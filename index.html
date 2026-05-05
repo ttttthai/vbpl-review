@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VBPL Review — Cổng tra cứu văn bản pháp luật Việt Nam</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- ===== TOP UTILITY ===== -->
+  <div class="utility">
+    <div class="utility-inner">
+      <div class="utility-left">
+        <span>Cập nhật: <strong style="color: white;" id="util-date"></strong></span>
+      </div>
+      <div class="utility-right">
+        <span class="util-status" id="util-status">Đã kết nối</span>
+        <span class="sep">|</span>
+        <a href="#">Tiếng Việt</a>
+        <span class="sep">|</span>
+        <a href="#">English</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== MAIN HEADER ===== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" id="brand-home">
+        <div class="brand-mark">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 6l9-3 9 3"/><path d="M5 9v10h14V9"/><path d="M9 19v-6h6v6"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <div class="brand-name">VBPL Review</div>
+          <div class="brand-tag">Thư viện văn bản pháp luật Việt Nam</div>
+        </div>
+      </a>
+
+      <div class="header-search">
+        <button class="header-search-type" id="header-type-btn">
+          <span>Tất cả</span>
+          <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="search-wrap">
+          <div class="search-box">
+            <input id="search-input" type="text" autocomplete="off" spellcheck="false"
+                   placeholder="Nhập số hiệu văn bản, tên gọi hoặc từ khoá..." />
+            <span class="search-shortcut">/</span>
+            <button id="search-clear" class="search-clear" aria-label="Xoá">×</button>
+          </div>
+          <ul id="suggestions" class="suggestions" role="listbox"></ul>
+        </div>
+        <button class="search-do" id="search-do">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          Tra cứu
+        </button>
+      </div>
+
+      <div class="header-actions">
+        <button class="btn-action">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          Hỗ trợ
+        </button>
+        <button class="btn-action primary" id="cta-search-btn">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+          VB của tôi
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== BREADCRUMB ===== -->
+  <div class="crumbs-bar">
+    <div class="container" id="crumbs">
+      <a id="bc-home">Trang chủ</a>
+      <span class="sep">›</span>
+      <span class="current">Tra cứu văn bản pháp luật</span>
+    </div>
+  </div>
+
+  <!-- ===== LANDING ===== -->
+  <main id="landing" class="landing">
+    <div class="container">
+
+      <!-- Trending row -->
+      <div class="trending-row">
+        <span class="label">Tâm điểm</span>
+        <div class="ticker">
+          <a href="#" data-doc-id="32/2024/QH15">Luật Các tổ chức tín dụng 32/2024/QH15 có hiệu lực 01/07/2024</a>
+          <a href="#" data-doc-id="22/2019/TT-NHNN">Tỷ lệ an toàn vốn tối thiểu theo Thông tư 22/2019</a>
+          <a href="#" data-doc-id="88/2019/ND-CP">Mức phạt mới theo NĐ 88/2019</a>
+        </div>
+      </div>
+
+      <!-- Spotlight -->
+      <div class="spotlight">
+        <div class="spotlight-grid">
+          <div>
+            <span class="spotlight-eyebrow">Văn bản tâm điểm</span>
+            <h1>Luật Các tổ chức tín dụng số 32/2024/QH15</h1>
+            <p>Có hiệu lực từ 01/07/2024 — bao gồm 209 điều quy định toàn diện về tổ chức, hoạt động, can thiệp sớm, kiểm soát đặc biệt và xử lý nợ xấu của các tổ chức tín dụng tại Việt Nam.</p>
+            <button class="btn-cta" data-doc-id="32/2024/QH15">
+              Mở văn bản
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </button>
+          </div>
+          <div class="spotlight-side">
+            <div class="spotlight-stat">
+              <div class="num" id="sp-total">8</div>
+              <div class="lbl">văn bản<br/>trong CSDL</div>
+            </div>
+            <div class="spotlight-stat">
+              <div class="num" id="sp-active">0</div>
+              <div class="lbl">văn bản<br/>đang có hiệu lực</div>
+            </div>
+            <div class="spotlight-stat">
+              <div class="num" id="sp-refs">100+</div>
+              <div class="lbl">liên kết<br/>viện dẫn chéo</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Two column body -->
+      <div class="land-grid">
+
+        <!-- LEFT: main column -->
+        <div class="land-main">
+
+          <!-- Văn bản mới ban hành -->
+          <div class="block" id="newdocs">
+            <div class="tab-strip" id="newdocs-tabs">
+              <button class="tab active" data-filter="all">Tất cả <span class="badge" id="cnt-all">0</span></button>
+              <button class="tab" data-filter="Luật">Luật <span class="badge" id="cnt-luat">0</span></button>
+              <button class="tab" data-filter="Nghị định">Nghị định <span class="badge" id="cnt-nghidinh">0</span></button>
+              <button class="tab" data-filter="Thông tư">Thông tư <span class="badge" id="cnt-thongtu">0</span></button>
+              <button class="tab" data-filter="Bộ luật">Bộ luật <span class="badge" id="cnt-boluat">0</span></button>
+            </div>
+            <div class="block-body">
+              <ul class="doc-list" id="newdocs-list"></ul>
+            </div>
+          </div>
+
+          <!-- Văn bản theo lĩnh vực -->
+          <div class="block" id="categories">
+            <div class="block-head">
+              <span class="title">Văn bản theo lĩnh vực</span>
+              <a href="#" class="more">Xem tất cả lĩnh vực →</a>
+            </div>
+            <div class="block-body">
+              <div class="field-grid">
+                <a class="field-card" data-field="ngan-hang">
+                  <div class="field-icon r1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="21" x2="21" y2="21"/><line x1="3" y1="10" x2="21" y2="10"/><polyline points="5 6 12 3 19 6"/><line x1="4" y1="10" x2="4" y2="21"/><line x1="20" y1="10" x2="20" y2="21"/><line x1="8" y1="14" x2="8" y2="17"/><line x1="12" y1="14" x2="12" y2="17"/><line x1="16" y1="14" x2="16" y2="17"/></svg></div>
+                  <div><div class="field-name">Tài chính – Ngân hàng</div><div class="field-count" id="fc-banking">0 văn bản</div></div>
+                </a>
+                <a class="field-card" data-field="dau-tu">
+                  <div class="field-icon r2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+                  <div><div class="field-name">Đầu tư – Doanh nghiệp</div><div class="field-count">Đang cập nhật</div></div>
+                </a>
+                <a class="field-card" data-field="lao-dong">
+                  <div class="field-icon r3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+                  <div><div class="field-name">Lao động – BHXH</div><div class="field-count">Đang cập nhật</div></div>
+                </a>
+                <a class="field-card" data-field="thue">
+                  <div class="field-icon r4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+                  <div><div class="field-name">Thuế – Phí – Lệ phí</div><div class="field-count">Đang cập nhật</div></div>
+                </a>
+                <a class="field-card" data-field="dat-dai">
+                  <div class="field-icon r1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+                  <div><div class="field-name">Đất đai – Xây dựng</div><div class="field-count">Đang cập nhật</div></div>
+                </a>
+                <a class="field-card" data-field="hinh-su">
+                  <div class="field-icon r2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s-8-4-8-12V5l8-3 8 3v5c0 8-8 12-8 12z"/></svg></div>
+                  <div><div class="field-name">Hình sự – Tố tụng</div><div class="field-count" id="fc-criminal">0 văn bản</div></div>
+                </a>
+                <a class="field-card" data-field="dan-su">
+                  <div class="field-icon r3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+                  <div><div class="field-name">Dân sự – Hợp đồng</div><div class="field-count">Đang cập nhật</div></div>
+                </a>
+                <a class="field-card" data-field="khac">
+                  <div class="field-icon r4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+                  <div><div class="field-name">Lĩnh vực khác</div><div class="field-count">Đang cập nhật</div></div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Văn bản hết hiệu lực gần đây -->
+          <div class="block">
+            <div class="block-head">
+              <span class="title">Văn bản đã hết hiệu lực</span>
+              <a href="#" class="more" id="see-expired">Xem tất cả →</a>
+            </div>
+            <div class="block-body">
+              <ul class="doc-list" id="expired-list"></ul>
+            </div>
+          </div>
+
+        </div><!-- /land-main -->
+
+        <!-- RIGHT: sidebar -->
+        <aside class="land-aside">
+
+          <!-- Stats -->
+          <div class="aside-block aside-stats">
+            <h3>Thống kê CSDL</h3>
+            <ul>
+              <li><span class="stat-num" id="ast-total">0</span><span class="stat-lbl">Văn bản</span></li>
+              <li><span class="stat-num" id="ast-luat">0</span><span class="stat-lbl">Luật</span></li>
+              <li><span class="stat-num" id="ast-nd">0</span><span class="stat-lbl">Nghị định</span></li>
+              <li><span class="stat-num" id="ast-tt">0</span><span class="stat-lbl">Thông tư</span></li>
+            </ul>
+          </div>
+
+          <!-- Hot docs -->
+          <div class="block aside-block" id="hotdocs">
+            <div class="block-head">
+              <span class="title">Văn bản hot</span>
+              <a href="#" class="more">Xem thêm →</a>
+            </div>
+            <div class="block-body">
+              <ul class="hot-list" id="hot-list"></ul>
+            </div>
+          </div>
+
+          <!-- Quick links -->
+          <div class="block aside-block">
+            <div class="block-head">
+              <span class="title">Liên kết nhanh</span>
+            </div>
+            <div class="block-body">
+              <ul class="quick-list">
+                <li><a href="https://vbpl.vn" target="_blank" rel="noopener">Cơ sở dữ liệu Quốc gia (vbpl.vn)</a></li>
+                <li><a href="https://vanban.chinhphu.vn" target="_blank" rel="noopener">Văn phòng Chính phủ</a></li>
+                <li><a href="https://quochoi.vn" target="_blank" rel="noopener">Quốc hội Việt Nam</a></li>
+                <li><a href="https://moj.gov.vn" target="_blank" rel="noopener">Bộ Tư pháp</a></li>
+                <li><a href="#">Văn bản mới ban hành</a></li>
+                <li><a href="#">Văn bản sắp có hiệu lực</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Newsletter -->
+          <div class="aside-block newsletter">
+            <h3>Bản tin pháp luật</h3>
+            <p>Đăng ký nhận tóm tắt văn bản mới ban hành mỗi tuần qua email.</p>
+            <form onsubmit="event.preventDefault(); document.getElementById('toast').textContent='Đã đăng ký nhận bản tin'; document.getElementById('toast').classList.add('visible'); setTimeout(function(){document.getElementById('toast').classList.remove('visible')}, 1800);">
+              <input type="email" placeholder="email@domain.vn" required />
+              <button type="submit">Đăng ký</button>
+            </form>
+          </div>
+
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <!-- ===== VIEWER ===== -->
+  <main id="viewer" class="viewer-page hidden">
+    <div class="container">
+      <div class="viewer-grid">
+
+        <aside>
+          <div class="sidecard">
+            <div class="sidecard-head"><span>Tìm văn bản</span></div>
+            <div class="side-search">
+              <input id="side-search-input" type="text" placeholder="Số hiệu hoặc tên..." autocomplete="off" />
+              <ul id="side-suggestions" class="suggestions side"></ul>
+            </div>
+            <div style="padding: 0 12px 12px;">
+              <button class="btn-action" id="back-home" style="width: 100%; justify-content: center;">
+                ← Trang chủ
+              </button>
+            </div>
+          </div>
+          <div class="sidecard">
+            <div class="sidecard-head">
+              <span>Mục lục</span>
+              <span class="count" id="toc-count">0</span>
+            </div>
+            <nav id="toc" class="toc"></nav>
+          </div>
+        </aside>
+
+        <article class="viewer-main" id="viewer-main">
+          <header class="doc-titlebar" id="doc-titlebar"></header>
+
+          <div class="props-wrap">
+            <table class="props-table" id="props-table"></table>
+          </div>
+
+          <div class="tabbar" id="tabbar">
+            <button class="tab active" data-tab="toanvan">Toàn văn</button>
+            <button class="tab" data-tab="luocdo">Lược đồ <span class="badge" id="luocdo-badge">0</span></button>
+            <button class="tab" data-tab="thuoctinh">Thuộc tính</button>
+          </div>
+
+          <div class="read-toolbar" id="read-toolbar">
+            <span class="lbl">Cỡ chữ</span>
+            <div class="tool-group">
+              <button class="tool-btn" id="size-down">A−</button>
+              <button class="tool-btn" id="size-reset">A</button>
+              <button class="tool-btn" id="size-up">A+</button>
+            </div>
+            <span class="lbl">Khổ</span>
+            <div class="tool-group">
+              <button class="tool-btn" id="width-narrow">Hẹp</button>
+              <button class="tool-btn" id="width-wide">Rộng</button>
+            </div>
+            <div class="spacer"></div>
+            <span class="lbl" id="reading-info"></span>
+          </div>
+
+          <section class="tab-panel active" data-panel="toanvan">
+            <div class="doc-body" id="doc-body"></div>
+          </section>
+          <section class="tab-panel" data-panel="luocdo">
+            <div class="luocdo" id="luocdo"></div>
+          </section>
+          <section class="tab-panel" data-panel="thuoctinh">
+            <div class="props-wrap">
+              <table class="props-table" id="props-full"></table>
+            </div>
+          </section>
+        </article>
+
+        <aside>
+          <div class="sidecard">
+            <div class="sidecard-head">
+              <span>Văn bản liên quan</span>
+              <span class="count" id="related-count">0</span>
+            </div>
+            <div class="sidecard-body">
+              <ul id="related-docs" class="related-docs"></ul>
+            </div>
+          </div>
+          <div class="sidecard">
+            <div class="sidecard-head"><span>Văn bản hot</span></div>
+            <div class="sidecard-body">
+              <ul class="hot-list" id="hot-list-side"></ul>
+            </div>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+
+    <button class="back-top" id="back-top" title="Lên đầu trang" aria-label="Lên đầu trang">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+    </button>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand">
+            <div class="brand-mark">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6l9-3 9 3"/><path d="M5 9v10h14V9"/><path d="M9 19v-6h6v6"/></svg>
+            </div>
+            <div class="brand-text">
+              <div class="brand-name">VBPL Review</div>
+              <div class="brand-tag">Thư viện văn bản pháp luật</div>
+            </div>
+          </a>
+          <p>Công cụ tra cứu, rà soát văn bản quy phạm pháp luật Việt Nam. Tích hợp dữ liệu công khai từ vbpl.vn và vanban.chinhphu.vn. Văn bản chỉ dùng để tham khảo, không thay thế bản gốc của cơ quan ban hành.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Sản phẩm</h4>
+          <a href="#">Tra cứu văn bản</a>
+          <a href="#categories">Lĩnh vực</a>
+          <a href="#newdocs">Văn bản mới</a>
+          <a href="#hotdocs">Văn bản hot</a>
+        </div>
+        <div class="footer-col">
+          <h4>Liên kết</h4>
+          <a href="https://vbpl.vn" target="_blank" rel="noopener">vbpl.vn</a>
+          <a href="https://vanban.chinhphu.vn" target="_blank" rel="noopener">vanban.chinhphu.vn</a>
+          <a href="https://quochoi.vn" target="_blank" rel="noopener">Quốc hội</a>
+          <a href="https://moj.gov.vn" target="_blank" rel="noopener">Bộ Tư pháp</a>
+        </div>
+        <div class="footer-col">
+          <h4>Hỗ trợ</h4>
+          <a href="#">Hướng dẫn sử dụng</a>
+          <a href="#">Câu hỏi thường gặp</a>
+          <a href="#">Liên hệ</a>
+          <a href="#">Báo lỗi</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2024 VBPL Review · Bản quyền văn bản thuộc cơ quan ban hành</div>
+  </footer>
+
+  <div id="ref-popup" class="ref-popup hidden" role="tooltip"></div>
+  <div id="toast" class="toast"></div>
+
+  <script src="data/documents.js?v=9"></script>
+  <script src="js/app.js?v=9"></script>
+</body>
+</html>
