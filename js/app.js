@@ -622,10 +622,20 @@
   }
 
   function renderTitlebar(doc) {
+    const loaded = (doc.chapters || []).reduce((s, ch) => s + ch.articles.length, 0);
+    const total = doc.articleTotal || loaded;
+    const partial = loaded < total;
+    const coverageHtml = `
+      <div class="doc-coverage ${partial ? "partial" : "full"}">
+        <span class="cov-label">Đã tải <strong>${loaded}</strong> trong tổng <strong>${total}</strong> điều</span>
+        ${partial && doc.sourceUrl ? `<a class="cov-source" href="${escapeHtml(doc.sourceUrl)}" target="_blank" rel="noopener">Mở bản gốc tại nguồn →</a>` : ""}
+      </div>
+    `;
     docTitlebar.innerHTML = `
       <span class="type-pill">${escapeHtml(doc.type)} · ${escapeHtml(doc.number)}</span>
       <h1>${escapeHtml(doc.title)}</h1>
       <div class="doc-issuer">${escapeHtml(doc.issuer)}${doc.signedBy ? " · Người ký: " + escapeHtml(doc.signedBy) : ""}</div>
+      ${coverageHtml}
     `;
   }
 
