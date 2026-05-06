@@ -381,6 +381,7 @@
   }
 
   function setCrumbs(items) {
+    if (!crumbs) return; // breadcrumb bar removed from layout
     crumbs.innerHTML = "";
     items.forEach((it, idx) => {
       if (idx > 0) {
