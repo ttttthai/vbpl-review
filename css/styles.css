@@ -224,7 +224,7 @@ table { border-collapse: collapse; }
 .search-clear:hover { color: var(--red); }
 .search-clear.visible { display: inline-flex; }
 .search-do {
-  background: var(--blue);
+  background: var(--orange);
   color: white;
   border: none;
   padding: 0 18px;
@@ -233,7 +233,7 @@ table { border-collapse: collapse; }
   display: inline-flex; align-items: center; gap: 6px;
   font-family: inherit;
 }
-.search-do:hover { background: var(--blue-dark); }
+.search-do:hover { background: var(--orange-dark); }
 .search-shortcut {
   font-size: 11px;
   color: var(--ink-mute);
@@ -400,7 +400,7 @@ table { border-collapse: collapse; }
   transition: background 0.15s, color 0.15s;
 }
 .topnav-link:hover { background: rgba(255,255,255,0.06); color: #f7f9fc; }
-.topnav-link.active { background: var(--red); color: white; }
+.topnav-link.active { background: var(--orange); color: white; }
 .topnav-item { position: relative; }
 .topnav-trigger { font-family: inherit; }
 .topnav-menu {
@@ -408,7 +408,7 @@ table { border-collapse: collapse; }
   position: absolute; top: 100%; left: 0;
   background: white;
   border: 1px solid var(--line-strong);
-  border-top: 3px solid var(--red);
+  border-top: 3px solid var(--orange);
   box-shadow: 0 8px 22px rgba(0,0,0,0.16);
   min-width: 320px;
   padding: 6px 0;

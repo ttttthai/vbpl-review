@@ -1013,10 +1013,10 @@
 
     html += `
       <div class="lt-legend">
-        <span class="lt-legend-item"><span class="lt-swatch type-luat"></span>Luật / Bộ luật</span>
-        <span class="lt-legend-item"><span class="lt-swatch type-nghidinh"></span>Nghị định</span>
-        <span class="lt-legend-item"><span class="lt-swatch type-thongtu"></span>Thông tư</span>
-        <span class="lt-legend-item"><span class="lt-swatch type-luat ring"></span>Văn bản đang xem</span>
+        <span class="lt-legend-item"><span class="lt-swatch type-luat"></span>Luật / BL</span>
+        <span class="lt-legend-item"><span class="lt-swatch type-nghidinh"></span>NĐ</span>
+        <span class="lt-legend-item"><span class="lt-swatch type-thongtu"></span>TT</span>
+        <span class="lt-legend-item"><span class="lt-swatch type-luat ring"></span>VB đang xem</span>
         <span class="lt-legend-item"><span class="lt-swatch expired"></span>Hết hiệu lực</span>
       </div>
       <div class="lt-wrap">
