@@ -681,14 +681,24 @@ table { border-collapse: collapse; }
   text-align: center;
 }
 /* Horizontal statbar — replaces the 6 stat cards */
-.spotlight-statbar {
-  grid-column: 1 / -1;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: stretch;
+.spotlight-statbar-wrap {
   margin-top: 18px;
   border-top: 1px solid rgba(127, 199, 190, 0.25);
   padding-top: 14px;
+}
+.spotlight-statbar-title {
+  font-family: Georgia, serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: rgba(247,242,228,0.55);
+  margin-bottom: 10px;
+}
+.spotlight-statbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
   gap: 0;
 }
 .ss-item {
