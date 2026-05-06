@@ -505,6 +505,7 @@
 
   // Văn bản mới — sorted by issuedDate desc
   function renderNewdocs() {
+    if (!newdocsList) return; // panel removed from landing
     let docs = Object.values(DB).slice();
     docs.sort((a, b) => (b.issuedDate || "").localeCompare(a.issuedDate || ""));
     if (newdocsFilter !== "all") docs = docs.filter(d => d.type === newdocsFilter);
@@ -546,15 +547,17 @@
   }
 
   // Tab strip — set filter (clears any active field filter)
-  $$(".tab", newdocsTabs).forEach(t => {
-    t.addEventListener("click", () => {
-      $$(".tab", newdocsTabs).forEach(x => x.classList.remove("active"));
-      t.classList.add("active");
-      newdocsFilter = t.dataset.filter;
-      window.__fieldFilterIds = null;
-      renderNewdocs();
+  if (newdocsTabs) {
+    $$(".tab", newdocsTabs).forEach(t => {
+      t.addEventListener("click", () => {
+        $$(".tab", newdocsTabs).forEach(x => x.classList.remove("active"));
+        t.classList.add("active");
+        newdocsFilter = t.dataset.filter;
+        window.__fieldFilterIds = null;
+        renderNewdocs();
+      });
     });
-  });
+  }
 
   function renderExpired() {
     const docs = Object.values(DB).filter(d => /Hết hiệu lực/i.test(d.status));
