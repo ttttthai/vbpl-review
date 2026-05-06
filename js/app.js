@@ -460,9 +460,13 @@
         if (otherRefs.some(r => r.docId === spotlight.id)) related.add(other.id);
       }
 
+      // Dedupe by canonical doc id (the related Set may contain both
+      // "NĐ-CP" and "ND-CP" variants of the same id)
+      const seenCanonical = new Set();
       for (const id of related) {
         const d = H.findDoc(id);
-        if (!d) continue;
+        if (!d || seenCanonical.has(d.id)) continue;
+        seenCanonical.add(d.id);
         const isDraft = /Dự thảo|Đang thảo luận/i.test(d.status || "");
         const isExpired = /Hết hiệu lực/i.test(d.status || "") || !!d.expiryDate;
         if (isDraft) sp.draft++;
@@ -1003,7 +1007,9 @@
 
   // ===== References =====
   const DOC_NUMBER_RE = /(Luật|Nghị\s*định|Thông\s*tư|Bộ\s*luật)(?:\s+số)?\s+([0-9]+\/[0-9]+\/(?:QH[0-9]+|N[ĐD][- ]?CP|TT[- ]?[A-ZĐ]+))/giu;
-  const NAMED_DOC_NUMBER_RE = /(Luật|Bộ\s*luật|Nghị\s*định|Thông\s*tư)\s+(?:[^.,;\n\/]{1,80}?)\s+số\s+([0-9]+\/[0-9]+\/(?:QH[0-9]+|N[ĐD][- ]?CP|TT[- ]?[A-ZĐ]+))/giu;
+  // Allow commas inside the document name segment — Vietnamese laws often have
+  // them (e.g. "Luật Phòng, chống rửa tiền số 14/2022/QH15").
+  const NAMED_DOC_NUMBER_RE = /(Luật|Bộ\s*luật|Nghị\s*định|Thông\s*tư)\s+(?:[^.;\n\/]{1,80}?)\s+số\s+([0-9]+\/[0-9]+\/(?:QH[0-9]+|N[ĐD][- ]?CP|TT[- ]?[A-ZĐ]+))/giu;
   const NAMED_CODE_RE = /Bộ\s*luật\s+Hình\s+sự(?!\s+số)/giu;
   const INNER_REF_RE = /(?:điểm\s+([a-zđ])\s+)?(?:khoản\s+(\d+)\s+)?Điều\s+(\d+)(?:\s+của\s+(Luật\s+này|Luật\s+số\s+[0-9]+\/[0-9]+\/QH[0-9]+|Nghị\s*định\s+số\s+[0-9]+\/[0-9]+\/N[ĐD]-CP|Thông\s*tư\s+số\s+[0-9]+\/[0-9]+\/TT-[A-ZĐ]+))?/giu;
 

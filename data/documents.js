@@ -76,7 +76,7 @@ window.LEGAL_DB = {
             id: "art-9",
             number: "Điều 9",
             heading: "Trách nhiệm của tổ chức tín dụng, chi nhánh ngân hàng nước ngoài trong việc bảo vệ quyền lợi của khách hàng",
-            body: "1. Tham gia bảo hiểm tiền gửi, quỹ bảo đảm an toàn hệ thống quỹ tín dụng nhân dân theo quy định của pháp luật và công bố công khai việc tham gia bảo hiểm tiền gửi tại trụ sở chính và chi nhánh.\n2. Tạo thuận lợi cho khách hàng gửi và rút tiền, bảo đảm thanh toán đủ, đúng hạn gốc và lãi của khoản tiền gửi.\n3. Từ chối điều tra, phong toả, cầm giữ, trích chuyển tiền gửi của khách hàng, trừ trường hợp có yêu cầu của cơ quan nhà nước có thẩm quyền theo quy định của pháp luật hoặc được sự chấp thuận của khách hàng.\n4. Thông báo công khai lãi suất tiền gửi, phí dịch vụ, các quyền, nghĩa vụ của khách hàng đối với từng loại sản phẩm, dịch vụ đang cung ứng.\n5. Công bố thời gian giao dịch chính thức và không được tự ý ngừng giao dịch vào thời gian đã công bố. Trường hợp ngừng giao dịch trong thời gian giao dịch chính thức, tổ chức tín dụng, chi nhánh ngân hàng nước ngoài phải niêm yết tại nơi giao dịch chậm nhất là 24 giờ trước thời điểm ngừng giao dịch. Tổ chức tín dụng, chi nhánh ngân hàng nước ngoài không được phép ngừng giao dịch quá 01 ngày làm việc, trừ trường hợp quy định tại điểm e khoản 1 Điều 156 của Luật này."
+            body: "1. Tham gia bảo hiểm tiền gửi theo quy định của Luật Bảo hiểm tiền gửi số 06/2012/QH13, quỹ bảo đảm an toàn hệ thống quỹ tín dụng nhân dân theo quy định của pháp luật và công bố công khai việc tham gia bảo hiểm tiền gửi tại trụ sở chính và chi nhánh.\n2. Tạo thuận lợi cho khách hàng gửi và rút tiền, bảo đảm thanh toán đủ, đúng hạn gốc và lãi của khoản tiền gửi.\n3. Từ chối điều tra, phong toả, cầm giữ, trích chuyển tiền gửi của khách hàng, trừ trường hợp có yêu cầu của cơ quan nhà nước có thẩm quyền theo quy định của pháp luật hoặc được sự chấp thuận của khách hàng.\n4. Thông báo công khai lãi suất tiền gửi, phí dịch vụ, các quyền, nghĩa vụ của khách hàng đối với từng loại sản phẩm, dịch vụ đang cung ứng.\n5. Công bố thời gian giao dịch chính thức và không được tự ý ngừng giao dịch vào thời gian đã công bố. Trường hợp ngừng giao dịch trong thời gian giao dịch chính thức, tổ chức tín dụng, chi nhánh ngân hàng nước ngoài phải niêm yết tại nơi giao dịch chậm nhất là 24 giờ trước thời điểm ngừng giao dịch. Tổ chức tín dụng, chi nhánh ngân hàng nước ngoài không được phép ngừng giao dịch quá 01 ngày làm việc, trừ trường hợp quy định tại điểm e khoản 1 Điều 156 của Luật này."
           },
           {
             id: "art-10",
@@ -94,7 +94,7 @@ window.LEGAL_DB = {
             id: "art-14",
             number: "Điều 14",
             heading: "Cung cấp thông tin",
-            body: "1. Tổ chức tín dụng, chi nhánh ngân hàng nước ngoài có trách nhiệm cung cấp thông tin theo yêu cầu của Ngân hàng Nhà nước phục vụ cho việc xây dựng cơ sở dữ liệu thông tin tín dụng quốc gia.\n2. Việc cung cấp thông tin trong các trường hợp sau đây phải được thực hiện theo quy định của pháp luật về phòng, chống rửa tiền, phòng, chống tài trợ khủng bố và pháp luật khác có liên quan.\n3. Việc trao đổi, chia sẻ, cung cấp thông tin giữa các cơ quan nhà nước có thẩm quyền với tổ chức tín dụng, chi nhánh ngân hàng nước ngoài phục vụ công tác quản lý nhà nước được thực hiện theo quy định của pháp luật.\n9. Trường hợp xử lý tổ chức tín dụng được kiểm soát đặc biệt theo quy định tại Điều 191 của Luật này, các tổ chức tín dụng, chi nhánh ngân hàng nước ngoài có thẩm quyền cung cấp, trao đổi thông tin nhằm hỗ trợ phương án phục hồi, sáp nhập, hợp nhất, chuyển nhượng toàn bộ phần vốn góp, cổ phần."
+            body: "1. Tổ chức tín dụng, chi nhánh ngân hàng nước ngoài có trách nhiệm cung cấp thông tin theo yêu cầu của Ngân hàng Nhà nước phục vụ cho việc xây dựng cơ sở dữ liệu thông tin tín dụng quốc gia.\n2. Việc cung cấp thông tin trong các trường hợp sau đây phải được thực hiện theo quy định của Luật Phòng, chống rửa tiền số 14/2022/QH15, pháp luật về phòng, chống tài trợ khủng bố và pháp luật khác có liên quan.\n3. Việc trao đổi, chia sẻ, cung cấp thông tin giữa các cơ quan nhà nước có thẩm quyền với tổ chức tín dụng, chi nhánh ngân hàng nước ngoài phục vụ công tác quản lý nhà nước được thực hiện theo quy định của pháp luật.\n9. Trường hợp xử lý tổ chức tín dụng được kiểm soát đặc biệt theo quy định tại Điều 191 của Luật này, các tổ chức tín dụng, chi nhánh ngân hàng nước ngoài có thẩm quyền cung cấp, trao đổi thông tin nhằm hỗ trợ phương án phục hồi, sáp nhập, hợp nhất, chuyển nhượng toàn bộ phần vốn góp, cổ phần."
           },
           {
             id: "art-15",
@@ -214,13 +214,13 @@ window.LEGAL_DB = {
             id: "art-138",
             number: "Điều 138",
             heading: "Tỷ lệ bảo đảm an toàn",
-            body: "1. Tổ chức tín dụng, chi nhánh ngân hàng nước ngoài phải duy trì các tỷ lệ bảo đảm an toàn sau đây:\na) Tỷ lệ khả năng chi trả;\nb) Tỷ lệ an toàn vốn tối thiểu 8% hoặc tỷ lệ cao hơn theo quy định của Thống đốc Ngân hàng Nhà nước trong từng thời kỳ;\nc) Tỷ lệ tối đa của nguồn vốn ngắn hạn được sử dụng để cho vay trung hạn và dài hạn;\nd) Tỷ trọng tối đa dư nợ cấp tín dụng so với tổng tiền gửi;\nđ) Trạng thái ngoại tệ, vàng tối đa so với vốn tự có;\ne) Tỷ lệ dự trữ thanh khoản;\ng) Các tỷ lệ bảo đảm an toàn khác.\n2. Tổng mức dư nợ cấp tín dụng đối với đối tượng được quy định tại các khoản 1, 3 và 4 Điều 134 và các khoản 1, 2, 3 và 4 Điều 135 của Luật này không được vượt quá 5% vốn tự có của tổ chức tín dụng, chi nhánh ngân hàng nước ngoài.\n3. Thống đốc Ngân hàng Nhà nước quy định cụ thể các tỷ lệ bảo đảm an toàn quy định tại khoản 1 Điều này đối với từng loại hình tổ chức tín dụng, chi nhánh ngân hàng nước ngoài. Việc thực hiện cụ thể được hướng dẫn tại Thông tư 22/2019/TT-NHNN."
+            body: "1. Tổ chức tín dụng, chi nhánh ngân hàng nước ngoài phải duy trì các tỷ lệ bảo đảm an toàn sau đây:\na) Tỷ lệ khả năng chi trả;\nb) Tỷ lệ an toàn vốn tối thiểu 8% theo phương pháp tiêu chuẩn quy định tại Thông tư 41/2016/TT-NHNN hoặc tỷ lệ cao hơn theo quy định của Thống đốc Ngân hàng Nhà nước trong từng thời kỳ;\nc) Tỷ lệ tối đa của nguồn vốn ngắn hạn được sử dụng để cho vay trung hạn và dài hạn;\nd) Tỷ trọng tối đa dư nợ cấp tín dụng so với tổng tiền gửi;\nđ) Trạng thái ngoại tệ, vàng tối đa so với vốn tự có;\ne) Tỷ lệ dự trữ thanh khoản;\ng) Các tỷ lệ bảo đảm an toàn khác.\n2. Tổng mức dư nợ cấp tín dụng đối với đối tượng được quy định tại các khoản 1, 3 và 4 Điều 134 và các khoản 1, 2, 3 và 4 Điều 135 của Luật này không được vượt quá 5% vốn tự có của tổ chức tín dụng, chi nhánh ngân hàng nước ngoài.\n3. Thống đốc Ngân hàng Nhà nước quy định cụ thể các tỷ lệ bảo đảm an toàn quy định tại khoản 1 Điều này đối với từng loại hình tổ chức tín dụng, chi nhánh ngân hàng nước ngoài. Việc thực hiện cụ thể được hướng dẫn tại Thông tư 22/2019/TT-NHNN."
           },
           {
             id: "art-140",
             number: "Điều 140",
             heading: "Bảo hiểm tiền gửi",
-            body: "1. Tổ chức tín dụng nhận tiền gửi của cá nhân, chi nhánh ngân hàng nước ngoài có trách nhiệm tham gia bảo hiểm tiền gửi theo quy định của pháp luật về bảo hiểm tiền gửi.\n2. Mức phí bảo hiểm tiền gửi được áp dụng tương ứng với mức độ rủi ro của tổ chức tham gia bảo hiểm tiền gửi do Thủ tướng Chính phủ quy định trên cơ sở đề xuất của Ngân hàng Nhà nước."
+            body: "1. Tổ chức tín dụng nhận tiền gửi của cá nhân, chi nhánh ngân hàng nước ngoài có trách nhiệm tham gia bảo hiểm tiền gửi theo quy định của Luật Bảo hiểm tiền gửi số 06/2012/QH13.\n2. Mức phí bảo hiểm tiền gửi được áp dụng tương ứng với mức độ rủi ro của tổ chức tham gia bảo hiểm tiền gửi do Thủ tướng Chính phủ quy định trên cơ sở đề xuất của Ngân hàng Nhà nước."
           },
           {
             id: "art-156",
@@ -268,7 +268,7 @@ window.LEGAL_DB = {
             id: "art-188",
             number: "Điều 188",
             heading: "Phạm vi và nguyên tắc xử lý nợ xấu",
-            body: "1. Phạm vi nợ xấu được xử lý theo quy định tại Chương này bao gồm khoản nợ xấu của tổ chức tín dụng, chi nhánh ngân hàng nước ngoài, tổ chức mà Nhà nước sở hữu 100% vốn điều lệ có chức năng mua, bán, xử lý nợ.\n2. Việc xử lý nợ xấu phải bảo đảm:\na) Nguyên tắc thị trường, công khai, minh bạch;\nb) Bảo vệ quyền và lợi ích hợp pháp của khách hàng vay, bên bảo đảm và bên thứ ba;\nc) Phù hợp với quy định của Luật này và pháp luật khác có liên quan.\n3. Tổ chức tín dụng, chi nhánh ngân hàng nước ngoài chịu trách nhiệm về tính chính xác, trung thực của hồ sơ, tài liệu, thông tin liên quan đến khoản nợ xấu khi thực hiện các biện pháp xử lý nợ xấu theo quy định của Luật này."
+            body: "1. Phạm vi nợ xấu được xử lý theo quy định tại Chương này bao gồm khoản nợ xấu của tổ chức tín dụng, chi nhánh ngân hàng nước ngoài, tổ chức mà Nhà nước sở hữu 100% vốn điều lệ có chức năng mua, bán, xử lý nợ. Việc phân loại nợ xấu thực hiện theo quy định tại Thông tư 11/2021/TT-NHNN; mức trích lập dự phòng rủi ro thực hiện theo Nghị định 86/2024/NĐ-CP.\n2. Việc xử lý nợ xấu phải bảo đảm:\na) Nguyên tắc thị trường, công khai, minh bạch;\nb) Bảo vệ quyền và lợi ích hợp pháp của khách hàng vay, bên bảo đảm và bên thứ ba;\nc) Phù hợp với quy định của Luật này và pháp luật khác có liên quan.\n3. Tổ chức tín dụng, chi nhánh ngân hàng nước ngoài chịu trách nhiệm về tính chính xác, trung thực của hồ sơ, tài liệu, thông tin liên quan đến khoản nợ xấu khi thực hiện các biện pháp xử lý nợ xấu theo quy định của Luật này."
           },
           {
             id: "art-195",
@@ -280,7 +280,7 @@ window.LEGAL_DB = {
             id: "art-202",
             number: "Điều 202",
             heading: "Giải thể, thanh lý tài sản của tổ chức tín dụng",
-            body: "1. Tổ chức tín dụng, chi nhánh ngân hàng nước ngoài giải thể trong các trường hợp sau đây:\na) Tự nguyện xin giải thể nếu có khả năng thanh toán hết nợ và được Ngân hàng Nhà nước chấp thuận bằng văn bản;\nb) Khi hết thời hạn hoạt động ghi trong Giấy phép mà không xin gia hạn hoặc xin gia hạn nhưng không được Ngân hàng Nhà nước chấp thuận;\nc) Bị thu hồi Giấy phép theo quy định tại Điều 29 của Luật này.\n2. Tổ chức tín dụng, chi nhánh ngân hàng nước ngoài bị giải thể có trách nhiệm thanh lý tài sản dưới sự giám sát của Ngân hàng Nhà nước theo trình tự, thủ tục thanh lý tài sản do Thống đốc Ngân hàng Nhà nước quy định.\n3. Trong quá trình giám sát thanh lý tài sản theo quy định tại khoản 2 Điều này, nếu phát hiện tổ chức tín dụng, chi nhánh ngân hàng nước ngoài không có khả năng thanh toán đầy đủ các khoản nợ, Ngân hàng Nhà nước ra quyết định chấm dứt thanh lý và thực hiện phương án phá sản tổ chức tín dụng theo quy định của Luật này và pháp luật về phá sản.\n4. Tổ chức tín dụng được giải thể theo quy định tại điểm a và điểm b khoản 1 Điều này phải thực hiện đầy đủ các nghĩa vụ tài chính đối với khách hàng, người gửi tiền và các chủ nợ trước khi chia phần tài sản còn lại cho cổ đông, thành viên góp vốn, chủ sở hữu."
+            body: "1. Tổ chức tín dụng, chi nhánh ngân hàng nước ngoài giải thể trong các trường hợp sau đây:\na) Tự nguyện xin giải thể nếu có khả năng thanh toán hết nợ và được Ngân hàng Nhà nước chấp thuận bằng văn bản;\nb) Khi hết thời hạn hoạt động ghi trong Giấy phép mà không xin gia hạn hoặc xin gia hạn nhưng không được Ngân hàng Nhà nước chấp thuận;\nc) Bị thu hồi Giấy phép theo quy định tại Điều 29 của Luật này.\n2. Tổ chức tín dụng, chi nhánh ngân hàng nước ngoài bị giải thể có trách nhiệm thanh lý tài sản dưới sự giám sát của Ngân hàng Nhà nước theo trình tự, thủ tục thanh lý tài sản do Thống đốc Ngân hàng Nhà nước quy định.\n3. Trong quá trình giám sát thanh lý tài sản theo quy định tại khoản 2 Điều này, nếu phát hiện tổ chức tín dụng, chi nhánh ngân hàng nước ngoài không có khả năng thanh toán đầy đủ các khoản nợ, Ngân hàng Nhà nước ra quyết định chấm dứt thanh lý và thực hiện phương án phá sản tổ chức tín dụng theo quy định của Luật này và Luật Phá sản số 51/2014/QH13.\n4. Tổ chức tín dụng được giải thể theo quy định tại điểm a và điểm b khoản 1 Điều này phải thực hiện đầy đủ các nghĩa vụ tài chính đối với khách hàng, người gửi tiền và các chủ nợ trước khi chia phần tài sản còn lại cho cổ đông, thành viên góp vốn, chủ sở hữu."
           },
           {
             id: "art-200",
@@ -699,6 +699,444 @@ window.LEGAL_DB = {
             number: "Điều 4",
             heading: "Hiệu lực thi hành",
             body: "1. Luật này có hiệu lực thi hành từ ngày 15 tháng 01 năm 2018.\n2. Đối với các tổ chức tín dụng đã được đặt vào tình trạng kiểm soát đặc biệt trước ngày Luật này có hiệu lực thi hành, Ngân hàng Nhà nước tiếp tục triển khai các biện pháp xử lý theo quy định của Luật này.\n(Văn bản đã hết hiệu lực thi hành kể từ ngày 01/7/2024 theo quy định tại khoản 2 Điều 209 Luật 32/2024/QH15.)"
+          }
+        ]
+      }
+    ]
+  },
+
+  // ===== Predecessor electricity laws (replaced by 61/2024/QH15) =====
+
+  "28/2004/QH11": {
+    id: "28/2004/QH11",
+    type: "Luật",
+    typeKey: "luat",
+    number: "28/2004/QH11",
+    shortTitle: "Luật Điện lực 2004",
+    title: "Luật Điện lực",
+    issuer: "Quốc hội",
+    signedBy: "Nguyễn Văn An",
+    issuedDate: "2004-12-03",
+    effectiveDate: "2005-07-01",
+    expiryDate: "2025-02-01",
+    replacedBy: "61/2024/QH15",
+    status: "Hết hiệu lực từ 01/02/2025",
+    articleTotal: 70,
+    sourceUrl: "https://vbpl.vn/TW/Pages/vbpq-toanvan.aspx?ItemID=18421",
+    chapters: [
+      {
+        title: "CHƯƠNG I",
+        subtitle: "NHỮNG QUY ĐỊNH CHUNG",
+        articles: [
+          {
+            id: "art-1",
+            number: "Điều 1",
+            heading: "Phạm vi điều chỉnh",
+            body: "Luật này quy định về quy hoạch và đầu tư phát triển điện lực; tiết kiệm điện; thị trường điện lực; quyền và nghĩa vụ của tổ chức, cá nhân hoạt động điện lực và sử dụng điện; bảo vệ trang thiết bị điện, công trình điện lực và an toàn điện.\n(Văn bản đã hết hiệu lực thi hành kể từ ngày 01/02/2025 — được thay thế bởi Luật Điện lực số 61/2024/QH15.)"
+          }
+        ]
+      }
+    ]
+  },
+
+  "24/2012/QH13": {
+    id: "24/2012/QH13",
+    type: "Luật",
+    typeKey: "luat",
+    number: "24/2012/QH13",
+    shortTitle: "Luật sửa đổi Luật Điện lực 2012",
+    title: "Luật sửa đổi, bổ sung một số điều của Luật Điện lực",
+    issuer: "Quốc hội",
+    signedBy: "Nguyễn Sinh Hùng",
+    issuedDate: "2012-11-20",
+    effectiveDate: "2013-07-01",
+    expiryDate: "2025-02-01",
+    replacedBy: "61/2024/QH15",
+    status: "Hết hiệu lực từ 01/02/2025",
+    articleTotal: 4,
+    sourceUrl: "https://vbpl.vn/TW/Pages/vbpq-toanvan.aspx?ItemID=27937",
+    chapters: [
+      {
+        title: "PHẦN MỞ ĐẦU",
+        subtitle: "",
+        articles: [
+          {
+            id: "art-1",
+            number: "Điều 1",
+            heading: "Sửa đổi, bổ sung Luật Điện lực 28/2004/QH11",
+            body: "Sửa đổi, bổ sung một số điều của Luật Điện lực số 28/2004/QH11, tập trung vào quy định về thị trường điện lực cạnh tranh, quy hoạch phát triển điện lực và điều chỉnh giá bán điện.\n(Văn bản đã hết hiệu lực thi hành kể từ ngày 01/02/2025 — được thay thế bởi Luật Điện lực 61/2024/QH15.)"
+          }
+        ]
+      }
+    ]
+  },
+
+  "28/2018/QH14": {
+    id: "28/2018/QH14",
+    type: "Luật",
+    typeKey: "luat",
+    number: "28/2018/QH14",
+    shortTitle: "Luật sửa đổi 11 Luật liên quan đến quy hoạch 2018",
+    title: "Luật sửa đổi, bổ sung một số điều của 11 Luật có liên quan đến quy hoạch",
+    issuer: "Quốc hội",
+    signedBy: "Nguyễn Thị Kim Ngân",
+    issuedDate: "2018-06-15",
+    effectiveDate: "2019-01-01",
+    expiryDate: "2025-02-01",
+    replacedBy: "61/2024/QH15",
+    status: "Hết hiệu lực một phần từ 01/02/2025 (phần sửa đổi Luật Điện lực)",
+    articleTotal: 12,
+    sourceUrl: "https://vbpl.vn/TW/Pages/vbpq-toanvan.aspx?ItemID=132906",
+    chapters: [
+      {
+        title: "PHẦN MỞ ĐẦU",
+        subtitle: "",
+        articles: [
+          {
+            id: "art-3",
+            number: "Điều 3",
+            heading: "Sửa đổi, bổ sung Luật Điện lực",
+            body: "Sửa đổi, bổ sung một số điều của Luật Điện lực số 28/2004/QH11 (đã được sửa đổi, bổ sung theo Luật số 24/2012/QH13) liên quan đến quy hoạch phát triển điện lực để phù hợp với Luật Quy hoạch số 21/2017/QH14.\n(Phần sửa đổi Luật Điện lực đã hết hiệu lực từ 01/02/2025 theo quy định tại Điều 130 Luật 61/2024/QH15.)"
+          }
+        ]
+      }
+    ]
+  },
+
+  "03/2022/QH15": {
+    id: "03/2022/QH15",
+    type: "Luật",
+    typeKey: "luat",
+    number: "03/2022/QH15",
+    shortTitle: "Luật sửa đổi Luật Điện lực 2022",
+    title: "Luật sửa đổi, bổ sung một số điều của Luật Điện lực",
+    issuer: "Quốc hội",
+    signedBy: "Vương Đình Huệ",
+    issuedDate: "2022-01-11",
+    effectiveDate: "2022-03-01",
+    expiryDate: "2025-02-01",
+    replacedBy: "61/2024/QH15",
+    status: "Hết hiệu lực từ 01/02/2025",
+    articleTotal: 3,
+    sourceUrl: "https://vbpl.vn/TW/Pages/vbpq-toanvan.aspx?ItemID=152921",
+    chapters: [
+      {
+        title: "PHẦN MỞ ĐẦU",
+        subtitle: "",
+        articles: [
+          {
+            id: "art-1",
+            number: "Điều 1",
+            heading: "Sửa đổi, bổ sung Điều 4 Luật Điện lực",
+            body: "Sửa đổi quy định tại Điều 4 Luật Điện lực số 28/2004/QH11 (đã được sửa đổi, bổ sung theo Luật số 24/2012/QH13 và Luật số 28/2018/QH14) cho phép tư nhân tham gia đầu tư xây dựng lưới điện truyền tải, mở đường cho việc xã hội hoá đầu tư hạ tầng truyền tải.\n(Văn bản đã hết hiệu lực thi hành kể từ ngày 01/02/2025 — được thay thế bởi Luật Điện lực 61/2024/QH15.)"
+          }
+        ]
+      }
+    ]
+  },
+
+  // ===== Foundational laws related to Luật TCTD 32/2024/QH15 =====
+
+  "06/2012/QH13": {
+    id: "06/2012/QH13",
+    type: "Luật",
+    typeKey: "luat",
+    number: "06/2012/QH13",
+    shortTitle: "Luật Bảo hiểm tiền gửi 2012",
+    title: "Luật Bảo hiểm tiền gửi",
+    issuer: "Quốc hội",
+    signedBy: "Nguyễn Sinh Hùng",
+    issuedDate: "2012-06-18",
+    effectiveDate: "2013-01-01",
+    status: "Có hiệu lực",
+    articleTotal: 39,
+    sourceUrl: "https://vbpl.vn/TW/Pages/vbpq-toanvan.aspx?ItemID=27566",
+    chapters: [
+      {
+        title: "CHƯƠNG I",
+        subtitle: "NHỮNG QUY ĐỊNH CHUNG",
+        articles: [
+          {
+            id: "art-1",
+            number: "Điều 1",
+            heading: "Phạm vi điều chỉnh",
+            body: "Luật này quy định về hoạt động bảo hiểm tiền gửi, quyền và nghĩa vụ của người được bảo hiểm tiền gửi, tổ chức tham gia bảo hiểm tiền gửi, tổ chức bảo hiểm tiền gửi và quản lý nhà nước về bảo hiểm tiền gửi."
+          },
+          {
+            id: "art-4",
+            number: "Điều 4",
+            heading: "Giải thích từ ngữ",
+            body: "1. Bảo hiểm tiền gửi là sự bảo đảm hoàn trả tiền gửi cho người được bảo hiểm tiền gửi trong hạn mức trả tiền bảo hiểm khi tổ chức tham gia bảo hiểm tiền gửi lâm vào tình trạng mất khả năng chi trả tiền gửi cho người gửi tiền hoặc phá sản.\n2. Tổ chức tham gia bảo hiểm tiền gửi là tổ chức tín dụng, chi nhánh ngân hàng nước ngoài thành lập và hoạt động theo Luật Các tổ chức tín dụng được nhận tiền gửi của cá nhân.\n3. Người được bảo hiểm tiền gửi là cá nhân có tiền gửi được bảo hiểm tại tổ chức tham gia bảo hiểm tiền gửi."
+          },
+          {
+            id: "art-24",
+            number: "Điều 24",
+            heading: "Hạn mức trả tiền bảo hiểm",
+            body: "Hạn mức trả tiền bảo hiểm là số tiền tối đa mà tổ chức bảo hiểm tiền gửi trả cho tất cả các khoản tiền gửi được bảo hiểm của một người tại một tổ chức tham gia bảo hiểm tiền gửi khi phát sinh nghĩa vụ trả tiền bảo hiểm. Thủ tướng Chính phủ quy định hạn mức trả tiền bảo hiểm theo đề nghị của Ngân hàng Nhà nước Việt Nam trong từng thời kỳ. (Hiện hành: 125 triệu đồng theo Quyết định 32/2021/QĐ-TTg.)"
+          }
+        ]
+      }
+    ]
+  },
+
+  "51/2014/QH13": {
+    id: "51/2014/QH13",
+    type: "Luật",
+    typeKey: "luat",
+    number: "51/2014/QH13",
+    shortTitle: "Luật Phá sản 2014",
+    title: "Luật Phá sản",
+    issuer: "Quốc hội",
+    signedBy: "Nguyễn Sinh Hùng",
+    issuedDate: "2014-06-19",
+    effectiveDate: "2015-01-01",
+    status: "Có hiệu lực",
+    articleTotal: 133,
+    sourceUrl: "https://vbpl.vn/TW/Pages/vbpq-toanvan.aspx?ItemID=37985",
+    chapters: [
+      {
+        title: "CHƯƠNG I",
+        subtitle: "NHỮNG QUY ĐỊNH CHUNG",
+        articles: [
+          {
+            id: "art-1",
+            number: "Điều 1",
+            heading: "Phạm vi điều chỉnh",
+            body: "Luật này quy định về trình tự, thủ tục nộp đơn, thụ lý và mở thủ tục phá sản; xác định nghĩa vụ về tài sản và biện pháp bảo toàn tài sản trong quá trình giải quyết phá sản; thủ tục phục hồi hoạt động kinh doanh; tuyên bố phá sản và thi hành quyết định tuyên bố phá sản."
+          },
+          {
+            id: "art-4",
+            number: "Điều 4",
+            heading: "Giải thích từ ngữ",
+            body: "1. Doanh nghiệp, hợp tác xã mất khả năng thanh toán là doanh nghiệp, hợp tác xã không thực hiện nghĩa vụ thanh toán khoản nợ trong thời hạn 03 tháng kể từ ngày đến hạn thanh toán.\n2. Phá sản là tình trạng của doanh nghiệp, hợp tác xã mất khả năng thanh toán và bị Tòa án nhân dân ra quyết định tuyên bố phá sản."
+          },
+          {
+            id: "art-97",
+            number: "Điều 97",
+            heading: "Phá sản tổ chức tín dụng",
+            body: "Việc phá sản tổ chức tín dụng được thực hiện theo quy định của Luật này, Luật Các tổ chức tín dụng và quy định khác của pháp luật có liên quan. Tòa án nhân dân chỉ thụ lý đơn yêu cầu mở thủ tục phá sản đối với tổ chức tín dụng sau khi Ngân hàng Nhà nước Việt Nam có văn bản chấm dứt kiểm soát đặc biệt hoặc văn bản chấm dứt áp dụng các biện pháp phục hồi khả năng thanh toán mà tổ chức tín dụng vẫn mất khả năng thanh toán."
+          }
+        ]
+      }
+    ]
+  },
+
+  "54/2019/QH14": {
+    id: "54/2019/QH14",
+    type: "Luật",
+    typeKey: "luat",
+    number: "54/2019/QH14",
+    shortTitle: "Luật Chứng khoán 2019",
+    title: "Luật Chứng khoán",
+    issuer: "Quốc hội",
+    signedBy: "Nguyễn Thị Kim Ngân",
+    issuedDate: "2019-11-26",
+    effectiveDate: "2021-01-01",
+    status: "Có hiệu lực",
+    articleTotal: 135,
+    sourceUrl: "https://vbpl.vn/TW/Pages/vbpq-toanvan.aspx?ItemID=140747",
+    chapters: [
+      {
+        title: "CHƯƠNG I",
+        subtitle: "NHỮNG QUY ĐỊNH CHUNG",
+        articles: [
+          {
+            id: "art-1",
+            number: "Điều 1",
+            heading: "Phạm vi điều chỉnh",
+            body: "Luật này quy định các hoạt động về chứng khoán và thị trường chứng khoán; quyền và nghĩa vụ của tổ chức, cá nhân trong lĩnh vực chứng khoán; tổ chức thị trường chứng khoán; quản lý nhà nước về chứng khoán và thị trường chứng khoán."
+          },
+          {
+            id: "art-72",
+            number: "Điều 72",
+            heading: "Công ty chứng khoán",
+            body: "1. Công ty chứng khoán được tổ chức dưới hình thức công ty trách nhiệm hữu hạn hoặc công ty cổ phần.\n2. Công ty chứng khoán được thực hiện một, một số hoặc toàn bộ nghiệp vụ kinh doanh chứng khoán sau đây: môi giới chứng khoán; tự doanh chứng khoán; bảo lãnh phát hành chứng khoán; tư vấn đầu tư chứng khoán.\n3. Công ty chứng khoán chỉ được thực hiện hoạt động khác sau khi được Ủy ban Chứng khoán Nhà nước chấp thuận bằng văn bản."
+          }
+        ]
+      }
+    ]
+  },
+
+  "14/2022/QH15": {
+    id: "14/2022/QH15",
+    type: "Luật",
+    typeKey: "luat",
+    number: "14/2022/QH15",
+    shortTitle: "Luật Phòng, chống rửa tiền 2022",
+    title: "Luật Phòng, chống rửa tiền",
+    issuer: "Quốc hội",
+    signedBy: "Vương Đình Huệ",
+    issuedDate: "2022-11-15",
+    effectiveDate: "2023-03-01",
+    status: "Có hiệu lực",
+    articleTotal: 66,
+    sourceUrl: "https://vbpl.vn/TW/Pages/vbpq-toanvan.aspx?ItemID=158196",
+    chapters: [
+      {
+        title: "CHƯƠNG I",
+        subtitle: "NHỮNG QUY ĐỊNH CHUNG",
+        articles: [
+          {
+            id: "art-1",
+            number: "Điều 1",
+            heading: "Phạm vi điều chỉnh",
+            body: "Luật này quy định về các biện pháp phòng ngừa, phát hiện, ngăn chặn, xử lý tổ chức, cá nhân có hành vi rửa tiền; trách nhiệm của cơ quan, tổ chức, cá nhân trong phòng, chống rửa tiền; hợp tác quốc tế về phòng, chống rửa tiền."
+          },
+          {
+            id: "art-4",
+            number: "Điều 4",
+            heading: "Đối tượng báo cáo",
+            body: "Đối tượng báo cáo là tổ chức tài chính, tổ chức kinh doanh ngành, nghề phi tài chính có liên quan, bao gồm:\n1. Tổ chức tín dụng, chi nhánh ngân hàng nước ngoài;\n2. Tổ chức cung ứng dịch vụ trung gian thanh toán;\n3. Công ty chứng khoán, công ty quản lý quỹ, công ty đầu tư chứng khoán, doanh nghiệp bảo hiểm nhân thọ;\n4. Công ty kinh doanh casino, kinh doanh đại lý đổi tiền, kinh doanh kim loại quý, đá quý;\n5. Công ty kinh doanh bất động sản;\n6. Tổ chức cung ứng dịch vụ kế toán, kiểm toán, công chứng, luật sư."
+          },
+          {
+            id: "art-26",
+            number: "Điều 26",
+            heading: "Báo cáo giao dịch có giá trị lớn phải báo cáo",
+            body: "1. Đối tượng báo cáo có trách nhiệm báo cáo Ngân hàng Nhà nước Việt Nam khi thực hiện các giao dịch có giá trị lớn phải báo cáo.\n2. Thủ tướng Chính phủ quyết định mức giao dịch có giá trị lớn phải báo cáo phù hợp với điều kiện kinh tế - xã hội trong từng thời kỳ. (Hiện hành: 400 triệu đồng theo Quyết định 11/2023/QĐ-TTg.)"
+          }
+        ]
+      }
+    ]
+  },
+
+  "86/2024/ND-CP": {
+    id: "86/2024/ND-CP",
+    type: "Nghị định",
+    typeKey: "nghidinh",
+    number: "86/2024/NĐ-CP",
+    shortTitle: "Nghị định 86/2024/NĐ-CP",
+    title: "Quy định về mức trích, phương pháp trích lập dự phòng rủi ro, việc sử dụng dự phòng để xử lý rủi ro của tổ chức tín dụng, chi nhánh ngân hàng nước ngoài và trường hợp tổ chức tín dụng phân bổ lãi phải thu phải thoái",
+    issuer: "Chính phủ",
+    signedBy: "Lê Minh Khái",
+    issuedDate: "2024-07-11",
+    effectiveDate: "2024-07-11",
+    status: "Có hiệu lực",
+    articleTotal: 16,
+    sourceUrl: "https://vanban.chinhphu.vn/?pageid=27160&docid=210289",
+    chapters: [
+      {
+        title: "CHƯƠNG I",
+        subtitle: "QUY ĐỊNH CHUNG",
+        articles: [
+          {
+            id: "art-1",
+            number: "Điều 1",
+            heading: "Phạm vi điều chỉnh",
+            body: "Nghị định này quy định về mức trích, phương pháp trích lập dự phòng rủi ro, việc sử dụng dự phòng để xử lý rủi ro của tổ chức tín dụng, chi nhánh ngân hàng nước ngoài quy định tại Luật Các tổ chức tín dụng số 32/2024/QH15 và trường hợp tổ chức tín dụng phân bổ lãi phải thu phải thoái."
+          },
+          {
+            id: "art-3",
+            number: "Điều 3",
+            heading: "Phương pháp trích lập dự phòng",
+            body: "1. Tổ chức tín dụng, chi nhánh ngân hàng nước ngoài phải trích lập dự phòng cụ thể theo từng nhóm nợ và dự phòng chung theo tỷ lệ quy định tại Nghị định này.\n2. Dự phòng cụ thể được tính theo công thức: Số tiền dự phòng cụ thể = (Giá trị khoản nợ - Giá trị khấu trừ tài sản bảo đảm) × Tỷ lệ trích lập dự phòng cụ thể tương ứng nhóm nợ.\n3. Tỷ lệ trích lập dự phòng cụ thể: Nhóm 1 (Nợ đủ tiêu chuẩn) - 0%; Nhóm 2 (Nợ cần chú ý) - 5%; Nhóm 3 (Nợ dưới tiêu chuẩn) - 20%; Nhóm 4 (Nợ nghi ngờ) - 50%; Nhóm 5 (Nợ có khả năng mất vốn) - 100%.\n4. Dự phòng chung được trích bằng 0,75% tổng dư nợ của các khoản nợ từ nhóm 1 đến nhóm 4 (không bao gồm dư nợ của các khoản đã trích lập dự phòng cụ thể 100%)."
+          }
+        ]
+      }
+    ]
+  },
+
+  "11/2021/TT-NHNN": {
+    id: "11/2021/TT-NHNN",
+    type: "Thông tư",
+    typeKey: "thongtu",
+    number: "11/2021/TT-NHNN",
+    shortTitle: "Thông tư 11/2021/TT-NHNN về phân loại nợ",
+    title: "Quy định về phân loại tài sản có, mức trích, phương pháp trích lập dự phòng rủi ro và việc sử dụng dự phòng để xử lý rủi ro trong hoạt động của tổ chức tín dụng, chi nhánh ngân hàng nước ngoài",
+    issuer: "Ngân hàng Nhà nước Việt Nam",
+    signedBy: "Đoàn Thái Sơn",
+    issuedDate: "2021-07-30",
+    effectiveDate: "2021-10-01",
+    status: "Có hiệu lực",
+    articleTotal: 18,
+    sourceUrl: "https://vbpl.vn/nganhangnhanuoc/Pages/vbpq-toanvan.aspx?ItemID=151033",
+    chapters: [
+      {
+        title: "CHƯƠNG I",
+        subtitle: "QUY ĐỊNH CHUNG",
+        articles: [
+          {
+            id: "art-1",
+            number: "Điều 1",
+            heading: "Phạm vi điều chỉnh",
+            body: "Thông tư này quy định về việc phân loại, mức trích, phương pháp trích lập dự phòng rủi ro và sử dụng dự phòng để xử lý rủi ro tín dụng đối với tài sản có (sau đây gọi là nợ) phát sinh từ các hoạt động cấp tín dụng, mua trái phiếu doanh nghiệp, gửi tiền, mua, bán nợ của tổ chức tín dụng, chi nhánh ngân hàng nước ngoài."
+          },
+          {
+            id: "art-10",
+            number: "Điều 10",
+            heading: "Phân loại nợ và cam kết ngoại bảng theo phương pháp định lượng",
+            body: "1. Tổ chức tín dụng, chi nhánh ngân hàng nước ngoài phân loại nợ thành 5 nhóm như sau:\na) Nhóm 1 (Nợ đủ tiêu chuẩn): Nợ trong hạn và được đánh giá là có khả năng thu hồi đầy đủ cả nợ gốc và lãi đúng hạn; nợ quá hạn dưới 10 ngày và được đánh giá có khả năng thu hồi đầy đủ;\nb) Nhóm 2 (Nợ cần chú ý): Nợ quá hạn từ 10 ngày đến 90 ngày; nợ điều chỉnh kỳ hạn trả nợ lần đầu;\nc) Nhóm 3 (Nợ dưới tiêu chuẩn): Nợ quá hạn từ 91 ngày đến 180 ngày; nợ gia hạn lần đầu;\nd) Nhóm 4 (Nợ nghi ngờ): Nợ quá hạn từ 181 ngày đến 360 ngày; nợ cơ cấu lại lần thứ hai trở lên;\nđ) Nhóm 5 (Nợ có khả năng mất vốn): Nợ quá hạn trên 360 ngày; nợ cơ cấu lại lần thứ ba trở lên."
+          }
+        ]
+      }
+    ]
+  },
+
+  "41/2016/TT-NHNN": {
+    id: "41/2016/TT-NHNN",
+    type: "Thông tư",
+    typeKey: "thongtu",
+    number: "41/2016/TT-NHNN",
+    shortTitle: "Thông tư 41/2016/TT-NHNN về tỷ lệ an toàn vốn (Basel II)",
+    title: "Quy định tỷ lệ an toàn vốn đối với ngân hàng, chi nhánh ngân hàng nước ngoài",
+    issuer: "Ngân hàng Nhà nước Việt Nam",
+    signedBy: "Nguyễn Thị Hồng",
+    issuedDate: "2016-12-30",
+    effectiveDate: "2020-01-01",
+    status: "Có hiệu lực",
+    articleTotal: 21,
+    sourceUrl: "https://vbpl.vn/nganhangnhanuoc/Pages/vbpq-toanvan.aspx?ItemID=119085",
+    chapters: [
+      {
+        title: "CHƯƠNG I",
+        subtitle: "QUY ĐỊNH CHUNG",
+        articles: [
+          {
+            id: "art-1",
+            number: "Điều 1",
+            heading: "Phạm vi điều chỉnh",
+            body: "Thông tư này quy định phương pháp tính và yêu cầu duy trì tỷ lệ an toàn vốn theo Phương pháp tiêu chuẩn (Standardized Approach) của Basel II đối với rủi ro tín dụng, rủi ro hoạt động và rủi ro thị trường của ngân hàng, chi nhánh ngân hàng nước ngoài."
+          },
+          {
+            id: "art-6",
+            number: "Điều 6",
+            heading: "Tỷ lệ an toàn vốn tối thiểu",
+            body: "1. Ngân hàng không có công ty con, chi nhánh ngân hàng nước ngoài phải duy trì tỷ lệ an toàn vốn (CAR) tối thiểu 8%.\n2. Ngân hàng có công ty con phải duy trì đồng thời tỷ lệ an toàn vốn riêng lẻ tối thiểu 8% và tỷ lệ an toàn vốn hợp nhất tối thiểu 8%.\n3. Công thức tính:\nCAR = C / (RWA + 12.5 × (KOR + KMR)) × 100%\nTrong đó: C = Vốn tự có; RWA = Tổng tài sản tính theo rủi ro tín dụng; KOR = Vốn yêu cầu cho rủi ro hoạt động; KMR = Vốn yêu cầu cho rủi ro thị trường."
+          }
+        ]
+      }
+    ]
+  },
+
+  "16/2021/TT-NHNN": {
+    id: "16/2021/TT-NHNN",
+    type: "Thông tư",
+    typeKey: "thongtu",
+    number: "16/2021/TT-NHNN",
+    shortTitle: "Thông tư 16/2021/TT-NHNN về mua trái phiếu doanh nghiệp",
+    title: "Quy định việc tổ chức tín dụng, chi nhánh ngân hàng nước ngoài mua, bán trái phiếu doanh nghiệp",
+    issuer: "Ngân hàng Nhà nước Việt Nam",
+    signedBy: "Đào Minh Tú",
+    issuedDate: "2021-11-10",
+    effectiveDate: "2022-01-15",
+    status: "Có hiệu lực",
+    articleTotal: 19,
+    sourceUrl: "https://vbpl.vn/nganhangnhanuoc/Pages/vbpq-toanvan.aspx?ItemID=151997",
+    chapters: [
+      {
+        title: "CHƯƠNG I",
+        subtitle: "QUY ĐỊNH CHUNG",
+        articles: [
+          {
+            id: "art-1",
+            number: "Điều 1",
+            heading: "Phạm vi điều chỉnh",
+            body: "Thông tư này quy định việc tổ chức tín dụng, chi nhánh ngân hàng nước ngoài mua, bán trái phiếu doanh nghiệp được phát hành tại thị trường trong nước theo quy định của pháp luật."
+          },
+          {
+            id: "art-4",
+            number: "Điều 4",
+            heading: "Nguyên tắc mua, bán trái phiếu doanh nghiệp",
+            body: "1. Tổ chức tín dụng, chi nhánh ngân hàng nước ngoài chỉ được mua trái phiếu doanh nghiệp khi có tỷ lệ nợ xấu dưới 3% theo kỳ phân loại gần nhất theo quy định của Ngân hàng Nhà nước.\n2. Tổ chức tín dụng không được mua trái phiếu doanh nghiệp trong các trường hợp:\na) Trái phiếu phát hành nhằm cơ cấu lại các khoản nợ của chính doanh nghiệp phát hành;\nb) Trái phiếu phát hành để góp vốn, mua cổ phần tại doanh nghiệp khác;\nc) Trái phiếu phát hành để tăng quy mô vốn hoạt động.\n3. Việc mua trái phiếu doanh nghiệp phải được Hội đồng quản trị, Hội đồng thành viên hoặc Tổng giám đốc (Giám đốc) phê duyệt theo thẩm quyền nội bộ và tuân thủ giới hạn cấp tín dụng quy định tại Điều 136, Điều 137 Luật Các tổ chức tín dụng số 32/2024/QH15."
           }
         ]
       }
