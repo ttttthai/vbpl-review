@@ -169,10 +169,22 @@ window.LEGAL_DB = {
             body: "1. Những đối tượng sau đây không được là thành viên Hội đồng quản trị, thành viên Hội đồng thành viên, thành viên Ban kiểm soát, Tổng giám đốc (Giám đốc), Phó Tổng giám đốc (Phó Giám đốc) và chức danh tương đương của tổ chức tín dụng:\na) Người chưa thành niên, người bị hạn chế hoặc bị mất năng lực hành vi dân sự, người có khó khăn trong nhận thức, làm chủ hành vi;\nb) Người đang bị truy cứu trách nhiệm hình sự, đang chấp hành bản án, quyết định về hình sự của Toà án;\nc) Người đã bị kết án về tội xâm phạm an ninh quốc gia, tội xâm phạm sở hữu, tội phạm về quản lý kinh tế, về chức vụ;\nd) Cán bộ, công chức, người quản lý từ cấp phòng trở lên trong các đơn vị sự nghiệp công lập, doanh nghiệp do Nhà nước nắm giữ trên 50% vốn điều lệ, trừ người được cử làm đại diện quản lý phần vốn góp của Nhà nước tại tổ chức tín dụng;\nđ) Sĩ quan, hạ sĩ quan, quân nhân chuyên nghiệp, công nhân, viên chức quốc phòng trong các cơ quan, đơn vị thuộc Quân đội nhân dân; sĩ quan, hạ sĩ quan chuyên nghiệp trong các cơ quan, đơn vị thuộc Công an nhân dân, trừ người được cử làm đại diện quản lý phần vốn góp của Nhà nước tại tổ chức tín dụng;\ne) Người đã từng là chủ doanh nghiệp tư nhân, chủ tịch Hội đồng thành viên, thành viên Hội đồng thành viên, chủ tịch Hội đồng quản trị, thành viên Hội đồng quản trị, Tổng giám đốc (Giám đốc), Phó Tổng giám đốc (Phó Giám đốc) và chức danh tương đương của doanh nghiệp đã bị tuyên bố phá sản, trừ trường hợp doanh nghiệp đó bị tuyên bố phá sản vì lý do bất khả kháng;\ng) Người đang bị cấm đảm nhiệm chức vụ, hành nghề hoặc làm công việc nhất định liên quan đến hoạt động ngân hàng theo quyết định của Toà án.\n2. Cha, mẹ, vợ, chồng, con và anh, chị, em ruột của thành viên Hội đồng quản trị, thành viên Hội đồng thành viên, Tổng giám đốc (Giám đốc) và vợ, chồng của những người này không được là Kế toán trưởng, Giám đốc tài chính, người phụ trách kế toán, người phụ trách tài chính của cùng tổ chức tín dụng đó.\n3. Người quản lý, người điều hành của tổ chức tín dụng đã bị thu hồi Giấy phép, người đại diện theo pháp luật của tổ chức tín dụng đã bị tuyên bố phá sản không được đảm nhiệm các chức vụ này tại bất kỳ tổ chức tín dụng, chi nhánh ngân hàng nước ngoài nào, trừ trường hợp tổ chức tín dụng đó được thành lập lại theo quy định của pháp luật."
           },
           {
+            id: "art-38",
+            number: "Điều 38",
+            heading: "Cơ cấu tổ chức của tổ chức tín dụng được thành lập dưới hình thức công ty cổ phần",
+            body: "1. Cơ cấu tổ chức của tổ chức tín dụng được thành lập dưới hình thức công ty cổ phần bao gồm:\na) Đại hội đồng cổ đông;\nb) Hội đồng quản trị;\nc) Ban kiểm soát;\nd) Tổng giám đốc (Giám đốc).\n2. Ngân hàng thương mại do Nhà nước nắm giữ trên 50% vốn điều lệ phải có thành viên Hội đồng quản trị độc lập với số lượng do Đại hội đồng cổ đông quyết định nhưng không ít hơn 1/3 tổng số thành viên Hội đồng quản trị, không ít hơn 02 thành viên độc lập đối với tổ chức tín dụng khác.\n3. Số lượng thành viên Hội đồng quản trị do Đại hội đồng cổ đông quyết định nhưng tối thiểu 05 thành viên và tối đa 11 thành viên, trong đó tối thiểu 1/2 tổng số thành viên là thành viên độc lập và thành viên không phải là người điều hành tổ chức tín dụng."
+          },
+          {
             id: "art-39",
             number: "Điều 39",
             heading: "Cơ cấu tổ chức quản trị, điều hành",
             body: "1. Cơ cấu tổ chức quản trị, điều hành của tổ chức tín dụng được thành lập dưới hình thức công ty cổ phần bao gồm: Đại hội đồng cổ đông, Hội đồng quản trị, Ban kiểm soát, Tổng giám đốc (Giám đốc).\n2. Cơ cấu tổ chức quản trị, điều hành của tổ chức tín dụng được thành lập dưới hình thức công ty trách nhiệm hữu hạn bao gồm: Hội đồng thành viên, Ban kiểm soát, Tổng giám đốc (Giám đốc). Đối với công ty trách nhiệm hữu hạn một thành viên do Nhà nước nắm giữ 100% vốn điều lệ, có Hội đồng thành viên hoặc Chủ tịch công ty.\n3. Cơ cấu tổ chức quản trị, điều hành của ngân hàng hợp tác xã, quỹ tín dụng nhân dân bao gồm: Đại hội thành viên, Hội đồng quản trị, Ban kiểm soát, Tổng giám đốc (Giám đốc).\n4. Tổ chức tín dụng có thể thành lập các đơn vị, bộ phận thuộc cơ cấu nội bộ phù hợp với quy mô, phạm vi hoạt động."
+          },
+          {
+            id: "art-40",
+            number: "Điều 40",
+            heading: "Nhiệm kỳ của thành viên Hội đồng quản trị, Hội đồng thành viên, Ban kiểm soát",
+            body: "1. Nhiệm kỳ của thành viên Hội đồng quản trị, Hội đồng thành viên không quá 05 năm và có thể được bầu lại với số nhiệm kỳ không hạn chế.\n2. Nhiệm kỳ của thành viên Ban kiểm soát không quá 05 năm và có thể được bầu lại với số nhiệm kỳ không hạn chế.\n3. Nhiệm kỳ đầu tiên của thành viên Hội đồng quản trị, Hội đồng thành viên, Ban kiểm soát của tổ chức tín dụng được tính từ ngày tổ chức tín dụng được cấp Giấy phép.\n4. Trong thời hạn 60 ngày kể từ ngày kết thúc nhiệm kỳ, Đại hội đồng cổ đông, chủ sở hữu, thành viên góp vốn của tổ chức tín dụng phải tiến hành bầu, bổ nhiệm thành viên Hội đồng quản trị, Hội đồng thành viên, Ban kiểm soát của nhiệm kỳ tiếp theo."
           },
           {
             id: "art-43",
@@ -683,6 +695,36 @@ window.LEGAL_DB = {
             number: "Điều 290",
             heading: "Tội sử dụng mạng máy tính, mạng viễn thông, phương tiện điện tử thực hiện hành vi chiếm đoạt tài sản",
             body: "1. Người nào sử dụng mạng máy tính, mạng viễn thông hoặc phương tiện điện tử thực hiện một trong các hành vi sau đây nhằm chiếm đoạt tài sản, thì bị phạt cải tạo không giam giữ đến 03 năm hoặc phạt tù từ 06 tháng đến 03 năm:\na) Sử dụng thông tin về tài khoản, thẻ ngân hàng của cơ quan, tổ chức, cá nhân để chiếm đoạt tài sản của chủ tài khoản, chủ thẻ hoặc thanh toán hàng hoá, dịch vụ;\nb) Làm, tàng trữ, mua bán, sử dụng, lưu hành thẻ ngân hàng giả nhằm chiếm đoạt tài sản của chủ tài khoản, chủ thẻ hoặc thanh toán hàng hoá, dịch vụ;\nc) Truy cập bất hợp pháp vào tài khoản của cơ quan, tổ chức, cá nhân nhằm chiếm đoạt tài sản;\nd) Lừa đảo trong thương mại điện tử, thanh toán điện tử, kinh doanh tiền tệ, huy động vốn, kinh doanh đa cấp hoặc giao dịch chứng khoán qua mạng nhằm chiếm đoạt tài sản;\nđ) Thiết lập, cung cấp trái phép dịch vụ viễn thông, internet nhằm chiếm đoạt tài sản.\n2. Phạm tội thuộc trường hợp chiếm đoạt 500 triệu đồng trở lên hoặc gây thiệt hại đặc biệt nghiêm trọng thì bị phạt tù từ 12 năm đến 20 năm."
+          },
+          {
+            id: "art-188",
+            number: "Điều 188",
+            heading: "Tội buôn lậu",
+            body: "1. Người nào buôn bán qua biên giới hoặc từ khu phi thuế quan vào nội địa hoặc ngược lại trái pháp luật hàng hoá, tiền Việt Nam, ngoại tệ, kim khí quý, đá quý trị giá từ 100.000.000 đồng đến dưới 300.000.000 đồng hoặc dưới 100.000.000 đồng nhưng thuộc một trong các trường hợp sau đây, thì bị phạt tiền từ 50.000.000 đồng đến 300.000.000 đồng hoặc phạt tù từ 06 tháng đến 03 năm:\na) Đã bị xử phạt vi phạm hành chính về hành vi quy định tại Điều này hoặc tại một trong các điều 189, 190, 191, 192, 193, 194, 195, 196, 200 của Bộ luật này hoặc đã bị kết án về một trong các tội này, chưa được xoá án tích mà còn vi phạm;\nb) Vật phạm pháp là di vật, cổ vật.\n2. Phạm tội thuộc trường hợp đặc biệt nghiêm trọng, vật phạm pháp trị giá 1.000.000.000 đồng trở lên, thì bị phạt tù từ 12 năm đến 20 năm."
+          },
+          {
+            id: "art-207",
+            number: "Điều 207",
+            heading: "Tội làm, tàng trữ, vận chuyển, lưu hành tiền giả",
+            body: "1. Người nào làm, tàng trữ, vận chuyển, lưu hành tiền giả, ngân phiếu giả, công trái giả, thì bị phạt tù từ 03 năm đến 07 năm.\n2. Phạm tội trong trường hợp tiền giả, ngân phiếu giả, công trái giả tương ứng với tiền Việt Nam có mệnh giá từ 5.000.000 đồng đến dưới 50.000.000 đồng, thì bị phạt tù từ 05 năm đến 12 năm.\n3. Phạm tội trong trường hợp tiền giả, ngân phiếu giả, công trái giả tương ứng với tiền Việt Nam có mệnh giá từ 50.000.000 đồng trở lên, thì bị phạt tù từ 10 năm đến 20 năm hoặc tù chung thân.\n4. Người chuẩn bị phạm tội này, thì bị phạt cải tạo không giam giữ đến 03 năm hoặc phạt tù từ 01 năm đến 03 năm."
+          },
+          {
+            id: "art-209",
+            number: "Điều 209",
+            heading: "Tội cố ý công bố thông tin sai lệch hoặc che giấu thông tin trong hoạt động chứng khoán",
+            body: "1. Người nào cố ý công bố thông tin sai lệch hoặc che giấu thông tin trong hoạt động chào bán, niêm yết, giao dịch, hoạt động kinh doanh chứng khoán, tổ chức thị trường, đăng ký, lưu ký, bù trừ hoặc thanh toán chứng khoán thuộc một trong các trường hợp sau đây, thì bị phạt tiền từ 100.000.000 đồng đến 500.000.000 đồng, phạt cải tạo không giam giữ đến 02 năm hoặc phạt tù từ 03 tháng đến 02 năm:\na) Gây thiệt hại cho nhà đầu tư từ 1.000.000.000 đồng đến dưới 3.000.000.000 đồng;\nb) Thu lợi bất chính từ 500.000.000 đồng đến dưới 1.000.000.000 đồng.\n2. Phạm tội gây thiệt hại cho nhà đầu tư từ 3.000.000.000 đồng trở lên, thì bị phạt tù từ 02 năm đến 07 năm."
+          },
+          {
+            id: "art-210",
+            number: "Điều 210",
+            heading: "Tội sử dụng thông tin nội bộ để mua bán chứng khoán",
+            body: "1. Người nào biết được thông tin liên quan đến công ty đại chúng hoặc quỹ đại chúng chưa được công bố mà nếu được công bố có thể ảnh hưởng lớn đến giá chứng khoán của công ty đại chúng hoặc quỹ đại chúng đó, sử dụng thông tin này để mua bán chứng khoán hoặc tiết lộ, cung cấp thông tin này cho đối tượng khác mua bán chứng khoán thu lợi bất chính từ 300.000.000 đồng đến dưới 1.000.000.000 đồng hoặc gây thiệt hại cho nhà đầu tư từ 500.000.000 đồng đến dưới 1.500.000.000 đồng, thì bị phạt tiền từ 500.000.000 đồng đến 2.000.000.000 đồng hoặc phạt tù từ 06 tháng đến 03 năm.\n2. Phạm tội thu lợi bất chính 1.000.000.000 đồng trở lên hoặc gây thiệt hại cho nhà đầu tư 1.500.000.000 đồng trở lên, thì bị phạt tù từ 02 năm đến 07 năm."
+          },
+          {
+            id: "art-217",
+            number: "Điều 217",
+            heading: "Tội vi phạm quy định về cạnh tranh",
+            body: "1. Người nào thực hiện một trong các hành vi sau đây gây thiệt hại đến lợi ích của Nhà nước, quyền và lợi ích hợp pháp của tổ chức, cá nhân, thu lợi bất chính từ 500.000.000 đồng đến dưới 3.000.000.000 đồng hoặc gây thiệt hại cho người khác từ 1.000.000.000 đồng đến dưới 5.000.000.000 đồng, thì bị phạt tiền từ 200.000.000 đồng đến 1.000.000.000 đồng, phạt cải tạo không giam giữ đến 02 năm hoặc phạt tù từ 03 tháng đến 02 năm:\na) Thoả thuận ngăn cản, kìm hãm không cho doanh nghiệp khác tham gia thị trường hoặc phát triển kinh doanh;\nb) Thoả thuận loại bỏ khỏi thị trường những doanh nghiệp không phải là các bên của thoả thuận;\nc) Thoả thuận hạn chế cạnh tranh khi các bên tham gia thoả thuận có thị phần kết hợp trên thị trường liên quan từ 30% trở lên."
           },
           {
             id: "art-353",
@@ -1489,6 +1531,18 @@ window.LEGAL_DB = {
             number: "Điều 117",
             heading: "Điều kiện có hiệu lực của giao dịch dân sự",
             body: "1. Giao dịch dân sự có hiệu lực khi có đủ các điều kiện sau đây:\na) Chủ thể có năng lực pháp luật dân sự, năng lực hành vi dân sự phù hợp với giao dịch dân sự được xác lập;\nb) Chủ thể tham gia giao dịch dân sự hoàn toàn tự nguyện;\nc) Mục đích và nội dung của giao dịch dân sự không vi phạm điều cấm của luật, không trái đạo đức xã hội.\n2. Hình thức của giao dịch dân sự là điều kiện có hiệu lực của giao dịch dân sự trong trường hợp luật có quy định."
+          },
+          {
+            id: "art-124",
+            number: "Điều 124",
+            heading: "Giao dịch dân sự vô hiệu do giả tạo",
+            body: "1. Khi các bên xác lập giao dịch dân sự một cách giả tạo nhằm che giấu một giao dịch dân sự khác thì giao dịch dân sự giả tạo vô hiệu, còn giao dịch dân sự bị che giấu vẫn có hiệu lực, trừ trường hợp giao dịch đó cũng vô hiệu theo quy định của Bộ luật này hoặc luật khác có liên quan.\n2. Trường hợp xác lập giao dịch dân sự giả tạo nhằm trốn tránh nghĩa vụ với người thứ ba thì giao dịch dân sự đó vô hiệu."
+          },
+          {
+            id: "art-292",
+            number: "Điều 292",
+            heading: "Bảo đảm thực hiện nghĩa vụ",
+            body: "Các biện pháp bảo đảm thực hiện nghĩa vụ bao gồm:\n1. Cầm cố tài sản;\n2. Thế chấp tài sản;\n3. Đặt cọc;\n4. Ký cược;\n5. Ký quỹ;\n6. Bảo lưu quyền sở hữu;\n7. Bảo lãnh;\n8. Tín chấp;\n9. Cầm giữ tài sản."
           },
           {
             id: "art-401",
