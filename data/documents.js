@@ -58,7 +58,7 @@ window.LEGAL_DB = {
             id: "art-6",
             number: "Điều 6",
             heading: "Hình thức tổ chức của tổ chức tín dụng, chi nhánh ngân hàng nước ngoài",
-            body: "1. Ngân hàng thương mại trong nước được thành lập, tổ chức dưới hình thức công ty cổ phần, trừ trường hợp quy định tại khoản 2 Điều này.\n2. Ngân hàng thương mại do Nhà nước nắm giữ trên 50% vốn điều lệ được thành lập, tổ chức dưới hình thức công ty cổ phần hoặc công ty trách nhiệm hữu hạn một thành viên do Nhà nước nắm giữ 100% vốn điều lệ.\n3. Tổ chức tín dụng phi ngân hàng trong nước được thành lập, tổ chức dưới hình thức công ty cổ phần, công ty trách nhiệm hữu hạn.\n4. Tổ chức tín dụng liên doanh, tổ chức tín dụng 100% vốn nước ngoài được thành lập, tổ chức dưới hình thức công ty trách nhiệm hữu hạn.\n5. Ngân hàng hợp tác xã, quỹ tín dụng nhân dân được thành lập, tổ chức dưới hình thức hợp tác xã.\n6. Tổ chức tài chính vi mô được thành lập, tổ chức dưới hình thức công ty trách nhiệm hữu hạn."
+            body: "1. Ngân hàng thương mại trong nước được thành lập, tổ chức dưới hình thức công ty cổ phần, trừ trường hợp quy định tại khoản 2 Điều này.\n2. Ngân hàng thương mại do Nhà nước nắm giữ trên 50% vốn điều lệ được thành lập, tổ chức dưới hình thức công ty cổ phần hoặc công ty trách nhiệm hữu hạn một thành viên do Nhà nước nắm giữ 100% vốn điều lệ.\n3. Tổ chức tín dụng phi ngân hàng trong nước được thành lập, tổ chức dưới hình thức công ty cổ phần, công ty trách nhiệm hữu hạn.\n4. Tổ chức tín dụng liên doanh, tổ chức tín dụng 100% vốn nước ngoài được thành lập, tổ chức dưới hình thức công ty trách nhiệm hữu hạn.\n5. Ngân hàng hợp tác xã, quỹ tín dụng nhân dân được thành lập, tổ chức dưới hình thức hợp tác xã.\n6. Tổ chức tài chính vi mô được thành lập, tổ chức dưới hình thức công ty trách nhiệm hữu hạn.\n7. Việc thành lập, tổ chức quản lý các loại hình công ty cổ phần, công ty trách nhiệm hữu hạn nêu trên thực hiện theo Luật Doanh nghiệp số 59/2020/QH14, trừ phần có quy định đặc thù tại Luật này."
           },
           {
             id: "art-7",
@@ -316,7 +316,7 @@ window.LEGAL_DB = {
             id: "art-188",
             number: "Điều 188",
             heading: "Phạm vi và nguyên tắc xử lý nợ xấu",
-            body: "1. Phạm vi nợ xấu được xử lý theo quy định tại Chương này bao gồm khoản nợ xấu của tổ chức tín dụng, chi nhánh ngân hàng nước ngoài, tổ chức mà Nhà nước sở hữu 100% vốn điều lệ có chức năng mua, bán, xử lý nợ. Việc phân loại nợ xấu thực hiện theo quy định tại Thông tư 11/2021/TT-NHNN; mức trích lập dự phòng rủi ro thực hiện theo Nghị định 86/2024/NĐ-CP.\n2. Việc xử lý nợ xấu phải bảo đảm:\na) Nguyên tắc thị trường, công khai, minh bạch;\nb) Bảo vệ quyền và lợi ích hợp pháp của khách hàng vay, bên bảo đảm và bên thứ ba;\nc) Phù hợp với quy định của Luật này và pháp luật khác có liên quan.\n3. Tổ chức tín dụng, chi nhánh ngân hàng nước ngoài chịu trách nhiệm về tính chính xác, trung thực của hồ sơ, tài liệu, thông tin liên quan đến khoản nợ xấu khi thực hiện các biện pháp xử lý nợ xấu theo quy định của Luật này."
+            body: "1. Phạm vi nợ xấu được xử lý theo quy định tại Chương này bao gồm khoản nợ xấu của tổ chức tín dụng, chi nhánh ngân hàng nước ngoài, Công ty Quản lý tài sản của các tổ chức tín dụng Việt Nam (VAMC) thành lập theo Nghị định 53/2013/NĐ-CP, và tổ chức mà Nhà nước sở hữu 100% vốn điều lệ có chức năng mua, bán, xử lý nợ. Việc phân loại nợ xấu thực hiện theo quy định tại Thông tư 11/2021/TT-NHNN; mức trích lập dự phòng rủi ro thực hiện theo Nghị định 86/2024/NĐ-CP.\n2. Việc xử lý nợ xấu phải bảo đảm:\na) Nguyên tắc thị trường, công khai, minh bạch;\nb) Bảo vệ quyền và lợi ích hợp pháp của khách hàng vay, bên bảo đảm và bên thứ ba;\nc) Phù hợp với quy định của Luật này và pháp luật khác có liên quan.\n3. Tổ chức tín dụng, chi nhánh ngân hàng nước ngoài chịu trách nhiệm về tính chính xác, trung thực của hồ sơ, tài liệu, thông tin liên quan đến khoản nợ xấu khi thực hiện các biện pháp xử lý nợ xấu theo quy định của Luật này."
           },
           {
             id: "art-195",
@@ -334,7 +334,7 @@ window.LEGAL_DB = {
             id: "art-200",
             number: "Điều 200",
             heading: "Xử lý tài sản bảo đảm của khoản nợ xấu",
-            body: "1. Tài sản bảo đảm của khoản nợ xấu được xử lý theo thoả thuận giữa các bên trong hợp đồng bảo đảm. Trường hợp các bên không có thoả thuận hoặc thoả thuận không thực hiện được thì tài sản bảo đảm được xử lý theo quy định của pháp luật về giao dịch bảo đảm và pháp luật khác có liên quan.\n2. Tổ chức tín dụng, chi nhánh ngân hàng nước ngoài, tổ chức mua bán, xử lý nợ xấu được quyền thu giữ tài sản bảo đảm của khoản nợ xấu khi có đủ các điều kiện sau đây:\na) Khi xảy ra trường hợp xử lý tài sản bảo đảm theo quy định của pháp luật về giao dịch bảo đảm;\nb) Tại hợp đồng bảo đảm có thoả thuận về việc bên nhận bảo đảm có quyền thu giữ tài sản bảo đảm của khoản nợ xấu khi xảy ra trường hợp xử lý tài sản bảo đảm theo quy định của pháp luật.\n3. Việc chuyển nhượng quyền sử dụng đất, chuyển nhượng tài sản gắn liền với đất là tài sản bảo đảm của khoản nợ xấu được thực hiện theo quy định của pháp luật về đất đai và pháp luật có liên quan; quy định tại khoản này có hiệu lực thi hành từ ngày 01 tháng 01 năm 2025.\n4. Số tiền thu được từ việc xử lý tài sản bảo đảm sau khi trừ các chi phí xử lý tài sản bảo đảm và các nghĩa vụ tài chính khác theo quy định của pháp luật được dùng để thanh toán nghĩa vụ trả nợ cho bên nhận bảo đảm; số tiền còn lại được trả cho bên bảo đảm."
+            body: "1. Tài sản bảo đảm của khoản nợ xấu được xử lý theo thoả thuận giữa các bên trong hợp đồng bảo đảm. Trường hợp các bên không có thoả thuận hoặc thoả thuận không thực hiện được thì tài sản bảo đảm được xử lý theo quy định của pháp luật về giao dịch bảo đảm, Luật Đất đai số 31/2024/QH15 (đối với tài sản là quyền sử dụng đất) và pháp luật khác có liên quan.\n2. Tổ chức tín dụng, chi nhánh ngân hàng nước ngoài, tổ chức mua bán, xử lý nợ xấu được quyền thu giữ tài sản bảo đảm của khoản nợ xấu khi có đủ các điều kiện sau đây:\na) Khi xảy ra trường hợp xử lý tài sản bảo đảm theo quy định của pháp luật về giao dịch bảo đảm;\nb) Tại hợp đồng bảo đảm có thoả thuận về việc bên nhận bảo đảm có quyền thu giữ tài sản bảo đảm của khoản nợ xấu khi xảy ra trường hợp xử lý tài sản bảo đảm theo quy định của pháp luật.\n3. Việc chuyển nhượng quyền sử dụng đất, chuyển nhượng tài sản gắn liền với đất là tài sản bảo đảm của khoản nợ xấu được thực hiện theo quy định của pháp luật về đất đai và pháp luật có liên quan; quy định tại khoản này có hiệu lực thi hành từ ngày 01 tháng 01 năm 2025.\n4. Số tiền thu được từ việc xử lý tài sản bảo đảm sau khi trừ các chi phí xử lý tài sản bảo đảm và các nghĩa vụ tài chính khác theo quy định của pháp luật được dùng để thanh toán nghĩa vụ trả nợ cho bên nhận bảo đảm; số tiền còn lại được trả cho bên bảo đảm."
           },
           {
             id: "art-209",
@@ -1771,6 +1771,170 @@ window.LEGAL_DB = {
             number: "Điều 8",
             heading: "Những nhu cầu vốn không được cho vay",
             body: "Tổ chức tín dụng, chi nhánh ngân hàng nước ngoài không được cho vay đối với các nhu cầu vốn sau đây:\n1. Để thực hiện các hoạt động đầu tư kinh doanh thuộc ngành, nghề mà pháp luật cấm đầu tư kinh doanh.\n2. Để thanh toán các chi phí, đáp ứng các nhu cầu tài chính của các giao dịch, hành vi mà pháp luật cấm.\n3. Để mua, sử dụng các hàng hoá, dịch vụ thuộc ngành, nghề mà pháp luật cấm đầu tư kinh doanh.\n4. Để mua vàng miếng.\n5. Để trả nợ khoản nợ vay tại chính tổ chức tín dụng cho vay trừ trường hợp cho vay để thanh toán lãi tiền vay phát sinh trong quá trình thi công xây dựng công trình."
+          }
+        ]
+      }
+    ]
+  },
+
+  // ===== Third-ring expansion: docs referenced two hops out from 32/2024/QH15 =====
+
+  "86/2019/ND-CP": {
+    id: "86/2019/ND-CP",
+    type: "Nghị định",
+    typeKey: "nghidinh",
+    number: "86/2019/NĐ-CP",
+    shortTitle: "Nghị định 86/2019/NĐ-CP về vốn pháp định TCTD",
+    title: "Quy định mức vốn pháp định của tổ chức tín dụng, chi nhánh ngân hàng nước ngoài",
+    issuer: "Chính phủ",
+    signedBy: "Nguyễn Xuân Phúc",
+    issuedDate: "2019-11-14",
+    effectiveDate: "2020-01-15",
+    status: "Có hiệu lực",
+    articleTotal: 7,
+    sourceUrl: "https://vanban.chinhphu.vn/?pageid=27160&docid=198395",
+    chapters: [
+      {
+        title: "PHẦN MỞ ĐẦU",
+        subtitle: "",
+        articles: [
+          {
+            id: "art-1",
+            number: "Điều 1",
+            heading: "Phạm vi điều chỉnh",
+            body: "Nghị định này quy định mức vốn pháp định của tổ chức tín dụng, chi nhánh ngân hàng nước ngoài thành lập và hoạt động tại Việt Nam theo quy định của Luật Các tổ chức tín dụng số 32/2024/QH15."
+          },
+          {
+            id: "art-2",
+            number: "Điều 2",
+            heading: "Mức vốn pháp định",
+            body: "Mức vốn pháp định của các tổ chức tín dụng, chi nhánh ngân hàng nước ngoài được quy định như sau:\n1. Ngân hàng thương mại: 3.000 tỷ đồng.\n2. Ngân hàng chính sách: 5.000 tỷ đồng.\n3. Ngân hàng hợp tác xã: 3.000 tỷ đồng.\n4. Chi nhánh ngân hàng nước ngoài: 15 triệu đô la Mỹ.\n5. Công ty tài chính: 500 tỷ đồng.\n6. Công ty cho thuê tài chính: 150 tỷ đồng.\n7. Tổ chức tài chính vi mô: 5 tỷ đồng.\n8. Quỹ tín dụng nhân dân:\na) Quỹ tín dụng nhân dân hoạt động trên địa bàn một xã, một thị trấn: 0,5 tỷ đồng;\nb) Quỹ tín dụng nhân dân hoạt động trên địa bàn một phường: 1 tỷ đồng;\nc) Quỹ tín dụng nhân dân hoạt động trên địa bàn liên xã, liên xã - phường, liên phường: 1 tỷ đồng."
+          }
+        ]
+      }
+    ]
+  },
+
+  "31/2024/QH15": {
+    id: "31/2024/QH15",
+    type: "Luật",
+    typeKey: "luat",
+    number: "31/2024/QH15",
+    shortTitle: "Luật Đất đai 2024",
+    title: "Luật Đất đai",
+    issuer: "Quốc hội",
+    signedBy: "Vương Đình Huệ",
+    issuedDate: "2024-01-18",
+    effectiveDate: "2024-08-01",
+    status: "Có hiệu lực",
+    articleTotal: 260,
+    sourceUrl: "https://vbpl.vn/TW/Pages/vbpq-toanvan.aspx?ItemID=164996",
+    chapters: [
+      {
+        title: "CHƯƠNG I",
+        subtitle: "QUY ĐỊNH CHUNG",
+        articles: [
+          {
+            id: "art-1",
+            number: "Điều 1",
+            heading: "Phạm vi điều chỉnh",
+            body: "Luật này quy định về chế độ sở hữu đất đai, quyền hạn và trách nhiệm của Nhà nước đại diện chủ sở hữu toàn dân về đất đai và thống nhất quản lý về đất đai, chế độ quản lý và sử dụng đất đai, quyền và nghĩa vụ của công dân, người sử dụng đất đối với đất đai thuộc lãnh thổ của nước Cộng hoà xã hội chủ nghĩa Việt Nam."
+          },
+          {
+            id: "art-3",
+            number: "Điều 3",
+            heading: "Giải thích từ ngữ",
+            body: "1. Quyền sử dụng đất là quyền của người sử dụng đất, được Nhà nước giao đất, cho thuê đất, công nhận quyền sử dụng đất hoặc nhận chuyển quyền sử dụng đất theo quy định của Luật này.\n2. Thế chấp quyền sử dụng đất là việc người sử dụng đất dùng quyền sử dụng đất của mình để bảo đảm thực hiện nghĩa vụ dân sự."
+          },
+          {
+            id: "art-37",
+            number: "Điều 37",
+            heading: "Quyền và nghĩa vụ của tổ chức tín dụng nhận thế chấp quyền sử dụng đất",
+            body: "1. Tổ chức tín dụng được nhận thế chấp quyền sử dụng đất, tài sản gắn liền với đất của tổ chức kinh tế, hộ gia đình, cá nhân Việt Nam theo quy định của Luật này, Luật Các tổ chức tín dụng số 32/2024/QH15 và pháp luật về dân sự.\n2. Khi xử lý tài sản bảo đảm là quyền sử dụng đất, tổ chức tín dụng được chuyển nhượng quyền sử dụng đất theo quy định của Luật này, quy định tại khoản 3 Điều 200 Luật Các tổ chức tín dụng số 32/2024/QH15 và pháp luật khác có liên quan."
+          }
+        ]
+      }
+    ]
+  },
+
+  "59/2020/QH14": {
+    id: "59/2020/QH14",
+    type: "Luật",
+    typeKey: "luat",
+    number: "59/2020/QH14",
+    shortTitle: "Luật Doanh nghiệp 2020",
+    title: "Luật Doanh nghiệp",
+    issuer: "Quốc hội",
+    signedBy: "Nguyễn Thị Kim Ngân",
+    issuedDate: "2020-06-17",
+    effectiveDate: "2021-01-01",
+    status: "Có hiệu lực",
+    articleTotal: 218,
+    sourceUrl: "https://vbpl.vn/TW/Pages/vbpq-toanvan.aspx?ItemID=144616",
+    chapters: [
+      {
+        title: "CHƯƠNG I",
+        subtitle: "NHỮNG QUY ĐỊNH CHUNG",
+        articles: [
+          {
+            id: "art-1",
+            number: "Điều 1",
+            heading: "Phạm vi điều chỉnh",
+            body: "Luật này quy định về việc thành lập, tổ chức quản lý, tổ chức lại, giải thể và hoạt động có liên quan của doanh nghiệp, bao gồm: công ty trách nhiệm hữu hạn, công ty cổ phần, công ty hợp danh và doanh nghiệp tư nhân; quy định về nhóm công ty."
+          },
+          {
+            id: "art-3",
+            number: "Điều 3",
+            heading: "Áp dụng Luật Doanh nghiệp và các luật khác",
+            body: "1. Trường hợp luật khác có quy định đặc thù về việc thành lập, tổ chức quản lý, tổ chức lại, giải thể và hoạt động có liên quan của doanh nghiệp thì áp dụng quy định của luật đó.\n2. Đối với tổ chức tín dụng được thành lập, tổ chức và hoạt động dưới hình thức công ty cổ phần, công ty trách nhiệm hữu hạn theo Luật Các tổ chức tín dụng số 32/2024/QH15, các quy định của Luật này được áp dụng đối với phần không trái với Luật Các tổ chức tín dụng."
+          },
+          {
+            id: "art-46",
+            number: "Điều 46",
+            heading: "Công ty trách nhiệm hữu hạn hai thành viên trở lên",
+            body: "1. Công ty trách nhiệm hữu hạn hai thành viên trở lên là doanh nghiệp có từ 02 đến 50 thành viên là tổ chức, cá nhân.\n2. Thành viên chịu trách nhiệm về các khoản nợ và nghĩa vụ tài sản khác của doanh nghiệp trong phạm vi số vốn đã góp vào doanh nghiệp.\n3. Phần vốn góp của thành viên chỉ được chuyển nhượng theo quy định tại các Điều 51, 52 và 53 của Luật này.\n4. Công ty trách nhiệm hữu hạn hai thành viên trở lên có tư cách pháp nhân kể từ ngày được cấp Giấy chứng nhận đăng ký doanh nghiệp."
+          }
+        ]
+      }
+    ]
+  },
+
+  "53/2013/ND-CP": {
+    id: "53/2013/ND-CP",
+    type: "Nghị định",
+    typeKey: "nghidinh",
+    number: "53/2013/NĐ-CP",
+    shortTitle: "Nghị định 53/2013/NĐ-CP về VAMC",
+    title: "Quy định về thành lập, tổ chức và hoạt động của Công ty Quản lý tài sản của các tổ chức tín dụng Việt Nam",
+    issuer: "Chính phủ",
+    signedBy: "Nguyễn Tấn Dũng",
+    issuedDate: "2013-05-18",
+    effectiveDate: "2013-07-09",
+    status: "Có hiệu lực (sửa đổi 34/2015/NĐ-CP, 18/2016/NĐ-CP)",
+    articleTotal: 35,
+    sourceUrl: "https://vanban.chinhphu.vn/?pageid=27160&docid=171125",
+    chapters: [
+      {
+        title: "CHƯƠNG I",
+        subtitle: "QUY ĐỊNH CHUNG",
+        articles: [
+          {
+            id: "art-1",
+            number: "Điều 1",
+            heading: "Phạm vi điều chỉnh và đối tượng áp dụng",
+            body: "Nghị định này quy định về việc thành lập, tổ chức và hoạt động của Công ty Quản lý tài sản của các tổ chức tín dụng Việt Nam (sau đây gọi là VAMC) — tổ chức do Nhà nước sở hữu 100% vốn điều lệ thuộc Ngân hàng Nhà nước Việt Nam, có chức năng mua, bán, xử lý nợ xấu của tổ chức tín dụng, chi nhánh ngân hàng nước ngoài theo quy định của Luật Các tổ chức tín dụng số 32/2024/QH15."
+          },
+          {
+            id: "art-3",
+            number: "Điều 3",
+            heading: "Mục tiêu hoạt động của VAMC",
+            body: "VAMC hoạt động theo nguyên tắc lấy thu bù chi và không vì mục tiêu lợi nhuận, nhằm:\n1. Góp phần xử lý nhanh nợ xấu, lành mạnh hoá tài chính của các tổ chức tín dụng, giảm thiểu rủi ro cho các tổ chức tín dụng, doanh nghiệp và thúc đẩy tăng trưởng tín dụng hợp lý cho nền kinh tế.\n2. Phát triển thị trường mua, bán nợ Việt Nam.\n3. Phát triển các dịch vụ liên quan đến mua, bán và xử lý nợ xấu."
+          },
+          {
+            id: "art-7",
+            number: "Điều 7",
+            heading: "Hoạt động của VAMC",
+            body: "1. Mua nợ xấu của các tổ chức tín dụng theo giá trị ghi sổ bằng trái phiếu đặc biệt do VAMC phát hành.\n2. Mua nợ xấu của các tổ chức tín dụng theo giá thị trường bằng nguồn vốn không phải là trái phiếu đặc biệt.\n3. Thu hồi nợ, đòi nợ và xử lý, bán nợ, tài sản bảo đảm.\n4. Cơ cấu lại khoản nợ, điều chỉnh điều kiện trả nợ, chuyển nợ thành vốn góp, vốn cổ phần của khách hàng vay.\n5. Tư vấn, môi giới mua, bán nợ và tài sản.\n6. Đầu tư tài chính, góp vốn, mua cổ phần."
           }
         ]
       }

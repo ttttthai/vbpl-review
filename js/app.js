@@ -1387,7 +1387,7 @@
       <div class="pop-body">${escapeHtml(body)}</div>
       <div class="pop-meta">
         <span>${escapeHtml(metaLeft)}</span>
-        ${canOpenDoc ? `<button class="pop-link" data-open="${escapeHtml(openDocId)}" data-anchor="${ref.kind === "article" && resolved.article ? "art-" + ref.articleNumber : ""}">Mở văn bản →</button>` : ""}
+        ${canOpenDoc ? `<button class="pop-link" data-open="${escapeHtml(openDocId)}" data-anchor="${ref.kind === "article" && resolved.article ? "art-" + ref.articleNumber : ""}">Xem văn bản →</button>` : ""}
       </div>
     `;
     refPopup.classList.remove("hidden");
