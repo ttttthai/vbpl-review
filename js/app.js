@@ -974,10 +974,17 @@
       return Math.max(0, Math.min(100, (ms / rangeMs) * 100));
     };
 
-    // Year tick marks
+    // Year tick marks. To avoid the labels cramming together when the range
+    // spans many years, we draw a gridline for every year but only label
+    // every 2nd year (or every 5th when the range is very long).
+    const span = maxY - minY;
+    const labelStep = span > 30 ? 5 : span > 15 ? 2 : 1;
     const ticks = [];
     for (let y = minY; y <= maxY; y++) ticks.push(y);
-    const tickHtml = ticks.map(y => `<div class="lt-tick" style="left:${pct(`${y}-01-01`)}%">${y}</div>`).join("");
+    const tickHtml = ticks.map(y => {
+      const showLabel = (y - minY) % labelStep === 0;
+      return `<div class="lt-tick${showLabel ? "" : " lt-tick-minor"}" style="left:${pct(`${y}-01-01`)}%">${showLabel ? y : ""}</div>`;
+    }).join("");
 
     // "Today" marker
     const todayPct = pct(today);
@@ -993,7 +1000,11 @@
       const endPct = pct(it.end);
       const widthPct = Math.max(1.2, endPct - startPct);
       const isExpired = !!d.expiryDate || /Hết hiệu lực/i.test(d.status || "");
-      const barCls = ["lt-bar", `role-${it.role}`, isExpired ? "expired" : "active"].join(" ");
+      // Bar colour comes from the document type pill (Luật/Bộ luật/Nghị định/
+      // Thông tư) rather than the role, so the bar visually matches the type
+      // chip on the left. Role is still on the bar for the dotted/hatched
+      // overlays (current = ring, expired = stripes).
+      const barCls = ["lt-bar", `type-${d.typeKey || "luat"}`, `role-${it.role}`, isExpired ? "expired" : "active"].join(" ");
       return `
         <div class="lt-row role-${it.role}" data-doc-id="${escapeHtml(d.id)}">
           <div class="lt-meta">
@@ -1015,11 +1026,10 @@
 
     html += `
       <div class="lt-legend">
-        <span class="lt-legend-item"><span class="lt-swatch role-current"></span>Văn bản đang xem</span>
-        <span class="lt-legend-item"><span class="lt-swatch role-cited"></span>Được dẫn chiếu (đi)</span>
-        <span class="lt-legend-item"><span class="lt-swatch role-cites"></span>Văn bản viện dẫn (đến)</span>
-        <span class="lt-legend-item"><span class="lt-swatch role-replaced"></span>Bị thay thế</span>
-        <span class="lt-legend-item"><span class="lt-swatch role-successor"></span>Văn bản thay thế</span>
+        <span class="lt-legend-item"><span class="lt-swatch type-luat"></span>Luật / Bộ luật</span>
+        <span class="lt-legend-item"><span class="lt-swatch type-nghidinh"></span>Nghị định</span>
+        <span class="lt-legend-item"><span class="lt-swatch type-thongtu"></span>Thông tư</span>
+        <span class="lt-legend-item"><span class="lt-swatch type-luat ring"></span>Văn bản đang xem</span>
         <span class="lt-legend-item"><span class="lt-swatch expired"></span>Hết hiệu lực</span>
       </div>
       <div class="lt-wrap">
@@ -1038,9 +1048,11 @@
     `;
 
     luocdoEl.innerHTML = html;
+    // Every row is clickable — including the current one. Clicking the
+    // current row exits luocdo-only mode (openDoc resets it) and shows the
+    // full Toàn-văn viewer for that doc.
     luocdoEl.querySelectorAll(".lt-row[data-doc-id]").forEach(row => {
       const id = row.dataset.docId;
-      if (id === doc.id) return;
       row.style.cursor = "pointer";
       row.addEventListener("click", () => openDoc(id));
     });
