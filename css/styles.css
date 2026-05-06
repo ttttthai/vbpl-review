@@ -4,28 +4,28 @@
    ============================================================ */
 
 :root {
-  /* Surfaces — slightly cooler, less saturated */
-  --bg: #f5f6f8;
-  --bg-2: #e8eaee;
-  --paper: #ffffff;
-  --paper-2: #fafbfc;
+  /* IKIGAI / Lazard-style editorial palette: cream surfaces, deep navy, muted gold */
+  --bg: #f6f0e2;            /* cream */
+  --bg-2: #ede4cf;
+  --paper: #fbf7ec;         /* warm ivory paper */
+  --paper-2: #f3ead4;
 
-  /* Primary brand: refined burgundy (less saturated than the previous red) */
-  --red: #8b1f24;
-  --red-dark: #6f161b;
-  --red-light: #a5343a;
-  --red-soft: #f4e6e7;
+  /* Primary brand: refined burgundy (kept; works well over cream) */
+  --red: #7d1d22;
+  --red-dark: #5e1418;
+  --red-light: #9b2a30;
+  --red-soft: #efdadb;
 
-  /* Navy: editorial deep blue */
-  --blue: #1f3a68;
-  --blue-dark: #142a4d;
-  --blue-light: #335284;
-  --blue-soft: #eaeef5;
+  /* Navy — IKIGAI deep navy */
+  --blue: #1a2c4a;
+  --blue-dark: #0f1c33;
+  --blue-light: #2c4470;
+  --blue-soft: #e0e3eb;
 
-  /* Accent: muted gold instead of bright orange */
-  --orange: #a8741b;
-  --orange-dark: #835815;
-  --orange-soft: #f5ecda;
+  /* Accent: IKIGAI gold */
+  --orange: #b08735;
+  --orange-dark: #8c6a26;
+  --orange-soft: #ecdcb6;
 
   /* Link blue — slightly more saturated for contrast */
   --link: #1a4f8a;
@@ -80,21 +80,27 @@ html, body {
   margin: 0; padding: 0;
   background: var(--bg);
   color: var(--ink);
-  font-family: "Inter", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", Arial, sans-serif;
-  font-feature-settings: "ss01", "cv11", "tnum";
+  /* IKIGAI / investment-banking editorial: Georgia serif throughout */
+  font-family: Georgia, "Times New Roman", "Source Serif 4", "Source Serif Pro", serif;
+  font-feature-settings: "kern", "lnum", "tnum";
   font-size: 13px;
-  line-height: 1.5;
+  line-height: 1.55;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  letter-spacing: 0.005em;
 }
 
-/* Editorial display family for major headings */
 h1, h2, h3, .brand-name, .doc-titlebar h1, .spotlight h1, .lt-header h2,
 .luocdo h2 {
-  font-family: "Source Serif 4", "Source Serif Pro", Georgia, "Times New Roman", serif;
+  font-family: Georgia, "Source Serif 4", "Times New Roman", serif;
   letter-spacing: -0.005em;
   font-feature-settings: "kern", "lnum";
+  font-weight: 700;
+}
+
+/* Numeric / monospace details remain sans for legibility */
+.lt-num, .num, .ss-num, code, samp {
+  font-family: "Inter", "Segoe UI", -apple-system, system-ui, sans-serif;
+  font-feature-settings: "tnum", "ss01";
 }
 
 a { color: var(--link); text-decoration: none; }
@@ -560,10 +566,7 @@ table { border-collapse: collapse; }
   pointer-events: none;
 }
 .spotlight-grid {
-  display: grid;
-  grid-template-columns: 1.5fr 1fr;
-  gap: 28px;
-  align-items: center;
+  display: block;
   position: relative;
 }
 .spotlight-eyebrow {
@@ -677,37 +680,44 @@ table { border-collapse: collapse; }
   color: var(--ink-mute); font-style: italic;
   text-align: center;
 }
-.spotlight-side {
-  display: flex; flex-direction: column; gap: 8px;
+/* Horizontal statbar — replaces the 6 stat cards */
+.spotlight-statbar {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  margin-top: 18px;
+  border-top: 1px solid rgba(216, 188, 121, 0.25);
+  padding-top: 14px;
+  gap: 0;
 }
-.spotlight-side-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 8px;
+.ss-item {
+  flex: 1 1 0;
+  min-width: 110px;
+  display: flex; align-items: baseline; gap: 8px;
+  padding: 4px 14px;
+  border-left: 1px solid rgba(216, 188, 121, 0.18);
 }
-.spotlight-stat {
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.14);
-  padding: 12px 14px;
-  border-radius: 6px;
-  display: flex; align-items: center; gap: 12px;
-  backdrop-filter: blur(6px);
-  border-left: 3px solid rgba(255,255,255,0.5);
-}
-.spotlight-stat.type-boluat { border-left-color: var(--red-light); }
-.spotlight-stat.type-luat { border-left-color: var(--orange); }
-.spotlight-stat.type-nghidinh { border-left-color: #ffb74d; }
-.spotlight-stat.type-thongtu { border-left-color: #4fc3f7; }
-.spotlight-stat.type-expired { border-left-color: var(--ink-faint); }
-.spotlight-stat.type-draft { border-left-color: #a78bfa; }
-.spotlight-stat .num {
+.ss-item:first-child { border-left: none; padding-left: 0; }
+.ss-num {
   font-size: 22px; font-weight: 700;
-  color: white;
-  letter-spacing: -0.4px;
-  font-family: "Tahoma", sans-serif;
-  min-width: 26px;
+  color: #f3d99c;
+  letter-spacing: -0.01em;
+  line-height: 1;
 }
-.spotlight-stat .lbl { font-size: 11.5px; color: rgba(255,255,255,0.78); line-height: 1.3; }
+.ss-lbl {
+  font-family: Georgia, serif;
+  font-size: 11.5px; color: rgba(247,242,228,0.72);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+.ss-item.type-boluat .ss-num { color: #e9b6b8; }
+.ss-item.type-luat .ss-num { color: #f3d99c; }
+.ss-item.type-nghidinh .ss-num { color: #efc28a; }
+.ss-item.type-thongtu .ss-num { color: #b8c9e0; }
+.ss-item.type-expired .ss-num { color: #b8b9bd; }
+.ss-item.type-draft .ss-num { color: #c8b4e6; }
 
 /* ===== "Văn bản mới" tabs ===== */
 .tab-strip {
@@ -1665,6 +1675,35 @@ body.lt-resizing { cursor: col-resize !important; user-select: none; }
   border-radius: var(--r-sm);
 }
 .lt-summary li strong { color: var(--blue-dark); margin-right: 4px; }
+
+/* Compact horizontal summary bar (replaces the .lt-summary card list) */
+.lt-summary-bar {
+  display: flex; align-items: stretch;
+  margin-top: 16px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: var(--paper-2);
+  padding: 6px 0;
+}
+.ls-item {
+  flex: 1 1 0;
+  min-width: 110px;
+  padding: 4px 12px;
+  border-left: 1px solid var(--line);
+  display: flex; align-items: baseline; gap: 8px;
+}
+.ls-item:first-child { border-left: none; }
+.ls-num {
+  font-size: 18px; font-weight: 700;
+  color: var(--blue-dark);
+  letter-spacing: -0.01em;
+  line-height: 1;
+}
+.ls-lbl {
+  font-family: Georgia, serif;
+  font-size: 11px; color: var(--ink-mute);
+  text-transform: uppercase; letter-spacing: 0.05em;
+}
 
 /* References */
 .legal-ref {

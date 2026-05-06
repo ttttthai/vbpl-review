@@ -74,6 +74,17 @@
     if (p.length !== 3) return d;
     return `${p[2]}/${p[1]}/${p[0]}`;
   }
+  // Abbreviate document-type labels for tight UI surfaces (Gantt pills,
+  // sidebar lists). The full word is kept in the title attribute for hover.
+  function abbrevType(type) {
+    const map = {
+      "Thông tư": "TT",
+      "Nghị định": "NĐ",
+      "Bộ luật": "BL"
+    };
+    return map[type] || type;
+  }
+
   function statusClass(status) {
     if (!status) return "";
     if (/Hết hiệu lực/i.test(status)) return "expired";
@@ -922,13 +933,14 @@
       // chip on the left. Role is still on the bar for the dotted/hatched
       // overlays (current = ring, expired = stripes).
       const barCls = ["lt-bar", `type-${d.typeKey || "luat"}`, `role-${it.role}`, isExpired ? "expired" : "active"].join(" ");
+      const typeLabel = abbrevType(d.type);
       // Pin the rel-label to the right edge of the bar so it stays close
       // to the timeline event without clipping the track for distant docs.
       const relLeftPct = Math.max(0, Math.min(86, startPct));
       return `
         <div class="lt-row role-${it.role}" data-doc-id="${escapeHtml(d.id)}">
           <div class="lt-meta">
-            <span class="lt-type ${d.typeKey}">${escapeHtml(d.type)}</span>
+            <span class="lt-type ${d.typeKey}" title="${escapeHtml(d.type)}">${escapeHtml(typeLabel)}</span>
             <div class="lt-meta-text">
               <div class="lt-num">${escapeHtml(d.number)}</div>
               <div class="lt-title" title="${escapeHtml(d.shortTitle)}">${escapeHtml(d.shortTitle)}</div>
@@ -961,14 +973,11 @@
         </div>
         <div class="lt-rows">${rowsHtml}</div>
       </div>
-      <div class="ld-group" style="margin-top: 22px;">
-        <div class="ld-label">Tổng hợp quan hệ văn bản</div>
-        <ul class="lt-summary">
-          <li><strong>Văn bản này dẫn chiếu đến:</strong> ${cited.size}</li>
-          <li><strong>Văn bản này được viện dẫn ở:</strong> ${citedBy.size}</li>
-          <li><strong>Văn bản bị thay thế bởi văn bản này:</strong> ${replaces.length}</li>
-          <li><strong>Văn bản thay thế văn bản này:</strong> ${replacedBy.length}</li>
-        </ul>
+      <div class="lt-summary-bar" role="list">
+        <div class="ls-item" role="listitem"><span class="ls-num">${cited.size}</span><span class="ls-lbl">Dẫn chiếu (đi)</span></div>
+        <div class="ls-item" role="listitem"><span class="ls-num">${citedBy.size}</span><span class="ls-lbl">Được viện dẫn (đến)</span></div>
+        <div class="ls-item" role="listitem"><span class="ls-num">${replaces.length}</span><span class="ls-lbl">Bị thay thế bởi VB này</span></div>
+        <div class="ls-item" role="listitem"><span class="ls-num">${replacedBy.length}</span><span class="ls-lbl">VB thay thế</span></div>
       </div>
     `;
 

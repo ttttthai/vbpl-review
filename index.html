@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" />
-  <link rel="stylesheet" href="css/styles.css?v=30" />
+  <link rel="stylesheet" href="css/styles.css?v=31" />
 </head>
 <body>
 
@@ -93,16 +93,6 @@
   <main id="landing" class="landing">
     <div class="container">
 
-      <!-- Trending row -->
-      <div class="trending-row">
-        <span class="label">Tâm điểm</span>
-        <div class="ticker">
-          <a href="#" data-doc-id="32/2024/QH15">Luật Các tổ chức tín dụng 32/2024/QH15 có hiệu lực 01/07/2024</a>
-          <a href="#" data-doc-id="22/2019/TT-NHNN">Tỷ lệ an toàn vốn tối thiểu theo Thông tư 22/2019</a>
-          <a href="#" data-doc-id="88/2019/ND-CP">Mức phạt mới theo NĐ 88/2019</a>
-        </div>
-      </div>
-
       <!-- Spotlight -->
       <div class="spotlight">
         <div class="spotlight-grid">
@@ -121,31 +111,13 @@
               </button>
             </div>
           </div>
-          <div class="spotlight-side spotlight-side-grid">
-            <div class="spotlight-stat type-boluat">
-              <div class="num" id="sp-cnt-boluat">0</div>
-              <div class="lbl">Bộ luật<br/>liên quan</div>
-            </div>
-            <div class="spotlight-stat type-luat">
-              <div class="num" id="sp-cnt-luat">0</div>
-              <div class="lbl">Luật<br/>liên quan</div>
-            </div>
-            <div class="spotlight-stat type-nghidinh">
-              <div class="num" id="sp-cnt-nghidinh">0</div>
-              <div class="lbl">Nghị định<br/>liên quan</div>
-            </div>
-            <div class="spotlight-stat type-thongtu">
-              <div class="num" id="sp-cnt-thongtu">0</div>
-              <div class="lbl">Thông tư<br/>liên quan</div>
-            </div>
-            <div class="spotlight-stat type-expired">
-              <div class="num" id="sp-cnt-expired">0</div>
-              <div class="lbl">Văn bản liên quan<br/>hết hiệu lực</div>
-            </div>
-            <div class="spotlight-stat type-draft">
-              <div class="num" id="sp-cnt-draft">0</div>
-              <div class="lbl">Văn bản liên quan<br/>đang thảo luận</div>
-            </div>
+          <div class="spotlight-statbar" role="list" aria-label="Tổng hợp văn bản liên quan">
+            <div class="ss-item type-boluat" role="listitem"><span class="ss-num" id="sp-cnt-boluat">0</span><span class="ss-lbl">Bộ luật</span></div>
+            <div class="ss-item type-luat" role="listitem"><span class="ss-num" id="sp-cnt-luat">0</span><span class="ss-lbl">Luật</span></div>
+            <div class="ss-item type-nghidinh" role="listitem"><span class="ss-num" id="sp-cnt-nghidinh">0</span><span class="ss-lbl">NĐ</span></div>
+            <div class="ss-item type-thongtu" role="listitem"><span class="ss-num" id="sp-cnt-thongtu">0</span><span class="ss-lbl">TT</span></div>
+            <div class="ss-item type-expired" role="listitem"><span class="ss-num" id="sp-cnt-expired">0</span><span class="ss-lbl">Hết hiệu lực</span></div>
+            <div class="ss-item type-draft" role="listitem"><span class="ss-num" id="sp-cnt-draft">0</span><span class="ss-lbl">Đang thảo luận</span></div>
           </div>
         </div>
       </div>
@@ -258,7 +230,7 @@
   <div id="ref-popup" class="ref-popup hidden" role="tooltip"></div>
   <div id="toast" class="toast"></div>
 
-  <script src="data/documents.js?v=30"></script>
-  <script src="js/app.js?v=30"></script>
+  <script src="data/documents.js?v=31"></script>
+  <script src="js/app.js?v=31"></script>
 </body>
 </html>
