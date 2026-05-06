@@ -1,76 +1,76 @@
 /* ============================================================
    VBPL Review — Vietnamese legal documents portal
-   Design inspired by thuvienphapluat.vn
+   Refined editorial / professional theme
    ============================================================ */
 
 :root {
-  /* Surfaces */
-  --bg: #f3f4f6;
-  --bg-2: #e5e7eb;
+  /* Surfaces — slightly cooler, less saturated */
+  --bg: #f5f6f8;
+  --bg-2: #e8eaee;
   --paper: #ffffff;
-  --paper-2: #f9fafb;
+  --paper-2: #fafbfc;
 
-  /* Brand: warm red */
-  --red: #c0392b;
-  --red-dark: #962b22;
-  --red-light: #e74c3c;
-  --red-soft: #fde8e7;
+  /* Primary brand: refined burgundy (less saturated than the previous red) */
+  --red: #8b1f24;
+  --red-dark: #6f161b;
+  --red-light: #a5343a;
+  --red-soft: #f4e6e7;
 
-  /* Nav: deep blue */
-  --blue: #1d4288;
-  --blue-dark: #14306b;
-  --blue-light: #3559a8;
-  --blue-soft: #e8eef9;
+  /* Navy: editorial deep blue */
+  --blue: #1f3a68;
+  --blue-dark: #142a4d;
+  --blue-light: #335284;
+  --blue-soft: #eaeef5;
 
-  /* Accent: orange (used for tab active, highlights) */
-  --orange: #ea7c1e;
-  --orange-dark: #c25e0e;
-  --orange-soft: #fef0dc;
+  /* Accent: muted gold instead of bright orange */
+  --orange: #a8741b;
+  --orange-dark: #835815;
+  --orange-soft: #f5ecda;
 
-  /* Link blue */
-  --link: #1565c0;
-  --link-hover: #c0392b;
+  /* Link blue — slightly more saturated for contrast */
+  --link: #1a4f8a;
+  --link-hover: #8b1f24;
   --visited: #6b21a8;
 
-  /* Ink */
-  --ink: #222831;
-  --ink-soft: #4a5160;
-  --ink-mute: #707682;
-  --ink-faint: #a3a8b4;
+  /* Ink — warmer near-black with cooler mid-tones */
+  --ink: #15181d;
+  --ink-soft: #3d4451;
+  --ink-mute: #6b7280;
+  --ink-faint: #9ca3af;
 
   /* Lines */
-  --line: #d8dde3;
-  --line-soft: #e6e9ee;
-  --line-strong: #b8bdc4;
+  --line: #dee1e7;
+  --line-soft: #ecedf1;
+  --line-strong: #c4c8cf;
 
   /* Reference */
-  --ref-bg: #fff3c4;
-  --ref-bg-hover: #fde68a;
-  --ref-border: #b88a16;
+  --ref-bg: #fbf6e6;
+  --ref-bg-hover: #f5ecca;
+  --ref-border: #a8741b;
   --ref-ink: #5b3e02;
 
   /* Status */
   --ok: #15803d;
-  --ok-bg: #d4ebcd;
-  --warn: #b45309;
-  --warn-bg: #fef3c7;
-  --hot: #dc2626;
-  --hot-bg: #fee2e2;
+  --ok-bg: #dff0e3;
+  --warn: #a26514;
+  --warn-bg: #fbf2dc;
+  --hot: #b81e1e;
+  --hot-bg: #f7e2e2;
   --new: #047857;
-  --new-bg: #d1fae5;
+  --new-bg: #d8efe2;
   --neutral: #475569;
-  --neutral-bg: #e2e8f0;
+  --neutral-bg: #e3e6eb;
 
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
-  --shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-  --shadow-md: 0 6px 18px -4px rgba(0, 0, 0, 0.10);
+  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.04);
+  --shadow: 0 2px 6px rgba(15, 23, 42, 0.05);
+  --shadow-md: 0 6px 16px -4px rgba(15, 23, 42, 0.08);
 
-  --r-sm: 4px;
-  --r: 6px;
-  --r-md: 8px;
+  --r-sm: 3px;
+  --r: 4px;
+  --r-md: 6px;
 
-  --read-size: 16px;
-  --read-width: 820px;
+  --read-size: 15px;
+  --read-width: 760px;
 }
 
 * { box-sizing: border-box; }
@@ -80,10 +80,21 @@ html, body {
   margin: 0; padding: 0;
   background: var(--bg);
   color: var(--ink);
-  font-family: "Tahoma", Arial, "Helvetica Neue", "Segoe UI", sans-serif;
-  font-size: 13.5px;
+  font-family: "Inter", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", Arial, sans-serif;
+  font-feature-settings: "ss01", "cv11", "tnum";
+  font-size: 13px;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: 0.005em;
+}
+
+/* Editorial display family for major headings */
+h1, h2, h3, .brand-name, .doc-titlebar h1, .spotlight h1, .lt-header h2,
+.luocdo h2 {
+  font-family: "Source Serif 4", "Source Serif Pro", Georgia, "Times New Roman", serif;
+  letter-spacing: -0.005em;
+  font-feature-settings: "kern", "lnum";
 }
 
 a { color: var(--link); text-decoration: none; }
@@ -357,7 +368,7 @@ table { border-collapse: collapse; }
 /* ===== Top navigation bar ===== */
 .topnav {
   background: var(--blue-dark);
-  border-bottom: 1px solid var(--blue-dark);
+  border-bottom: 1px solid #0a1428;
   position: relative;
   z-index: 50;
 }
@@ -371,16 +382,18 @@ table { border-collapse: collapse; }
 }
 .topnav-link {
   display: inline-flex; align-items: center; gap: 6px;
-  padding: 11px 16px;
-  color: rgba(255,255,255,0.88);
-  font-size: 13px; font-weight: 600;
+  padding: 9px 14px;
+  color: rgba(247,249,252,0.84);
+  font-family: "Inter", "Segoe UI", sans-serif;
+  font-size: 12px; font-weight: 500;
+  letter-spacing: 0.01em;
   text-decoration: none;
   background: transparent; border: none;
-  border-right: 1px solid rgba(255,255,255,0.08);
+  border-right: 1px solid rgba(255,255,255,0.06);
   cursor: pointer; white-space: nowrap;
   transition: background 0.15s, color 0.15s;
 }
-.topnav-link:hover { background: var(--blue); color: white; }
+.topnav-link:hover { background: rgba(255,255,255,0.06); color: #f7f9fc; }
 .topnav-link.active { background: var(--red); color: white; }
 .topnav-item { position: relative; }
 .topnav-trigger { font-family: inherit; }
@@ -522,60 +535,64 @@ table { border-collapse: collapse; }
 .block-head .more:hover { color: var(--red); text-decoration: underline; }
 .block-body { padding: 12px 16px; }
 
-/* ===== Featured spotlight (main banner) ===== */
+/* ===== Featured spotlight (main banner) — editorial dark navy ===== */
 .spotlight {
   background:
-    radial-gradient(circle at 90% 20%, rgba(234, 124, 30, 0.15) 0%, transparent 40%),
-    linear-gradient(135deg, #1d4288 0%, #14306b 100%);
+    radial-gradient(circle at 92% 18%, rgba(168, 116, 27, 0.18) 0%, transparent 38%),
+    linear-gradient(135deg, #1a2c4a 0%, #0f1c33 100%);
   color: white;
-  padding: 28px 32px;
-  border-radius: var(--r-md);
-  margin-bottom: 18px;
+  padding: 24px 28px;
+  border-radius: var(--r);
+  margin-bottom: 14px;
   position: relative;
   overflow: hidden;
+  border: 1px solid #0a1428;
 }
 .spotlight::before {
   content: "";
   position: absolute; inset: 0;
   background-image:
-    linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
-  background-size: 40px 40px;
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 48px 48px;
   mask-image: radial-gradient(ellipse 70% 60% at 80% 50%, black 0%, transparent 70%);
   -webkit-mask-image: radial-gradient(ellipse 70% 60% at 80% 50%, black 0%, transparent 70%);
   pointer-events: none;
 }
 .spotlight-grid {
   display: grid;
-  grid-template-columns: 1.4fr 1fr;
-  gap: 32px;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 28px;
   align-items: center;
   position: relative;
 }
 .spotlight-eyebrow {
   display: inline-flex; align-items: center; gap: 6px;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.6px;
+  font-family: "Inter", "Segoe UI", sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.4px;
   text-transform: uppercase;
-  background: rgba(234, 124, 30, 0.2);
-  color: #ffd9a8;
-  padding: 4px 10px;
-  border-radius: 999px;
-  border: 1px solid rgba(234, 124, 30, 0.3);
+  background: rgba(168, 116, 27, 0.16);
+  color: #d9b87a;
+  padding: 3px 10px;
+  border-radius: 2px;
+  border: 1px solid rgba(168, 116, 27, 0.32);
 }
 .spotlight h1 {
-  font-size: 26px;
-  font-weight: 700;
-  line-height: 1.25;
-  margin: 12px 0 10px;
-  letter-spacing: -0.2px;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 10px 0 8px;
+  letter-spacing: -0.01em;
+  color: #f7f9fc;
 }
 .spotlight p {
-  margin: 0 0 18px;
-  font-size: 13.5px;
-  color: rgba(255, 255, 255, 0.78);
+  margin: 0 0 16px;
+  font-size: 12.5px;
+  color: rgba(247, 249, 252, 0.72);
   line-height: 1.6;
+  max-width: 56ch;
 }
 .spotlight-actions {
   display: flex; align-items: center; gap: 10px;
@@ -584,32 +601,35 @@ table { border-collapse: collapse; }
 .spotlight .btn-cta {
   background: var(--orange);
   color: white;
-  border: none;
-  padding: 10px 22px;
+  border: 1px solid rgba(255,255,255,0.06);
+  padding: 8px 16px;
   font-weight: 600;
-  font-size: 13.5px;
-  border-radius: 4px;
+  font-size: 12.5px;
+  letter-spacing: 0.01em;
+  border-radius: 3px;
   display: inline-flex; align-items: center; gap: 6px;
   text-decoration: none;
   cursor: pointer;
+  transition: background 0.15s;
 }
 .spotlight .btn-cta:hover { background: var(--orange-dark); text-decoration: none; }
 .spotlight .btn-cta-secondary {
   background: transparent;
   color: white;
-  border: 1.5px solid rgba(255, 255, 255, 0.45);
-  padding: 9px 18px;
-  font-weight: 600;
-  font-size: 13.5px;
-  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  padding: 7px 14px;
+  font-weight: 500;
+  font-size: 12.5px;
+  letter-spacing: 0.01em;
+  border-radius: 3px;
   display: inline-flex; align-items: center; gap: 6px;
   text-decoration: none;
   cursor: pointer;
   transition: background 0.15s, border-color 0.15s;
 }
 .spotlight .btn-cta-secondary:hover {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: white;
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.55);
 }
 .spotlight-expired-wrap { position: relative; }
 .spotlight-expired-wrap .btn-cta-secondary.open { background: rgba(255,255,255,0.12); border-color: white; }
