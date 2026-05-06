@@ -340,7 +340,7 @@ window.LEGAL_DB = {
             id: "art-3",
             number: "Điều 3",
             heading: "Hình thức xử phạt, mức phạt tiền, thẩm quyền phạt tiền và biện pháp khắc phục hậu quả",
-            body: "1. Hình thức xử phạt chính bao gồm cảnh cáo và phạt tiền.\n2. Mức phạt tiền tối đa đối với hành vi vi phạm trong lĩnh vực tiền tệ và ngân hàng đối với tổ chức là 2.000.000.000 đồng và đối với cá nhân là 1.000.000.000 đồng.\n3. Mức phạt tiền quy định tại Chương II Nghị định này là mức phạt tiền áp dụng đối với cá nhân; mức phạt tiền đối với tổ chức có cùng một hành vi vi phạm hành chính bằng 02 lần mức phạt tiền đối với cá nhân."
+            body: "1. Hình thức xử phạt chính bao gồm cảnh cáo và phạt tiền theo quy định của Luật Xử lý vi phạm hành chính số 15/2012/QH13.\n2. Mức phạt tiền tối đa đối với hành vi vi phạm trong lĩnh vực tiền tệ và ngân hàng đối với tổ chức là 2.000.000.000 đồng và đối với cá nhân là 1.000.000.000 đồng.\n3. Mức phạt tiền quy định tại Chương II Nghị định này là mức phạt tiền áp dụng đối với cá nhân; mức phạt tiền đối với tổ chức có cùng một hành vi vi phạm hành chính bằng 02 lần mức phạt tiền đối với cá nhân."
           },
           {
             id: "art-13",
@@ -574,7 +574,7 @@ window.LEGAL_DB = {
             id: "art-3",
             number: "Điều 3",
             heading: "Nguyên tắc xử lý",
-            body: "1. Đối với người phạm tội:\na) Mọi hành vi phạm tội do người thực hiện phải được phát hiện kịp thời, xử lý nhanh chóng, công minh theo đúng pháp luật;\nb) Mọi người phạm tội đều bình đẳng trước pháp luật, không phân biệt giới tính, dân tộc, tín ngưỡng, tôn giáo, thành phần, địa vị xã hội;\nc) Nghiêm trị người chủ mưu, cầm đầu, chỉ huy, ngoan cố chống đối, côn đồ, tái phạm nguy hiểm, lợi dụng chức vụ, quyền hạn để phạm tội;\nd) Khoan hồng đối với người tự thú, đầu thú, thành khẩn khai báo, tố giác đồng phạm, lập công chuộc tội, ăn năn hối cải, tự nguyện sửa chữa hoặc bồi thường thiệt hại gây ra."
+            body: "1. Đối với người phạm tội:\na) Mọi hành vi phạm tội do người thực hiện phải được phát hiện kịp thời, xử lý nhanh chóng, công minh theo đúng pháp luật;\nb) Mọi người phạm tội đều bình đẳng trước pháp luật, không phân biệt giới tính, dân tộc, tín ngưỡng, tôn giáo, thành phần, địa vị xã hội;\nc) Nghiêm trị người chủ mưu, cầm đầu, chỉ huy, ngoan cố chống đối, côn đồ, tái phạm nguy hiểm, lợi dụng chức vụ, quyền hạn để phạm tội;\nd) Khoan hồng đối với người tự thú, đầu thú, thành khẩn khai báo, tố giác đồng phạm, lập công chuộc tội, ăn năn hối cải, tự nguyện sửa chữa hoặc bồi thường thiệt hại gây ra.\n2. Trình tự, thủ tục tố tụng các vụ án hình sự thực hiện theo Bộ luật Tố tụng hình sự số 101/2015/QH13. Bộ luật này đã được sửa đổi, bổ sung theo Luật số 12/2017/QH14."
           },
           {
             id: "art-8",
@@ -914,7 +914,7 @@ window.LEGAL_DB = {
             id: "art-97",
             number: "Điều 97",
             heading: "Phá sản tổ chức tín dụng",
-            body: "Việc phá sản tổ chức tín dụng được thực hiện theo quy định của Luật này, Luật Các tổ chức tín dụng và quy định khác của pháp luật có liên quan. Tòa án nhân dân chỉ thụ lý đơn yêu cầu mở thủ tục phá sản đối với tổ chức tín dụng sau khi Ngân hàng Nhà nước Việt Nam có văn bản chấm dứt kiểm soát đặc biệt hoặc văn bản chấm dứt áp dụng các biện pháp phục hồi khả năng thanh toán mà tổ chức tín dụng vẫn mất khả năng thanh toán."
+            body: "Việc phá sản tổ chức tín dụng được thực hiện theo quy định của Luật này, Luật Các tổ chức tín dụng số 32/2024/QH15 và Bộ luật Tố tụng dân sự số 92/2015/QH13. Tòa án nhân dân chỉ thụ lý đơn yêu cầu mở thủ tục phá sản đối với tổ chức tín dụng sau khi Ngân hàng Nhà nước Việt Nam có văn bản chấm dứt kiểm soát đặc biệt hoặc văn bản chấm dứt áp dụng các biện pháp phục hồi khả năng thanh toán mà tổ chức tín dụng vẫn mất khả năng thanh toán."
           }
         ]
       }
@@ -950,7 +950,7 @@ window.LEGAL_DB = {
             id: "art-72",
             number: "Điều 72",
             heading: "Công ty chứng khoán",
-            body: "1. Công ty chứng khoán được tổ chức dưới hình thức công ty trách nhiệm hữu hạn hoặc công ty cổ phần.\n2. Công ty chứng khoán được thực hiện một, một số hoặc toàn bộ nghiệp vụ kinh doanh chứng khoán sau đây: môi giới chứng khoán; tự doanh chứng khoán; bảo lãnh phát hành chứng khoán; tư vấn đầu tư chứng khoán.\n3. Công ty chứng khoán chỉ được thực hiện hoạt động khác sau khi được Ủy ban Chứng khoán Nhà nước chấp thuận bằng văn bản."
+            body: "1. Công ty chứng khoán được tổ chức dưới hình thức công ty trách nhiệm hữu hạn hoặc công ty cổ phần.\n2. Công ty chứng khoán được thực hiện một, một số hoặc toàn bộ nghiệp vụ kinh doanh chứng khoán sau đây: môi giới chứng khoán; tự doanh chứng khoán; bảo lãnh phát hành chứng khoán; tư vấn đầu tư chứng khoán.\n3. Công ty chứng khoán chỉ được thực hiện hoạt động khác sau khi được Ủy ban Chứng khoán Nhà nước chấp thuận bằng văn bản.\n4. Điều kiện, trình tự cấp Giấy phép thành lập và hoạt động của công ty chứng khoán; điều kiện chào bán cổ phiếu lần đầu ra công chúng; nghĩa vụ công bố thông tin được quy định chi tiết tại Nghị định 155/2020/NĐ-CP."
           }
         ]
       }
@@ -1192,7 +1192,7 @@ window.LEGAL_DB = {
             id: "art-49",
             number: "Điều 49",
             heading: "Hợp đồng mua bán điện trực tiếp (DPPA)",
-            body: "1. Khách hàng sử dụng điện lớn được phép ký hợp đồng mua bán điện trực tiếp với đơn vị phát điện sử dụng năng lượng tái tạo theo một trong hai hình thức:\na) DPPA qua đường dây kết nối riêng;\nb) DPPA qua lưới điện quốc gia.\n2. Trình tự, thủ tục, điều kiện tham gia DPPA được thực hiện theo quy định tại Nghị định 80/2024/NĐ-CP.\n3. Tổng công ty Điện lực, Tập đoàn Điện lực Việt Nam có trách nhiệm cung cấp dịch vụ phụ trợ, dịch vụ truyền tải, phân phối cho các bên tham gia DPPA theo quy định."
+            body: "1. Khách hàng sử dụng điện lớn được phép ký hợp đồng mua bán điện trực tiếp với đơn vị phát điện sử dụng năng lượng tái tạo theo một trong hai hình thức:\na) DPPA qua đường dây kết nối riêng;\nb) DPPA qua lưới điện quốc gia.\n2. Trình tự, thủ tục, điều kiện tham gia DPPA được thực hiện theo quy định tại Nghị định 80/2024/NĐ-CP. Quy hoạch nguồn năng lượng tái tạo được tích hợp trong quy hoạch ngành quốc gia theo Luật Quy hoạch số 21/2017/QH14.\n3. Tổng công ty Điện lực, Tập đoàn Điện lực Việt Nam có trách nhiệm cung cấp dịch vụ phụ trợ, dịch vụ truyền tải, phân phối cho các bên tham gia DPPA theo quy định."
           },
           {
             id: "art-130",
@@ -1343,6 +1343,320 @@ window.LEGAL_DB = {
             number: "Điều 8",
             heading: "Quy định kỹ thuật và đấu nối",
             body: "1. Việc đấu nối, vận hành hệ thống điện mặt trời mái nhà tự sản xuất, tự tiêu thụ phải tuân thủ quy chuẩn, tiêu chuẩn kỹ thuật do Bộ Công Thương ban hành và Quy định hệ thống điện phân phối.\n2. Tập đoàn Điện lực Việt Nam, Tổng công ty Điện lực, Công ty Điện lực có trách nhiệm thoả thuận đấu nối, lắp đặt công tơ điện đo đếm hai chiều cho khách hàng có nhu cầu trong thời hạn 05 ngày làm việc kể từ ngày nhận đầy đủ hồ sơ hợp lệ.\n3. Đơn vị quản lý vận hành lưới điện không được từ chối đấu nối hệ thống điện mặt trời mái nhà tự sản xuất, tự tiêu thụ đáp ứng đủ điều kiện kỹ thuật, trừ trường hợp đường dây, trạm biến áp đã đầy tải."
+          }
+        ]
+      }
+    ]
+  },
+
+  // ===== Second-ring related documents (referenced by docs already in DB) =====
+
+  "91/2015/QH13": {
+    id: "91/2015/QH13",
+    type: "Bộ luật",
+    typeKey: "bo-luat",
+    number: "91/2015/QH13",
+    shortTitle: "Bộ luật Dân sự 2015",
+    title: "Bộ luật Dân sự",
+    issuer: "Quốc hội",
+    signedBy: "Nguyễn Sinh Hùng",
+    issuedDate: "2015-11-24",
+    effectiveDate: "2017-01-01",
+    status: "Có hiệu lực",
+    articleTotal: 689,
+    sourceUrl: "https://vbpl.vn/TW/Pages/vbpq-toanvan.aspx?ItemID=96069",
+    chapters: [
+      {
+        title: "PHẦN THỨ NHẤT",
+        subtitle: "QUY ĐỊNH CHUNG",
+        articles: [
+          {
+            id: "art-1",
+            number: "Điều 1",
+            heading: "Phạm vi điều chỉnh",
+            body: "Bộ luật này quy định địa vị pháp lý, chuẩn mực pháp lý về cách ứng xử của cá nhân, pháp nhân; quyền, nghĩa vụ về nhân thân và tài sản của cá nhân, pháp nhân trong các quan hệ được hình thành trên cơ sở bình đẳng, tự do ý chí, độc lập về tài sản và tự chịu trách nhiệm (sau đây gọi chung là quan hệ dân sự)."
+          },
+          {
+            id: "art-3",
+            number: "Điều 3",
+            heading: "Các nguyên tắc cơ bản của pháp luật dân sự",
+            body: "1. Mọi cá nhân, pháp nhân đều bình đẳng, không được lấy bất kỳ lý do nào để phân biệt đối xử; được pháp luật bảo hộ như nhau về các quyền nhân thân và tài sản.\n2. Cá nhân, pháp nhân xác lập, thực hiện, chấm dứt quyền, nghĩa vụ dân sự của mình trên cơ sở tự do, tự nguyện cam kết, thoả thuận. Mọi cam kết, thoả thuận không vi phạm điều cấm của luật, không trái đạo đức xã hội có hiệu lực thực hiện đối với các bên.\n3. Cá nhân, pháp nhân phải xác lập, thực hiện, chấm dứt quyền, nghĩa vụ dân sự của mình một cách thiện chí, trung thực.\n4. Việc xác lập, thực hiện, chấm dứt quyền, nghĩa vụ dân sự không được xâm phạm đến lợi ích quốc gia, dân tộc, lợi ích công cộng, quyền và lợi ích hợp pháp của người khác."
+          },
+          {
+            id: "art-117",
+            number: "Điều 117",
+            heading: "Điều kiện có hiệu lực của giao dịch dân sự",
+            body: "1. Giao dịch dân sự có hiệu lực khi có đủ các điều kiện sau đây:\na) Chủ thể có năng lực pháp luật dân sự, năng lực hành vi dân sự phù hợp với giao dịch dân sự được xác lập;\nb) Chủ thể tham gia giao dịch dân sự hoàn toàn tự nguyện;\nc) Mục đích và nội dung của giao dịch dân sự không vi phạm điều cấm của luật, không trái đạo đức xã hội.\n2. Hình thức của giao dịch dân sự là điều kiện có hiệu lực của giao dịch dân sự trong trường hợp luật có quy định."
+          },
+          {
+            id: "art-468",
+            number: "Điều 468",
+            heading: "Lãi suất",
+            body: "1. Lãi suất vay do các bên thoả thuận. Trường hợp các bên có thoả thuận về lãi suất thì lãi suất theo thoả thuận không được vượt quá 20%/năm của khoản tiền vay, trừ trường hợp luật khác có liên quan quy định khác. Trường hợp lãi suất theo thoả thuận vượt quá lãi suất giới hạn được quy định tại khoản này thì mức lãi suất vượt quá không có hiệu lực.\n2. Trường hợp các bên có thoả thuận về việc trả lãi nhưng không xác định rõ lãi suất và có tranh chấp về lãi suất thì lãi suất được xác định bằng 50% mức lãi suất giới hạn quy định tại khoản 1 Điều này tại thời điểm trả nợ."
+          }
+        ]
+      }
+    ]
+  },
+
+  "101/2015/QH13": {
+    id: "101/2015/QH13",
+    type: "Bộ luật",
+    typeKey: "bo-luat",
+    number: "101/2015/QH13",
+    shortTitle: "Bộ luật Tố tụng hình sự 2015",
+    title: "Bộ luật Tố tụng hình sự",
+    issuer: "Quốc hội",
+    signedBy: "Nguyễn Sinh Hùng",
+    issuedDate: "2015-11-27",
+    effectiveDate: "2018-01-01",
+    status: "Có hiệu lực",
+    articleTotal: 510,
+    sourceUrl: "https://vbpl.vn/TW/Pages/vbpq-toanvan.aspx?ItemID=96074",
+    chapters: [
+      {
+        title: "CHƯƠNG I",
+        subtitle: "NHỮNG QUY ĐỊNH CHUNG",
+        articles: [
+          {
+            id: "art-1",
+            number: "Điều 1",
+            heading: "Phạm vi điều chỉnh",
+            body: "Bộ luật Tố tụng hình sự quy định trình tự, thủ tục tiếp nhận, giải quyết nguồn tin về tội phạm, khởi tố, điều tra, truy tố, xét xử và một số thủ tục thi hành án hình sự; nhiệm vụ, quyền hạn và mối quan hệ giữa các cơ quan có thẩm quyền tiến hành tố tụng; nhiệm vụ, quyền hạn và trách nhiệm của người có thẩm quyền tiến hành tố tụng; quyền và nghĩa vụ của người tham gia tố tụng, cơ quan, tổ chức, cá nhân; hợp tác quốc tế trong tố tụng hình sự."
+          },
+          {
+            id: "art-2",
+            number: "Điều 2",
+            heading: "Nhiệm vụ của Bộ luật Tố tụng hình sự",
+            body: "Bộ luật Tố tụng hình sự có nhiệm vụ bảo đảm phát hiện chính xác và xử lý công minh, kịp thời mọi hành vi phạm tội, phòng ngừa, ngăn chặn tội phạm, không để lọt tội phạm, không làm oan người vô tội; góp phần bảo vệ công lý, bảo vệ quyền con người, quyền công dân, bảo vệ chế độ xã hội chủ nghĩa, bảo vệ lợi ích của Nhà nước, quyền và lợi ích hợp pháp của tổ chức, cá nhân, giáo dục mọi người ý thức tuân theo pháp luật, đấu tranh phòng ngừa và chống tội phạm."
+          }
+        ]
+      }
+    ]
+  },
+
+  "92/2015/QH13": {
+    id: "92/2015/QH13",
+    type: "Bộ luật",
+    typeKey: "bo-luat",
+    number: "92/2015/QH13",
+    shortTitle: "Bộ luật Tố tụng dân sự 2015",
+    title: "Bộ luật Tố tụng dân sự",
+    issuer: "Quốc hội",
+    signedBy: "Nguyễn Sinh Hùng",
+    issuedDate: "2015-11-25",
+    effectiveDate: "2016-07-01",
+    status: "Có hiệu lực",
+    articleTotal: 517,
+    sourceUrl: "https://vbpl.vn/TW/Pages/vbpq-toanvan.aspx?ItemID=96068",
+    chapters: [
+      {
+        title: "CHƯƠNG I",
+        subtitle: "NHỮNG QUY ĐỊNH CHUNG",
+        articles: [
+          {
+            id: "art-1",
+            number: "Điều 1",
+            heading: "Phạm vi điều chỉnh",
+            body: "Bộ luật Tố tụng dân sự quy định những nguyên tắc cơ bản trong tố tụng dân sự; trình tự, thủ tục khởi kiện để Toà án giải quyết các vụ án về tranh chấp dân sự, hôn nhân và gia đình, kinh doanh, thương mại, lao động (sau đây gọi chung là vụ án dân sự) và trình tự, thủ tục yêu cầu để Toà án giải quyết các việc về yêu cầu dân sự; thi hành án dân sự."
+          },
+          {
+            id: "art-26",
+            number: "Điều 26",
+            heading: "Tranh chấp về dân sự thuộc thẩm quyền giải quyết của Tòa án",
+            body: "Tranh chấp về dân sự thuộc thẩm quyền giải quyết của Tòa án bao gồm:\n1. Tranh chấp về quốc tịch Việt Nam giữa cá nhân với cá nhân;\n2. Tranh chấp về quyền sở hữu và các quyền khác đối với tài sản;\n3. Tranh chấp về giao dịch dân sự, hợp đồng dân sự;\n4. Tranh chấp về quyền sở hữu trí tuệ, chuyển giao công nghệ, trừ trường hợp các bên có thoả thuận khác;\n5. Tranh chấp về thừa kế tài sản;\n6. Tranh chấp về bồi thường thiệt hại ngoài hợp đồng;\n7. Tranh chấp về khai thác, sử dụng tài nguyên nước, xả thải vào nguồn nước theo quy định của Luật Tài nguyên nước."
+          }
+        ]
+      }
+    ]
+  },
+
+  "15/2012/QH13": {
+    id: "15/2012/QH13",
+    type: "Luật",
+    typeKey: "luat",
+    number: "15/2012/QH13",
+    shortTitle: "Luật Xử lý vi phạm hành chính 2012",
+    title: "Luật Xử lý vi phạm hành chính",
+    issuer: "Quốc hội",
+    signedBy: "Nguyễn Sinh Hùng",
+    issuedDate: "2012-06-20",
+    effectiveDate: "2013-07-01",
+    status: "Có hiệu lực (sửa đổi 2020)",
+    articleTotal: 142,
+    sourceUrl: "https://vbpl.vn/TW/Pages/vbpq-toanvan.aspx?ItemID=27621",
+    chapters: [
+      {
+        title: "CHƯƠNG I",
+        subtitle: "NHỮNG QUY ĐỊNH CHUNG",
+        articles: [
+          {
+            id: "art-1",
+            number: "Điều 1",
+            heading: "Phạm vi điều chỉnh",
+            body: "Luật này quy định về xử phạt vi phạm hành chính và các biện pháp xử lý hành chính."
+          },
+          {
+            id: "art-2",
+            number: "Điều 2",
+            heading: "Giải thích từ ngữ",
+            body: "Trong Luật này, các từ ngữ dưới đây được hiểu như sau:\n1. Vi phạm hành chính là hành vi có lỗi do cá nhân, tổ chức thực hiện, vi phạm quy định của pháp luật về quản lý nhà nước mà không phải là tội phạm và theo quy định của pháp luật phải bị xử phạt vi phạm hành chính.\n2. Xử phạt vi phạm hành chính là việc người có thẩm quyền xử phạt áp dụng hình thức xử phạt, biện pháp khắc phục hậu quả đối với cá nhân, tổ chức thực hiện hành vi vi phạm hành chính theo quy định của pháp luật về xử phạt vi phạm hành chính."
+          },
+          {
+            id: "art-21",
+            number: "Điều 21",
+            heading: "Các hình thức xử phạt và nguyên tắc áp dụng",
+            body: "1. Các hình thức xử phạt vi phạm hành chính bao gồm:\na) Cảnh cáo;\nb) Phạt tiền;\nc) Tước quyền sử dụng giấy phép, chứng chỉ hành nghề có thời hạn hoặc đình chỉ hoạt động có thời hạn;\nd) Tịch thu tang vật vi phạm hành chính, phương tiện được sử dụng để vi phạm hành chính;\nđ) Trục xuất.\n2. Hình thức xử phạt cảnh cáo và phạt tiền chỉ được quy định và áp dụng là hình thức xử phạt chính. Các hình thức xử phạt khác có thể được quy định là hình thức xử phạt bổ sung hoặc hình thức xử phạt chính."
+          }
+        ]
+      }
+    ]
+  },
+
+  "21/2017/QH14": {
+    id: "21/2017/QH14",
+    type: "Luật",
+    typeKey: "luat",
+    number: "21/2017/QH14",
+    shortTitle: "Luật Quy hoạch 2017",
+    title: "Luật Quy hoạch",
+    issuer: "Quốc hội",
+    signedBy: "Nguyễn Thị Kim Ngân",
+    issuedDate: "2017-11-24",
+    effectiveDate: "2019-01-01",
+    status: "Có hiệu lực",
+    articleTotal: 72,
+    sourceUrl: "https://vbpl.vn/TW/Pages/vbpq-toanvan.aspx?ItemID=131283",
+    chapters: [
+      {
+        title: "CHƯƠNG I",
+        subtitle: "NHỮNG QUY ĐỊNH CHUNG",
+        articles: [
+          {
+            id: "art-1",
+            number: "Điều 1",
+            heading: "Phạm vi điều chỉnh",
+            body: "Luật này quy định việc lập, thẩm định, quyết định hoặc phê duyệt, công bố, thực hiện, đánh giá, điều chỉnh quy hoạch trong hệ thống quy hoạch quốc gia; trách nhiệm quản lý nhà nước về quy hoạch."
+          },
+          {
+            id: "art-3",
+            number: "Điều 3",
+            heading: "Giải thích từ ngữ",
+            body: "1. Quy hoạch là việc sắp xếp, phân bố không gian các hoạt động kinh tế - xã hội, quốc phòng, an ninh gắn với phát triển kết cấu hạ tầng, sử dụng tài nguyên và bảo vệ môi trường trên lãnh thổ xác định để sử dụng hiệu quả các nguồn lực của đất nước phục vụ mục tiêu phát triển bền vững cho thời kỳ xác định.\n2. Hệ thống quy hoạch quốc gia bao gồm quy hoạch tổng thể quốc gia, quy hoạch không gian biển quốc gia, quy hoạch sử dụng đất quốc gia, quy hoạch ngành quốc gia, quy hoạch vùng, quy hoạch tỉnh, quy hoạch đơn vị hành chính - kinh tế đặc biệt và quy hoạch đô thị, quy hoạch nông thôn."
+          }
+        ]
+      }
+    ]
+  },
+
+  "155/2020/ND-CP": {
+    id: "155/2020/ND-CP",
+    type: "Nghị định",
+    typeKey: "nghidinh",
+    number: "155/2020/NĐ-CP",
+    shortTitle: "Nghị định 155/2020/NĐ-CP",
+    title: "Quy định chi tiết thi hành một số điều của Luật Chứng khoán",
+    issuer: "Chính phủ",
+    signedBy: "Lê Minh Khái",
+    issuedDate: "2020-12-31",
+    effectiveDate: "2021-01-01",
+    status: "Có hiệu lực",
+    articleTotal: 322,
+    sourceUrl: "https://vanban.chinhphu.vn/?pageid=27160&docid=202122",
+    chapters: [
+      {
+        title: "CHƯƠNG I",
+        subtitle: "QUY ĐỊNH CHUNG",
+        articles: [
+          {
+            id: "art-1",
+            number: "Điều 1",
+            heading: "Phạm vi điều chỉnh",
+            body: "Nghị định này quy định chi tiết thi hành một số điều của Luật Chứng khoán số 54/2019/QH14, bao gồm: chào bán chứng khoán; công ty đại chúng; tổ chức thị trường giao dịch chứng khoán; đăng ký, lưu ký, bù trừ và thanh toán chứng khoán; tổ chức kinh doanh chứng khoán; quỹ đầu tư chứng khoán và công ty đầu tư chứng khoán; công bố thông tin trên thị trường chứng khoán; thanh tra, xử lý vi phạm trong lĩnh vực chứng khoán."
+          },
+          {
+            id: "art-3",
+            number: "Điều 3",
+            heading: "Điều kiện chào bán cổ phiếu lần đầu ra công chúng (IPO)",
+            body: "1. Mức vốn điều lệ đã góp tại thời điểm đăng ký chào bán từ 30 tỷ đồng trở lên tính theo giá trị ghi trên sổ kế toán.\n2. Hoạt động kinh doanh của 02 năm liên tục liền trước năm đăng ký chào bán phải có lãi, đồng thời không có lỗ luỹ kế tính đến năm đăng ký chào bán.\n3. Có phương án phát hành và phương án sử dụng vốn thu được từ đợt chào bán cổ phiếu được Đại hội đồng cổ đông thông qua.\n4. Tối thiểu là 15% số cổ phiếu có quyền biểu quyết của tổ chức phát hành phải được bán cho ít nhất 100 nhà đầu tư không phải là cổ đông lớn; trường hợp vốn điều lệ của tổ chức phát hành từ 1.000 tỷ đồng trở lên, tỷ lệ tối thiểu là 10% số cổ phiếu có quyền biểu quyết."
+          }
+        ]
+      }
+    ]
+  },
+
+  "12/2017/QH14": {
+    id: "12/2017/QH14",
+    type: "Luật",
+    typeKey: "luat",
+    number: "12/2017/QH14",
+    shortTitle: "Luật sửa đổi Bộ luật Hình sự 2017",
+    title: "Luật sửa đổi, bổ sung một số điều của Bộ luật Hình sự số 100/2015/QH13",
+    issuer: "Quốc hội",
+    signedBy: "Nguyễn Thị Kim Ngân",
+    issuedDate: "2017-06-20",
+    effectiveDate: "2018-01-01",
+    status: "Có hiệu lực",
+    articleTotal: 3,
+    sourceUrl: "https://vbpl.vn/TW/Pages/vbpq-toanvan.aspx?ItemID=128817",
+    chapters: [
+      {
+        title: "PHẦN MỞ ĐẦU",
+        subtitle: "",
+        articles: [
+          {
+            id: "art-1",
+            number: "Điều 1",
+            heading: "Sửa đổi, bổ sung Bộ luật Hình sự 100/2015/QH13",
+            body: "Sửa đổi, bổ sung 113 điều của Bộ luật Hình sự số 100/2015/QH13, tập trung vào các nội dung: tội phạm về kinh tế (chứng khoán, ngân hàng, kinh doanh đa cấp); tội phạm môi trường; tội phạm về công nghệ thông tin; tội phạm về tham nhũng và chức vụ. Một số khung hình phạt được điều chỉnh để bảo đảm tính răn đe và phù hợp với thực tiễn xét xử."
+          },
+          {
+            id: "art-2",
+            number: "Điều 2",
+            heading: "Hiệu lực thi hành",
+            body: "1. Luật này có hiệu lực thi hành từ ngày 01 tháng 01 năm 2018.\n2. Đối với các vụ án đã được khởi tố, điều tra, truy tố, xét xử trước ngày Luật này có hiệu lực thi hành nhưng đến thời điểm này chưa kết thúc thì áp dụng quy định của Bộ luật Hình sự số 100/2015/QH13 đã được sửa đổi, bổ sung theo Luật này nếu các quy định đó có lợi cho người phạm tội."
+          }
+        ]
+      }
+    ]
+  },
+
+  "39/2016/TT-NHNN": {
+    id: "39/2016/TT-NHNN",
+    type: "Thông tư",
+    typeKey: "thongtu",
+    number: "39/2016/TT-NHNN",
+    shortTitle: "Thông tư 39/2016/TT-NHNN về cho vay",
+    title: "Quy định về hoạt động cho vay của tổ chức tín dụng, chi nhánh ngân hàng nước ngoài đối với khách hàng",
+    issuer: "Ngân hàng Nhà nước Việt Nam",
+    signedBy: "Nguyễn Thị Hồng",
+    issuedDate: "2016-12-30",
+    effectiveDate: "2017-03-15",
+    status: "Có hiệu lực (sửa đổi 06/2023/TT-NHNN)",
+    articleTotal: 35,
+    sourceUrl: "https://vbpl.vn/nganhangnhanuoc/Pages/vbpq-toanvan.aspx?ItemID=119082",
+    chapters: [
+      {
+        title: "CHƯƠNG I",
+        subtitle: "QUY ĐỊNH CHUNG",
+        articles: [
+          {
+            id: "art-1",
+            number: "Điều 1",
+            heading: "Phạm vi điều chỉnh",
+            body: "Thông tư này quy định về hoạt động cho vay của tổ chức tín dụng, chi nhánh ngân hàng nước ngoài đối với khách hàng theo quy định của Luật Các tổ chức tín dụng số 32/2024/QH15 và Bộ luật Dân sự số 91/2015/QH13."
+          },
+          {
+            id: "art-7",
+            number: "Điều 7",
+            heading: "Điều kiện vay vốn",
+            body: "Tổ chức tín dụng, chi nhánh ngân hàng nước ngoài xem xét, quyết định cho vay khi khách hàng có đủ các điều kiện sau đây:\n1. Khách hàng là pháp nhân có năng lực pháp luật dân sự theo quy định của pháp luật. Khách hàng là cá nhân từ đủ 18 tuổi trở lên có năng lực hành vi dân sự đầy đủ theo quy định của Bộ luật Dân sự 91/2015/QH13.\n2. Nhu cầu vay vốn để sử dụng vào mục đích hợp pháp.\n3. Có phương án sử dụng vốn khả thi.\n4. Có khả năng tài chính để trả nợ.\n5. Trường hợp cho vay bằng phương tiện điện tử, khách hàng phải đáp ứng các điều kiện theo quy định của Ngân hàng Nhà nước về hoạt động cho vay bằng phương tiện điện tử."
+          },
+          {
+            id: "art-8",
+            number: "Điều 8",
+            heading: "Những nhu cầu vốn không được cho vay",
+            body: "Tổ chức tín dụng, chi nhánh ngân hàng nước ngoài không được cho vay đối với các nhu cầu vốn sau đây:\n1. Để thực hiện các hoạt động đầu tư kinh doanh thuộc ngành, nghề mà pháp luật cấm đầu tư kinh doanh.\n2. Để thanh toán các chi phí, đáp ứng các nhu cầu tài chính của các giao dịch, hành vi mà pháp luật cấm.\n3. Để mua, sử dụng các hàng hoá, dịch vụ thuộc ngành, nghề mà pháp luật cấm đầu tư kinh doanh.\n4. Để mua vàng miếng.\n5. Để trả nợ khoản nợ vay tại chính tổ chức tín dụng cho vay trừ trường hợp cho vay để thanh toán lãi tiền vay phát sinh trong quá trình thi công xây dựng công trình."
           }
         ]
       }
