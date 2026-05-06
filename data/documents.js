@@ -705,6 +705,212 @@ window.LEGAL_DB = {
     ]
   },
 
+  // ===== Renewable Energy sector =====
+
+  "61/2024/QH15": {
+    id: "61/2024/QH15",
+    type: "Luật",
+    typeKey: "luat",
+    number: "61/2024/QH15",
+    shortTitle: "Luật Điện lực 2024",
+    title: "Luật Điện lực",
+    issuer: "Quốc hội",
+    signedBy: "Trần Thanh Mẫn",
+    issuedDate: "2024-11-30",
+    effectiveDate: "2025-02-01",
+    status: "Có hiệu lực",
+    articleTotal: 130,
+    sourceUrl: "https://vbpl.vn/TW/Pages/vbpq-toanvan.aspx?ItemID=170824",
+    chapters: [
+      {
+        title: "CHƯƠNG I",
+        subtitle: "NHỮNG QUY ĐỊNH CHUNG",
+        articles: [
+          {
+            id: "art-1",
+            number: "Điều 1",
+            heading: "Phạm vi điều chỉnh",
+            body: "Luật này quy định về quy hoạch phát triển điện lực, đầu tư xây dựng dự án điện lực; phát triển điện năng lượng tái tạo, điện năng lượng mới; giấy phép hoạt động điện lực; thị trường điện cạnh tranh, hoạt động mua bán điện; điều độ, vận hành hệ thống điện quốc gia; bảo vệ công trình điện lực và an toàn trong lĩnh vực điện; quản lý nhà nước về điện lực."
+          },
+          {
+            id: "art-3",
+            number: "Điều 3",
+            heading: "Giải thích từ ngữ",
+            body: "Trong Luật này, các từ ngữ dưới đây được hiểu như sau:\n1. Điện năng lượng tái tạo là điện năng được sản xuất từ nguồn năng lượng tái tạo, bao gồm: thuỷ điện, điện gió trên đất liền, điện gió ngoài khơi, điện mặt trời, điện sinh khối, điện địa nhiệt, điện thủy triều, điện sóng biển và các loại điện được sản xuất từ nguồn năng lượng tái tạo khác.\n2. Điện năng lượng mới là điện năng được sản xuất từ nguồn năng lượng mới, bao gồm: hydro xanh, amoniac xanh và các loại điện được sản xuất từ nguồn năng lượng mới khác.\n3. Mua bán điện trực tiếp (DPPA) là hoạt động mua bán điện giữa đơn vị phát điện sử dụng năng lượng tái tạo và khách hàng sử dụng điện lớn theo quy định tại Nghị định 80/2024/NĐ-CP."
+          },
+          {
+            id: "art-5",
+            number: "Điều 5",
+            heading: "Chính sách của Nhà nước về phát triển điện lực",
+            body: "1. Bảo đảm an ninh năng lượng quốc gia, đáp ứng nhu cầu điện cho phát triển kinh tế - xã hội.\n2. Ưu tiên phát triển điện năng lượng tái tạo, điện năng lượng mới phù hợp với cam kết phát thải ròng bằng \"0\" (Net Zero) vào năm 2050.\n3. Khuyến khích đầu tư phát triển nguồn điện sử dụng năng lượng tái tạo, năng lượng mới thông qua các cơ chế giá điện, ưu đãi đầu tư và đấu thầu cạnh tranh để lựa chọn nhà đầu tư.\n4. Phát triển thị trường điện cạnh tranh minh bạch, công bằng, hiệu quả; bảo đảm hài hoà lợi ích Nhà nước, doanh nghiệp và người sử dụng điện.\n5. Hỗ trợ phát triển hệ thống lưu trữ điện, hạ tầng truyền tải để tích hợp các nguồn năng lượng tái tạo có tỷ trọng cao vào hệ thống điện quốc gia."
+          },
+          {
+            id: "art-20",
+            number: "Điều 20",
+            heading: "Phát triển điện năng lượng tái tạo, điện năng lượng mới",
+            body: "1. Điện năng lượng tái tạo, điện năng lượng mới là một trong những lĩnh vực được Nhà nước khuyến khích đầu tư.\n2. Cơ chế hỗ trợ giá điện đối với từng loại nguồn điện năng lượng tái tạo, năng lượng mới được Thủ tướng Chính phủ quy định trong từng thời kỳ trên cơ sở đề xuất của Bộ Công Thương.\n3. Đấu thầu lựa chọn nhà đầu tư là phương thức ưu tiên để phát triển nguồn điện năng lượng tái tạo, năng lượng mới có công suất lắp đặt từ một mức nhất định trở lên do Chính phủ quy định.\n4. Khuyến khích phát triển điện mặt trời mái nhà tự sản, tự tiêu theo cơ chế quy định tại Nghị định 135/2024/NĐ-CP và các văn bản hướng dẫn của Bộ Công Thương."
+          },
+          {
+            id: "art-49",
+            number: "Điều 49",
+            heading: "Hợp đồng mua bán điện trực tiếp (DPPA)",
+            body: "1. Khách hàng sử dụng điện lớn được phép ký hợp đồng mua bán điện trực tiếp với đơn vị phát điện sử dụng năng lượng tái tạo theo một trong hai hình thức:\na) DPPA qua đường dây kết nối riêng;\nb) DPPA qua lưới điện quốc gia.\n2. Trình tự, thủ tục, điều kiện tham gia DPPA được thực hiện theo quy định tại Nghị định 80/2024/NĐ-CP.\n3. Tổng công ty Điện lực, Tập đoàn Điện lực Việt Nam có trách nhiệm cung cấp dịch vụ phụ trợ, dịch vụ truyền tải, phân phối cho các bên tham gia DPPA theo quy định."
+          },
+          {
+            id: "art-130",
+            number: "Điều 130",
+            heading: "Hiệu lực thi hành",
+            body: "1. Luật này có hiệu lực thi hành từ ngày 01 tháng 02 năm 2025.\n2. Luật Điện lực số 28/2004/QH11 đã được sửa đổi, bổ sung một số điều theo Luật số 24/2012/QH13, Luật số 28/2018/QH14 và Luật số 03/2022/QH15 hết hiệu lực kể từ ngày Luật này có hiệu lực thi hành.\n3. Các Quyết định của Thủ tướng Chính phủ về cơ chế giá điện áp dụng đối với các dự án điện năng lượng tái tạo đã được ký kết hợp đồng mua bán điện trước ngày Luật này có hiệu lực thi hành tiếp tục được thực hiện theo nội dung đã thoả thuận."
+          }
+        ]
+      }
+    ]
+  },
+
+  "50/2010/QH12": {
+    id: "50/2010/QH12",
+    type: "Luật",
+    typeKey: "luat",
+    number: "50/2010/QH12",
+    shortTitle: "Luật Sử dụng năng lượng tiết kiệm và hiệu quả 2010",
+    title: "Luật Sử dụng năng lượng tiết kiệm và hiệu quả",
+    issuer: "Quốc hội",
+    signedBy: "Nguyễn Phú Trọng",
+    issuedDate: "2010-06-17",
+    effectiveDate: "2011-01-01",
+    status: "Có hiệu lực",
+    articleTotal: 48,
+    sourceUrl: "https://vbpl.vn/TW/Pages/vbpq-toanvan.aspx?ItemID=25510",
+    chapters: [
+      {
+        title: "CHƯƠNG I",
+        subtitle: "NHỮNG QUY ĐỊNH CHUNG",
+        articles: [
+          {
+            id: "art-1",
+            number: "Điều 1",
+            heading: "Phạm vi điều chỉnh",
+            body: "Luật này quy định về sử dụng năng lượng tiết kiệm và hiệu quả; chính sách, biện pháp thúc đẩy sử dụng năng lượng tiết kiệm và hiệu quả; quyền, nghĩa vụ, trách nhiệm của tổ chức, hộ gia đình, cá nhân trong sử dụng năng lượng tiết kiệm và hiệu quả."
+          },
+          {
+            id: "art-3",
+            number: "Điều 3",
+            heading: "Giải thích từ ngữ",
+            body: "Trong Luật này, các từ ngữ dưới đây được hiểu như sau:\n1. Năng lượng bao gồm nhiên liệu, điện năng, nhiệt năng thu được trực tiếp hoặc thông qua chế biến từ các nguồn tài nguyên năng lượng không tái tạo và tái tạo.\n2. Tài nguyên năng lượng không tái tạo gồm than đá, khí than, dầu mỏ, khí thiên nhiên, quặng urani và các tài nguyên năng lượng khác không có khả năng tái tạo.\n3. Tài nguyên năng lượng tái tạo gồm sức nước, sức gió, ánh sáng mặt trời, địa nhiệt, nhiên liệu sinh học và các tài nguyên năng lượng khác có khả năng tái tạo.\n4. Sử dụng năng lượng tiết kiệm và hiệu quả là việc áp dụng các biện pháp quản lý và kỹ thuật nhằm giảm tổn thất, giảm mức tiêu thụ năng lượng của phương tiện, thiết bị mà vẫn bảo đảm nhu cầu, mục tiêu đặt ra đối với quá trình sản xuất và đời sống."
+          },
+          {
+            id: "art-5",
+            number: "Điều 5",
+            heading: "Chính sách của Nhà nước về sử dụng năng lượng tiết kiệm và hiệu quả",
+            body: "1. Áp dụng đồng bộ các biện pháp quản lý, công nghệ tiên tiến và đầu tư hợp lý cho việc sử dụng năng lượng tiết kiệm và hiệu quả; bảo vệ môi trường.\n2. Ưu tiên phát triển hợp lý công nghệ năng lượng sạch, nâng cao tỷ trọng sử dụng năng lượng tái tạo trong cơ cấu nguồn năng lượng quốc gia.\n3. Khuyến khích, hỗ trợ tổ chức, cá nhân nghiên cứu, áp dụng công nghệ, sản phẩm, thiết bị tiết kiệm năng lượng; sản xuất, kinh doanh sản phẩm tiết kiệm năng lượng; sử dụng năng lượng tái tạo.\n4. Bố trí ngân sách nhà nước cho công tác tuyên truyền, giáo dục, khen thưởng và các hoạt động khác phục vụ việc sử dụng năng lượng tiết kiệm và hiệu quả."
+          },
+          {
+            id: "art-39",
+            number: "Điều 39",
+            heading: "Phát triển và sử dụng năng lượng tái tạo",
+            body: "1. Nhà nước khuyến khích đầu tư sản xuất, sử dụng các thiết bị, sản phẩm sử dụng năng lượng tái tạo trên cơ sở áp dụng tiến bộ khoa học và công nghệ.\n2. Tổ chức, cá nhân đầu tư sản xuất năng lượng tái tạo được hưởng ưu đãi về đầu tư, đất đai, vay vốn, thuế, phí và các ưu đãi khác theo quy định của pháp luật.\n3. Bộ Công Thương chủ trì, phối hợp với các Bộ, ngành có liên quan ban hành quy chuẩn kỹ thuật, tiêu chuẩn quốc gia về thiết bị, sản phẩm sử dụng năng lượng tái tạo và biện pháp khuyến khích sản xuất, sử dụng năng lượng tái tạo."
+          }
+        ]
+      }
+    ]
+  },
+
+  "80/2024/ND-CP": {
+    id: "80/2024/ND-CP",
+    type: "Nghị định",
+    typeKey: "nghidinh",
+    number: "80/2024/NĐ-CP",
+    shortTitle: "Nghị định 80/2024/NĐ-CP về DPPA",
+    title: "Quy định về cơ chế mua bán điện trực tiếp giữa đơn vị phát điện năng lượng tái tạo với khách hàng sử dụng điện lớn",
+    issuer: "Chính phủ",
+    signedBy: "Trần Hồng Hà",
+    issuedDate: "2024-07-03",
+    effectiveDate: "2024-07-03",
+    status: "Có hiệu lực",
+    articleTotal: 30,
+    sourceUrl: "https://vanban.chinhphu.vn/?pageid=27160&docid=210139",
+    chapters: [
+      {
+        title: "CHƯƠNG I",
+        subtitle: "QUY ĐỊNH CHUNG",
+        articles: [
+          {
+            id: "art-1",
+            number: "Điều 1",
+            heading: "Phạm vi điều chỉnh",
+            body: "Nghị định này quy định về cơ chế mua bán điện trực tiếp giữa đơn vị phát điện năng lượng tái tạo với khách hàng sử dụng điện lớn (sau đây gọi là cơ chế DPPA) thông qua hai hình thức: mua bán điện trực tiếp qua đường dây kết nối riêng và mua bán điện trực tiếp qua lưới điện quốc gia."
+          },
+          {
+            id: "art-3",
+            number: "Điều 3",
+            heading: "Giải thích từ ngữ",
+            body: "Trong Nghị định này, các từ ngữ dưới đây được hiểu như sau:\n1. Đơn vị phát điện năng lượng tái tạo là đơn vị sở hữu nhà máy điện sử dụng năng lượng tái tạo (bao gồm điện gió và điện mặt trời) đấu nối với hệ thống điện quốc gia có công suất lắp đặt từ 10 MW trở lên hoặc nhà máy điện gió, điện mặt trời có công suất lắp đặt nhỏ hơn 10 MW có lựa chọn tham gia cơ chế DPPA.\n2. Khách hàng sử dụng điện lớn là khách hàng sử dụng điện cho mục đích sản xuất từ cấp điện áp 22 kV trở lên có sản lượng tiêu thụ điện bình quân từ 200.000 kWh/tháng trở lên.\n3. Hợp đồng kỳ hạn là hợp đồng song phương giữa đơn vị phát điện năng lượng tái tạo và khách hàng sử dụng điện lớn về mua bán điện theo giá kỳ hạn cố định trong một thời gian xác định."
+          },
+          {
+            id: "art-5",
+            number: "Điều 5",
+            heading: "Cơ chế DPPA qua đường dây kết nối riêng",
+            body: "1. Đơn vị phát điện năng lượng tái tạo và khách hàng sử dụng điện lớn được mua bán điện thông qua đường dây kết nối riêng do hai bên đầu tư xây dựng và quản lý vận hành.\n2. Hai bên tự thoả thuận về giá điện, sản lượng điện, các điều kiện giao nhận điện và các nội dung khác trong hợp đồng mua bán điện.\n3. Trường hợp nhà máy điện hoặc khách hàng sử dụng điện lớn cũng đấu nối vào hệ thống điện quốc gia thì việc giao nhận điện và thanh toán phần điện năng dư hoặc thiếu hụt được thực hiện theo giá điện do Tập đoàn Điện lực Việt Nam và đối tác công bố."
+          },
+          {
+            id: "art-9",
+            number: "Điều 9",
+            heading: "Cơ chế DPPA qua lưới điện quốc gia",
+            body: "1. Đơn vị phát điện năng lượng tái tạo bán toàn bộ điện năng sản xuất ra cho thị trường điện giao ngay (Spot Market) thuộc thị trường bán buôn điện cạnh tranh.\n2. Khách hàng sử dụng điện lớn mua điện từ Tổng công ty Điện lực theo giá thị trường bán buôn điện cộng các loại phí truyền tải, phân phối và các loại chi phí khác theo quy định.\n3. Đơn vị phát điện năng lượng tái tạo và khách hàng sử dụng điện lớn ký Hợp đồng kỳ hạn (Contract for Differences) để chốt giá điện trong một thời hạn xác định, sản lượng và giá điện do hai bên tự thoả thuận theo nguyên tắc thị trường."
+          }
+        ]
+      }
+    ]
+  },
+
+  "135/2024/ND-CP": {
+    id: "135/2024/ND-CP",
+    type: "Nghị định",
+    typeKey: "nghidinh",
+    number: "135/2024/NĐ-CP",
+    shortTitle: "Nghị định 135/2024/NĐ-CP về điện mặt trời mái nhà",
+    title: "Quy định cơ chế, chính sách khuyến khích phát triển điện mặt trời mái nhà tự sản xuất, tự tiêu thụ",
+    issuer: "Chính phủ",
+    signedBy: "Trần Hồng Hà",
+    issuedDate: "2024-10-22",
+    effectiveDate: "2024-10-22",
+    status: "Có hiệu lực",
+    articleTotal: 18,
+    sourceUrl: "https://vanban.chinhphu.vn/?pageid=27160&docid=211874",
+    chapters: [
+      {
+        title: "CHƯƠNG I",
+        subtitle: "QUY ĐỊNH CHUNG",
+        articles: [
+          {
+            id: "art-1",
+            number: "Điều 1",
+            heading: "Phạm vi điều chỉnh",
+            body: "Nghị định này quy định cơ chế, chính sách khuyến khích phát triển điện mặt trời mái nhà tự sản xuất, tự tiêu thụ được lắp đặt trên mái nhà của công trình xây dựng nhằm cung cấp điện cho phụ tải tại chỗ, không bán điện cho tổ chức, cá nhân khác."
+          },
+          {
+            id: "art-3",
+            number: "Điều 3",
+            heading: "Giải thích từ ngữ",
+            body: "Trong Nghị định này, các từ ngữ dưới đây được hiểu như sau:\n1. Điện mặt trời mái nhà tự sản xuất, tự tiêu thụ là hệ thống điện mặt trời được lắp đặt trên mái nhà của công trình xây dựng để sản xuất điện và phục vụ tiêu thụ điện tại chỗ của tổ chức, cá nhân là chủ đầu tư hệ thống điện mặt trời mái nhà.\n2. Hệ thống điện mặt trời mái nhà tự sản xuất, tự tiêu thụ có đấu nối với hệ thống điện quốc gia là hệ thống được kết nối với hệ thống điện quốc gia thông qua công tơ điện đo đếm hai chiều.\n3. Hệ thống điện mặt trời mái nhà tự sản xuất, tự tiêu thụ không đấu nối với hệ thống điện quốc gia là hệ thống hoạt động độc lập, không kết nối với hệ thống điện quốc gia."
+          },
+          {
+            id: "art-5",
+            number: "Điều 5",
+            heading: "Cơ chế khuyến khích phát triển",
+            body: "1. Tổ chức, cá nhân lắp đặt điện mặt trời mái nhà tự sản xuất, tự tiêu thụ được miễn giấy phép hoạt động điện lực, miễn các điều kiện liên quan đến quy hoạch, bổ sung quy hoạch.\n2. Hộ gia đình, nhà ở riêng lẻ phát triển điện mặt trời mái nhà tự sản xuất, tự tiêu thụ được miễn các loại thuế, phí có liên quan và miễn lập giấy phép xây dựng.\n3. Trường hợp đấu nối với hệ thống điện quốc gia, được phép phát phần điện dư lên lưới điện quốc gia với giá ghi nhận bằng 0 đồng.\n4. Tổng công suất điện mặt trời mái nhà tự sản xuất, tự tiêu thụ có đấu nối với hệ thống điện quốc gia tại mỗi tỉnh, thành phố không vượt quá công suất phân bổ trong Kế hoạch thực hiện Quy hoạch phát triển điện lực quốc gia."
+          },
+          {
+            id: "art-8",
+            number: "Điều 8",
+            heading: "Quy định kỹ thuật và đấu nối",
+            body: "1. Việc đấu nối, vận hành hệ thống điện mặt trời mái nhà tự sản xuất, tự tiêu thụ phải tuân thủ quy chuẩn, tiêu chuẩn kỹ thuật do Bộ Công Thương ban hành và Quy định hệ thống điện phân phối.\n2. Tập đoàn Điện lực Việt Nam, Tổng công ty Điện lực, Công ty Điện lực có trách nhiệm thoả thuận đấu nối, lắp đặt công tơ điện đo đếm hai chiều cho khách hàng có nhu cầu trong thời hạn 05 ngày làm việc kể từ ngày nhận đầy đủ hồ sơ hợp lệ.\n3. Đơn vị quản lý vận hành lưới điện không được từ chối đấu nối hệ thống điện mặt trời mái nhà tự sản xuất, tự tiêu thụ đáp ứng đủ điều kiện kỹ thuật, trừ trường hợp đường dây, trạm biến áp đã đầy tải."
+          }
+        ]
+      }
+    ]
+  },
+
   // Draft / under-discussion document — slotted to populate the
   // "Văn bản đang thảo luận" statistic on the landing spotlight
   "DT-LCTCTD-2026": {

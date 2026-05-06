@@ -324,11 +324,26 @@
       "dat-dai": "Đất đai – Xây dựng",
       "hinh-su": "Hình sự – Tố tụng",
       "dan-su": "Dân sự – Hợp đồng",
+      "nang-luong": "Phát triển năng lượng tái tạo",
       "khac": "Lĩnh vực khác"
     };
+    const fieldMatchers = {
+      "ngan-hang": /(tổ chức tín dụng|ngân hàng|tiền tệ|tín dụng|tài chính)/,
+      "hinh-su": /(hình sự|tội phạm)/,
+      "nang-luong": /(năng lượng|điện lực|điện gió|điện mặt trời|tái tạo|dppa|mua bán điện)/
+    };
     const lbl = labels[f] || "lĩnh vực này";
-    if (f === "ngan-hang" || f === "hinh-su") {
-      showToast(`Đang lọc theo lĩnh vực ${lbl}`);
+    const matcher = fieldMatchers[f];
+    if (matcher) {
+      // Filter newdocs list by docs whose title/shortTitle matches
+      const ids = Object.values(DB)
+        .filter(d => matcher.test((d.title + " " + d.shortTitle).toLowerCase()))
+        .map(d => d.id);
+      window.__fieldFilterIds = new Set(ids);
+      newdocsFilter = "all";
+      $$(".tab", newdocsTabs).forEach(x => x.classList.toggle("active", x.dataset.filter === "all"));
+      renderNewdocs();
+      showToast(`Đang lọc theo lĩnh vực ${lbl} — ${ids.length} văn bản`);
       const sec = $("#newdocs"); if (sec) sec.scrollIntoView({ behavior: "smooth", block: "start" });
     } else {
       showToast(`Lĩnh vực ${lbl} đang cập nhật`);
@@ -399,12 +414,13 @@
   function renderStats() {
     const docs = Object.values(DB);
     const counts = { Luật: 0, "Nghị định": 0, "Thông tư": 0, "Bộ luật": 0 };
-    let bankingCount = 0, criminalCount = 0;
+    let bankingCount = 0, criminalCount = 0, energyCount = 0;
     for (const d of docs) {
       if (counts[d.type] !== undefined) counts[d.type]++;
       const txt = (d.title + " " + d.shortTitle).toLowerCase();
       if (/(tổ chức tín dụng|ngân hàng|tiền tệ|tín dụng|tài chính)/.test(txt)) bankingCount++;
       if (/(hình sự|tội phạm)/.test(txt)) criminalCount++;
+      if (/(năng lượng|điện lực|điện gió|điện mặt trời|tái tạo|dppa|mua bán điện)/.test(txt)) energyCount++;
     }
 
     const setText = (id, v) => { const el = $(id); if (el) el.textContent = v; };
@@ -480,6 +496,7 @@
     // === Field counts (top nav dropdown) ===
     setText("#tn-fc-banking", bankingCount + " văn bản");
     setText("#tn-fc-criminal", criminalCount + " văn bản");
+    setText("#tn-fc-energy", energyCount + " văn bản");
   }
 
   // Văn bản mới — sorted by issuedDate desc
@@ -487,6 +504,7 @@
     let docs = Object.values(DB).slice();
     docs.sort((a, b) => (b.issuedDate || "").localeCompare(a.issuedDate || ""));
     if (newdocsFilter !== "all") docs = docs.filter(d => d.type === newdocsFilter);
+    if (window.__fieldFilterIds) docs = docs.filter(d => window.__fieldFilterIds.has(d.id));
 
     if (!docs.length) {
       newdocsList.innerHTML = `<li style="grid-template-columns: 1fr; cursor: default; color: var(--ink-mute); padding: 20px 0; text-align: center;">Không có văn bản loại này.</li>`;
@@ -523,12 +541,13 @@
     });
   }
 
-  // Tab strip — set filter
+  // Tab strip — set filter (clears any active field filter)
   $$(".tab", newdocsTabs).forEach(t => {
     t.addEventListener("click", () => {
       $$(".tab", newdocsTabs).forEach(x => x.classList.remove("active"));
       t.classList.add("active");
       newdocsFilter = t.dataset.filter;
+      window.__fieldFilterIds = null;
       renderNewdocs();
     });
   });
