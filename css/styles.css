@@ -1378,6 +1378,31 @@ table { border-collapse: collapse; }
   border: 1px dashed var(--line);
 }
 
+/* "Lược đồ only" viewing mode (entered via spotlight Lược đồ button) — hide
+   the doc title bar, properties, tab strip, reading toolbar, side aside
+   columns, and the non-Lược-đồ tab panels. The Gantt panel is always shown,
+   regardless of which tab is internally "active". */
+body.luocdo-only .doc-titlebar,
+body.luocdo-only .props-wrap,
+body.luocdo-only .tabbar,
+body.luocdo-only .read-toolbar,
+body.luocdo-only .viewer-grid > aside,
+body.luocdo-only .tab-panel[data-panel="toanvan"],
+body.luocdo-only .tab-panel[data-panel="thuoctinh"] {
+  display: none !important;
+}
+body.luocdo-only .tab-panel[data-panel="luocdo"] {
+  display: block !important;
+}
+body.luocdo-only .viewer-grid {
+  grid-template-columns: 1fr !important;
+}
+body.luocdo-only .viewer-main {
+  border: none;
+  background: transparent;
+  padding: 0;
+}
+
 /* Timeline (lược đồ — hiệu lực) */
 .lt-header {
   display: flex; align-items: center; justify-content: space-between;

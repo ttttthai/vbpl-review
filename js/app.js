@@ -353,12 +353,21 @@
     if (el.tagName === "BUTTON" || (el.classList && (el.classList.contains("btn-cta") || el.classList.contains("btn-cta-secondary")))) {
       el.addEventListener("click", (e) => {
         e.preventDefault();
-        openDoc(el.dataset.docId);
         const tab = el.dataset.tab;
+        openDoc(el.dataset.docId);
+        // Tabbed entry from the spotlight (Lược đồ button) collapses the
+        // viewer down to just the Gantt chart. Set this AFTER openDoc so
+        // openDoc's default reset doesn't wipe it. Subsequent navigation
+        // through related-doc clicks will reset the mode automatically.
+        if (tab === "luocdo") setLuocdoOnlyMode(true);
         if (tab) setTimeout(() => activateTab(tab), 0);
       });
     }
   });
+
+  function setLuocdoOnlyMode(on) {
+    document.body.classList.toggle("luocdo-only", !!on);
+  }
 
   // Spotlight: "Văn bản đã hết hiệu lực" mini-dropdown listing expired docs
   // related to the spotlight (32/2024/QH15). Wrap in try/catch so any error
@@ -466,6 +475,7 @@
   });
 
   function goHome() {
+    setLuocdoOnlyMode(false);
     viewer.classList.add("hidden");
     landing.classList.remove("hidden");
     searchInput.value = "";
@@ -710,6 +720,7 @@
   function openDoc(id) {
     const doc = H.findDoc(id);
     if (!doc) return;
+    setLuocdoOnlyMode(false); // default: full viewer; spotlight CTA re-enables
     currentDoc = doc;
     pushRecent(doc.id);
     autoCacheDoc(doc);
