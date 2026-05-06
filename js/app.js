@@ -250,21 +250,21 @@
     });
   }
 
-  wireSearch(searchInput, suggestions, openDoc);
+  if (searchInput && suggestions) wireSearch(searchInput, suggestions, openDoc);
   wireSearch(sideSearchInput, sideSuggestions, (id) => {
     openDoc(id);
     sideSearchInput.value = "";
     sideSuggestions.innerHTML = "";
   });
 
-  searchDo.addEventListener("click", () => {
+  if (searchDo) searchDo.addEventListener("click", () => {
     const top = suggest(searchInput.value)[0];
     if (top) openDoc(top.id);
     else if (searchInput.value.trim()) showToast("Không tìm thấy văn bản phù hợp");
     else searchInput.focus();
   });
 
-  searchClear.addEventListener("click", () => {
+  if (searchClear) searchClear.addEventListener("click", () => {
     searchInput.value = "";
     searchClear.classList.remove("visible");
     suggestions.innerHTML = "";
@@ -272,7 +272,7 @@
   });
 
   document.addEventListener("click", (e) => {
-    if (!e.target.closest(".search-wrap") && !e.target.closest(".header-search")) suggestions.innerHTML = "";
+    if (suggestions && !e.target.closest(".search-wrap") && !e.target.closest(".header-search")) suggestions.innerHTML = "";
     if (!e.target.closest(".side-search")) sideSuggestions.innerHTML = "";
   });
 
@@ -282,7 +282,7 @@
     if (e.key === "/" && !e.metaKey && !e.ctrlKey) {
       e.preventDefault();
       if (!viewer.classList.contains("hidden")) sideSearchInput.focus();
-      else { searchInput.focus(); searchInput.scrollIntoView({ behavior: "smooth", block: "center" }); }
+      else if (searchInput) { searchInput.focus(); searchInput.scrollIntoView({ behavior: "smooth", block: "center" }); }
     } else if (e.key === "Escape" && popupPinned) {
       hidePopup(true);
     }
@@ -320,10 +320,10 @@
   // Header / nav buttons
   if (brandHome) brandHome.addEventListener("click", (e) => { e.preventDefault(); goHome(); });
   if (navHome) navHome.addEventListener("click", (e) => { e.preventDefault(); goHome(); });
-  if (navSearch) navSearch.addEventListener("click", (e) => { e.preventDefault(); goHome(); setTimeout(() => searchInput.focus(), 100); });
+  if (navSearch) navSearch.addEventListener("click", (e) => { e.preventDefault(); goHome(); if (searchInput) setTimeout(() => searchInput.focus(), 100); });
   if (backHome) backHome.addEventListener("click", (e) => { e.preventDefault(); goHome(); });
   if (bcHome) bcHome.addEventListener("click", (e) => { e.preventDefault(); goHome(); });
-  if (ctaSearchBtn) ctaSearchBtn.addEventListener("click", () => searchInput.focus());
+  if (ctaSearchBtn) ctaSearchBtn.addEventListener("click", () => searchInput && searchInput.focus());
 
   // Top nav (Home + Văn bản theo lĩnh vực dropdown + field menu items)
   const topnavHome = $("#topnav-home");
@@ -423,9 +423,9 @@
     setLuocdoOnlyMode(false);
     viewer.classList.add("hidden");
     landing.classList.remove("hidden");
-    searchInput.value = "";
-    searchClear.classList.remove("visible");
-    suggestions.innerHTML = "";
+    if (searchInput) searchInput.value = "";
+    if (searchClear) searchClear.classList.remove("visible");
+    if (suggestions) suggestions.innerHTML = "";
     if (navHome) navHome.classList.add("active");
     setCrumbs([{ label: "Trang chủ", action: goHome }, { label: "Tra cứu văn bản pháp luật", current: true }]);
     // Restore default spotlight (32/2024/QH15)
@@ -887,7 +887,7 @@
 
     landing.classList.add("hidden");
     viewer.classList.remove("hidden");
-    suggestions.innerHTML = "";
+    if (suggestions) suggestions.innerHTML = "";
     sideSuggestions.innerHTML = "";
 
     if (navHome) navHome.classList.remove("active");
