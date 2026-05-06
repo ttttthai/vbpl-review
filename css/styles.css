@@ -476,12 +476,11 @@ table { border-collapse: collapse; }
 
 .land-grid {
   display: grid;
-  grid-template-columns: 1fr 320px;
+  grid-template-columns: 1fr;
   gap: 20px;
   align-items: start;
 }
 .land-main { min-width: 0; }
-.land-aside { min-width: 0; }
 
 /* ===== Section block ===== */
 .block {

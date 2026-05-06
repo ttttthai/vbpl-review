@@ -37,8 +37,6 @@
   const newdocsList = $("#newdocs-list");
   const newdocsTabs = $("#newdocs-tabs");
   const expiredList = $("#expired-list");
-  const hotList = $("#hot-list");
-  const hotListMain = $("#hot-list-main");
   const hotListSide = $("#hot-list-side");
 
   const refPopup = $("#ref-popup");
@@ -594,14 +592,6 @@
       </li>
     `).join("");
 
-    if (hotList) {
-      hotList.innerHTML = html;
-      $$("li[data-doc-id]", hotList).forEach(li => li.addEventListener("click", () => openDoc(li.dataset.docId)));
-    }
-    if (hotListMain) {
-      hotListMain.innerHTML = html;
-      $$("li[data-doc-id]", hotListMain).forEach(li => li.addEventListener("click", () => openDoc(li.dataset.docId)));
-    }
     if (hotListSide) {
       hotListSide.innerHTML = html;
       $$("li[data-doc-id]", hotListSide).forEach(li => li.addEventListener("click", () => openDoc(li.dataset.docId)));
@@ -614,6 +604,7 @@
     if (!doc) return;
     currentDoc = doc;
     pushRecent(doc.id);
+    autoCacheDoc(doc);
 
     landing.classList.add("hidden");
     viewer.classList.remove("hidden");
@@ -840,14 +831,7 @@
       return (a.start || "").localeCompare(b.start || "");
     });
 
-    let html = `
-      <div class="lt-header">
-        <h2>Lược đồ văn bản — ${escapeHtml(doc.shortTitle)}</h2>
-        <button class="lt-download" id="lt-download-btn" type="button" title="Tải toàn bộ văn bản trên lược đồ về CSDL JSON nội bộ">
-          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-          Tải về CSDL nội bộ
-        </button>
-      </div>`;
+    let html = `<h2>Lược đồ văn bản — ${escapeHtml(doc.shortTitle)}</h2>`;
 
     if (items.length === 0) {
       html += `<div class="ld-empty">Không có văn bản liên quan để hiển thị trên lược đồ.</div>`;
@@ -941,20 +925,17 @@
       row.style.cursor = "pointer";
       row.addEventListener("click", () => openDoc(id));
     });
-    const dlBtn = $("#lt-download-btn", luocdoEl);
-    if (dlBtn) {
-      dlBtn.addEventListener("click", (e) => {
-        e.stopPropagation();
-        downloadGanttDocs(doc, items);
-      });
-    }
   }
 
-  function downloadGanttDocs(currentDoc, items) {
-    const docs = {};
-    for (const it of items) {
-      const d = it.doc;
-      docs[d.id] = {
+  // Auto-cache: every time the user opens a doc, persist its full payload to
+  // localStorage. The local "DB" grows organically as the user actually uses
+  // the system — no manual download step needed.
+  function autoCacheDoc(d) {
+    if (!d || !d.id) return;
+    try {
+      const cacheKey = "vbpl.localdb.cache";
+      const existing = JSON.parse(localStorage.getItem(cacheKey) || "{}");
+      existing[d.id] = {
         id: d.id, type: d.type, typeKey: d.typeKey, number: d.number,
         shortTitle: d.shortTitle, title: d.title,
         issuer: d.issuer, signedBy: d.signedBy || null,
@@ -963,40 +944,12 @@
         status: d.status,
         replaces: d.replaces || null,
         sourceUrl: d.sourceUrl || null,
-        chapters: d.chapters || []
+        articleTotal: d.articleTotal || null,
+        chapters: d.chapters || [],
+        cachedAt: new Date().toISOString()
       };
-    }
-    const payload = {
-      generatedAt: new Date().toISOString(),
-      origin: "VBPL Review — Lược đồ download",
-      sourceDoc: { id: currentDoc.id, number: currentDoc.number, shortTitle: currentDoc.shortTitle },
-      sources: ["https://vbpl.vn", "https://vanban.chinhphu.vn"],
-      docCount: items.length,
-      documents: docs
-    };
-    const json = JSON.stringify(payload, null, 2);
-
-    // Persist to browser-local cache (acts as a true local DB) keyed by doc id
-    try {
-      const cacheKey = "vbpl.localdb.cache";
-      const existing = JSON.parse(localStorage.getItem(cacheKey) || "{}");
-      Object.assign(existing, docs);
       localStorage.setItem(cacheKey, JSON.stringify(existing));
-    } catch (err) { /* localStorage may be full or disabled */ }
-
-    // Trigger browser download so the user has a JSON copy on disk
-    const safeId = currentDoc.id.replace(/[^a-z0-9]+/gi, "-").replace(/^-+|-+$/g, "").toLowerCase();
-    const fileName = `vbpl-luocdo-${safeId}.json`;
-    const blob = new Blob([json], { type: "application/json;charset=utf-8" });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url; a.download = fileName;
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    setTimeout(() => URL.revokeObjectURL(url), 2000);
-
-    showToast(`Đã tải ${items.length} văn bản về CSDL nội bộ (${fileName})`);
+    } catch (err) { /* quota/disabled — silent */ }
   }
 
   // ===== Tabs =====

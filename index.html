@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>VBPL Review — Cổng tra cứu văn bản pháp luật Việt Nam</title>
-  <link rel="stylesheet" href="css/styles.css?v=13" />
+  <link rel="stylesheet" href="css/styles.css?v=14" />
 </head>
 <body>
 
@@ -123,8 +123,6 @@
           </a>
         </div>
       </div>
-      <a class="topnav-link" href="#newdocs">Văn bản mới</a>
-      <a class="topnav-link" href="#hotdocs-card">Văn bản hot</a>
     </div>
   </nav>
 
@@ -223,44 +221,8 @@
             </div>
           </div>
 
-          <!-- Văn bản hot (main card) -->
-          <div class="block" id="hotdocs-card">
-            <div class="block-head">
-              <span class="title">Văn bản hot</span>
-              <a href="#" class="more">Xem thêm →</a>
-            </div>
-            <div class="block-body">
-              <ul class="hot-list" id="hot-list-main"></ul>
-            </div>
-          </div>
-
         </div><!-- /land-main -->
 
-        <!-- RIGHT: sidebar -->
-        <aside class="land-aside">
-
-          <!-- Stats -->
-          <div class="aside-block aside-stats">
-            <h3>Thống kê CSDL</h3>
-            <ul>
-              <li><span class="stat-num" id="ast-total">0</span><span class="stat-lbl">Văn bản</span></li>
-              <li><span class="stat-num" id="ast-luat">0</span><span class="stat-lbl">Luật</span></li>
-              <li><span class="stat-num" id="ast-nd">0</span><span class="stat-lbl">Nghị định</span></li>
-              <li><span class="stat-num" id="ast-tt">0</span><span class="stat-lbl">Thông tư</span></li>
-            </ul>
-          </div>
-
-          <!-- Newsletter -->
-          <div class="aside-block newsletter">
-            <h3>Bản tin pháp luật</h3>
-            <p>Đăng ký nhận tóm tắt văn bản mới ban hành mỗi tuần qua email.</p>
-            <form onsubmit="event.preventDefault(); document.getElementById('toast').textContent='Đã đăng ký nhận bản tin'; document.getElementById('toast').classList.add('visible'); setTimeout(function(){document.getElementById('toast').classList.remove('visible')}, 1800);">
-              <input type="email" placeholder="email@domain.vn" required />
-              <button type="submit">Đăng ký</button>
-            </form>
-          </div>
-
-        </aside>
       </div>
     </div>
   </main>
@@ -363,7 +325,7 @@
   <div id="ref-popup" class="ref-popup hidden" role="tooltip"></div>
   <div id="toast" class="toast"></div>
 
-  <script src="data/documents.js?v=13"></script>
-  <script src="js/app.js?v=13"></script>
+  <script src="data/documents.js?v=14"></script>
+  <script src="js/app.js?v=14"></script>
 </body>
 </html>
