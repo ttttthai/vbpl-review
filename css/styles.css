@@ -577,6 +577,10 @@ table { border-collapse: collapse; }
   color: rgba(255, 255, 255, 0.78);
   line-height: 1.6;
 }
+.spotlight-actions {
+  display: flex; align-items: center; gap: 10px;
+  flex-wrap: wrap;
+}
 .spotlight .btn-cta {
   background: var(--orange);
   color: white;
@@ -587,8 +591,26 @@ table { border-collapse: collapse; }
   border-radius: 4px;
   display: inline-flex; align-items: center; gap: 6px;
   text-decoration: none;
+  cursor: pointer;
 }
 .spotlight .btn-cta:hover { background: var(--orange-dark); text-decoration: none; }
+.spotlight .btn-cta-secondary {
+  background: transparent;
+  color: white;
+  border: 1.5px solid rgba(255, 255, 255, 0.45);
+  padding: 9px 18px;
+  font-weight: 600;
+  font-size: 13.5px;
+  border-radius: 4px;
+  display: inline-flex; align-items: center; gap: 6px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+}
+.spotlight .btn-cta-secondary:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: white;
+}
 .spotlight-side {
   display: flex; flex-direction: column; gap: 8px;
 }

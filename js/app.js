@@ -348,12 +348,14 @@
     }
   }
 
-  // Spotlight CTA
+  // Spotlight CTAs (Mở văn bản + Lược đồ)
   $$("[data-doc-id]").forEach(el => {
-    if (el.tagName === "BUTTON" || (el.classList && el.classList.contains("btn-cta"))) {
+    if (el.tagName === "BUTTON" || (el.classList && (el.classList.contains("btn-cta") || el.classList.contains("btn-cta-secondary")))) {
       el.addEventListener("click", (e) => {
         e.preventDefault();
         openDoc(el.dataset.docId);
+        const tab = el.dataset.tab;
+        if (tab) setTimeout(() => activateTab(tab), 0);
       });
     }
   });
