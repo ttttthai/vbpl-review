@@ -220,7 +220,7 @@ window.LEGAL_DB = {
             id: "art-99",
             number: "Điều 99",
             heading: "Hoạt động ngân hàng của tổ chức tín dụng phi ngân hàng",
-            body: "1. Tổ chức tín dụng phi ngân hàng được thực hiện một hoặc một số hoạt động ngân hàng sau đây theo nội dung ghi trong Giấy phép:\na) Nhận tiền gửi của tổ chức;\nb) Phát hành chứng chỉ tiền gửi, kỳ phiếu, tín phiếu, trái phiếu để huy động vốn của tổ chức;\nc) Vay vốn của tổ chức tín dụng, tổ chức tài chính trong nước và nước ngoài theo quy định của pháp luật; vay Ngân hàng Nhà nước dưới hình thức tái cấp vốn theo quy định của Luật Ngân hàng Nhà nước Việt Nam;\nd) Cấp tín dụng dưới các hình thức quy định tại điểm a, điểm b và điểm e khoản 3 Điều 98 của Luật này;\nđ) Cung ứng dịch vụ thanh toán không qua tài khoản thanh toán của khách hàng.\n2. Tổ chức tín dụng phi ngân hàng không được phép nhận tiền gửi của cá nhân và cung ứng các dịch vụ thanh toán qua tài khoản của khách hàng."
+            body: "1. Tổ chức tín dụng phi ngân hàng được thực hiện một hoặc một số hoạt động ngân hàng sau đây theo nội dung ghi trong Giấy phép:\na) Nhận tiền gửi của tổ chức;\nb) Phát hành chứng chỉ tiền gửi, kỳ phiếu, tín phiếu, trái phiếu để huy động vốn của tổ chức;\nc) Vay vốn của tổ chức tín dụng, tổ chức tài chính trong nước và nước ngoài theo quy định của pháp luật; vay Ngân hàng Nhà nước dưới hình thức tái cấp vốn theo quy định của Luật Ngân hàng Nhà nước Việt Nam;\nd) Cấp tín dụng dưới các hình thức quy định tại điểm a, điểm b và điểm e khoản 3 Điều 98 của Luật này;\nđ) Cung ứng dịch vụ thanh toán không qua tài khoản thanh toán của khách hàng.\n2. Tổ chức tín dụng phi ngân hàng không được phép nhận tiền gửi của cá nhân và cung ứng các dịch vụ thanh toán qua tài khoản của khách hàng.\n3. Hoạt động cụ thể của công ty tài chính tổng hợp, công ty tài chính chuyên ngành (bao gồm công ty tài chính tiêu dùng) được quy định chi tiết tại Nghị định 39/2014/NĐ-CP. Hoạt động cho vay tiêu dùng của công ty tài chính tiêu dùng đối với cá nhân thực hiện theo Thông tư 43/2016/TT-NHNN (đã được sửa đổi tại Thông tư 18/2019/TT-NHNN)."
           },
           {
             id: "art-100",
@@ -1825,6 +1825,136 @@ window.LEGAL_DB = {
             number: "Điều 8",
             heading: "Những nhu cầu vốn không được cho vay",
             body: "Tổ chức tín dụng, chi nhánh ngân hàng nước ngoài không được cho vay đối với các nhu cầu vốn sau đây:\n1. Để thực hiện các hoạt động đầu tư kinh doanh thuộc ngành, nghề mà pháp luật cấm đầu tư kinh doanh.\n2. Để thanh toán các chi phí, đáp ứng các nhu cầu tài chính của các giao dịch, hành vi mà pháp luật cấm.\n3. Để mua, sử dụng các hàng hoá, dịch vụ thuộc ngành, nghề mà pháp luật cấm đầu tư kinh doanh.\n4. Để mua vàng miếng.\n5. Để trả nợ khoản nợ vay tại chính tổ chức tín dụng cho vay trừ trường hợp cho vay để thanh toán lãi tiền vay phát sinh trong quá trình thi công xây dựng công trình."
+          }
+        ]
+      }
+    ]
+  },
+
+  // ===== Consumer-finance / Tài chính tiêu dùng cluster =====
+  // Linked to Luật TCTD 32/2024/QH15 via Điều 4 (định nghĩa công ty tài chính)
+  // and Điều 99 (Hoạt động ngân hàng của TCTD phi ngân hàng).
+
+  "43/2016/TT-NHNN": {
+    id: "43/2016/TT-NHNN",
+    type: "Thông tư",
+    typeKey: "thongtu",
+    number: "43/2016/TT-NHNN",
+    shortTitle: "TT 43/2016/TT-NHNN về cho vay tiêu dùng của công ty tài chính",
+    title: "Quy định cho vay tiêu dùng của công ty tài chính",
+    issuer: "Ngân hàng Nhà nước Việt Nam",
+    signedBy: "Nguyễn Đồng Tiến",
+    issuedDate: "2016-12-30",
+    effectiveDate: "2017-03-15",
+    status: "Có hiệu lực (sửa đổi 18/2019/TT-NHNN)",
+    articleTotal: 16,
+    sourceUrl: "https://vbpl.vn/nganhangnhanuoc/Pages/vbpq-toanvan.aspx?ItemID=119086",
+    chapters: [
+      {
+        title: "CHƯƠNG I",
+        subtitle: "QUY ĐỊNH CHUNG",
+        articles: [
+          {
+            id: "art-1",
+            number: "Điều 1",
+            heading: "Phạm vi điều chỉnh",
+            body: "Thông tư này quy định về hoạt động cho vay tiêu dùng của công ty tài chính theo quy định tại Luật Các tổ chức tín dụng số 32/2024/QH15 và quy định khác của pháp luật có liên quan."
+          },
+          {
+            id: "art-3",
+            number: "Điều 3",
+            heading: "Giải thích từ ngữ",
+            body: "1. Cho vay tiêu dùng là việc công ty tài chính cho vay đối với khách hàng là cá nhân để mua, sử dụng hàng hoá hoặc dịch vụ không nhằm mục đích phát sinh thu nhập từ hoạt động kinh doanh, hoạt động thương mại với tổng dư nợ cho vay tiêu dùng đối với một khách hàng tại công ty tài chính đó không vượt quá 100.000.000 đồng.\n2. Khách hàng vay tiêu dùng là cá nhân Việt Nam từ đủ 18 tuổi trở lên có năng lực hành vi dân sự đầy đủ theo quy định của Bộ luật Dân sự số 91/2015/QH13."
+          },
+          {
+            id: "art-7",
+            number: "Điều 7",
+            heading: "Lãi suất cho vay tiêu dùng",
+            body: "1. Lãi suất cho vay tiêu dùng do công ty tài chính và khách hàng thoả thuận theo quy định của Luật Các tổ chức tín dụng số 32/2024/QH15.\n2. Công ty tài chính phải ban hành quy định về khung lãi suất cho vay tiêu dùng áp dụng thống nhất trong toàn hệ thống trong từng thời kỳ, trong đó bao gồm mức lãi suất cao nhất, mức lãi suất thấp nhất đối với từng sản phẩm cho vay tiêu dùng.\n3. Trong thời hạn 10 ngày làm việc kể từ ngày ban hành mới hoặc sửa đổi, bổ sung khung lãi suất, công ty tài chính phải gửi trực tiếp hoặc qua đường bưu điện cho Ngân hàng Nhà nước (Cơ quan Thanh tra, giám sát ngân hàng) báo cáo về khung lãi suất."
+          },
+          {
+            id: "art-10",
+            number: "Điều 10",
+            heading: "Biện pháp đôn đốc, thu hồi nợ",
+            body: "1. Biện pháp đôn đốc, thu hồi nợ phù hợp với đặc thù của khách hàng vay tiêu dùng và quy định của pháp luật, trong đó:\na) Không được sử dụng biện pháp đe doạ đối với khách hàng;\nb) Không nhắc nợ, đòi nợ, gửi thông tin về việc thu hồi nợ của khách hàng đối với tổ chức, cá nhân không có nghĩa vụ trả nợ cho công ty tài chính, trừ trường hợp có yêu cầu của cơ quan nhà nước có thẩm quyền theo quy định của pháp luật;\nc) Bảo mật thông tin khách hàng theo quy định của pháp luật;\nd) Thời gian nhắc nợ do các bên thoả thuận trong hợp đồng cho vay tiêu dùng nhưng phải trong khoảng thời gian từ 7 giờ đến 21 giờ và không bao gồm việc đe doạ khách hàng."
+          }
+        ]
+      }
+    ]
+  },
+
+  "18/2019/TT-NHNN": {
+    id: "18/2019/TT-NHNN",
+    type: "Thông tư",
+    typeKey: "thongtu",
+    number: "18/2019/TT-NHNN",
+    shortTitle: "TT 18/2019/TT-NHNN sửa đổi TT 43/2016",
+    title: "Sửa đổi, bổ sung một số điều của Thông tư 43/2016/TT-NHNN quy định cho vay tiêu dùng của công ty tài chính",
+    issuer: "Ngân hàng Nhà nước Việt Nam",
+    signedBy: "Đoàn Thái Sơn",
+    issuedDate: "2019-11-04",
+    effectiveDate: "2020-01-01",
+    status: "Có hiệu lực",
+    articleTotal: 4,
+    sourceUrl: "https://vbpl.vn/nganhangnhanuoc/Pages/vbpq-toanvan.aspx?ItemID=140817",
+    chapters: [
+      {
+        title: "PHẦN MỞ ĐẦU",
+        subtitle: "",
+        articles: [
+          {
+            id: "art-1",
+            number: "Điều 1",
+            heading: "Sửa đổi, bổ sung Thông tư 43/2016/TT-NHNN",
+            body: "Sửa đổi, bổ sung một số điều của Thông tư 43/2016/TT-NHNN quy định cho vay tiêu dùng của công ty tài chính, tập trung vào: tỷ lệ giải ngân trực tiếp cho khách hàng đối với một số sản phẩm cho vay tiêu dùng (cho vay không có mục đích cụ thể) tối đa 70% tổng dư nợ; siết quy định đôn đốc thu hồi nợ — chỉ được liên hệ khách hàng vào khoảng thời gian từ 7 giờ đến 21 giờ; bắt buộc công ty tài chính công khai khung lãi suất, biểu phí trên trang thông tin điện tử và tại trụ sở; tăng cường nghĩa vụ báo cáo Ngân hàng Nhà nước."
+          },
+          {
+            id: "art-2",
+            number: "Điều 2",
+            heading: "Hiệu lực thi hành",
+            body: "1. Thông tư này có hiệu lực thi hành từ ngày 01 tháng 01 năm 2020.\n2. Đối với hợp đồng cho vay tiêu dùng đã ký kết giữa công ty tài chính và khách hàng trước ngày Thông tư này có hiệu lực thi hành, các bên tiếp tục thực hiện theo các thoả thuận đã cam kết, trừ trường hợp các bên có thoả thuận sửa đổi, bổ sung phù hợp với quy định tại Thông tư này."
+          }
+        ]
+      }
+    ]
+  },
+
+  "39/2014/ND-CP": {
+    id: "39/2014/ND-CP",
+    type: "Nghị định",
+    typeKey: "nghidinh",
+    number: "39/2014/NĐ-CP",
+    shortTitle: "NĐ 39/2014/NĐ-CP về công ty tài chính, CTCTLT",
+    title: "Quy định về hoạt động của công ty tài chính và công ty cho thuê tài chính",
+    issuer: "Chính phủ",
+    signedBy: "Nguyễn Tấn Dũng",
+    issuedDate: "2014-05-07",
+    effectiveDate: "2014-07-01",
+    status: "Có hiệu lực",
+    articleTotal: 27,
+    sourceUrl: "https://vanban.chinhphu.vn/?pageid=27160&docid=173354",
+    chapters: [
+      {
+        title: "CHƯƠNG I",
+        subtitle: "QUY ĐỊNH CHUNG",
+        articles: [
+          {
+            id: "art-1",
+            number: "Điều 1",
+            heading: "Phạm vi điều chỉnh",
+            body: "Nghị định này quy định về hoạt động của công ty tài chính và công ty cho thuê tài chính theo quy định tại Luật Các tổ chức tín dụng số 32/2024/QH15."
+          },
+          {
+            id: "art-3",
+            number: "Điều 3",
+            heading: "Loại hình hoạt động của công ty tài chính",
+            body: "1. Công ty tài chính tổng hợp được thực hiện một hoặc một số các hoạt động ngân hàng quy định tại Luật Các tổ chức tín dụng phù hợp với loại hình tổ chức tín dụng phi ngân hàng.\n2. Công ty tài chính chuyên ngành bao gồm:\na) Công ty tài chính bao thanh toán;\nb) Công ty tài chính tín dụng tiêu dùng (sau đây gọi tắt là công ty tài chính tiêu dùng);\nc) Công ty tài chính cho thuê tài chính.\n3. Công ty tài chính tiêu dùng được thực hiện hoạt động cho vay tiêu dùng, phát hành thẻ tín dụng, chiết khấu, tái chiết khấu công cụ chuyển nhượng, các giấy tờ có giá khác phục vụ tiêu dùng theo quy định của Ngân hàng Nhà nước."
+          },
+          {
+            id: "art-7",
+            number: "Điều 7",
+            heading: "Hoạt động cho vay tiêu dùng của công ty tài chính tiêu dùng",
+            body: "1. Công ty tài chính tiêu dùng được cho vay tiêu dùng đối với khách hàng là cá nhân theo quy định tại Luật Các tổ chức tín dụng số 32/2024/QH15 và Thông tư 43/2016/TT-NHNN của Ngân hàng Nhà nước.\n2. Công ty tài chính tiêu dùng không được nhận tiền gửi của cá nhân và không được cung ứng các dịch vụ thanh toán qua tài khoản của khách hàng theo quy định tại Điều 99 Luật Các tổ chức tín dụng số 32/2024/QH15.\n3. Tổng dư nợ cho vay tiêu dùng đối với một khách hàng tại công ty tài chính tiêu dùng không vượt quá 100.000.000 đồng theo quy định tại Thông tư 43/2016/TT-NHNN."
           }
         ]
       }
