@@ -345,8 +345,11 @@
   }
   $$(".topnav-menu-item").forEach(item => {
     item.addEventListener("click", (e) => {
-      e.preventDefault();
       const f = item.dataset.field;
+      // Special slots handled elsewhere: "__add" → modal trigger,
+      // "user:..." → custom user field click handler in renderUserFieldsMenu.
+      if (f === "__add" || (f && f.startsWith("user:"))) return;
+      e.preventDefault();
       if (topnavFieldsItem) topnavFieldsItem.classList.remove("open");
       handleFieldClick(f);
     });
@@ -363,13 +366,15 @@
       "dan-su": "Dân sự – Hợp đồng",
       "nang-luong": "Phát triển năng lượng tái tạo",
       "du-lieu-ca-nhan": "Luật Bảo vệ dữ liệu cá nhân",
+      "dien-luc": "Luật Điện lực",
       "khac": "Lĩnh vực khác"
     };
     const fieldMatchers = {
       "ngan-hang": /(tổ chức tín dụng|ngân hàng|tiền tệ|tín dụng|tài chính)/,
       "hinh-su": /(hình sự|tội phạm)/,
       "nang-luong": /(năng lượng|điện lực|điện gió|điện mặt trời|tái tạo|dppa|mua bán điện)/,
-      "du-lieu-ca-nhan": /(dữ liệu cá nhân|bảo vệ dữ liệu|thông tin cá nhân|pdpd)/
+      "du-lieu-ca-nhan": /(dữ liệu cá nhân|bảo vệ dữ liệu|thông tin cá nhân|pdpd)/,
+      "dien-luc": /(điện lực)/
     };
     const lbl = labels[f] || "lĩnh vực này";
     const matcher = fieldMatchers[f];
@@ -513,7 +518,7 @@
   function renderStats() {
     const docs = Object.values(DB);
     const counts = { Luật: 0, "Nghị định": 0, "Thông tư": 0, "Bộ luật": 0 };
-    let bankingCount = 0, criminalCount = 0, energyCount = 0, pdpCount = 0;
+    let bankingCount = 0, criminalCount = 0, energyCount = 0, pdpCount = 0, dienLucCount = 0;
     for (const d of docs) {
       if (counts[d.type] !== undefined) counts[d.type]++;
       const txt = (d.title + " " + d.shortTitle).toLowerCase();
@@ -521,6 +526,7 @@
       if (/(hình sự|tội phạm)/.test(txt)) criminalCount++;
       if (/(năng lượng|điện lực|điện gió|điện mặt trời|tái tạo|dppa|mua bán điện)/.test(txt)) energyCount++;
       if (/(dữ liệu cá nhân|bảo vệ dữ liệu|thông tin cá nhân|pdpd)/.test(txt)) pdpCount++;
+      if (/(điện lực)/.test(txt)) dienLucCount++;
     }
 
     const setText = (id, v) => { const el = $(id); if (el) el.textContent = v; };
@@ -603,7 +609,164 @@
     setText("#tn-fc-criminal", criminalCount + " văn bản");
     setText("#tn-fc-energy", energyCount + " văn bản");
     setText("#tn-fc-pdp", pdpCount + " văn bản");
+    setText("#tn-fc-dienluc", dienLucCount + " văn bản");
+
+    // Update counts for any user-added fields too
+    updateUserFieldCounts(docs);
   }
+
+  // ===== User-added "Lĩnh vực" sectors =====
+  // Persist a list of {key, label, anchorDocId, matcher} in localStorage so
+  // the dropdown remembers fields added across visits. The anchor doc is also
+  // stored to a queue file so the GitHub Action scraper picks it up next run.
+  const USER_FIELDS_KEY = "vbpl.userFields";
+  const SCRAPE_QUEUE_KEY = "vbpl.scrapeQueue";
+
+  function loadUserFields() {
+    try { return JSON.parse(localStorage.getItem(USER_FIELDS_KEY) || "[]"); }
+    catch { return []; }
+  }
+  function saveUserFields(list) {
+    try { localStorage.setItem(USER_FIELDS_KEY, JSON.stringify(list)); } catch {}
+  }
+  function loadScrapeQueue() {
+    try { return JSON.parse(localStorage.getItem(SCRAPE_QUEUE_KEY) || "[]"); }
+    catch { return []; }
+  }
+  function saveScrapeQueue(list) {
+    try { localStorage.setItem(SCRAPE_QUEUE_KEY, JSON.stringify(list)); } catch {}
+  }
+
+  function updateUserFieldCounts(docs) {
+    const fields = loadUserFields();
+    for (const f of fields) {
+      const cnt = docs.filter(d => d.id === f.anchorDocId).length;
+      const el = document.getElementById("tn-fc-user-" + f.key);
+      if (el) el.textContent = cnt + " văn bản (chờ tải toàn văn)";
+    }
+  }
+
+  function renderUserFieldsMenu() {
+    const wrap = $("#topnav-user-fields");
+    if (!wrap) return;
+    const fields = loadUserFields();
+    if (!fields.length) { wrap.innerHTML = ""; return; }
+    wrap.innerHTML = fields.map(f => `
+      <a class="topnav-menu-item" data-field="user:${escapeHtml(f.key)}" role="menuitem">
+        <span class="tn-ico r1"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></span>
+        <span class="tn-text"><span class="tn-name">${escapeHtml(f.label)}</span><span class="tn-cnt" id="tn-fc-user-${escapeHtml(f.key)}">0 văn bản</span></span>
+      </a>
+    `).join("");
+    // Wire click handlers for user fields
+    wrap.querySelectorAll(".topnav-menu-item").forEach(item => {
+      item.addEventListener("click", (e) => {
+        e.preventDefault();
+        const key = item.dataset.field.replace(/^user:/, "");
+        const f = loadUserFields().find(x => x.key === key);
+        if (!f) return;
+        const topnavFieldsItem2 = $("#topnav-fields-btn")?.closest(".topnav-dropdown");
+        if (topnavFieldsItem2) topnavFieldsItem2.classList.remove("open");
+        // Open the anchor doc as a preview
+        if (H.findDoc(f.anchorDocId)) {
+          showDocPreview(f.anchorDocId);
+          showToast(`Lĩnh vực "${f.label}" — đang xem ${f.anchorDocId}`);
+        } else {
+          showToast(`Lĩnh vực "${f.label}" đã được xếp hàng. Văn bản sẽ xuất hiện sau khi scraper chạy.`);
+        }
+      });
+    });
+  }
+
+  // ===== "Thêm lĩnh vực mới" modal =====
+  (function wireAddFieldModal() {
+    const trigger = $("#topnav-add-field-btn");
+    const modal = $("#add-field-modal");
+    const form = $("#add-field-form");
+    const closeBtn = $("#add-field-close");
+    const cancelBtn = $("#add-field-cancel");
+    if (!trigger || !modal || !form) return;
+
+    function open() { modal.hidden = false; setTimeout(() => $("#af-field-name")?.focus(), 30); }
+    function close() { modal.hidden = true; form.reset(); }
+
+    trigger.addEventListener("click", (e) => {
+      e.preventDefault(); e.stopPropagation();
+      // Close the dropdown
+      const dd = trigger.closest(".topnav-dropdown");
+      if (dd) dd.classList.remove("open");
+      open();
+    });
+    closeBtn.addEventListener("click", close);
+    cancelBtn.addEventListener("click", close);
+    modal.addEventListener("click", (e) => { if (e.target === modal) close(); });
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !modal.hidden) close(); });
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const fieldName = $("#af-field-name").value.trim();
+      const docNumber = $("#af-doc-number").value.trim();
+      const docTitle = $("#af-doc-title").value.trim();
+      const sourceUrl = $("#af-source-url").value.trim();
+      if (!/^[0-9]+\/[0-9]+\/QH[0-9]+$/.test(docNumber)) {
+        showToast("Số hiệu Luật phải có dạng NN/YYYY/QHXX (ví dụ 58/2014/QH13)");
+        return;
+      }
+      if (H.findDoc(docNumber)) {
+        showToast(`Văn bản ${docNumber} đã có trong CSDL. Hãy mở từ ô tìm kiếm.`);
+        close();
+        return;
+      }
+      const yearMatch = docNumber.match(/^[0-9]+\/([0-9]{4})\//);
+      const year = yearMatch ? yearMatch[1] : null;
+      // Add stub doc to in-memory DB (so search finds it immediately)
+      const stub = {
+        id: docNumber,
+        type: "Luật",
+        typeKey: "luat",
+        number: docNumber,
+        shortTitle: docTitle.length > 60 ? docTitle.slice(0, 57) + "…" : docTitle,
+        title: docTitle,
+        issuer: "Quốc hội",
+        signedBy: null,
+        issuedDate: year ? `${year}-01-01` : null,
+        effectiveDate: null,
+        status: "Chờ tải toàn văn",
+        articleTotal: null,
+        sourceUrl: sourceUrl || null,
+        chapters: [{
+          title: "TOÀN VĂN", subtitle: "",
+          articles: [{
+            id: "art-pending",
+            number: "Toàn văn",
+            heading: "Đang chờ scraper tải nội dung",
+            body: `Văn bản này vừa được người dùng thêm vào CSDL nội bộ qua chức năng "Thêm lĩnh vực mới". Toàn văn và các văn bản liên quan sẽ được scraper (.github/workflows/scrape.yml) tải về trong lần chạy kế tiếp.\n\nSố hiệu: ${docNumber}\nTên: ${docTitle}\n${sourceUrl ? "Nguồn: " + sourceUrl : "Nguồn: scraper sẽ tìm trên vbpl.vn theo số hiệu."}`
+          }]
+        }]
+      };
+      window.LEGAL_DB[docNumber] = stub;
+
+      // Persist user field
+      const fields = loadUserFields();
+      const key = "f-" + Date.now().toString(36);
+      fields.push({ key, label: fieldName, anchorDocId: docNumber, createdAt: new Date().toISOString() });
+      saveUserFields(fields);
+
+      // Append to scraper queue
+      const queue = loadScrapeQueue();
+      queue.push({ docNumber, docTitle, sourceUrl: sourceUrl || null, queuedAt: new Date().toISOString() });
+      saveScrapeQueue(queue);
+
+      // Re-render menu + counts
+      renderUserFieldsMenu();
+      renderLandingContent();
+
+      close();
+      showToast(`Đã thêm "${fieldName}" và xếp ${docNumber} vào hàng đợi scraper.`);
+    });
+
+    // On boot, render any persisted user fields
+    renderUserFieldsMenu();
+  })();
 
   // Văn bản mới — sorted by issuedDate desc
   function renderNewdocs() {

@@ -443,6 +443,140 @@ table { border-collapse: collapse; }
 .tn-name { font-weight: 600; color: var(--ink); }
 .tn-cnt { font-size: 11px; color: var(--ink-mute); margin-top: 1px; }
 
+/* "Thêm lĩnh vực mới" affordance */
+.topnav-add-field {
+  border-top: 1px dashed var(--line);
+  margin-top: 4px;
+}
+.tn-ico-add {
+  background: var(--orange-soft);
+  color: var(--orange-dark);
+  width: 28px; height: 28px;
+  border-radius: 4px;
+  display: inline-flex; align-items: center; justify-content: center;
+}
+.topnav-user-fields {
+  list-style: none; padding: 0; margin: 0;
+  border-top: 1px dashed var(--line);
+}
+.topnav-user-fields:empty { display: none; }
+
+/* Modal: Thêm lĩnh vực mới */
+.modal-backdrop {
+  position: fixed; inset: 0; z-index: 200;
+  background: rgba(15, 28, 51, 0.55);
+  display: flex; align-items: center; justify-content: center;
+  padding: 20px;
+  animation: fadeIn 0.15s ease-out;
+}
+.modal-backdrop[hidden] { display: none !important; }
+.modal {
+  background: var(--paper);
+  border: 1px solid var(--line-strong);
+  border-top: 4px solid var(--orange);
+  border-radius: 5px;
+  width: min(520px, 100%);
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 60px -10px rgba(15, 23, 42, 0.35);
+  padding: 24px 26px;
+}
+.modal-head {
+  display: flex; align-items: flex-start; justify-content: space-between;
+  margin-bottom: 6px;
+}
+.modal-head h2 {
+  font-family: Georgia, serif;
+  font-size: 19px; font-weight: 700;
+  color: var(--ink); margin: 0;
+  border: none; padding: 0;
+}
+.modal-close {
+  background: transparent; border: none;
+  color: var(--ink-mute); font-size: 24px; line-height: 1;
+  cursor: pointer; padding: 0 4px;
+}
+.modal-close:hover { color: var(--orange-dark); }
+.modal-desc {
+  font-family: Georgia, serif;
+  font-size: 12.5px; color: var(--ink-soft);
+  line-height: 1.55; margin: 0 0 18px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--line);
+}
+.modal-desc strong { color: var(--orange-dark); }
+.modal-field {
+  display: block; margin-bottom: 14px;
+}
+.modal-field-label {
+  display: block;
+  font-family: "Inter", "Segoe UI", sans-serif;
+  font-size: 11px; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.06em;
+  color: var(--ink-soft);
+  margin-bottom: 4px;
+}
+.modal-field input {
+  width: 100%;
+  font-family: "Inter", "Segoe UI", sans-serif;
+  font-size: 13px;
+  padding: 8px 10px;
+  background: white;
+  border: 1px solid var(--line-strong);
+  border-radius: 3px;
+  color: var(--ink);
+}
+.modal-field input:focus {
+  outline: none;
+  border-color: var(--orange);
+  box-shadow: 0 0 0 3px rgba(21, 168, 132, 0.15);
+}
+.modal-field-hint {
+  display: block;
+  font-family: "Inter", "Segoe UI", sans-serif;
+  font-size: 11px; color: var(--ink-mute);
+  margin-top: 4px;
+}
+.modal-field-hint code {
+  background: var(--paper-2);
+  padding: 1px 5px;
+  border-radius: 2px;
+  font-size: 10.5px;
+}
+.modal-actions {
+  display: flex; align-items: center; justify-content: flex-end; gap: 10px;
+  margin-top: 22px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+.modal-cancel, .modal-submit {
+  font-family: "Inter", "Segoe UI", sans-serif;
+  font-size: 12.5px; font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 3px;
+  cursor: pointer;
+  letter-spacing: 0.01em;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+.modal-cancel {
+  background: transparent;
+  color: var(--ink-soft);
+  border: 1px solid var(--line-strong);
+}
+.modal-cancel:hover {
+  border-color: var(--ink-mute);
+  color: var(--ink);
+}
+.modal-submit {
+  background: var(--orange);
+  color: white;
+  border: 1px solid var(--orange);
+}
+.modal-submit:hover {
+  background: var(--orange-dark);
+  border-color: var(--orange-dark);
+}
+
 /* Liên kết nhanh — main column card grid */
 .quicklinks-grid {
   display: grid;
