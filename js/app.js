@@ -277,6 +277,34 @@
     }
   });
 
+  // ===== Navigation stack (drives the "Quay lại" button) =====
+  const _navHistory = [];
+  let _currentNav = null;
+  let _suppressNav = false;
+  function _recordNav(state) {
+    if (_suppressNav) return;
+    if (_currentNav) _navHistory.push(_currentNav);
+    _currentNav = state;
+  }
+  function _navBack() {
+    if (!_navHistory.length) {
+      // Already on the first page — fall back to home
+      _suppressNav = true; try { goHome(); } finally { _suppressNav = false; }
+      return;
+    }
+    const prev = _navHistory.pop();
+    _suppressNav = true;
+    try {
+      if (prev.type === "doc") openDoc(prev.docId, prev.opts || {});
+      else goHome();
+    } finally {
+      _suppressNav = false;
+      _currentNav = prev;
+    }
+  }
+  const btnBack = $("#btn-back");
+  if (btnBack) btnBack.addEventListener("click", (e) => { e.preventDefault(); _navBack(); });
+
   // Header / nav buttons
   if (brandHome) brandHome.addEventListener("click", (e) => { e.preventDefault(); goHome(); });
   if (navHome) navHome.addEventListener("click", (e) => { e.preventDefault(); goHome(); });
@@ -353,13 +381,7 @@
       el.addEventListener("click", (e) => {
         e.preventDefault();
         const tab = el.dataset.tab;
-        openDoc(el.dataset.docId);
-        // Tabbed entry from the spotlight (Lược đồ button) collapses the
-        // viewer down to just the Gantt chart. Set this AFTER openDoc so
-        // openDoc's default reset doesn't wipe it. Subsequent navigation
-        // through related-doc clicks will reset the mode automatically.
-        if (tab === "luocdo") setLuocdoOnlyMode(true);
-        if (tab) setTimeout(() => activateTab(tab), 0);
+        openDoc(el.dataset.docId, { tab, luocdoOnly: tab === "luocdo" });
       });
     }
   });
@@ -474,6 +496,7 @@
   });
 
   function goHome() {
+    _recordNav({ type: "home" });
     setLuocdoOnlyMode(false);
     viewer.classList.add("hidden");
     landing.classList.remove("hidden");
@@ -716,10 +739,13 @@
   }
 
   // ===== Open / render document =====
-  function openDoc(id) {
+  function openDoc(id, opts = {}) {
     const doc = H.findDoc(id);
     if (!doc) return;
-    setLuocdoOnlyMode(false); // default: full viewer; spotlight CTA re-enables
+    _recordNav({ type: "doc", docId: id, opts });
+    // Default: reset luocdo-only. Caller can opt back in via opts.luocdoOnly
+    // (the spotlight Lược-đồ button does this) or by setting it AFTER openDoc.
+    setLuocdoOnlyMode(!!opts.luocdoOnly);
     currentDoc = doc;
     pushRecent(doc.id);
     autoCacheDoc(doc);
@@ -743,7 +769,7 @@
     renderRelated(doc);
     renderLuocdo(doc);
     renderHot(); // refresh side hot list
-    activateTab("toanvan");
+    activateTab(opts.tab || "toanvan");
     applyReadSettings();
 
     window.scrollTo({ top: 0 });
@@ -993,20 +1019,24 @@
       // chip on the left. Role is still on the bar for the dotted/hatched
       // overlays (current = ring, expired = stripes).
       const barCls = ["lt-bar", `type-${d.typeKey || "luat"}`, `role-${it.role}`, isExpired ? "expired" : "active"].join(" ");
+      // Pin the rel-label to the right edge of the bar so it stays close
+      // to the timeline event without clipping the track for distant docs.
+      const relLeftPct = Math.max(0, Math.min(86, startPct));
       return `
         <div class="lt-row role-${it.role}" data-doc-id="${escapeHtml(d.id)}">
           <div class="lt-meta">
             <span class="lt-type ${d.typeKey}">${escapeHtml(d.type)}</span>
             <div class="lt-meta-text">
               <div class="lt-num">${escapeHtml(d.number)}</div>
-              <div class="lt-title">${escapeHtml(d.shortTitle)}</div>
-              <div class="lt-rel">${escapeHtml(it.relLabel)}</div>
+              <div class="lt-title" title="${escapeHtml(d.shortTitle)}">${escapeHtml(d.shortTitle)}</div>
             </div>
           </div>
+          <div class="lt-splitter" aria-hidden="true"></div>
           <div class="lt-track">
             <div class="${barCls}" style="left:${startPct}%; width:${widthPct}%" title="${escapeHtml(formatDate(it.start))} → ${isExpired ? escapeHtml(formatDate(d.expiryDate || it.end)) : "hiện tại"}">
               <span class="lt-bar-label">${escapeHtml(formatDate(it.start))}${isExpired ? " → " + escapeHtml(formatDate(d.expiryDate || it.end)) : ""}</span>
             </div>
+            <div class="lt-rel" style="left:${relLeftPct}%">${escapeHtml(it.relLabel)}</div>
           </div>
         </div>
       `;
@@ -1021,7 +1051,11 @@
         <span class="lt-legend-item"><span class="lt-swatch expired"></span>Hết hiệu lực</span>
       </div>
       <div class="lt-wrap">
-        <div class="lt-axis">${tickHtml}${todayMarker}</div>
+        <div class="lt-axis-row">
+          <div class="lt-axis-spacer" aria-hidden="true"></div>
+          <div class="lt-splitter" aria-hidden="true"></div>
+          <div class="lt-axis">${tickHtml}${todayMarker}</div>
+        </div>
         <div class="lt-rows">${rowsHtml}</div>
       </div>
       <div class="ld-group" style="margin-top: 22px;">
@@ -1042,8 +1076,49 @@
     luocdoEl.querySelectorAll(".lt-row[data-doc-id]").forEach(row => {
       const id = row.dataset.docId;
       row.style.cursor = "pointer";
-      row.addEventListener("click", () => openDoc(id));
+      row.addEventListener("click", (e) => {
+        if (e.target.classList.contains("lt-splitter")) return;
+        openDoc(id);
+      });
     });
+    wireMetaSplitter(luocdoEl.querySelector(".lt-wrap"));
+    // Restore persisted column width
+    const wrap = luocdoEl.querySelector(".lt-wrap");
+    if (wrap) {
+      const stored = parseInt(localStorage.getItem("vbpl.lt.metaW") || "0", 10);
+      if (stored >= 120 && stored <= 400) wrap.style.setProperty("--lt-meta-width", stored + "px");
+    }
+  }
+
+  function wireMetaSplitter(wrap) {
+    if (!wrap || wrap.dataset.splitterBound) return;
+    wrap.dataset.splitterBound = "1";
+    let dragging = null;
+    function onDown(e) {
+      const handle = e.target.closest(".lt-splitter");
+      if (!handle || !wrap.contains(handle)) return;
+      e.preventDefault();
+      e.stopPropagation();
+      const cs = getComputedStyle(wrap).getPropertyValue("--lt-meta-width") || "200";
+      dragging = { startX: e.clientX, startW: parseInt(cs, 10) || 200 };
+      document.body.classList.add("lt-resizing");
+    }
+    function onMove(e) {
+      if (!dragging) return;
+      const dx = e.clientX - dragging.startX;
+      const w = Math.max(120, Math.min(400, dragging.startW + dx));
+      wrap.style.setProperty("--lt-meta-width", w + "px");
+    }
+    function onUp() {
+      if (!dragging) return;
+      const w = parseInt(getComputedStyle(wrap).getPropertyValue("--lt-meta-width"), 10);
+      try { localStorage.setItem("vbpl.lt.metaW", String(w)); } catch {}
+      dragging = null;
+      document.body.classList.remove("lt-resizing");
+    }
+    wrap.addEventListener("mousedown", onDown);
+    document.addEventListener("mousemove", onMove);
+    document.addEventListener("mouseup", onUp);
   }
 
   // Auto-cache: every time the user opens a doc, persist its full payload to
