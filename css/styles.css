@@ -1387,8 +1387,7 @@ body.luocdo-only .props-wrap,
 body.luocdo-only .tabbar,
 body.luocdo-only .read-toolbar,
 body.luocdo-only .viewer-grid > aside,
-body.luocdo-only .tab-panel[data-panel="toanvan"],
-body.luocdo-only .tab-panel[data-panel="thuoctinh"] {
+body.luocdo-only .tab-panel[data-panel="toanvan"] {
   display: none !important;
 }
 body.luocdo-only .tab-panel[data-panel="luocdo"] {

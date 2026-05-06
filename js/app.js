@@ -20,7 +20,6 @@
 
   const docTitlebar = $("#doc-titlebar");
   const propsTable = $("#props-table");
-  const propsFull = $("#props-full");
   const docBody = $("#doc-body");
   const tocEl = $("#toc");
   const tocCount = $("#toc-count");
@@ -780,19 +779,8 @@
     `;
     propsTable.innerHTML = compact;
 
-    const full = `
-      <tr><th>Số/Ký hiệu</th><td colspan="3"><span class="num">${escapeHtml(doc.number)}</span></td></tr>
-      <tr><th>Tên văn bản</th><td colspan="3">${escapeHtml(doc.title)}</td></tr>
-      <tr><th>Tên rút gọn</th><td colspan="3">${escapeHtml(doc.shortTitle)}</td></tr>
-      <tr><th>Loại văn bản</th><td>${escapeHtml(doc.type)}</td>
-          <th>Cơ quan ban hành</th><td>${escapeHtml(doc.issuer)}</td></tr>
-      <tr><th>Ngày ban hành</th><td>${formatDate(doc.issuedDate)}</td>
-          <th>Ngày có hiệu lực</th><td>${formatDate(doc.effectiveDate)}</td></tr>
-      <tr><th>Người ký</th><td>${escapeHtml(doc.signedBy || "—")}</td>
-          <th>Tình trạng</th><td><span class="status ${cls}">${escapeHtml(doc.status)}</span></td></tr>
-      <tr><th>Liên kết nguồn</th><td colspan="3">${doc.sourceUrl ? `<a href="${escapeHtml(doc.sourceUrl)}" target="_blank" rel="noopener">${escapeHtml(doc.sourceUrl)}</a>` : "—"}</td></tr>
-    `;
-    propsFull.innerHTML = full;
+    // Thuộc tính tab was removed; the compact props table on top covers
+    // everything users need at a glance.
   }
 
   function renderBody(doc) {
