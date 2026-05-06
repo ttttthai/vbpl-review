@@ -1831,6 +1831,62 @@ window.LEGAL_DB = {
     ]
   },
 
+  // ===== Personal Data Protection sector =====
+
+  "13/2023/ND-CP": {
+    id: "13/2023/ND-CP",
+    type: "Nghị định",
+    typeKey: "nghidinh",
+    number: "13/2023/NĐ-CP",
+    shortTitle: "NĐ 13/2023/NĐ-CP về bảo vệ dữ liệu cá nhân",
+    title: "Nghị định bảo vệ dữ liệu cá nhân",
+    issuer: "Chính phủ",
+    signedBy: "Trần Lưu Quang",
+    issuedDate: "2023-04-17",
+    effectiveDate: "2023-07-01",
+    status: "Có hiệu lực",
+    articleTotal: 44,
+    sourceUrl: "https://vanban.chinhphu.vn/?pageid=27160&docid=207766",
+    chapters: [
+      {
+        title: "CHƯƠNG I",
+        subtitle: "QUY ĐỊNH CHUNG",
+        articles: [
+          {
+            id: "art-1",
+            number: "Điều 1",
+            heading: "Phạm vi điều chỉnh",
+            body: "Nghị định này quy định về bảo vệ dữ liệu cá nhân và trách nhiệm bảo vệ dữ liệu cá nhân của cơ quan, tổ chức, cá nhân có liên quan."
+          },
+          {
+            id: "art-2",
+            number: "Điều 2",
+            heading: "Giải thích từ ngữ",
+            body: "Trong Nghị định này, các từ ngữ dưới đây được hiểu như sau:\n1. Dữ liệu cá nhân là thông tin dưới dạng ký hiệu, chữ viết, chữ số, hình ảnh, âm thanh hoặc dạng tương tự trên môi trường điện tử gắn liền với một con người cụ thể hoặc giúp xác định một con người cụ thể. Dữ liệu cá nhân bao gồm dữ liệu cá nhân cơ bản và dữ liệu cá nhân nhạy cảm.\n2. Dữ liệu cá nhân nhạy cảm là dữ liệu cá nhân gắn liền với quyền riêng tư của cá nhân mà khi bị xâm phạm sẽ gây ảnh hưởng trực tiếp tới quyền và lợi ích hợp pháp của cá nhân, gồm: quan điểm chính trị, tôn giáo; tình trạng sức khoẻ; thông tin về nguồn gốc chủng tộc, dân tộc; dữ liệu về tội phạm, hành vi phạm tội; thông tin về vị trí địa lý của cá nhân; dữ liệu sinh trắc học; dữ liệu về xu hướng tình dục; dữ liệu về tài chính cá nhân.\n3. Chủ thể dữ liệu là cá nhân được phản ánh thông qua dữ liệu cá nhân.\n4. Bên Kiểm soát dữ liệu cá nhân là cơ quan, tổ chức, cá nhân quyết định mục đích và phương tiện xử lý dữ liệu cá nhân.\n5. Bên Xử lý dữ liệu cá nhân là cơ quan, tổ chức, cá nhân thực hiện việc xử lý dữ liệu thay mặt cho Bên Kiểm soát dữ liệu, thông qua một hợp đồng hoặc thoả thuận với Bên Kiểm soát dữ liệu."
+          },
+          {
+            id: "art-3",
+            number: "Điều 3",
+            heading: "Nguyên tắc bảo vệ dữ liệu cá nhân",
+            body: "1. Dữ liệu cá nhân được xử lý theo quy định của pháp luật.\n2. Chủ thể dữ liệu được biết về hoạt động liên quan tới xử lý dữ liệu cá nhân của mình, trừ trường hợp luật có quy định khác.\n3. Dữ liệu cá nhân chỉ được xử lý đúng với mục đích đã được Bên Kiểm soát dữ liệu cá nhân, Bên Xử lý dữ liệu cá nhân, Bên Kiểm soát và Xử lý dữ liệu cá nhân, Bên thứ ba đăng ký, tuyên bố về xử lý dữ liệu cá nhân.\n4. Dữ liệu cá nhân thu thập phải phù hợp và giới hạn trong phạm vi, mục đích cần xử lý.\n5. Dữ liệu cá nhân được áp dụng các biện pháp bảo vệ, bảo mật trong quá trình xử lý.\n6. Dữ liệu cá nhân chỉ được lưu trữ trong khoảng thời gian phù hợp với mục đích xử lý dữ liệu, trừ trường hợp pháp luật có quy định khác."
+          },
+          {
+            id: "art-9",
+            number: "Điều 9",
+            heading: "Quyền của chủ thể dữ liệu",
+            body: "1. Quyền được biết: Chủ thể dữ liệu được biết về hoạt động xử lý dữ liệu cá nhân của mình, trừ trường hợp luật có quy định khác.\n2. Quyền đồng ý: Chủ thể dữ liệu được đồng ý hoặc không đồng ý cho phép xử lý dữ liệu cá nhân của mình, trừ trường hợp quy định tại Điều 17 Nghị định này.\n3. Quyền truy cập, chỉnh sửa: Chủ thể dữ liệu được truy cập để xem, chỉnh sửa hoặc yêu cầu chỉnh sửa dữ liệu cá nhân của mình.\n4. Quyền rút lại sự đồng ý.\n5. Quyền xoá dữ liệu.\n6. Quyền hạn chế xử lý dữ liệu.\n7. Quyền cung cấp dữ liệu (di chuyển dữ liệu).\n8. Quyền phản đối xử lý dữ liệu.\n9. Quyền khiếu nại, tố cáo, khởi kiện.\n10. Quyền yêu cầu bồi thường thiệt hại."
+          },
+          {
+            id: "art-43",
+            number: "Điều 43",
+            heading: "Xử lý vi phạm quy định bảo vệ dữ liệu cá nhân",
+            body: "1. Cơ quan, tổ chức, cá nhân vi phạm quy định bảo vệ dữ liệu cá nhân tuỳ theo mức độ có thể bị xử lý kỷ luật, xử phạt vi phạm hành chính, xử lý hình sự theo quy định.\n2. Mức phạt tiền tối đa trong xử phạt vi phạm hành chính đối với hành vi vi phạm quy định bảo vệ dữ liệu cá nhân áp dụng theo quy định của pháp luật về xử lý vi phạm hành chính."
+          }
+        ]
+      }
+    ]
+  },
+
   // ===== Third-ring expansion: docs referenced two hops out from 32/2024/QH15 =====
 
   "86/2019/ND-CP": {

@@ -362,12 +362,14 @@
       "hinh-su": "Hình sự – Tố tụng",
       "dan-su": "Dân sự – Hợp đồng",
       "nang-luong": "Phát triển năng lượng tái tạo",
+      "du-lieu-ca-nhan": "Luật Bảo vệ dữ liệu cá nhân",
       "khac": "Lĩnh vực khác"
     };
     const fieldMatchers = {
       "ngan-hang": /(tổ chức tín dụng|ngân hàng|tiền tệ|tín dụng|tài chính)/,
       "hinh-su": /(hình sự|tội phạm)/,
-      "nang-luong": /(năng lượng|điện lực|điện gió|điện mặt trời|tái tạo|dppa|mua bán điện)/
+      "nang-luong": /(năng lượng|điện lực|điện gió|điện mặt trời|tái tạo|dppa|mua bán điện)/,
+      "du-lieu-ca-nhan": /(dữ liệu cá nhân|bảo vệ dữ liệu|thông tin cá nhân|pdpd)/
     };
     const lbl = labels[f] || "lĩnh vực này";
     const matcher = fieldMatchers[f];
@@ -511,13 +513,14 @@
   function renderStats() {
     const docs = Object.values(DB);
     const counts = { Luật: 0, "Nghị định": 0, "Thông tư": 0, "Bộ luật": 0 };
-    let bankingCount = 0, criminalCount = 0, energyCount = 0;
+    let bankingCount = 0, criminalCount = 0, energyCount = 0, pdpCount = 0;
     for (const d of docs) {
       if (counts[d.type] !== undefined) counts[d.type]++;
       const txt = (d.title + " " + d.shortTitle).toLowerCase();
       if (/(tổ chức tín dụng|ngân hàng|tiền tệ|tín dụng|tài chính)/.test(txt)) bankingCount++;
       if (/(hình sự|tội phạm)/.test(txt)) criminalCount++;
       if (/(năng lượng|điện lực|điện gió|điện mặt trời|tái tạo|dppa|mua bán điện)/.test(txt)) energyCount++;
+      if (/(dữ liệu cá nhân|bảo vệ dữ liệu|thông tin cá nhân|pdpd)/.test(txt)) pdpCount++;
     }
 
     const setText = (id, v) => { const el = $(id); if (el) el.textContent = v; };
@@ -599,6 +602,7 @@
     setText("#tn-fc-banking", bankingCount + " văn bản");
     setText("#tn-fc-criminal", criminalCount + " văn bản");
     setText("#tn-fc-energy", energyCount + " văn bản");
+    setText("#tn-fc-pdp", pdpCount + " văn bản");
   }
 
   // Văn bản mới — sorted by issuedDate desc
