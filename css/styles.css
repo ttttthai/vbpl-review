@@ -22,10 +22,10 @@
   --blue-light: #2c4470;
   --blue-soft: #e0e3eb;
 
-  /* Accent: IKIGAI gold */
-  --orange: #b08735;
-  --orange-dark: #8c6a26;
-  --orange-soft: #ecdcb6;
+  /* Accent: dental clinic teal-green (var name kept for compatibility) */
+  --orange: #2a9d8f;
+  --orange-dark: #1f7d72;
+  --orange-soft: #d4ede9;
 
   /* Link blue — slightly more saturated for contrast */
   --link: #1a4f8a;
@@ -544,7 +544,7 @@ table { border-collapse: collapse; }
 /* ===== Featured spotlight (main banner) — editorial dark navy ===== */
 .spotlight {
   background:
-    radial-gradient(circle at 92% 18%, rgba(168, 116, 27, 0.18) 0%, transparent 38%),
+    radial-gradient(circle at 92% 18%, rgba(42, 157, 143, 0.20) 0%, transparent 40%),
     linear-gradient(135deg, #1a2c4a 0%, #0f1c33 100%);
   color: white;
   padding: 24px 28px;
@@ -571,16 +571,16 @@ table { border-collapse: collapse; }
 }
 .spotlight-eyebrow {
   display: inline-flex; align-items: center; gap: 6px;
-  font-family: "Inter", "Segoe UI", sans-serif;
+  font-family: Georgia, serif;
   font-size: 10px;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 1.4px;
   text-transform: uppercase;
-  background: rgba(168, 116, 27, 0.16);
-  color: #d9b87a;
+  background: rgba(42, 157, 143, 0.18);
+  color: #7fc7be;
   padding: 3px 10px;
   border-radius: 2px;
-  border: 1px solid rgba(168, 116, 27, 0.32);
+  border: 1px solid rgba(42, 157, 143, 0.36);
 }
 .spotlight h1 {
   font-size: 24px;
@@ -687,7 +687,7 @@ table { border-collapse: collapse; }
   flex-wrap: wrap;
   align-items: stretch;
   margin-top: 18px;
-  border-top: 1px solid rgba(216, 188, 121, 0.25);
+  border-top: 1px solid rgba(127, 199, 190, 0.25);
   padding-top: 14px;
   gap: 0;
 }
@@ -696,12 +696,12 @@ table { border-collapse: collapse; }
   min-width: 110px;
   display: flex; align-items: baseline; gap: 8px;
   padding: 4px 14px;
-  border-left: 1px solid rgba(216, 188, 121, 0.18);
+  border-left: 1px solid rgba(127, 199, 190, 0.18);
 }
 .ss-item:first-child { border-left: none; padding-left: 0; }
 .ss-num {
   font-size: 22px; font-weight: 700;
-  color: #f3d99c;
+  color: #7fc7be;
   letter-spacing: -0.01em;
   line-height: 1;
 }
@@ -713,7 +713,7 @@ table { border-collapse: collapse; }
   line-height: 1.2;
 }
 .ss-item.type-boluat .ss-num { color: #e9b6b8; }
-.ss-item.type-luat .ss-num { color: #f3d99c; }
+.ss-item.type-luat .ss-num { color: #7fc7be; }
 .ss-item.type-nghidinh .ss-num { color: #efc28a; }
 .ss-item.type-thongtu .ss-num { color: #b8c9e0; }
 .ss-item.type-expired .ss-num { color: #b8b9bd; }

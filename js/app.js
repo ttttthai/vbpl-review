@@ -307,6 +307,7 @@
     _suppressNav = true;
     try {
       if (prev.type === "doc") openDoc(prev.docId, prev.opts || {});
+      else if (prev.type === "preview") showDocPreview(prev.docId);
       else goHome();
     } finally {
       _suppressNav = false;
@@ -411,6 +412,7 @@
 
   function goHome() {
     _recordNav({ type: "home" });
+    window.__spotlightDocId = null; // reset to default in renderStats
     setLuocdoOnlyMode(false);
     viewer.classList.add("hidden");
     landing.classList.remove("hidden");
@@ -419,8 +421,59 @@
     suggestions.innerHTML = "";
     if (navHome) navHome.classList.add("active");
     setCrumbs([{ label: "Trang chủ", action: goHome }, { label: "Tra cứu văn bản pháp luật", current: true }]);
+    // Restore default spotlight (32/2024/QH15)
+    fillSpotlight(H.findDoc("32/2024/QH15"));
     window.scrollTo({ top: 0, behavior: "smooth" });
     renderLandingContent();
+  }
+
+  // Re-populate the spotlight card with a given doc — used when the user
+  // clicks a row in the Lược đồ Gantt: instead of opening the full Toàn-văn
+  // viewer, take them back to a spotlight-card view of that doc.
+  function showDocPreview(docId) {
+    const doc = H.findDoc(docId);
+    if (!doc) return;
+    _recordNav({ type: "preview", docId });
+    window.__spotlightDocId = docId;
+    setLuocdoOnlyMode(false);
+    viewer.classList.add("hidden");
+    landing.classList.remove("hidden");
+    fillSpotlight(doc);
+    renderLandingContent();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  // Update the spotlight card DOM (eyebrow, title, description, CTA targets)
+  // for the given doc. Pure DOM mutation; doesn't change view state.
+  function fillSpotlight(doc) {
+    if (!doc) return;
+    const eyebrow = $("#sp-eyebrow");
+    const title = $("#sp-title");
+    const desc = $("#sp-desc");
+    const ctaOpen = $("#sp-cta-open");
+    const ctaLuocdo = $("#sp-cta-luocdo");
+    const isFeatured = doc.id === "32/2024/QH15";
+    if (eyebrow) eyebrow.textContent = isFeatured ? "Văn bản tâm điểm" : "Văn bản đã chọn";
+    if (title) title.textContent = `${doc.title} ${doc.number ? "số " + doc.number : ""}`.trim();
+    if (desc) {
+      const eff = doc.effectiveDate ? formatDate(doc.effectiveDate) : null;
+      const total = doc.articleTotal || (doc.chapters || []).reduce((s, ch) => s + ch.articles.length, 0);
+      const status = doc.status || "";
+      let parts = [];
+      if (eff) parts.push(`Có hiệu lực từ ${eff}`);
+      if (total) parts.push(`bao gồm ${total} điều`);
+      let descText = parts.join(" — ");
+      if (doc.shortTitle && doc.shortTitle !== doc.title) {
+        descText += ". " + doc.shortTitle + ".";
+      } else {
+        descText += ".";
+      }
+      if (/Hết hiệu lực/i.test(status)) descText += ` Tình trạng: ${status}.`;
+      if (/Dự thảo|Đang thảo luận/i.test(status)) descText = `Tình trạng: ${status}. ` + (doc.shortTitle || doc.title) + ".";
+      desc.textContent = descText;
+    }
+    if (ctaOpen) ctaOpen.dataset.docId = doc.id;
+    if (ctaLuocdo) ctaLuocdo.dataset.docId = doc.id;
   }
 
   function setCrumbs(items) {
@@ -469,8 +522,9 @@
 
     const setText = (id, v) => { const el = $(id); if (el) el.textContent = v; };
 
-    // === Spotlight: counts of docs RELATED to the featured doc (32/2024/QH15) ===
-    const SPOTLIGHT_ID = "32/2024/QH15";
+    // === Spotlight: counts of docs RELATED to the featured doc ===
+    // The currently-featured doc id is settable via showDocPreview().
+    const SPOTLIGHT_ID = window.__spotlightDocId || "32/2024/QH15";
     const spotlight = H.findDoc(SPOTLIGHT_ID);
     const sp = { boluat: 0, luat: 0, nghidinh: 0, thongtu: 0, expired: 0, draft: 0 };
     if (spotlight) {
@@ -982,15 +1036,24 @@
     `;
 
     luocdoEl.innerHTML = html;
-    // Every row is clickable — including the current one. Clicking the
-    // current row exits luocdo-only mode (openDoc resets it) and shows the
-    // full Toàn-văn viewer for that doc.
+    // Row click behaviour
+    //   - If we entered the Lược-đồ from the spotlight ("Lược đồ" CTA) —
+    //     i.e. body.luocdo-only is set — clicking a row should take the
+    //     user BACK to a spotlight-card preview of that doc, not into the
+    //     full Toàn-văn viewer. Mở văn bản from the new preview opens the
+    //     reader; Lược đồ from the new preview re-enters this Gantt for
+    //     the chosen doc.
+    //   - Otherwise (Gantt opened as the Lược đồ tab inside the full
+    //     viewer), clicking a row keeps the existing behaviour — jump
+    //     to the chosen doc's Toàn văn.
+    const inLuocdoOnly = document.body.classList.contains("luocdo-only");
     luocdoEl.querySelectorAll(".lt-row[data-doc-id]").forEach(row => {
       const id = row.dataset.docId;
       row.style.cursor = "pointer";
       row.addEventListener("click", (e) => {
         if (e.target.classList.contains("lt-splitter")) return;
-        openDoc(id);
+        if (inLuocdoOnly) showDocPreview(id);
+        else openDoc(id);
       });
     });
     wireMetaSplitter(luocdoEl.querySelector(".lt-wrap"));

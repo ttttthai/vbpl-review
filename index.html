@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" />
-  <link rel="stylesheet" href="css/styles.css?v=31" />
+  <link rel="stylesheet" href="css/styles.css?v=32" />
 </head>
 <body>
 
@@ -72,7 +72,7 @@
       </a>
       <div class="topnav-item topnav-dropdown">
         <button type="button" class="topnav-link topnav-trigger" id="topnav-fields-btn" aria-haspopup="true" aria-expanded="false">
-          Văn bản theo lĩnh vực
+          Lĩnh vực
           <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
         <div class="topnav-menu" id="topnav-fields-menu" role="menu">
@@ -97,15 +97,15 @@
       <div class="spotlight">
         <div class="spotlight-grid">
           <div>
-            <span class="spotlight-eyebrow">Văn bản tâm điểm</span>
-            <h1>Luật Các tổ chức tín dụng số 32/2024/QH15</h1>
-            <p>Có hiệu lực từ 01/07/2024 — bao gồm 209 điều quy định toàn diện về tổ chức, hoạt động, can thiệp sớm, kiểm soát đặc biệt và xử lý nợ xấu của các tổ chức tín dụng tại Việt Nam.</p>
+            <span class="spotlight-eyebrow" id="sp-eyebrow">Văn bản tâm điểm</span>
+            <h1 id="sp-title">Luật Các tổ chức tín dụng số 32/2024/QH15</h1>
+            <p id="sp-desc">Có hiệu lực từ 01/07/2024 — bao gồm 209 điều quy định toàn diện về tổ chức, hoạt động, can thiệp sớm, kiểm soát đặc biệt và xử lý nợ xấu của các tổ chức tín dụng tại Việt Nam.</p>
             <div class="spotlight-actions">
-              <button class="btn-cta" data-doc-id="32/2024/QH15">
+              <button class="btn-cta" id="sp-cta-open" data-doc-id="32/2024/QH15">
                 Mở văn bản
                 <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
               </button>
-              <button class="btn-cta-secondary" data-doc-id="32/2024/QH15" data-tab="luocdo">
+              <button class="btn-cta-secondary" id="sp-cta-luocdo" data-doc-id="32/2024/QH15" data-tab="luocdo">
                 <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M3 12h18M3 18h18"/><circle cx="6" cy="6" r="1.4" fill="currentColor"/><circle cx="6" cy="12" r="1.4" fill="currentColor"/><circle cx="6" cy="18" r="1.4" fill="currentColor"/></svg>
                 Lược đồ
               </button>
@@ -230,7 +230,7 @@
   <div id="ref-popup" class="ref-popup hidden" role="tooltip"></div>
   <div id="toast" class="toast"></div>
 
-  <script src="data/documents.js?v=31"></script>
-  <script src="js/app.js?v=31"></script>
+  <script src="data/documents.js?v=32"></script>
+  <script src="js/app.js?v=32"></script>
 </body>
 </html>
