@@ -431,6 +431,37 @@ window.LEGAL_DB = {
         ]
       }
     ]
+  },
+
+  // Draft / under-discussion document — slotted to populate the
+  // "Văn bản đang thảo luận" statistic on the landing spotlight
+  "DT-LCTCTD-2026": {
+    id: "DT-LCTCTD-2026",
+    type: "Luật",
+    typeKey: "luat",
+    number: "Dự thảo Luật sửa đổi, bổ sung một số điều của Luật Các tổ chức tín dụng",
+    shortTitle: "Dự thảo Luật sửa đổi Luật TCTD 2026",
+    title: "Dự thảo Luật sửa đổi, bổ sung một số điều của Luật Các tổ chức tín dụng số 32/2024/QH15",
+    issuer: "Quốc hội",
+    signedBy: null,
+    issuedDate: "2026-03-15",
+    effectiveDate: null,
+    status: "Đang thảo luận",
+    sourceUrl: "https://duthaoonline.quochoi.vn/",
+    chapters: [
+      {
+        title: "PHẦN MỞ ĐẦU",
+        subtitle: "TỜ TRÌNH",
+        articles: [
+          {
+            id: "art-1",
+            number: "Điều 1",
+            heading: "Phạm vi sửa đổi",
+            body: "Dự thảo này đề xuất sửa đổi, bổ sung một số điều của Luật Các tổ chức tín dụng số 32/2024/QH15, tập trung vào các nội dung: tỷ lệ sở hữu cổ phần tại tổ chức tín dụng, giới hạn cấp tín dụng đối với người có liên quan, cơ chế can thiệp sớm và xử lý nợ xấu sau ngày 01/01/2025. Dự thảo đang trong quá trình lấy ý kiến rộng rãi từ Bộ Tư pháp, Ngân hàng Nhà nước, các tổ chức tín dụng và công chúng trước khi trình Quốc hội thông qua."
+          }
+        ]
+      }
+    ]
   }
 };
 

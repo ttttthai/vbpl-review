@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>VBPL Review — Cổng tra cứu văn bản pháp luật Việt Nam</title>
-  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/styles.css?v=11" />
 </head>
 <body>
 
@@ -72,6 +72,59 @@
     </div>
   </header>
 
+  <!-- ===== TOP NAV BAR ===== -->
+  <nav class="topnav">
+    <div class="topnav-inner">
+      <a class="topnav-link" href="#" id="topnav-home">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l9-9 9 9"/><path d="M5 10v10h14V10"/></svg>
+        Trang chủ
+      </a>
+      <div class="topnav-item topnav-dropdown">
+        <button type="button" class="topnav-link topnav-trigger" id="topnav-fields-btn" aria-haspopup="true" aria-expanded="false">
+          Văn bản theo lĩnh vực
+          <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="topnav-menu" id="topnav-fields-menu" role="menu">
+          <a class="topnav-menu-item" data-field="ngan-hang" role="menuitem">
+            <span class="tn-ico r1"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="21" x2="21" y2="21"/><line x1="3" y1="10" x2="21" y2="10"/><polyline points="5 6 12 3 19 6"/></svg></span>
+            <span class="tn-text"><span class="tn-name">Tài chính – Ngân hàng</span><span class="tn-cnt" id="tn-fc-banking">0 văn bản</span></span>
+          </a>
+          <a class="topnav-menu-item" data-field="dau-tu" role="menuitem">
+            <span class="tn-ico r2"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></span>
+            <span class="tn-text"><span class="tn-name">Đầu tư – Doanh nghiệp</span><span class="tn-cnt">Đang cập nhật</span></span>
+          </a>
+          <a class="topnav-menu-item" data-field="lao-dong" role="menuitem">
+            <span class="tn-ico r3"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
+            <span class="tn-text"><span class="tn-name">Lao động – BHXH</span><span class="tn-cnt">Đang cập nhật</span></span>
+          </a>
+          <a class="topnav-menu-item" data-field="thue" role="menuitem">
+            <span class="tn-ico r4"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
+            <span class="tn-text"><span class="tn-name">Thuế – Phí – Lệ phí</span><span class="tn-cnt">Đang cập nhật</span></span>
+          </a>
+          <a class="topnav-menu-item" data-field="dat-dai" role="menuitem">
+            <span class="tn-ico r1"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></span>
+            <span class="tn-text"><span class="tn-name">Đất đai – Xây dựng</span><span class="tn-cnt">Đang cập nhật</span></span>
+          </a>
+          <a class="topnav-menu-item" data-field="hinh-su" role="menuitem">
+            <span class="tn-ico r2"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s-8-4-8-12V5l8-3 8 3v5c0 8-8 12-8 12z"/></svg></span>
+            <span class="tn-text"><span class="tn-name">Hình sự – Tố tụng</span><span class="tn-cnt" id="tn-fc-criminal">0 văn bản</span></span>
+          </a>
+          <a class="topnav-menu-item" data-field="dan-su" role="menuitem">
+            <span class="tn-ico r3"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/></svg></span>
+            <span class="tn-text"><span class="tn-name">Dân sự – Hợp đồng</span><span class="tn-cnt">Đang cập nhật</span></span>
+          </a>
+          <a class="topnav-menu-item" data-field="khac" role="menuitem">
+            <span class="tn-ico r4"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/></svg></span>
+            <span class="tn-text"><span class="tn-name">Lĩnh vực khác</span><span class="tn-cnt">Đang cập nhật</span></span>
+          </a>
+        </div>
+      </div>
+      <a class="topnav-link" href="#newdocs">Văn bản mới</a>
+      <a class="topnav-link" href="#hotdocs-card">Văn bản hot</a>
+      <a class="topnav-link" href="#quicklinks-card">Liên kết nhanh</a>
+    </div>
+  </nav>
+
   <!-- ===== BREADCRUMB ===== -->
   <div class="crumbs-bar">
     <div class="container" id="crumbs">
@@ -107,18 +160,30 @@
               <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
             </button>
           </div>
-          <div class="spotlight-side">
-            <div class="spotlight-stat">
-              <div class="num" id="sp-total">8</div>
-              <div class="lbl">văn bản<br/>trong CSDL</div>
+          <div class="spotlight-side spotlight-side-grid">
+            <div class="spotlight-stat type-boluat">
+              <div class="num" id="sp-cnt-boluat">0</div>
+              <div class="lbl">Bộ luật<br/>liên quan</div>
             </div>
-            <div class="spotlight-stat">
-              <div class="num" id="sp-active">0</div>
-              <div class="lbl">văn bản<br/>đang có hiệu lực</div>
+            <div class="spotlight-stat type-luat">
+              <div class="num" id="sp-cnt-luat">0</div>
+              <div class="lbl">Luật<br/>liên quan</div>
             </div>
-            <div class="spotlight-stat">
-              <div class="num" id="sp-refs">100+</div>
-              <div class="lbl">liên kết<br/>viện dẫn chéo</div>
+            <div class="spotlight-stat type-nghidinh">
+              <div class="num" id="sp-cnt-nghidinh">0</div>
+              <div class="lbl">Nghị định<br/>liên quan</div>
+            </div>
+            <div class="spotlight-stat type-thongtu">
+              <div class="num" id="sp-cnt-thongtu">0</div>
+              <div class="lbl">Thông tư<br/>liên quan</div>
+            </div>
+            <div class="spotlight-stat type-expired">
+              <div class="num" id="sp-cnt-expired">0</div>
+              <div class="lbl">Văn bản liên quan<br/>hết hiệu lực</div>
+            </div>
+            <div class="spotlight-stat type-draft">
+              <div class="num" id="sp-cnt-draft">0</div>
+              <div class="lbl">Văn bản liên quan<br/>đang thảo luận</div>
             </div>
           </div>
         </div>
@@ -144,50 +209,6 @@
             </div>
           </div>
 
-          <!-- Văn bản theo lĩnh vực -->
-          <div class="block" id="categories">
-            <div class="block-head">
-              <span class="title">Văn bản theo lĩnh vực</span>
-              <a href="#" class="more">Xem tất cả lĩnh vực →</a>
-            </div>
-            <div class="block-body">
-              <div class="field-grid">
-                <a class="field-card" data-field="ngan-hang">
-                  <div class="field-icon r1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="21" x2="21" y2="21"/><line x1="3" y1="10" x2="21" y2="10"/><polyline points="5 6 12 3 19 6"/><line x1="4" y1="10" x2="4" y2="21"/><line x1="20" y1="10" x2="20" y2="21"/><line x1="8" y1="14" x2="8" y2="17"/><line x1="12" y1="14" x2="12" y2="17"/><line x1="16" y1="14" x2="16" y2="17"/></svg></div>
-                  <div><div class="field-name">Tài chính – Ngân hàng</div><div class="field-count" id="fc-banking">0 văn bản</div></div>
-                </a>
-                <a class="field-card" data-field="dau-tu">
-                  <div class="field-icon r2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
-                  <div><div class="field-name">Đầu tư – Doanh nghiệp</div><div class="field-count">Đang cập nhật</div></div>
-                </a>
-                <a class="field-card" data-field="lao-dong">
-                  <div class="field-icon r3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
-                  <div><div class="field-name">Lao động – BHXH</div><div class="field-count">Đang cập nhật</div></div>
-                </a>
-                <a class="field-card" data-field="thue">
-                  <div class="field-icon r4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
-                  <div><div class="field-name">Thuế – Phí – Lệ phí</div><div class="field-count">Đang cập nhật</div></div>
-                </a>
-                <a class="field-card" data-field="dat-dai">
-                  <div class="field-icon r1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
-                  <div><div class="field-name">Đất đai – Xây dựng</div><div class="field-count">Đang cập nhật</div></div>
-                </a>
-                <a class="field-card" data-field="hinh-su">
-                  <div class="field-icon r2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s-8-4-8-12V5l8-3 8 3v5c0 8-8 12-8 12z"/></svg></div>
-                  <div><div class="field-name">Hình sự – Tố tụng</div><div class="field-count" id="fc-criminal">0 văn bản</div></div>
-                </a>
-                <a class="field-card" data-field="dan-su">
-                  <div class="field-icon r3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
-                  <div><div class="field-name">Dân sự – Hợp đồng</div><div class="field-count">Đang cập nhật</div></div>
-                </a>
-                <a class="field-card" data-field="khac">
-                  <div class="field-icon r4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
-                  <div><div class="field-name">Lĩnh vực khác</div><div class="field-count">Đang cập nhật</div></div>
-                </a>
-              </div>
-            </div>
-          </div>
-
           <!-- Văn bản hết hiệu lực gần đây -->
           <div class="block">
             <div class="block-head">
@@ -196,6 +217,52 @@
             </div>
             <div class="block-body">
               <ul class="doc-list" id="expired-list"></ul>
+            </div>
+          </div>
+
+          <!-- Văn bản hot (main card) -->
+          <div class="block" id="hotdocs-card">
+            <div class="block-head">
+              <span class="title">Văn bản hot</span>
+              <a href="#" class="more">Xem thêm →</a>
+            </div>
+            <div class="block-body">
+              <ul class="hot-list" id="hot-list-main"></ul>
+            </div>
+          </div>
+
+          <!-- Liên kết nhanh (main card) -->
+          <div class="block" id="quicklinks-card">
+            <div class="block-head">
+              <span class="title">Liên kết nhanh</span>
+            </div>
+            <div class="block-body">
+              <div class="quicklinks-grid">
+                <a class="qlink" href="https://vbpl.vn" target="_blank" rel="noopener">
+                  <span class="qlink-ico"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                  <span class="qlink-text"><span class="qlink-name">Cơ sở dữ liệu Quốc gia</span><span class="qlink-host">vbpl.vn</span></span>
+                </a>
+                <a class="qlink" href="https://vanban.chinhphu.vn" target="_blank" rel="noopener">
+                  <span class="qlink-ico"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></span>
+                  <span class="qlink-text"><span class="qlink-name">Văn phòng Chính phủ</span><span class="qlink-host">vanban.chinhphu.vn</span></span>
+                </a>
+                <a class="qlink" href="https://quochoi.vn" target="_blank" rel="noopener">
+                  <span class="qlink-ico"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V8l7-5 7 5v13"/><path d="M9 21V12h6v9"/></svg></span>
+                  <span class="qlink-text"><span class="qlink-name">Quốc hội Việt Nam</span><span class="qlink-host">quochoi.vn</span></span>
+                </a>
+                <a class="qlink" href="https://moj.gov.vn" target="_blank" rel="noopener">
+                  <span class="qlink-ico"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s-8-4-8-12V5l8-3 8 3v5c0 8-8 12-8 12z"/></svg></span>
+                  <span class="qlink-text"><span class="qlink-name">Bộ Tư pháp</span><span class="qlink-host">moj.gov.vn</span></span>
+                </a>
+                <a class="qlink" href="https://duthaoonline.quochoi.vn" target="_blank" rel="noopener">
+                  <span class="qlink-ico"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4z"/></svg></span>
+                  <span class="qlink-text"><span class="qlink-name">Dự thảo trực tuyến</span><span class="qlink-host">duthaoonline.quochoi.vn</span></span>
+                </a>
+                <a class="qlink" href="https://www.sbv.gov.vn" target="_blank" rel="noopener">
+                  <span class="qlink-ico"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="21" x2="21" y2="21"/><line x1="3" y1="10" x2="21" y2="10"/><polyline points="5 6 12 3 19 6"/></svg></span>
+                  <span class="qlink-text"><span class="qlink-name">Ngân hàng Nhà nước</span><span class="qlink-host">sbv.gov.vn</span></span>
+                </a>
+              </div>
             </div>
           </div>
 
@@ -213,34 +280,6 @@
               <li><span class="stat-num" id="ast-nd">0</span><span class="stat-lbl">Nghị định</span></li>
               <li><span class="stat-num" id="ast-tt">0</span><span class="stat-lbl">Thông tư</span></li>
             </ul>
-          </div>
-
-          <!-- Hot docs -->
-          <div class="block aside-block" id="hotdocs">
-            <div class="block-head">
-              <span class="title">Văn bản hot</span>
-              <a href="#" class="more">Xem thêm →</a>
-            </div>
-            <div class="block-body">
-              <ul class="hot-list" id="hot-list"></ul>
-            </div>
-          </div>
-
-          <!-- Quick links -->
-          <div class="block aside-block">
-            <div class="block-head">
-              <span class="title">Liên kết nhanh</span>
-            </div>
-            <div class="block-body">
-              <ul class="quick-list">
-                <li><a href="https://vbpl.vn" target="_blank" rel="noopener">Cơ sở dữ liệu Quốc gia (vbpl.vn)</a></li>
-                <li><a href="https://vanban.chinhphu.vn" target="_blank" rel="noopener">Văn phòng Chính phủ</a></li>
-                <li><a href="https://quochoi.vn" target="_blank" rel="noopener">Quốc hội Việt Nam</a></li>
-                <li><a href="https://moj.gov.vn" target="_blank" rel="noopener">Bộ Tư pháp</a></li>
-                <li><a href="#">Văn bản mới ban hành</a></li>
-                <li><a href="#">Văn bản sắp có hiệu lực</a></li>
-              </ul>
-            </div>
           </div>
 
           <!-- Newsletter -->
@@ -398,7 +437,7 @@
   <div id="ref-popup" class="ref-popup hidden" role="tooltip"></div>
   <div id="toast" class="toast"></div>
 
-  <script src="data/documents.js?v=9"></script>
-  <script src="js/app.js?v=9"></script>
+  <script src="data/documents.js?v=11"></script>
+  <script src="js/app.js?v=11"></script>
 </body>
 </html>

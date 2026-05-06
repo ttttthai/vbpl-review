@@ -38,6 +38,7 @@
   const newdocsTabs = $("#newdocs-tabs");
   const expiredList = $("#expired-list");
   const hotList = $("#hot-list");
+  const hotListMain = $("#hot-list-main");
   const hotListSide = $("#hot-list-side");
 
   const refPopup = $("#ref-popup");
@@ -287,6 +288,53 @@
   if (bcHome) bcHome.addEventListener("click", (e) => { e.preventDefault(); goHome(); });
   if (ctaSearchBtn) ctaSearchBtn.addEventListener("click", () => searchInput.focus());
 
+  // Top nav (Home + Văn bản theo lĩnh vực dropdown + field menu items)
+  const topnavHome = $("#topnav-home");
+  if (topnavHome) topnavHome.addEventListener("click", (e) => { e.preventDefault(); goHome(); });
+  const topnavFieldsBtn = $("#topnav-fields-btn");
+  const topnavFieldsItem = topnavFieldsBtn ? topnavFieldsBtn.closest(".topnav-dropdown") : null;
+  if (topnavFieldsBtn && topnavFieldsItem) {
+    topnavFieldsBtn.addEventListener("click", (e) => {
+      e.preventDefault(); e.stopPropagation();
+      const open = topnavFieldsItem.classList.toggle("open");
+      topnavFieldsBtn.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+    document.addEventListener("click", (e) => {
+      if (!e.target.closest(".topnav-dropdown")) {
+        topnavFieldsItem.classList.remove("open");
+        topnavFieldsBtn.setAttribute("aria-expanded", "false");
+      }
+    });
+  }
+  $$(".topnav-menu-item").forEach(item => {
+    item.addEventListener("click", (e) => {
+      e.preventDefault();
+      const f = item.dataset.field;
+      if (topnavFieldsItem) topnavFieldsItem.classList.remove("open");
+      handleFieldClick(f);
+    });
+  });
+
+  function handleFieldClick(f) {
+    const labels = {
+      "ngan-hang": "Tài chính – Ngân hàng",
+      "dau-tu": "Đầu tư – Doanh nghiệp",
+      "lao-dong": "Lao động – BHXH",
+      "thue": "Thuế – Phí – Lệ phí",
+      "dat-dai": "Đất đai – Xây dựng",
+      "hinh-su": "Hình sự – Tố tụng",
+      "dan-su": "Dân sự – Hợp đồng",
+      "khac": "Lĩnh vực khác"
+    };
+    const lbl = labels[f] || "lĩnh vực này";
+    if (f === "ngan-hang" || f === "hinh-su") {
+      showToast(`Đang lọc theo lĩnh vực ${lbl}`);
+      const sec = $("#newdocs"); if (sec) sec.scrollIntoView({ behavior: "smooth", block: "start" });
+    } else {
+      showToast(`Lĩnh vực ${lbl} đang cập nhật`);
+    }
+  }
+
   // Spotlight CTA
   $$("[data-doc-id]").forEach(el => {
     if (el.tagName === "BUTTON" || (el.classList && el.classList.contains("btn-cta"))) {
@@ -351,39 +399,87 @@
   function renderStats() {
     const docs = Object.values(DB);
     const counts = { Luật: 0, "Nghị định": 0, "Thông tư": 0, "Bộ luật": 0 };
-    let okCount = 0, refCount = 0, bankingCount = 0, criminalCount = 0;
+    let bankingCount = 0, criminalCount = 0;
     for (const d of docs) {
       if (counts[d.type] !== undefined) counts[d.type]++;
-      if (/Có hiệu lực/i.test(d.status)) okCount++;
-      // crude field classification
       const txt = (d.title + " " + d.shortTitle).toLowerCase();
       if (/(tổ chức tín dụng|ngân hàng|tiền tệ|tín dụng|tài chính)/.test(txt)) bankingCount++;
       if (/(hình sự|tội phạm)/.test(txt)) criminalCount++;
-      for (const ch of d.chapters || []) for (const a of ch.articles) {
-        const m = a.body.match(/Điều\s+\d+|[0-9]+\/[0-9]+\/(?:QH|N[ĐD]|TT)/g);
-        if (m) refCount += m.length;
-      }
     }
 
     const setText = (id, v) => { const el = $(id); if (el) el.textContent = v; };
-    setText("#sp-total", docs.length);
-    setText("#sp-active", okCount);
-    setText("#sp-refs", refCount);
+
+    // === Spotlight: counts of docs RELATED to the featured doc (32/2024/QH15) ===
+    const SPOTLIGHT_ID = "32/2024/QH15";
+    const spotlight = H.findDoc(SPOTLIGHT_ID);
+    const sp = { boluat: 0, luat: 0, nghidinh: 0, thongtu: 0, expired: 0, draft: 0 };
+    if (spotlight) {
+      const related = new Set();
+      // Outgoing refs — use the same resolver as the popup so named codes (e.g. Bộ luật Hình sự) are caught
+      const refs = collectAllRefsInDoc(spotlight);
+      for (const r of refs) {
+        if (r.docId && r.docId !== spotlight.id) related.add(r.docId);
+      }
+      // explicit replaces relations
+      for (const id of (spotlight.replaces || [])) related.add(id);
+      // anything that says it's been replaced by us, or that we replace
+      for (const other of docs) {
+        if (other.id === spotlight.id) continue;
+        const oReplaces = Array.isArray(other.replaces) ? other.replaces : [];
+        if (oReplaces.includes(spotlight.id) || (other.status && other.status.includes(spotlight.id))) related.add(other.id);
+        if (spotlight.status && spotlight.status.includes(other.id)) related.add(other.id);
+      }
+      // any draft / under-discussion doc that targets or amends the spotlight
+      for (const other of docs) {
+        if (other.id === spotlight.id) continue;
+        if (/Dự thảo|Đang thảo luận/i.test(other.status || "")) {
+          const txt = (other.title + " " + other.shortTitle).toLowerCase();
+          if (txt.includes(spotlight.id.toLowerCase()) || txt.includes("tổ chức tín dụng")) related.add(other.id);
+        }
+      }
+      // Any other doc whose body cites the spotlight (incoming refs)
+      for (const other of docs) {
+        if (other.id === spotlight.id) continue;
+        const otherRefs = collectAllRefsInDoc(other);
+        if (otherRefs.some(r => r.docId === spotlight.id)) related.add(other.id);
+      }
+
+      for (const id of related) {
+        const d = H.findDoc(id);
+        if (!d) continue;
+        const isDraft = /Dự thảo|Đang thảo luận/i.test(d.status || "");
+        const isExpired = /Hết hiệu lực/i.test(d.status || "") || !!d.expiryDate;
+        if (isDraft) sp.draft++;
+        else if (isExpired) sp.expired++;
+        else if (d.type === "Bộ luật") sp.boluat++;
+        else if (d.type === "Luật") sp.luat++;
+        else if (d.type === "Nghị định") sp.nghidinh++;
+        else if (d.type === "Thông tư") sp.thongtu++;
+      }
+    }
+    setText("#sp-cnt-boluat", sp.boluat);
+    setText("#sp-cnt-luat", sp.luat);
+    setText("#sp-cnt-nghidinh", sp.nghidinh);
+    setText("#sp-cnt-thongtu", sp.thongtu);
+    setText("#sp-cnt-expired", sp.expired);
+    setText("#sp-cnt-draft", sp.draft);
+
+    // === Sidebar Stats — total counts in DB ===
     setText("#ast-total", docs.length);
     setText("#ast-luat", counts["Luật"] + counts["Bộ luật"]);
     setText("#ast-nd", counts["Nghị định"]);
     setText("#ast-tt", counts["Thông tư"]);
 
-    // tab counts
+    // === "Văn bản mới" tab counts ===
     setText("#cnt-all", docs.length);
     setText("#cnt-luat", counts["Luật"]);
     setText("#cnt-nghidinh", counts["Nghị định"]);
     setText("#cnt-thongtu", counts["Thông tư"]);
     setText("#cnt-boluat", counts["Bộ luật"]);
 
-    // field counts
-    setText("#fc-banking", bankingCount + " văn bản");
-    setText("#fc-criminal", criminalCount + " văn bản");
+    // === Field counts (top nav dropdown) ===
+    setText("#tn-fc-banking", bankingCount + " văn bản");
+    setText("#tn-fc-criminal", criminalCount + " văn bản");
   }
 
   // Văn bản mới — sorted by issuedDate desc
@@ -483,31 +579,15 @@
       hotList.innerHTML = html;
       $$("li[data-doc-id]", hotList).forEach(li => li.addEventListener("click", () => openDoc(li.dataset.docId)));
     }
+    if (hotListMain) {
+      hotListMain.innerHTML = html;
+      $$("li[data-doc-id]", hotListMain).forEach(li => li.addEventListener("click", () => openDoc(li.dataset.docId)));
+    }
     if (hotListSide) {
       hotListSide.innerHTML = html;
       $$("li[data-doc-id]", hotListSide).forEach(li => li.addEventListener("click", () => openDoc(li.dataset.docId)));
     }
   }
-
-  // Field cards: filter newdocs by approximate field
-  $$(".field-card").forEach(card => {
-    card.addEventListener("click", (e) => {
-      e.preventDefault();
-      const f = card.dataset.field;
-      // simple mapping
-      let typeFilter = "all";
-      if (f === "hinh-su") {
-        // no specific handling — just scroll to newdocs
-        showToast("Đang lọc theo lĩnh vực Hình sự");
-      } else if (f === "ngan-hang") {
-        showToast("Đang lọc theo lĩnh vực Tài chính – Ngân hàng");
-      } else {
-        showToast("Lĩnh vực này đang cập nhật");
-      }
-      const sec = $("#newdocs");
-      if (sec) sec.scrollIntoView({ behavior: "smooth", block: "start" });
-    });
-  });
 
   // ===== Open / render document =====
   function openDoc(id) {
