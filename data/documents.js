@@ -139,6 +139,18 @@ window.LEGAL_DB = {
             body: "Tổ chức được cấp Giấy phép phải nộp lệ phí cấp Giấy phép theo quy định của pháp luật về phí, lệ phí. Mức thu, thẩm quyền thu, chế độ thu, nộp, quản lý và sử dụng lệ phí được thực hiện theo quy định của pháp luật."
           },
           {
+            id: "art-32",
+            number: "Điều 32",
+            heading: "Cấp Giấy phép cho chi nhánh ngân hàng nước ngoài",
+            body: "1. Ngân hàng nước ngoài được cấp Giấy phép thành lập chi nhánh tại Việt Nam khi đáp ứng các điều kiện sau đây:\na) Có thời gian hoạt động ngân hàng tối thiểu 5 năm liên tục liền kề trước thời điểm nộp hồ sơ đề nghị cấp Giấy phép;\nb) Có tổng tài sản có ít nhất tương đương 20 tỷ đô la Mỹ vào năm liền kề trước năm nộp hồ sơ;\nc) Đáp ứng các tỷ lệ bảo đảm an toàn theo quy định của pháp luật của nước nguyên xứ và đang được cơ quan thanh tra ngân hàng nước ngoài đánh giá xếp hạng tốt;\nd) Có tình trạng tài chính lành mạnh, kinh doanh có lãi trong 03 năm liên tục liền kề trước năm nộp hồ sơ;\nđ) Cam kết hỗ trợ về tài chính, công nghệ, quản trị và nhân sự đối với chi nhánh tại Việt Nam.\n2. Ngân hàng nước ngoài đặt trụ sở chính ở quốc gia, vùng lãnh thổ chưa có thoả thuận hợp tác về thanh tra, giám sát ngân hàng với Ngân hàng Nhà nước phải đáp ứng các yêu cầu bổ sung do Thống đốc Ngân hàng Nhà nước quy định."
+          },
+          {
+            id: "art-37",
+            number: "Điều 37",
+            heading: "Văn phòng đại diện tại Việt Nam",
+            body: "1. Văn phòng đại diện của tổ chức tín dụng nước ngoài, tổ chức nước ngoài khác có hoạt động ngân hàng tại Việt Nam là đơn vị phụ thuộc của tổ chức nước ngoài, không có tư cách pháp nhân và không được thực hiện hoạt động kinh doanh sinh lời.\n2. Văn phòng đại diện được thực hiện các hoạt động sau đây:\na) Làm chức năng văn phòng liên lạc;\nb) Nghiên cứu thị trường;\nc) Xúc tiến xây dựng các dự án hợp tác đầu tư trong lĩnh vực ngân hàng;\nd) Các hoạt động khác phù hợp với pháp luật Việt Nam.\n3. Thời hạn hoạt động ghi trong Giấy phép thành lập văn phòng đại diện không quá 05 năm và có thể được gia hạn."
+          },
+          {
             id: "art-29",
             number: "Điều 29",
             heading: "Thu hồi Giấy phép",
@@ -157,6 +169,24 @@ window.LEGAL_DB = {
             body: "1. Những đối tượng sau đây không được là thành viên Hội đồng quản trị, thành viên Hội đồng thành viên, thành viên Ban kiểm soát, Tổng giám đốc (Giám đốc), Phó Tổng giám đốc (Phó Giám đốc) và chức danh tương đương của tổ chức tín dụng:\na) Người chưa thành niên, người bị hạn chế hoặc bị mất năng lực hành vi dân sự, người có khó khăn trong nhận thức, làm chủ hành vi;\nb) Người đang bị truy cứu trách nhiệm hình sự, đang chấp hành bản án, quyết định về hình sự của Toà án;\nc) Người đã bị kết án về tội xâm phạm an ninh quốc gia, tội xâm phạm sở hữu, tội phạm về quản lý kinh tế, về chức vụ;\nd) Cán bộ, công chức, người quản lý từ cấp phòng trở lên trong các đơn vị sự nghiệp công lập, doanh nghiệp do Nhà nước nắm giữ trên 50% vốn điều lệ, trừ người được cử làm đại diện quản lý phần vốn góp của Nhà nước tại tổ chức tín dụng;\nđ) Sĩ quan, hạ sĩ quan, quân nhân chuyên nghiệp, công nhân, viên chức quốc phòng trong các cơ quan, đơn vị thuộc Quân đội nhân dân; sĩ quan, hạ sĩ quan chuyên nghiệp trong các cơ quan, đơn vị thuộc Công an nhân dân, trừ người được cử làm đại diện quản lý phần vốn góp của Nhà nước tại tổ chức tín dụng;\ne) Người đã từng là chủ doanh nghiệp tư nhân, chủ tịch Hội đồng thành viên, thành viên Hội đồng thành viên, chủ tịch Hội đồng quản trị, thành viên Hội đồng quản trị, Tổng giám đốc (Giám đốc), Phó Tổng giám đốc (Phó Giám đốc) và chức danh tương đương của doanh nghiệp đã bị tuyên bố phá sản, trừ trường hợp doanh nghiệp đó bị tuyên bố phá sản vì lý do bất khả kháng;\ng) Người đang bị cấm đảm nhiệm chức vụ, hành nghề hoặc làm công việc nhất định liên quan đến hoạt động ngân hàng theo quyết định của Toà án.\n2. Cha, mẹ, vợ, chồng, con và anh, chị, em ruột của thành viên Hội đồng quản trị, thành viên Hội đồng thành viên, Tổng giám đốc (Giám đốc) và vợ, chồng của những người này không được là Kế toán trưởng, Giám đốc tài chính, người phụ trách kế toán, người phụ trách tài chính của cùng tổ chức tín dụng đó.\n3. Người quản lý, người điều hành của tổ chức tín dụng đã bị thu hồi Giấy phép, người đại diện theo pháp luật của tổ chức tín dụng đã bị tuyên bố phá sản không được đảm nhiệm các chức vụ này tại bất kỳ tổ chức tín dụng, chi nhánh ngân hàng nước ngoài nào, trừ trường hợp tổ chức tín dụng đó được thành lập lại theo quy định của pháp luật."
           },
           {
+            id: "art-39",
+            number: "Điều 39",
+            heading: "Cơ cấu tổ chức quản trị, điều hành",
+            body: "1. Cơ cấu tổ chức quản trị, điều hành của tổ chức tín dụng được thành lập dưới hình thức công ty cổ phần bao gồm: Đại hội đồng cổ đông, Hội đồng quản trị, Ban kiểm soát, Tổng giám đốc (Giám đốc).\n2. Cơ cấu tổ chức quản trị, điều hành của tổ chức tín dụng được thành lập dưới hình thức công ty trách nhiệm hữu hạn bao gồm: Hội đồng thành viên, Ban kiểm soát, Tổng giám đốc (Giám đốc). Đối với công ty trách nhiệm hữu hạn một thành viên do Nhà nước nắm giữ 100% vốn điều lệ, có Hội đồng thành viên hoặc Chủ tịch công ty.\n3. Cơ cấu tổ chức quản trị, điều hành của ngân hàng hợp tác xã, quỹ tín dụng nhân dân bao gồm: Đại hội thành viên, Hội đồng quản trị, Ban kiểm soát, Tổng giám đốc (Giám đốc).\n4. Tổ chức tín dụng có thể thành lập các đơn vị, bộ phận thuộc cơ cấu nội bộ phù hợp với quy mô, phạm vi hoạt động."
+          },
+          {
+            id: "art-43",
+            number: "Điều 43",
+            heading: "Nghĩa vụ của thành viên Hội đồng quản trị, Hội đồng thành viên, Ban kiểm soát, người điều hành",
+            body: "1. Thực hiện nhiệm vụ, quyền hạn được giao một cách trung thực, cẩn trọng, tốt nhất nhằm bảo đảm lợi ích hợp pháp tối đa của tổ chức tín dụng và cổ đông, thành viên góp vốn của tổ chức tín dụng.\n2. Trung thành với lợi ích của tổ chức tín dụng và cổ đông, thành viên góp vốn của tổ chức tín dụng; không sử dụng thông tin, bí quyết, cơ hội kinh doanh của tổ chức tín dụng, lạm dụng địa vị, chức vụ và tài sản của tổ chức tín dụng để tư lợi hoặc phục vụ lợi ích của tổ chức, cá nhân khác.\n3. Bảo đảm lưu giữ và bảo mật thông tin theo quy định của pháp luật và Điều lệ của tổ chức tín dụng.\n4. Thông báo kịp thời, đầy đủ, chính xác cho tổ chức tín dụng về quyền lợi của mình tại các tổ chức khác có thể dẫn đến xung đột lợi ích.\n5. Chịu trách nhiệm cá nhân khi vi phạm nghĩa vụ trung thành, gây thiệt hại cho tổ chức tín dụng."
+          },
+          {
+            id: "art-55",
+            number: "Điều 55",
+            heading: "Vốn pháp định",
+            body: "1. Vốn pháp định là mức vốn tối thiểu cần phải có để tổ chức tín dụng, chi nhánh ngân hàng nước ngoài được thành lập và hoạt động.\n2. Chính phủ quy định mức vốn pháp định cụ thể đối với từng loại hình tổ chức tín dụng, chi nhánh ngân hàng nước ngoài. Hiện hành thực hiện theo Nghị định 86/2019/NĐ-CP, theo đó mức vốn pháp định: Ngân hàng thương mại 3.000 tỷ đồng; Ngân hàng chính sách 5.000 tỷ đồng; Ngân hàng hợp tác xã 3.000 tỷ đồng; Chi nhánh ngân hàng nước ngoài 15 triệu đô la Mỹ; Công ty tài chính 500 tỷ đồng; Công ty cho thuê tài chính 150 tỷ đồng; Quỹ tín dụng nhân dân hoạt động trên địa bàn xã 0,5 tỷ đồng; Tổ chức tài chính vi mô 5 tỷ đồng.\n3. Tổ chức tín dụng, chi nhánh ngân hàng nước ngoài có vốn điều lệ, vốn được cấp thấp hơn vốn pháp định phải tăng vốn theo lộ trình do Thống đốc Ngân hàng Nhà nước quyết định."
+          },
+          {
             id: "art-63",
             number: "Điều 63",
             heading: "Tỷ lệ sở hữu cổ phần",
@@ -168,6 +198,12 @@ window.LEGAL_DB = {
         title: "CHƯƠNG V",
         subtitle: "HOẠT ĐỘNG CỦA TỔ CHỨC TÍN DỤNG",
         articles: [
+          {
+            id: "art-91",
+            number: "Điều 91",
+            heading: "Hoạt động cho vay",
+            body: "1. Tổ chức tín dụng được cho vay đối với tổ chức, cá nhân Việt Nam và tổ chức, cá nhân nước ngoài để thực hiện các nhu cầu vốn theo quy định của Luật này và quy định của Thông tư 39/2016/TT-NHNN.\n2. Tổ chức tín dụng có quyền chấm dứt việc cho vay, thu hồi nợ trước hạn khi phát hiện khách hàng cung cấp thông tin sai sự thật, vi phạm các điều khoản của hợp đồng tín dụng. Tổ chức tín dụng và khách hàng được quyền thoả thuận chuyển nợ vay sang nợ quá hạn.\n3. Lãi suất cho vay do tổ chức tín dụng và khách hàng thoả thuận theo cung cầu vốn thị trường, nhu cầu vay vốn và mức độ tín nhiệm của khách hàng, trừ trường hợp Ngân hàng Nhà nước có quy định về lãi suất cho vay tối đa đối với một số nhu cầu vốn ưu tiên.\n4. Tổ chức tín dụng có quyền yêu cầu khách hàng vay áp dụng các biện pháp bảo đảm tiền vay theo quy định của pháp luật về giao dịch bảo đảm và Bộ luật Dân sự số 91/2015/QH13."
+          },
           {
             id: "art-99",
             number: "Điều 99",
@@ -191,6 +227,18 @@ window.LEGAL_DB = {
             number: "Điều 135",
             heading: "Những trường hợp không được cấp tín dụng",
             body: "1. Tổ chức tín dụng, chi nhánh ngân hàng nước ngoài không được cấp tín dụng đối với những đối tượng sau đây:\na) Thành viên Hội đồng quản trị, thành viên Hội đồng thành viên, thành viên Ban kiểm soát, Tổng giám đốc (Giám đốc), Phó Tổng giám đốc (Phó Giám đốc) và chức danh tương đương của tổ chức tín dụng, chi nhánh ngân hàng nước ngoài, pháp nhân là cổ đông có người đại diện phần vốn góp là thành viên Hội đồng quản trị, thành viên Ban kiểm soát của tổ chức tín dụng là công ty cổ phần, pháp nhân là thành viên góp vốn, chủ sở hữu của tổ chức tín dụng là công ty trách nhiệm hữu hạn;\nb) Cha, mẹ, vợ, chồng, con của thành viên Hội đồng quản trị, thành viên Hội đồng thành viên, thành viên Ban kiểm soát, Tổng giám đốc (Giám đốc), Phó Tổng giám đốc (Phó Giám đốc) và chức danh tương đương.\n2. Quy định tại khoản 1 Điều này không áp dụng đối với quỹ tín dụng nhân dân, tổ chức tài chính vi mô.\n3. Tổ chức tín dụng, chi nhánh ngân hàng nước ngoài không được cấp tín dụng cho khách hàng trên cơ sở bảo đảm của đối tượng quy định tại khoản 1 Điều này. Tổ chức tín dụng, chi nhánh ngân hàng nước ngoài không được bảo đảm dưới bất kỳ hình thức nào để tổ chức tín dụng khác cấp tín dụng cho đối tượng quy định tại khoản 1 Điều này.\n4. Tổ chức tín dụng không được cấp tín dụng cho doanh nghiệp hoạt động trong lĩnh vực kinh doanh chứng khoán mà tổ chức tín dụng nắm quyền kiểm soát.\n5. Tổ chức tín dụng không được cấp tín dụng trên cơ sở nhận bảo đảm bằng cổ phiếu của chính tổ chức tín dụng đó hoặc công ty con của tổ chức tín dụng đó."
+          },
+          {
+            id: "art-101",
+            number: "Điều 101",
+            heading: "Hoạt động ngân hàng của tổ chức tài chính vi mô",
+            body: "1. Tổ chức tài chính vi mô được thực hiện một hoặc một số hoạt động ngân hàng sau đây theo nội dung ghi trong Giấy phép:\na) Nhận tiền gửi của tổ chức, cá nhân, hộ gia đình;\nb) Cho vay các khoản vay nhỏ đối với khách hàng tài chính vi mô;\nc) Mở tài khoản thanh toán tại ngân hàng để thực hiện các hoạt động kinh doanh của mình;\nd) Cung ứng dịch vụ tư vấn tài chính có liên quan đến hoạt động tài chính vi mô.\n2. Khách hàng tài chính vi mô là cá nhân thuộc hộ nghèo, hộ cận nghèo, hộ mới thoát nghèo, cá nhân có thu nhập thấp và các doanh nghiệp siêu nhỏ theo quy định của pháp luật.\n3. Tổ chức tài chính vi mô không được phép thực hiện hoạt động cấp tín dụng dưới các hình thức không phải cho vay quy định tại điểm b khoản 1 Điều này."
+          },
+          {
+            id: "art-105",
+            number: "Điều 105",
+            heading: "Mở chi nhánh, phòng giao dịch, văn phòng đại diện",
+            body: "1. Tổ chức tín dụng, chi nhánh ngân hàng nước ngoài được mở chi nhánh, phòng giao dịch, văn phòng đại diện tại Việt Nam và ở nước ngoài sau khi được Ngân hàng Nhà nước chấp thuận bằng văn bản.\n2. Việc mở chi nhánh, phòng giao dịch, văn phòng đại diện phải đáp ứng các điều kiện về vốn, tỷ lệ bảo đảm an toàn, năng lực quản trị, kết quả phân loại tài chính và các điều kiện khác do Thống đốc Ngân hàng Nhà nước quy định.\n3. Tổ chức tín dụng có thời hạn không quá 12 tháng kể từ ngày được Ngân hàng Nhà nước chấp thuận để khai trương hoạt động chi nhánh, phòng giao dịch, văn phòng đại diện. Quá thời hạn này, văn bản chấp thuận tự động hết hiệu lực."
           },
           {
             id: "art-134",
@@ -419,6 +467,24 @@ window.LEGAL_DB = {
             number: "Điều 12",
             heading: "Lãi suất",
             body: "1. Ngân hàng Nhà nước công bố lãi suất tái cấp vốn, lãi suất cơ bản và các loại lãi suất khác để điều hành chính sách tiền tệ, chống cho vay nặng lãi.\n2. Trong trường hợp thị trường tiền tệ có diễn biến bất thường, Ngân hàng Nhà nước quy định cơ chế điều hành lãi suất áp dụng trong quan hệ giữa các tổ chức tín dụng với nhau và với khách hàng, các quan hệ tín dụng khác."
+          },
+          {
+            id: "art-13",
+            number: "Điều 13",
+            heading: "Tỷ giá hối đoái",
+            body: "1. Tỷ giá hối đoái của đồng Việt Nam được hình thành trên cơ sở cung cầu ngoại tệ trên thị trường có sự điều tiết của Nhà nước.\n2. Ngân hàng Nhà nước công bố tỷ giá hối đoái, quyết định chế độ tỷ giá, cơ chế điều hành tỷ giá."
+          },
+          {
+            id: "art-14",
+            number: "Điều 14",
+            heading: "Dự trữ bắt buộc",
+            body: "1. Ngân hàng Nhà nước quy định tỷ lệ dự trữ bắt buộc đối với từng loại hình tổ chức tín dụng và từng loại tiền gửi tại tổ chức tín dụng nhằm thực hiện chính sách tiền tệ quốc gia.\n2. Ngân hàng Nhà nước quy định việc trả lãi đối với tiền gửi dự trữ bắt buộc, tiền gửi vượt dự trữ bắt buộc của từng loại hình tổ chức tín dụng đối với từng loại tiền gửi."
+          },
+          {
+            id: "art-17",
+            number: "Điều 17",
+            heading: "Phát hành tiền giấy, tiền kim loại",
+            body: "1. Ngân hàng Nhà nước là cơ quan duy nhất phát hành tiền giấy, tiền kim loại của nước Cộng hoà xã hội chủ nghĩa Việt Nam.\n2. Tiền giấy, tiền kim loại do Ngân hàng Nhà nước phát hành là phương tiện thanh toán hợp pháp trên lãnh thổ nước Cộng hoà xã hội chủ nghĩa Việt Nam.\n3. Ngân hàng Nhà nước bảo đảm cung ứng đủ số lượng và cơ cấu tiền giấy, tiền kim loại cho nền kinh tế."
           }
         ]
       }
@@ -599,6 +665,30 @@ window.LEGAL_DB = {
             number: "Điều 14",
             heading: "Chuẩn bị phạm tội",
             body: "1. Chuẩn bị phạm tội là tìm kiếm, sửa soạn công cụ, phương tiện hoặc tạo ra những điều kiện khác để thực hiện tội phạm hoặc thành lập, tham gia nhóm tội phạm, trừ trường hợp thành lập hoặc tham gia nhóm tội phạm quy định tại Điều 109, điểm a khoản 2 Điều 113 hoặc điểm a khoản 2 Điều 299 của Bộ luật này.\n2. Người chuẩn bị phạm tội quy định tại một trong các điều 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 123, 134, 168, 169, 207, 299, 300, 301, 302, 303 và 324 của Bộ luật này thì phải chịu trách nhiệm hình sự.\n3. Người từ đủ 14 tuổi đến dưới 16 tuổi chuẩn bị phạm tội quy định tại Điều 123, Điều 168 của Bộ luật này thì phải chịu trách nhiệm hình sự."
+          },
+          {
+            id: "art-168",
+            number: "Điều 168",
+            heading: "Tội cướp tài sản",
+            body: "1. Người nào dùng vũ lực, đe doạ dùng vũ lực ngay tức khắc hoặc có hành vi khác làm cho người bị tấn công lâm vào tình trạng không thể chống cự được nhằm chiếm đoạt tài sản, thì bị phạt tù từ 03 năm đến 10 năm.\n2. Phạm tội thuộc một trong các trường hợp sau đây, thì bị phạt tù từ 07 năm đến 15 năm:\na) Có tổ chức;\nb) Có tính chất chuyên nghiệp;\nc) Gây thương tích hoặc gây tổn hại cho sức khoẻ của người khác mà tỷ lệ tổn thương cơ thể từ 11% đến 30%;\nd) Sử dụng vũ khí, phương tiện hoặc thủ đoạn nguy hiểm khác;\nđ) Chiếm đoạt tài sản trị giá từ 50.000.000 đồng đến dưới 200.000.000 đồng;\ne) Phạm tội đối với người dưới 16 tuổi, phụ nữ có thai, người già yếu hoặc người không có khả năng tự vệ.\n3. Phạm tội thuộc trường hợp đặc biệt nghiêm trọng có thể bị phạt tù chung thân hoặc tử hình."
+          },
+          {
+            id: "art-174",
+            number: "Điều 174",
+            heading: "Tội lừa đảo chiếm đoạt tài sản",
+            body: "1. Người nào bằng thủ đoạn gian dối chiếm đoạt tài sản của người khác trị giá từ 2.000.000 đồng đến dưới 50.000.000 đồng hoặc dưới 2.000.000 đồng nhưng thuộc một trong các trường hợp sau đây, thì bị phạt cải tạo không giam giữ đến 03 năm hoặc phạt tù từ 06 tháng đến 03 năm:\na) Đã bị xử phạt vi phạm hành chính về hành vi chiếm đoạt tài sản mà còn vi phạm;\nb) Đã bị kết án về tội này hoặc về một trong các tội quy định tại các điều 168, 169, 170, 171, 172, 173, 175 và 290 của Bộ luật này, chưa được xoá án tích mà còn vi phạm.\n2. Phạm tội với tài sản trị giá từ 50.000.000 đồng đến dưới 200.000.000 đồng thì bị phạt tù từ 02 năm đến 07 năm.\n3. Phạm tội với tài sản trị giá từ 200.000.000 đồng đến dưới 500.000.000 đồng thì bị phạt tù từ 07 năm đến 15 năm.\n4. Phạm tội với tài sản trị giá 500.000.000 đồng trở lên thì bị phạt tù từ 12 năm đến 20 năm hoặc tù chung thân."
+          },
+          {
+            id: "art-290",
+            number: "Điều 290",
+            heading: "Tội sử dụng mạng máy tính, mạng viễn thông, phương tiện điện tử thực hiện hành vi chiếm đoạt tài sản",
+            body: "1. Người nào sử dụng mạng máy tính, mạng viễn thông hoặc phương tiện điện tử thực hiện một trong các hành vi sau đây nhằm chiếm đoạt tài sản, thì bị phạt cải tạo không giam giữ đến 03 năm hoặc phạt tù từ 06 tháng đến 03 năm:\na) Sử dụng thông tin về tài khoản, thẻ ngân hàng của cơ quan, tổ chức, cá nhân để chiếm đoạt tài sản của chủ tài khoản, chủ thẻ hoặc thanh toán hàng hoá, dịch vụ;\nb) Làm, tàng trữ, mua bán, sử dụng, lưu hành thẻ ngân hàng giả nhằm chiếm đoạt tài sản của chủ tài khoản, chủ thẻ hoặc thanh toán hàng hoá, dịch vụ;\nc) Truy cập bất hợp pháp vào tài khoản của cơ quan, tổ chức, cá nhân nhằm chiếm đoạt tài sản;\nd) Lừa đảo trong thương mại điện tử, thanh toán điện tử, kinh doanh tiền tệ, huy động vốn, kinh doanh đa cấp hoặc giao dịch chứng khoán qua mạng nhằm chiếm đoạt tài sản;\nđ) Thiết lập, cung cấp trái phép dịch vụ viễn thông, internet nhằm chiếm đoạt tài sản.\n2. Phạm tội thuộc trường hợp chiếm đoạt 500 triệu đồng trở lên hoặc gây thiệt hại đặc biệt nghiêm trọng thì bị phạt tù từ 12 năm đến 20 năm."
+          },
+          {
+            id: "art-353",
+            number: "Điều 353",
+            heading: "Tội tham ô tài sản",
+            body: "1. Người nào lợi dụng chức vụ, quyền hạn chiếm đoạt tài sản mà mình có trách nhiệm quản lý trị giá từ 2.000.000 đồng đến dưới 100.000.000 đồng hoặc dưới 2.000.000 đồng nhưng thuộc một trong các trường hợp sau đây, thì bị phạt tù từ 02 năm đến 07 năm:\na) Đã bị xử lý kỷ luật về hành vi này mà còn vi phạm;\nb) Đã bị kết án về một trong các tội quy định tại Mục 1 Chương XXIII Bộ luật này, chưa được xoá án tích mà còn vi phạm.\n2. Phạm tội với tài sản trị giá từ 100.000.000 đồng đến dưới 500.000.000 đồng thì bị phạt tù từ 07 năm đến 15 năm.\n3. Phạm tội với tài sản trị giá từ 500.000.000 đồng đến dưới 1.000.000.000 đồng thì bị phạt tù từ 15 năm đến 20 năm.\n4. Phạm tội với tài sản trị giá 1.000.000.000 đồng trở lên thì bị phạt tù 20 năm, tù chung thân hoặc tử hình."
           }
         ]
       }
@@ -873,6 +963,18 @@ window.LEGAL_DB = {
             number: "Điều 24",
             heading: "Hạn mức trả tiền bảo hiểm",
             body: "Hạn mức trả tiền bảo hiểm là số tiền tối đa mà tổ chức bảo hiểm tiền gửi trả cho tất cả các khoản tiền gửi được bảo hiểm của một người tại một tổ chức tham gia bảo hiểm tiền gửi khi phát sinh nghĩa vụ trả tiền bảo hiểm. Thủ tướng Chính phủ quy định hạn mức trả tiền bảo hiểm theo đề nghị của Ngân hàng Nhà nước Việt Nam trong từng thời kỳ. (Hiện hành: 125 triệu đồng theo Quyết định 32/2021/QĐ-TTg.)"
+          },
+          {
+            id: "art-18",
+            number: "Điều 18",
+            heading: "Tiền gửi được bảo hiểm",
+            body: "Tiền gửi được bảo hiểm là tiền gửi bằng đồng Việt Nam của cá nhân gửi tại tổ chức tham gia bảo hiểm tiền gửi dưới hình thức tiền gửi có kỳ hạn, tiền gửi không kỳ hạn, tiền gửi tiết kiệm, chứng chỉ tiền gửi, kỳ phiếu, tín phiếu và các hình thức tiền gửi khác theo quy định của Luật Các tổ chức tín dụng số 32/2024/QH15, trừ các loại tiền gửi quy định tại Điều 19 của Luật này."
+          },
+          {
+            id: "art-19",
+            number: "Điều 19",
+            heading: "Tiền gửi không được bảo hiểm",
+            body: "1. Tiền gửi tại tổ chức tín dụng của cá nhân là người sở hữu trên 5% vốn điều lệ của chính tổ chức tín dụng đó.\n2. Tiền gửi tại tổ chức tín dụng của cá nhân là thành viên Hội đồng thành viên, thành viên Hội đồng quản trị, thành viên Ban kiểm soát, Tổng giám đốc (Giám đốc), Phó Tổng giám đốc (Phó Giám đốc) của chính tổ chức tín dụng đó.\n3. Tiền mua các giấy tờ có giá vô danh do tổ chức tham gia bảo hiểm tiền gửi phát hành.\n4. Tiền gửi của tổ chức (không phải cá nhân)."
           }
         ]
       }
@@ -1387,6 +1489,18 @@ window.LEGAL_DB = {
             number: "Điều 117",
             heading: "Điều kiện có hiệu lực của giao dịch dân sự",
             body: "1. Giao dịch dân sự có hiệu lực khi có đủ các điều kiện sau đây:\na) Chủ thể có năng lực pháp luật dân sự, năng lực hành vi dân sự phù hợp với giao dịch dân sự được xác lập;\nb) Chủ thể tham gia giao dịch dân sự hoàn toàn tự nguyện;\nc) Mục đích và nội dung của giao dịch dân sự không vi phạm điều cấm của luật, không trái đạo đức xã hội.\n2. Hình thức của giao dịch dân sự là điều kiện có hiệu lực của giao dịch dân sự trong trường hợp luật có quy định."
+          },
+          {
+            id: "art-401",
+            number: "Điều 401",
+            heading: "Hiệu lực của hợp đồng",
+            body: "1. Hợp đồng được giao kết hợp pháp có hiệu lực từ thời điểm giao kết, trừ trường hợp có thoả thuận khác hoặc luật liên quan có quy định khác.\n2. Từ thời điểm hợp đồng có hiệu lực, các bên phải thực hiện quyền và nghĩa vụ đối với nhau theo cam kết. Hợp đồng chỉ có thể bị sửa đổi hoặc huỷ bỏ theo thoả thuận của các bên hoặc theo quy định của pháp luật.\n3. Hợp đồng giả tạo thì vô hiệu theo quy định tại Điều 124 của Bộ luật này. Hợp đồng giao kết do bị nhầm lẫn, lừa dối, đe doạ, cưỡng ép có thể bị tuyên bố vô hiệu theo yêu cầu của bên bị nhầm lẫn, bị lừa dối, bị đe doạ, bị cưỡng ép."
+          },
+          {
+            id: "art-463",
+            number: "Điều 463",
+            heading: "Hợp đồng vay tài sản",
+            body: "Hợp đồng vay tài sản là sự thoả thuận giữa các bên, theo đó bên cho vay giao tài sản cho bên vay; khi đến hạn trả, bên vay phải hoàn trả cho bên cho vay tài sản cùng loại theo đúng số lượng, chất lượng và chỉ phải trả lãi nếu có thoả thuận hoặc pháp luật có quy định."
           },
           {
             id: "art-468",
