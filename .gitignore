@@ -3,3 +3,7 @@
 .claude/launch.json
 node_modules/
 *.log
+# Per-run scraper outputs are checked-in artefacts (data/scraped/*.json)
+# but the run-summary file changes every invocation — keep it out of diffs.
+data/scraped/_run.json
+package-lock.json

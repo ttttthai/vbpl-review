@@ -1,0 +1,81 @@
+name: Scrape legal documents
+
+on:
+  # Manual run with optional id filter
+  workflow_dispatch:
+    inputs:
+      doc_id:
+        description: "Limit to a single doc id (e.g. 32/2024/QH15). Leave blank to scrape all."
+        required: false
+        default: ""
+  # Nightly at 02:00 UTC (09:00 ICT)
+  schedule:
+    - cron: "0 2 * * *"
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install deps + Chromium
+        run: |
+          npm install --no-audit --no-fund
+          npx playwright install --with-deps chromium
+
+      - name: Scrape
+        env:
+          SCRAPE_TIMEOUT: "20000"
+        run: |
+          if [ -n "${{ github.event.inputs.doc_id }}" ]; then
+            node scripts/scrape.js --id "${{ github.event.inputs.doc_id }}"
+          else
+            node scripts/scrape.js
+          fi
+
+      - name: Merge into documents.js
+        run: node scripts/merge.js
+
+      - name: Open PR if anything changed
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: bot/scrape-${{ github.run_number }}
+          commit-message: |
+            chore(data): refresh scraped legal documents
+
+            Automated scrape of vbpl.vn / vanban.chinhphu.vn source URLs.
+            Review the diff before merging — the scraper preserves curated
+            metadata but replaces chapters/articles with the parsed content
+            when at least 3 articles are extracted.
+          title: "chore(data): refresh scraped legal documents (run #${{ github.run_number }})"
+          body: |
+            Automated PR from the nightly scraper (`.github/workflows/scrape.yml`).
+
+            **What's in here**
+            - Re-rendered each `sourceUrl` with headless Chromium
+            - Parsed the visible article structure (`Điều X. heading` markers)
+            - Wrote per-doc JSON to `data/scraped/`
+            - Merged into `data/documents.js`, preserving all curated metadata
+              (id, type, dates, status, replaces, articleTotal, sourceUrl, etc.)
+
+            **Review checklist**
+            - [ ] Article counts look reasonable per doc
+            - [ ] No accidental wipes (existing curated articles weren't lost)
+            - [ ] Spot-check 1–2 article bodies against the official source
+            - [ ] `data/scraped/_run.json` lists which docs were `ok` / `no-content`
+
+            If the scrape produced garbage (e.g. URLs broken upstream), close
+            this PR and update the affected `sourceUrl` in `data/documents.js`,
+            then re-run via the **Run workflow** button.
+          labels: scraper, data
+          delete-branch: true

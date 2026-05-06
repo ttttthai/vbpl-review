@@ -1,0 +1,19 @@
+{
+  "name": "vbpl-review",
+  "version": "0.1.0",
+  "private": true,
+  "description": "VBPL Review — Vietnamese legal documents portal, with a Playwright-based scraper that fetches full article text from official sources.",
+  "scripts": {
+    "scrape": "node scripts/scrape.js",
+    "scrape:one": "node scripts/scrape.js --id",
+    "merge": "node scripts/merge.js",
+    "scrape:all": "npm run scrape && npm run merge",
+    "postinstall": "playwright install --with-deps chromium || true"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "playwright": "^1.49.0"
+  }
+}
