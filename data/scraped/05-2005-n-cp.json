@@ -1,0 +1,369 @@
+{
+  "id": "05/2005/NĐ-CP",
+  "sourceUrl": "https://vbpl.vn/van-ban/chi-tiet/nghi-dinh-so-05-2005-nd-cp-ve-ban-dau-gia-tai-san--18511",
+  "scrapedAt": "2026-05-07T01:26:24.131Z",
+  "httpStatus": 200,
+  "via": "[class*=ant-tabs-content-holder]",
+  "chapters": [
+    {
+      "title": "CHƯƠNG I",
+      "subtitle": "NHỮNG QUY ĐỊNH CHUNG",
+      "articles": [
+        {
+          "id": "art-1",
+          "number": "Điều 1",
+          "heading": "Phạm vi điều chỉnh",
+          "body": "Nghị định này quy định về nguyên tắc, thủ tục bán đấu giá tài sản, người bán đấu giá tài sản và quản lý nhà nước đối với hoạt động bán đấu giá tài sản."
+        },
+        {
+          "id": "art-2",
+          "number": "Điều 2",
+          "heading": "Giải thích từ ngữ",
+          "body": "Trong Nghị định này, các từ ngữ dưới đây được hiểu như sau:\n1. Bán đấu giá tài sản là hình thức bán tài sản công khai, có từ hai người trở lên tham gia đấu giá theo nguyên tắc và thủ tục được quy định tại Nghị định này.\n2. Tài sản bán đấu giá là động sản, bất động sản và các quyền tài sản được phép giao dịch theo quy định của pháp luật.\n3. Người có tài sản bán đấu giá là chủ sở hữu tài sản hoặc người được chủ sở hữu uỷ quyền bán tài sản hoặc cá nhân, tổ chức có quyền bán tài sản của người khác theo quy định của pháp luật.\n4. Người tham gia đấu giá tài sản là cá nhân, tổ chức được phép tham gia đấu giá để mua tài sản bán đấu giá theo quy định của Nghị định này và các quy định khác của pháp luật có liên quan.\nNgười tham gia đấu giá tài sản có thể uỷ quyền bằng văn bản cho người khác thay mặt mình tham gia đấu giá tài sản.\n5. Người mua được tài sản bán đấu giá là người trả giá cao nhất và ít nhất bằng giá khởi điểm và được coi là đã chấp nhận giao kết hợp đồng mua bán tài sản."
+        },
+        {
+          "id": "art-3",
+          "number": "Điều 3",
+          "heading": "Nguyên tắc bán đấu giá tài sản",
+          "body": "Việc bán đấu giá tài sản được thực hiện theo nguyên tắc công khai, liên tục, trung thực, bình đẳng, bảo vệ quyền, lợi ích hợp pháp của các bên tham gia."
+        },
+        {
+          "id": "art-4",
+          "number": "Điều 4",
+          "heading": "Bảo vệ quyền, lợi ích hợp pháp của người mua được tài sản bán đấu giá.",
+          "body": "Quyền, lợi ích hợp pháp của người mua được tài sản bán đấu giá được pháp luật bảo vệ. Các cơ quan nhà nước có thẩm quyền trong phạm vi nhiệm vụ, quyền hạn của mình có trách nhiệm bảo đảm việc thực hiện quyền, lợi ích hợp pháp của người mua được tài sản bán đấu giá.\nTrong trường hợp có người thứ ba tranh chấp về quyền sở hữu, quyền sử dụng tài sản đã bán đấu giá thì tài sản đó vẫn thuộc quyền sở hữu, quyền sử dụng của người mua được tài sản bán đấu giá, trừ trường hợp Toà án có quyết định khác."
+        }
+      ]
+    },
+    {
+      "title": "CHƯƠNG II",
+      "subtitle": "TÀI SẢN BÁN ĐẤU GIÁ, THỦ TỤC BÁN ĐẤU GIÁ TÀI SẢN",
+      "articles": [
+        {
+          "id": "art-5",
+          "number": "Điều 5",
+          "heading": "Các loại tài sản bán đấu giá",
+          "body": "1. Tài sản để thi hành án theo quy định của pháp luật về thi hành án.\n2. Tài sản là tang vật, phương tiện vi phạm hành chính bị tịch thu sung quỹ nhà nước theo quy định của pháp luật về xử lý vi phạm hành chính.\n3. Tài sản bảo đảm theo quy định của pháp luật về giao dịch bảo đảm.\n4. Tài sản thuộc sở hữu của cá nhân, tổ chức có yêu cầu bán đấu giá tài sản.\n5. Hàng hoá lưu giữ do người vận chuyển đường biển, đường hàng không, đường bộ lưu giữ tại Việt Nam.\n6. Tài sản nhà nước phải bán đấu giá theo quy định của pháp luật về quản lý tài sản nhà nước."
+        },
+        {
+          "id": "art-6",
+          "number": "Điều 6",
+          "heading": "Lựa chọn người bán đấu giá tài sản",
+          "body": "Người có tài sản bán đấu giá có quyền lựa chọn người bán đấu giá tài sản quy định tại Nghị định này để ủy quyền bán đấu giá tài sản, trừ trường hợp pháp luật có quy định khác."
+        },
+        {
+          "id": "art-7",
+          "number": "Điều 7",
+          "heading": "Hợp đồng uỷ quyền bán đấu giá tài sản",
+          "body": "1. Việc bán đấu giá tài sản được thực hiện theo hợp đồng uỷ quyền bán đấu giá tài sản, trừ trường hợp pháp luật có quy định khác.\n2. Hợp đồng uỷ quyền bán đấu giá tài sản phải được lập thành văn bản và có các nội dung chủ yếu sau đây:\na. Họ, tên, địa chỉ của người có tài sản bán đấu giá; tên, địa chỉ của người bán đấu giá tài sản;\nb. Thời hạn, địa điểm bán đấu giá tài sản;\nc. Liệt kê, mô tả tài sản bán đấu giá;\nd. Giá khởi điểm của tài sản bán đấu giá;\nđ. Thời hạn, địa điểm, phương thức giao tài sản để bán đấu giá;\ne. Việc thanh toán tiền bán tài sản trong trường hợp bán đấu giá thành;\ng. Các chi phí thực tế, hợp lý cho việc bán đấu giá tài sản;\nh. Quyền, nghĩa vụ của các bên;\ni. Trách nhiệm do vi phạm hợp đồng;\nk. Các thoả thuận khác."
+        },
+        {
+          "id": "art-8",
+          "number": "Điều 8",
+          "heading": "Ký kết hợp đồng uỷ quyền bán đấu giá tài sản",
+          "body": "1. Hợp đồng uỷ quyền bán đấu giá tài sản được ký kết giữa người bán đấu giá tài sản và người có tài sản bán đấu giá hoặc người đại diện của người đó.\n2. Trong trường hợp bán đấu giá một số loại tài sản dưới đây thì các bên ký kết hợp đồng uỷ quyền bán đấu giá tài sản được xác định như sau:\na. Tài sản là quyền sử dụng đất thì hợp đồng uỷ quyền bán đấu giá tài sản được ký kết giữa người có quyền sử dụng đất hoặc người đại diện của người đó với người bán đấu giá tài sản;\nb. Tài sản thuộc sở hữu chung hợp nhất thì hợp đồng uỷ quyền bán đấu giá tài sản được ký kết giữa các chủ sở hữu chung hoặc người đại diện của họ với người bán đấu giá tài sản, trừ trường hợp các bên có thoả thuận khác;\nc. Tài sản thuộc sở hữu chung theo phần thì hợp đồng uỷ quyền bán dấu giá tài sản được ký kết giữa chủ sở hữu phần tài sản bán đấu giá hoặc người đại diện của người đó với người bán đấu giá tài sản;\nd. Tài sản cầm cố, thế chấp, bảo lãnh thì hợp đồng uỷ quyền bán đấu giá tài sản được ký kết giữa người có quyền xử lý tài sản đó theo thoả thuận trong hợp đồng cầm cố, thế chấp, bảo lãnh hoặc theo quy định của pháp luật với người bán đấu giá tài sản;\nđ. Tài sản nhà nước thì hợp đồng uỷ quyền bán đấu giá tài sản đươc ký kết giữa cơ quan nhà nước có thẩm quyền theo quy định của pháp luật với người bán đấu giá tài sản;\ne. Tài sản để thi hành án thì hợp đồng uỷ quyền bán đấu giá tài sản được ký kết giữa cơ quan thi hành án với người bán đấu giá tài sản.\n3. Khi ký kết hợp đồng uỷ quyền bán đấu giá tài sản, người có tài sản bán đấu giá có trách nhiệm cung cấp cho người bán đấu giá tài sản giấy chứng nhận hợp pháp hoặc bằng chứng khác chứng minh quyền sử hữu hoặc quyền được bán tài sản theo quy định của pháp luật và chịu trách nhiệm về các bằng chứng đó.\nNgười bán đấu giá tài sản có trách nhiệm kiểm tra các thông tin do người có tài sản bán đấu giá cung cấp để bảo đảm việc bán đấu giá tài sản là hợp pháp."
+        },
+        {
+          "id": "art-9",
+          "number": "Điều 9",
+          "heading": "Xác định giá khởi điểm của tài sản bán đấu giá",
+          "body": "1. Giá khởi điểm của tài sản bán đấu giá được xác định trước khi ký kết hợp đồng uỷ quyền bán đấu giá tài sản hoặc chuyển giao tài sản để bán đấu giá, trừ trường hợp các bên có thoả thuận khác hoặc pháp luật có quy định khác.\n2. Việc xác định giá khởi điểm của tài sản bán đấu giá được thực hiện như sau:\na. Đối với tài sản bán đấu giá là tài sản nhà nước thì giá khởi điểm do cơ quan tài chính hoặc Hội đồng định giá của Nhà nước xác định theo hướng dẫn của Bộ Tài chính;\nb. Đối với các loại tài sản bán đấu giá không phải là tài sản nhà nước thì giá khởi điểm do người có tài sản bán đấu giá tự xác định hoặc uỷ quyền cho người bán đấu giá tài sản hoặc người thứ ba xác định.\nTrong trường hợp người có tài sản bán đấu giá uỷ quyền cho người bán đấu giá tài sản xác định giá khởi điểm thì người bán đấu giá tài sản phải thông báo cho người uỷ quyền về giá khởi điểm trước khi thông báo công khai việc bán đấu giá."
+        },
+        {
+          "id": "art-10",
+          "number": "Điều 10",
+          "heading": "Giám định tài sản bán đấu giá",
+          "body": "1. Tài sản bán đấu giá được giám định khi có yêu cầu hoặc theo quy định của pháp luật.\n2. Trong trường hợp giám định theo yêu cầu thì người yêu cầu giám định phải thanh toán chi phí giám định, nếu các bên không có thoả thuận khác.\nTrong trường hợp giám định theo quy định của pháp luật, thì người có tài sản bán đấu giá phải thanh toán chi phí giám định, trừ trường hợp pháp luật có quy định khác."
+        },
+        {
+          "id": "art-11",
+          "number": "Điều 11",
+          "heading": "Đơn phương đình chỉ thực hiện hợp đồng uỷ quyền bán đấu giá tài sản",
+          "body": "Người có tài sản bán đấu giá hoặc người bán đấu giá tài sản được đơn phương đình chỉ thực hiện hợp đồng uỷ quyền bán đấu giá tài sản theo quy định của Bộ luật Dân sự trước khi người bán đấu giá tài sản thông báo công khai việc bán đấu giá tài sản, trừ trường hợp pháp luật có quy định khác."
+        },
+        {
+          "id": "art-12",
+          "number": "Điều 12",
+          "heading": "Niêm yết, thông báo công khai việc bán đấu giá tài sản",
+          "body": "1. Người bán đấu giá tài sản phải niêm yết việc bán đấu giá tài sản tại nơi bán đấu giá, nơi trưng bày tài sản, nơi đặt trụ sở của người bán đấu giá tài sản, nơi có bất động sản bán đấu giá chậm nhất là bảy ngày đối với động sản, ba mươi ngày đối với bất động sản trước ngày mở cuộc bán đấu giá tài sản.\nTrong trường hợp người có tài sản bán đấu giá có yêu cầu thì thời hạn niêm yết việc bán đấu giá tài sản có thể rút ngắn theo thoả thuận của các bên.\n2. Đối với tài sản bán đấu giá là động sản có giá khởi điểm từ mười triệu đồng trở lên và bất động sản thì đồng thời với việc niêm yết, người bán đấu giá tài sản phải thông báo công khai ít nhất hai lần, mỗi lần cách nhau ba ngày trên phương tiện thông tin đại chúng của Trung ương hoặc địa phương về việc bán đấu giá tài sản. Thời hạn thông báo công khai được thực hiện theo quy định tại khoản 1 Điều này.\nViệc thông báo công khai trên phương tiện thông tin đại chúng cũng được thực hiện đối với tài sản bán đấu giá là động sản có giá khởi điểm dưới mười triệu đồng, nếu người có tài sản bán đấu giá yêu cầu.\n3. Niêm yết, thông báo công khai về việc bán đấu giá tài sản là quyền sử dụng đất để thi hành án được thực hiện theo quy định của pháp luật về thi hành án dân sự.\n4. Niêm yết, thông báo công khai về bán đấu giá tài sản có các nội dung chủ yếu sau đây:\na. Tên, địa chỉ của người bán đấu giá tài sản;\nb. Thời gian, địa điểm bán đấu giá tài sản;\nc. Danh mục tài sản, số lượng, chất lượng của tài sản bán đấu giá;\nd. Giá khởi điểm của tài sản bán đấu giá;\nđ. Địa điểm, thời hạn trưng bày tài sản bán đấu giá;\ne. Địa điểm, thời hạn tham khảo hồ sơ tài sản bán đấu giá;\ng. Địa điểm, thời hạn đăng ký mua tài sản bán đấu giá;\nh. Những thông tin cần thiết khác liên quan đến tài sản bán đấu giá, gồm cả những thông tin mà người có tài sản bán đấu giá yêu cầu thông báo công khai."
+        },
+        {
+          "id": "art-13",
+          "number": "Điều 13",
+          "heading": "Người không được tham gia đấu giá tài sản",
+          "body": "1. Người không có năng lực hành vi dân sự, người mất hoặc bị hạn chế năng lực hành vi dân sự theo quy định của Bộ luật Dân sự hoặc người tại thời điểm đấu giá không nhận thức, làm chủ được hành vi của mình.\n2. Người làm việc trong Trung tâm dịch vụ bán đấu giá tài sản, doanh nghiệp bán đấu giá tài sản hoặc Hội đồng bán đấu giá tài sản, nơi thực hiện việc bán đấu giá tài sản đó; người trực tiếp giám định, định giá tài sản; cha, mẹ, vợ, chồng hoặc con của những người đó.\n3. Người có tài sản bán đấu giá.\n4. Người không có quyền mua tài sản bán đấu giá theo quy định của pháp luật."
+        },
+        {
+          "id": "art-14",
+          "number": "Điều 14",
+          "heading": "Đăng ký mua tài sản bán đấu giá.",
+          "body": "1. Người muốn tham gia đấu giá bất động sản hoặc động sản có giá khởi điểm từ mười triệu đồng trở lên phải đăng ký mua trong thời hạn mà người bán đấu giá tài sản đã thông báo.\n2. Người đã đăng ký mua tài sản bán đấu giá phải nộp một khoản tiền đặt trước do người bán đấu giá tài sản và người có tài sản bán đấu giá thoả thuận quy định, nhưng tối đa không quá 5% của giá khởi điểm.\n3. Trong trường hợp người đã nộp tiền đặt trước mua được tài sản bán đấu giá thì khoản tiền đặt trước được trừ vào giá mua; nếu không mua được, thì khoản tiền đặt trước được trả lại cho người nộp ngay sau khi cuộc bán đấu giá kết thúc, trừ trường hợp pháp luật có quy định khác.\n4. Trong trường hợp người đăng ký mua tài sản bán đấu giá đã nộp một khoản tiền đặt trước nhưng không tham gia cuộc bán đấu giá mà không có lý do chính đáng thì khoản tiền đặt trước đó thuộc về người bán đấu giá tài sản, trừ trường hợp các bên có thoả thuận khác."
+        },
+        {
+          "id": "art-15",
+          "number": "Điều 15",
+          "heading": "Trưng bày, xem tài sản bán đấu giá",
+          "body": "1. Đối với tài sản bán đấu giá là bất động sản thì người tham gia đấu giá tài sản được trực tiếp xem tài sản từ khi niêm yết và thông báo công khai cho đến trước ngày mở cuộc bán đấu giá tài sản hai ngày.\n2. Đối với tài sản bán đấu giá là động sản thì ít nhất hai ngày trước ngày mở cuộc bán đấu giá tài sản, người bán đấu giá tài sản phải tạo điều kiện cho người tham gia đấu giá tài sản được xem tài sản bán đấu giá. Trên tài sản hoặc mẫu tài sản phải ghi rõ tên của người có tài sản bán đấu giá và thông tin về tài sản đó."
+        },
+        {
+          "id": "art-16",
+          "number": "Điều 16",
+          "heading": "Địa điểm bán đấu giá tài sản",
+          "body": "Cuộc bán đấu giá tài sản có thể được tổ chức tại trụ sở của người bán đấu giá tài sản, tại nơi có tài sản hoặc tại một địa điểm khác theo thỏa thuận của người bán đấu giá tài sản và người có tài sản bán đấu giá."
+        },
+        {
+          "id": "art-17",
+          "number": "Điều 17",
+          "heading": "Tiến hành cuộc bán đấu giá tài sản",
+          "body": "1. Người bán đấu giá tài sản có thể lựa chọn một trong các hình thức đấu giá sau đây để tiến hành cuộc bán đấu giá tài sản:\na. Đấu giá trực tiếp bằng lời nói;\nb. Đấu giá bằng bỏ phiếu;\nc. Đấu giá thông qua mạng Internet;\nd. Các hình thức khác do người có tài sản bán đấu giá và người bán đấu giá tài sản thỏa thuận.\n2. Trình tự tiến hành cuộc bán đấu giá tài sản được thực hiện như sau:\na. Mở đầu cuộc bán đấu giá tài sản, người điều hành cuộc bán đấu giá tài sản giới thiệu bản thân và người giúp việc; thông báo những quy định về cuộc bán đấu giá tài sản; công bố danh sách người đăng ký mua tài sản bán đấu giá và điểm danh; giới thiệu từng tài sản bán đấu giá; nhắc lại giá khởi điểm; quy định mức chênh lệch của mỗi lần trả giá; trả lời các câu hỏi của người tham gia đấu giá tài sản;\nb. Người điều hành cuộc bán đấu giá tài sản yêu cầu người tham gia đấu giá tài sản trả giá. Sau mỗi lần người tham gia đấu giá tài sản trả giá, người điều hành cuộc bán đấu giá tài sản thông báo công khai về giá đã trả cho những người tham gia đấu giá tài sản;\nc. Người điều hành cuộc bán đấu giá tài sản công bố người mua được tài sản bán đấu giá. Trường hợp giá trả cao nhất được công bố thấp hơn so với giá khởi điểm thì cuộc bán đấu giá tài sản coi như không thành.\n3. Diễn biến của cuộc bán đấu giá tài sản phải được ghi vào biên bản bán đấu giá tài sản. Biên bản bán đấu giá tài sản phải có chữ ký của người điều hành cuộc bán đấu giá tài sản, người ghi biên bản và đại diện người tham gia đấu giá tài sản.\n4. Kết quả cuộc bán đấu giá tài sản được ghi vào Sổ đăng ký bán đấu giá tài sản. Trong trường hợp bán đấu giá tài sản thành thì người điều hành cuộc bán đấu giá tài sản lập văn bản bán đấu giá tài sản.\n5. Căn cứ vào các quy định của Nghị định này và đặc thù của từng hình thức đấu giá tài sản, Bộ tư pháp phối hợp với các bộ có liên quan hướng dẫn thủ tục chi tiết áp dụng cho từng hình thức đấu giá tài sản."
+        },
+        {
+          "id": "art-18",
+          "number": "Điều 18",
+          "heading": "Văn bản bán đấu giá tài sản",
+          "body": "1. Văn bản bán đấu giá tài sản có giá trị xác nhận việc mua bán tài sản, là cơ sở pháp lý để chuyển quyền sở hữu hoặc quyền sử dụng tài sản bán đấu giá.\n2. Văn bản bán đấu giá tài sản có các nội dung chủ yếu sau đây:\na. Tên, địa chỉ của người bán đấu giá tài sản;\nb. Họ, tên của người điều hành cuộc bán đấu giá tài sản;\nc. Họ, tên, địa chỉ của người có tài sản bán đấu giá;\nd. Họ, tên, địa chỉ của người mua được tài sản bán đấu giá;\nđ. Thời gian, địa điểm bán đấu giá tài sản;\ne. Tài sản bán đấu giá;\ng. Giá khởi điểm của tài sản bán đấu giá;\nh. Giá bán tài sản;\ni. Thời hạn, phương thức, địa điểm thanh toán tiền mua tài sản đã bán đấu giá;\nk. Thời hạn, địa điểm giao tài sản đã bán đấu giá cho người mua được tài sản bán đấu giá;\nl. Trách nhiệm do vi phạm nghĩa vụ của các bên.\n3. Văn bản bán đấu giá tài sản phải có chữ ký của đấu giá viên chịu trách nhiệm về việc bán đấu giá tài sản và của người mua được tài sản bán đấu giá. Đối với văn bản bán đấu giá bất động sản thì phải được cơ quan công chứng nơi có bất động sản chứng nhận.\n4. Văn bản bán đấu giá tài sản được người bán đấu giá tài sản giữ một bản và gửi cho người mua được tài sản bán đấu giá, người có tài sản bán đấu giá và cơ quan nhà nước có thẩm quyền đăng ký quyền sở hữu tài sản, quyền sử dụng tài sản, mỗi nơi một bản. Trong trường hợp tài sản bán đấu giá là bất động sản thì văn bản bán đấu giá tài sản còn được gửi cho cơ quan thuế."
+        },
+        {
+          "id": "art-19",
+          "number": "Điều 19",
+          "heading": "Bán tài sản bán đấu giá trong trường hợp đặc biệt",
+          "body": "1. Trong trường hợp đã hết thời hạn đăng ký tham gia đấu giá tài sản mà chỉ có một người đăng ký mua tài sản bán đấu giá và trả giá ít nhất bằng giá khởi điểm thì tài sản được bán cho người đó, nếu người có tài sản bán đấu giá đồng ý.\n2. Khi bán tài sản theo quy định tại khoản 1 điều này, đấu giá viên chịu trách nhiệm về việc bán đấu giá tài sản cũng phải lập biên bản về việc bán tài sản bán đấu giá, ghi kết quả vào Sổ đăng ký bán đấu giá tài sản và lập văn bản bán đấu giá tài sản."
+        },
+        {
+          "id": "art-20",
+          "number": "Điều 20",
+          "heading": "Rút lại giá đã trả",
+          "body": "1. Tại cuộc bán đấu giá tài sản, người đã trả giá cao nhất mà rút lại giá đã trả trước khi người điều hành cuộc bán đấu giá tài sản công bố người mua được tài sản thì cuộc bán đấu giá tài sản vẫn tiếp tục và bắt đầu từ giá của người trả giá liền kề trước đó.\n2. Người rút lại giá đã trả bị truất quyền tham gia trả giá tiếp và không được hoàn trả khoản tiền đặt trước. Khoản tiền đặt trước của người rút lại giá đã trả thuộc về người có tài sản bán đấu giá."
+        },
+        {
+          "id": "art-21",
+          "number": "Điều 21",
+          "heading": "Từ chối mua tài sản bán đấu giá.",
+          "body": "1. Trong trường hợp người điều hành cuộc bán đấu giá tài sản đã công bố người mua được tài sản bán đấu giá mà người này từ chối mua thì tài sản được bán cho người trả giá liền kề nếu giá liền kề ít nhất bằng giá khởi điểm. Khoản tiền đặt trước của người từ chối mua thuộc về người có tài sản bán đấu giá.\n2. Trong trường hợp người trả giá liền kề không đồng ý mua hoặc giá trả liền kề thấp hơn giá khởi điểm thì cuộc bán đấu giá coi như không thành. Khoản tiền đặt trước của người từ chối mua quy định tại khoản 1 điều này thuộc về người có tài sản bán đấu giá."
+        },
+        {
+          "id": "art-22",
+          "number": "Điều 22",
+          "heading": "Trả lại tài sản bán đấu giá trong trường hợp bán đấu giá tài sản không thành",
+          "body": "Trong trường hợp bán đấu giá tài sản không thành, thì người bán đấu giá tài sản trả lại tài sản được giao bảo quản hoặc quản lý cho người có tài sản bán đấu giá trong thời hạn chậm nhất là ba ngày, kể từ ngày bán đấu giá tài sản không thành, trừ trường hợp các bên có thoả thuận khác hoặc pháp luật có quy định khác."
+        },
+        {
+          "id": "art-23",
+          "number": "Điều 23",
+          "heading": "Thanh toán tiền bán tài sản trong trường hợp bán đấu giá tài sản thành",
+          "body": "Việc thanh toán tiền bán tài sản trong trường hợp bán đấu giá tài sản thành do người bán đấu giá tài sản và người có tài sản bán đấu giá thoả thuận trong hợp đồng ủy quyền bán đấu giá tài sản, trừ trường hợp pháp luật có quy định khác."
+        },
+        {
+          "id": "art-24",
+          "number": "Điều 24",
+          "heading": "Thời hạn, phương thức, địa điểm thanh toán tiền mua tài sản, giao tài sau đã bán đấu giá",
+          "body": "1. Thời hạn, phương thức, địa điểm thanh toán tiền mua tài sản đã bán đấu giá do người bán đấu giá tài sản và người mua được tài sản bán đấu giá thoả thuận trong văn bản bán đấu giá tài sản.\n2. Thời hạn, địa điểm giao tài sản đã bán đấu giá do người bán đấu giá tài sản và người mua được tài sản bán đấu giá thoả thuận trong văn bản bán đấu giá tài sản.\nViệc giao tài sản đã bán đấu giá là tài sản thi hành án cho người mua được tài sản bán dấu giá được thực hiện theo quy định của pháp luật về thi hành án dân sự."
+        },
+        {
+          "id": "art-25",
+          "number": "Điều 25",
+          "heading": "Mua lại tài sản đã bán đấu giá",
+          "body": "1. Người có tài sản bán đấu giá chỉ được mua lại tài sản đã bán đấu giá, nếu người mua được tài sản bán đấu giá đồng ý.\n2. Việc mua lại tài sản dã bán đấu giá được thực hiện theo quy định của Bộ luật Dân sự về hợp đồng mua bán tài sản."
+        },
+        {
+          "id": "art-26",
+          "number": "Điều 26",
+          "heading": "Chi phí bán đấu giá tài sản",
+          "body": "1. Trong trường hợp bán đấu giá tài sản thành thì người có tài sản bán đấu giá thanh toán cho người bán đấu giá tài sản các chi phí bán đấu giá tài sản sau đây:\na. Phí đấu giá được thực hiện theo quy định của pháp luật về phí, lệ phí;\nb. Các chi phí thực tế, hợp lý cho việc bán đấu giá tài sản do người có tài sản bán đấu giá và người bán đấu giá tài sản thoả thuận.\n2. Trong trường hợp bán đấu giá tài sản không thành thì người có tài sản bán đấu giá thanh toán cho người bán đấu giá tài sản các chi phí quy định tại điểm b khoản 1 Điều này, trừ trường hợp các bên có thoả thuận khác hoặc pháp luật có quy định khác."
+        },
+        {
+          "id": "art-27",
+          "number": "Điều 27",
+          "heading": "Phí dịch vụ làm thủ tục chuyển quyền sở hữu, quyền sử dụng, xác định giá khởi điểm của tài sản bán đấu giá (sau đây gọi chung là phí dịch vụ)",
+          "body": "1. Tổ chức, cá nhân có yêu cầu và được người bán đấu giá tài sản cung cấp dịch vụ làm thủ tục chuyển quyền sở hữu, quyền sử dụng tài sản xác định giá khởi điểm của tài sản bán đấu giá thì phải trả phí dịch vụ cho người bán đấu giá tài sản.\n2. Mức phí dịch vụ do các bên thoả thuận trên cơ sở chi phí cần thiết hợp lý và giá thị trường tại địa phương."
+        },
+        {
+          "id": "art-28",
+          "number": "Điều 28",
+          "heading": "Quản lý, sử dụng chi phí bán đấu giá tài sản, phí dịch vụ và các khoản thu khác",
+          "body": "1. Việc quản lý, sử dụng chi phí bán đấu giá tài sản, phí dịch vụ và các khoản thu khác của Trung tâm dịch vụ bán đấu giá tài sản hoặc doanh nghiệp bán đấu giá tài sản được thực hiện theo quy định của pháp luật về phí, lệ phí và chế độ tài chính áp dụng cho đơn vị sự nghiệp có thu hoặc cho doanh nghiệp.\n2. Bộ Tài chính hướng dẫn chế độ thu chi tài chính của Hội đồng bán đấu giá tài sản."
+        },
+        {
+          "id": "art-29",
+          "number": "Điều 29",
+          "heading": "Hồ sơ cấp giấy chứng nhận quyền sở hữu, quyền sử dụng tài sản bán đấu giá",
+          "body": "Hồ sơ cấp giấy chứng nhận quyền sở hữu, quyền sử dụng tài sản bán đấu giá bao gồm văn bản bán đấu giá tài sản và các loại giấy tờ sau đây, tùy theo từng loại tài sản:\n1. Đối với tài sản thuộc sở hữu của cá nhân, tổ chức: giấy chứng nhận quyền sở hữu, quyền sử dụng tài sản hoặc giấy tờ hợp lệ khác theo quy định của pháp luật.\n2. Đối với tài sản bán đấu giá thuộc sở hữu nhà nước: ngoài giấy tờ chứng nhận quyền sở hữu, quyền sử dụng tài sản, nếu việc bán tài sản đó phải có sự đồng ý hoặc cho phép của cơ quan nhà nước có thẩm quyền thì phải có văn bản đồng ý, cho phép của cơ quan đó.\n3. Đối với tài sản để thi hành án: bản sao bản án, quyết định của Toà án, quyết định thi hành án, quyết định kê biên tài sản của cơ quan thi hành án và các loại giấy tờ chứng nhận quyền sở hữu, quyền sử dụng tài sản, nếu có.\n4. Đối với tài sản bị tịch thu sung quỹ nhà nước: quyết định tịch thu tài sản của cơ quan nhà nước có thẩm quyền.\n5. Đối với tài sản xác lập quyền sở hữu của nhà nước: quyết định hoặc văn bản của Uỷ ban nhân dân cấp có thẩm quyền hoặc cơ quan nhà nước có thẩm quyền.\n6. Đối với tài sản bảo đảm thì ngoài giấy chứng nhận quyền sở hữu, quyền sử dụng tài sản hoặc giấy tờ hợp lệ khác theo quy định của pháp luật, còn kèm theo hợp đồng bảo đảm, hợp đồng tín dụng, biên bản xử lý tài sản hoặc biên bản thu giữ tài sản, nếu có."
+        },
+        {
+          "id": "art-30",
+          "number": "Điều 30",
+          "heading": "Cấp giấy chứng nhận quyền sở hữu, quyền sử dụng tài sản bán đấu giá",
+          "body": "1. Đối với tài sản đã bán đấu giá, cơ quan nhà nước có thẩm quyền có trách nhiệm cấp giấy chứng nhận quyền sở hữu, quyền sử dụng tài sản cho người mua được tài sản bán đấu giá.\n2. Thời hạn cấp giấy chứng nhận quyền sở hữu, quyền sử dụng đối với tài sản đã bán đấu giá là ba mươi ngày, kể từ ngày nhận đủ hồ sơ theo quy định tại Điều 29 của Nghị định này, trừ trường hợp pháp luật có quy định khác."
+        },
+        {
+          "id": "art-31",
+          "number": "Điều 31",
+          "heading": "Trách nhiệm về giá trị, chất lượng của tài sản đã bán đấu giá",
+          "body": "Người bán đấu giá tài sản không chịu trách nhiệm về giá trị, chất lượng của tài sản đã bán đấu giá, trừ trường hợp không thông báo đầy đủ, chính xác cho người tham gia đấu giá tài sản những thông tin cần thiết có liên quan đến giá trị, chất lượng của tài sản đã bán đấu giá."
+        },
+        {
+          "id": "art-32",
+          "number": "Điều 32",
+          "heading": "Huỷ kết quả bán đấu giá tài sản",
+          "body": "1. Kết quả bán đấu giá tài sản bị huỷ trong các trường hợp sau đây:\na) Do thoả thuận giữa người có tài sản bán đấu giá, người mua được tài sản bán đấu giá và người bán đấu giá tài sản, trừ trường hợp pháp luật có quy định khác;\nb. Hợp đồng uỷ quyền bán dấu giá tài sản, văn bản bán đấu giá tài sản bị Toà án tuyên bố vô hiệu hoặc bị huỷ theo quy định của BỘ luật Dân sự ;\nc. Có quyết định của cơ quan nhà nước có thẩm quyền về việc sửa đổi một phần hoặc huỷ toàn bộ các quyết định liên quan đến tài sản bán đấu giá do có vi phạm pháp luật.\n2. Trong trường hợp kết quả bán đấu giá tài sản bị huỷ thì các bên khôi phục lại tình trạng ban đầu, hoàn trả cho nhau tài sản đã nhận; nếu không hoàn trả được bằng hiện vật, thì phải trả bằng tiền. Bên có lỗi gây thiệt hại phải bồi thường.\n3. Bộ Tư pháp hướng dẫn cụ thể về việc huỷ kết quả bán đấu giá tài sản quy định tại khoản 1 Điều này."
+        },
+        {
+          "id": "art-33",
+          "number": "Điều 33",
+          "heading": "Tổ chức bán đấu giá lại",
+          "body": "Trong trường hợp bán đấu giá tài sản không thành thì việc tổ chức bán đấu giá lại được thực hiện theo quy định của pháp luật hoặc theo thoả thuận giữa người có tài sản bán đấu giá và người bán đấu giá tài sản.\nViệc tổ chức bán đấu giá lại được tiến hành theo thủ tục như đối vào việc bán đấu giá tài sản lần đầu."
+        }
+      ]
+    },
+    {
+      "title": "CHƯƠNG III",
+      "subtitle": "NGƯỜI BÁN ĐẤU GIÁ",
+      "articles": [
+        {
+          "id": "art-34",
+          "number": "Điều 34",
+          "heading": "Người bán đấu giá",
+          "body": "1. Doanh nghiệp bán đấu giá tài sản.\n2. Trung tâm dịch vụ bán đấu giá tài sản.\n3. Hội đồng bán đấu giá tài sản."
+        },
+        {
+          "id": "art-35",
+          "number": "Điều 35",
+          "heading": "Doanh nghiệp bán dấu giá tài sản",
+          "body": "Doanh nghiệp được tiến hành kinh doanh dịch vụ bán đấu giá tài sản khi có đủ các điều kiện sau đây:\n1. Có đăng ký kinh doanh dịch vụ bán đấu giá tài sản;\n2. Có ít nhất 1 đấu giá viên;\n3. Có cơ sở vật chất bảo đảm cho việc thực hiện bán đấu giá tài sản."
+        },
+        {
+          "id": "art-36",
+          "number": "Điều 36",
+          "heading": "Trung tâm dịch vụ bán đấu g á tài sản",
+          "body": "1. Việc bán đấu giá tài sản chủ yếu thông qua các tổ chức doanh nghiệp. Trong trường hợp cần thiết thì Ở mỗi tỉnh, thành phổ trực thuộc Trung ương thành lập một Trung tâm dịch vụ bán đấu giá tài sản (sau đây gọi tắt là Trung tâm).\nTrung tâm do Chủ tịch Uỷ ban nhân dân tỉnh, thành phố trực thuộc Trung ương quyết định thành lập và giao cho SỞ chuyên môn có chức năng quản lý nhà nước về công tác bán đấu giá tài sản tại địa phương trực tiếp quản lý.\n2. Trung tâm là đơn vị sự nghiệp có thu, có trụ sở, có tư cách pháp nhân, có con dấu và tài khoản riêng. Trung tâm có Giám đốc, kế toán, thủ quỹ, thủ kho và ít nhất là một đấu giá viê. Giám đốc Trung tâm phải là đấu giá viên.\n3. Trung tâm có nhiệm vụ bán đấu giá tài sản để thi hành án, tài sản là tang vật, phương tiện vi phạm hành chính bị tịch thu sung quỹ nhà nước theo quy định của pháp luật.\nNgoài nhiệm vụ bán đấu giá các tài sản quy định tại khoản này, Trung tâm có thể ký hợp đồng với tổ chức, cá nhân có yêu cầu để bán đấu giá các loại tài sản khác."
+        },
+        {
+          "id": "art-37",
+          "number": "Điều 37",
+          "heading": "Hội đồng bán đấu giá tài sản.",
+          "body": "1. Hội đồng bán đấu giá tài sản do Thủ trưởng cơ quan quản lý nhà nước có thẩm quyền quyết định thành lập để tổ chức bán đấu giá tài sản của Nhà nước có giá trị dưới mười triệu đồng.\n2. Trong trường hợp tài sản là cổ vật, tài sản có giá trị văn hoá - lịch sử, tài sản có giá trị đặc biệt lớn phải được bán đấu giá thông qua Hội đồng bán đấu giá tài sản hoặc tổ chức bán đấu giá nước ngoài thì việc thành lập Hội đồng bán đấu giá tài sản hoặc thuê tổ chức bán đấu giá nước ngoài được thực hiện theo quyết định của Thủ tướng Chính phủ."
+        },
+        {
+          "id": "art-38",
+          "number": "Điều 38",
+          "heading": "Nghĩa vụ của người bán đấu giá tài sản",
+          "body": "1. Tổ chức việc bán đấu giá tài sản theo nguyên tắc và thủ tục quy định tại Nghị định này.\n2. Niêm yết, thông báo công khai, đầy đủ, chính xác các thông tin cần thiết có liên quan đến tài sản bán đấu giá.\n3. Bảo quản tài sản bán đấu giá khi được người có tài sản giao bảo quản hoặc quản lý.\n4. Trưng bày, cho xem và cho tham khảo hồ sơ tài sản bán đấu giá.\n5. Giao tài sản bán đấu giá được giao bảo quản hoặc quản lý cho người mua được tài sản bán đấu giá; yêu cầu người có tài sản bán đấu giá giao tài sản cho người mua được tài sản bán đấu giá trong trường hợp người có tài sản bán đấu giá đang trực tiếp quản lý tài sản đó.\n6. Cung cấp đầy đủ các giấy tờ liên quan đến tài sản bán đấu giá cho người mua được tài sản bán đấu giá.\n7. Thanh toán cho người có tài sản bán đấu giá số tiền bán tài sản sau khi trừ các chi phí bán đấu giá theo quy định tại Điều 26 của Nghị định này\n8. Thực hiện chế độ kế toán, tài chính theo quy định của pháp luật.\n9. Bồi thường thiệt hại trong trường hợp có lỗi do vi phạm nghĩa vụ.\n10. Định kỳ hàng năm, Trung tâm và doanh nghiệp bán đấu giá tài sản báo cáo Uỷ ban nhân dân tỉnh, thành phố trực thuộc Trung ương nơi Trung tâm, doanh nghiệp đặt trụ sở chính và Bộ Tư pháp về tổ chức và hoạt động của mình."
+        },
+        {
+          "id": "art-39",
+          "number": "Điều 39",
+          "heading": "Quyền của người bán đấu giá tài sản",
+          "body": "1. Yêu cầu người có tài sản bán đấu giá cung cấp đầy đủ, chính xác thông tin, giấy tờ liên quan đến tài sản bán đấu giá.\n2. Yêu cầu người mua được tài sản bán đấu giá thực hiện việc thanh toán tiền mua tài sản bán đấu giá.\n3. Yêu cầu người có tài sản bán đấu giá thực hiện việc thanh toán chi phí bán đấu giá tài sản theo quy định tại Điều 26 của Nghị định này."
+        },
+        {
+          "id": "art-40",
+          "number": "Điều 40",
+          "heading": "Người điều hành cuộc bán đấu giá tài sản",
+          "body": "1. Người điều hành cuộc bán đấu giá tài sản là đấu giá viên.\n2. Trong trường hợp bán đấu giá các tài sản đặc thù, người bán đấu giá tài sản có thể cử hoặc thuê người không phải là đấu giá viên nhưng có hiểu biết về tài sản đó điều hành cuộc bán đấu giá tài sản."
+        },
+        {
+          "id": "art-41",
+          "number": "Điều 41",
+          "heading": "Đấu giá viên",
+          "body": "1. Đấu giá viên là người có đủ các điều kiện quy định tại khoản 2 Điều này, được cấp Thẻ đấu giá viên để thực hiện việc bán đấu giá tài sản theo quy định của Nghị định này.\n2. Công dân Việt Nam thường trú tại Việt Nam có đủ các điều kiện sau đây thì được cấp Thẻ đấu giá viên:\na. Có bằng tốt nghiệp đại học và đã qua thực tế công tác theo ngành học từ hai năm trở lên;\nb. Có phẩm chất đạo đức tốt;\nc. Không phải là người bị mất hoặc bị hạn chế năng lực hành vi dân sự, người đang bị truy cứu trách nhiệm hình sự hoặc đã bị kết án mà chưa được xoá án tích, người đang bị quản chế hành chính."
+        },
+        {
+          "id": "art-42",
+          "number": "Điều 42",
+          "heading": "Thủ tục cấp Thẻ đấu giá viên",
+          "body": "1. Người muốn được cấp Thẻ đấu giá viên phải có hồ sơ xin cấp Thẻ đấu giá viên. Hồ sơ gồm các giấy tờ sau đây:\na. Đơn xin cấp Thẻ đấu giá viên;\nb. Sơ yếu lý lịch;\nc. Phiếu lý lịch tư pháp;\nd. Bản sao bằng tốt nghiệp đại học; ..\nđ. Giấy xác nhận thời gian công tác theo quy định tại điểm a khoản 2 Điều 41 của Nghị định này.\n2. Hồ sơ xin cấp Thẻ đấu giá viên do Trung tâm hoặc doanh nghiệp bán đấu giá tài sản gửi đến Bộ Tư pháp. Trong thời hạn mười lăm ngày, kể từ ngày nhận được hồ sơ hợp lệ, Bộ Tư pháp có trách nhiệm cấp Thẻ đấu giá viên cho người làm đơn; trong trường hợp từ chối thì phải thông báo lý do bằng văn bản cho Trung tâm hoặc doanh nghiệp đã nộp hồ sơ."
+        },
+        {
+          "id": "art-43",
+          "number": "Điều 43",
+          "heading": "Quyền, nghĩa vụ của đấu giá viên",
+          "body": "1. Trực tiếp thực hiện và chịu trách nhiệm về việc tổ chức bán đấu giá tài sản\n2. Điều hành cuộc bán đấu giá tài sản hoặc giám sát người điều hành cuộc bán đấu giá tài sản không phải là đấu giá viên được quy định tại khoản 2 Điều 40 của Nghị định này.\n3. Ký tên và đóng dấu văn bản bán đấu giá tài sản"
+        }
+      ]
+    },
+    {
+      "title": "CHƯƠNG IV",
+      "subtitle": "QUẢN LÝ NHÀ NƯỚC VỀ BÁN ĐẤU GIÁ TÀI SẢN",
+      "articles": [
+        {
+          "id": "art-44",
+          "number": "Điều 44",
+          "heading": "Nhiệm vụ, quyền hạn của Bộ Tư pháp",
+          "body": "Bộ Tư pháp là cơ quan giúp Chính phủ thực hiện quản lý nhà nước thống nhất về tổ chức và hoạt động bán đấu giá tài sản trong phạm vi cả nước, có nhiệm vụ, quyền hạn sau đây:\n1. Soạn thảo, trình cơ quan nhà nước có thẩm quyền ban hành hoặc ban hành theo thẩm quyền các văn bản quy phạm pháp luật về tổ chức và hoá động bán đấu giá tài sản; hướng dẫn thi hành các văn bản quy phạm pháp luật đó.\n2. Ban hành, quản lý và hướng dẫn theo thẩm quyền việc sử dụng các mẫu văn bản, giấy tờ trong lĩnh vào bán đấu giá tài sản. Sổ đăng ký bán đấu giá tài sản.\n3. Kiểm tra, thanh tra về tổ chức và hoạt động bán đấu giá tài sản theo thẩm quyền.\n4. Tổng hợp và hàng năm báo cáo Thủ tướng Chính phủ về tổ chức và hoạt động bán đấu giá tài sản.\n5. Hợp tác quốc tế trong lĩnh vực bán đấu giá tài sản.\n6. Thực hiện các nhiệm vụ, quyền hạn khác được Chính phủ giao."
+        },
+        {
+          "id": "art-45",
+          "number": "Điều 45",
+          "heading": "Nhiệm vụ, quyền hạn của Bộ Tài chính",
+          "body": "1. Hướng dẫn về chế độ tài chính trong hoạt động bán đấu giá tài sản.\n2. Hướng dẫn, kiểm tra việc chuyển giao tài sản nhà nước để bán đấu giá\n3. Hướng dẫn việc xác định giá khởi điểm của tài sản bán đấu giá là tài sản nhà nước.\n4. Hướng dân chung về mức thu, việc quản lý, sử dụng phí đấu giá thuộc nguồn thu của ngân sách nhà nước theo quy định của pháp luật về phí lệ phí."
+        },
+        {
+          "id": "art-46",
+          "number": "Điều 46",
+          "heading": "Nhiệm vụ, quyền hạn của Uỷ ban nhân dân tỉnh, thành phố trực thuộc Trung ương",
+          "body": "Uỷ ban nhân dân tỉnh, thành phố trực thuộc Trung ương quản lý hoạt động bán đấu giá tài sản tại địa phương, có nhiệm vụ, quyền hạn sau đây:\n1. Quyết định thành lập Trung tâm; bổ nhiệm, miễn nhiệm Giám đốc Trung tâm.\n2. Bảo đảm biên chế, cơ sở vật chất và phương tiện làm việc cho Trung tâm.\n3. Quy định cụ thể về mức phí đấu giá tại địa phương căn cứ vào quyết định của Hội đồng nhân dân tỉnh, thành phố trực thuộc Trung ương.\n4. Kiểm tra, thanh tra về tổ chức và hoạt động bán đấu giá tài sản trong phạm vi địa phương theo thẩm quyền."
+        }
+      ]
+    },
+    {
+      "title": "CHƯƠNG V",
+      "subtitle": "KHEN THƯỞNG, XỬ LÝ VI PHẠM, KHIẾU NẠI, TỔ CÁO VÀ GIẢI QUYẾT TRANH CHẤP",
+      "articles": [
+        {
+          "id": "art-47",
+          "number": "Điều 47",
+          "heading": "Khen thưởng",
+          "body": "Cá nhân, tổ chức có thành tích xuất sắc trong lĩnh vực bán đấu giá tài sản thì được khen thưởng theo quy định của pháp luật."
+        },
+        {
+          "id": "art-48",
+          "number": "Điều 48",
+          "heading": "Xử lý vi phạm đối với người tham gia đấu giá tài sản",
+          "body": "1. Người tham gia đấu giá tài sản có hành vi phá rối, cản trở cuộc bán đấu giá tài sản hoặc liên kết thông đồng, dìm giá tài sản bán đấu giá thì bị truất quyền tham gia đấu giá tài sản và thông được hoàn trả khoản tiền đặt trước.\n2. Người điều hành cuộc bán đấu giá tài sản có quyền truất quyền tham gia đấu giá đối với người có hành vi quy định tại khoản 1 Điều này. Khoản tiền đặt trước của người bị truất quyền tham gia đấu giá thuộc về người bán đấu giá tài sản.\nViệc truất quyền tham gia đấu giá tài sản phải được ghi vào biên bản bán đấu giá tài sản"
+        },
+        {
+          "id": "art-49",
+          "number": "Điều 49",
+          "heading": "Xử lý vi phạm đối với người bán đấu giá tài sản, người điều hành cuộc bán đấu giá tài sản",
+          "body": "1. Người bán đấu giá tài sản vi phạm quy định của Nghị định này và các quy định khác của pháp luật có liên quan thì tuỳ theo tính chất và mức độ vi phạm mà bị xử phạt vi phạm hành chính hoặc bị xử lý bằng các hình thức khác theo quy định của pháp luật; nếu gây thiệt hại thì phải bồi thường theo quy định của pháp luật.\n2. Người điều hành cuộc bán đấu giá tài sản vi phạm quy định của Nghị định này thì tuỳ theo tính chất và mức độ vi phạm mà bị xử phạt vi phạm hành chính, bị thu hồi Thẻ đấu giá viên; nếu gây thiệt hại thì phải bồi thường theo quy định của pháp luật."
+        },
+        {
+          "id": "art-50",
+          "number": "Điều 50",
+          "heading": "Khiếu nại, tố cáo",
+          "body": "1. Cá nhân, tổ chức có quyền khiếu nại đối với quyết định hành chính, hành vi hành chính của cơ quan hành chính nhà nước, người có thẩm quyền trong cơ quan hành chính nhà nước khi có căn cứ cho rằng quyết định, hành vi đó đã vi phạm quy định của Nghị định này và xâm phạm quyền, lợi ích hợp pháp của mình.\nViệc giải quyết khiếu nại thực hiện theo quy định của pháp luật về khiếu nại, tố cáo.\n2. Cá nhân có quyền tố cáo với cơ quan nhà nước có thẩm quyền về các hành vi vi phạm quy định của Nghị định này.\nViệc giải quyết tố cáo tuân theo quy định của pháp luật về khiếu nại, tố cáo."
+        },
+        {
+          "id": "art-51",
+          "number": "Điều 51",
+          "heading": "Giải quyết tranh chấp",
+          "body": "Việc giải quyết các tranh chấp phát sinh từ việc thực hiện hợp đồng uỷ quyền bán đấu giá tài sản và văn bản bán đấu giá tài sản được thực hiện theo quy định của pháp luật về tố tụng dân sự;"
+        }
+      ]
+    },
+    {
+      "title": "CHƯƠNG VI",
+      "subtitle": "ĐIỀU KHOẢN THI HÀNH",
+      "articles": [
+        {
+          "id": "art-52",
+          "number": "Điều 52",
+          "heading": "Quy định chuyển tiếp",
+          "body": "1. Các trung tâm dịch vụ bán đấu giá tài sản và doanh nghiệp bán đấu giá tài sản được thành lập theo quy định của Quy chế bán đấu giá tài sản ban hành kèm theo Nghị định số 86/CP ngày 19 tháng 12 năm 1996 của Chính phủ được tiếp tục hoạt động theo quy định của Nghị định này;\n2. Trong thời hạn sáu mươi ngày, kể từ ngày Nghị định này có hiệu lực thi hành. mỗi Trung tâm dịch vụ bán đấu giá tài sản và doanh nghiệp bán đấu giá tài sản đang hoạt động theo quy định của Quy chế bán đấu giá tài sản ban hành kèm theo Nghị định số 86/CP ngày 19 tháng 12 năm 1996 của Chính phủ phải có ít nhất một đấu giá viên theo quy định của Nghị định này."
+        },
+        {
+          "id": "art-53",
+          "number": "Điều 53",
+          "heading": "Hiệu lực thi hành",
+          "body": "Nghị định này có hiệu lực thi hành sau 15 ngày, kể từ ngày đăng Công báo và thay thế Nghị định số 86/CP ngày 19 tháng 12 năm 1996 của Chính phủ ban hành Quy chế Bán đấu giá tài sản."
+        },
+        {
+          "id": "art-54",
+          "number": "Điều 54",
+          "heading": "Trách nhiệm thi hành",
+          "body": "1. Bộ Tư pháp phối hợp với Bộ Tài chính và các Bộ có liên quan hướng dẫn thi hành Nghị định này.\n2. Các Bộ trưởng, Thủ trưởng cơ quan ngang Bộ, Thủ trưởng cơ quan thuộc Chính phủ, Chủ tịch Uỷ ban nhân dân tỉnh, thành phố trực thuộc Trung ương chịu trách nhiệm thi hành Nghị định này."
+        }
+      ]
+    }
+  ]
+}
