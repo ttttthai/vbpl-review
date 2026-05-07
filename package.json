@@ -8,7 +8,7 @@
     "scrape:one": "node scripts/scrape.js --id",
     "merge": "node scripts/merge.js",
     "scrape:all": "npm run scrape && npm run merge",
-    "postinstall": "playwright install --with-deps chromium || true"
+    "postinstall": "node scripts/postinstall.js"
   },
   "engines": {
     "node": ">=20"
