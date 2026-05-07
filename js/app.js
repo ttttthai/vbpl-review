@@ -426,8 +426,9 @@
 
   function goHome() {
     _recordNav({ type: "home" });
-    window.__spotlightDocId = null; // reset to default in renderStats
+    window.__spotlightDocId = null;
     setLuocdoOnlyMode(false);
+    document.body.classList.remove("preview-mode");
     viewer.classList.add("hidden");
     landing.classList.remove("hidden");
     if (searchInput) searchInput.value = "";
@@ -435,8 +436,6 @@
     if (suggestions) suggestions.innerHTML = "";
     if (navHome) navHome.classList.add("active");
     setCrumbs([{ label: "Trang chủ", action: goHome }, { label: "Tra cứu văn bản pháp luật", current: true }]);
-    // Restore default spotlight (32/2024/QH15)
-    fillSpotlight(H.findDoc("32/2024/QH15"));
     window.scrollTo({ top: 0, behavior: "smooth" });
     renderLandingContent();
   }
@@ -450,6 +449,7 @@
     _recordNav({ type: "preview", docId });
     window.__spotlightDocId = docId;
     setLuocdoOnlyMode(false);
+    document.body.classList.add("preview-mode");
     viewer.classList.add("hidden");
     landing.classList.remove("hidden");
     fillSpotlight(doc);
@@ -625,13 +625,43 @@
     const grid = $("#industry-grid");
     if (!grid) return;
     const docs = Object.values(DB);
-    const html = INDUSTRIES.map((ind) => {
-      // Count docs whose title/shortTitle matches the industry's regex
-      let count = 0;
-      for (const d of docs) {
-        const txt = ((d.title || "") + " " + (d.shortTitle || "")).toLowerCase();
-        if (ind.matcher.test(txt)) count++;
+
+    // Precompute outgoing-ref Sets per doc once — same trick as renderSodo —
+    // so the per-industry "related docs" count is fast.
+    const outgoingByDoc = new Map();
+    for (const d of docs) {
+      const refs = collectAllRefsInDoc(d);
+      const set = new Set();
+      for (const r of refs) if (r.docId) set.add(r.docId);
+      outgoingByDoc.set(d.id, set);
+    }
+
+    function relatedCount(anchorId) {
+      const anchor = H.findDoc(anchorId);
+      if (!anchor) return 0;
+      const related = new Set();
+      // outgoing — anchor cites these
+      for (const id of outgoingByDoc.get(anchor.id) || []) {
+        if (id !== anchor.id) related.add(id);
       }
+      // incoming — docs whose body cites the anchor
+      for (const d of docs) {
+        if (d.id === anchor.id) continue;
+        if ((outgoingByDoc.get(d.id) || new Set()).has(anchor.id)) related.add(d.id);
+      }
+      // structural — replaces / replacedBy
+      const aReplaces = Array.isArray(anchor.replaces) ? anchor.replaces : [];
+      for (const id of aReplaces) if (id !== anchor.id) related.add(id);
+      for (const d of docs) {
+        if (d.id === anchor.id) continue;
+        const dReplaces = Array.isArray(d.replaces) ? d.replaces : [];
+        if (dReplaces.includes(anchor.id)) related.add(d.id);
+      }
+      return related.size;
+    }
+
+    const html = INDUSTRIES.map((ind) => {
+      const count = relatedCount(ind.anchor);
       const anchor = H.findDoc(ind.anchor);
       const anchorTitle = anchor ? anchor.shortTitle : ind.anchor;
       return `
@@ -643,7 +673,7 @@
           </div>
           <div class="ind-count">
             <span class="ind-count-num">${count}</span>
-            <span class="ind-count-lbl">văn bản</span>
+            <span class="ind-count-lbl">liên quan</span>
           </div>
         </button>`;
     }).join("");

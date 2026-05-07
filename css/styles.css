@@ -636,6 +636,12 @@ table { border-collapse: collapse; }
 }
 .land-main { min-width: 0; }
 
+/* Home mode (no doc selected): hide the spotlight; only the industries
+   grid is visible. preview-mode (a card was clicked) flips the rule:
+   spotlight visible, industries hidden. */
+body:not(.preview-mode) .spotlight { display: none; }
+body.preview-mode .industries { display: none; }
+
 /* ===== Lĩnh vực pháp lý — main-page industries grid ===== */
 .industries {
   background: var(--paper);
