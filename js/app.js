@@ -1242,12 +1242,14 @@
     }
   }
 
-  // Sơ đồ — concentric-ring network of related docs around the spotlight.
-  // Inner ring = structural (predecessor/successor), middle = outgoing
-  // citations, outer = incoming citations. Click a node to spotlight-preview.
+  // Sơ đồ — force-directed network of every visible doc with edges drawn
+  // for ALL inter-doc citation/structural relationships (not just the
+  // hub-and-spoke from the spotlight). Connected clusters group together
+  // visually; isolated docs drift to the periphery. Click any node to
+  // spotlight-preview that doc.
   function renderSodo(doc) {
     if (!sodoEl) return;
-    // Reuse the same relationship model as Lược đồ.
+    // Spotlight's outgoing refs and incoming refs.
     const refs = collectAllRefsInDoc(doc);
     const cited = new Map();
     for (const r of refs) {
@@ -1255,11 +1257,18 @@
       if (!cited.has(r.docId)) cited.set(r.docId, H.findDoc(r.docId));
     }
     const citedBy = new Map();
+    // Cache outgoing-ref Sets for every DB doc — reused below for inter-doc edges.
+    const outgoingCache = new Map();
     for (const other of Object.values(DB)) {
       if (other.id === doc.id) continue;
       const otherRefs = collectAllRefsInDoc(other);
-      if (otherRefs.some(r => r.docId === doc.id)) citedBy.set(other.id, other);
+      const set = new Set();
+      for (const r of otherRefs) if (r.docId) set.add(r.docId);
+      outgoingCache.set(other.id, set);
+      if (set.has(doc.id)) citedBy.set(other.id, other);
     }
+    outgoingCache.set(doc.id, new Set([...cited.keys()]));
+
     const replaces = [], replacedBy = [];
     const docReplaces = Array.isArray(doc.replaces) ? doc.replaces : [];
     for (const other of Object.values(DB)) {
@@ -1269,79 +1278,142 @@
       if (oReplaces.includes(doc.id) || (other.status && other.status.includes(doc.id))) replacedBy.push(other);
     }
 
-    // Bucket without duplicates. Spotlight first; then structural, outgoing, incoming.
+    // Build node list. Each visible doc appears once; the spotlight is index 0.
+    const nodes = [{ doc, role: "current", rel: "Văn bản đang xem" }];
     const seen = new Set([doc.id]);
-    const structural = [];
-    for (const d of replaces) {
-      if (!d || seen.has(d.id)) continue;
-      seen.add(d.id); structural.push({ doc: d, rel: "Bị thay thế bởi văn bản đang xem" });
-    }
-    for (const d of replacedBy) {
-      if (!d || seen.has(d.id)) continue;
-      seen.add(d.id); structural.push({ doc: d, rel: "Văn bản đã thay thế văn bản đang xem" });
-    }
-    const outgoing = [];
-    for (const [, d] of cited) {
-      if (!d || seen.has(d.id)) continue;
-      seen.add(d.id); outgoing.push({ doc: d, rel: "Được dẫn chiếu trong văn bản này" });
-    }
-    const incoming = [];
-    for (const [, d] of citedBy) {
-      if (!d || seen.has(d.id)) continue;
-      seen.add(d.id); incoming.push({ doc: d, rel: "Văn bản này được viện dẫn ở đây" });
-    }
+    const addBucket = (list, rel) => {
+      for (const d of list) {
+        if (!d || seen.has(d.id)) continue;
+        seen.add(d.id); nodes.push({ doc: d, rel });
+      }
+    };
+    addBucket(replaces, "Bị thay thế bởi văn bản đang xem");
+    addBucket(replacedBy, "Văn bản đã thay thế văn bản đang xem");
+    addBucket([...cited.values()], "Được dẫn chiếu trong văn bản này");
+    addBucket([...citedBy.values()], "Văn bản này được viện dẫn ở đây");
 
-    const total = structural.length + outgoing.length + incoming.length;
-    if (sodoBadge) sodoBadge.textContent = total;
+    const totalRelated = nodes.length - 1;
+    const structuralCount = replaces.length + replacedBy.length;
+    const outgoingCount = cited.size;
+    const incomingCount = citedBy.size;
+    if (sodoBadge) sodoBadge.textContent = totalRelated;
 
-    if (!total) {
+    if (!totalRelated) {
       sodoEl.innerHTML = `<h2>Sơ đồ liên kết — ${escapeHtml(doc.shortTitle)}</h2><div class="ld-empty">Không có văn bản liên quan để vẽ sơ đồ.</div>`;
       return;
     }
 
-    // Layout: 1000×1000 viewBox. Spotlight at center; rings at radii 200/340/480.
+    // Build edges between every pair of visible nodes that cite each other
+    // or have a structural relationship.
+    const visibleIds = new Set(nodes.map(n => n.doc.id));
+    const edges = [];
+    for (let i = 0; i < nodes.length; i++) {
+      for (let j = i + 1; j < nodes.length; j++) {
+        const a = nodes[i].doc, b = nodes[j].doc;
+        const aOut = outgoingCache.get(a.id) || new Set();
+        const bOut = outgoingCache.get(b.id) || new Set();
+        const aRep = Array.isArray(a.replaces) ? a.replaces : [];
+        const bRep = Array.isArray(b.replaces) ? b.replaces : [];
+        const isStruct = aRep.includes(b.id) || bRep.includes(a.id);
+        const isCite = aOut.has(b.id) || bOut.has(a.id);
+        if (isStruct || isCite) edges.push({ source: i, target: j, struct: isStruct });
+      }
+    }
+
+    // Layout: 1000×1000 viewBox; spotlight pinned at centre; others initialised
+    // on a ring around it then relaxed by a force-directed simulation.
     const SIZE = 1000, cx = SIZE / 2, cy = SIZE / 2;
-    const ringDefs = [
-      { items: structural, r: 200 },
-      { items: outgoing, r: 340 },
-      { items: incoming, r: 480 },
-    ];
-
-    // Pre-compute node positions
-    for (const ring of ringDefs) {
-      const n = ring.items.length;
-      if (!n) continue;
-      const offset = -Math.PI / 2; // start at the top
-      ring.items.forEach((it, i) => {
-        const ang = offset + (2 * Math.PI * i) / n;
-        it._x = cx + ring.r * Math.cos(ang);
-        it._y = cy + ring.r * Math.sin(ang);
-      });
+    const N = nodes.length;
+    nodes[0].x = cx; nodes[0].y = cy; nodes[0].fixed = true;
+    nodes[0].vx = 0; nodes[0].vy = 0;
+    for (let i = 1; i < N; i++) {
+      // Deterministic spread by index so reloads produce the same layout
+      const ang = (2 * Math.PI * (i - 1)) / Math.max(1, N - 1) - Math.PI / 2;
+      nodes[i].x = cx + 350 * Math.cos(ang);
+      nodes[i].y = cy + 350 * Math.sin(ang);
+      nodes[i].vx = 0; nodes[i].vy = 0;
     }
 
-    // SVG: edges first (so nodes draw on top), then center, then ring nodes.
-    let edges = "", nodes = "";
-    for (const ring of ringDefs) {
-      for (const it of ring.items) {
-        edges += `<line x1="${cx}" y1="${cy}" x2="${it._x}" y2="${it._y}" class="sd-edge"/>`;
+    // Force simulation parameters tuned for 1000×1000 viewport.
+    const REPEL = 7000;        // pairwise repulsion strength
+    const LINK_K = 0.04;       // attraction along edges (Hooke-like)
+    const LINK_LEN = 130;      // resting edge length
+    const CENTER_K = 0.0008;   // gentle pull toward centre
+    const DAMP = 0.84;
+    const PAD = 36;
+    const ITER = 320;
+    for (let it = 0; it < ITER; it++) {
+      for (const n of nodes) { n.fx = 0; n.fy = 0; }
+      // Repulsion (all pairs)
+      for (let i = 0; i < N; i++) {
+        for (let j = i + 1; j < N; j++) {
+          const a = nodes[i], b = nodes[j];
+          let dx = b.x - a.x, dy = b.y - a.y;
+          let dsq = dx * dx + dy * dy;
+          if (dsq < 25) { dsq = 25; }
+          const dist = Math.sqrt(dsq);
+          const f = REPEL / dsq;
+          const fx = (f * dx) / dist;
+          const fy = (f * dy) / dist;
+          a.fx -= fx; a.fy -= fy;
+          b.fx += fx; b.fy += fy;
+        }
+      }
+      // Attraction along edges (target rest length)
+      for (const e of edges) {
+        const a = nodes[e.source], b = nodes[e.target];
+        let dx = b.x - a.x, dy = b.y - a.y;
+        let dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < 1) dist = 1;
+        const f = LINK_K * (dist - LINK_LEN);
+        const fx = (f * dx) / dist;
+        const fy = (f * dy) / dist;
+        a.fx += fx; a.fy += fy;
+        b.fx -= fx; b.fy -= fy;
+      }
+      // Gentle pull toward centre to keep the graph from drifting away
+      for (const n of nodes) {
+        if (n.fixed) continue;
+        n.fx += (cx - n.x) * CENTER_K;
+        n.fy += (cy - n.y) * CENTER_K;
+      }
+      // Integrate
+      for (const n of nodes) {
+        if (n.fixed) continue;
+        n.vx = (n.vx + n.fx) * DAMP;
+        n.vy = (n.vy + n.fy) * DAMP;
+        n.x += n.vx;
+        n.y += n.vy;
+        if (n.x < PAD) n.x = PAD; else if (n.x > SIZE - PAD) n.x = SIZE - PAD;
+        if (n.y < PAD) n.y = PAD; else if (n.y > SIZE - PAD) n.y = SIZE - PAD;
       }
     }
-    for (const ring of ringDefs) {
-      for (const it of ring.items) {
-        const tk = it.doc.typeKey || "";
-        nodes += `
-          <g class="sd-node" data-doc-id="${escapeHtml(it.doc.id)}">
-            <title>${escapeHtml(it.doc.shortTitle)} — ${escapeHtml(it.rel)}</title>
-            <circle cx="${it._x}" cy="${it._y}" r="22" class="sd-circle sd-${tk}"/>
-            <text x="${it._x}" y="${it._y}" class="sd-label">${escapeHtml(it.doc.number)}</text>
-          </g>`;
-      }
+
+    // Render — edges first so nodes draw on top.
+    let edgeMarkup = "";
+    for (const e of edges) {
+      const a = nodes[e.source], b = nodes[e.target];
+      const cls = e.struct ? "sd-edge sd-edge-struct" : "sd-edge";
+      edgeMarkup += `<line x1="${a.x.toFixed(1)}" y1="${a.y.toFixed(1)}" x2="${b.x.toFixed(1)}" y2="${b.y.toFixed(1)}" class="${cls}"/>`;
     }
-    const centerNode = `
-      <g class="sd-node sd-current">
-        <circle cx="${cx}" cy="${cy}" r="46" class="sd-circle sd-${doc.typeKey || ''}"/>
-        <text x="${cx}" y="${cy}" class="sd-label sd-label-center">${escapeHtml(doc.number)}</text>
-      </g>`;
+
+    const radiusFor = i => (i === 0 ? 46 : 22);
+    let nodeMarkup = "";
+    for (let i = 0; i < N; i++) {
+      const n = nodes[i];
+      const tk = n.doc.typeKey || "";
+      const isCenter = i === 0;
+      const r = radiusFor(i);
+      const labelCls = isCenter ? "sd-label sd-label-center" : "sd-label";
+      const groupCls = isCenter ? "sd-node sd-current" : "sd-node";
+      const dataAttr = isCenter ? "" : ` data-doc-id="${escapeHtml(n.doc.id)}"`;
+      nodeMarkup += `
+        <g class="${groupCls}"${dataAttr}>
+          <title>${escapeHtml(n.doc.shortTitle)} — ${escapeHtml(n.rel)}</title>
+          <circle cx="${n.x.toFixed(1)}" cy="${n.y.toFixed(1)}" r="${r}" class="sd-circle sd-${tk}"/>
+          <text x="${n.x.toFixed(1)}" y="${n.y.toFixed(1)}" class="${labelCls}">${escapeHtml(n.doc.number)}</text>
+        </g>`;
+    }
 
     sodoEl.innerHTML = `
       <h2>Sơ đồ liên kết — ${escapeHtml(doc.shortTitle)}</h2>
@@ -1349,16 +1421,18 @@
         <span class="sd-leg-item"><i class="sd-dot sd-luat"></i> Luật / Bộ luật</span>
         <span class="sd-leg-item"><i class="sd-dot sd-nghidinh"></i> Nghị định</span>
         <span class="sd-leg-item"><i class="sd-dot sd-thongtu"></i> Thông tư</span>
+        <span class="sd-leg-item"><i class="sd-line"></i> Dẫn chiếu</span>
+        <span class="sd-leg-item"><i class="sd-line sd-line-struct"></i> Thay thế</span>
       </div>
       <div class="sd-counts">
-        ${structural.length ? `<span class="sd-count">${structural.length} cấu trúc</span>` : ''}
-        ${outgoing.length ? `<span class="sd-count">${outgoing.length} dẫn chiếu (đi)</span>` : ''}
-        ${incoming.length ? `<span class="sd-count">${incoming.length} viện dẫn (đến)</span>` : ''}
+        ${structuralCount ? `<span class="sd-count">${structuralCount} cấu trúc</span>` : ''}
+        ${outgoingCount ? `<span class="sd-count">${outgoingCount} dẫn chiếu (đi)</span>` : ''}
+        ${incomingCount ? `<span class="sd-count">${incomingCount} viện dẫn (đến)</span>` : ''}
+        <span class="sd-count sd-count-edges">${edges.length} liên kết</span>
       </div>
       <svg class="sd-svg" viewBox="0 0 ${SIZE} ${SIZE}" preserveAspectRatio="xMidYMid meet">
-        <g class="sd-edges">${edges}</g>
-        ${centerNode}
-        <g class="sd-nodes">${nodes}</g>
+        <g class="sd-edges">${edgeMarkup}</g>
+        <g class="sd-nodes">${nodeMarkup}</g>
       </svg>
     `;
 
