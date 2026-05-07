@@ -3,13 +3,17 @@
 // Strategy (preserve curated work, prefer official source):
 //   - Top-level metadata (id, type, number, shortTitle, issuedDate,
 //     replaces, articleTotal, sourceUrl, status, etc.) is NEVER touched.
-//   - Chapters/articles are replaced wholesale with the scraped version
-//     IF the scrape parsed at least MIN_OK articles. Otherwise the existing
-//     chapters/articles are kept untouched (so a bad scrape can't wipe data).
-//   - For docs with no scrape file, nothing changes.
+//   - Only the `chapters: [...]` array of each doc is replaced in-place,
+//     so cluster comments, formatting, and unquoted-key style all survive.
+//   - A scraped doc is merged only if it parsed at least MIN_OK articles —
+//     a bad scrape can't wipe data.
+//   - Docs with no scrape file are left alone.
 //
-// The output is rewritten as documents.js using JSON.stringify with light
-// post-processing so the diff stays readable on review.
+// This used to do a full re-serialise via JSON.stringify, which destroyed
+// the hand-authored cluster headers (// ===== Foo cluster =====) and
+// switched all keys to quoted-string form. The current implementation does
+// surgical span-replacement using a brace-aware walker, so the diff after
+// merge contains only the chapters arrays that actually changed.
 
 "use strict";
 
@@ -19,25 +23,7 @@ const path = require("path");
 const ROOT = path.resolve(__dirname, "..");
 const DOCS_PATH = path.join(ROOT, "data", "documents.js");
 const SCRAPED_DIR = path.join(ROOT, "data", "scraped");
-const MIN_OK = 3;
-
-function loadDb() {
-  const src = fs.readFileSync(DOCS_PATH, "utf8");
-  const sandbox = { window: {} };
-  // eslint-disable-next-line no-new-func
-  new Function("window", src)(sandbox.window);
-  return {
-    db: sandbox.window.LEGAL_DB || {},
-    helpersBlock: extractHelpersBlock(src),
-  };
-}
-
-// Pull the LEGAL_DB_HELPERS block out of the original file verbatim so we
-// don't lose its hand-tuned implementation when re-serialising.
-function extractHelpersBlock(src) {
-  const m = src.match(/\n\/\/ Lookup helpers used by app\.js[\s\S]+$/);
-  return m ? m[0] : "";
-}
+const MIN_OK = 1;
 
 function readScraped() {
   if (!fs.existsSync(SCRAPED_DIR)) return {};
@@ -52,69 +38,92 @@ function readScraped() {
   return map;
 }
 
-function mergeDoc(doc, scraped) {
-  if (!scraped) return doc;
-  const articleCount = (scraped.chapters || []).reduce((s, ch) => s + ch.articles.length, 0);
-  if (articleCount < MIN_OK) return doc;
-  const next = { ...doc };
-  next.chapters = scraped.chapters;
-  next.lastScrapedAt = scraped.scrapedAt;
-  return next;
+// Locate the `chapters: [ ... ]` span for the given doc id in src.
+// Returns { start, end, indent } where [start, end) covers the literal
+// "chapters: [...]" (including the closing bracket). `indent` is the
+// indentation prefix of the doc-level field line (e.g. "    ").
+function findChaptersSpan(src, docId) {
+  const escId = docId.replace(/[.+?^${}()|[\]\\]/g, "\\$&");
+  const idRe = new RegExp(`(\\n[ \\t]*)id:\\s*"${escId}"`);
+  const m = idRe.exec(src);
+  if (!m) return null;
+  const indent = m[1].slice(1);
+
+  const chRe = /chapters:\s*\[/g;
+  chRe.lastIndex = m.index;
+  const chMatch = chRe.exec(src);
+  if (!chMatch) return null;
+
+  const bracketAt = chMatch.index + chMatch[0].length - 1;
+  let depth = 1;
+  let i = bracketAt + 1;
+  let stringChar = null;
+  let escape = false;
+  while (i < src.length && depth > 0) {
+    const c = src[i];
+    if (stringChar) {
+      if (escape) escape = false;
+      else if (c === "\\") escape = true;
+      else if (c === stringChar) stringChar = null;
+    } else if (c === '"' || c === "'" || c === "`") {
+      stringChar = c;
+    } else if (c === "[") {
+      depth++;
+    } else if (c === "]") {
+      depth--;
+    }
+    i++;
+  }
+  return { start: chMatch.index, end: i, indent };
 }
 
-function serialise(db, helpersBlock) {
-  const lines = [];
-  lines.push("// Local database of Vietnamese legal documents.");
-  lines.push("// Sources modeled after vanban.chinhphu.vn and vbpl.vn.");
-  lines.push("// Article bodies are populated either by hand or by scripts/scrape.js.");
-  lines.push("// Each article has an id like \"art-3\" usable as anchor.");
-  lines.push("");
-  lines.push("window.LEGAL_DB = {");
-  const ids = Object.keys(db);
-  ids.forEach((id, idx) => {
-    const json = JSON.stringify(db[id], null, 2);
-    // Quote the key (handles slashes/digits)
-    lines.push(`  ${JSON.stringify(id)}: ${indent(json, 2).trimStart()}${idx === ids.length - 1 ? "" : ","}`);
-    lines.push("");
-  });
-  lines.push("};");
-  lines.push(helpersBlock || "");
-  return lines.join("\n");
-}
-
-function indent(s, n) {
-  const pad = " ".repeat(n);
-  return s
-    .split("\n")
-    .map((line, i) => (i === 0 ? line : pad + line))
-    .join("\n");
+// Render `chapters` as JSON, then convert simple-identifier keys to
+// unquoted form so the output matches the file's hand-edited style.
+function formatChaptersValue(chapters, baseIndent) {
+  const json = JSON.stringify(chapters, null, 2);
+  // "key": → key:
+  const unquoted = json.replace(/^(\s*)"([a-zA-Z_$][a-zA-Z0-9_$]*)":/gm, "$1$2:");
+  // Indent every line except the first by baseIndent
+  return unquoted.replace(/\n/g, "\n" + baseIndent);
 }
 
 function main() {
-  const { db, helpersBlock } = loadDb();
+  let src = fs.readFileSync(DOCS_PATH, "utf8");
   const scraped = readScraped();
-  const ids = Object.keys(db);
-  const summary = { merged: [], unchanged: [], missing: [] };
+  const summary = { merged: [], skipped: [], missing: [] };
 
-  for (const id of ids) {
-    if (scraped[id]) {
-      const before = (db[id].chapters || []).reduce((s, ch) => s + ch.articles.length, 0);
-      db[id] = mergeDoc(db[id], scraped[id]);
-      const after = (db[id].chapters || []).reduce((s, ch) => s + ch.articles.length, 0);
-      if (after !== before) summary.merged.push({ id, before, after });
-      else summary.unchanged.push({ id, articles: after });
-    } else {
-      summary.missing.push(id);
+  for (const [id, data] of Object.entries(scraped)) {
+    const articleCount = (data.chapters || []).reduce(
+      (s, ch) => s + ch.articles.length,
+      0
+    );
+    if (articleCount < MIN_OK) {
+      summary.skipped.push({ id, reason: `only ${articleCount} articles` });
+      continue;
     }
+    const span = findChaptersSpan(src, id);
+    if (!span) {
+      summary.missing.push({ id, reason: "no chapters span found" });
+      continue;
+    }
+    const replacement = `chapters: ${formatChaptersValue(data.chapters, span.indent)}`;
+    src = src.slice(0, span.start) + replacement + src.slice(span.end);
+    summary.merged.push({ id, articles: articleCount });
   }
 
-  fs.writeFileSync(DOCS_PATH, serialise(db, helpersBlock));
-  console.log("[merge] documents.js updated.");
-  console.log("[merge] merged:", summary.merged.length ? summary.merged : "none");
-  console.log("[merge] unchanged:", summary.unchanged.length);
-  console.log("[merge] no scrape data for:", summary.missing);
+  fs.writeFileSync(DOCS_PATH, src);
+  console.log(`[merge] documents.js updated — ${summary.merged.length} docs merged`);
+  for (const m of summary.merged) console.log(`  ${m.id.padEnd(20)} ${m.articles} articles`);
+  if (summary.skipped.length) {
+    console.log(`[merge] skipped (low quality): ${summary.skipped.length}`);
+    for (const s of summary.skipped) console.log(`  ${s.id}: ${s.reason}`);
+  }
+  if (summary.missing.length) {
+    console.log(`[merge] skipped (no match in documents.js): ${summary.missing.length}`);
+    for (const s of summary.missing) console.log(`  ${s.id}: ${s.reason}`);
+  }
 }
 
 if (require.main === module) main();
 
-module.exports = { mergeDoc };
+module.exports = { findChaptersSpan, formatChaptersValue };

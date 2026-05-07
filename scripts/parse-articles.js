@@ -24,7 +24,10 @@
 
 "use strict";
 
-const CHAPTER_RE = /^\s*(CHƯƠNG|PHẦN)\s+([IVXLCDM]+|\d+|MỞ\s+ĐẦU|THỨ\s+NHẤT|THỨ\s+HAI|THỨ\s+BA|THỨ\s+TƯ|THỨ\s+NĂM)\s*$/i;
+// Matches a chapter heading like "Chương IV" or "CHƯƠNG IV" optionally followed
+// by an inline subtitle on the same line (the new vbpl.vn SPA flattens
+// "Chương IV\nTỔ CHỨC..." into "Chương IV TỔ CHỨC..." for chapters past III).
+const CHAPTER_RE = /^\s*(CHƯƠNG|PHẦN)\s+([IVXLCDM]+|\d+|MỞ\s+ĐẦU|THỨ\s+NHẤT|THỨ\s+HAI|THỨ\s+BA|THỨ\s+TƯ|THỨ\s+NĂM)(?:\s+(.+?))?\s*$/i;
 const ARTICLE_RE = /^\s*Điều\s+(\d+)\.?\s*(.*)$/;
 // Patterns we strip out as noise (header chrome, footer links, page numbers)
 const NOISE_RE = [
@@ -90,12 +93,14 @@ function parseLegalText(text, opts = {}) {
     if (chMatch) {
       flushChapter();
       const title = `${chMatch[1].toUpperCase()} ${chMatch[2].toUpperCase()}`.trim();
-      // Subtitle is the next non-empty line if it's all-caps short text
-      let subtitle = "";
-      const next = lines[i + 1];
-      if (next && next === next.toUpperCase() && next.length < 120 && !ARTICLE_RE.test(next)) {
-        subtitle = next;
-        i += 1;
+      let subtitle = (chMatch[3] || "").trim();
+      // No inline subtitle? Look at the next line (older format).
+      if (!subtitle) {
+        const next = lines[i + 1];
+        if (next && next === next.toUpperCase() && next.length < 200 && !ARTICLE_RE.test(next)) {
+          subtitle = next;
+          i += 1;
+        }
       }
       currentChapter = { title, subtitle, articles: [] };
       continue;
