@@ -1669,6 +1669,9 @@ table { border-collapse: collapse; }
   font-weight: 500;
 }
 
+.sd-canvas {
+  position: relative;
+}
 .sd-svg {
   width: 100%;
   height: auto;
@@ -1677,7 +1680,41 @@ table { border-collapse: collapse; }
   border: 1px solid rgba(26, 44, 74, 0.12);
   border-radius: 6px;
   display: block;
+  cursor: grab;
+  touch-action: none;
 }
+.sd-svg.sd-dragging { cursor: grabbing; }
+.sd-zoom-controls {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  background: rgba(251, 247, 236, 0.94);
+  border: 1px solid rgba(26, 44, 74, 0.18);
+  border-radius: 6px;
+  padding: 3px;
+  z-index: 5;
+  box-shadow: 0 1px 3px rgba(15, 28, 51, 0.08);
+}
+.sd-zoom-btn {
+  width: 30px;
+  height: 30px;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--ink);
+  border-radius: 4px;
+  transition: background 0.15s ease;
+  line-height: 1;
+  padding: 0;
+}
+.sd-zoom-btn:hover { background: rgba(21, 168, 132, 0.16); }
+.sd-zoom-btn:active { background: rgba(21, 168, 132, 0.28); }
 
 .sd-edge {
   stroke: rgba(26, 44, 74, 0.22);
