@@ -4,6 +4,11 @@
   const DB = window.LEGAL_DB;
   const H = window.LEGAL_DB_HELPERS;
 
+  // Vietnamese point-letters used in legal docs ("a) b) c) đ) e) ...").
+  // Declared early so any function that uses it via closure can resolve
+  // it the moment the IIFE begins evaluating function bodies on demand.
+  const VN_LETTER = "a-zđêôơư";
+
   const $ = (sel, root = document) => root.querySelector(sel);
   const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
 
@@ -1574,11 +1579,17 @@
   }
 
   // ===== Tabs =====
+  // The tab bar was removed from the viewer (every view is reached from the
+  // spotlight CTAs now), so `tabbar` is null. Guard everything that touched
+  // it; activateTab still works because we only need the panel-class swap,
+  // and the reading toolbar visibility toggle lookups are id-based.
   function activateTab(name) {
-    $$(".tab", tabbar).forEach(t => {
-      if (!t.dataset.tab) return;
-      t.classList.toggle("active", t.dataset.tab === name);
-    });
+    if (tabbar) {
+      $$(".tab", tabbar).forEach(t => {
+        if (!t.dataset.tab) return;
+        t.classList.toggle("active", t.dataset.tab === name);
+      });
+    }
     $$(".tab-panel").forEach(p => {
       p.classList.toggle("active", p.dataset.panel === name);
     });
@@ -1586,11 +1597,14 @@
     if (rt) rt.style.display = (name === "toanvan") ? "" : "none";
   }
   function isTabActive(name) {
+    if (!tabbar) return name === "toanvan"; // default panel when tabbar is gone
     return !!$(`.tab.active[data-tab="${name}"]`, tabbar);
   }
-  $$(".tab[data-tab]", tabbar).forEach(t => {
-    t.addEventListener("click", () => activateTab(t.dataset.tab));
-  });
+  if (tabbar) {
+    $$(".tab[data-tab]", tabbar).forEach(t => {
+      t.addEventListener("click", () => activateTab(t.dataset.tab));
+    });
+  }
 
 
   // Reading toolbar
@@ -1666,23 +1680,26 @@
     { re: /Luật\s+Kinh\s+doanh\s+bất\s+động\s+sản(?!\s+số\s+\d)/giu, docId: "29/2023/QH15" },
     { re: /Luật\s+Nhà\s+ở(?!\s+số\s+\d)/giu, docId: "27/2023/QH15" },
   ];
-  // Structured citation phrase. Matches things like:
+  // Structured citation phrase. Matches phrases like:
   //   "điểm a khoản 1 Điều này"
   //   "các điểm a, b, c, d và đ khoản này"
   //   "khoản 1 Điều 5 của Luật số 32/2024/QH15"
-  //   "khoản này"
-  // Each letter (a/b/c/...) and each clause/article number gets its own
-  // hover-link span so the user can hover any individual identifier and see
-  // the corresponding excerpt.
-  const VN_LETTER = "a-zđêôơư";
+  //   "khoản 1 Điều này"
+  // The regex requires "khoản X" as the anchor (so bare "Điều X" without a
+  // preceding khoản won't match — that's by design after the user asked us
+  // to drop standalone Điều linking). For chained phrases like
+  // "khoản 1 và khoản 2 Điều này" the global flag yields two separate
+  // matches, each carrying the trailing "Điều này" if present.
   const STRUCT_REF_RE = new RegExp(
+    // Optional "[các] điểm L1, L2, ... [và Lk]" prefix
     "(?:(các\\s+)?(điểm)\\s+(" +
-      // letter, then any number of ", letter" or " và letter" — all letters captured as one big string
       "[" + VN_LETTER + "](?:\\s*,\\s*[" + VN_LETTER + "])*(?:\\s+(?:và|hoặc)\\s+[" + VN_LETTER + "])?" +
     ")\\s+)?" +
-    "(?:(khoản)\\s+(\\d+|này))?" +
-    "(?:\\s*(?:,|và|hoặc)?\\s*(khoản)\\s+(\\d+|này))?" +
+    // Required "khoản N" or "khoản này"
+    "(khoản)\\s+(\\d+|này)" +
+    // Optional " Điều M" or " Điều này"
     "(?:\\s+(Điều)\\s+(\\d+|này))?" +
+    // Optional " [của ]<doc-phrase>"
     "(?:\\s+(?:của\\s+)?(Luật\\s+này|Luật\\s+số\\s+[0-9]+\\/[0-9]+\\/QH[0-9]+|Nghị\\s*định\\s+số\\s+[0-9]+\\/[0-9]+\\/N[ĐD]-CP|Thông\\s*tư\\s+số\\s+[0-9]+\\/[0-9]+\\/TT-[A-ZĐ]+|Bộ\\s*luật\\s+(?:Hình\\s+sự|Dân\\s+sự|Tố\\s+tụng\\s+(?:dân|hình)\\s+sự|Lao\\s+động)))?",
     "giu"
   );
@@ -1758,49 +1775,46 @@
     STRUCT_REF_RE.lastIndex = 0;
     let m;
     while ((m = STRUCT_REF_RE.exec(text)) !== null) {
-      // m[2] = "điểm" keyword, m[3] = letters string
-      // m[4] = "khoản" keyword 1, m[5] = clause id 1
-      // m[6] = "khoản" keyword 2, m[7] = clause id 2 (rarely used in MVP)
-      // m[8] = "Điều" keyword, m[9] = article id
-      // m[10] = doc phrase
+      // m[1] = "các"        m[2] = "điểm" keyword     m[3] = letters string
+      // m[4] = "khoản"      m[5] = clause id (\d+|này)
+      // m[6] = "Điều"       m[7] = article id (\d+|này)
+      // m[8] = doc phrase
       const hasPoint = !!m[2];
-      const hasClause = !!m[4];
-      const hasClause2 = !!m[6];
-      const hasArticle = !!m[8];
-      // Skip empty matches (regex has all groups optional)
-      if (!hasPoint && !hasClause && !hasArticle) {
+      const hasClause = !!m[4]; // always true with the new anchor regex
+      const hasArticle = !!m[6];
+      // Defensive: skip empty matches if the engine ever emits one
+      if (!hasClause) {
         if (m[0].length === 0) STRUCT_REF_RE.lastIndex++;
         continue;
       }
 
       const phraseStart = m.index;
       const phraseEnd = m.index + m[0].length;
-      const docId = resolveDocPhrase(m[10], ctx.docId);
+      const docId = resolveDocPhrase(m[8], ctx.docId);
 
-      // Resolve article: explicit id > "này" > current article context
-      let resolvedArt;
-      if (hasArticle) {
-        resolvedArt = m[9] === "này" ? ctx.article : m[9];
-      } else {
-        resolvedArt = ctx.article;
-      }
+      // Resolve article: explicit id > "này" > current article from context
+      const resolvedArt = hasArticle
+        ? (m[7] === "này" ? ctx.article : m[7])
+        : ctx.article;
 
-      // Resolve clause: explicit > "này" > current clause context
-      let resolvedClause = null, resolvedClause2 = null;
-      if (hasClause) resolvedClause = m[5] === "này" ? ctx.clause : m[5];
-      if (hasClause2) resolvedClause2 = m[7] === "này" ? ctx.clause : m[7];
+      // Resolve clause: explicit > "này" > current clause from context
+      const resolvedClause = m[5] === "này" ? ctx.clause : m[5];
 
       let cursor = phraseStart;
 
-      // Wrap each letter in the points list
+      // Wrap each letter in the points list (e.g. "a", "b", "c", "đ").
+      // Word boundaries skip letters that are part of "và" / "hoặc" — those
+      // are the conjunctions joining the list, not list items.
       if (hasPoint) {
         const lettersStr = m[3] || "";
-        // Find every individual letter as a standalone token within the phrase
-        const letterRe = new RegExp("\\b([" + VN_LETTER + "])\\b", "giu");
-        // Limit search to the letters substring portion of the original text
         const lettersStartInText = text.indexOf(lettersStr, phraseStart);
         if (lettersStartInText >= 0) {
-          letterRe.lastIndex = 0;
+          // Use Unicode-property lookarounds so the conjunction "và" / "hoặc"
+          // (whose "v"/"h"/"o" are in [VN_LETTER] but are followed by accented
+          // letters that aren't) doesn't get split into spurious single-letter
+          // refs. \b doesn't help here because JS regex \b doesn't see "à",
+          // "ặ", etc. as word chars without \p{L}.
+          const letterRe = new RegExp("(?<!\\p{L})[" + VN_LETTER + "](?!\\p{L})", "giu");
           let lm;
           while ((lm = letterRe.exec(lettersStr)) !== null) {
             const absStart = lettersStartInText + lm.index;
@@ -1809,19 +1823,21 @@
               docId,
               articleNumber: resolvedArt,
               clause: resolvedClause,
-              point: lm[1].toLowerCase(),
-              raw: lm[1],
+              point: lm[0].toLowerCase(),
+              raw: lm[0],
               start: absStart,
-              end: absStart + lm[1].length,
+              end: absStart + lm[0].length,
             });
           }
           cursor = lettersStartInText + lettersStr.length;
         }
       }
 
-      // Wrap clause id (number or "này")
-      if (hasClause && resolvedClause) {
-        const clauseRe = new RegExp("\\b" + (m[5] === "này" ? "này" : m[5]) + "\\b", "u");
+      // Wrap the clause id (number or "này"). Only emit if it's resolvable
+      // (resolvedClause may be null if "này" is used outside any clause).
+      if (resolvedClause) {
+        const clauseTok = m[5];
+        const clauseRe = new RegExp("\\b" + clauseTok.replace(/[.+?^${}()|[\]\\]/g, "\\$&") + "\\b", "u");
         const cIdx = text.slice(cursor, phraseEnd).search(clauseRe);
         if (cIdx >= 0) {
           const absStart = cursor + cIdx;
@@ -1831,37 +1847,18 @@
             articleNumber: resolvedArt,
             clause: resolvedClause,
             point: null,
-            raw: m[5],
+            raw: clauseTok,
             start: absStart,
-            end: absStart + m[5].length,
+            end: absStart + clauseTok.length,
           });
-          cursor = absStart + m[5].length;
+          cursor = absStart + clauseTok.length;
         }
       }
 
-      // Wrap second clause id if present (e.g. "khoản 1 và khoản 2")
-      if (hasClause2 && resolvedClause2) {
-        const c2Re = new RegExp("\\b" + (m[7] === "này" ? "này" : m[7]) + "\\b", "u");
-        const cIdx = text.slice(cursor, phraseEnd).search(c2Re);
-        if (cIdx >= 0) {
-          const absStart = cursor + cIdx;
-          out.push({
-            kind: "article",
-            docId,
-            articleNumber: resolvedArt,
-            clause: resolvedClause2,
-            point: null,
-            raw: m[7],
-            start: absStart,
-            end: absStart + m[7].length,
-          });
-          cursor = absStart + m[7].length;
-        }
-      }
-
-      // Wrap article id (number or "này")
+      // Wrap the article id (number or "này") if present in the phrase.
       if (hasArticle && resolvedArt) {
-        const artRe = new RegExp("\\b" + (m[9] === "này" ? "này" : m[9]) + "\\b", "u");
+        const artTok = m[7];
+        const artRe = new RegExp("\\b" + artTok.replace(/[.+?^${}()|[\]\\]/g, "\\$&") + "\\b", "u");
         const aIdx = text.slice(cursor, phraseEnd).search(artRe);
         if (aIdx >= 0) {
           const absStart = cursor + aIdx;
@@ -1871,11 +1868,11 @@
             articleNumber: resolvedArt,
             clause: null,
             point: null,
-            raw: m[9],
+            raw: artTok,
             start: absStart,
-            end: absStart + m[9].length,
+            end: absStart + artTok.length,
           });
-          cursor = absStart + m[9].length;
+          cursor = absStart + artTok.length;
         }
       }
     }
