@@ -1596,7 +1596,7 @@
   // Reading toolbar
   $("#size-down").addEventListener("click", () => setReadSize(readSize - 1));
   $("#size-up").addEventListener("click", () => setReadSize(readSize + 1));
-  $("#size-reset").addEventListener("click", () => setReadSize(16));
+  $("#size-reset").addEventListener("click", () => setReadSize(15));
   $("#width-narrow").addEventListener("click", () => setWide(false));
   $("#width-wide").addEventListener("click", () => setWide(true));
 
