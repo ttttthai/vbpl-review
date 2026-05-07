@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" />
-  <link rel="stylesheet" href="css/styles.css?v=49" />
+  <link rel="stylesheet" href="css/styles.css?v=51" />
 </head>
 <body>
 
@@ -103,6 +103,10 @@
                 <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M3 12h18M3 18h18"/><circle cx="6" cy="6" r="1.4" fill="currentColor"/><circle cx="6" cy="12" r="1.4" fill="currentColor"/><circle cx="6" cy="18" r="1.4" fill="currentColor"/></svg>
                 Lược đồ
               </button>
+              <button class="btn-cta-secondary" id="sp-cta-sodo" data-doc-id="32/2024/QH15" data-tab="sodo">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><circle cx="5" cy="5" r="2"/><circle cx="19" cy="5" r="2"/><circle cx="5" cy="19" r="2"/><circle cx="19" cy="19" r="2"/><line x1="9.8" y1="9.8" x2="6.4" y2="6.4"/><line x1="14.2" y1="9.8" x2="17.6" y2="6.4"/><line x1="9.8" y1="14.2" x2="6.4" y2="17.6"/><line x1="14.2" y1="14.2" x2="17.6" y2="17.6"/></svg>
+                Sơ đồ
+              </button>
             </div>
           </div>
           <div class="spotlight-statbar-wrap">
@@ -172,6 +176,7 @@
           <div class="tabbar" id="tabbar">
             <button class="tab active" data-tab="toanvan">Toàn văn</button>
             <button class="tab" data-tab="luocdo">Lược đồ <span class="badge" id="luocdo-badge">0</span></button>
+            <button class="tab" data-tab="sodo">Sơ đồ <span class="badge" id="sodo-badge">0</span></button>
           </div>
 
           <div class="read-toolbar" id="read-toolbar">
@@ -195,6 +200,9 @@
           </section>
           <section class="tab-panel" data-panel="luocdo">
             <div class="luocdo" id="luocdo"></div>
+          </section>
+          <section class="tab-panel" data-panel="sodo">
+            <div class="sodo" id="sodo"></div>
           </section>
         </article>
 
@@ -266,7 +274,7 @@
     </div>
   </div>
 
-  <script src="data/documents.js?v=49"></script>
-  <script src="js/app.js?v=49"></script>
+  <script src="data/documents.js?v=51"></script>
+  <script src="js/app.js?v=51"></script>
 </body>
 </html>

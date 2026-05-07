@@ -27,6 +27,8 @@
   const relatedCount = $("#related-count");
   const luocdoEl = $("#luocdo");
   const luocdoBadge = $("#luocdo-badge");
+  const sodoEl = $("#sodo");
+  const sodoBadge = $("#sodo-badge");
   const crumbs = $("#crumbs");
 
   const readingInfo = $("#reading-info");
@@ -481,6 +483,8 @@
     }
     if (ctaOpen) ctaOpen.dataset.docId = doc.id;
     if (ctaLuocdo) ctaLuocdo.dataset.docId = doc.id;
+    const ctaSodo = $("#sp-cta-sodo");
+    if (ctaSodo) ctaSodo.dataset.docId = doc.id;
   }
 
   function setCrumbs(items) {
@@ -903,6 +907,7 @@
     renderToc(doc);
     renderRelated(doc);
     renderLuocdo(doc);
+    renderSodo(doc);
     renderHot(); // refresh side hot list
     activateTab(opts.tab || "toanvan");
     applyReadSettings();
@@ -1230,6 +1235,136 @@
       const stored = parseInt(localStorage.getItem("vbpl.lt.metaW") || "0", 10);
       if (stored >= 120 && stored <= 400) wrap.style.setProperty("--lt-meta-width", stored + "px");
     }
+  }
+
+  // Sơ đồ — concentric-ring network of related docs around the spotlight.
+  // Inner ring = structural (predecessor/successor), middle = outgoing
+  // citations, outer = incoming citations. Click a node to spotlight-preview.
+  function renderSodo(doc) {
+    if (!sodoEl) return;
+    // Reuse the same relationship model as Lược đồ.
+    const refs = collectAllRefsInDoc(doc);
+    const cited = new Map();
+    for (const r of refs) {
+      if (!r.docId || r.docId === doc.id) continue;
+      if (!cited.has(r.docId)) cited.set(r.docId, H.findDoc(r.docId));
+    }
+    const citedBy = new Map();
+    for (const other of Object.values(DB)) {
+      if (other.id === doc.id) continue;
+      const otherRefs = collectAllRefsInDoc(other);
+      if (otherRefs.some(r => r.docId === doc.id)) citedBy.set(other.id, other);
+    }
+    const replaces = [], replacedBy = [];
+    const docReplaces = Array.isArray(doc.replaces) ? doc.replaces : [];
+    for (const other of Object.values(DB)) {
+      if (other.id === doc.id) continue;
+      const oReplaces = Array.isArray(other.replaces) ? other.replaces : [];
+      if (docReplaces.includes(other.id) || (doc.status && doc.status.includes(other.id))) replaces.push(other);
+      if (oReplaces.includes(doc.id) || (other.status && other.status.includes(doc.id))) replacedBy.push(other);
+    }
+
+    // Bucket without duplicates. Spotlight first; then structural, outgoing, incoming.
+    const seen = new Set([doc.id]);
+    const structural = [];
+    for (const d of replaces) {
+      if (!d || seen.has(d.id)) continue;
+      seen.add(d.id); structural.push({ doc: d, rel: "Bị thay thế bởi văn bản đang xem" });
+    }
+    for (const d of replacedBy) {
+      if (!d || seen.has(d.id)) continue;
+      seen.add(d.id); structural.push({ doc: d, rel: "Văn bản đã thay thế văn bản đang xem" });
+    }
+    const outgoing = [];
+    for (const [, d] of cited) {
+      if (!d || seen.has(d.id)) continue;
+      seen.add(d.id); outgoing.push({ doc: d, rel: "Được dẫn chiếu trong văn bản này" });
+    }
+    const incoming = [];
+    for (const [, d] of citedBy) {
+      if (!d || seen.has(d.id)) continue;
+      seen.add(d.id); incoming.push({ doc: d, rel: "Văn bản này được viện dẫn ở đây" });
+    }
+
+    const total = structural.length + outgoing.length + incoming.length;
+    if (sodoBadge) sodoBadge.textContent = total;
+
+    if (!total) {
+      sodoEl.innerHTML = `<h2>Sơ đồ liên kết — ${escapeHtml(doc.shortTitle)}</h2><div class="ld-empty">Không có văn bản liên quan để vẽ sơ đồ.</div>`;
+      return;
+    }
+
+    // Layout: 1000×1000 viewBox. Spotlight at center; rings at radii 200/340/480.
+    const SIZE = 1000, cx = SIZE / 2, cy = SIZE / 2;
+    const ringDefs = [
+      { items: structural, r: 200 },
+      { items: outgoing, r: 340 },
+      { items: incoming, r: 480 },
+    ];
+
+    // Pre-compute node positions
+    for (const ring of ringDefs) {
+      const n = ring.items.length;
+      if (!n) continue;
+      const offset = -Math.PI / 2; // start at the top
+      ring.items.forEach((it, i) => {
+        const ang = offset + (2 * Math.PI * i) / n;
+        it._x = cx + ring.r * Math.cos(ang);
+        it._y = cy + ring.r * Math.sin(ang);
+      });
+    }
+
+    // SVG: edges first (so nodes draw on top), then center, then ring nodes.
+    let edges = "", nodes = "";
+    for (const ring of ringDefs) {
+      for (const it of ring.items) {
+        edges += `<line x1="${cx}" y1="${cy}" x2="${it._x}" y2="${it._y}" class="sd-edge"/>`;
+      }
+    }
+    for (const ring of ringDefs) {
+      for (const it of ring.items) {
+        const tk = it.doc.typeKey || "";
+        nodes += `
+          <g class="sd-node" data-doc-id="${escapeHtml(it.doc.id)}">
+            <title>${escapeHtml(it.doc.shortTitle)} — ${escapeHtml(it.rel)}</title>
+            <circle cx="${it._x}" cy="${it._y}" r="22" class="sd-circle sd-${tk}"/>
+            <text x="${it._x}" y="${it._y}" class="sd-label">${escapeHtml(it.doc.number)}</text>
+          </g>`;
+      }
+    }
+    const centerNode = `
+      <g class="sd-node sd-current">
+        <circle cx="${cx}" cy="${cy}" r="46" class="sd-circle sd-${doc.typeKey || ''}"/>
+        <text x="${cx}" y="${cy}" class="sd-label sd-label-center">${escapeHtml(doc.number)}</text>
+      </g>`;
+
+    sodoEl.innerHTML = `
+      <h2>Sơ đồ liên kết — ${escapeHtml(doc.shortTitle)}</h2>
+      <div class="sd-legend">
+        <span class="sd-leg-item"><i class="sd-dot sd-luat"></i> Luật / Bộ luật</span>
+        <span class="sd-leg-item"><i class="sd-dot sd-nghidinh"></i> Nghị định</span>
+        <span class="sd-leg-item"><i class="sd-dot sd-thongtu"></i> Thông tư</span>
+      </div>
+      <div class="sd-counts">
+        ${structural.length ? `<span class="sd-count">${structural.length} cấu trúc</span>` : ''}
+        ${outgoing.length ? `<span class="sd-count">${outgoing.length} dẫn chiếu (đi)</span>` : ''}
+        ${incoming.length ? `<span class="sd-count">${incoming.length} viện dẫn (đến)</span>` : ''}
+      </div>
+      <svg class="sd-svg" viewBox="0 0 ${SIZE} ${SIZE}" preserveAspectRatio="xMidYMid meet">
+        <g class="sd-edges">${edges}</g>
+        ${centerNode}
+        <g class="sd-nodes">${nodes}</g>
+      </svg>
+    `;
+
+    // Click navigation: same as Lược đồ row click — show doc preview.
+    sodoEl.querySelectorAll(".sd-node[data-doc-id]").forEach(g => {
+      g.addEventListener("click", () => {
+        const id = g.dataset.docId;
+        if (document.body.classList.contains("luocdo-only")) showDocPreview(id);
+        else openDoc(id);
+      });
+    });
   }
 
   function wireMetaSplitter(wrap) {

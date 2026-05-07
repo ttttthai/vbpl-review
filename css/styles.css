@@ -1577,6 +1577,107 @@ table { border-collapse: collapse; }
   box-shadow: 0 1px 3px rgba(15, 168, 132, 0.30);
 }
 
+/* Sơ đồ — concentric-ring network diagram of related docs */
+.sodo { padding: 22px 24px; }
+.sodo h2 {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 22px;
+  color: var(--ink);
+  margin: 0 0 14px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+.sd-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 18px;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  color: var(--text-soft);
+  margin-bottom: 6px;
+}
+.sd-leg-item { display: inline-flex; align-items: center; gap: 6px; }
+.sd-dot {
+  width: 11px; height: 11px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.sd-dot.sd-luat, .sd-dot.sd-bo-luat { background: #7d1d22; }
+.sd-dot.sd-nghidinh { background: #15a884; }
+.sd-dot.sd-thongtu { background: #1a2c4a; }
+
+.sd-counts {
+  display: flex; flex-wrap: wrap; gap: 8px;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  margin-bottom: 12px;
+}
+.sd-count {
+  background: rgba(21, 168, 132, 0.12);
+  color: #0d6e57;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-weight: 500;
+}
+
+.sd-svg {
+  width: 100%;
+  height: auto;
+  max-height: 78vh;
+  background: #fbf7ec;
+  border: 1px solid rgba(26, 44, 74, 0.12);
+  border-radius: 6px;
+  display: block;
+}
+
+.sd-edge {
+  stroke: rgba(26, 44, 74, 0.18);
+  stroke-width: 1;
+  pointer-events: none;
+}
+
+.sd-node {
+  cursor: pointer;
+}
+.sd-circle {
+  stroke: #fbf7ec;
+  stroke-width: 2;
+  transition: filter 0.15s ease, stroke-width 0.15s ease;
+}
+.sd-circle.sd-luat,
+.sd-circle.sd-bo-luat { fill: #7d1d22; }
+.sd-circle.sd-nghidinh { fill: #15a884; }
+.sd-circle.sd-thongtu { fill: #1a2c4a; }
+.sd-circle:not(.sd-luat):not(.sd-bo-luat):not(.sd-nghidinh):not(.sd-thongtu) {
+  fill: #6b7a8f;
+}
+
+.sd-current .sd-circle {
+  stroke: #15a884;
+  stroke-width: 5;
+  filter: drop-shadow(0 0 10px rgba(21, 168, 132, 0.45));
+}
+
+.sd-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 9px;
+  text-anchor: middle;
+  dominant-baseline: central;
+  fill: #fbf7ec;
+  pointer-events: none;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+.sd-label-center {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.sd-node:hover .sd-circle {
+  filter: brightness(1.18) drop-shadow(0 2px 4px rgba(0,0,0,0.18));
+  stroke-width: 3;
+}
+
 /* "Lược đồ only" viewing mode (entered via spotlight Lược đồ button) — hide
    the doc title bar, properties, tab strip, reading toolbar, side aside
    columns, and the non-Lược-đồ tab panels. The Gantt panel is always shown,
