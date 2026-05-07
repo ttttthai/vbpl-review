@@ -1340,8 +1340,67 @@
   // Allow commas inside the document name segment — Vietnamese laws often have
   // them (e.g. "Luật Phòng, chống rửa tiền số 14/2022/QH15").
   const NAMED_DOC_NUMBER_RE = /(Luật|Bộ\s*luật|Nghị\s*định|Thông\s*tư)\s+(?:[^.;\n\/]{1,80}?)\s+số\s+([0-9]+\/[0-9]+\/(?:QH[0-9]+|N[ĐD][- ]?CP|TT[- ]?[A-ZĐ]+))/giu;
-  const NAMED_CODE_RE = /Bộ\s*luật\s+Hình\s+sự(?!\s+số)/giu;
-  const INNER_REF_RE = /(?:điểm\s+([a-zđ])\s+)?(?:khoản\s+(\d+)\s+)?Điều\s+(\d+)(?:\s+của\s+(Luật\s+này|Luật\s+số\s+[0-9]+\/[0-9]+\/QH[0-9]+|Nghị\s*định\s+số\s+[0-9]+\/[0-9]+\/N[ĐD]-CP|Thông\s*tư\s+số\s+[0-9]+\/[0-9]+\/TT-[A-ZĐ]+))?/giu;
+  // Short-form law names → current canonical doc id. Vietnamese legal text
+  // commonly cites laws by short name only ("theo quy định của Luật Các tổ
+  // chức tín dụng") instead of by number, so we keep an ordered table from
+  // most-specific to least-specific name (e.g. "Bộ luật Tố tụng dân sự" must
+  // come before "Bộ luật Dân sự") with a negative lookahead that skips the
+  // long-form "Luật X số …" cases (those are caught by NAMED_DOC_NUMBER_RE).
+  const NAMED_CODE_PATTERNS = [
+    // Bộ luật family — longer phrases first
+    { re: /Bộ\s*luật\s+Tố\s+tụng\s+dân\s+sự(?!\s+số\s+\d)/giu, docId: "92/2015/QH13" },
+    { re: /Bộ\s*luật\s+Tố\s+tụng\s+hình\s+sự(?!\s+số\s+\d)/giu, docId: "101/2015/QH13" },
+    { re: /Bộ\s*luật\s+Hình\s+sự(?!\s+số\s+\d)/giu, docId: "100/2015/QH13" },
+    { re: /Bộ\s*luật\s+Dân\s+sự(?!\s+số\s+\d)/giu, docId: "91/2015/QH13" },
+    // Luật family — long descriptive names first
+    { re: /Luật\s+Sử\s+dụng\s+năng\s+lượng\s+tiết\s+kiệm\s+và\s+hiệu\s+quả(?!\s+số\s+\d)/giu, docId: "50/2010/QH12" },
+    { re: /Luật\s+Đầu\s+tư\s+theo\s+phương\s+thức\s+đối\s+tác\s+công\s+tư(?!\s+số\s+\d)/giu, docId: "64/2020/QH14" },
+    { re: /Luật\s+Bảo\s+vệ\s+quyền\s+lợi\s+người\s+tiêu\s+dùng(?!\s+số\s+\d)/giu, docId: "59/2010/QH12" },
+    { re: /Luật\s+Phòng[, ]+chống\s+rửa\s+tiền(?!\s+số\s+\d)/giu, docId: "14/2022/QH15" },
+    { re: /Luật\s+Ngân\s+hàng\s+Nhà\s+nước(?:\s+Việt\s+Nam)?(?!\s+số\s+\d)/giu, docId: "46/2010/QH12" },
+    { re: /Luật\s+Bảo\s+hiểm\s+tiền\s+gửi(?!\s+số\s+\d)/giu, docId: "06/2012/QH13" },
+    { re: /Luật\s+Bảo\s+vệ\s+môi\s+trường(?!\s+số\s+\d)/giu, docId: "72/2020/QH14" },
+    { re: /Luật\s+Xử\s+lý\s+vi\s+phạm\s+hành\s+chính(?!\s+số\s+\d)/giu, docId: "15/2012/QH13" },
+    { re: /Luật\s+Quản\s+lý\s+thuế(?!\s+số\s+\d)/giu, docId: "38/2019/QH14" },
+    { re: /Luật\s+Đầu\s+tư\s+công(?!\s+số\s+\d)/giu, docId: "39/2019/QH14" },
+    { re: /Luật\s+Ngân\s+sách\s+nhà\s+nước(?!\s+số\s+\d)/giu, docId: "83/2015/QH13" },
+    { re: /Luật\s+Các\s+tổ\s+chức\s+tín\s+dụng(?!\s+số\s+\d)/giu, docId: "32/2024/QH15" },
+    { re: /Luật\s+Tổ\s+chức\s+Tòa\s+án\s+nhân\s+dân(?!\s+số\s+\d)/giu, docId: "33/2002/QH10" },
+    { re: /Luật\s+Phá\s+sản(?!\s+số\s+\d)/giu, docId: "51/2014/QH13" },
+    { re: /Luật\s+Doanh\s+nghiệp(?!\s+số\s+\d)/giu, docId: "59/2020/QH14" },
+    { re: /Luật\s+Đất\s+đai(?!\s+số\s+\d)/giu, docId: "31/2024/QH15" },
+    { re: /Luật\s+Chứng\s+khoán(?!\s+số\s+\d)/giu, docId: "54/2019/QH14" },
+    { re: /Luật\s+Đầu\s+tư(?!\s+(?:công|theo|số\s+\d))/giu, docId: "61/2020/QH14" },
+    { re: /Luật\s+Đường\s+sắt(?!\s+số\s+\d)/giu, docId: "06/2017/QH14" },
+    { re: /Luật\s+Thủy\s+lợi(?!\s+số\s+\d)/giu, docId: "08/2017/QH14" },
+    { re: /Luật\s+Quy\s+hoạch(?!\s+số\s+\d)/giu, docId: "21/2017/QH14" },
+    { re: /Luật\s+Điện\s+lực(?!\s+số\s+\d)/giu, docId: "61/2024/QH15" },
+    { re: /Luật\s+Xây\s+dựng(?!\s+số\s+\d)/giu, docId: "50/2014/QH13" },
+    { re: /Luật\s+Cạnh\s+tranh(?!\s+số\s+\d)/giu, docId: "23/2018/QH14" },
+    { re: /Luật\s+Giá(?!\s+số\s+\d)/giu, docId: "16/2023/QH15" },
+    { re: /Luật\s+Kinh\s+doanh\s+bất\s+động\s+sản(?!\s+số\s+\d)/giu, docId: "29/2023/QH15" },
+    { re: /Luật\s+Nhà\s+ở(?!\s+số\s+\d)/giu, docId: "27/2023/QH15" },
+  ];
+  // Structured citation phrase. Matches things like:
+  //   "điểm a khoản 1 Điều này"
+  //   "các điểm a, b, c, d và đ khoản này"
+  //   "khoản 1 Điều 5 của Luật số 32/2024/QH15"
+  //   "khoản này"
+  // Each letter (a/b/c/...) and each clause/article number gets its own
+  // hover-link span so the user can hover any individual identifier and see
+  // the corresponding excerpt.
+  const VN_LETTER = "a-zđêôơư";
+  const STRUCT_REF_RE = new RegExp(
+    "(?:(các\\s+)?(điểm)\\s+(" +
+      // letter, then any number of ", letter" or " và letter" — all letters captured as one big string
+      "[" + VN_LETTER + "](?:\\s*,\\s*[" + VN_LETTER + "])*(?:\\s+(?:và|hoặc)\\s+[" + VN_LETTER + "])?" +
+    ")\\s+)?" +
+    "(?:(khoản)\\s+(\\d+|này))?" +
+    "(?:\\s*(?:,|và|hoặc)?\\s*(khoản)\\s+(\\d+|này))?" +
+    "(?:\\s+(Điều)\\s+(\\d+|này))?" +
+    "(?:\\s+(?:của\\s+)?(Luật\\s+này|Luật\\s+số\\s+[0-9]+\\/[0-9]+\\/QH[0-9]+|Nghị\\s*định\\s+số\\s+[0-9]+\\/[0-9]+\\/N[ĐD]-CP|Thông\\s*tư\\s+số\\s+[0-9]+\\/[0-9]+\\/TT-[A-ZĐ]+|Bộ\\s*luật\\s+(?:Hình\\s+sự|Dân\\s+sự|Tố\\s+tụng\\s+(?:dân|hình)\\s+sự|Lao\\s+động)))?",
+    "giu"
+  );
 
   function normalizeDocNumber(raw) {
     return raw.toUpperCase().replace(/\s+/g, "")
@@ -1350,11 +1409,233 @@
       .replace(/TT\s*-\s*/gi, "TT-");
   }
 
+  // Parse an article body into { intro, clauses: [{ number, text, points: [{ letter, text }] }] }.
+  // Vietnamese legal articles use "1." for clauses and "a)" for points.
+  function parseArticleStructure(body) {
+    if (!body) return { intro: "", clauses: [] };
+    const lines = body.split(/\r?\n/);
+    const clauses = [];
+    let curClause = null, curPoint = null;
+    const intro = [];
+    for (const raw of lines) {
+      const line = raw.trim();
+      if (!line) continue;
+      const cMatch = line.match(/^(\d+)\.\s*(.*)$/);
+      const pMatch = line.match(new RegExp("^([" + VN_LETTER + "])\\)\\s*(.*)$", "i"));
+      if (cMatch) {
+        curClause = { number: cMatch[1], text: cMatch[2], points: [] };
+        curPoint = null;
+        clauses.push(curClause);
+      } else if (pMatch && curClause) {
+        curPoint = { letter: pMatch[1].toLowerCase(), text: pMatch[2] };
+        curClause.points.push(curPoint);
+      } else if (curPoint) {
+        curPoint.text += "\n" + line;
+      } else if (curClause) {
+        curClause.text += "\n" + line;
+      } else {
+        intro.push(line);
+      }
+    }
+    return { intro: intro.join("\n"), clauses };
+  }
+
+  const _structCache = new Map();
+  function getArticleStructure(doc, articleNumber) {
+    if (!doc || !articleNumber) return null;
+    const key = doc.id + "#" + articleNumber;
+    if (_structCache.has(key)) return _structCache.get(key);
+    const art = H.findArticle(doc, articleNumber);
+    if (!art) { _structCache.set(key, null); return null; }
+    const struct = parseArticleStructure(art.body);
+    _structCache.set(key, struct);
+    return struct;
+  }
+
+  // Resolve a doc-name phrase ("Luật này" / "Luật số ..." / "Bộ luật Hình sự") to a docId.
+  function resolveDocPhrase(phrase, contextDocId) {
+    if (!phrase) return contextDocId;
+    if (/Luật\s+này/i.test(phrase)) return contextDocId;
+    const numMatch = phrase.match(/[0-9]+\/[0-9]+\/[A-ZĐ\-]+/i);
+    if (numMatch) return normalizeDocNumber(numMatch[0]);
+    if (/Bộ\s*luật\s+Tố\s+tụng\s+dân\s+sự/i.test(phrase)) return "92/2015/QH13";
+    if (/Bộ\s*luật\s+Tố\s+tụng\s+hình\s+sự/i.test(phrase)) return "101/2015/QH13";
+    if (/Bộ\s*luật\s+Hình\s+sự/i.test(phrase)) return "100/2015/QH13";
+    if (/Bộ\s*luật\s+Dân\s+sự/i.test(phrase)) return "91/2015/QH13";
+    return contextDocId;
+  }
+
+  // Find structured citation phrases ("điểm a, b khoản 1 Điều này", etc.) and
+  // emit one ref per individual identifier (each letter, each number).
+  function findStructuredRefs(text, ctx) {
+    const out = [];
+    if (!ctx) ctx = {};
+    STRUCT_REF_RE.lastIndex = 0;
+    let m;
+    while ((m = STRUCT_REF_RE.exec(text)) !== null) {
+      // m[2] = "điểm" keyword, m[3] = letters string
+      // m[4] = "khoản" keyword 1, m[5] = clause id 1
+      // m[6] = "khoản" keyword 2, m[7] = clause id 2 (rarely used in MVP)
+      // m[8] = "Điều" keyword, m[9] = article id
+      // m[10] = doc phrase
+      const hasPoint = !!m[2];
+      const hasClause = !!m[4];
+      const hasClause2 = !!m[6];
+      const hasArticle = !!m[8];
+      // Skip empty matches (regex has all groups optional)
+      if (!hasPoint && !hasClause && !hasArticle) {
+        if (m[0].length === 0) STRUCT_REF_RE.lastIndex++;
+        continue;
+      }
+
+      const phraseStart = m.index;
+      const phraseEnd = m.index + m[0].length;
+      const docId = resolveDocPhrase(m[10], ctx.docId);
+
+      // Resolve article: explicit id > "này" > current article context
+      let resolvedArt;
+      if (hasArticle) {
+        resolvedArt = m[9] === "này" ? ctx.article : m[9];
+      } else {
+        resolvedArt = ctx.article;
+      }
+
+      // Resolve clause: explicit > "này" > current clause context
+      let resolvedClause = null, resolvedClause2 = null;
+      if (hasClause) resolvedClause = m[5] === "này" ? ctx.clause : m[5];
+      if (hasClause2) resolvedClause2 = m[7] === "này" ? ctx.clause : m[7];
+
+      let cursor = phraseStart;
+
+      // Wrap each letter in the points list
+      if (hasPoint) {
+        const lettersStr = m[3] || "";
+        // Find every individual letter as a standalone token within the phrase
+        const letterRe = new RegExp("\\b([" + VN_LETTER + "])\\b", "giu");
+        // Limit search to the letters substring portion of the original text
+        const lettersStartInText = text.indexOf(lettersStr, phraseStart);
+        if (lettersStartInText >= 0) {
+          letterRe.lastIndex = 0;
+          let lm;
+          while ((lm = letterRe.exec(lettersStr)) !== null) {
+            const absStart = lettersStartInText + lm.index;
+            out.push({
+              kind: "article",
+              docId,
+              articleNumber: resolvedArt,
+              clause: resolvedClause,
+              point: lm[1].toLowerCase(),
+              raw: lm[1],
+              start: absStart,
+              end: absStart + lm[1].length,
+            });
+          }
+          cursor = lettersStartInText + lettersStr.length;
+        }
+      }
+
+      // Wrap clause id (number or "này")
+      if (hasClause && resolvedClause) {
+        const clauseRe = new RegExp("\\b" + (m[5] === "này" ? "này" : m[5]) + "\\b", "u");
+        const cIdx = text.slice(cursor, phraseEnd).search(clauseRe);
+        if (cIdx >= 0) {
+          const absStart = cursor + cIdx;
+          out.push({
+            kind: "article",
+            docId,
+            articleNumber: resolvedArt,
+            clause: resolvedClause,
+            point: null,
+            raw: m[5],
+            start: absStart,
+            end: absStart + m[5].length,
+          });
+          cursor = absStart + m[5].length;
+        }
+      }
+
+      // Wrap second clause id if present (e.g. "khoản 1 và khoản 2")
+      if (hasClause2 && resolvedClause2) {
+        const c2Re = new RegExp("\\b" + (m[7] === "này" ? "này" : m[7]) + "\\b", "u");
+        const cIdx = text.slice(cursor, phraseEnd).search(c2Re);
+        if (cIdx >= 0) {
+          const absStart = cursor + cIdx;
+          out.push({
+            kind: "article",
+            docId,
+            articleNumber: resolvedArt,
+            clause: resolvedClause2,
+            point: null,
+            raw: m[7],
+            start: absStart,
+            end: absStart + m[7].length,
+          });
+          cursor = absStart + m[7].length;
+        }
+      }
+
+      // Wrap article id (number or "này")
+      if (hasArticle && resolvedArt) {
+        const artRe = new RegExp("\\b" + (m[9] === "này" ? "này" : m[9]) + "\\b", "u");
+        const aIdx = text.slice(cursor, phraseEnd).search(artRe);
+        if (aIdx >= 0) {
+          const absStart = cursor + aIdx;
+          out.push({
+            kind: "article",
+            docId,
+            articleNumber: resolvedArt,
+            clause: null,
+            point: null,
+            raw: m[9],
+            start: absStart,
+            end: absStart + m[9].length,
+          });
+          cursor = absStart + m[9].length;
+        }
+      }
+    }
+    return out;
+  }
+
   function annotateReferences(rootEl, contextDoc) {
-    walkTextNodes(rootEl, (textNode) => {
+    // Walk paragraphs in document order, tracking the current article /
+    // clause / point context for "Điều này" / "khoản này" / "điểm này"
+    // resolution. For nested structure: <h3.article id="art-N"> starts an
+    // article; subsequent <p.clause> sets the active clause and resets the
+    // point; <p.point> sets the active point.
+    let curArticle = null, curClause = null, curPoint = null;
+    const walker = document.createTreeWalker(rootEl, NodeFilter.SHOW_ELEMENT, null);
+    const targets = [];
+    let node;
+    while ((node = walker.nextNode())) {
+      if (node.matches && node.matches("h3.article")) {
+        const m = (node.id || "").match(/^art-(\d+)/);
+        curArticle = m ? m[1] : null;
+        curClause = null;
+        curPoint = null;
+        continue;
+      }
+      if (node.tagName === "P") {
+        if (node.classList.contains("clause")) {
+          const m = (node.textContent || "").match(/^(\d+)\./);
+          curClause = m ? m[1] : curClause;
+          curPoint = null;
+        } else if (node.classList.contains("point")) {
+          const m = (node.textContent || "").match(new RegExp("^([" + VN_LETTER + "])\\)", "i"));
+          curPoint = m ? m[1].toLowerCase() : curPoint;
+        }
+        targets.push({ el: node, ctx: { docId: contextDoc ? contextDoc.id : null, article: curArticle, clause: curClause, point: curPoint } });
+      }
+    }
+
+    for (const { el, ctx } of targets) annotateElement(el, contextDoc, ctx);
+  }
+
+  function annotateElement(el, contextDoc, ctx) {
+    walkTextNodes(el, (textNode) => {
       const text = textNode.nodeValue;
       if (!text || text.length < 4) return;
-      const matches = findReferencesInText(text);
+      const matches = findReferencesInText(text, ctx);
       if (!matches.length) return;
       const frag = document.createDocumentFragment();
       let cursor = 0;
@@ -1380,7 +1661,7 @@
     });
   }
 
-  function findReferencesInText(text) {
+  function findReferencesInText(text, ctx) {
     const found = [];
     let m;
     NAMED_DOC_NUMBER_RE.lastIndex = 0;
@@ -1392,23 +1673,18 @@
       if (found.some(r => !(r.end <= m.index || r.start >= m.index + m[0].length))) continue;
       found.push({ kind: "doc", docId: normalizeDocNumber(m[2]), articleNumber: null, clause: null, point: null, raw: m[0], start: m.index, end: m.index + m[0].length });
     }
-    NAMED_CODE_RE.lastIndex = 0;
-    while ((m = NAMED_CODE_RE.exec(text)) !== null) {
-      if (found.some(r => r.start <= m.index && r.end >= m.index + m[0].length)) continue;
-      found.push({ kind: "named-code", docId: "100/2015/QH13", articleNumber: null, clause: null, point: null, raw: m[0], start: m.index, end: m.index + m[0].length });
-    }
-    INNER_REF_RE.lastIndex = 0;
-    while ((m = INNER_REF_RE.exec(text)) !== null) {
-      const point = m[1] || null, clause = m[2] || null, article = m[3];
-      const targetPhrase = m[4] || null;
-      let docId = null;
-      if (!targetPhrase || /Luật\s+này/i.test(targetPhrase)) docId = null;
-      else {
-        const nm = targetPhrase.match(/[0-9]+\/[0-9]+\/[A-ZĐ\-]+/i);
-        if (nm) docId = normalizeDocNumber(nm[0]);
+    for (const { re, docId } of NAMED_CODE_PATTERNS) {
+      re.lastIndex = 0;
+      while ((m = re.exec(text)) !== null) {
+        if (found.some(r => !(r.end <= m.index || r.start >= m.index + m[0].length))) continue;
+        found.push({ kind: "named-code", docId, articleNumber: null, clause: null, point: null, raw: m[0], start: m.index, end: m.index + m[0].length });
       }
-      if (found.some(r => !(r.end <= m.index || r.start >= m.index + m[0].length))) continue;
-      found.push({ kind: "article", docId, articleNumber: article, clause, point, raw: m[0], start: m.index, end: m.index + m[0].length });
+    }
+    // Structured citations (điểm a, b khoản N Điều X) — emit one ref per
+    // letter / number so each identifier is independently hoverable.
+    for (const r of findStructuredRefs(text, ctx || {})) {
+      if (found.some(other => !(other.end <= r.start || other.start >= r.end))) continue;
+      found.push(r);
     }
     found.sort((a, b) => a.start - b.start || (b.end - b.start) - (a.end - a.start));
     const filtered = []; let lastEnd = -1;
