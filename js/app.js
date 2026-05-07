@@ -456,6 +456,11 @@
   // for the given doc. Pure DOM mutation; doesn't change view state.
   function fillSpotlight(doc) {
     if (!doc) return;
+    const card = $(".spotlight");
+    if (card) {
+      card.classList.remove("type-luat", "type-bo-luat", "type-nghidinh", "type-thongtu");
+      if (doc.typeKey) card.classList.add("type-" + doc.typeKey);
+    }
     const eyebrow = $("#sp-eyebrow");
     const title = $("#sp-title");
     const desc = $("#sp-desc");
