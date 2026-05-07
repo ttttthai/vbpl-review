@@ -212,7 +212,7 @@
         <div class="suggestion-meta">${highlightMatch(item.number, query)} · ${escapeHtml(item.issuer)}</div>
       </div>
     `;
-    li.addEventListener("mousedown", (e) => { e.preventDefault(); openDoc(item.id); });
+    li.addEventListener("mousedown", (e) => { e.preventDefault(); showDocPreview(item.id); });
     li.addEventListener("mouseenter", () => setActiveSuggestion(li));
     return li;
   }
@@ -252,16 +252,16 @@
     });
   }
 
-  if (searchInput && suggestions) wireSearch(searchInput, suggestions, openDoc);
+  if (searchInput && suggestions) wireSearch(searchInput, suggestions, showDocPreview);
   wireSearch(sideSearchInput, sideSuggestions, (id) => {
-    openDoc(id);
+    showDocPreview(id);
     sideSearchInput.value = "";
     sideSuggestions.innerHTML = "";
   });
 
   if (searchDo) searchDo.addEventListener("click", () => {
     const top = suggest(searchInput.value)[0];
-    if (top) openDoc(top.id);
+    if (top) showDocPreview(top.id);
     else if (searchInput.value.trim()) showToast("Không tìm thấy văn bản phù hợp");
     else searchInput.focus();
   });
@@ -415,7 +415,7 @@
   $$(".trending-row .ticker a").forEach(a => {
     a.addEventListener("click", (e) => {
       e.preventDefault();
-      if (a.dataset.docId) openDoc(a.dataset.docId);
+      if (a.dataset.docId) showDocPreview(a.dataset.docId);
     });
   });
 
@@ -816,7 +816,7 @@
     }).join("");
 
     $$("li[data-doc-id]", newdocsList).forEach(li => {
-      li.addEventListener("click", () => openDoc(li.dataset.docId));
+      li.addEventListener("click", () => showDocPreview(li.dataset.docId));
     });
   }
 
@@ -857,7 +857,7 @@
       </li>
     `).join("");
     $$("li[data-doc-id]", expiredList).forEach(li => {
-      li.addEventListener("click", () => openDoc(li.dataset.docId));
+      li.addEventListener("click", () => showDocPreview(li.dataset.docId));
     });
   }
 
@@ -878,7 +878,7 @@
 
     if (hotListSide) {
       hotListSide.innerHTML = html;
-      $$("li[data-doc-id]", hotListSide).forEach(li => li.addEventListener("click", () => openDoc(li.dataset.docId)));
+      $$("li[data-doc-id]", hotListSide).forEach(li => li.addEventListener("click", () => showDocPreview(li.dataset.docId)));
     }
   }
 
@@ -1054,7 +1054,7 @@
       </li>
     `).join("");
     relatedDocsEl.querySelectorAll("li[data-doc-id]").forEach(li => {
-      li.addEventListener("click", () => openDoc(li.dataset.docId));
+      li.addEventListener("click", () => showDocPreview(li.dataset.docId));
     });
   }
 
@@ -1215,22 +1215,16 @@
     luocdoEl.innerHTML = html;
     // Row click behaviour
     //   - If we entered the Lược-đồ from the spotlight ("Lược đồ" CTA) —
-    //     i.e. body.luocdo-only is set — clicking a row should take the
-    //     user BACK to a spotlight-card preview of that doc, not into the
-    //     full Toàn-văn viewer. Mở văn bản from the new preview opens the
-    //     reader; Lược đồ from the new preview re-enters this Gantt for
-    //     the chosen doc.
-    //   - Otherwise (Gantt opened as the Lược đồ tab inside the full
-    //     viewer), clicking a row keeps the existing behaviour — jump
-    //     to the chosen doc's Toàn văn.
-    const inLuocdoOnly = document.body.classList.contains("luocdo-only");
+    //   Per the UX spec, every doc click anywhere lands on the spotlight
+    //   first (with the type-coloured background) so the user explicitly
+    //   chooses to enter the viewer. Both luocdo-only and embedded-tab
+    //   modes route the click through showDocPreview now.
     luocdoEl.querySelectorAll(".lt-row[data-doc-id]").forEach(row => {
       const id = row.dataset.docId;
       row.style.cursor = "pointer";
       row.addEventListener("click", (e) => {
         if (e.target.classList.contains("lt-splitter")) return;
-        if (inLuocdoOnly) showDocPreview(id);
-        else openDoc(id);
+        showDocPreview(id);
       });
     });
     wireMetaSplitter(luocdoEl.querySelector(".lt-wrap"));
@@ -1449,8 +1443,10 @@
     sodoEl.querySelectorAll(".sd-node[data-doc-id]").forEach(g => {
       g.addEventListener("click", () => {
         const id = g.dataset.docId;
-        if (document.body.classList.contains("luocdo-only")) showDocPreview(id);
-        else openDoc(id);
+        // Always preview-first per UX spec: every doc click lands on the
+        // spotlight card so the user sees the type-coloured landing before
+        // entering the viewer themselves.
+        showDocPreview(id);
       });
     });
 
