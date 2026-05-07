@@ -29,8 +29,9 @@ const { parseLegalText } = require("./parse-articles");
 
 const ROOT = path.resolve(__dirname, "..");
 const SCRAPED_DIR = path.join(ROOT, "data", "scraped");
-const TIMEOUT_MS = parseInt(process.env.SCRAPE_TIMEOUT || "15000", 10);
-const MIN_ARTICLES_OK = 2; // a doc with fewer parsed articles is treated as a failed scrape
+const TIMEOUT_MS = parseInt(process.env.SCRAPE_TIMEOUT || "30000", 10);
+// Many short amendment laws ("Luật sửa đổi...") have only 1 article — keep them.
+const MIN_ARTICLES_OK = 1;
 
 // Cheap & cheerful loader — reads data/documents.js by evaluating it in a
 // stripped-down context that exposes window.LEGAL_DB. Avoids pulling in
@@ -53,12 +54,17 @@ function log(msg, ...rest) {
 }
 
 async function extractRenderedText(page) {
-  // Prefer obvious content containers (vbpl.vn, vanban.chinhphu.vn, thuvienphapluat)
+  // Prefer obvious content containers. New vbpl.vn (Next.js + Ant Design) renders
+  // article body inside `.ant-tabs-content-holder`. Old vbpl.vn / vanban.chinhphu.vn /
+  // thuvienphapluat used `#toanvancontent`, `#noidung`, `#tab1.contentDoc` etc.
   const selectors = [
     "#toanvancontent",
     "#noidung",
     "#fulltext",
+    "#tab1",
+    ".contentDoc",
     ".document-content",
+    "[class*=ant-tabs-content-holder]",
     "[class*=toanvan]",
     "[class*=ContentBody]",
     "[class*=DocumentBody]",
