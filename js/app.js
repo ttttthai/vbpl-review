@@ -1430,10 +1430,19 @@
         ${incomingCount ? `<span class="sd-count">${incomingCount} viện dẫn (đến)</span>` : ''}
         <span class="sd-count sd-count-edges">${edges.length} liên kết</span>
       </div>
-      <svg class="sd-svg" viewBox="0 0 ${SIZE} ${SIZE}" preserveAspectRatio="xMidYMid meet">
-        <g class="sd-edges">${edgeMarkup}</g>
-        <g class="sd-nodes">${nodeMarkup}</g>
-      </svg>
+      <div class="sd-canvas">
+        <div class="sd-zoom-controls" role="group" aria-label="Phóng to thu nhỏ">
+          <button class="sd-zoom-btn" data-zoom="in" title="Phóng to" aria-label="Phóng to">+</button>
+          <button class="sd-zoom-btn" data-zoom="out" title="Thu nhỏ" aria-label="Thu nhỏ">−</button>
+          <button class="sd-zoom-btn" data-zoom="reset" title="Khôi phục" aria-label="Khôi phục">⌂</button>
+        </div>
+        <svg class="sd-svg" viewBox="0 0 ${SIZE} ${SIZE}" preserveAspectRatio="xMidYMid meet">
+          <g class="sd-zoom" transform="translate(0 0) scale(1)">
+            <g class="sd-edges">${edgeMarkup}</g>
+            <g class="sd-nodes">${nodeMarkup}</g>
+          </g>
+        </svg>
+      </div>
     `;
 
     // Click navigation: same as Lược đồ row click — show doc preview.
@@ -1442,6 +1451,72 @@
         const id = g.dataset.docId;
         if (document.body.classList.contains("luocdo-only")) showDocPreview(id);
         else openDoc(id);
+      });
+    });
+
+    // Zoom + pan. State lives in this closure; the SVG is replaced on the
+    // next renderSodo so listeners die with it. Pointer events (with capture)
+    // give us touch support and clean drag tracking without window listeners.
+    const svg = sodoEl.querySelector(".sd-svg");
+    const zoomG = sodoEl.querySelector(".sd-zoom");
+    let scale = 1, tx = 0, ty = 0;
+    const MIN = 0.4, MAX = 6;
+    const apply = () => zoomG.setAttribute("transform", `translate(${tx.toFixed(1)} ${ty.toFixed(1)}) scale(${scale.toFixed(3)})`);
+    const clientToSvg = (clientX, clientY) => {
+      const rect = svg.getBoundingClientRect();
+      return {
+        x: ((clientX - rect.left) / rect.width) * SIZE,
+        y: ((clientY - rect.top) / rect.height) * SIZE,
+      };
+    };
+    const zoomAt = (svgX, svgY, factor) => {
+      const newScale = Math.max(MIN, Math.min(MAX, scale * factor));
+      // Keep the point under the cursor fixed in screen space
+      const localX = (svgX - tx) / scale;
+      const localY = (svgY - ty) / scale;
+      tx = svgX - localX * newScale;
+      ty = svgY - localY * newScale;
+      scale = newScale;
+      apply();
+    };
+
+    svg.addEventListener("wheel", (e) => {
+      e.preventDefault();
+      const p = clientToSvg(e.clientX, e.clientY);
+      zoomAt(p.x, p.y, e.deltaY < 0 ? 1.15 : 1 / 1.15);
+    }, { passive: false });
+
+    let dragging = false, dragStart = null;
+    svg.addEventListener("pointerdown", (e) => {
+      if (e.target.closest(".sd-node[data-doc-id]")) return; // let click bubble
+      svg.setPointerCapture(e.pointerId);
+      dragging = true;
+      dragStart = { x: e.clientX, y: e.clientY, tx, ty };
+      svg.classList.add("sd-dragging");
+    });
+    svg.addEventListener("pointermove", (e) => {
+      if (!dragging) return;
+      const rect = svg.getBoundingClientRect();
+      const dx = ((e.clientX - dragStart.x) / rect.width) * SIZE;
+      const dy = ((e.clientY - dragStart.y) / rect.height) * SIZE;
+      tx = dragStart.tx + dx;
+      ty = dragStart.ty + dy;
+      apply();
+    });
+    const endDrag = (e) => {
+      if (!dragging) return;
+      dragging = false;
+      svg.classList.remove("sd-dragging");
+      try { svg.releasePointerCapture(e.pointerId); } catch (_) {}
+    };
+    svg.addEventListener("pointerup", endDrag);
+    svg.addEventListener("pointercancel", endDrag);
+
+    sodoEl.querySelectorAll(".sd-zoom-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const action = btn.dataset.zoom;
+        if (action === "reset") { scale = 1; tx = 0; ty = 0; apply(); return; }
+        zoomAt(SIZE / 2, SIZE / 2, action === "in" ? 1.4 : 1 / 1.4);
       });
     });
   }
