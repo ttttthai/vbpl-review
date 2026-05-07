@@ -70,7 +70,7 @@
   --r: 4px;
   --r-md: 6px;
 
-  --read-size: 15px;
+  --read-size: 14.5px;
   --read-width: 760px;
 }
 
@@ -1498,13 +1498,16 @@ table { border-collapse: collapse; }
 .tool-btn.active { background: var(--orange); color: white; }
 .read-toolbar .spacer { flex: 1; }
 
-/* Doc body — keep serif for legal text reading */
+/* Doc body — Source Serif 4 (loaded at top of <head>) for clean legal-text
+   reading; tighter line-height than the previous 1.85 because Vietnamese
+   legal text already has many short numbered/lettered paragraphs and the
+   extra leading made the page feel sparse. */
 .doc-body {
   padding: 28px clamp(20px, 4vw, 48px) 48px;
   font-size: var(--read-size);
-  line-height: 1.85;
+  line-height: 1.55;
   color: #1f2733;
-  font-family: "Times New Roman", "Tinos", "Cambria", Georgia, serif;
+  font-family: "Source Serif 4", Georgia, "Iowan Old Style", serif;
   max-width: var(--read-width);
   margin: 0 auto;
 }
@@ -1544,9 +1547,9 @@ table { border-collapse: collapse; }
   0% { background: var(--ref-bg); }
   100% { background: transparent; }
 }
-.doc-body p { margin: 6px 0; text-align: justify; }
-.doc-body .clause { margin: 5px 0; }
-.doc-body .point { margin-left: 20px; }
+.doc-body p { margin: 3px 0; text-align: justify; }
+.doc-body .clause { margin: 3px 0; }
+.doc-body .point { margin-left: 20px; margin-top: 1px; margin-bottom: 1px; }
 
 /* Lược đồ */
 .luocdo { padding: 22px 24px; }
