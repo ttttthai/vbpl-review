@@ -2379,6 +2379,74 @@
 
   // Find structured citation phrases ("điểm a, b khoản 1 Điều này", etc.) and
   // emit one ref per individual identifier (each letter, each number).
+  // Helper used by findArticleListRefs: does `text` START with a recognised
+  // doc phrase? Returns { docId, raw, length } if so, else null. Tries the
+  // same patterns the rest of the parser uses, in priority order: named
+  // doc-number ("Luật ... số 32/2024/QH15"), bare doc-number ("Luật số 32/...").
+  // every NAMED_CODE_PATTERNS entry ("Luật Các tổ chức tín dụng" → 32/2024),
+  // and finally "Luật này" → contextDoc.
+  function matchLeadingDocPhrase(text, ctx) {
+    let m = text.match(/^(Luật|Bộ\s*luật|Nghị\s*định|Thông\s*tư)\s+(?:[^.;\n\/]{1,80}?)\s+số\s+([0-9]+\/[0-9]+\/(?:QH[0-9]+|N[ĐD][- ]?CP|TT[- ]?[A-ZĐ]+))/iu);
+    if (m) return { docId: normalizeDocNumber(m[2]), raw: m[0], length: m[0].length };
+    m = text.match(/^(Luật|Nghị\s*định|Thông\s*tư|Bộ\s*luật)(?:\s+số)?\s+([0-9]+\/[0-9]+\/(?:QH[0-9]+|N[ĐD][- ]?CP|TT[- ]?[A-ZĐ]+))/iu);
+    if (m) return { docId: normalizeDocNumber(m[2]), raw: m[0], length: m[0].length };
+    for (const { re, docId } of NAMED_CODE_PATTERNS) {
+      const anchored = new RegExp("^" + re.source, "iu");
+      m = text.match(anchored);
+      if (m) return { docId, raw: m[0], length: m[0].length };
+    }
+    // "Luật này" / "Bộ luật này" / "Nghị định này" / "Thông tư này" —
+    // context-relative reference back to the document being read.
+    m = text.match(/^(?:Luật|Bộ\s*luật|Nghị\s*định|Thông\s*tư)\s+này\b/iu);
+    if (m && ctx && ctx.docId) {
+      return { docId: ctx.docId, raw: m[0], length: m[0].length };
+    }
+    return null;
+  }
+
+  // Match phrases like "Điều 24 Luật Các tổ chức tín dụng",
+  // "Điều 24 đến Điều 28 Luật các tổ chức tín dụng",
+  // "Điều 5 và Điều 6 Luật Doanh nghiệp",
+  // "Điều 100 Bộ luật Hình sự",
+  // "Điều 5 của Luật số 32/2024/QH15".
+  // Each article number gets its own hover span pointing at that article in
+  // the resolved doc. The doc phrase itself is left for the existing
+  // doc-level matchers (overlap-skip drops duplicates).
+  function findArticleListRefs(text, ctx) {
+    const out = [];
+    const ANCHOR_RE = /Điều\s+(\d+)((?:\s*(?:,|\s+(?:và|hoặc|đến|tới)\s+)\s*(?:Điều\s+)?\d+)*)/giu;
+    let m;
+    ANCHOR_RE.lastIndex = 0;
+    while ((m = ANCHOR_RE.exec(text)) !== null) {
+      const anchorStart = m.index;
+      const anchorEnd = m.index + m[0].length;
+      const tail = text.slice(anchorEnd);
+      const lead = tail.match(/^(\s+(?:của\s+)?)/);
+      if (!lead) continue;
+      const docPhraseText = tail.slice(lead[0].length);
+      const docInfo = matchLeadingDocPhrase(docPhraseText, ctx);
+      if (!docInfo) continue;
+      // Emit one ref per article number found in the anchor span.
+      const numRe = /\d+/g;
+      let nm;
+      numRe.lastIndex = 0;
+      while ((nm = numRe.exec(m[0])) !== null) {
+        const absStart = anchorStart + nm.index;
+        out.push({
+          kind: "article",
+          docId: docInfo.docId,
+          articleNumber: nm[0],
+          clause: null,
+          point: null,
+          raw: nm[0],
+          start: absStart,
+          end: absStart + nm[0].length,
+        });
+      }
+    }
+    return out;
+  }
+
   function findStructuredRefs(text, ctx) {
     const out = [];
     if (!ctx) ctx = {};
@@ -2575,6 +2643,15 @@
     // Structured citations (điểm a, b khoản N Điều X) — emit one ref per
     // letter / number so each identifier is independently hoverable.
     for (const r of findStructuredRefs(text, ctx || {})) {
+      if (found.some(other => !(other.end <= r.start || other.start >= r.end))) continue;
+      found.push(r);
+    }
+    // Article-list references with explicit doc target ("Điều 24 đến Điều 28
+    // Luật các Tổ chức tín dụng", "Điều 5 và Điều 6 Luật Doanh nghiệp", etc.)
+    // The doc phrase itself was already wrapped above; we only emit the
+    // article-number spans here. Overlap-skip drops anything already handled
+    // by findStructuredRefs (the khoản-anchored variant).
+    for (const r of findArticleListRefs(text, ctx || {})) {
       if (found.some(other => !(other.end <= r.start || other.start >= r.end))) continue;
       found.push(r);
     }
