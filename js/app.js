@@ -524,9 +524,136 @@
   // ===== Landing rendering =====
   function renderLandingContent() {
     renderStats();
+    renderIndustries();
     renderNewdocs();
     renderExpired();
     renderHot();
+  }
+
+  // Industries / Lĩnh vực pháp lý — landing-page overview of every legal area
+  // covered in the corpus. Each card carries a regex matcher for counting,
+  // the canonical anchor doc id (the primary law for that area), and an SVG
+  // icon. Clicking a card lands on the spotlight preview of that anchor doc.
+  const INDUSTRIES = [
+    {
+      key: "ngan-hang", label: "Tài chính – Ngân hàng",
+      anchor: "32/2024/QH15",
+      typeKey: "luat",
+      matcher: /(tổ chức tín dụng|ngân hàng|tiền tệ|tín dụng|tài chính|bảo hiểm tiền gửi|công ty tài chính|cho vay|trái phiếu|chứng khoán)/,
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="21" x2="21" y2="21"/><line x1="3" y1="10" x2="21" y2="10"/><polyline points="5 6 12 3 19 6"/><line x1="6" y1="14" x2="6" y2="18"/><line x1="10" y1="14" x2="10" y2="18"/><line x1="14" y1="14" x2="14" y2="18"/><line x1="18" y1="14" x2="18" y2="18"/></svg>',
+    },
+    {
+      key: "dien-luc", label: "Điện lực & Năng lượng",
+      anchor: "61/2024/QH15",
+      typeKey: "luat",
+      matcher: /(năng lượng|điện lực|điện gió|điện mặt trời|tái tạo|dppa|mua bán điện|tiết kiệm)/,
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>',
+    },
+    {
+      key: "du-lieu-ca-nhan", label: "Bảo vệ dữ liệu cá nhân",
+      anchor: "13/2023/ND-CP",
+      typeKey: "nghidinh",
+      matcher: /(dữ liệu cá nhân|bảo vệ dữ liệu|thông tin cá nhân|pdpd)/,
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>',
+    },
+    {
+      key: "dat-dai", label: "Đất đai – Bất động sản",
+      anchor: "31/2024/QH15",
+      typeKey: "luat",
+      matcher: /(đất đai|nhà ở|kinh doanh bất động sản|quy hoạch sử dụng đất)/,
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10l9-7 9 7v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg>',
+    },
+    {
+      key: "doanh-nghiep", label: "Doanh nghiệp – Đầu tư",
+      anchor: "59/2020/QH14",
+      typeKey: "luat",
+      matcher: /(doanh nghiệp|đầu tư|cạnh tranh|công ty cổ phần|hợp tác xã)/,
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="14" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><line x1="12" y1="11" x2="12" y2="17"/><line x1="9" y1="14" x2="15" y2="14"/></svg>',
+    },
+    {
+      key: "hinh-su", label: "Hình sự – Tố tụng hình sự",
+      anchor: "100/2015/QH13",
+      typeKey: "bo-luat",
+      matcher: /(hình sự|tội phạm|tố tụng hình sự|công an nhân dân|phòng chống tham nhũng)/,
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6l9-4 9 4v6c0 5-3.5 9-9 11-5.5-2-9-6-9-11z"/></svg>',
+    },
+    {
+      key: "dan-su", label: "Dân sự – Hợp đồng",
+      anchor: "91/2015/QH13",
+      typeKey: "bo-luat",
+      matcher: /(dân sự|hợp đồng|tố tụng dân sự|trách nhiệm dân sự|bảo lãnh)/,
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="14" y2="17"/></svg>',
+    },
+    {
+      key: "chung-khoan", label: "Chứng khoán",
+      anchor: "54/2019/QH14",
+      typeKey: "luat",
+      matcher: /(chứng khoán|cổ phiếu|trái phiếu doanh nghiệp|chứng chỉ quỹ|niêm yết)/,
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 17 9 11 13 15 21 7"/><polyline points="14 7 21 7 21 14"/></svg>',
+    },
+    {
+      key: "pha-san", label: "Phá sản – Phục hồi",
+      anchor: "51/2014/QH13",
+      typeKey: "luat",
+      matcher: /(phá sản|kiểm soát đặc biệt|phục hồi khả năng thanh toán)/,
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 13c0 4-4 8-9 8s-9-4-9-8a9 9 0 0 1 4-7"/><polyline points="3 6 7 2 11 6"/><line x1="7" y1="2" x2="7" y2="14"/></svg>',
+    },
+    {
+      key: "pcrt", label: "Phòng chống rửa tiền",
+      anchor: "14/2022/QH15",
+      typeKey: "luat",
+      matcher: /(rửa tiền|chống rửa tiền|báo cáo giao dịch đáng ngờ|aml)/,
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>',
+    },
+    {
+      key: "quy-hoach", label: "Quy hoạch – Xây dựng",
+      anchor: "21/2017/QH14",
+      typeKey: "luat",
+      matcher: /(quy hoạch|xây dựng|đô thị|hạ tầng|đường sắt|thủy lợi)/,
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V9l9-7 9 7v12"/><polyline points="9 21 9 13 15 13 15 21"/></svg>',
+    },
+    {
+      key: "vphc", label: "Xử lý vi phạm hành chính",
+      anchor: "15/2012/QH13",
+      typeKey: "luat",
+      matcher: /(vi phạm hành chính|xử phạt|xử lý vi phạm|thẩm quyền xử phạt)/,
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>',
+    },
+  ];
+
+  function renderIndustries() {
+    const grid = $("#industry-grid");
+    if (!grid) return;
+    const docs = Object.values(DB);
+    const html = INDUSTRIES.map((ind) => {
+      // Count docs whose title/shortTitle matches the industry's regex
+      let count = 0;
+      for (const d of docs) {
+        const txt = ((d.title || "") + " " + (d.shortTitle || "")).toLowerCase();
+        if (ind.matcher.test(txt)) count++;
+      }
+      const anchor = H.findDoc(ind.anchor);
+      const anchorTitle = anchor ? anchor.shortTitle : ind.anchor;
+      return `
+        <button class="industry-card type-${escapeHtml(ind.typeKey)}" data-anchor="${escapeHtml(ind.anchor)}" type="button">
+          <span class="ind-icon">${ind.icon}</span>
+          <div class="ind-body">
+            <div class="ind-name">${escapeHtml(ind.label)}</div>
+            <div class="ind-anchor">${escapeHtml(anchorTitle)}</div>
+          </div>
+          <div class="ind-count">
+            <span class="ind-count-num">${count}</span>
+            <span class="ind-count-lbl">văn bản</span>
+          </div>
+        </button>`;
+    }).join("");
+    grid.innerHTML = html;
+    grid.querySelectorAll(".industry-card[data-anchor]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const id = btn.dataset.anchor;
+        if (H.findDoc(id)) showDocPreview(id);
+      });
+    });
   }
 
   function renderStats() {
