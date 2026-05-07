@@ -1643,6 +1643,17 @@ table { border-collapse: collapse; }
 .sd-dot.sd-luat, .sd-dot.sd-bo-luat { background: #7d1d22; }
 .sd-dot.sd-nghidinh { background: #15a884; }
 .sd-dot.sd-thongtu { background: #1a2c4a; }
+.sd-line {
+  display: inline-block;
+  width: 22px; height: 0;
+  border-top: 1px solid rgba(26, 44, 74, 0.45);
+  vertical-align: middle;
+  margin-right: 1px;
+}
+.sd-line.sd-line-struct {
+  border-top-style: dashed;
+  border-top-color: #7d1d22;
+}
 
 .sd-counts {
   display: flex; flex-wrap: wrap; gap: 8px;
@@ -1669,9 +1680,14 @@ table { border-collapse: collapse; }
 }
 
 .sd-edge {
-  stroke: rgba(26, 44, 74, 0.18);
+  stroke: rgba(26, 44, 74, 0.22);
   stroke-width: 1;
   pointer-events: none;
+}
+.sd-edge.sd-edge-struct {
+  stroke: rgba(125, 29, 34, 0.55);
+  stroke-width: 1.4;
+  stroke-dasharray: 4 3;
 }
 
 .sd-node {
