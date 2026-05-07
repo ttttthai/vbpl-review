@@ -92,6 +92,28 @@
     return map[type] || type;
   }
 
+  // Subtitle for the Lược đồ row's lower line. Hand-curated docs have a
+  // meaningful shortTitle (e.g. "Luật Các TCTD 2024", "BLHS 2015") — keep
+  // those verbatim. Auto-discovered placeholder docs default their
+  // shortTitle to "${type} ${id}" (just repeating the number); for those we
+  // pull the descriptive part out of the longer auto-generated title,
+  // dropping the "So <n> <year> <type>" prefix and trailing ItemID number
+  // so the user sees roughly what the doc is *about*.
+  function getRowSubtitle(d) {
+    const placeholderShort = `${d.type} ${d.number}`;
+    if (d.shortTitle && d.shortTitle !== placeholderShort) return d.shortTitle;
+    let s = (d.title || "").trim();
+    const typeRe = new RegExp("^" + d.type.replace(/[.+?^${}()|[\]\\]/g, "\\$&") + "\\s+", "i");
+    s = s.replace(typeRe, "");
+    // Strip a leading "So 13 1999 nd cp" / "So 32 2024 qh15" tail
+    s = s.replace(/^so\s+\d+\s+\d+\s+[a-z][a-z0-9-]+(?:\s+[a-z][a-z0-9-]+)?\s+/i, "");
+    // Strip trailing ItemID (4+ digits)
+    s = s.replace(/\s+\d{4,}\s*$/, "");
+    s = s.trim();
+    if (!s) return placeholderShort;
+    return s.charAt(0).toUpperCase() + s.slice(1);
+  }
+
   function statusClass(status) {
     if (!status) return "";
     if (/Hết hiệu lực/i.test(status)) return "expired";
@@ -1335,8 +1357,8 @@
           <div class="lt-meta">
             <span class="lt-type ${d.typeKey}" title="${escapeHtml(d.type)}">${escapeHtml(typeLabel)}</span>
             <div class="lt-meta-text">
-              <div class="lt-num">${escapeHtml(d.number)}</div>
-              <div class="lt-title" title="${escapeHtml(d.shortTitle)}">${escapeHtml(d.shortTitle)}</div>
+              <div class="lt-num" title="${escapeHtml(d.shortTitle || d.number)}">${escapeHtml(d.number)}</div>
+              <div class="lt-title">${escapeHtml(getRowSubtitle(d))}</div>
             </div>
           </div>
           <div class="lt-splitter" aria-hidden="true"></div>
