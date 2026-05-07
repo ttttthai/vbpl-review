@@ -689,6 +689,44 @@ table { border-collapse: collapse; }
   overflow: hidden;
   border: 1px solid #0a1428;
 }
+/* Type-keyed background variants — match the chips: burgundy for Luật / Bộ
+   luật, dental teal-green for Nghị định, navy for Thông tư (default). */
+.spotlight.type-luat,
+.spotlight.type-bo-luat {
+  background:
+    radial-gradient(circle at 92% 18%, rgba(255, 255, 255, 0.10) 0%, transparent 40%),
+    linear-gradient(135deg, var(--red) 0%, var(--red-dark) 100%);
+  border-color: #4a0d11;
+}
+.spotlight.type-nghidinh {
+  background:
+    radial-gradient(circle at 92% 18%, rgba(255, 255, 255, 0.14) 0%, transparent 40%),
+    linear-gradient(135deg, var(--orange) 0%, var(--orange-dark) 100%);
+  border-color: #086a52;
+}
+.spotlight.type-thongtu {
+  background:
+    radial-gradient(circle at 92% 18%, rgba(42, 157, 143, 0.20) 0%, transparent 40%),
+    linear-gradient(135deg, var(--blue) 0%, var(--blue-dark) 100%);
+  border-color: #0a1428;
+}
+/* Eyebrow chip — neutral white tint on any colored background. */
+.spotlight.type-luat .spotlight-eyebrow,
+.spotlight.type-bo-luat .spotlight-eyebrow,
+.spotlight.type-nghidinh .spotlight-eyebrow {
+  background: rgba(255, 255, 255, 0.16);
+  color: rgba(255, 255, 255, 0.92);
+}
+/* The default green primary CTA blends into a green Nghị định background;
+   swap it for a high-contrast inverse (cream button, dark teal text). */
+.spotlight.type-nghidinh .btn-cta {
+  background: #fbf7ec;
+  color: var(--orange-dark);
+}
+.spotlight.type-nghidinh .btn-cta:hover {
+  background: #ffffff;
+  color: var(--orange-dark);
+}
 .spotlight::before {
   content: "";
   position: absolute; inset: 0;
