@@ -7,153 +7,197 @@ Static editorial portal for reviewing Vietnamese legal documents anchored on **L
 
 ---
 
+## Workflow (read this first)
+
+**One branch, direct push to `main`. No PRs by default. No worktrees.**
+
+```bash
+cd "/Users/hoangthai/Downloads/CLAUDECODE/LEGAL PLATFORM"
+git status                     # always start clean
+git fetch origin main && git rebase origin/main
+# … make changes …
+git add <files>
+git commit -m "…"
+git push origin main           # straight to main
+```
+
+GitHub Pages auto-deploys from `main / root` (legacy mode). Every push to `main` re-deploys the live site within ~1 min.
+
+If a change is risky enough to want PR review, the user will explicitly say "PR this". Default is direct-to-main.
+
+**Cache-bust**: bump `?v=N` on `<link>` / `<script>` tags in `index.html` after changing `css/styles.css`, `js/app.js`, or `data/documents.js`. Current: `?v=72`.
+
+---
+
+## Current state
+
+**Corpus**: 412 docs / 26,325 articles loaded
+
+| Type     | Count |
+|----------|-------|
+| Luật     | 252   |
+| Nghị định| 111   |
+| Thông tư | 39    |
+| Bộ luật  | 10    |
+
+Spotlight (`32/2024/QH15`): full 210/210 articles, 15 chapters.
+
+---
+
 ## What this app does
 
-1. Landing page: **spotlight card** for the featured doc (`32/2024/QH15`), with a horizontal `Văn bản liên quan` stat bar (Bộ luật / Luật / NĐ / TT / Hết hiệu lực / Đang thảo luận).
-2. **Lược đồ** (Gantt chart): timeline of the spotlight + every related doc, coloured by type, with relationship label below each bar.
-3. **Doc-preview flow**: clicking any row in the Lược đồ does NOT open Toàn-văn — it lands on a fresh spotlight-card preview of that doc. The user can then `Xem văn bản` or re-enter `Lược đồ` for the new doc. This lets users walk the citation graph spotlight → Gantt → spotlight → Gantt without entering the reading view.
-4. **Reference detection**: every `Điều X` / `Luật N/Y/QH..` / `Bộ luật Hình sự` mention in body text is parsed at render time and turned into a hover popup that resolves to the cited article excerpt.
-5. **Lĩnh vực dropdown**: 5 sectors + "+ Thêm lĩnh vực mới" modal. Custom user fields persist in `localStorage["vbpl.userFields"]` and queue new docs for the scraper via `localStorage["vbpl.scrapeQueue"]`.
+1. **Main page (Trang chủ)**: 12 industry cards under "Lĩnh vực pháp lý" — banking, energy, PDPD, land, corporate, civil, criminal, securities, insolvency, AML, planning, admin violations. Each card shows doc count + anchor doc; click to spotlight.
+2. **Spotlight preview** (after clicking an industry card or any doc anywhere): card with type-coloured background (burgundy for Luật/Bộ luật, dental teal for Nghị định, navy for Thông tư) + 3 CTAs: **Xem văn bản** / **Lược đồ** / **Sơ đồ**.
+3. **Toàn văn (Xem văn bản)**: the full doc body, Source Serif 4 typography, line-height 1.55, font 14.5px (resizeable A− / A / A+).
+4. **Lược đồ**: Gantt-style timeline of every related doc (predecessors, successors, citing, cited). Each row's left meta column shows the doc number on the link line + a descriptive subtitle below. Click any row → spotlight-preview that doc.
+5. **Sơ đồ**: force-directed network diagram showing inter-doc citation edges (not just hub-and-spoke). Wheel-zoom, click-drag pan, +/−/⌂ on-canvas buttons. Click any node → spotlight that doc.
+6. **Citation popups in body text** — three matchers, in priority:
+   - Doc-number citations: "Luật số 32/2024/QH15", "Nghị định số 13/2023/NĐ-CP" etc.
+   - Named-code (short-form law names): "Luật Các tổ chức tín dụng" → 32/2024/QH15, "Bộ luật Hình sự" → 100/2015/QH13, ~30 entries in `NAMED_CODE_PATTERNS`.
+   - Structured / article-level: "điểm a, b khoản 1 Điều này", "khoản 1 Điều 5 của Luật ABC", "Điều 24 đến Điều 28 Luật các Tổ chức tín dụng" → each letter / number / "này" becomes its own hover ref.
+7. Bare "Điều X" with no following doc reference is **NOT** linked (per user request — was over-eager before).
+
+---
 
 ## Architecture
 
 ```
 index.html             single-page entry, links Inter + Source Serif 4 from Google Fonts
 css/styles.css         all styles, IKIGAI cream + navy + dental teal-green palette
-js/app.js              ~1.6kloc, IIFE, all state in closure variables
+js/app.js              ~2.4kloc, IIFE, all state in closure variables
 data/documents.js      window.LEGAL_DB (object keyed by doc id) + LEGAL_DB_HELPERS
 
 scripts/parse-articles.js   pure JS: rendered text → {chapters: [{title, subtitle, articles: [{id, number, heading, body}]}]}
-scripts/scrape.js           Playwright-based per-doc scraper, writes data/scraped/{id}.json
-scripts/merge.js            merges scraped JSON into documents.js, preserves curated metadata
+scripts/scrape.js           Playwright per-doc scraper, writes data/scraped/{id}.json
+scripts/scrape-ids.js       scrape only specific comma-separated ids
+scripts/merge.js            surgical chapters[] span-replacement merge into documents.js (preserves cluster comments + unquoted-key style)
+scripts/expand-corpus.js    discover unknown citation refs in DB, look up in cached vbpl.vn sitemaps, emit placeholder DB entries
+scripts/expand-and-scrape.sh  orchestrator: discover → insert → scrape → merge across N rounds until convergence
+scripts/postinstall.js      best-effort Playwright install (always exits 0 so static-site hosts don't fail npm install)
 
-.github/workflows/scrape.yml   nightly cron + workflow_dispatch, uses peter-evans/create-pull-request
+.github/workflows/scrape.yml   nightly cron + workflow_dispatch, opens a PR
 ```
 
 ### Theme
-- **Palette**: cream `#f6f0e2` bg, ivory `#fbf7ec` paper, navy `#1a2c4a` headers, burgundy `#7d1d22` for Luật/Bộ-luật pills, **dental teal-green `#15a884`** for accents (CTA buttons, search button, active topnav, back button hover, summary bar borders).
-- **Typography**: Georgia serif body throughout. Inter sans-serif retained for tabular numerals (`.lt-num`, `.ss-num`, `.ls-num`), legend, type pills, and modal forms.
-
-### Navigation stack
-- Internal `_navHistory` array + `_currentNav` track home / doc / preview states.
-- `Quay lại` button at the top of the viewer pops the stack and replays the previous state via the `_suppressNav` flag.
-- Each top-level transition (`goHome`, `openDoc`, `showDocPreview`) records to the stack unless `_suppressNav` is set.
+- **Palette**: cream `#f6f0e2` bg, ivory `#fbf7ec` paper, navy `#1a2c4a` headers, burgundy `#7d1d22` for Luật/Bộ luật, **dental teal-green `#15a884`** (var: `--orange`) for accents.
+- **Typography**: Source Serif 4 for body text (loaded from Google Fonts), Inter for tabular numerals + UI chrome.
 
 ### Spotlight is parameterised
-- `window.__spotlightDocId` selects which doc the spotlight + statbar represents. Default `32/2024/QH15`. `showDocPreview(id)` updates this; `goHome()` resets to null.
-- `fillSpotlight(doc)` re-templates the title / description / CTA `data-doc-id` attributes.
+- `window.__spotlightDocId` selects which doc the spotlight represents. `showDocPreview(id)` updates this; `goHome()` resets to default `32/2024/QH15`.
+- `fillSpotlight(doc)` re-templates the title / description / CTA `data-doc-id` attributes AND swaps the `.spotlight` element's `type-luat` / `type-bo-luat` / `type-nghidinh` / `type-thongtu` modifier class to match the doc's type.
 
-### Lược đồ
-- Drag-resizable meta column via `--lt-meta-width` CSS var, persisted to `localStorage["vbpl.lt.metaW"]`.
-- Bars coloured by type (`type-luat / type-bo-luat / type-nghidinh / type-thongtu`), expired bars get diagonal hatching, current doc gets an inset white ring.
-- Year axis labels every 1/2/5 years depending on range span.
-- Hover row → green tint + bar brightness lift + title underline.
+### Every doc click goes through the spotlight first
+Clicks on doc lists, search results, Lược đồ rows, Sơ đồ nodes, related-docs sidebar — ALL call `showDocPreview(id)` instead of `openDoc`. The user explicitly chooses to enter the viewer via the spotlight's three CTAs. Three intentional `openDoc` callers remain:
+- `_navBack` (restoring prior viewer state)
+- Spotlight CTA buttons (`#sp-cta-open` / `#sp-cta-luocdo` / `#sp-cta-sodo`)
+- Citation popup's "Xem văn bản →" button
 
-## Known constraints (non-trivial)
+---
 
-- **vbpl.vn migrated to Next.js SPA** — every old `Pages/vbpq-toanvan.aspx?ItemID=…` URL returns 404 over plain HTTP. The Playwright scraper is set up to render with JS, but the stored `sourceUrl` values for older docs all need updating to current URLs before they'll yield content.
-- **Coverage is 4%** of the actual legal corpus (~190 articles loaded out of ~4,550 total across the 41 docs in DB). Hand-authoring is asymptotic; the realistic path to fuller coverage is either (a) user uploads PDFs, (b) the scraper runs against fixed URLs, or (c) accept the current state which is dense enough for the lượchế đồ + popup-citation workflow.
-- **CORS**: a static GitHub Pages site cannot fetch vbpl.vn from the browser, which is why scraping is server-side via the GitHub Action.
-- **Vietnamese law citations are asymmetric**: a Thông tư always cites its parent Luật in its preamble, but a Luật rarely names specific Thông tư (Luật uỷ quyền NHNN ban hành Thông tư hướng dẫn chung). In our DB I added some manual upward references (Luật → TT) for visibility in the lượchế đồ — these are interpretive, not legally normative.
+## Recent changes this session
 
-## DB state (current)
+(Most recent first.)
 
-| ID | Doc | Loaded / Total |
-|---|---|---|
-| `32/2024/QH15` | Luật Các TCTD 2024 (spotlight) | 53 / 209 |
-| `100/2015/QH13` | BLHS 2015 | 16 / 426 |
-| `91/2015/QH13` | BLDS 2015 | 8 / 689 |
-| `46/2010/QH12` | Luật NHNN | 9 / 66 |
-| `06/2012/QH13` | Luật BHTG | 5 / 39 |
-| `47/2010/QH12` | Luật TCTD 2010 (expired) | 4 / 163 |
-| `17/2017/QH14` | Luật sửa đổi TCTD (expired) | 4 / 4 |
-| `61/2024/QH15` | Luật Điện lực | 6 / 130 |
-| `50/2010/QH12` | Luật SD năng lượng tiết kiệm | 4 / 48 |
-| `14/2022/QH15` | Luật PCRT | 3 / 66 |
-| `51/2014/QH13` | Luật Phá sản | 3 / 133 |
-| `54/2019/QH14` | Luật Chứng khoán | 2 / 135 |
-| `15/2012/QH13` | Luật XLVPHC | 3 / 142 |
-| `21/2017/QH14` | Luật Quy hoạch | 2 / 72 |
-| `12/2017/QH14` | Luật sửa đổi BLHS 2017 | 2 / 3 |
-| `92/2015/QH13` | BL Tố tụng dân sự | 2 / 517 |
-| `101/2015/QH13` | BL Tố tụng hình sự | 2 / 510 |
-| `28/2004/QH11`, `24/2012/QH13`, `28/2018/QH14`, `03/2022/QH15` | predecessors of Luật Điện lực (all expired) | 1 / each |
-| `31/2024/QH15` | Luật Đất đai | 3 / 260 |
-| `59/2020/QH14` | Luật Doanh nghiệp | 3 / 218 |
-| `88/2019/NĐ-CP` | NĐ xử phạt VPHC tiền tệ NH | 6 / 58 |
-| `86/2024/NĐ-CP` | NĐ về dự phòng rủi ro TCTD | 2 / 16 |
-| `155/2020/NĐ-CP` | NĐ chi tiết Luật Chứng khoán | 2 / 322 |
-| `80/2024/NĐ-CP` | NĐ về DPPA | 4 / 30 |
-| `135/2024/NĐ-CP` | NĐ về điện mặt trời mái nhà | 4 / 18 |
-| `86/2019/NĐ-CP` | NĐ về vốn pháp định TCTD | 2 / 7 |
-| `53/2013/NĐ-CP` | NĐ về VAMC | 3 / 35 |
-| `13/2023/NĐ-CP` | NĐ bảo vệ dữ liệu cá nhân | 5 / 44 |
-| `39/2014/NĐ-CP` | NĐ về công ty tài chính | 3 / 27 |
-| `50/2018/TT-NHNN` | TT về thay đổi NHTM | 5 / 30 |
-| `22/2019/TT-NHNN` | TT về tỷ lệ an toàn | 6 / 24 |
-| `41/2016/TT-NHNN` | TT về CAR (Basel II) | 2 / 21 |
-| `11/2021/TT-NHNN` | TT về phân loại nợ | 2 / 18 |
-| `16/2021/TT-NHNN` | TT về mua TPDN | 2 / 19 |
-| `39/2016/TT-NHNN` | TT về cho vay | 3 / 35 |
-| `43/2016/TT-NHNN` | TT cho vay tiêu dùng (CTTC) | 4 / 16 |
-| `18/2019/TT-NHNN` | TT sửa đổi 43/2016 | 2 / 4 |
-| `DT-LCTCTD-2026` | Dự thảo sửa đổi Luật TCTD | 1 / 1 |
+- `90f50ba` Article-list refs with explicit doc target ("Điều X đến Điều Y Luật ...")
+- `8c12931` Lược đồ rows: shrink description font 9px → 8px
+- `08afc50` Lược đồ rows: shrink description font 10.5px → 9px
+- `6c6d87e` Reaccent placeholder doc subtitles (~250-entry Vietnamese reaccent dictionary)
+- `32f7455` Lược đồ rows: descriptive subtitle + link styling on the number line
+- `bd1b10d` Home page: industries-only; spotlight moves to dedicated preview view
+- `75ddc42` Add "Lĩnh vực pháp lý" main-page overview (12 industry cards)
+- `4a7e446` Fix structured citation parser (khoản-only, multi-segment, conjunction false-positives)
+- `7329c45` Drop in-viewer tab bar + tighten article body typography
+- `a4e7cb1` Route every doc click through the spotlight preview
+- `aa2c99f` Sơ đồ: zoom + pan with wheel, drag, and on-canvas controls
+- `600ca83` Sơ đồ: show direct inter-doc citations + force-directed layout
+- `573124c` Match spotlight bg colour to the doc-type chip
+- `e592f9f` Add Sơ đồ tab
+- `553e8e8` Make postinstall safe for static-site hosts (Render etc.)
+- `56957d5` Refresh corpus to 412 docs / 26,325 articles + bump cache-bust
+- `c3b988a` Drop bare Điều X links + add structured & named-code citation refs
+- `1ae87da` Add recursive corpus-expansion tooling
+- `fcb71da` Rebuild scraper for new vbpl.vn Next.js URLs
 
-Total: **41 docs**, ~190 articles loaded.
+---
 
-## Sectors in dropdown
+## Known constraints / open issues
 
-- `ngan-hang` — Tài chính – Ngân hàng (matcher: tổ chức tín dụng / ngân hàng / tiền tệ / tín dụng / tài chính)
-- `nang-luong` — Phát triển năng lượng tái tạo (matcher: năng lượng / điện lực / điện gió / điện mặt trời / tái tạo / dppa / mua bán điện)
-- `du-lieu-ca-nhan` — Luật Bảo vệ dữ liệu cá nhân (matcher: dữ liệu cá nhân / bảo vệ dữ liệu / thông tin cá nhân / pdpd)
-- `dien-luc` — Luật Điện lực (matcher: điện lực)
-- `__add` — opens "Thêm lĩnh vực mới" modal
+### Scraping
+- **vbpl.vn is currently rate-limiting our IP** (Playwright probes return "Web Page Blocked"). Future re-scrapes from this machine may need a different IP or coordinated retries.
+- New URL pattern: `https://vbpl.vn/van-ban/chi-tiet/{slug}--{ItemID}`. The old `Pages/vbpq-toanvan.aspx?ItemID=…` form returns 404.
+- vbpl.vn does **server-side truncate** very long docs at ~150 articles (e.g. NĐ 155/2020 stops at Điều 149 of 322). Not a parser bug — upstream limit.
+- 4 docs still don't scrape (parser sees no article markers): `03/2007/TT-NHNN`, `50/2019/QH14`, `47/2019/QH14`, `35/2002/QH10`. All are short amendment laws.
 
-## How to continue
+### Placeholder doc metadata
+~290 of 412 docs are placeholder entries auto-generated by `scripts/expand-corpus.js`. Their `shortTitle` is just `"${type} ${id}"` and their `title` is a humanised URL slug missing Vietnamese diacritics. `getRowSubtitle()` in `js/app.js` runs a 250-entry reaccent dictionary over them so the Lược đồ menu reads as "Về tổ chức hoạt động..." instead of "Ve to chuc hoat dong...". The dictionary covers most legal terminology but isn't exhaustive — when you spot a missing word, add a row to `REACCENT` in `js/app.js`.
 
-### Run locally
+A future scrape pass with header extraction would give us the canonical Vietnamese titles (the dict would become a fallback). The scraper currently only captures chapters/articles, not the page header.
+
+### Citation parsing — what's NOT linked
+- Bare "Điều X" with no following doc reference (intentional — was over-eager before).
+- "Điểm a" / "khoản 1" without surrounding "khoản"/"Điều" anchors.
+- Citations using purely English ("Article 5") — Vietnamese only.
+
+### UI / layout
+- The `<title>` of a placeholder doc viewer ("Nghị định So 13 1999 nd cp ve to chuc...") is ugly. The spotlight + Lược đồ display use `getRowSubtitle()` which reaccents, but the doc viewer's internal H1 still uses the raw title. Could pass through `getRowSubtitle()` there too.
+- One PR (`#3`) is closed-not-merged on GitHub (the typography fix was cherry-picked direct to main). Lives in PR history; can't be deleted.
+
+---
+
+## Cache-bust + deploy
+
+- **Auto-deploy**: GitHub Pages legacy mode, branch `main / root`. Every push to `main` redeploys.
+- **Cache-bust**: bump `?v=N` on `<link>` and `<script>` tags in `index.html` whenever you change `css/styles.css`, `js/app.js`, or `data/documents.js`. Current: `?v=72`. Next bump: `?v=73`.
+- The user occasionally also runs Render (Vercel-style host) — postinstall is null-safe so npm install won't fail there.
+
+---
+
+## Quick start (next session)
+
 ```bash
-cd "LEGAL PLATFORM"
-python3 -m http.server 8765   # or any static server
-# http://localhost:8765
+cd "/Users/hoangthai/Downloads/CLAUDECODE/LEGAL PLATFORM"
+git fetch origin main && git rebase origin/main   # ensure latest
+python3 -m http.server 8765                       # local preview at http://localhost:8765
 ```
 
-### Run the scraper
+Make changes → bump cache-bust → commit → push:
+
 ```bash
-npm install                     # also runs `playwright install --with-deps chromium` postinstall
-npm run scrape                  # scrape every sourceUrl, writes data/scraped/*.json
-npm run scrape:one -- --id 32/2024/QH15
-npm run merge                   # merge scraped JSON back into data/documents.js
-npm run scrape:all              # both, in sequence
+git add <files>
+git commit -m "<short imperative summary>"
+git push origin main
 ```
 
-The bundled GitHub Action (`.github/workflows/scrape.yml`) does the same nightly and opens a PR.
+The user prefers direct-to-main. Don't open PRs unless they explicitly ask.
 
-### Add a new doc by hand
+---
+
+## Add a new doc by hand
+
 1. Append entry to `window.LEGAL_DB` in `data/documents.js` (model after an existing one — `id`, `type`, `typeKey`, `number`, `shortTitle`, `title`, `issuer`, `issuedDate`, `effectiveDate`, `status`, `articleTotal`, `sourceUrl`, `chapters`).
-2. Wire references in body text of related docs so the lượchế đồ picks up the relationship.
-3. Bump `?v=…` query string on the `<script>`/`<link>` tags in `index.html`.
+2. Wire references in body text of related docs so the Lược đồ + Sơ đồ pick up the relationship.
+3. Bump `?v=…` cache-bust.
 4. Commit + push.
 
-### What's pending / open
+For bulk additions, prefer the recursive expander:
 
-- **Search bar removed** in the latest commit. The `wireSearch` plumbing is null-safe so re-enabling is just restoring the `<div class="header-search">…</div>` block in `index.html`.
-- **Add-field modal**: writes to `localStorage["vbpl.scrapeQueue"]`. The scraper script does NOT yet read that queue — needs `scripts/scrape.js` to optionally consume queued doc numbers. This is a small follow-up.
-- **Coverage gap**: 96% of articles are not yet hand-authored. The scraper is the right path here, but stored `sourceUrl` values for older docs need updating to current vbpl.vn URLs.
-- **Vietnamese law citations are asymmetric**: see "Known constraints" above — Luật → TT references in our DB are interpretive.
+```bash
+./scripts/expand-and-scrape.sh round-name 200    # capped at 200 new docs per round
+```
 
-## Conversation notes
+---
 
-This handoff is from a long-running session that started with "let's create a web page for legal docs review for Vietnam" and accumulated incremental requests:
-1. Build the basic landing + viewer + lược đồ
-2. Strip down the chrome (footer, breadcrumb, tab bar items, brand title)
-3. Apply IKIGAI editorial theme + abbreviations
-4. Switch to dental teal-green accent
-5. Add doc-preview flow (Gantt row click → spotlight)
-6. Add `+ Thêm lĩnh vực mới` modal + scrape queue
-7. Add consumer-finance cluster (TT 43/2016, TT 18/2019, NĐ 39/2014)
-8. Remove search bar (current commit)
+## Conversation notes for context
 
-The user is comfortable with incremental UI tweaks and direct rewrites. They asked multiple times for "complete" doc text — the realistic answer is that hand-authoring 4,000+ articles is asymptotic, and the scraper is the right tool. They've been tolerant of that constraint.
+The current session (the one wrapping up now) started from the previous handoff's "fix scraper URLs" item and grew into:
+- Rebuild the scraper for vbpl.vn's Next.js migration
+- Recursive corpus expansion (5 rounds → 41 → 412 docs)
+- Sơ đồ tab (force-directed inter-doc network with zoom/pan)
+- Spotlight type-coloured background
+- Always-spotlight-first navigation
+- Industries grid as the new home page
+- Structured citation parser overhaul (điểm/khoản/Điều ranges)
+- Vietnamese accent restoration dictionary
+- Workflow consolidation: single branch, direct push to `main`, no worktrees
 
-Cache-bust query strings: bump the `?v=…` on `<link>`/`<script>` every time you change `css/styles.css`, `js/app.js`, or `data/documents.js`.
+The user iterates fast: "fix this", "smaller font", "bigger network", "more industries". Match their cadence — short turnarounds, bump cache-bust, push to main. Verify in the browser preview when changes are observable; skip verification when changes are scraper-only / data-only.
