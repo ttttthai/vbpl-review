@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Sơ đồ — Visual style samples</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap">
+  <link rel="stylesheet" href="css/styles.css?v=79">
+  <style>
+    body { background: var(--bg); padding: 32px; max-width: 1180px; margin: 0 auto; font-family: "Inter", sans-serif; font-size: 13px; }
+    .ix-head { margin-bottom: 28px; }
+    .ix-head h1 { font-size: 22px; font-family: Georgia, serif; margin: 0 0 6px; color: var(--ink); }
+    .ix-head p { color: var(--ink-soft); margin: 0; font-size: 13px; }
+    .ix-toc { display: flex; gap: 8px; margin-top: 14px; flex-wrap: wrap; }
+    .ix-toc a {
+      font-size: 11.5px; font-weight: 600;
+      padding: 4px 10px; border-radius: 999px;
+      background: var(--paper-2); color: var(--ink); border: 1px solid var(--line);
+      text-decoration: none;
+    }
+    .ix-toc a:hover { background: var(--bg-2); }
+
+    .demo {
+      background: white; border: 1px solid var(--line); border-radius: 6px;
+      padding: 24px 28px; margin: 28px 0;
+    }
+    .demo-title {
+      font-family: Georgia, serif; font-size: 17px; font-weight: 700;
+      color: var(--ink); margin: 0 0 4px;
+    }
+    .demo-sub {
+      font-size: 12px; color: var(--ink-mute); margin: 0 0 18px;
+      font-style: italic;
+    }
+
+    /* Style B — Timeline by year */
+    .tl-box { padding: 18px 12px 14px; }
+    .tl-axis {
+      position: relative; height: 80px;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px dashed var(--line);
+      margin-top: 32px;
+    }
+    .tl-tick {
+      position: absolute; top: -7px; bottom: -7px;
+      border-left: 1px solid var(--line);
+    }
+    .tl-tick-label {
+      position: absolute; bottom: -20px;
+      transform: translateX(-50%);
+      font-size: 10.5px; color: var(--ink-mute); font-weight: 600;
+    }
+    .tl-dot {
+      position: absolute; top: 50%; transform: translate(-50%, -50%);
+      width: 14px; height: 14px; border-radius: 50%;
+      border: 2px solid white;
+      cursor: pointer;
+    }
+    .tl-dot.luat { background: #7d1d22; }
+    .tl-dot.nghidinh { background: #15a884; }
+    .tl-dot.thongtu { background: #1a2c4a; }
+    .tl-dot.current {
+      width: 20px; height: 20px;
+      background: var(--ink); border: 3px solid #f6e08a;
+      box-shadow: 0 0 0 2px var(--ink);
+      z-index: 2;
+    }
+    .tl-tooltip {
+      position: absolute; top: 18px;
+      transform: translateX(-50%);
+      font-size: 10.5px;
+      background: white; border: 1px solid var(--line);
+      padding: 1px 6px; border-radius: 3px;
+      white-space: nowrap;
+      color: var(--ink); font-weight: 600;
+    }
+    .tl-tooltip.below { top: auto; bottom: 18px; }
+    .tl-legend { display: flex; gap: 14px; font-size: 11px; color: var(--ink-soft); margin-top: 20px; }
+    .tl-legend i { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 4px; vertical-align: middle; }
+
+    /* Style C — Type × Relation matrix */
+    .mx-table { width: 100%; border-collapse: collapse; }
+    .mx-table th, .mx-table td {
+      border: 1px solid var(--line);
+      padding: 10px 12px; font-size: 12px; text-align: center;
+    }
+    .mx-table thead th {
+      background: var(--paper-2); font-weight: 700;
+      font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.5px;
+      color: var(--ink-soft);
+    }
+    .mx-table tbody th {
+      background: var(--paper-2); text-align: left;
+      font-family: Georgia, serif; font-weight: 700;
+      color: var(--ink);
+    }
+    .mx-cell {
+      cursor: pointer;
+      font-family: "Inter"; font-weight: 700; font-size: 14px;
+    }
+    .mx-cell-empty { color: var(--ink-faint); font-weight: 400; }
+    .mx-cell-luat { color: #7d1d22; }
+    .mx-cell-nghidinh { color: #15a884; }
+    .mx-cell-thongtu { color: #1a2c4a; }
+    .mx-cell-boluat { color: #4a0d10; }
+
+    /* Style D — Sankey 3-column flow */
+    .sk-wrap { display: grid; grid-template-columns: 1fr 220px 1fr; gap: 0; align-items: start; min-height: 360px; }
+    .sk-side { padding: 0 14px; }
+    .sk-side-label {
+      font-size: 10px; text-transform: uppercase; letter-spacing: 1.4px;
+      color: var(--ink-mute); font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .sk-in { text-align: right; }
+    .sk-out { text-align: left; }
+    .sk-pill {
+      display: inline-block;
+      padding: 4px 9px; border-radius: 4px;
+      background: white; border: 1px solid var(--line);
+      font-size: 11px; margin: 4px 0;
+      max-width: 100%; cursor: pointer;
+    }
+    .sk-pill.luat { border-left: 3px solid #7d1d22; }
+    .sk-pill.nghidinh { border-left: 3px solid #15a884; }
+    .sk-pill.thongtu { border-left: 3px solid #1a2c4a; }
+    .sk-pill .num { font-weight: 700; font-family: "Inter"; font-size: 10px; color: var(--ink-mute); margin-right: 6px; }
+    .sk-hub {
+      background: var(--paper-2); border-radius: 50%; aspect-ratio: 1;
+      display: flex; align-items: center; justify-content: center;
+      flex-direction: column;
+      padding: 18px; text-align: center;
+      border: 4px solid #7d1d22;
+      align-self: center;
+    }
+    .sk-hub-num { font-family: "Inter"; font-size: 11px; font-weight: 700; color: #7d1d22; letter-spacing: 0.4px; }
+    .sk-hub-title { font-family: Georgia, serif; font-size: 13.5px; font-weight: 700; color: var(--ink); margin-top: 4px; line-height: 1.3; }
+    .sk-arrow {
+      font-size: 22px; color: #15a884; display: flex; align-items: center; justify-content: center;
+      margin: 16px 0;
+    }
+
+    /* Style E — Radial / orbital */
+    .rd-wrap { position: relative; height: 480px; }
+    .rd-svg { width: 100%; height: 100%; }
+    .rd-ring1, .rd-ring2 { fill: none; stroke: var(--line); stroke-dasharray: 4 4; }
+    .rd-node { cursor: pointer; }
+    .rd-node circle.outer { fill: white; stroke-width: 2; }
+    .rd-node text { font-family: "Inter"; font-size: 9.5px; font-weight: 700; text-anchor: middle; fill: var(--ink); }
+    .rd-center circle { fill: var(--paper-2); stroke: #7d1d22; stroke-width: 3; }
+    .rd-center text { font-family: Georgia, serif; font-weight: 700; fill: var(--ink); }
+    .rd-luat circle.outer { stroke: #7d1d22; }
+    .rd-nghidinh circle.outer { stroke: #15a884; }
+    .rd-thongtu circle.outer { stroke: #1a2c4a; }
+    .rd-ring-label { font-family: "Inter"; font-size: 10px; fill: var(--ink-mute); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+
+    /* Style F — Kanban 4-column */
+    .kb-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+    .kb-col { background: var(--paper-2); border-radius: 6px; padding: 10px; border: 1px solid var(--line); }
+    .kb-col-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+    .kb-col-title { font-size: 10px; text-transform: uppercase; letter-spacing: 0.6px; color: var(--ink-soft); font-weight: 700; }
+    .kb-col-count { font-size: 10px; font-weight: 700; color: var(--ink-mute); background: white; padding: 1px 7px; border-radius: 999px; }
+    .kb-card {
+      background: white; border-radius: 4px; padding: 8px 10px;
+      border: 1px solid var(--line); border-left: 3px solid var(--line);
+      margin-bottom: 6px; cursor: pointer;
+    }
+    .kb-card.luat { border-left-color: #7d1d22; }
+    .kb-card.nghidinh { border-left-color: #15a884; }
+    .kb-card.thongtu { border-left-color: #1a2c4a; }
+    .kb-card-num { font-family: "Inter"; font-size: 9.5px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; color: var(--ink-mute); }
+    .kb-card-title { font-family: Georgia, serif; font-size: 11.5px; font-weight: 600; color: var(--ink); line-height: 1.3; margin-top: 2px; }
+
+    /* Style G — Tag cloud */
+    .tg-section { margin: 16px 0; }
+    .tg-label { font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.8px; color: var(--ink-soft); font-weight: 700; margin-bottom: 8px; }
+    .tg-tag {
+      display: inline-block;
+      padding: 4px 10px; border-radius: 999px;
+      background: white; border: 1px solid var(--line);
+      font-size: 11px; margin: 0 4px 6px 0;
+      color: var(--ink); cursor: pointer;
+      font-family: "Inter"; font-weight: 600;
+    }
+    .tg-tag.luat { border-color: #7d1d22; color: #7d1d22; }
+    .tg-tag.nghidinh { border-color: #15a884; color: #15a884; }
+    .tg-tag.thongtu { border-color: #1a2c4a; color: #1a2c4a; }
+    .tg-tag.boluat { border-color: #4a0d10; color: #4a0d10; }
+
+    /* Style H — Evolution / Lineage tree */
+    .ev-wrap {
+      position: relative;
+      padding: 8px 0 8px 70px;
+    }
+    .ev-row {
+      position: relative;
+      display: flex; align-items: center; gap: 14px;
+      padding: 14px 0;
+    }
+    .ev-year {
+      position: absolute; left: -70px;
+      width: 54px;
+      font-family: "Inter"; font-weight: 700; font-size: 13px;
+      color: var(--ink-mute);
+      text-align: right;
+    }
+    .ev-spine {
+      position: absolute; left: 0; top: 0; bottom: 0;
+      width: 2px; background: var(--line);
+    }
+    .ev-row::before {
+      content: ""; position: absolute;
+      left: -7px; top: 50%; transform: translateY(-50%);
+      width: 16px; height: 16px;
+      background: white;
+      border: 2px solid var(--line);
+      border-radius: 50%;
+    }
+    .ev-row.ev-current::before {
+      background: #f6e08a; border-color: #7d1d22;
+      box-shadow: 0 0 0 4px rgba(125, 29, 34, 0.15);
+      width: 18px; height: 18px;
+      left: -8px;
+    }
+    .ev-row.ev-luat::before { border-color: #7d1d22; }
+    .ev-row.ev-nghidinh::before { border-color: #15a884; }
+    .ev-row.ev-thongtu::before { border-color: #1a2c4a; }
+
+    .ev-card {
+      flex: 1;
+      background: white; border: 1px solid var(--line);
+      border-left: 4px solid var(--line);
+      border-radius: 4px;
+      padding: 10px 14px;
+      cursor: pointer;
+      max-width: 540px;
+    }
+    .ev-card.ev-luat { border-left-color: #7d1d22; }
+    .ev-card.ev-nghidinh { border-left-color: #15a884; }
+    .ev-card.ev-thongtu { border-left-color: #1a2c4a; }
+    .ev-card.ev-current {
+      background: var(--paper-2);
+      border-color: #7d1d22;
+      border-left-width: 6px;
+    }
+    .ev-pill {
+      display: inline-block;
+      font-family: "Inter"; font-size: 9.5px;
+      font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase;
+      color: var(--ink-mute);
+      margin-bottom: 4px;
+    }
+    .ev-title {
+      font-family: Georgia, serif; font-size: 14px; font-weight: 700;
+      color: var(--ink); line-height: 1.3;
+    }
+    .ev-rel {
+      font-size: 10.5px; color: var(--ink-mute);
+      font-style: italic; margin-top: 4px;
+    }
+    .ev-rel strong {
+      color: var(--ink); font-style: normal; font-weight: 600;
+      background: var(--paper-2); padding: 1px 6px; border-radius: 3px;
+      font-size: 10px; letter-spacing: 0.3px; text-transform: uppercase;
+    }
+    .ev-current-badge {
+      display: inline-block;
+      font-family: "Inter"; font-size: 9.5px; font-weight: 700;
+      letter-spacing: 0.6px; text-transform: uppercase;
+      color: #7d1d22;
+      margin-left: 8px;
+    }
+
+    /* Branch / merge — multiple parents render side by side, joined by a curve */
+    .ev-branch {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
+      flex: 1; max-width: 540px;
+    }
+    .ev-branch .ev-card { max-width: none; margin: 0; }
+    .ev-merge-note {
+      font-family: "Inter"; font-size: 10.5px;
+      color: var(--ink-mute); font-style: italic;
+      margin-top: 6px; margin-bottom: -4px;
+      padding-left: 4px;
+    }
+
+    /* Style I — SVG branching tree of evolution */
+    .evt-wrap { padding: 12px 0; overflow-x: auto; }
+    .evt-svg { width: 100%; max-width: 820px; height: 560px; display: block; margin: 0 auto; }
+    .evt-axis-label { font-family: "Inter"; font-size: 11px; font-weight: 700; fill: var(--ink-mute); }
+    .evt-axis-line { stroke: var(--line); stroke-dasharray: 3 4; }
+    .evt-edge { fill: none; stroke-width: 2; }
+    .evt-edge-replace { stroke: #7d1d22; stroke-width: 2.5; }
+    .evt-edge-amend { stroke: #b78a3e; stroke-dasharray: 5 4; }
+    .evt-edge-elevate { stroke: #15a884; stroke-width: 2.5; }
+    .evt-edge-arrowhead { fill: currentColor; }
+    .evt-node-rect { fill: white; stroke: var(--line); stroke-width: 1.5; }
+    .evt-node-rect.luat { stroke: #7d1d22; }
+    .evt-node-rect.nghidinh { stroke: #15a884; }
+    .evt-node-rect.thongtu { stroke: #1a2c4a; }
+    .evt-node-rect.current {
+      fill: #fbf3d4;
+      stroke: #7d1d22; stroke-width: 3;
+    }
+    .evt-node-num {
+      font-family: "Inter"; font-size: 9.5px; font-weight: 700;
+      letter-spacing: 0.4px; fill: var(--ink-mute);
+      text-transform: uppercase;
+    }
+    .evt-node-num.current { fill: #7d1d22; }
+    .evt-node-title {
+      font-family: Georgia, serif; font-size: 12.5px; font-weight: 700;
+      fill: var(--ink);
+    }
+    .evt-node-sub {
+      font-family: "Inter"; font-size: 9.5px;
+      fill: var(--ink-mute); font-style: italic;
+    }
+    .evt-edge-label {
+      font-family: "Inter"; font-size: 9.5px; font-weight: 600;
+      fill: var(--ink-soft); letter-spacing: 0.2px;
+    }
+    .evt-edge-label-bg {
+      fill: white; stroke: var(--line); stroke-width: 0.5;
+    }
+    .evt-legend {
+      display: flex; gap: 18px; flex-wrap: wrap;
+      margin-top: 14px; padding-top: 14px;
+      border-top: 1px dashed var(--line);
+      font-family: "Inter"; font-size: 11px; color: var(--ink-soft);
+    }
+    .evt-legend-line {
+      display: inline-block; width: 26px; height: 0;
+      border-top: 2px solid var(--line);
+      vertical-align: middle; margin-right: 4px;
+    }
+    .evt-legend-line.replace { border-top-color: #7d1d22; border-top-width: 2.5px; }
+    .evt-legend-line.amend { border-top-style: dashed; border-top-color: #b78a3e; }
+    .evt-legend-line.elevate { border-top-color: #15a884; border-top-width: 2.5px; }
+  </style>
+</head>
+<body>
+
+<header class="ix-head">
+  <h1>Sơ đồ — Visual style samples</h1>
+  <p>Sample layouts using Luật 32/2024/QH15 (the spotlight doc) as the focus. Same data, six different visualisations. Pick whichever feels right and I'll wire it in.</p>
+  <nav class="ix-toc">
+    <a href="#a">A · Directional flow (current)</a>
+    <a href="#b">B · Timeline</a>
+    <a href="#c">C · Matrix</a>
+    <a href="#d">D · Sankey</a>
+    <a href="#e">E · Radial</a>
+    <a href="#f">F · Kanban</a>
+    <a href="#g">G · Tag cloud</a>
+    <a href="#h" style="background: #f6e08a; border-color: #7d1d22; color: #7d1d22;">★ H · Evolution lineage</a>
+    <a href="#i" style="background: #f6e08a; border-color: #7d1d22; color: #7d1d22;">★ I · Branching tree</a>
+  </nav>
+</header>
+
+<!-- ============== A · DIRECTIONAL FLOW (current) ============== -->
+<section class="demo" id="a">
+  <h2 class="demo-title">A · Directional flow (current)</h2>
+  <p class="demo-sub">Hero on top spanning width; below, two columns: ← Đầu vào (predecessors + incoming citations) and Đầu ra → (successors + outgoing citations). Compact horizontal rows.</p>
+  <div class="sd-flow-hub type-luat">
+    <div class="sd-flow-hub-eyebrow">Văn bản đang xem</div>
+    <div class="sd-flow-hub-pill">LUẬT · 32/2024/QH15</div>
+    <div class="sd-flow-hub-title">Luật Các tổ chức tín dụng</div>
+    <div class="sd-flow-hub-meta">
+      <span><strong>47</strong> đầu vào</span><span class="sd-flow-hub-sep">·</span><span><strong>5</strong> đầu ra</span>
+    </div>
+  </div>
+  <div class="sd-flow">
+    <div class="sd-flow-side sd-flow-in">
+      <div class="sd-flow-side-label">← Đầu vào</div>
+      <div class="sd-bucket"><div class="sd-bucket-head"><span class="sd-bucket-label">Văn bản tiền nhiệm</span><span class="sd-bucket-count">2</span></div>
+        <div class="sd-bucket-list">
+          <button class="sd-row type-luat"><span class="sd-row-pill">LUẬT · 47/2010/QH12</span><span class="sd-row-title">Luật Các TCTD 2010</span></button>
+          <button class="sd-row type-luat"><span class="sd-row-pill">LUẬT · 17/2017/QH14</span><span class="sd-row-title">Luật sửa đổi Luật Các TCTD 2017</span></button>
+        </div>
+      </div>
+      <div class="sd-bucket"><div class="sd-bucket-head"><span class="sd-bucket-label">Viện dẫn (đến)</span><span class="sd-bucket-count">45</span></div>
+        <div class="sd-bucket-list">
+          <button class="sd-row type-nghidinh"><span class="sd-row-pill">NĐ · 88/2019/NĐ-CP</span><span class="sd-row-title">NĐ 88/2019/NĐ-CP</span></button>
+          <button class="sd-row type-thongtu"><span class="sd-row-pill">TT · 50/2018/TT-NHNN</span><span class="sd-row-title">TT 50/2018/TT-NHNN</span></button>
+          <button class="sd-row type-bo-luat"><span class="sd-row-pill">BỘ LUẬT · 100/2015/QH13</span><span class="sd-row-title">BLHS 2015</span></button>
+        </div>
+      </div>
+    </div>
+    <div class="sd-flow-side sd-flow-out">
+      <div class="sd-flow-side-label">Đầu ra →</div>
+      <div class="sd-bucket"><div class="sd-bucket-head"><span class="sd-bucket-label">Văn bản kế nhiệm</span><span class="sd-bucket-count">0</span></div><div class="sd-bucket-empty">—</div></div>
+      <div class="sd-bucket"><div class="sd-bucket-head"><span class="sd-bucket-label">Được dẫn chiếu (đi)</span><span class="sd-bucket-count">5</span></div>
+        <div class="sd-bucket-list">
+          <button class="sd-row type-luat"><span class="sd-row-pill">LUẬT · 46/2010/QH12</span><span class="sd-row-title">Luật NHNN Việt Nam 2010</span></button>
+          <button class="sd-row type-luat"><span class="sd-row-pill">LUẬT · 54/2019/QH14</span><span class="sd-row-title">Luật Chứng khoán 2019</span></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== B · TIMELINE ============== -->
+<section class="demo" id="b">
+  <h2 class="demo-title">B · Timeline by issued year</h2>
+  <p class="demo-sub">Horizontal time axis, every related doc placed at its issued year. Colour = doc type. Current doc highlighted in gold/black. Quickly shows how old the predecessor cluster is and which way the citations flow.</p>
+  <div class="tl-box">
+    <div class="tl-axis">
+      <!-- Year ticks: 2010, 2014, 2018, 2022, 2024 -->
+      <span class="tl-tick" style="left:0%"></span><span class="tl-tick-label" style="left:0%">2010</span>
+      <span class="tl-tick" style="left:25%"></span><span class="tl-tick-label" style="left:25%">2014</span>
+      <span class="tl-tick" style="left:50%"></span><span class="tl-tick-label" style="left:50%">2018</span>
+      <span class="tl-tick" style="left:75%"></span><span class="tl-tick-label" style="left:75%">2022</span>
+      <span class="tl-tick" style="left:100%"></span><span class="tl-tick-label" style="left:100%">2024</span>
+      <!-- Dots -->
+      <span class="tl-dot luat" style="left:0%"></span><span class="tl-tooltip" style="left:0%">47/2010/QH12</span>
+      <span class="tl-dot luat" style="left:0.4%"></span>
+      <span class="tl-dot luat" style="left:25%"></span><span class="tl-tooltip below" style="left:25%">51/2014/QH13</span>
+      <span class="tl-dot luat" style="left:43.7%"></span><span class="tl-tooltip" style="left:43.7%">17/2017</span>
+      <span class="tl-dot thongtu" style="left:50%"></span>
+      <span class="tl-dot thongtu" style="left:51%"></span>
+      <span class="tl-dot thongtu" style="left:54%"></span>
+      <span class="tl-dot nghidinh" style="left:56%"></span><span class="tl-tooltip below" style="left:56%">88/2019/NĐ-CP</span>
+      <span class="tl-dot luat" style="left:56.5%"></span>
+      <span class="tl-dot thongtu" style="left:69%"></span>
+      <span class="tl-dot thongtu" style="left:70%"></span>
+      <span class="tl-dot nghidinh" style="left:72%"></span>
+      <span class="tl-dot luat" style="left:81.2%"></span>
+      <span class="tl-dot luat" style="left:87.5%"></span>
+      <span class="tl-dot current" style="left:87.5%"></span><span class="tl-tooltip" style="left:87.5%; top: -22px;">★ Luật 32/2024/QH15</span>
+      <span class="tl-dot nghidinh" style="left:100%"></span>
+    </div>
+    <div class="tl-legend">
+      <span><i style="background:#7d1d22"></i> Luật / Bộ luật</span>
+      <span><i style="background:#15a884"></i> Nghị định</span>
+      <span><i style="background:#1a2c4a"></i> Thông tư</span>
+      <span><i style="background:var(--ink); border: 2px solid #f6e08a"></i> Văn bản đang xem</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============== C · MATRIX ============== -->
+<section class="demo" id="c">
+  <h2 class="demo-title">C · Type × Relation matrix</h2>
+  <p class="demo-sub">A 4×4 table: rows = doc type, columns = relation kind. Cells show counts. Click a non-zero cell to drill into the list. Compact summary that stays on one screen no matter how many related docs there are.</p>
+  <table class="mx-table">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Tiền nhiệm</th>
+        <th>Kế nhiệm</th>
+        <th>Dẫn chiếu (đi)</th>
+        <th>Viện dẫn (đến)</th>
+        <th>Tổng</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>Bộ luật</th>
+        <td class="mx-cell-empty">—</td>
+        <td class="mx-cell-empty">—</td>
+        <td class="mx-cell-empty">—</td>
+        <td class="mx-cell mx-cell-boluat">1</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <th>Luật</th>
+        <td class="mx-cell mx-cell-luat">2</td>
+        <td class="mx-cell-empty">—</td>
+        <td class="mx-cell mx-cell-luat">4</td>
+        <td class="mx-cell mx-cell-luat">4</td>
+        <td>10</td>
+      </tr>
+      <tr>
+        <th>Nghị định</th>
+        <td class="mx-cell-empty">—</td>
+        <td class="mx-cell-empty">—</td>
+        <td class="mx-cell mx-cell-nghidinh">1</td>
+        <td class="mx-cell mx-cell-nghidinh">3</td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <th>Thông tư</th>
+        <td class="mx-cell-empty">—</td>
+        <td class="mx-cell-empty">—</td>
+        <td class="mx-cell-empty">—</td>
+        <td class="mx-cell mx-cell-thongtu">37</td>
+        <td>37</td>
+      </tr>
+      <tr style="background: var(--paper-2);">
+        <th>Tổng</th>
+        <td><strong>2</strong></td>
+        <td>—</td>
+        <td><strong>5</strong></td>
+        <td><strong>45</strong></td>
+        <td><strong>52</strong></td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ============== D · SANKEY ============== -->
+<section class="demo" id="d">
+  <h2 class="demo-title">D · Sankey 3-column flow</h2>
+  <p class="demo-sub">Predecessors + incoming citations on the LEFT, current doc as a circular hub in the MIDDLE, successors + outgoing citations on the RIGHT. Strong directional read; works well when each side has &lt; 12 items.</p>
+  <div class="sk-wrap">
+    <div class="sk-side sk-in">
+      <div class="sk-side-label">← Đầu vào (47)</div>
+      <div class="sk-pill luat"><span class="num">L</span>47/2010/QH12</div>
+      <div class="sk-pill luat"><span class="num">L</span>17/2017/QH14</div>
+      <div class="sk-pill nghidinh"><span class="num">N</span>88/2019/NĐ-CP</div>
+      <div class="sk-pill thongtu"><span class="num">T</span>50/2018/TT-NHNN</div>
+      <div class="sk-pill thongtu"><span class="num">T</span>22/2019/TT-NHNN</div>
+      <div class="sk-pill luat"><span class="num">L</span>06/2012/QH13</div>
+      <div class="sk-pill luat"><span class="num">L</span>51/2014/QH13</div>
+      <div class="sk-pill" style="opacity:0.55">… và 40 văn bản khác</div>
+    </div>
+    <div>
+      <div class="sk-arrow">→</div>
+      <div class="sk-hub">
+        <span class="sk-hub-num">LUẬT · 32/2024/QH15</span>
+        <div class="sk-hub-title">Luật Các tổ chức tín dụng</div>
+      </div>
+      <div class="sk-arrow">→</div>
+    </div>
+    <div class="sk-side sk-out">
+      <div class="sk-side-label">Đầu ra → (5)</div>
+      <div class="sk-pill luat"><span class="num">L</span>46/2010/QH12</div>
+      <div class="sk-pill luat"><span class="num">L</span>29/2023/QH15</div>
+      <div class="sk-pill luat"><span class="num">L</span>54/2019/QH14</div>
+      <div class="sk-pill luat"><span class="num">L</span>47/2010/QH12</div>
+      <div class="sk-pill luat"><span class="num">L</span>17/2017/QH14</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== E · RADIAL ============== -->
+<section class="demo" id="e">
+  <h2 class="demo-title">E · Radial / orbital</h2>
+  <p class="demo-sub">Current doc at the centre, predecessors on the inner ring, citations on the outer ring. Visually compelling, but cramped when the outer ring has &gt; ~16 items.</p>
+  <div class="rd-wrap">
+    <svg class="rd-svg" viewBox="0 0 720 480" preserveAspectRatio="xMidYMid meet">
+      <circle class="rd-ring1" cx="360" cy="240" r="100"/>
+      <circle class="rd-ring2" cx="360" cy="240" r="180"/>
+      <text class="rd-ring-label" x="360" y="135" text-anchor="middle">Tiền nhiệm / Kế nhiệm</text>
+      <text class="rd-ring-label" x="360" y="55" text-anchor="middle">Citations</text>
+      <!-- Center -->
+      <g class="rd-center">
+        <circle cx="360" cy="240" r="48"/>
+        <text x="360" y="234" text-anchor="middle" font-size="11">LUẬT</text>
+        <text x="360" y="250" text-anchor="middle" font-size="11">32/2024</text>
+        <text x="360" y="262" text-anchor="middle" font-size="9" font-style="italic" font-weight="500">TCTD</text>
+      </g>
+      <!-- Inner ring (predecessors): 2 nodes -->
+      <g class="rd-node rd-luat" transform="translate(260 240)">
+        <circle class="outer" r="22"/>
+        <text y="3">47/2010</text>
+      </g>
+      <g class="rd-node rd-luat" transform="translate(460 240)">
+        <circle class="outer" r="22"/>
+        <text y="3">17/2017</text>
+      </g>
+      <!-- Outer ring (citations): 12 sample positions, 30° each -->
+      <g class="rd-node rd-luat" transform="translate(540 240)"><circle class="outer" r="20"/><text y="3">46/10</text></g>
+      <g class="rd-node rd-luat" transform="translate(516 333)"><circle class="outer" r="20"/><text y="3">29/23</text></g>
+      <g class="rd-node rd-luat" transform="translate(450 397)"><circle class="outer" r="20"/><text y="3">54/19</text></g>
+      <g class="rd-node rd-thongtu" transform="translate(360 420)"><circle class="outer" r="20"/><text y="3">50/18</text></g>
+      <g class="rd-node rd-thongtu" transform="translate(270 397)"><circle class="outer" r="20"/><text y="3">22/19</text></g>
+      <g class="rd-node rd-thongtu" transform="translate(204 333)"><circle class="outer" r="20"/><text y="3">11/21</text></g>
+      <g class="rd-node rd-nghidinh" transform="translate(180 240)"><circle class="outer" r="20"/><text y="3">88/19</text></g>
+      <g class="rd-node rd-nghidinh" transform="translate(204 147)"><circle class="outer" r="20"/><text y="3">86/24</text></g>
+      <g class="rd-node rd-luat" transform="translate(270 83)"><circle class="outer" r="20"/><text y="3">06/12</text></g>
+      <g class="rd-node rd-luat" transform="translate(360 60)"><circle class="outer" r="20"/><text y="3">51/14</text></g>
+      <g class="rd-node rd-luat" transform="translate(450 83)"><circle class="outer" r="20"/><text y="3">61/24</text></g>
+      <g class="rd-node rd-luat" transform="translate(516 147)"><circle class="outer" r="20"/><text y="3">100/15</text></g>
+      <!-- Spoke lines: center to inner; inner to outer -->
+      <line x1="360" y1="240" x2="282" y2="240" stroke="var(--line)" stroke-width="1"/>
+      <line x1="360" y1="240" x2="438" y2="240" stroke="var(--line)" stroke-width="1"/>
+    </svg>
+  </div>
+</section>
+
+<!-- ============== F · KANBAN ============== -->
+<section class="demo" id="f">
+  <h2 class="demo-title">F · Kanban — 4 columns by relation</h2>
+  <p class="demo-sub">One column per relation type (Tiền nhiệm, Kế nhiệm, Dẫn chiếu đi, Viện dẫn đến). Cards stack vertically. Easy to scan; good when the relation matters more than the doc type.</p>
+  <div class="kb-grid">
+    <div class="kb-col">
+      <div class="kb-col-head"><span class="kb-col-title">Tiền nhiệm</span><span class="kb-col-count">2</span></div>
+      <div class="kb-card luat"><div class="kb-card-num">LUẬT · 47/2010/QH12</div><div class="kb-card-title">Luật Các TCTD 2010</div></div>
+      <div class="kb-card luat"><div class="kb-card-num">LUẬT · 17/2017/QH14</div><div class="kb-card-title">Luật sửa đổi Luật Các TCTD 2017</div></div>
+    </div>
+    <div class="kb-col">
+      <div class="kb-col-head"><span class="kb-col-title">Kế nhiệm</span><span class="kb-col-count">0</span></div>
+      <div style="font-size:11px; color:var(--ink-faint); text-align:center; padding: 24px 0; font-style: italic;">Chưa có văn bản kế nhiệm</div>
+    </div>
+    <div class="kb-col">
+      <div class="kb-col-head"><span class="kb-col-title">Dẫn chiếu (đi)</span><span class="kb-col-count">5</span></div>
+      <div class="kb-card luat"><div class="kb-card-num">LUẬT · 46/2010/QH12</div><div class="kb-card-title">Luật NHNN Việt Nam 2010</div></div>
+      <div class="kb-card luat"><div class="kb-card-num">LUẬT · 29/2023/QH15</div><div class="kb-card-title">Luật 29/2023/QH15</div></div>
+      <div class="kb-card luat"><div class="kb-card-num">LUẬT · 54/2019/QH14</div><div class="kb-card-title">Luật Chứng khoán 2019</div></div>
+    </div>
+    <div class="kb-col">
+      <div class="kb-col-head"><span class="kb-col-title">Viện dẫn (đến)</span><span class="kb-col-count">45</span></div>
+      <div class="kb-card nghidinh"><div class="kb-card-num">NĐ · 88/2019/NĐ-CP</div><div class="kb-card-title">NĐ 88/2019/NĐ-CP</div></div>
+      <div class="kb-card thongtu"><div class="kb-card-num">TT · 50/2018/TT-NHNN</div><div class="kb-card-title">TT 50/2018/TT-NHNN</div></div>
+      <div class="kb-card thongtu"><div class="kb-card-num">TT · 22/2019/TT-NHNN</div><div class="kb-card-title">TT 22/2019/TT-NHNN</div></div>
+      <div class="kb-card" style="opacity:0.6"><div class="kb-card-num">… và 42 văn bản khác</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== G · TAG CLOUD ============== -->
+<section class="demo" id="g">
+  <h2 class="demo-title">G · Compact tag cloud</h2>
+  <p class="demo-sub">Each related doc as a coloured pill, grouped by relation. Densest layout; good when you have lots of relations and want everything visible at once. Trade-off: less info per card.</p>
+  <div class="tg-section">
+    <div class="tg-label">Văn bản tiền nhiệm · 2</div>
+    <span class="tg-tag luat">47/2010/QH12 · Luật Các TCTD 2010</span>
+    <span class="tg-tag luat">17/2017/QH14 · Luật sửa đổi Luật Các TCTD</span>
+  </div>
+  <div class="tg-section">
+    <div class="tg-label">Được dẫn chiếu (đi) · 5</div>
+    <span class="tg-tag luat">46/2010/QH12</span>
+    <span class="tg-tag luat">29/2023/QH15</span>
+    <span class="tg-tag luat">54/2019/QH14</span>
+    <span class="tg-tag luat">47/2010/QH12</span>
+    <span class="tg-tag luat">17/2017/QH14</span>
+  </div>
+  <div class="tg-section">
+    <div class="tg-label">Viện dẫn (đến) · 45</div>
+    <span class="tg-tag nghidinh">88/2019/NĐ-CP</span>
+    <span class="tg-tag thongtu">50/2018/TT-NHNN</span>
+    <span class="tg-tag thongtu">22/2019/TT-NHNN</span>
+    <span class="tg-tag boluat">100/2015/QH13 · BLHS</span>
+    <span class="tg-tag luat">06/2012/QH13 · BHTG</span>
+    <span class="tg-tag luat">51/2014/QH13 · Phá sản</span>
+    <span class="tg-tag nghidinh">86/2024/NĐ-CP</span>
+    <span class="tg-tag thongtu">11/2021/TT-NHNN</span>
+    <span class="tg-tag thongtu">41/2016/TT-NHNN · CAR</span>
+    <span class="tg-tag thongtu">16/2021/TT-NHNN</span>
+    <span class="tg-tag luat">61/2024/QH15 · Điện lực</span>
+    <span class="tg-tag luat">12/2017/QH14 · BLHS sửa đổi</span>
+    <span class="tg-tag thongtu">39/2016/TT-NHNN</span>
+    <span class="tg-tag thongtu">43/2016/TT-NHNN</span>
+    <span class="tg-tag nghidinh">39/2014/NĐ-CP</span>
+    <span class="tg-tag" style="opacity:0.55">… và 30 văn bản khác</span>
+  </div>
+</section>
+
+<!-- ============== H · EVOLUTION LINEAGE ============== -->
+<section class="demo" id="h">
+  <h2 class="demo-title">★ H · Evolution / Lineage tree</h2>
+  <p class="demo-sub">Time flows top-to-bottom. Each row is one doc with its issue year on the left margin. The vertical spine is the chain of <em>replaces / amends</em>. Branches appear when multiple older docs were consolidated; the current spotlight doc is highlighted in burgundy + gold. Walks BOTH directions — back to the legal ancestors and forward to any successors. Built from the existing <code>replaces</code> / <code>replacedBy</code> data we already have, no new manual work needed.</p>
+
+  <div class="ev-wrap">
+    <div class="ev-spine"></div>
+
+    <!-- 2010: original predecessor -->
+    <div class="ev-row ev-luat">
+      <span class="ev-year">2010</span>
+      <div class="ev-card ev-luat">
+        <div class="ev-pill">LUẬT · 47/2010/QH12</div>
+        <div class="ev-title">Luật Các tổ chức tín dụng</div>
+        <div class="ev-rel"><strong>Văn bản gốc</strong> — đã được thay thế</div>
+      </div>
+    </div>
+
+    <!-- 2017: amendment to 47/2010 -->
+    <div class="ev-row ev-luat">
+      <span class="ev-year">2017</span>
+      <div class="ev-card ev-luat">
+        <div class="ev-pill">LUẬT · 17/2017/QH14</div>
+        <div class="ev-title">Luật sửa đổi, bổ sung một số điều của Luật Các tổ chức tín dụng</div>
+        <div class="ev-rel"><strong>Sửa đổi</strong> Luật 47/2010/QH12</div>
+      </div>
+    </div>
+
+    <!-- 2024: current — consolidated from both -->
+    <div class="ev-row ev-luat ev-current">
+      <span class="ev-year">2024</span>
+      <div class="ev-card ev-luat ev-current">
+        <div>
+          <span class="ev-pill" style="color:#7d1d22">LUẬT · 32/2024/QH15</span>
+          <span class="ev-current-badge">★ Văn bản đang xem</span>
+        </div>
+        <div class="ev-title">Luật Các tổ chức tín dụng</div>
+        <div class="ev-rel"><strong>Hợp nhất + thay thế</strong> Luật 47/2010 và Luật 17/2017 — Hiệu lực 01/07/2024</div>
+      </div>
+    </div>
+
+    <!-- 2025: amendment to 32/2024 -->
+    <div class="ev-row ev-luat">
+      <span class="ev-year">2025</span>
+      <div class="ev-card ev-luat">
+        <div class="ev-pill">LUẬT · 96/2025/QH15</div>
+        <div class="ev-title">Luật sửa đổi, bổ sung một số điều của Luật Các tổ chức tín dụng</div>
+        <div class="ev-rel"><strong>Sửa đổi</strong> Luật 32/2024/QH15 — Hiệu lực 15/10/2025 (Điều 193, 169, 172, 179, 180, 183 + bổ sung Điều 198a/198b/198c)</div>
+      </div>
+    </div>
+  </div>
+
+  <hr style="margin: 24px 0; border: none; border-top: 1px dashed var(--line);">
+
+  <p class="demo-sub" style="margin-top: 0;">For the personal-data ecosystem (NĐ 13/2023 → Luật 91/2025), the lineage looks like this — a decree-tier instrument elevated to law-tier:</p>
+
+  <div class="ev-wrap">
+    <div class="ev-spine"></div>
+
+    <div class="ev-row ev-nghidinh">
+      <span class="ev-year">2023</span>
+      <div class="ev-card ev-nghidinh">
+        <div class="ev-pill">NGHỊ ĐỊNH · 13/2023/NĐ-CP</div>
+        <div class="ev-title">Nghị định về bảo vệ dữ liệu cá nhân</div>
+        <div class="ev-rel"><strong>Văn bản gốc cấp Chính phủ</strong> — Hiệu lực 01/07/2023</div>
+      </div>
+    </div>
+
+    <div class="ev-row ev-luat ev-current">
+      <span class="ev-year">2025</span>
+      <div class="ev-card ev-luat ev-current">
+        <div>
+          <span class="ev-pill" style="color:#7d1d22">LUẬT · 91/2025/QH15</span>
+          <span class="ev-current-badge">★ Nâng cấp lên Luật</span>
+        </div>
+        <div class="ev-title">Luật Bảo vệ dữ liệu cá nhân</div>
+        <div class="ev-rel"><strong>Nâng cấp + bổ sung</strong> NĐ 13/2023 — Hiệu lực 01/01/2026 · 39 điều · Điều 39 quy định chuyển tiếp từ NĐ cũ</div>
+      </div>
+    </div>
+  </div>
+
+  <hr style="margin: 24px 0; border: none; border-top: 1px dashed var(--line);">
+
+  <p class="demo-sub" style="margin-top: 0;">When implemented for real, the tree walks the <code>replaces</code> / <code>replacedBy</code> graph from the spotlight doc in both directions, deduplicates, and lays out chronologically. Each card is clickable → spotlight-preview that doc.</p>
+</section>
+
+<!-- ============== I · BRANCHING TREE (SVG) ============== -->
+<section class="demo" id="i">
+  <h2 class="demo-title">★ I · Branching tree of evolution (SVG)</h2>
+  <p class="demo-sub">A real tree, not a list. Time flows top-to-bottom. Multiple ancestors <strong>merge</strong> into a consolidated successor (47/2010 + 17/2017 → 32/2024). Edges are colour-coded by relation type: <span style="color:#7d1d22; font-weight:700">replace</span> (solid burgundy), <span style="color:#b78a3e; font-weight:700">amend</span> (dashed gold), <span style="color:#15a884; font-weight:700">elevate</span> (solid teal — decree raised to law). Current spotlight doc highlighted in cream + bold burgundy.</p>
+
+  <div class="evt-wrap">
+    <svg class="evt-svg" viewBox="0 0 820 560" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="arr-replace" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L8 4 L0 8 z" fill="#7d1d22"/></marker>
+        <marker id="arr-amend"   viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L8 4 L0 8 z" fill="#b78a3e"/></marker>
+        <marker id="arr-elevate" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L8 4 L0 8 z" fill="#15a884"/></marker>
+      </defs>
+
+      <!-- Year axis -->
+      <g class="evt-axis">
+        <text class="evt-axis-label" x="14" y="84">2010</text>
+        <line class="evt-axis-line" x1="58" y1="80" x2="800" y2="80"/>
+        <text class="evt-axis-label" x="14" y="214">2017</text>
+        <line class="evt-axis-line" x1="58" y1="210" x2="800" y2="210"/>
+        <text class="evt-axis-label" x="14" y="354">2024</text>
+        <line class="evt-axis-line" x1="58" y1="350" x2="800" y2="350"/>
+        <text class="evt-axis-label" x="14" y="484">2025</text>
+        <line class="evt-axis-line" x1="58" y1="480" x2="800" y2="480"/>
+      </g>
+
+      <!-- EDGES first so nodes paint on top -->
+      <!-- 47/2010 → 17/2017 (amend, dashed gold) -->
+      <path class="evt-edge evt-edge-amend"
+            d="M 200 110 V 165 H 470 V 195"
+            marker-end="url(#arr-amend)"/>
+      <g transform="translate(260 158)">
+        <rect class="evt-edge-label-bg" x="-30" y="-10" width="60" height="16" rx="3"/>
+        <text class="evt-edge-label" x="0" y="2" text-anchor="middle">SỬA ĐỔI</text>
+      </g>
+
+      <!-- 47/2010 → 32/2024 (replace, solid burgundy, curved through left) -->
+      <path class="evt-edge evt-edge-replace"
+            d="M 200 110 C 100 200, 100 300, 320 335"
+            marker-end="url(#arr-replace)"/>
+      <g transform="translate(110 245)">
+        <rect class="evt-edge-label-bg" x="-30" y="-10" width="60" height="16" rx="3"/>
+        <text class="evt-edge-label" x="0" y="2" text-anchor="middle">THAY THẾ</text>
+      </g>
+
+      <!-- 17/2017 → 32/2024 (replace, solid burgundy, vertical) -->
+      <path class="evt-edge evt-edge-replace"
+            d="M 470 245 V 305 H 412 V 335"
+            marker-end="url(#arr-replace)"/>
+      <g transform="translate(534 295)">
+        <rect class="evt-edge-label-bg" x="-32" y="-10" width="64" height="16" rx="3"/>
+        <text class="evt-edge-label" x="0" y="2" text-anchor="middle">HỢP NHẤT</text>
+      </g>
+
+      <!-- 32/2024 → 96/2025 (amend, dashed gold) -->
+      <path class="evt-edge evt-edge-amend"
+            d="M 410 405 V 465"
+            marker-end="url(#arr-amend)"/>
+      <g transform="translate(485 432)">
+        <rect class="evt-edge-label-bg" x="-30" y="-10" width="60" height="16" rx="3"/>
+        <text class="evt-edge-label" x="0" y="2" text-anchor="middle">SỬA ĐỔI</text>
+      </g>
+
+      <!-- NODES -->
+      <!-- 47/2010 -->
+      <g class="evt-node">
+        <rect class="evt-node-rect luat" x="120" y="50" width="160" height="60" rx="5"/>
+        <text class="evt-node-num" x="200" y="70" text-anchor="middle">LUẬT · 47/2010/QH12</text>
+        <text class="evt-node-title" x="200" y="89" text-anchor="middle">Luật Các TCTD</text>
+        <text class="evt-node-sub" x="200" y="103" text-anchor="middle">Văn bản gốc</text>
+      </g>
+
+      <!-- 17/2017 -->
+      <g class="evt-node">
+        <rect class="evt-node-rect luat" x="390" y="185" width="160" height="60" rx="5"/>
+        <text class="evt-node-num" x="470" y="205" text-anchor="middle">LUẬT · 17/2017/QH14</text>
+        <text class="evt-node-title" x="470" y="223" text-anchor="middle">Luật sửa đổi TCTD</text>
+        <text class="evt-node-sub" x="470" y="237" text-anchor="middle">Sửa đổi 47/2010</text>
+      </g>
+
+      <!-- 32/2024 (current) -->
+      <g class="evt-node">
+        <rect class="evt-node-rect luat current" x="320" y="325" width="180" height="76" rx="5"/>
+        <text class="evt-node-num current" x="410" y="345" text-anchor="middle">★ LUẬT · 32/2024/QH15</text>
+        <text class="evt-node-title" x="410" y="364" text-anchor="middle">Luật Các tổ chức tín dụng</text>
+        <text class="evt-node-sub" x="410" y="380" text-anchor="middle">Hợp nhất + thay thế cả hai</text>
+        <text class="evt-node-sub" x="410" y="392" text-anchor="middle" style="font-weight:700; fill:#7d1d22; font-style: normal;">VĂN BẢN ĐANG XEM</text>
+      </g>
+
+      <!-- 96/2025 -->
+      <g class="evt-node">
+        <rect class="evt-node-rect luat" x="330" y="465" width="160" height="60" rx="5"/>
+        <text class="evt-node-num" x="410" y="485" text-anchor="middle">LUẬT · 96/2025/QH15</text>
+        <text class="evt-node-title" x="410" y="503" text-anchor="middle">Luật sửa đổi TCTD</text>
+        <text class="evt-node-sub" x="410" y="517" text-anchor="middle">Sửa đổi 32/2024 · hiệu lực 15/10/2025</text>
+      </g>
+    </svg>
+
+    <div class="evt-legend">
+      <span><i class="evt-legend-line replace"></i> Thay thế / Hợp nhất</span>
+      <span><i class="evt-legend-line amend"></i> Sửa đổi, bổ sung</span>
+      <span><i class="evt-legend-line elevate"></i> Nâng cấp tier (NĐ → Luật)</span>
+    </div>
+  </div>
+
+  <hr style="margin: 28px 0; border: none; border-top: 1px dashed var(--line);">
+
+  <p class="demo-sub" style="margin-top: 0;">For the personal-data ecosystem, the same tree shows the decree-to-law elevation as a teal edge:</p>
+
+  <div class="evt-wrap">
+    <svg class="evt-svg" viewBox="0 0 820 320" preserveAspectRatio="xMidYMid meet" style="height: 320px;" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="arr-elevate-2" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L8 4 L0 8 z" fill="#15a884"/></marker>
+      </defs>
+
+      <text class="evt-axis-label" x="14" y="84">2023</text>
+      <line class="evt-axis-line" x1="58" y1="80" x2="800" y2="80"/>
+      <text class="evt-axis-label" x="14" y="244">2025</text>
+      <line class="evt-axis-line" x1="58" y1="240" x2="800" y2="240"/>
+
+      <!-- Edge: NĐ 13/2023 → Luật 91/2025 (elevate) -->
+      <path class="evt-edge evt-edge-elevate"
+            d="M 410 110 V 215"
+            marker-end="url(#arr-elevate-2)"/>
+      <g transform="translate(490 162)">
+        <rect class="evt-edge-label-bg" x="-50" y="-10" width="100" height="16" rx="3"/>
+        <text class="evt-edge-label" x="0" y="2" text-anchor="middle">NÂNG CẤP TIER</text>
+      </g>
+
+      <!-- NĐ 13/2023 -->
+      <g class="evt-node">
+        <rect class="evt-node-rect nghidinh" x="320" y="50" width="180" height="60" rx="5"/>
+        <text class="evt-node-num" x="410" y="70" text-anchor="middle">NGHỊ ĐỊNH · 13/2023/NĐ-CP</text>
+        <text class="evt-node-title" x="410" y="89" text-anchor="middle">Nghị định BVDLCN</text>
+        <text class="evt-node-sub" x="410" y="103" text-anchor="middle">Văn bản cấp Chính phủ</text>
+      </g>
+
+      <!-- Luật 91/2025 (current) -->
+      <g class="evt-node">
+        <rect class="evt-node-rect luat current" x="320" y="215" width="180" height="76" rx="5"/>
+        <text class="evt-node-num current" x="410" y="235" text-anchor="middle">★ LUẬT · 91/2025/QH15</text>
+        <text class="evt-node-title" x="410" y="254" text-anchor="middle">Luật BVDLCN</text>
+        <text class="evt-node-sub" x="410" y="270" text-anchor="middle">39 điều · hiệu lực 01/01/2026</text>
+        <text class="evt-node-sub" x="410" y="282" text-anchor="middle" style="font-weight:700; fill:#7d1d22; font-style: normal;">VĂN BẢN ĐANG XEM</text>
+      </g>
+    </svg>
+  </div>
+
+  <p class="demo-sub" style="margin-top: 14px;">Implementation: walk <code>replaces</code>/<code>replacedBy</code> recursively from the spotlight doc, build a node list with <code>(year, branch)</code> coordinates via topological sort, and render orthogonal SVG paths between parent/child pairs. Branch column is assigned by lineage; merging is automatic when two ancestors share the same descendant.</p>
+</section>
+
+</body>
+</html>

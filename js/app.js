@@ -24,7 +24,6 @@
   const sideSuggestions = $("#side-suggestions");
 
   const docTitlebar = $("#doc-titlebar");
-  const propsTable = $("#props-table");
   const docBody = $("#doc-body");
   const tocEl = $("#toc");
   const tocCount = $("#toc-count");
@@ -62,7 +61,7 @@
   let popupTarget = null;
   let popupHideTimer = null;
   let scrollSpyArticles = [];
-  let readSize = parseFloat(localStorage.getItem("vbpl.readSize")) || 16;
+  let readSize = parseFloat(localStorage.getItem("vbpl.readSize")) || 12;
   let wideMode = localStorage.getItem("vbpl.wide") === "1";
   let newdocsFilter = "all";
 
@@ -1522,7 +1521,6 @@
     ]);
 
     renderTitlebar(doc);
-    renderProps(doc);
     renderBody(doc);
     renderToc(doc);
     renderRelated(doc);
@@ -1539,34 +1537,23 @@
     const loaded = (doc.chapters || []).reduce((s, ch) => s + ch.articles.length, 0);
     const total = doc.articleTotal || loaded;
     const partial = loaded < total;
-    const coverageHtml = `
-      <div class="doc-coverage ${partial ? "partial" : "full"}">
-        <span class="cov-label">Đã tải <strong>${loaded}</strong> trong tổng <strong>${total}</strong> điều</span>
-        ${partial && doc.sourceUrl ? `<a class="cov-source" href="${escapeHtml(doc.sourceUrl)}" target="_blank" rel="noopener">Mở bản gốc tại nguồn →</a>` : ""}
-      </div>
-    `;
-    docTitlebar.innerHTML = `
-      <span class="type-pill">${escapeHtml(doc.type)} · ${escapeHtml(doc.number)}</span>
-      <h1>${escapeHtml(doc.title)}</h1>
-      <div class="doc-issuer">${escapeHtml(doc.issuer)}${doc.signedBy ? " · Người ký: " + escapeHtml(doc.signedBy) : ""}</div>
-      ${coverageHtml}
-    `;
-  }
-
-  function renderProps(doc) {
     const cls = statusClass(doc.status);
-    const compact = `
-      <tr><th>Số/Ký hiệu</th><td><span class="num">${escapeHtml(doc.number)}</span></td>
-          <th>Ngày ban hành</th><td>${formatDate(doc.issuedDate)}</td></tr>
-      <tr><th>Loại văn bản</th><td>${escapeHtml(doc.type)}</td>
-          <th>Ngày hiệu lực</th><td>${formatDate(doc.effectiveDate)}</td></tr>
-      <tr><th>Cơ quan ban hành</th><td>${escapeHtml(doc.issuer)}</td>
-          <th>Tình trạng</th><td><span class="status ${cls}">${escapeHtml(doc.status)}</span></td></tr>
-    `;
-    propsTable.innerHTML = compact;
+    const meta = [];
+    meta.push(`<span class="dt-issuer">${escapeHtml(doc.issuer)}</span>`);
+    if (doc.signedBy) meta.push(`Người ký <strong>${escapeHtml(doc.signedBy)}</strong>`);
+    meta.push(`Ban hành <strong>${escapeHtml(formatDate(doc.issuedDate))}</strong>`);
+    meta.push(`Hiệu lực <strong>${escapeHtml(formatDate(doc.effectiveDate))}</strong>`);
+    meta.push(`<span class="dt-coverage ${partial ? "partial" : "full"}">${loaded}/${total} điều</span>`);
 
-    // Thuộc tính tab was removed; the compact props table on top covers
-    // everything users need at a glance.
+    docTitlebar.innerHTML = `
+      <div class="dt-row1">
+        <span class="type-pill">${escapeHtml(doc.type)} · ${escapeHtml(doc.number)}</span>
+        <h1>${escapeHtml(doc.title)}</h1>
+        <span class="status ${cls}">${escapeHtml(doc.status)}</span>
+      </div>
+      <div class="dt-row2">${meta.join('<span class="dt-sep">·</span>')}</div>
+      ${partial && doc.sourceUrl ? `<a class="dt-source" href="${escapeHtml(doc.sourceUrl)}" target="_blank" rel="noopener">Mở bản gốc tại nguồn →</a>` : ""}
+    `;
   }
 
   function renderBody(doc) {
@@ -1851,283 +1838,234 @@
     }
   }
 
-  // Sơ đồ — force-directed network of every visible doc with edges drawn
-  // for ALL inter-doc citation/structural relationships (not just the
-  // hub-and-spoke from the spotlight). Connected clusters group together
-  // visually; isolated docs drift to the periphery. Click any node to
-  // spotlight-preview that doc.
+  // Sơ đồ — branching evolution tree. Walks the `replaces` graph upward
+  // (ancestors) and downward (any other doc whose `replaces` includes this
+  // one) to build a chronological tree. Edges are classified as replace /
+  // amend / elevate based on the child doc's title and the tier change.
   function renderSodo(doc) {
     if (!sodoEl) return;
-    // Spotlight's outgoing refs and incoming refs.
-    const refs = collectAllRefsInDoc(doc);
-    const cited = new Map();
-    for (const r of refs) {
-      if (!r.docId || r.docId === doc.id) continue;
-      if (!cited.has(r.docId)) cited.set(r.docId, H.findDoc(r.docId));
-    }
-    const citedBy = new Map();
-    // Cache outgoing-ref Sets for every DB doc — reused below for inter-doc edges.
-    const outgoingCache = new Map();
-    for (const other of Object.values(DB)) {
-      if (other.id === doc.id) continue;
-      const otherRefs = collectAllRefsInDoc(other);
-      const set = new Set();
-      for (const r of otherRefs) if (r.docId) set.add(r.docId);
-      outgoingCache.set(other.id, set);
-      if (set.has(doc.id)) citedBy.set(other.id, other);
-    }
-    outgoingCache.set(doc.id, new Set([...cited.keys()]));
 
-    const replaces = [], replacedBy = [];
-    const docReplaces = Array.isArray(doc.replaces) ? doc.replaces : [];
+    // Build reverse maps: parentId → [child docs] for both replaces and amends.
+    const replacedByMap = new Map();
+    const amendedByMap = new Map();
     for (const other of Object.values(DB)) {
-      if (other.id === doc.id) continue;
-      const oReplaces = Array.isArray(other.replaces) ? other.replaces : [];
-      if (docReplaces.includes(other.id) || (doc.status && doc.status.includes(other.id))) replaces.push(other);
-      if (oReplaces.includes(doc.id) || (other.status && other.status.includes(doc.id))) replacedBy.push(other);
-    }
-
-    // Build node list. Each visible doc appears once; the spotlight is index 0.
-    const nodes = [{ doc, role: "current", rel: "Văn bản đang xem" }];
-    const seen = new Set([doc.id]);
-    const addBucket = (list, rel) => {
-      for (const d of list) {
-        if (!d || seen.has(d.id)) continue;
-        seen.add(d.id); nodes.push({ doc: d, rel });
+      for (const pid of (other.replaces || [])) {
+        if (!replacedByMap.has(pid)) replacedByMap.set(pid, []);
+        replacedByMap.get(pid).push(other);
       }
+      for (const pid of (other.amends || [])) {
+        if (!amendedByMap.has(pid)) amendedByMap.set(pid, []);
+        amendedByMap.get(pid).push(other);
+      }
+    }
+
+    const isLawTier = (tk) => tk === 'luat' || tk === 'bo-luat';
+    const classifyReplace = (parentDoc, childDoc) => {
+      if (!isLawTier(parentDoc.typeKey) && isLawTier(childDoc.typeKey)) return 'elevate';
+      return 'replace';
     };
-    addBucket(replaces, "Bị thay thế bởi văn bản đang xem");
-    addBucket(replacedBy, "Văn bản đã thay thế văn bản đang xem");
-    addBucket([...cited.values()], "Được dẫn chiếu trong văn bản này");
-    addBucket([...citedBy.values()], "Văn bản này được viện dẫn ở đây");
 
-    const totalRelated = nodes.length - 1;
-    const structuralCount = replaces.length + replacedBy.length;
-    const outgoingCount = cited.size;
-    const incomingCount = citedBy.size;
-    if (sodoBadge) sodoBadge.textContent = totalRelated;
+    const nodes = new Map(); // id → { doc, isCurrent }
+    const edges = [];        // { from, to, type }
+    const visited = new Set();
+    (function visit(id) {
+      if (visited.has(id)) return;
+      visited.add(id);
+      const d = H.findDoc(id);
+      if (!d) return;
+      nodes.set(id, { doc: d, isCurrent: id === doc.id });
+      // Upward: this doc REPLACES some older docs (full replacement / consolidation)
+      for (const pid of (d.replaces || [])) {
+        const pd = H.findDoc(pid);
+        if (pd) edges.push({ from: pid, to: id, type: classifyReplace(pd, d) });
+        visit(pid);
+      }
+      // Upward: this doc AMENDS some older docs (in-place modification)
+      for (const pid of (d.amends || [])) {
+        const pd = H.findDoc(pid);
+        if (pd) edges.push({ from: pid, to: id, type: 'amend' });
+        visit(pid);
+      }
+      // Downward: docs that REPLACE this one
+      for (const child of (replacedByMap.get(id) || [])) {
+        edges.push({ from: id, to: child.id, type: classifyReplace(d, child) });
+        visit(child.id);
+      }
+      // Downward: docs that AMEND this one
+      for (const child of (amendedByMap.get(id) || [])) {
+        edges.push({ from: id, to: child.id, type: 'amend' });
+        visit(child.id);
+      }
+    })(doc.id);
 
-    if (!totalRelated) {
-      sodoEl.innerHTML = `<h2>Sơ đồ liên kết — ${escapeHtml(doc.shortTitle)}</h2><div class="ld-empty">Không có văn bản liên quan để vẽ sơ đồ.</div>`;
+    const seenEdges = new Set();
+    const uniqEdges = edges.filter(e => {
+      const k = `${e.from}:${e.to}`;
+      if (seenEdges.has(k)) return false;
+      seenEdges.add(k);
+      return true;
+    });
+
+    if (sodoBadge) sodoBadge.textContent = nodes.size - 1;
+
+    if (nodes.size <= 1) {
+      sodoEl.innerHTML = `
+        <h2>Cây tiến hóa — ${escapeHtml(doc.shortTitle)}</h2>
+        <div class="ld-empty">
+          Văn bản này hiện chưa có dữ liệu tiền nhiệm hoặc kế nhiệm.<br>
+          Cây tiến hóa được dựng từ trường <code>replaces</code> trong CSDL — sẽ xuất hiện khi liên kết cấu trúc được bổ sung.
+        </div>
+      `;
       return;
     }
 
-    // Build edges between every pair of visible nodes that cite each other
-    // or have a structural relationship.
-    const visibleIds = new Set(nodes.map(n => n.doc.id));
-    const edges = [];
-    for (let i = 0; i < nodes.length; i++) {
-      for (let j = i + 1; j < nodes.length; j++) {
-        const a = nodes[i].doc, b = nodes[j].doc;
-        const aOut = outgoingCache.get(a.id) || new Set();
-        const bOut = outgoingCache.get(b.id) || new Set();
-        const aRep = Array.isArray(a.replaces) ? a.replaces : [];
-        const bRep = Array.isArray(b.replaces) ? b.replaces : [];
-        const isStruct = aRep.includes(b.id) || bRep.includes(a.id);
-        const isCite = aOut.has(b.id) || bOut.has(a.id);
-        if (isStruct || isCite) edges.push({ source: i, target: j, struct: isStruct });
-      }
-    }
+    // Sort nodes chronologically by issuedDate
+    const nodeList = [...nodes.values()].sort((a, b) =>
+      (a.doc.issuedDate || '9999').localeCompare(b.doc.issuedDate || '9999')
+    );
 
-    // Layout: 1000×1000 viewBox; spotlight pinned at centre; others initialised
-    // on a ring around it then relaxed by a force-directed simulation.
-    const SIZE = 1000, cx = SIZE / 2, cy = SIZE / 2;
-    const N = nodes.length;
-    nodes[0].x = cx; nodes[0].y = cy; nodes[0].fixed = true;
-    nodes[0].vx = 0; nodes[0].vy = 0;
-    for (let i = 1; i < N; i++) {
-      // Deterministic spread by index so reloads produce the same layout
-      const ang = (2 * Math.PI * (i - 1)) / Math.max(1, N - 1) - Math.PI / 2;
-      nodes[i].x = cx + 350 * Math.cos(ang);
-      nodes[i].y = cy + 350 * Math.sin(ang);
-      nodes[i].vx = 0; nodes[i].vy = 0;
+    // Group by year
+    const byYear = new Map();
+    for (const n of nodeList) {
+      const yr = (n.doc.issuedDate || '').slice(0, 4) || '?';
+      if (!byYear.has(yr)) byYear.set(yr, []);
+      byYear.get(yr).push(n);
     }
+    const years = [...byYear.keys()].sort();
 
-    // Force simulation parameters tuned for 1000×1000 viewport.
-    const REPEL = 7000;        // pairwise repulsion strength
-    const LINK_K = 0.04;       // attraction along edges (Hooke-like)
-    const LINK_LEN = 130;      // resting edge length
-    const CENTER_K = 0.0008;   // gentle pull toward centre
-    const DAMP = 0.84;
-    const PAD = 36;
-    const ITER = 320;
-    for (let it = 0; it < ITER; it++) {
-      for (const n of nodes) { n.fx = 0; n.fy = 0; }
-      // Repulsion (all pairs)
-      for (let i = 0; i < N; i++) {
-        for (let j = i + 1; j < N; j++) {
-          const a = nodes[i], b = nodes[j];
-          let dx = b.x - a.x, dy = b.y - a.y;
-          let dsq = dx * dx + dy * dy;
-          if (dsq < 25) { dsq = 25; }
-          const dist = Math.sqrt(dsq);
-          const f = REPEL / dsq;
-          const fx = (f * dx) / dist;
-          const fy = (f * dy) / dist;
-          a.fx -= fx; a.fy -= fy;
-          b.fx += fx; b.fy += fy;
-        }
-      }
-      // Attraction along edges (target rest length)
-      for (const e of edges) {
-        const a = nodes[e.source], b = nodes[e.target];
-        let dx = b.x - a.x, dy = b.y - a.y;
-        let dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < 1) dist = 1;
-        const f = LINK_K * (dist - LINK_LEN);
-        const fx = (f * dx) / dist;
-        const fy = (f * dy) / dist;
-        a.fx += fx; a.fy += fy;
-        b.fx -= fx; b.fy -= fy;
-      }
-      // Gentle pull toward centre to keep the graph from drifting away
-      for (const n of nodes) {
-        if (n.fixed) continue;
-        n.fx += (cx - n.x) * CENTER_K;
-        n.fy += (cy - n.y) * CENTER_K;
-      }
-      // Integrate
-      for (const n of nodes) {
-        if (n.fixed) continue;
-        n.vx = (n.vx + n.fx) * DAMP;
-        n.vy = (n.vy + n.fy) * DAMP;
-        n.x += n.vx;
-        n.y += n.vy;
-        if (n.x < PAD) n.x = PAD; else if (n.x > SIZE - PAD) n.x = SIZE - PAD;
-        if (n.y < PAD) n.y = PAD; else if (n.y > SIZE - PAD) n.y = SIZE - PAD;
-      }
-    }
+    // Layout dimensions
+    const NODE_W = 200, NODE_H = 70;
+    const Y_GAP = 130;
+    const X_LEFT = 150, X_CENTER = 380, X_RIGHT = 610;
+    const SVG_W = 760;
+    const yearY = new Map();
+    years.forEach((yr, i) => yearY.set(yr, 90 + i * Y_GAP));
+    const SVG_H = years.length * Y_GAP + 90;
 
-    // Render — edges first so nodes draw on top.
-    let edgeMarkup = "";
+    // A doc is an "amendment branch" if it has any amends edge (incoming to it).
+    const isAmendNode = new Map();
     for (const e of edges) {
-      const a = nodes[e.source], b = nodes[e.target];
-      const cls = e.struct ? "sd-edge sd-edge-struct" : "sd-edge";
-      edgeMarkup += `<line x1="${a.x.toFixed(1)}" y1="${a.y.toFixed(1)}" x2="${b.x.toFixed(1)}" y2="${b.y.toFixed(1)}" class="${cls}"/>`;
+      if (e.type === 'amend') isAmendNode.set(e.to, true);
     }
 
-    const radiusFor = i => (i === 0 ? 46 : 22);
-    let nodeMarkup = "";
-    for (let i = 0; i < N; i++) {
-      const n = nodes[i];
-      const tk = n.doc.typeKey || "";
-      const isCenter = i === 0;
-      const r = radiusFor(i);
-      const labelCls = isCenter ? "sd-label sd-label-center" : "sd-label";
-      const groupCls = isCenter ? "sd-node sd-current" : "sd-node";
-      const dataAttr = isCenter ? "" : ` data-doc-id="${escapeHtml(n.doc.id)}"`;
+    // Assign columns: current → center; amendments → right; everyone else → center.
+    // Resolve overlaps by spreading nodes at the same year across L/C/R.
+    for (const n of nodeList) {
+      const yr = (n.doc.issuedDate || '').slice(0, 4) || '?';
+      n.y = yearY.get(yr);
+      if (n.isCurrent) n.x = X_CENTER;
+      else if (isAmendNode.get(n.doc.id)) n.x = X_RIGHT;
+      else n.x = X_CENTER;
+    }
+    for (const [yr, group] of byYear) {
+      if (group.length <= 1) continue;
+      const cols = [X_LEFT, X_CENTER, X_RIGHT];
+      const used = new Set();
+      // current keeps center
+      for (const n of group) if (n.isCurrent) used.add(n.x);
+      // amendments keep right (if not taken)
+      for (const n of group) {
+        if (n.isCurrent) continue;
+        if (isAmendNode.get(n.doc.id) && !used.has(X_RIGHT)) { n.x = X_RIGHT; used.add(X_RIGHT); }
+      }
+      // remaining nodes pick first free column
+      for (const n of group) {
+        if (n.isCurrent || used.has(n.x)) continue;
+        const free = cols.find(c => !used.has(c));
+        if (free !== undefined) { n.x = free; used.add(free); }
+      }
+    }
+
+    // Count parents per child to detect merges (multi-parent → "HỢP NHẤT")
+    const parentCount = new Map();
+    for (const e of uniqEdges) parentCount.set(e.to, (parentCount.get(e.to) || 0) + 1);
+
+    const labelFor = (e) => {
+      if (e.type === 'amend') return 'SỬA ĐỔI';
+      if (e.type === 'elevate') return 'NÂNG CẤP';
+      return parentCount.get(e.to) > 1 ? 'HỢP NHẤT' : 'THAY THẾ';
+    };
+
+    // === Build SVG ===
+    let edgeMarkup = '';
+    for (const e of uniqEdges) {
+      const f = nodes.get(e.from), t = nodes.get(e.to);
+      if (!f || !t || f.x === undefined) continue;
+      const x1 = f.x, y1 = f.y + NODE_H / 2;
+      const x2 = t.x, y2 = t.y - NODE_H / 2;
+      let path;
+      if (x1 === x2) {
+        path = `M ${x1} ${y1} V ${y2}`;
+      } else {
+        // Orthogonal step: down half, across, down to target
+        const midY = y1 + (y2 - y1) * 0.55;
+        path = `M ${x1} ${y1} V ${midY} H ${x2} V ${y2}`;
+      }
+      edgeMarkup += `<path class="evt-edge evt-edge-${e.type}" d="${path}" marker-end="url(#evt-arr-${e.type})"/>`;
+      const lx = (x1 + x2) / 2, ly = y1 + (y2 - y1) * 0.55;
+      const labelText = labelFor(e);
+      const labelW = Math.max(48, labelText.length * 6 + 14);
+      edgeMarkup += `<g transform="translate(${lx} ${ly})">
+        <rect class="evt-edge-label-bg" x="${-labelW / 2}" y="-9" width="${labelW}" height="16" rx="3"/>
+        <text class="evt-edge-label" x="0" y="3" text-anchor="middle">${escapeHtml(labelText)}</text>
+      </g>`;
+    }
+
+    let nodeMarkup = '';
+    for (const n of nodeList) {
+      const tk = n.doc.typeKey || '';
+      const cls = `evt-node-rect ${tk}${n.isCurrent ? ' current' : ''}`;
+      const numCls = `evt-node-num${n.isCurrent ? ' current' : ''}`;
+      const x = n.x - NODE_W / 2;
+      const y = n.y - NODE_H / 2;
+      const titleText = (n.doc.shortTitle || n.doc.title || n.doc.number || '').replace(/\s+/g, ' ').slice(0, 36);
       nodeMarkup += `
-        <g class="${groupCls}"${dataAttr}>
-          <title>${escapeHtml(n.doc.shortTitle)} — ${escapeHtml(n.rel)}</title>
-          <circle cx="${n.x.toFixed(1)}" cy="${n.y.toFixed(1)}" r="${r}" class="sd-circle sd-${tk}"/>
-          <text x="${n.x.toFixed(1)}" y="${n.y.toFixed(1)}" class="${labelCls}">${escapeHtml(n.doc.number)}</text>
-        </g>`;
+        <g class="evt-node-group" data-doc-id="${escapeHtml(n.doc.id)}" style="cursor: pointer;">
+          <rect class="${cls}" x="${x}" y="${y}" width="${NODE_W}" height="${NODE_H}" rx="5"/>
+          <text class="${numCls}" x="${n.x}" y="${n.y - 18}" text-anchor="middle">${n.isCurrent ? '★ ' : ''}${escapeHtml(n.doc.type)} · ${escapeHtml(n.doc.number)}</text>
+          <text class="evt-node-title" x="${n.x}" y="${n.y - 2}" text-anchor="middle">${escapeHtml(titleText)}</text>
+          <text class="evt-node-sub" x="${n.x}" y="${n.y + 18}" text-anchor="middle">${escapeHtml(n.doc.issuedDate ? formatDate(n.doc.issuedDate) : '')}</text>
+        </g>
+      `;
+    }
+
+    let axisMarkup = '';
+    for (const yr of years) {
+      const y = yearY.get(yr);
+      axisMarkup += `<text class="evt-axis-label" x="14" y="${y + 5}">${escapeHtml(yr)}</text>`;
+      axisMarkup += `<line class="evt-axis-line" x1="58" y1="${y}" x2="${SVG_W - 20}" y2="${y}"/>`;
     }
 
     sodoEl.innerHTML = `
-      <h2>Sơ đồ liên kết — ${escapeHtml(doc.shortTitle)}</h2>
-      <div class="sd-legend">
-        <span class="sd-leg-item"><i class="sd-dot sd-luat"></i> Luật / Bộ luật</span>
-        <span class="sd-leg-item"><i class="sd-dot sd-nghidinh"></i> Nghị định</span>
-        <span class="sd-leg-item"><i class="sd-dot sd-thongtu"></i> Thông tư</span>
-        <span class="sd-leg-item"><i class="sd-line"></i> Dẫn chiếu</span>
-        <span class="sd-leg-item"><i class="sd-line sd-line-struct"></i> Thay thế</span>
+      <h2>Cây tiến hóa — ${escapeHtml(doc.shortTitle)}</h2>
+      <div class="evt-meta">
+        <span><strong>${nodes.size - 1}</strong> văn bản trong nhánh</span>
+        <span class="evt-meta-sep">·</span>
+        <span><strong>${uniqEdges.length}</strong> liên kết</span>
       </div>
-      <div class="sd-counts">
-        ${structuralCount ? `<span class="sd-count">${structuralCount} cấu trúc</span>` : ''}
-        ${outgoingCount ? `<span class="sd-count">${outgoingCount} dẫn chiếu (đi)</span>` : ''}
-        ${incomingCount ? `<span class="sd-count">${incomingCount} viện dẫn (đến)</span>` : ''}
-        <span class="sd-count sd-count-edges">${edges.length} liên kết</span>
-      </div>
-      <div class="sd-canvas">
-        <div class="sd-zoom-controls" role="group" aria-label="Phóng to thu nhỏ">
-          <button class="sd-zoom-btn" data-zoom="in" title="Phóng to" aria-label="Phóng to">+</button>
-          <button class="sd-zoom-btn" data-zoom="out" title="Thu nhỏ" aria-label="Thu nhỏ">−</button>
-          <button class="sd-zoom-btn" data-zoom="reset" title="Khôi phục" aria-label="Khôi phục">⌂</button>
-        </div>
-        <svg class="sd-svg" viewBox="0 0 ${SIZE} ${SIZE}" preserveAspectRatio="xMidYMid meet">
-          <g class="sd-zoom" transform="translate(0 0) scale(1)">
-            <g class="sd-edges">${edgeMarkup}</g>
-            <g class="sd-nodes">${nodeMarkup}</g>
-          </g>
+      <div class="evt-wrap">
+        <svg class="evt-svg" viewBox="0 0 ${SVG_W} ${SVG_H}" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <marker id="evt-arr-replace" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L8 4 L0 8 z" fill="#7d1d22"/></marker>
+            <marker id="evt-arr-amend" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L8 4 L0 8 z" fill="#b78a3e"/></marker>
+            <marker id="evt-arr-elevate" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L8 4 L0 8 z" fill="#15a884"/></marker>
+          </defs>
+          <g class="evt-axis">${axisMarkup}</g>
+          <g class="evt-edges">${edgeMarkup}</g>
+          <g class="evt-nodes">${nodeMarkup}</g>
         </svg>
+        <div class="evt-legend">
+          <span><i class="evt-legend-line replace"></i> Thay thế / Hợp nhất</span>
+          <span><i class="evt-legend-line amend"></i> Sửa đổi, bổ sung</span>
+          <span><i class="evt-legend-line elevate"></i> Nâng cấp tier (NĐ → Luật)</span>
+        </div>
       </div>
     `;
 
-    // Click navigation: same as Lược đồ row click — show doc preview.
-    sodoEl.querySelectorAll(".sd-node[data-doc-id]").forEach(g => {
-      g.addEventListener("click", () => {
+    sodoEl.querySelectorAll('.evt-node-group[data-doc-id]').forEach(g => {
+      g.addEventListener('click', () => {
         const id = g.dataset.docId;
-        // Always preview-first per UX spec: every doc click lands on the
-        // spotlight card so the user sees the type-coloured landing before
-        // entering the viewer themselves.
-        showDocPreview(id);
-      });
-    });
-
-    // Zoom + pan. State lives in this closure; the SVG is replaced on the
-    // next renderSodo so listeners die with it. Pointer events (with capture)
-    // give us touch support and clean drag tracking without window listeners.
-    const svg = sodoEl.querySelector(".sd-svg");
-    const zoomG = sodoEl.querySelector(".sd-zoom");
-    let scale = 1, tx = 0, ty = 0;
-    const MIN = 0.4, MAX = 6;
-    const apply = () => zoomG.setAttribute("transform", `translate(${tx.toFixed(1)} ${ty.toFixed(1)}) scale(${scale.toFixed(3)})`);
-    const clientToSvg = (clientX, clientY) => {
-      const rect = svg.getBoundingClientRect();
-      return {
-        x: ((clientX - rect.left) / rect.width) * SIZE,
-        y: ((clientY - rect.top) / rect.height) * SIZE,
-      };
-    };
-    const zoomAt = (svgX, svgY, factor) => {
-      const newScale = Math.max(MIN, Math.min(MAX, scale * factor));
-      // Keep the point under the cursor fixed in screen space
-      const localX = (svgX - tx) / scale;
-      const localY = (svgY - ty) / scale;
-      tx = svgX - localX * newScale;
-      ty = svgY - localY * newScale;
-      scale = newScale;
-      apply();
-    };
-
-    svg.addEventListener("wheel", (e) => {
-      e.preventDefault();
-      const p = clientToSvg(e.clientX, e.clientY);
-      zoomAt(p.x, p.y, e.deltaY < 0 ? 1.15 : 1 / 1.15);
-    }, { passive: false });
-
-    let dragging = false, dragStart = null;
-    svg.addEventListener("pointerdown", (e) => {
-      if (e.target.closest(".sd-node[data-doc-id]")) return; // let click bubble
-      svg.setPointerCapture(e.pointerId);
-      dragging = true;
-      dragStart = { x: e.clientX, y: e.clientY, tx, ty };
-      svg.classList.add("sd-dragging");
-    });
-    svg.addEventListener("pointermove", (e) => {
-      if (!dragging) return;
-      const rect = svg.getBoundingClientRect();
-      const dx = ((e.clientX - dragStart.x) / rect.width) * SIZE;
-      const dy = ((e.clientY - dragStart.y) / rect.height) * SIZE;
-      tx = dragStart.tx + dx;
-      ty = dragStart.ty + dy;
-      apply();
-    });
-    const endDrag = (e) => {
-      if (!dragging) return;
-      dragging = false;
-      svg.classList.remove("sd-dragging");
-      try { svg.releasePointerCapture(e.pointerId); } catch (_) {}
-    };
-    svg.addEventListener("pointerup", endDrag);
-    svg.addEventListener("pointercancel", endDrag);
-
-    sodoEl.querySelectorAll(".sd-zoom-btn").forEach(btn => {
-      btn.addEventListener("click", () => {
-        const action = btn.dataset.zoom;
-        if (action === "reset") { scale = 1; tx = 0; ty = 0; apply(); return; }
-        zoomAt(SIZE / 2, SIZE / 2, action === "in" ? 1.4 : 1 / 1.4);
+        if (id !== doc.id) showDocPreview(id);
       });
     });
   }
@@ -2220,12 +2158,12 @@
   // Reading toolbar
   $("#size-down").addEventListener("click", () => setReadSize(readSize - 1));
   $("#size-up").addEventListener("click", () => setReadSize(readSize + 1));
-  $("#size-reset").addEventListener("click", () => setReadSize(15));
+  $("#size-reset").addEventListener("click", () => setReadSize(12));
   $("#width-narrow").addEventListener("click", () => setWide(false));
   $("#width-wide").addEventListener("click", () => setWide(true));
 
   function setReadSize(px) {
-    readSize = Math.max(13, Math.min(20, px));
+    readSize = Math.max(10, Math.min(20, px));
     localStorage.setItem("vbpl.readSize", String(readSize));
     applyReadSettings();
   }
@@ -2300,13 +2238,30 @@
   // to drop standalone Điều linking). For chained phrases like
   // "khoản 1 và khoản 2 Điều này" the global flag yields two separate
   // matches, each carrying the trailing "Điều này" if present.
+  // Section / chapter citation phrase. Matches:
+  //   "Mục 3 Chương V"
+  //   "Mục 3 Chương V của Luật này"
+  //   "Chương V của Luật số 32/2024/QH15"
+  //   "Chương V" (alone)
+  // Roman numeral is uppercase-only to avoid false positives like "Chương vi
+  // phạm". Trailing doc phrase is excluded from the visible span — the
+  // doc-number / named-code matchers wrap it separately.
+  const SECTION_REF_RE = new RegExp(
+    "(?:(M[ụu]c)\\s+(\\d+)\\s+)?" +
+    "(Ch[ưu]ơng)\\s+([IVXLCDM]+|\\d+)(?![\\p{L}\\d])" +
+    "(?:\\s+(?:của\\s+)?(Luật\\s+này|Luật\\s+số\\s+[0-9]+\\/[0-9]+\\/QH[0-9]+|Nghị\\s*định\\s+số\\s+[0-9]+\\/[0-9]+\\/N[ĐD]-CP|Thông\\s*tư\\s+số\\s+[0-9]+\\/[0-9]+\\/TT-[A-ZĐ]+|Bộ\\s*luật\\s+(?:Hình\\s+sự|Dân\\s+sự|Tố\\s+tụng\\s+(?:dân|hình)\\s+sự|Lao\\s+động)))?",
+    "gu"
+  );
+
   const STRUCT_REF_RE = new RegExp(
     // Optional "[các] điểm L1, L2, ... [và Lk]" prefix
     "(?:(các\\s+)?(điểm)\\s+(" +
       "[" + VN_LETTER + "](?:\\s*,\\s*[" + VN_LETTER + "])*(?:\\s+(?:và|hoặc)\\s+[" + VN_LETTER + "])?" +
     ")\\s+)?" +
-    // Required "khoản N" or "khoản này"
-    "(khoản)\\s+(\\d+|này)" +
+    // Required "khoản N[, N, ... và N]" or "khoản này". Optional "các" before "khoản".
+    "(?:các\\s+)?(khoản)\\s+(" +
+      "\\d+(?:\\s*,\\s*\\d+)*(?:\\s+(?:và|hoặc)\\s+\\d+)?|này" +
+    ")" +
     // Optional " Điều M" or " Điều này"
     "(?:\\s+(Điều)\\s+(\\d+|này))?" +
     // Optional " [của ]<doc-phrase>"
@@ -2426,23 +2381,76 @@
       const docPhraseText = tail.slice(lead[0].length);
       const docInfo = matchLeadingDocPhrase(docPhraseText, ctx);
       if (!docInfo) continue;
-      // Emit one ref per article number found in the anchor span.
-      const numRe = /\d+/g;
-      let nm;
-      numRe.lastIndex = 0;
-      while ((nm = numRe.exec(m[0])) !== null) {
-        const absStart = anchorStart + nm.index;
+      // Emit one ref per "[Điều ]N" chunk. The span covers "Điều N" wherever
+      // the source spells out "Điều", and just the number where it doesn't
+      // (e.g. "Điều 5, 6, 7 Luật ABC" yields "Điều 5", "6", "7").
+      const PIECE_RE = /(Điều\s+)?(\d+)/giu;
+      let pm;
+      PIECE_RE.lastIndex = 0;
+      while ((pm = PIECE_RE.exec(m[0])) !== null) {
+        const startInMatch = pm.index;
+        const endInMatch = pm.index + pm[0].length;
         out.push({
           kind: "article",
           docId: docInfo.docId,
-          articleNumber: nm[0],
+          articleNumber: pm[2],
           clause: null,
           point: null,
-          raw: nm[0],
-          start: absStart,
-          end: absStart + nm[0].length,
+          raw: m[0].slice(startInMatch, endInMatch),
+          start: anchorStart + startInMatch,
+          end: anchorStart + endInMatch,
         });
       }
+    }
+    return out;
+  }
+
+  // Find "[Mục N] Chương X [của <doc>]" phrases and emit a single span per
+  // match. Span covers from "Mục" (or "Chương" if section is omitted) through
+  // the chapter id; the trailing doc phrase is left for the doc-level
+  // matchers.
+  function findSectionRefs(text, ctx) {
+    const out = [];
+    if (!ctx) ctx = {};
+    SECTION_REF_RE.lastIndex = 0;
+    let m;
+    while ((m = SECTION_REF_RE.exec(text)) !== null) {
+      // m[1] = "Mục" (optional), m[2] = section id (digits)
+      // m[3] = "Chương",          m[4] = chapter id (Roman or digits)
+      // m[5] = doc phrase
+      if (m[0].length === 0) { SECTION_REF_RE.lastIndex++; continue; }
+      const hasSection = !!m[1];
+      const phraseStart = m.index;
+      const fullMatch = m[0];
+      const docId = resolveDocPhrase(m[5], ctx.docId);
+
+      const startRe = hasSection ? /M[ụu]c/u : /Ch[ưu]ơng/u;
+      const startSearch = fullMatch.match(startRe);
+      const spanStartInMatch = startSearch ? startSearch.index : 0;
+
+      const escape = (s) => s.replace(/[.+?^${}()|[\]\\]/g, "\\$&");
+      const endRe = new RegExp("Ch[ưu]ơng\\s+" + escape(m[4]), "u");
+      const endSearch = fullMatch.match(endRe);
+      const spanEndInMatch = endSearch
+        ? endSearch.index + endSearch[0].length
+        : fullMatch.length;
+
+      const absStart = phraseStart + spanStartInMatch;
+      const absEnd = phraseStart + spanEndInMatch;
+      if (absEnd <= absStart) continue;
+
+      out.push({
+        kind: "section",
+        docId,
+        chapter: m[4].toUpperCase(),
+        section: hasSection ? m[2] : null,
+        articleNumber: null,
+        clause: null,
+        point: null,
+        raw: text.slice(absStart, absEnd),
+        start: absStart,
+        end: absEnd,
+      });
     }
     return out;
   }
@@ -2460,99 +2468,76 @@
       const hasPoint = !!m[2];
       const hasClause = !!m[4]; // always true with the new anchor regex
       const hasArticle = !!m[6];
-      // Defensive: skip empty matches if the engine ever emits one
       if (!hasClause) {
         if (m[0].length === 0) STRUCT_REF_RE.lastIndex++;
         continue;
       }
 
       const phraseStart = m.index;
-      const phraseEnd = m.index + m[0].length;
+      const fullMatch = m[0];
       const docId = resolveDocPhrase(m[8], ctx.docId);
-
-      // Resolve article: explicit id > "này" > current article from context
       const resolvedArt = hasArticle
         ? (m[7] === "này" ? ctx.article : m[7])
         : ctx.article;
 
-      // Resolve clause: explicit > "này" > current clause from context
-      const resolvedClause = m[5] === "này" ? ctx.clause : m[5];
+      // Parse the clause group, which may be a list ("2, 4, 6 và 18") or "này".
+      let clauseList;
+      if (m[5] === "này") {
+        clauseList = ctx.clause ? [String(ctx.clause)] : null;
+      } else {
+        clauseList = m[5].match(/\d+/g);
+      }
+      if (!clauseList || !clauseList.length) continue;
 
-      let cursor = phraseStart;
+      // Emit ONE consolidated span covering the full structured phrase
+      // ("[các] [điểm a, b] khoản 2, 4, 6, 7, 8, 9, 10, 12, 13, 14 và 18 Điều 70").
+      // The trailing doc phrase ("của Luật này", "của Luật số 32/2024/QH15") is
+      // deliberately excluded — it already gets its own hover via the
+      // doc-number / named-code matchers.
+      const startRe = hasPoint
+        ? (m[1] ? /(?:các\s+)?điểm/iu : /điểm/iu)
+        : /(?:các\s+)?khoản/iu;
+      const startSearch = fullMatch.match(startRe);
+      const spanStartInMatch = startSearch ? startSearch.index : 0;
 
-      // Wrap each letter in the points list (e.g. "a", "b", "c", "đ").
-      // Word boundaries skip letters that are part of "và" / "hoặc" — those
-      // are the conjunctions joining the list, not list items.
+      const escape = (s) => s.replace(/[.+?^${}()|[\]\\]/g, "\\$&");
+      let spanEndInMatch;
+      if (hasArticle) {
+        const endRe = new RegExp("Điều\\s+" + escape(m[7]), "iu");
+        const endSearch = fullMatch.match(endRe);
+        spanEndInMatch = endSearch ? endSearch.index + endSearch[0].length : fullMatch.length;
+      } else {
+        // No "Điều X" suffix — span ends at the last clause id (or "này")
+        const tail = m[5];
+        const idx = fullMatch.lastIndexOf(tail);
+        spanEndInMatch = idx >= 0 ? idx + tail.length : fullMatch.length;
+      }
+
+      const absStart = phraseStart + spanStartInMatch;
+      const absEnd = phraseStart + spanEndInMatch;
+      if (absEnd <= absStart) continue;
+
+      // Carry the point letter only when exactly one is named ("điểm a").
+      // For lists like "điểm a, b" we keep the consolidated span but drop the
+      // point qualifier so the popup shows clause + article only.
+      let point = null;
       if (hasPoint) {
-        const lettersStr = m[3] || "";
-        const lettersStartInText = text.indexOf(lettersStr, phraseStart);
-        if (lettersStartInText >= 0) {
-          // Use Unicode-property lookarounds so the conjunction "và" / "hoặc"
-          // (whose "v"/"h"/"o" are in [VN_LETTER] but are followed by accented
-          // letters that aren't) doesn't get split into spurious single-letter
-          // refs. \b doesn't help here because JS regex \b doesn't see "à",
-          // "ặ", etc. as word chars without \p{L}.
-          const letterRe = new RegExp("(?<!\\p{L})[" + VN_LETTER + "](?!\\p{L})", "giu");
-          let lm;
-          while ((lm = letterRe.exec(lettersStr)) !== null) {
-            const absStart = lettersStartInText + lm.index;
-            out.push({
-              kind: "article",
-              docId,
-              articleNumber: resolvedArt,
-              clause: resolvedClause,
-              point: lm[0].toLowerCase(),
-              raw: lm[0],
-              start: absStart,
-              end: absStart + lm[0].length,
-            });
-          }
-          cursor = lettersStartInText + lettersStr.length;
-        }
+        const letterRe = new RegExp("(?<!\\p{L})[" + VN_LETTER + "](?!\\p{L})", "giu");
+        const letters = (m[3] || "").match(letterRe) || [];
+        if (letters.length === 1) point = letters[0].toLowerCase();
       }
 
-      // Wrap the clause id (number or "này"). Only emit if it's resolvable
-      // (resolvedClause may be null if "này" is used outside any clause).
-      if (resolvedClause) {
-        const clauseTok = m[5];
-        const clauseRe = new RegExp("\\b" + clauseTok.replace(/[.+?^${}()|[\]\\]/g, "\\$&") + "\\b", "u");
-        const cIdx = text.slice(cursor, phraseEnd).search(clauseRe);
-        if (cIdx >= 0) {
-          const absStart = cursor + cIdx;
-          out.push({
-            kind: "article",
-            docId,
-            articleNumber: resolvedArt,
-            clause: resolvedClause,
-            point: null,
-            raw: clauseTok,
-            start: absStart,
-            end: absStart + clauseTok.length,
-          });
-          cursor = absStart + clauseTok.length;
-        }
-      }
-
-      // Wrap the article id (number or "này") if present in the phrase.
-      if (hasArticle && resolvedArt) {
-        const artTok = m[7];
-        const artRe = new RegExp("\\b" + artTok.replace(/[.+?^${}()|[\]\\]/g, "\\$&") + "\\b", "u");
-        const aIdx = text.slice(cursor, phraseEnd).search(artRe);
-        if (aIdx >= 0) {
-          const absStart = cursor + aIdx;
-          out.push({
-            kind: "article",
-            docId,
-            articleNumber: resolvedArt,
-            clause: null,
-            point: null,
-            raw: artTok,
-            start: absStart,
-            end: absStart + artTok.length,
-          });
-          cursor = absStart + artTok.length;
-        }
-      }
+      out.push({
+        kind: "article",
+        docId,
+        articleNumber: resolvedArt,
+        clause: clauseList[0],
+        clauses: clauseList,
+        point,
+        raw: text.slice(absStart, absEnd),
+        start: absStart,
+        end: absEnd,
+      });
     }
     return out;
   }
@@ -2608,7 +2593,10 @@
         if (m.docId) span.dataset.docId = m.docId;
         if (m.articleNumber) span.dataset.article = m.articleNumber;
         if (m.clause) span.dataset.clause = m.clause;
+        if (m.clauses && m.clauses.length > 1) span.dataset.clauses = m.clauses.join(",");
         if (m.point) span.dataset.point = m.point;
+        if (m.chapter) span.dataset.chapter = m.chapter;
+        if (m.section) span.dataset.section = m.section;
         span.dataset.raw = m.raw;
         const resolved = resolveReference(m, contextDoc);
         if (!resolved.found) span.classList.add("missing");
@@ -2655,6 +2643,11 @@
       if (found.some(other => !(other.end <= r.start || other.start >= r.end))) continue;
       found.push(r);
     }
+    // Section / chapter citations ("Mục 3 Chương V", "Chương XV của Luật số ...").
+    for (const r of findSectionRefs(text, ctx || {})) {
+      if (found.some(other => !(other.end <= r.start || other.start >= r.end))) continue;
+      found.push(r);
+    }
     found.sort((a, b) => a.start - b.start || (b.end - b.start) - (a.end - a.start));
     const filtered = []; let lastEnd = -1;
     for (const r of found) {
@@ -2673,6 +2666,69 @@
       if (!targetDoc) return { found: false, doc: null, article: null };
       const art = H.findArticle(targetDoc, ref.articleNumber);
       return { found: !!art, doc: targetDoc, article: art };
+    }
+    if (ref.kind === "section") {
+      if (!targetDoc) return { found: false, doc: null, chapter: null, anchorArticle: null };
+      const wantCh = String(ref.chapter || "").toUpperCase();
+      const chapter = (targetDoc.chapters || []).find(ch => {
+        const mm = String(ch.title || "").toUpperCase().match(/CH[ƯU]ƠNG\s+([IVXLCDM]+|\d+)\b/u);
+        return mm && mm[1] === wantCh;
+      });
+      if (!chapter) return { found: false, doc: targetDoc, chapter: null, anchorArticle: null };
+      const arts = chapter.articles || [];
+      if (!ref.section) {
+        return {
+          found: true,
+          doc: targetDoc,
+          chapter,
+          anchorArticle: arts[0] || null,
+          sectionSubtitle: null,
+        };
+      }
+      // Mục headers are emitted by the upstream parser as a line like
+      // "Mục N ..." that gets glued onto the END of the body of the LAST
+      // article of the PREVIOUS section. So scanning chapter article bodies
+      // for the marker "Mục N" tells us which article precedes the section,
+      // and the section's first article is the NEXT one in the list. Mục 1
+      // typically has no marker — fall back to the chapter's first article.
+      const sectId = String(ref.section);
+      const secRe = new RegExp("(?:^|\\n)\\s*M[ụu]c\\s+" + sectId + "\\b[^\\n]*", "u");
+      const anyMarkerRe = /(?:^|\n)\s*M[ụu]c\s+\d+\b/u;
+      let preIdx = -1;
+      let sectionSubtitle = null;
+      for (let i = 0; i < arts.length; i++) {
+        const mm = (arts[i].body || "").match(secRe);
+        if (mm) {
+          sectionSubtitle = mm[0].replace(/^\s*M[ụu]c\s+\d+\.?\s*/u, "").trim();
+          preIdx = i;
+          break;
+        }
+      }
+      let firstIdx, lastIdx;
+      if (preIdx >= 0) {
+        firstIdx = preIdx + 1;
+      } else if (sectId === "1") {
+        firstIdx = 0;
+      } else {
+        return { found: false, doc: targetDoc, chapter, anchorArticle: null };
+      }
+      // Section ends at the article just before the NEXT Mục marker.
+      lastIdx = arts.length - 1;
+      for (let j = firstIdx; j < arts.length; j++) {
+        if (anyMarkerRe.test(arts[j].body || "")) { lastIdx = j; break; }
+      }
+      const anchor = arts[firstIdx] || null;
+      if (!anchor) return { found: false, doc: targetDoc, chapter, anchorArticle: null };
+      return {
+        found: true,
+        doc: targetDoc,
+        chapter,
+        anchorArticle: anchor,
+        sectionSubtitle,
+        sectionFirst: arts[firstIdx] || null,
+        sectionLast: arts[lastIdx] || null,
+        sectionCount: lastIdx - firstIdx + 1,
+      };
     }
     return { found: false };
   }
@@ -2732,11 +2788,14 @@
       kind: el.dataset.kind, docId: el.dataset.docId || null,
       articleNumber: el.dataset.article || null,
       clause: el.dataset.clause || null,
+      clauses: el.dataset.clauses ? el.dataset.clauses.split(",") : null,
       point: el.dataset.point || null,
+      chapter: el.dataset.chapter || null,
+      section: el.dataset.section || null,
       raw: el.dataset.raw || el.textContent
     };
     const resolved = resolveReference(ref, currentDoc);
-    let sourceLabel = "", title = "", body = "", metaLeft = "", canOpenDoc = false, openDocId = null;
+    let sourceLabel = "", title = "", body = "", metaLeft = "", canOpenDoc = false, openDocId = null, openAnchor = "";
     let citation = ref.raw;
 
     if (!resolved.found) {
@@ -2767,10 +2826,27 @@
         title = `${art.number}. ${art.heading}`;
         body = formatArticleExcerpt(art, ref);
         const parts = [tdoc.shortTitle];
-        if (ref.clause) parts.push(`Khoản ${ref.clause}`);
+        if (ref.clauses && ref.clauses.length > 1) parts.push(`Khoản ${ref.clauses.join(", ")}`);
+        else if (ref.clause) parts.push(`Khoản ${ref.clause}`);
         if (ref.point) parts.push(`Điểm ${ref.point}`);
         metaLeft = parts.join(" · ");
         citation = `${art.number} ${tdoc.type} ${tdoc.number}`;
+        openAnchor = "art-" + ref.articleNumber;
+      } else if (ref.kind === "section" && resolved.chapter) {
+        const titleParts = [];
+        if (ref.section) titleParts.push(`Mục ${ref.section}`);
+        titleParts.push(`Chương ${ref.chapter}`);
+        title = titleParts.join(" ");
+        const subtitle = (ref.section ? resolved.sectionSubtitle : resolved.chapter.subtitle) || resolved.chapter.subtitle || "";
+        const allArts = resolved.chapter.articles || [];
+        const first = ref.section ? resolved.sectionFirst : allArts[0];
+        const last = ref.section ? resolved.sectionLast : allArts[allArts.length - 1];
+        const count = ref.section ? resolved.sectionCount : allArts.length;
+        const range = (first && last) ? `${first.number} – ${last.number}` : "";
+        body = subtitle + (range ? `\n${range} (${count} điều)` : "");
+        metaLeft = tdoc.shortTitle;
+        citation = `${title} ${tdoc.type} ${tdoc.number}`;
+        if (resolved.anchorArticle) openAnchor = resolved.anchorArticle.id;
       } else {
         title = tdoc.title;
         body = `${tdoc.shortTitle} — ${tdoc.issuer}.\nBan hành: ${formatDate(tdoc.issuedDate)} · Hiệu lực: ${formatDate(tdoc.effectiveDate)}\nTình trạng: ${tdoc.status}`;
@@ -2799,7 +2875,6 @@
       <div class="pop-body">${escapeHtml(body)}</div>
       <div class="pop-meta">
         <span>${escapeHtml(metaLeft)}</span>
-        ${canOpenDoc ? `<button class="pop-link" data-open="${escapeHtml(openDocId)}" data-anchor="${ref.kind === "article" && resolved.article ? "art-" + ref.articleNumber : ""}">Xem văn bản →</button>` : ""}
       </div>
     `;
     refPopup.classList.remove("hidden");
@@ -2819,45 +2894,31 @@
       e.stopPropagation();
       hidePopup(true);
     });
-    const openBtn = refPopup.querySelector("[data-open]");
-    if (openBtn) {
-      openBtn.addEventListener("click", () => {
-        const id = openBtn.dataset.open;
-        const anchor = openBtn.dataset.anchor;
-        hidePopup(true);
-        openDoc(id);
-        if (anchor) {
-          setTimeout(() => {
-            const el = document.getElementById(anchor);
-            if (el) {
-              el.scrollIntoView({ behavior: "smooth", block: "start" });
-              el.classList.remove("flash");
-              void el.offsetWidth;
-              el.classList.add("flash");
-            }
-          }, 100);
-        }
-      });
-    }
   }
 
   function formatArticleExcerpt(article, ref) {
-    if (ref.clause) {
+    const clauses = (ref.clauses && ref.clauses.length) ? ref.clauses : (ref.clause ? [ref.clause] : []);
+    if (clauses.length) {
       const lines = article.body.split(/\r?\n/);
-      const matchIdx = lines.findIndex(l => new RegExp("^" + ref.clause + "\\.").test(l.trim()));
-      if (matchIdx >= 0) {
+      const chunks = [];
+      for (const cl of clauses) {
+        const matchIdx = lines.findIndex(l => new RegExp("^" + cl + "\\.").test(l.trim()));
+        if (matchIdx < 0) continue;
         const buf = [lines[matchIdx]];
         for (let i = matchIdx + 1; i < lines.length; i++) {
           if (/^\d+\./.test(lines[i].trim())) break;
           buf.push(lines[i]);
         }
         let excerpt = buf.join("\n").trim();
-        if (ref.point) {
-          const m = excerpt.match(new RegExp("(^|\\n)\\s*" + ref.point + "\\)[^\\n]*", "i"));
-          if (m) return m[0].trim();
+        if (clauses.length === 1 && ref.point) {
+          const pm = excerpt.match(new RegExp("(^|\\n)\\s*" + ref.point + "\\)[^\\n]*", "i"));
+          if (pm) { chunks.push(pm[0].trim()); continue; }
         }
-        return excerpt;
+        // Cap each clause to keep multi-clause popups readable.
+        if (clauses.length > 1 && excerpt.length > 240) excerpt = excerpt.slice(0, 240) + "…";
+        chunks.push(excerpt);
       }
+      if (chunks.length) return chunks.join("\n\n");
     }
     const text = article.body.replace(/\s+/g, " ").trim();
     return text.length > 480 ? text.slice(0, 480) + "…" : text;
@@ -2928,6 +2989,44 @@
   if (utilDate) utilDate.textContent = formatDate(new Date().toISOString().slice(0, 10));
   const utilStatus = $("#util-status");
   if (utilStatus) utilStatus.textContent = `Đã kết nối · ${formatDate(new Date().toISOString().slice(0, 10))}`;
+
+  // Re-scan the corpus and refresh the cross-reference index. Walks every
+  // article body, runs the citation parser, counts resolved/missing refs,
+  // re-renders the landing UI, and shows a toast with the totals.
+  function runRefreshIndex() {
+    let totalRefs = 0, resolvedRefs = 0, missingRefs = 0;
+    const docsWithRefs = new Set();
+    for (const id of Object.keys(window.LEGAL_DB)) {
+      const doc = window.LEGAL_DB[id];
+      let docHasRef = false;
+      for (const ch of doc.chapters || []) {
+        for (const a of ch.articles || []) {
+          const refs = findReferencesInText(a.body || "", { docId: doc.id });
+          if (refs.length) docHasRef = true;
+          totalRefs += refs.length;
+          for (const r of refs) {
+            const res = resolveReference(r, doc);
+            if (res.found) resolvedRefs++; else missingRefs++;
+          }
+        }
+      }
+      if (docHasRef) docsWithRefs.add(doc.id);
+    }
+    const now = new Date();
+    const hh = String(now.getHours()).padStart(2, "0");
+    const mm = String(now.getMinutes()).padStart(2, "0");
+    if (utilDate) utilDate.textContent = `${formatDate(now.toISOString().slice(0, 10))} · ${hh}:${mm}`;
+    renderLandingContent();
+    const tail = missingRefs ? ` · ${missingRefs} chưa khớp` : "";
+    showToast(`Đã cập nhật ${docsWithRefs.size} văn bản · ${totalRefs} liên kết${tail}`);
+  }
+  const utilRefresh = $("#util-refresh");
+  if (utilRefresh) {
+    utilRefresh.addEventListener("click", (e) => {
+      e.preventDefault();
+      runRefreshIndex();
+    });
+  }
 
   renderLandingContent();
 })();
