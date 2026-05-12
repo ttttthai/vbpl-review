@@ -3646,6 +3646,11 @@
 
   // ===== References =====
   const DOC_NUMBER_RE = /(Luật|Nghị\s*định|Thông\s*tư|Bộ\s*luật)(?:\s+số)?\s+([0-9]+\/[0-9]+\/(?:QH[0-9]+|N[ĐD][- ]?CP|TT[- ]?[A-ZĐ]+))/giu;
+  // Quyết định citations use a different id pattern (NUM/QĐ-AUTH, no year
+  // segment in the middle). The accompanying "ngày D tháng M năm YYYY"
+  // disambiguates which yearly variant we're pointing at — our DB stores
+  // QĐs with the year as a suffix (e.g. "262/QĐ-TTg-2024").
+  const QD_DOC_NUMBER_RE = /(Quyết\s*định)(?:\s+số)?\s+(\d+\s*\/\s*Q[ĐD][\s-]*[A-Za-zĐ]+)(?:\s+ngày\s+(\d{1,2})\s+tháng\s+(\d{1,2})\s+năm\s+(\d{4}))?/giu;
   // Allow commas inside the document name segment — Vietnamese laws often have
   // them (e.g. "Luật Phòng, chống rửa tiền số 14/2022/QH15").
   const NAMED_DOC_NUMBER_RE = /(Luật|Bộ\s*luật|Nghị\s*định|Thông\s*tư)\s+(?:[^.;\n\/]{1,80}?)\s+số\s+([0-9]+\/[0-9]+\/(?:QH[0-9]+|N[ĐD][- ]?CP|TT[- ]?[A-ZĐ]+))/giu;
@@ -3736,6 +3741,25 @@
       .replace(/ND-CP/gi, "NĐ-CP")
       .replace(/NĐ\s*-\s*CP/gi, "NĐ-CP")
       .replace(/TT\s*-\s*/gi, "TT-");
+  }
+
+  // Normalize a Quyết định number — preserves the original casing of the
+  // authority suffix (TTg, BCT, NHNN) since our DB stores them mixed-case.
+  function normalizeQdNumber(raw) {
+    return raw.replace(/\s+/g, "")
+      .replace(/QD/g, "QĐ")
+      .replace(/Q\s*Đ\s*-\s*/g, "QĐ-");
+  }
+
+  // Resolve a Quyết định reference to an actual DB id. The text reference
+  // gives the doc-number form (e.g. "262/QĐ-TTg") plus optionally a date;
+  // the DB stores QĐs with year as a suffix ("262/QĐ-TTg-2024"). We try
+  // year-suffixed first, then bare; if none resolves, return the
+  // year-suffixed candidate anyway so the popup can report a clean miss.
+  function resolveQdDocId(base, year) {
+    if (year && H.findDoc(`${base}-${year}`)) return `${base}-${year}`;
+    if (H.findDoc(base)) return base;
+    return year ? `${base}-${year}` : base;
   }
 
   // Parse an article body into { intro, clauses: [{ number, text, points: [{ letter, text }] }] }.
@@ -4020,6 +4044,10 @@
         curArticle = m ? m[1] : null;
         curClause = null;
         curPoint = null;
+        // Annotate the heading too — some docs (e.g. QĐ 768/QĐ-TTg-2025 Điều 3)
+        // pack their entire substantive content into the heading instead of
+        // a separate body, so skipping it loses real citations.
+        targets.push({ el: node, ctx: { docId: contextDoc ? contextDoc.id : null, article: curArticle, clause: curClause, point: curPoint } });
         continue;
       }
       if (node.tagName === "P") {
@@ -4082,6 +4110,15 @@
     while ((m = DOC_NUMBER_RE.exec(text)) !== null) {
       if (found.some(r => !(r.end <= m.index || r.start >= m.index + m[0].length))) continue;
       found.push({ kind: "doc", docId: normalizeDocNumber(m[2]), articleNumber: null, clause: null, point: null, raw: m[0], start: m.index, end: m.index + m[0].length });
+    }
+    // Quyết định references — separate pass because their id format differs.
+    QD_DOC_NUMBER_RE.lastIndex = 0;
+    while ((m = QD_DOC_NUMBER_RE.exec(text)) !== null) {
+      if (found.some(r => !(r.end <= m.index || r.start >= m.index + m[0].length))) continue;
+      const base = normalizeQdNumber(m[2]);
+      const year = m[5] || null;
+      const docId = resolveQdDocId(base, year);
+      found.push({ kind: "doc", docId, articleNumber: null, clause: null, point: null, raw: m[0], start: m.index, end: m.index + m[0].length });
     }
     for (const { re, docId } of NAMED_CODE_PATTERNS) {
       re.lastIndex = 0;
