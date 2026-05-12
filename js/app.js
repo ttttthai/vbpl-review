@@ -929,7 +929,7 @@
     if (searchInput) searchInput.value = "";
     if (searchClear) searchClear.classList.remove("visible");
     if (suggestions) suggestions.innerHTML = "";
-    setCrumbs([{ label: "Trang chủ", action: goHome }, { label: "Overview", current: true }]);
+    setCrumbs([{ label: "Trang chủ", action: goHome }, { label: "Hệ thống", current: true }]);
     window.scrollTo({ top: 0, behavior: "smooth" });
     renderOverviewContent();
   }
