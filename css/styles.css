@@ -2045,7 +2045,30 @@ body.preview-mode .industries { display: none; }
 }
 .evt-meta strong { color: var(--ink); font-weight: 700; }
 .evt-meta-sep { opacity: 0.4; }
-.evt-wrap { padding: 2px 0; overflow-x: auto; }
+.evt-zoom-controls {
+  display: inline-flex; align-items: center; gap: 4px;
+  margin-left: auto;
+}
+.evt-zoom-btn {
+  border: 1px solid var(--line); background: white;
+  width: 22px; height: 22px;
+  font-family: "Inter", sans-serif; font-size: 13px; font-weight: 700;
+  color: var(--ink-soft); cursor: pointer;
+  border-radius: 3px;
+  padding: 0; line-height: 1;
+  display: inline-flex; align-items: center; justify-content: center;
+}
+.evt-zoom-btn:hover { background: var(--paper-2); color: var(--ink); }
+.evt-zoom-pct {
+  font-family: "Inter", sans-serif; font-size: 10.5px;
+  font-weight: 600; color: var(--ink-mute);
+  min-width: 32px; text-align: right;
+  margin-left: 2px;
+  font-feature-settings: "tnum";
+}
+.evt-meta { justify-content: flex-start; }
+
+.evt-wrap { padding: 2px 0; overflow-x: auto; overflow-y: hidden; }
 .evt-svg { width: 100%; max-width: 900px; display: block; margin: 0 auto; }
 .evt-axis-label { font-family: "Inter", sans-serif; font-size: 11px; font-weight: 700; fill: var(--ink-mute); }
 .evt-axis-line { stroke: var(--line); stroke-dasharray: 3 4; }

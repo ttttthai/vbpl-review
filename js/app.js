@@ -2039,22 +2039,16 @@
     }
     visit(doc.id);
 
-    // When the spotlight is a master Luật, also include the evolution chains
-    // of every doc that implements it (or any doc in the master's lineage).
-    // We only include implementing docs that ARE part of a chain (have
-    // replaces/replacedBy/amends linkages); standalone implementing docs
-    // already live in the Hệ thống tab and would just clutter the tree.
+    // When the spotlight is a master Luật, include every doc that implements
+    // it (the master and its lineage). Standalone implementing docs without
+    // chain linkages render as isolated nodes — still informative because
+    // they show the full ecosystem at a glance.
     if (isLawTier(doc.typeKey)) {
       const masterChain = new Set(nodes.keys());
       for (const other of Object.values(DB)) {
         const imps = other.implements || [];
         if (!imps.some(id => masterChain.has(id))) continue;
-        const hasChain = (other.replaces && other.replaces.length) ||
-                         (other.amends && other.amends.length) ||
-                         (other.replacedBy && (Array.isArray(other.replacedBy) ? other.replacedBy.length : true)) ||
-                         replacedByMap.has(other.id) ||
-                         amendedByMap.has(other.id);
-        if (hasChain) visit(other.id);
+        visit(other.id);
       }
     }
 
@@ -2093,17 +2087,26 @@
     }
     const years = [...byYear.keys()].sort();
 
-    // Layout dimensions. 5 columns let same-year clusters (e.g. 5+ 2025 docs
-    // for the electricity ecosystem) fit without overlapping. Leftmost column
-    // starts at 130 to leave room for the year-axis labels on the far left.
+    // Layout dimensions. 5 columns; when a year has >5 docs, wraps to
+    // sub-rows within that year band (Y_GAP_ROW per row).
     const NODE_W = 150, NODE_H = 56;
-    const Y_GAP = 92;
+    const Y_GAP_ROW = 70; // vertical step per sub-row within a year
+    const Y_GAP_MIN = 92; // minimum gap between year bands
     const COLS = [130, 290, 450, 610, 770];
     const X_CENTER = COLS[2];
     const SVG_W = 870;
+    // Compute Y for each year, dynamically allocating space for crowded years.
     const yearY = new Map();
-    years.forEach((yr, i) => yearY.set(yr, 90 + i * Y_GAP));
-    const SVG_H = years.length * Y_GAP + 90;
+    const yearRows = new Map(); // year → rows used
+    let cursor = 90;
+    for (const yr of years) {
+      yearY.set(yr, cursor);
+      const count = byYear.get(yr).length;
+      const rows = Math.max(1, Math.ceil(count / COLS.length));
+      yearRows.set(yr, rows);
+      cursor += Math.max(Y_GAP_MIN, rows * Y_GAP_ROW + 20);
+    }
+    const SVG_H = cursor + 20;
 
     // Identify the master's vertical spine — the chain of `replaces` /
     // `amends` linking the spotlight doc to its ancestors. Spine nodes
@@ -2150,27 +2153,45 @@
     const clusterCol = new Map();
     for (let i = 0; i < clusterIdx; i++) clusterCol.set(i, sideOrder[i % sideOrder.length]);
 
-    // Now assign positions.
-    for (const n of nodeList) {
-      const yr = (n.doc.issuedDate || '').slice(0, 4) || '?';
-      n.y = yearY.get(yr);
-      if (spine.has(n.doc.id)) {
-        n.x = X_CENTER;
-      } else {
-        n.x = clusterCol.get(clusterOf.get(n.doc.id)) ?? COLS[1];
+    // Assign positions. For each year band, fill column slots in row-major
+    // order: spine node (if any) → cluster columns → wrap to a new sub-row
+    // when all columns at the current row are taken.
+    for (const [yr, group] of byYear) {
+      const baseY = yearY.get(yr);
+      const slots = new Map(); // key "col:row" → node
+      // Spine node first (gets center, row 0)
+      for (const n of group) {
+        if (spine.has(n.doc.id)) {
+          n.x = X_CENTER;
+          n.y = baseY;
+          slots.set(`${X_CENTER}:0`, n);
+        }
       }
-    }
-
-    // If two nodes ended up at the same (x, y), spread them.
-    const slotMap = new Map();
-    for (const n of nodeList) {
-      const key = `${n.x}:${n.y}`;
-      if (!slotMap.has(key)) { slotMap.set(key, n); continue; }
-      // collision — push this node to next free column at same year
-      const taken = new Set();
-      for (const m of nodeList) if (m.y === n.y) taken.add(m.x);
-      const free = COLS.find(c => !taken.has(c));
-      if (free !== undefined) { n.x = free; }
+      // Non-spine nodes — try cluster-preferred column first, then any free
+      for (const n of group) {
+        if (spine.has(n.doc.id)) continue;
+        const preferred = clusterCol.get(clusterOf.get(n.doc.id)) ?? COLS[1];
+        let placed = false;
+        for (let row = 0; row < 10 && !placed; row++) {
+          const key = `${preferred}:${row}`;
+          if (!slots.has(key)) {
+            n.x = preferred; n.y = baseY + row * Y_GAP_ROW;
+            slots.set(key, n); placed = true;
+            break;
+          }
+        }
+        if (placed) continue;
+        // Fallback: any free col at any row
+        for (let row = 0; row < 10 && !placed; row++) {
+          for (const c of COLS) {
+            const key = `${c}:${row}`;
+            if (!slots.has(key)) {
+              n.x = c; n.y = baseY + row * Y_GAP_ROW;
+              slots.set(key, n); placed = true; break;
+            }
+          }
+        }
+      }
     }
 
     // Count parents per child to detect merges (multi-parent → "HỢP NHẤT")
@@ -2247,6 +2268,13 @@
         <span><strong>${nodes.size - 1}</strong> văn bản trong nhánh</span>
         <span class="evt-meta-sep">·</span>
         <span><strong>${uniqEdges.length}</strong> liên kết</span>
+        <span class="evt-meta-sep">·</span>
+        <span class="evt-zoom-controls">
+          <button class="evt-zoom-btn" data-zoom="out" title="Thu nhỏ">−</button>
+          <button class="evt-zoom-btn" data-zoom="reset" title="Đặt lại">⌂</button>
+          <button class="evt-zoom-btn" data-zoom="in" title="Phóng to">+</button>
+          <span class="evt-zoom-pct">100%</span>
+        </span>
       </div>
       <div class="evt-wrap">
         <svg class="evt-svg" viewBox="0 0 ${SVG_W} ${SVG_H}" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
@@ -2273,6 +2301,39 @@
         if (id !== doc.id) showDocPreview(id);
       });
     });
+
+    // Zoom controls — scale the SVG via CSS transform on the wrap.
+    const wrap = sodoEl.querySelector('.evt-wrap');
+    const svg = sodoEl.querySelector('.evt-svg');
+    const pctEl = sodoEl.querySelector('.evt-zoom-pct');
+    let scale = 1;
+    function applyZoom() {
+      if (!svg) return;
+      svg.style.transformOrigin = '0 0';
+      svg.style.transform = `scale(${scale})`;
+      svg.style.width = `${100 * scale}%`;
+      if (pctEl) pctEl.textContent = `${Math.round(scale * 100)}%`;
+    }
+    sodoEl.querySelectorAll('.evt-zoom-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const a = btn.dataset.zoom;
+        if (a === 'in') scale = Math.min(3, scale + 0.2);
+        else if (a === 'out') scale = Math.max(0.4, scale - 0.2);
+        else scale = 1;
+        applyZoom();
+      });
+    });
+    // Ctrl/Cmd + wheel = zoom; plain wheel = page scroll (unchanged).
+    if (wrap) {
+      wrap.addEventListener('wheel', (e) => {
+        if (!(e.ctrlKey || e.metaKey)) return;
+        e.preventDefault();
+        const delta = e.deltaY < 0 ? 0.1 : -0.1;
+        scale = Math.max(0.4, Math.min(3, scale + delta));
+        applyZoom();
+      }, { passive: false });
+    }
   }
 
   // Hệ thống văn bản — hierarchical pyramid view. Walks the `implements`
