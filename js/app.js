@@ -2139,10 +2139,10 @@
       return (a.start || "").localeCompare(b.start || "");
     });
 
-    let html = `<h2>Lược đồ văn bản — ${escapeHtml(doc.shortTitle)}</h2>`;
+    let html = `<h2>Niên biểu hiệu lực — ${escapeHtml(doc.shortTitle)}</h2>`;
 
     if (items.length === 0) {
-      html += `<div class="ld-empty">Không có văn bản liên quan để hiển thị trên lược đồ.</div>`;
+      html += `<div class="ld-empty">Không có văn bản liên quan để hiển thị trên niên biểu.</div>`;
       luocdoEl.innerHTML = html;
       return;
     }
