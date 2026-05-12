@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" />
-  <link rel="stylesheet" href="css/styles.css?v=107" />
+  <link rel="stylesheet" href="css/styles.css?v=108" />
 </head>
 <body>
 
@@ -122,35 +122,51 @@
     </div>
   </main>
 
-  <!-- ===== OVERVIEW ===== -->
+  <!-- ===== OVERVIEW (legal hierarchy pyramid) ===== -->
   <main id="overview" class="overview-page hidden">
     <div class="container">
       <header class="overview-head">
-        <h1>Tổng quan hệ thống pháp luật</h1>
-        <p class="overview-sub" id="overview-sub">Bấm vào bất kỳ thẻ nào để mở văn bản tương ứng.</p>
+        <h1>Hệ thống pháp luật Việt Nam</h1>
+        <p class="overview-sub">Tháp văn bản theo thứ bậc — từ Hiến pháp (cha đẻ của mọi luật) xuống các tầng văn bản pháp luật.</p>
       </header>
 
-      <section class="industries">
-        <header class="industries-head">
-          <h2>12 Lĩnh vực pháp lý chính</h2>
-          <p class="industries-sub">Mỗi lĩnh vực gắn với một Luật chủ chốt.</p>
-        </header>
-        <div class="industry-grid" id="ov-industry-grid"></div>
+      <!-- TIER 1 — Constitution -->
+      <section class="hp-section ov-tier" data-tier="1">
+        <div class="ov-tier-label">
+          <span class="ov-tier-num">I</span>
+          <span class="ov-tier-name">HIẾN PHÁP — Luật cơ bản của Nhà nước</span>
+        </div>
+        <div class="hp-row" id="ov-hp-row"></div>
       </section>
+      <div class="ov-connector" aria-hidden="true"></div>
 
-      <section class="boluat-section">
-        <header class="industries-head">
-          <h2>Bộ luật</h2>
-          <p class="industries-sub" id="ov-boluat-sub">Tất cả Bộ luật trong CSDL.</p>
-        </header>
+      <!-- TIER 2 — Bộ luật + Luật chính (passed by Quốc hội) -->
+      <section class="boluat-section ov-tier" data-tier="2">
+        <div class="ov-tier-label">
+          <span class="ov-tier-num">II</span>
+          <span class="ov-tier-name">BỘ LUẬT — Văn bản tổng hợp một lĩnh vực</span>
+        </div>
         <div class="boluat-grid" id="ov-boluat-grid"></div>
       </section>
+      <div class="ov-connector" aria-hidden="true"></div>
 
-      <section class="alllaws-section">
-        <header class="industries-head">
-          <h2>Toàn bộ Luật theo nhóm</h2>
-          <p class="industries-sub" id="ov-alllaws-sub">Mỗi Luật được phân vào nhóm lĩnh vực dựa trên chủ đề. Bấm vào mã số để mở văn bản.</p>
-        </header>
+      <!-- TIER 3 — 12 main legal areas -->
+      <section class="industries ov-tier" data-tier="3">
+        <div class="ov-tier-label">
+          <span class="ov-tier-num">III</span>
+          <span class="ov-tier-name">12 LĨNH VỰC PHÁP LÝ CHÍNH</span>
+        </div>
+        <div class="industry-grid" id="ov-industry-grid"></div>
+      </section>
+      <div class="ov-connector" aria-hidden="true"></div>
+
+      <!-- TIER 4 — All Luật grouped -->
+      <section class="alllaws-section ov-tier" data-tier="4">
+        <div class="ov-tier-label">
+          <span class="ov-tier-num">IV</span>
+          <span class="ov-tier-name">TOÀN BỘ LUẬT — Phân theo nhóm chủ đề</span>
+        </div>
+        <p class="industries-sub" id="ov-alllaws-sub">Bấm vào mã số để mở văn bản.</p>
         <div class="alllaws-list" id="ov-alllaws-list"></div>
       </section>
     </div>
@@ -290,7 +306,7 @@
     </div>
   </div>
 
-  <script src="data/documents.js?v=107"></script>
-  <script src="js/app.js?v=107"></script>
+  <script src="data/documents.js?v=108"></script>
+  <script src="js/app.js?v=108"></script>
 </body>
 </html>

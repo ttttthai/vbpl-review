@@ -939,7 +939,7 @@
     if (!doc) return;
     const card = $(".spotlight");
     if (card) {
-      card.classList.remove("type-luat", "type-bo-luat", "type-nghidinh", "type-thongtu");
+      card.classList.remove("type-luat", "type-bo-luat", "type-nghidinh", "type-thongtu", "type-quyetdinh", "type-hienphap");
       if (doc.typeKey) card.classList.add("type-" + doc.typeKey);
     }
     const eyebrow = $("#sp-eyebrow");
@@ -1010,9 +1010,46 @@
 
   // ===== Overview page rendering =====
   function renderOverviewContent() {
-    renderIndustries("#ov-industry-grid");
+    renderHienPhapTier("#ov-hp-row");
     renderBoLuatGrid("#ov-boluat-grid", "#ov-boluat-sub");
+    renderIndustries("#ov-industry-grid");
     renderAllLuatGrouped("#ov-alllaws-list", "#ov-alllaws-sub");
+  }
+
+  // Render the Constitution tier — active HP big & prominent, historical
+  // HPs as smaller "predecessor" tiles to the side.
+  function renderHienPhapTier(rowSel) {
+    const row = $(rowSel);
+    if (!row) return;
+    const hps = Object.values(DB).filter((d) => d.typeKey === "hienphap");
+    if (!hps.length) { row.innerHTML = ""; return; }
+    const active = hps.find((d) => /hiệu lực/i.test(d.status || "") && !/hết/i.test(d.status || ""));
+    const history = sortByYearDesc(hps.filter((d) => d !== active));
+    const heroHtml = active ? `
+      <button class="hp-hero" data-doc-id="${escapeHtml(active.id)}" type="button">
+        <span class="hp-hero-eyebrow">Đang có hiệu lực</span>
+        <span class="hp-hero-title">${escapeHtml(active.number || active.shortTitle)}</span>
+        <span class="hp-hero-sub">${escapeHtml(active.title)}</span>
+        <span class="hp-hero-meta">${active.articleTotal || "—"} điều · Có hiệu lực từ ${active.effectiveDate ? formatDate(active.effectiveDate) : "—"}</span>
+      </button>` : "";
+    const historyHtml = history.length ? `
+      <div class="hp-history">
+        <span class="hp-history-label">Các bản trước</span>
+        <div class="hp-history-list">
+          ${history.map((d) => `
+            <button class="hp-prev" data-doc-id="${escapeHtml(d.id)}" type="button" title="${escapeHtml(d.title)}">
+              <span class="hp-prev-year">${(d.issuedDate || "").slice(0,4)}</span>
+              <span class="hp-prev-name">${escapeHtml(d.shortTitle || d.number)}</span>
+            </button>`).join("")}
+        </div>
+      </div>` : "";
+    row.innerHTML = heroHtml + historyHtml;
+    row.querySelectorAll("[data-doc-id]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const id = btn.dataset.docId;
+        if (H.findDoc(id)) showDocPreview(id);
+      });
+    });
   }
 
   // === Sub-sector tree ===
