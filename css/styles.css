@@ -2072,7 +2072,15 @@ body.preview-mode .industries { display: none; }
 .evt-svg { display: block; margin: 0 auto; }
 .evt-svg-v { max-width: 900px; width: 100%; height: auto; }
 .evt-svg-h { /* keep natural width set via SVG attrs; container scrolls */ }
-.evt-axis-label { font-family: "Inter", sans-serif; font-size: 11px; font-weight: 700; fill: var(--ink-mute); }
+.evt-axis-label { font-family: "Inter", sans-serif; font-size: 11px; font-weight: 700; fill: var(--ink-mute); user-select: none; }
+.evt-year-toggle:hover .evt-axis-label { fill: var(--ink); }
+.evt-collapsed-rect {
+  fill: var(--paper-2); stroke: var(--ink-mute);
+  stroke-width: 1.5; stroke-dasharray: 4 3;
+}
+.evt-collapsed-group:hover .evt-collapsed-rect { stroke: var(--ink); }
+.evt-fo-collapsed { font-style: italic; opacity: 0.9; }
+.evt-fo-collapsed .evt-fo-title { color: var(--ink-soft); }
 .evt-axis-line { stroke: var(--line); stroke-dasharray: 3 4; }
 .evt-edge { fill: none; stroke-width: 2; }
 .evt-edge-replace { stroke: #7d1d22; stroke-width: 2.5; }

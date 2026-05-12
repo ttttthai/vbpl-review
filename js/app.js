@@ -2090,32 +2090,63 @@
     // Layout direction — 'v' = vertical (time top-to-bottom),
     // 'h' = horizontal (time left-to-right). Persisted to localStorage.
     const direction = localStorage.getItem('vbpl.sodoDir') === 'h' ? 'h' : 'v';
+    // Years the user collapsed (per-direction state in localStorage).
+    const collapsedKey = `vbpl.sodoCollapsed.${doc.id}`;
+    const collapsed = new Set(JSON.parse(localStorage.getItem(collapsedKey) || '[]'));
 
     const NODE_W = 150, NODE_H = 56;
-    // For the vertical layout, COLS is X positions; for horizontal it's Y.
-    // The other dimension becomes the time axis.
+    // Lane positions (perpendicular to time axis). The 5-column default works
+    // for sparse years; crowded same-year clusters extend into extra lanes
+    // automatically via the placement logic below.
     const COLS = [130, 290, 450, 610, 770];
     const X_CENTER = COLS[2];
+    const LANE_STEP = 160;                  // 150-wide node + 10 gap
+    const TIME_STEP_VERT_ROW = 70;          // NODE_H + 14 — within a year band, vertical mode
+    const TIME_GAP_MIN_VERT = 92;
+    const TIME_GAP_MIN_HORZ = 170;          // NODE_W + 20 — must clear adjacent year columns
 
-    // Compute the time-axis position for each year, dynamically allocating
-    // space for crowded years (multi-row stacking within a year band).
-    const TIME_GAP_MIN = 92;
-    const TIME_GAP_ROW = 70;
-    const yearTime = new Map(); // year → time-axis coordinate
-    const yearRows = new Map(); // year → rows used (>1 when crowded)
+    // Compute year placements in time AND lane axes. The data we need is
+    // the count per year and (for vertical mode only) the number of rows.
+    const yearTime = new Map();
+    const yearRows = new Map();
+    const yearLaneCount = new Map();
     let cursor = 90;
     for (const yr of years) {
       yearTime.set(yr, cursor);
       const count = byYear.get(yr).length;
-      const rows = Math.max(1, Math.ceil(count / COLS.length));
-      yearRows.set(yr, rows);
-      cursor += Math.max(TIME_GAP_MIN, rows * TIME_GAP_ROW + 20);
+      if (collapsed.has(yr)) {
+        // Collapsed year — just a single placeholder row, no rows allocated.
+        yearRows.set(yr, 1);
+        yearLaneCount.set(yr, 1);
+        cursor += direction === 'h' ? TIME_GAP_MIN_HORZ : TIME_GAP_MIN_VERT;
+        continue;
+      }
+      if (direction === 'h') {
+        // Each year is one X column; multi-cluster cards stack along Y (lanes).
+        // No time-axis sub-rows.
+        yearRows.set(yr, 1);
+        yearLaneCount.set(yr, count);
+        cursor += TIME_GAP_MIN_HORZ;
+      } else {
+        // Vertical mode: same-year cards wrap to additional Y sub-rows.
+        const rows = Math.max(1, Math.ceil(count / COLS.length));
+        yearRows.set(yr, rows);
+        yearLaneCount.set(yr, Math.min(count, COLS.length));
+        cursor += Math.max(TIME_GAP_MIN_VERT, rows * TIME_STEP_VERT_ROW + 20);
+      }
     }
     const TIME_SPAN = cursor + 20;
 
-    // SVG dimensions depend on direction.
+    // SVG dimensions + horizontal-mode center.
+    // In horizontal mode same-year cards alternate above/below the center
+    // lane (Y axis); we need vertical room for ceil(maxYearCount/2) cards
+    // above and below.
+    const maxYearCount = Math.max(...[...byYear.values()].map(g => g.length));
+    const STACK_H_PRE = NODE_H + 14;
+    const halfStack = Math.ceil(maxYearCount / 2) * STACK_H_PRE;
+    const H_CENTER = direction === 'h' ? Math.max(450, halfStack + 90) : X_CENTER;
     const SVG_W = direction === 'h' ? TIME_SPAN : 870;
-    const SVG_H = direction === 'h' ? 900 : TIME_SPAN;
+    const SVG_H = direction === 'h' ? (H_CENTER * 2 + 80) : TIME_SPAN;
 
     // Identify the master's vertical spine — the chain of `replaces` /
     // `amends` linking the spotlight doc to its ancestors. Spine nodes
@@ -2162,37 +2193,56 @@
     const clusterCol = new Map();
     for (let i = 0; i < clusterIdx; i++) clusterCol.set(i, sideOrder[i % sideOrder.length]);
 
-    // Assign positions in (timeCoord, laneCoord). Then map to (x, y) by
-    // direction.
+    // Assign positions in (timeCoord, laneCoord). Direction-specific logic.
+    const STACK_V = TIME_STEP_VERT_ROW;   // 70 — vertical mode sub-row pitch
+    const STACK_H = NODE_H + 14;          // 70 — horizontal mode lane pitch (Y)
     for (const [yr, group] of byYear) {
       const baseT = yearTime.get(yr);
-      const slots = new Map(); // key "lane:row" → node
-      // Spine first: center lane, row 0
-      for (const n of group) {
-        if (spine.has(n.doc.id)) {
-          n._lane = X_CENTER;
-          n._time = baseT;
-          slots.set(`${X_CENTER}:0`, n);
-        }
+      if (collapsed.has(yr)) {
+        const center = direction === 'h' ? H_CENTER : X_CENTER;
+        for (const n of group) { n._collapsed = true; n._time = baseT; n._lane = center; }
+        continue;
       }
-      for (const n of group) {
-        if (spine.has(n.doc.id)) continue;
-        const preferred = clusterCol.get(clusterOf.get(n.doc.id)) ?? COLS[1];
-        let placed = false;
-        for (let row = 0; row < 10 && !placed; row++) {
-          const key = `${preferred}:${row}`;
-          if (!slots.has(key)) {
-            n._lane = preferred; n._time = baseT + row * TIME_GAP_ROW;
-            slots.set(key, n); placed = true; break;
+      // Sort so spine first, then by cluster (keeps same-chain docs near each other)
+      const sorted = group.slice().sort((a, b) => {
+        const as = spine.has(a.doc.id) ? -1 : (clusterOf.get(a.doc.id) ?? 99);
+        const bs = spine.has(b.doc.id) ? -1 : (clusterOf.get(b.doc.id) ?? 99);
+        return as - bs;
+      });
+
+      if (direction === 'h') {
+        // Same-year cards all share the same X (baseT) and stack vertically,
+        // alternating above/below the center lane in step increments of STACK_H.
+        let above = 1, below = 1;
+        for (const n of sorted) {
+          if (spine.has(n.doc.id)) {
+            n._time = baseT; n._lane = H_CENTER;
+          } else if (above <= below) {
+            n._time = baseT; n._lane = H_CENTER - above * STACK_H;
+            above++;
+          } else {
+            n._time = baseT; n._lane = H_CENTER + below * STACK_H;
+            below++;
           }
         }
-        if (placed) continue;
-        for (let row = 0; row < 10 && !placed; row++) {
-          for (const c of COLS) {
-            const key = `${c}:${row}`;
-            if (!slots.has(key)) {
-              n._lane = c; n._time = baseT + row * TIME_GAP_ROW;
-              slots.set(key, n); placed = true; break;
+      } else {
+        // Vertical: distribute across 5 columns, wrap to additional sub-rows
+        // along the time axis when crowded.
+        const slots = new Set();
+        const place = (n, lane, row) => {
+          n._lane = lane;
+          n._time = baseT + row * STACK_V;
+          slots.add(`${lane}:${row}`);
+        };
+        for (const n of sorted) {
+          if (spine.has(n.doc.id)) { place(n, X_CENTER, 0); continue; }
+          const preferred = clusterCol.get(clusterOf.get(n.doc.id)) ?? COLS[1];
+          let placed = false;
+          for (let row = 0; row < 12 && !placed; row++) {
+            if (!slots.has(`${preferred}:${row}`)) { place(n, preferred, row); placed = true; break; }
+            for (const c of COLS) {
+              if (c === preferred) continue;
+              if (!slots.has(`${c}:${row}`)) { place(n, c, row); placed = true; break; }
             }
           }
         }
@@ -2258,17 +2308,37 @@
     }
 
     let nodeMarkup = '';
+    const renderedCollapsedYears = new Set();
     for (const n of nodeList) {
+      if (n._collapsed) {
+        // Render exactly one placeholder per collapsed year, at the year's
+        // (lane=center, time=baseT) position.
+        const yr = (n.doc.issuedDate || '').slice(0, 4) || '?';
+        if (renderedCollapsedYears.has(yr)) continue;
+        renderedCollapsedYears.add(yr);
+        const count = byYear.get(yr).length;
+        const x = n.x - NODE_W / 2;
+        const y = n.y - NODE_H / 2;
+        nodeMarkup += `
+          <g class="evt-collapsed-group" data-year="${escapeHtml(yr)}" style="cursor: pointer;">
+            <rect class="evt-collapsed-rect" x="${x}" y="${y}" width="${NODE_W}" height="${NODE_H}" rx="5"/>
+            <foreignObject x="${x}" y="${y}" width="${NODE_W}" height="${NODE_H}">
+              <div xmlns="http://www.w3.org/1999/xhtml" class="evt-fo evt-fo-collapsed">
+                <div class="evt-fo-num">▸ ${escapeHtml(yr)}</div>
+                <div class="evt-fo-title">${count} văn bản</div>
+                <div class="evt-fo-sub">Bấm để mở rộng</div>
+              </div>
+            </foreignObject>
+          </g>
+        `;
+        continue;
+      }
       const tk = n.doc.typeKey || '';
       const cls = `evt-node-rect ${tk}${n.isCurrent ? ' current' : ''}`;
-      const numCls = `evt-node-num${n.isCurrent ? ' current' : ''}`;
       const x = n.x - NODE_W / 2;
       const y = n.y - NODE_H / 2;
       const rawTitle = (n.doc.shortTitle || n.doc.title || n.doc.number || '').replace(/\s+/g, ' ');
       const foCurrent = n.isCurrent ? ' current' : '';
-      // <foreignObject> lets HTML/CSS handle wrapping + ellipsis cleanly
-      // inside the SVG card, avoiding the manual char-count truncation
-      // that produced text overflow with longer Vietnamese titles.
       nodeMarkup += `
         <g class="evt-node-group" data-doc-id="${escapeHtml(n.doc.id)}" style="cursor: pointer;">
           <rect class="${cls}" x="${x}" y="${y}" width="${NODE_W}" height="${NODE_H}" rx="5"/>
@@ -2286,12 +2356,18 @@
     let axisMarkup = '';
     for (const yr of years) {
       const t = yearTime.get(yr);
+      const isColl = collapsed.has(yr);
+      const chev = isColl ? '▸' : '▾';
       if (direction === 'h') {
         // Year labels along the top, vertical grid lines at each year.
-        axisMarkup += `<text class="evt-axis-label" x="${t}" y="40" text-anchor="middle">${escapeHtml(yr)}</text>`;
+        axisMarkup += `<g class="evt-year-toggle" data-year="${escapeHtml(yr)}" style="cursor: pointer;">
+          <text class="evt-axis-label" x="${t}" y="40" text-anchor="middle">${chev} ${escapeHtml(yr)}</text>
+        </g>`;
         axisMarkup += `<line class="evt-axis-line" x1="${t}" y1="58" x2="${t}" y2="${SVG_H - 20}"/>`;
       } else {
-        axisMarkup += `<text class="evt-axis-label" x="14" y="${t + 5}">${escapeHtml(yr)}</text>`;
+        axisMarkup += `<g class="evt-year-toggle" data-year="${escapeHtml(yr)}" style="cursor: pointer;">
+          <text class="evt-axis-label" x="14" y="${t + 5}">${chev} ${escapeHtml(yr)}</text>
+        </g>`;
         axisMarkup += `<line class="evt-axis-line" x1="58" y1="${t}" x2="${SVG_W - 20}" y2="${t}"/>`;
       }
     }
@@ -2335,6 +2411,20 @@
         const id = g.dataset.docId;
         if (id !== doc.id) showDocPreview(id);
       });
+    });
+
+    // Year toggle (axis labels + collapsed placeholders)
+    const toggleYear = (yr) => {
+      const s = new Set(JSON.parse(localStorage.getItem(collapsedKey) || '[]'));
+      if (s.has(yr)) s.delete(yr); else s.add(yr);
+      localStorage.setItem(collapsedKey, JSON.stringify([...s]));
+      renderSodo(doc);
+    };
+    sodoEl.querySelectorAll('.evt-year-toggle[data-year]').forEach(g => {
+      g.addEventListener('click', (e) => { e.preventDefault(); toggleYear(g.dataset.year); });
+    });
+    sodoEl.querySelectorAll('.evt-collapsed-group[data-year]').forEach(g => {
+      g.addEventListener('click', (e) => { e.preventDefault(); toggleYear(g.dataset.year); });
     });
 
     // Zoom controls — scale the SVG via CSS transform on the wrap.
