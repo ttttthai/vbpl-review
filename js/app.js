@@ -2008,7 +2008,7 @@
     const nodes = new Map(); // id → { doc, isCurrent }
     const edges = [];        // { from, to, type }
     const visited = new Set();
-    (function visit(id) {
+    function visit(id) {
       if (visited.has(id)) return;
       visited.add(id);
       const d = H.findDoc(id);
@@ -2036,7 +2036,27 @@
         edges.push({ from: id, to: child.id, type: 'amend' });
         visit(child.id);
       }
-    })(doc.id);
+    }
+    visit(doc.id);
+
+    // When the spotlight is a master Luật, also include the evolution chains
+    // of every doc that implements it (or any doc in the master's lineage).
+    // We only include implementing docs that ARE part of a chain (have
+    // replaces/replacedBy/amends linkages); standalone implementing docs
+    // already live in the Hệ thống tab and would just clutter the tree.
+    if (isLawTier(doc.typeKey)) {
+      const masterChain = new Set(nodes.keys());
+      for (const other of Object.values(DB)) {
+        const imps = other.implements || [];
+        if (!imps.some(id => masterChain.has(id))) continue;
+        const hasChain = (other.replaces && other.replaces.length) ||
+                         (other.amends && other.amends.length) ||
+                         (other.replacedBy && (Array.isArray(other.replacedBy) ? other.replacedBy.length : true)) ||
+                         replacedByMap.has(other.id) ||
+                         amendedByMap.has(other.id);
+        if (hasChain) visit(other.id);
+      }
+    }
 
     const seenEdges = new Set();
     const uniqEdges = edges.filter(e => {
@@ -2073,47 +2093,83 @@
     }
     const years = [...byYear.keys()].sort();
 
-    // Layout dimensions
-    const NODE_W = 200, NODE_H = 70;
+    // Layout dimensions. 5 columns let same-year clusters (e.g. 5+ 2025 docs
+    // for the electricity ecosystem) fit without overlapping.
+    const NODE_W = 170, NODE_H = 70;
     const Y_GAP = 130;
-    const X_LEFT = 150, X_CENTER = 380, X_RIGHT = 610;
-    const SVG_W = 760;
+    const COLS = [110, 280, 450, 620, 790];
+    const X_CENTER = COLS[2];
+    const SVG_W = 900;
     const yearY = new Map();
     years.forEach((yr, i) => yearY.set(yr, 90 + i * Y_GAP));
     const SVG_H = years.length * Y_GAP + 90;
 
-    // A doc is an "amendment branch" if it has any amends edge (incoming to it).
-    const isAmendNode = new Map();
-    for (const e of edges) {
-      if (e.type === 'amend') isAmendNode.set(e.to, true);
-    }
+    // Identify the master's vertical spine — the chain of `replaces` /
+    // `amends` linking the spotlight doc to its ancestors. Spine nodes
+    // get the center column so the master chain reads as a clean vertical.
+    // Every other node belongs to a "side chain"; we cluster side chains
+    // by their connected component and assign each cluster its own
+    // column off-center so edges within a chain stay vertical and don't
+    // cross the spine.
+    const spine = new Set();
+    (function walkSpine(id) {
+      if (spine.has(id)) return;
+      spine.add(id);
+      const d = H.findDoc(id);
+      if (!d) return;
+      for (const pid of (d.replaces || [])) walkSpine(pid);
+      for (const pid of (d.amends || [])) walkSpine(pid);
+    })(doc.id);
 
-    // Assign columns: current → center; amendments → right; everyone else → center.
-    // Resolve overlaps by spreading nodes at the same year across L/C/R.
+    // Build undirected adjacency over the visited nodes (treat each edge
+    // as un-directed for clustering purposes).
+    const adj = new Map();
+    for (const e of uniqEdges) {
+      if (!adj.has(e.from)) adj.set(e.from, new Set());
+      if (!adj.has(e.to)) adj.set(e.to, new Set());
+      adj.get(e.from).add(e.to);
+      adj.get(e.to).add(e.from);
+    }
+    // Find connected components of non-spine nodes.
+    const clusterOf = new Map();
+    let clusterIdx = 0;
+    for (const id of nodes.keys()) {
+      if (spine.has(id) || clusterOf.has(id)) continue;
+      const stack = [id];
+      while (stack.length) {
+        const x = stack.pop();
+        if (clusterOf.has(x) || spine.has(x)) continue;
+        clusterOf.set(x, clusterIdx);
+        for (const nb of (adj.get(x) || [])) if (!clusterOf.has(nb) && !spine.has(nb)) stack.push(nb);
+      }
+      clusterIdx++;
+    }
+    // Map each cluster to a side column, alternating left/right outward.
+    const sideOrder = [COLS[1], COLS[3], COLS[0], COLS[4]];
+    const clusterCol = new Map();
+    for (let i = 0; i < clusterIdx; i++) clusterCol.set(i, sideOrder[i % sideOrder.length]);
+
+    // Now assign positions.
     for (const n of nodeList) {
       const yr = (n.doc.issuedDate || '').slice(0, 4) || '?';
       n.y = yearY.get(yr);
-      if (n.isCurrent) n.x = X_CENTER;
-      else if (isAmendNode.get(n.doc.id)) n.x = X_RIGHT;
-      else n.x = X_CENTER;
+      if (spine.has(n.doc.id)) {
+        n.x = X_CENTER;
+      } else {
+        n.x = clusterCol.get(clusterOf.get(n.doc.id)) ?? COLS[1];
+      }
     }
-    for (const [yr, group] of byYear) {
-      if (group.length <= 1) continue;
-      const cols = [X_LEFT, X_CENTER, X_RIGHT];
-      const used = new Set();
-      // current keeps center
-      for (const n of group) if (n.isCurrent) used.add(n.x);
-      // amendments keep right (if not taken)
-      for (const n of group) {
-        if (n.isCurrent) continue;
-        if (isAmendNode.get(n.doc.id) && !used.has(X_RIGHT)) { n.x = X_RIGHT; used.add(X_RIGHT); }
-      }
-      // remaining nodes pick first free column
-      for (const n of group) {
-        if (n.isCurrent || used.has(n.x)) continue;
-        const free = cols.find(c => !used.has(c));
-        if (free !== undefined) { n.x = free; used.add(free); }
-      }
+
+    // If two nodes ended up at the same (x, y), spread them.
+    const slotMap = new Map();
+    for (const n of nodeList) {
+      const key = `${n.x}:${n.y}`;
+      if (!slotMap.has(key)) { slotMap.set(key, n); continue; }
+      // collision — push this node to next free column at same year
+      const taken = new Set();
+      for (const m of nodeList) if (m.y === n.y) taken.add(m.x);
+      const free = COLS.find(c => !taken.has(c));
+      if (free !== undefined) { n.x = free; }
     }
 
     // Count parents per child to detect merges (multi-parent → "HỢP NHẤT")
@@ -2158,7 +2214,8 @@
       const numCls = `evt-node-num${n.isCurrent ? ' current' : ''}`;
       const x = n.x - NODE_W / 2;
       const y = n.y - NODE_H / 2;
-      const titleText = (n.doc.shortTitle || n.doc.title || n.doc.number || '').replace(/\s+/g, ' ').slice(0, 36);
+      const rawTitle = (n.doc.shortTitle || n.doc.title || n.doc.number || '').replace(/\s+/g, ' ');
+      const titleText = rawTitle.length > 28 ? rawTitle.slice(0, 27) + '…' : rawTitle;
       nodeMarkup += `
         <g class="evt-node-group" data-doc-id="${escapeHtml(n.doc.id)}" style="cursor: pointer;">
           <rect class="${cls}" x="${x}" y="${y}" width="${NODE_W}" height="${NODE_H}" rx="5"/>
