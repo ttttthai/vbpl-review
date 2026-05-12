@@ -980,7 +980,6 @@
   function renderLandingContent() {
     renderStats();
     renderIndustries();
-    renderSubsectorTree();
     renderNewdocs();
     renderExpired();
     renderHot();
@@ -998,23 +997,25 @@
       typeKey: "luat",
       groups: [
         { key: "capital", label: "Vốn pháp định & An toàn vốn",
-          docs: ["86/2019/ND-CP","41/2016/TT-NHNN","22/2019/TT-NHNN","22/2011/TT-NHNN","19/2010/TT-NHNN","19/2017/TT-NHNN","13/2010/TT-NHNN","16/2018/TT-NHNN","06/2016/TT-NHNN","36/2014/TT-NHNN"] },
+          docs: ["86/2019/ND-CP","41/2016/TT-NHNN","22/2019/TT-NHNN","14/2022/TT-NHNN","22/2011/TT-NHNN","19/2010/TT-NHNN","19/2017/TT-NHNN","13/2010/TT-NHNN","16/2018/TT-NHNN","06/2016/TT-NHNN","36/2014/TT-NHNN"] },
         { key: "bad-debt", label: "Xử lý nợ xấu, dự phòng & VAMC",
-          docs: ["53/2013/ND-CP","11/2021/TT-NHNN","02/2013/TT-NHNN","09/2014/TT-NHNN","12/2013/TT-NHNN","19/2013/TT-NHNN"] },
+          docs: ["53/2013/ND-CP","11/2021/TT-NHNN","26/2022/TT-NHNN","02/2013/TT-NHNN","09/2014/TT-NHNN","12/2013/TT-NHNN","19/2013/TT-NHNN"] },
         { key: "lending", label: "Hoạt động cho vay",
-          docs: ["39/2016/TT-NHNN","08/2014/TT-NHNN","09/2013/TT-NHNN","10/2013/TT-NHNN","12/2010/TT-NHNN","14/2012/TT-NHNN","16/2013/TT-NHNN","20/2012/TT-NHNN","33/2011/TT-NHNN","33/2012/TT-NHNN","05/2011/TT-NHNN","15/2009/TT-NHNN"] },
+          docs: ["39/2016/TT-NHNN","06/2023/TT-NHNN","08/2014/TT-NHNN","09/2013/TT-NHNN","10/2013/TT-NHNN","12/2010/TT-NHNN","14/2012/TT-NHNN","16/2013/TT-NHNN","20/2012/TT-NHNN","33/2011/TT-NHNN","33/2012/TT-NHNN","05/2011/TT-NHNN","15/2009/TT-NHNN"] },
         { key: "consumer-finance", label: "Tài chính tiêu dùng",
-          docs: ["43/2016/TT-NHNN","18/2019/TT-NHNN"] },
+          docs: ["39/2014/NĐ-CP","43/2016/TT-NHNN","18/2019/TT-NHNN"] },
         { key: "bond", label: "Trái phiếu doanh nghiệp",
-          docs: ["16/2021/TT-NHNN","15/2018/TT-NHNN","22/2016/TT-NHNN","28/2011/TT-NHNN"] },
+          docs: ["16/2021/TT-NHNN","17/2022/TT-NHNN","15/2018/TT-NHNN","22/2016/TT-NHNN","28/2011/TT-NHNN"] },
         { key: "license", label: "Cấp phép & Tổ chức hoạt động",
-          docs: ["22/2006/NĐ-CP","49/2000/NĐ-CP","59/2009/NĐ-CP","69/2007/NĐ-CP","13/2019/TT-NHNN","03/2007/TT-NHNN","06/2010/TT-NHNN","50/2018/TT-NHNN"] },
+          docs: ["22/2006/NĐ-CP","49/2000/NĐ-CP","59/2009/NĐ-CP","69/2007/NĐ-CP","13/2019/TT-NHNN","30/2015/TT-NHNN","03/2021/TT-NHNN","03/2007/TT-NHNN","06/2010/TT-NHNN","50/2018/TT-NHNN"] },
         { key: "payment", label: "Thanh toán & E-money",
-          docs: ["86/2024/ND-CP","64/2001/NĐ-CP"] },
+          docs: ["86/2024/ND-CP","222/2013/NĐ-CP","101/2012/NĐ-CP","64/2001/NĐ-CP"] },
+        { key: "guarantee", label: "Bảo lãnh ngân hàng",
+          docs: ["11/2022/TT-NHNN","28/2012/TT-NHNN","22/2018/TT-NHNN"] },
+        { key: "sandbox", label: "Sandbox fintech",
+          docs: ["116/2024/NĐ-CP"] },
         { key: "sanctions", label: "Xử phạt vi phạm hành chính",
           docs: ["88/2019/ND-CP","96/2014/NĐ-CP","202/2004/NĐ-CP","20/2000/NĐ-CP"] },
-        { key: "guarantee", label: "Bảo lãnh ngân hàng & Khác",
-          docs: ["28/2012/TT-NHNN","22/2018/TT-NHNN"] },
       ]
     },
     {
@@ -1022,14 +1023,18 @@
       masterLabel: "Điện lực & Năng lượng",
       typeKey: "luat",
       groups: [
-        { key: "renewable", label: "Năng lượng tái tạo",
+        { key: "renewable", label: "Năng lượng tái tạo & Điện mặt trời",
           docs: ["135/2024/ND-CP"] },
         { key: "dppa", label: "Mua bán điện trực tiếp (DPPA)",
-          docs: ["80/2024/ND-CP"] },
-        { key: "rural", label: "Truyền tải, phân phối & nông thôn",
-          docs: ["68/2010/NĐ-CP"] },
-        { key: "other", label: "Văn bản khác",
-          docs: ["74/2003/NĐ-CP"] },
+          docs: ["80/2024/ND-CP","100/2025/NĐ-CP"] },
+        { key: "market", label: "Thị trường điện & Phát triển điện lực",
+          docs: ["56/2025/NĐ-CP","17/2020/NĐ-CP"] },
+        { key: "transmission", label: "Truyền tải & Phân phối điện",
+          docs: ["68/2010/NĐ-CP","25/2016/TT-BCT","39/2015/TT-BCT","40/2014/TT-BCT"] },
+        { key: "energy-saving", label: "Sử dụng năng lượng tiết kiệm",
+          docs: ["21/2011/NĐ-CP"] },
+        { key: "general", label: "Hướng dẫn chung",
+          docs: ["137/2013/NĐ-CP","74/2003/NĐ-CP"] },
       ]
     },
   ];
