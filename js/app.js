@@ -1964,7 +1964,13 @@
   }
 
   function renderArticleBody(body) {
-    const lines = body.split(/\r?\n/);
+    // If the body contains a "Nơi nhận:" closing block, split it off and
+    // render that portion as a formal signature block.
+    const sigSplit = body.search(/(?:^|\n)\s*Nơi nhận:/);
+    const mainText = sigSplit >= 0 ? body.slice(0, sigSplit) : body;
+    const sigText  = sigSplit >= 0 ? body.slice(sigSplit) : null;
+
+    const lines = mainText.split(/\r?\n/);
     let html = "";
     for (const line of lines) {
       const t = line.trim();
@@ -1973,7 +1979,49 @@
       else if (/^\d+\./.test(t)) html += `<p class="clause">${escapeHtml(t)}</p>`;
       else html += `<p>${escapeHtml(t)}</p>`;
     }
+    if (sigText) html += renderSignatureBlockFromText(sigText);
     return html;
+  }
+
+  // Parse a chunk of text that starts with "Nơi nhận:" and produce a
+  // two-column closing block (recipients left, signer right) styled to
+  // resemble the formal Vietnamese government doc layout.
+  function renderSignatureBlockFromText(text) {
+    const lines = text.split(/\r?\n/).map(l => l.trim()).filter(Boolean);
+    // Skip the leading "Nơi nhận:" header, collect recipients
+    const recipients = [];
+    let i = 0;
+    if (lines[0] && /^Nơi nhận:?\s*$/i.test(lines[0])) i++;
+    // recipients: dash-prefixed lines (also include "Lưu:" which often is the last item)
+    while (i < lines.length && /^[-–•]/.test(lines[i])) {
+      recipients.push(lines[i].replace(/^[-–•]\s*/, ""));
+      i++;
+    }
+    // The remainder is the signer block
+    const signerLines = lines.slice(i);
+    return renderSignatureBlock(recipients, signerLines);
+  }
+
+  function renderSignatureBlock(recipients, signerLines) {
+    const liHtml = recipients.map(r => `<li>${escapeHtml(r)}</li>`).join("");
+    const sigHtml = signerLines.map((l) => {
+      const isSignedNote = /^\(.*đã ký.*\)$/i.test(l);
+      const isName = /^[A-ZÀ-Ỹ][a-zà-ỹ]/.test(l) && !/^(?:KT|TM|THỪA)/.test(l) && !isSignedNote;
+      let cls = "sig-line";
+      if (/^(?:KT|TM|THỪA)\.?/.test(l)) cls += " sig-onbehalf";
+      else if (/^[A-ZÀ-Ỹ\s.,()-]+$/.test(l) && !isSignedNote) cls += " sig-position";
+      else if (isSignedNote) cls += " sig-mark";
+      else if (isName) cls += " sig-name";
+      return `<div class="${cls}">${escapeHtml(l)}</div>`;
+    }).join("");
+    return `
+      <section class="doc-signature">
+        <div class="sig-recipients">
+          <h4 class="sig-recipients-head">Nơi nhận:</h4>
+          <ul>${liHtml}</ul>
+        </div>
+        <div class="sig-signer">${sigHtml}</div>
+      </section>`;
   }
 
   // Render structured blocks (text or table). Used by docs scraped with
@@ -1997,6 +2045,23 @@
   function renderTableBlock(block) {
     const rows = block.rows || [];
     if (!rows.length) return "";
+
+    // Detect "Nơi nhận" signature blocks: 1 row, 2 cells, left starts with
+    // "Nơi nhận". These appear before appendices in Vietnamese gov docs;
+    // they should look like a formal closing, not a generic data table.
+    if (rows.length === 1 && rows[0].length === 2 && /^\s*Nơi nhận/i.test(rows[0][0].text || "")) {
+      const leftLines = (rows[0][0].text || "").split(/\r?\n/).map(l => l.trim()).filter(Boolean);
+      const signerLines = (rows[0][1].text || "").split(/\r?\n/).map(l => l.trim()).filter(Boolean);
+      const recipients = [];
+      let i = 0;
+      if (leftLines[0] && /^Nơi nhận:?\s*$/i.test(leftLines[0])) i++;
+      while (i < leftLines.length && /^[-–•]/.test(leftLines[i])) {
+        recipients.push(leftLines[i].replace(/^[-–•]\s*/, ""));
+        i++;
+      }
+      return renderSignatureBlock(recipients, signerLines);
+    }
+
     let html = '<div class="art-table-wrap"><table class="art-table">';
     let bodyStartIdx = 0;
     if (rows[0].some(c => c.isHeader)) {
