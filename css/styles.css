@@ -2159,6 +2159,40 @@ body.preview-mode .industries { display: none; }
   margin: 0 auto;
 }
 .doc-body.wide { max-width: 100%; }
+
+/* Tables in article body (appendix tables, e.g. QĐ 768 PDP8 phụ lục) */
+.doc-body .art-table-wrap {
+  margin: 14px 0 18px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.doc-body .art-table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: calc(var(--read-size) - 1px);
+  font-family: 'Inter', Arial, sans-serif;
+  background: white;
+}
+.doc-body .art-table th,
+.doc-body .art-table td {
+  border: 1px solid var(--line-strong);
+  padding: 6px 10px;
+  vertical-align: top;
+  text-align: left;
+  line-height: 1.4;
+}
+.doc-body .art-table th {
+  background: rgba(125, 29, 34, 0.06);
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.02em;
+}
+.doc-body .art-table tbody tr:nth-child(even) td {
+  background: rgba(125, 29, 34, 0.025);
+}
+.doc-body .art-table tbody tr:hover td {
+  background: rgba(125, 29, 34, 0.06);
+}
 .doc-body h2.chapter {
   text-align: center; font-size: 16.5px;
   margin: 32px 0 4px;

@@ -1940,7 +1940,7 @@
           <span>${escapeHtml(a.number)}. ${escapeHtml(a.heading)}</span>
           <a class="anchor-link" data-anchor="${a.id}" title="Chép liên kết điều này">#</a>
         </h3>`;
-        html += renderArticleBody(a.body);
+        html += a.blocks ? renderArticleBlocks(a.blocks) : renderArticleBody(a.body);
       }
     }
     docBody.innerHTML = html;
@@ -1973,6 +1973,55 @@
       else if (/^\d+\./.test(t)) html += `<p class="clause">${escapeHtml(t)}</p>`;
       else html += `<p>${escapeHtml(t)}</p>`;
     }
+    return html;
+  }
+
+  // Render structured blocks (text or table). Used by docs scraped with
+  // table-aware extraction (e.g. QĐ 768/QĐ-TTg 2025 with PDP8 appendix).
+  function renderArticleBlocks(blocks) {
+    let html = "";
+    for (const b of blocks) {
+      if (b.kind === "text") {
+        const t = (b.text || "").trim();
+        if (!t) continue;
+        if (/^[a-zđ]\)/i.test(t)) html += `<p class="point">${escapeHtml(t)}</p>`;
+        else if (/^\d+\./.test(t)) html += `<p class="clause">${escapeHtml(t)}</p>`;
+        else html += `<p>${escapeHtml(t)}</p>`;
+      } else if (b.kind === "table") {
+        html += renderTableBlock(b);
+      }
+    }
+    return html;
+  }
+
+  function renderTableBlock(block) {
+    const rows = block.rows || [];
+    if (!rows.length) return "";
+    let html = '<div class="art-table-wrap"><table class="art-table">';
+    // Treat first row as <thead> if any cell in row 0 is isHeader or row 0 looks like a header (no later row shares same cells)
+    let bodyStartIdx = 0;
+    if (rows[0].some(c => c.isHeader)) {
+      html += '<thead><tr>';
+      for (const c of rows[0]) {
+        const cs = c.colspan && c.colspan > 1 ? ` colspan="${c.colspan}"` : "";
+        const rs = c.rowspan && c.rowspan > 1 ? ` rowspan="${c.rowspan}"` : "";
+        html += `<th${cs}${rs}>${escapeHtml(c.text || "")}</th>`;
+      }
+      html += '</tr></thead>';
+      bodyStartIdx = 1;
+    }
+    html += '<tbody>';
+    for (let i = bodyStartIdx; i < rows.length; i++) {
+      html += '<tr>';
+      for (const c of rows[i]) {
+        const cs = c.colspan && c.colspan > 1 ? ` colspan="${c.colspan}"` : "";
+        const rs = c.rowspan && c.rowspan > 1 ? ` rowspan="${c.rowspan}"` : "";
+        const tag = c.isHeader ? "th" : "td";
+        html += `<${tag}${cs}${rs}>${escapeHtml(c.text || "")}</${tag}>`;
+      }
+      html += '</tr>';
+    }
+    html += '</tbody></table></div>';
     return html;
   }
 
