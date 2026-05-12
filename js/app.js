@@ -980,9 +980,122 @@
   function renderLandingContent() {
     renderStats();
     renderIndustries();
+    renderSubsectorTree();
     renderNewdocs();
     renderExpired();
     renderHot();
+  }
+
+  // === Sub-sector tree ===
+  // Two main branches (banking + electricity) with hand-curated sub-sector
+  // groupings. Each leaf is a real doc id from LEGAL_DB; the tree starts
+  // with both branches collapsed and toggles via click. Each docId click
+  // routes through showDocPreview.
+  const SUB_SECTOR_TAXONOMY = [
+    {
+      masterId: "32/2024/QH15",
+      masterLabel: "Tài chính – Ngân hàng",
+      typeKey: "luat",
+      groups: [
+        { key: "capital", label: "Vốn pháp định & An toàn vốn",
+          docs: ["86/2019/ND-CP","41/2016/TT-NHNN","22/2019/TT-NHNN","22/2011/TT-NHNN","19/2010/TT-NHNN","19/2017/TT-NHNN","13/2010/TT-NHNN","16/2018/TT-NHNN","06/2016/TT-NHNN","36/2014/TT-NHNN"] },
+        { key: "bad-debt", label: "Xử lý nợ xấu, dự phòng & VAMC",
+          docs: ["53/2013/ND-CP","11/2021/TT-NHNN","02/2013/TT-NHNN","09/2014/TT-NHNN","12/2013/TT-NHNN","19/2013/TT-NHNN"] },
+        { key: "lending", label: "Hoạt động cho vay",
+          docs: ["39/2016/TT-NHNN","08/2014/TT-NHNN","09/2013/TT-NHNN","10/2013/TT-NHNN","12/2010/TT-NHNN","14/2012/TT-NHNN","16/2013/TT-NHNN","20/2012/TT-NHNN","33/2011/TT-NHNN","33/2012/TT-NHNN","05/2011/TT-NHNN","15/2009/TT-NHNN"] },
+        { key: "consumer-finance", label: "Tài chính tiêu dùng",
+          docs: ["43/2016/TT-NHNN","18/2019/TT-NHNN"] },
+        { key: "bond", label: "Trái phiếu doanh nghiệp",
+          docs: ["16/2021/TT-NHNN","15/2018/TT-NHNN","22/2016/TT-NHNN","28/2011/TT-NHNN"] },
+        { key: "license", label: "Cấp phép & Tổ chức hoạt động",
+          docs: ["22/2006/NĐ-CP","49/2000/NĐ-CP","59/2009/NĐ-CP","69/2007/NĐ-CP","13/2019/TT-NHNN","03/2007/TT-NHNN","06/2010/TT-NHNN","50/2018/TT-NHNN"] },
+        { key: "payment", label: "Thanh toán & E-money",
+          docs: ["86/2024/ND-CP","64/2001/NĐ-CP"] },
+        { key: "sanctions", label: "Xử phạt vi phạm hành chính",
+          docs: ["88/2019/ND-CP","96/2014/NĐ-CP","202/2004/NĐ-CP","20/2000/NĐ-CP"] },
+        { key: "guarantee", label: "Bảo lãnh ngân hàng & Khác",
+          docs: ["28/2012/TT-NHNN","22/2018/TT-NHNN"] },
+      ]
+    },
+    {
+      masterId: "61/2024/QH15",
+      masterLabel: "Điện lực & Năng lượng",
+      typeKey: "luat",
+      groups: [
+        { key: "renewable", label: "Năng lượng tái tạo",
+          docs: ["135/2024/ND-CP"] },
+        { key: "dppa", label: "Mua bán điện trực tiếp (DPPA)",
+          docs: ["80/2024/ND-CP"] },
+        { key: "rural", label: "Truyền tải, phân phối & nông thôn",
+          docs: ["68/2010/NĐ-CP"] },
+        { key: "other", label: "Văn bản khác",
+          docs: ["74/2003/NĐ-CP"] },
+      ]
+    },
+  ];
+
+  function renderSubsectorTree() {
+    const wrap = $("#subsector-tree");
+    if (!wrap) return;
+
+    const branchHTML = (branch) => {
+      const master = H.findDoc(branch.masterId);
+      if (!master) return '';
+      const totalDocs = branch.groups.reduce((s, g) => s + g.docs.filter(id => H.findDoc(id)).length, 0);
+      const groupsHTML = branch.groups.map(g => {
+        const docs = g.docs.map(id => H.findDoc(id)).filter(Boolean);
+        if (!docs.length) return '';
+        const leavesHTML = docs.map(d => `
+          <li class="st-leaf" data-doc-id="${escapeHtml(d.id)}" role="treeitem">
+            <span class="st-leaf-pill type-${escapeHtml(d.typeKey || '')}">${escapeHtml(d.type)} · ${escapeHtml(d.number)}</span>
+            <span class="st-leaf-title">${escapeHtml(d.shortTitle || d.title || d.number)}</span>
+          </li>
+        `).join('');
+        return `
+          <li class="st-group" data-group-key="${escapeHtml(g.key)}" role="treeitem" aria-expanded="false">
+            <button class="st-group-head" type="button">
+              <span class="st-chev" aria-hidden="true">▸</span>
+              <span class="st-group-label">${escapeHtml(g.label)}</span>
+              <span class="st-group-count">${docs.length}</span>
+            </button>
+            <ul class="st-leaves" role="group">${leavesHTML}</ul>
+          </li>
+        `;
+      }).join('');
+
+      return `
+        <li class="st-branch type-${escapeHtml(branch.typeKey || 'luat')}" data-master-id="${escapeHtml(branch.masterId)}" role="treeitem" aria-expanded="false">
+          <button class="st-branch-head" type="button">
+            <span class="st-chev" aria-hidden="true">▸</span>
+            <span class="st-branch-pill">${escapeHtml(master.type)} · ${escapeHtml(master.number)}</span>
+            <span class="st-branch-label">${escapeHtml(branch.masterLabel)}</span>
+            <span class="st-branch-count">${totalDocs}</span>
+          </button>
+          <ul class="st-groups" role="group">${groupsHTML}</ul>
+        </li>
+      `;
+    };
+
+    wrap.innerHTML = `<ul class="st-tree" role="tree">${SUB_SECTOR_TAXONOMY.map(branchHTML).join('')}</ul>`;
+
+    // Expand/collapse on header click
+    wrap.querySelectorAll('.st-branch-head, .st-group-head').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const node = btn.closest('.st-branch, .st-group');
+        const open = node.getAttribute('aria-expanded') === 'true';
+        node.setAttribute('aria-expanded', open ? 'false' : 'true');
+      });
+    });
+
+    // Leaf doc click → spotlight preview
+    wrap.querySelectorAll('.st-leaf[data-doc-id]').forEach(leaf => {
+      leaf.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        if (typeof showDocPreview === 'function') showDocPreview(leaf.dataset.docId);
+      });
+    });
   }
 
   // Industries / Lĩnh vực pháp lý — landing-page overview of every legal area
