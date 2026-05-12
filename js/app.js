@@ -788,6 +788,8 @@
   // Top nav (Home + Văn bản theo lĩnh vực dropdown + field menu items)
   const topnavHome = $("#topnav-home");
   if (topnavHome) topnavHome.addEventListener("click", (e) => { e.preventDefault(); goHome(); });
+  const topnavOverview = $("#topnav-overview");
+  if (topnavOverview) topnavOverview.addEventListener("click", (e) => { e.preventDefault(); showOverview(); });
   const topnavFieldsBtn = $("#topnav-fields-btn");
   const topnavFieldsItem = topnavFieldsBtn ? topnavFieldsBtn.closest(".topnav-dropdown") : null;
   if (topnavFieldsBtn && topnavFieldsItem) {
@@ -883,6 +885,8 @@
     setLuocdoOnlyMode(false);
     document.body.classList.remove("preview-mode");
     viewer.classList.add("hidden");
+    const overview = $("#overview");
+    if (overview) overview.classList.add("hidden");
     landing.classList.remove("hidden");
     if (searchInput) searchInput.value = "";
     if (searchClear) searchClear.classList.remove("visible");
@@ -891,6 +895,23 @@
     setCrumbs([{ label: "Trang chủ", action: goHome }, { label: "Tra cứu văn bản pháp luật", current: true }]);
     window.scrollTo({ top: 0, behavior: "smooth" });
     renderLandingContent();
+  }
+
+  function showOverview() {
+    _recordNav({ type: "overview" });
+    window.__spotlightDocId = null;
+    setLuocdoOnlyMode(false);
+    document.body.classList.remove("preview-mode");
+    viewer.classList.add("hidden");
+    landing.classList.add("hidden");
+    const overview = $("#overview");
+    if (overview) overview.classList.remove("hidden");
+    if (searchInput) searchInput.value = "";
+    if (searchClear) searchClear.classList.remove("visible");
+    if (suggestions) suggestions.innerHTML = "";
+    setCrumbs([{ label: "Trang chủ", action: goHome }, { label: "Overview", current: true }]);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    renderOverviewContent();
   }
 
   // Re-populate the spotlight card with a given doc — used when the user
@@ -904,6 +925,8 @@
     setLuocdoOnlyMode(false);
     document.body.classList.add("preview-mode");
     viewer.classList.add("hidden");
+    const overview = $("#overview");
+    if (overview) overview.classList.add("hidden");
     landing.classList.remove("hidden");
     fillSpotlight(doc);
     renderLandingContent();
@@ -979,12 +1002,17 @@
   // ===== Landing rendering =====
   function renderLandingContent() {
     renderStats();
-    renderIndustries();
-    renderBoLuatGrid();
-    renderAllLuatGrouped();
+    renderIndustries("#industry-grid");
     renderNewdocs();
     renderExpired();
     renderHot();
+  }
+
+  // ===== Overview page rendering =====
+  function renderOverviewContent() {
+    renderIndustries("#ov-industry-grid");
+    renderBoLuatGrid("#ov-boluat-grid", "#ov-boluat-sub");
+    renderAllLuatGrouped("#ov-alllaws-list", "#ov-alllaws-sub");
   }
 
   // === Sub-sector tree ===
@@ -1214,8 +1242,8 @@
     },
   ];
 
-  function renderIndustries() {
-    const grid = $("#industry-grid");
+  function renderIndustries(gridSel) {
+    const grid = $(gridSel || "#industry-grid");
     if (!grid) return;
     const docs = Object.values(DB);
 
@@ -1290,10 +1318,14 @@
   }
 
   // Render the "Bộ luật" section — all Bộ luật cards in a simple grid.
-  function renderBoLuatGrid() {
-    const grid = $("#boluat-grid");
+  function renderBoLuatGrid(gridSel, subSel) {
+    const grid = $(gridSel || "#boluat-grid");
     if (!grid) return;
     const items = sortByYearDesc(Object.values(DB).filter((d) => d.type === "Bộ luật"));
+    if (subSel) {
+      const sub = $(subSel);
+      if (sub) sub.textContent = `${items.length} Bộ luật trong CSDL — bấm để xem chi tiết.`;
+    }
     grid.innerHTML = items.map((d) => {
       const year = (d.issuedDate || "").slice(0, 4) || "—";
       const title = d.shortTitle || d.title || d.id;
@@ -1382,8 +1414,8 @@
   // LAW_GROUPS using its matcher regex against title+shortTitle, with
   // an "Khác" fallback for laws that don't fit any group. Each bucket is a
   // collapsible <details>; collapse-state is per-session, no localStorage.
-  function renderAllLuatGrouped() {
-    const wrap = $("#alllaws-list");
+  function renderAllLuatGrouped(listSel, subSel) {
+    const wrap = $(listSel || "#alllaws-list");
     if (!wrap) return;
     const luat = Object.values(DB).filter((d) => d.type === "Luật");
     // Build no-diacritic mirror regex for each group so undiacriticised
@@ -1404,8 +1436,10 @@
     const buckets = [...groups.filter((g) => g.items.length), khac].filter((g) => g.items.length);
     for (const g of buckets) g.items = sortByYearDesc(g.items);
 
-    const sub = $("#alllaws-sub");
-    if (sub) sub.textContent = `${luat.length} Luật, phân vào ${buckets.length} nhóm. Bấm tiêu đề nhóm để mở/đóng.`;
+    if (subSel) {
+      const sub = $(subSel);
+      if (sub) sub.textContent = `${luat.length} Luật, phân vào ${buckets.length} nhóm. Bấm tiêu đề nhóm để mở/đóng.`;
+    }
 
     wrap.innerHTML = buckets.map((g, idx) => `
       <details class="law-group" ${idx < 1 ? "open" : ""} data-group="${escapeHtml(g.key)}">
@@ -1808,6 +1842,8 @@
     autoCacheDoc(doc);
 
     landing.classList.add("hidden");
+    const overviewEl = $("#overview");
+    if (overviewEl) overviewEl.classList.add("hidden");
     viewer.classList.remove("hidden");
     if (suggestions) suggestions.innerHTML = "";
     sideSuggestions.innerHTML = "";
