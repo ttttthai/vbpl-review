@@ -1673,6 +1673,130 @@ body.preview-mode .industries { display: none; }
 }
 
 /* ============================================================
+   AGENCIES (Hệ thống cơ quan Việt Nam)
+   ============================================================ */
+.agencies-page {
+  padding: 18px 0 48px;
+  animation: fadeIn 200ms ease;
+}
+.agencies-tree {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 14px;
+  margin-top: 8px;
+}
+.ag-node {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: opacity 0.18s ease;
+}
+.ag-node.ag-depth-0 {
+  border-top: 3px solid var(--red);
+  padding: 14px 16px 16px;
+}
+.ag-node.ag-depth-0.ag-kind-party { border-top-color: #b3261e; }
+.ag-node.ag-depth-0.ag-kind-state { border-top-color: var(--red); }
+.ag-node.ag-depth-0.ag-kind-front { border-top-color: var(--blue); }
+.ag-card {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  justify-content: space-between;
+}
+.ag-label {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 14.5px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  line-height: 1.3;
+}
+.ag-node.ag-depth-0 .ag-label {
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.ag-node.ag-depth-1 .ag-label {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink);
+}
+.ag-node.ag-depth-2 .ag-label,
+.ag-node.ag-depth-3 .ag-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink);
+}
+.ag-children {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  border-left: 2px solid var(--line);
+  padding-left: 10px;
+  margin-left: 2px;
+}
+.ag-children .ag-node {
+  background: rgba(125, 29, 34, 0.025);
+  border: 1px solid var(--line);
+  border-left: 3px solid transparent;
+  padding: 8px 12px;
+  border-radius: 5px;
+}
+.ag-children .ag-node:hover {
+  border-left-color: var(--red);
+}
+.ag-children .ag-children {
+  border-left-color: rgba(125, 29, 34, 0.18);
+}
+.ag-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px; height: 14px;
+  color: var(--red);
+  font-size: 16px;
+  flex-shrink: 0;
+}
+.ag-node.ag-highlight {
+  background: rgba(125, 29, 34, 0.08);
+  border-color: var(--red);
+}
+.ag-node.ag-highlight .ag-label {
+  color: var(--red);
+  font-weight: 700;
+}
+.ag-node.ag-dim {
+  opacity: 0.45;
+}
+.ag-node.ag-dim:hover {
+  opacity: 1;
+}
+
+/* Make the Nơi nhận header into a hyperlink */
+.doc-body .doc-signature a.sig-recipients-head {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--red);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.12s ease;
+  cursor: pointer;
+}
+.doc-body .doc-signature a.sig-recipients-head:hover {
+  border-bottom-color: var(--red);
+}
+.doc-body .doc-signature a.sig-recipients-head svg {
+  opacity: 0.7;
+}
+
+/* ============================================================
    OVERVIEW (single page showing industries + Bộ luật + all Luật)
    ============================================================ */
 

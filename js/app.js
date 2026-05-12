@@ -790,6 +790,22 @@
   if (topnavHome) topnavHome.addEventListener("click", (e) => { e.preventDefault(); goHome(); });
   const topnavOverview = $("#topnav-overview");
   if (topnavOverview) topnavOverview.addEventListener("click", (e) => { e.preventDefault(); showOverview(); });
+
+  // Delegated click handler for "Nơi nhận:" links inside any signature block.
+  // The signature block is rendered dynamically by renderArticleBody, so we
+  // listen on the docBody container and dispatch by data-action.
+  if (docBody) {
+    docBody.addEventListener("click", (e) => {
+      const link = e.target.closest('[data-action="open-agencies"]');
+      if (!link) return;
+      e.preventDefault();
+      let recipients = [];
+      try { recipients = JSON.parse(link.dataset.recipients || "[]"); } catch {}
+      const docLabel = currentDoc ? currentDoc.shortTitle : "";
+      const highlight = matchAgencies(recipients);
+      showAgencies(highlight, docLabel);
+    });
+  }
   const topnavFieldsBtn = $("#topnav-fields-btn");
   const topnavFieldsItem = topnavFieldsBtn ? topnavFieldsBtn.closest(".topnav-dropdown") : null;
   if (topnavFieldsBtn && topnavFieldsItem) {
@@ -887,6 +903,8 @@
     viewer.classList.add("hidden");
     const overview = $("#overview");
     if (overview) overview.classList.add("hidden");
+    const agencies = $("#agencies");
+    if (agencies) agencies.classList.add("hidden");
     landing.classList.remove("hidden");
     if (searchInput) searchInput.value = "";
     if (searchClear) searchClear.classList.remove("visible");
@@ -906,12 +924,37 @@
     landing.classList.add("hidden");
     const overview = $("#overview");
     if (overview) overview.classList.remove("hidden");
+    const agencies = $("#agencies");
+    if (agencies) agencies.classList.add("hidden");
     if (searchInput) searchInput.value = "";
     if (searchClear) searchClear.classList.remove("visible");
     if (suggestions) suggestions.innerHTML = "";
     setCrumbs([{ label: "Trang chủ", action: goHome }, { label: "Overview", current: true }]);
     window.scrollTo({ top: 0, behavior: "smooth" });
     renderOverviewContent();
+  }
+
+  // Hệ thống cơ quan — show the Vietnamese government org structure.
+  // If highlightSet is provided (a Set of agency-tree node ids), those
+  // agencies are highlighted; everything else is dimmed. This is used when
+  // entering from a doc's "Nơi nhận" link.
+  function showAgencies(highlightSet, fromDocLabel) {
+    _recordNav({ type: "agencies" });
+    setLuocdoOnlyMode(false);
+    document.body.classList.remove("preview-mode");
+    viewer.classList.add("hidden");
+    landing.classList.add("hidden");
+    const overviewEl = $("#overview");
+    if (overviewEl) overviewEl.classList.add("hidden");
+    const agencies = $("#agencies");
+    if (agencies) agencies.classList.remove("hidden");
+    if (suggestions) suggestions.innerHTML = "";
+    const crumbs = [{ label: "Trang chủ", action: goHome }];
+    if (fromDocLabel) crumbs.push({ label: fromDocLabel });
+    crumbs.push({ label: "Cơ quan ban hành", current: true });
+    setCrumbs(crumbs);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    renderAgenciesContent(highlightSet, fromDocLabel);
   }
 
   // Re-populate the spotlight card with a given doc — used when the user
@@ -1014,6 +1057,151 @@
     renderBoLuatGrid("#ov-boluat-grid", "#ov-boluat-sub");
     renderIndustries("#ov-industry-grid");
     renderAllLuatGrouped("#ov-alllaws-list", "#ov-alllaws-sub");
+  }
+
+  // ===== Agency tree (Hệ thống cơ quan Việt Nam) =====
+  // Hard-coded hierarchy of Vietnamese government / political-system organs.
+  // The "aliases" array on each node lists strings that may appear in a
+  // doc's Nơi nhận; matching is substring + case-insensitive.
+  const AGENCY_TREE = {
+    label: "Hệ thống chính trị Việt Nam",
+    children: [
+      {
+        id: "dang", label: "Đảng Cộng sản Việt Nam", kind: "party",
+        children: [
+          { id: "bbt", label: "Ban Bí thư Trung ương", aliases: ["Ban Bí thư Trung ương Đảng", "Ban Bí thư"] },
+          { id: "vp-tw", label: "Văn phòng Trung ương & các Ban của Đảng", aliases: ["Văn phòng Trung ương và các Ban của Đảng", "Văn phòng Trung ương Đảng"] },
+          { id: "vp-tbt", label: "Văn phòng Tổng Bí thư", aliases: ["Văn phòng Tổng Bí thư"] },
+        ],
+      },
+      {
+        id: "nha-nuoc", label: "Nhà nước CHXHCN Việt Nam", kind: "state",
+        children: [
+          {
+            id: "ctn", label: "Chủ tịch nước",
+            children: [
+              { id: "vp-ctn", label: "Văn phòng Chủ tịch nước", aliases: ["Văn phòng Chủ tịch nước"] },
+            ],
+          },
+          {
+            id: "quoc-hoi", label: "Quốc hội (lập pháp)",
+            children: [
+              { id: "uy-ban-tv-qh", label: "Ủy ban Thường vụ Quốc hội", aliases: ["Ủy ban Thường vụ Quốc hội"] },
+              { id: "hdt", label: "Hội đồng Dân tộc", aliases: ["Hội đồng Dân tộc"] },
+              { id: "uy-ban-qh", label: "Các Ủy ban của Quốc hội", aliases: ["các Ủy ban của Quốc hội", "Ủy ban của Quốc hội"] },
+              { id: "vp-qh", label: "Văn phòng Quốc hội", aliases: ["Văn phòng Quốc hội"] },
+            ],
+          },
+          {
+            id: "chinh-phu", label: "Chính phủ (hành pháp)",
+            children: [
+              { id: "ttg", label: "Thủ tướng & các Phó Thủ tướng", aliases: ["Thủ tướng, các Phó Thủ tướng Chính phủ", "Thủ tướng"] },
+              {
+                id: "vpcp", label: "Văn phòng Chính phủ (VPCP)", aliases: ["VPCP", "Văn phòng Chính phủ"],
+                children: [
+                  { id: "vpcp-btcn", label: "Bộ trưởng – Chủ nhiệm VPCP", aliases: ["BTCN"] },
+                  { id: "vpcp-pcn", label: "Các Phó Chủ nhiệm", aliases: ["các PCN", "Phó Chủ nhiệm"] },
+                  { id: "vpcp-trolly", label: "Trợ lý Thủ tướng", aliases: ["Trợ lý TTg"] },
+                  { id: "vpcp-cong-ttdt", label: "Cổng Thông tin Điện tử", aliases: ["TGĐ Cổng TTĐT", "Cổng TTĐT"] },
+                  { id: "vpcp-vu-cuc", label: "Các Vụ, Cục thuộc VPCP", aliases: ["các Vụ", "Cục"] },
+                  { id: "vpcp-cong-bao", label: "Công báo", aliases: ["Công báo"] },
+                ],
+              },
+              { id: "cac-bo", label: "Các Bộ & cơ quan ngang Bộ", aliases: ["Các bộ, cơ quan ngang bộ", "cơ quan ngang bộ", "Các Bộ"] },
+              { id: "co-quan-thuoc-cp", label: "Cơ quan thuộc Chính phủ", aliases: ["cơ quan thuộc Chính phủ"] },
+            ],
+          },
+          {
+            id: "tu-phap", label: "Tư pháp",
+            children: [
+              { id: "tand", label: "Tòa án Nhân dân Tối cao", aliases: ["Tòa án nhân dân tối cao", "Toà án nhân dân tối cao"] },
+              { id: "vksnd", label: "Viện Kiểm sát Nhân dân Tối cao", aliases: ["Viện kiểm sát nhân dân tối cao"] },
+            ],
+          },
+          {
+            id: "kiem-toan", label: "Kiểm toán Nhà nước",
+            aliases: ["Kiểm toán nhà nước", "Kiểm toán Nhà nước"],
+          },
+          {
+            id: "dia-phuong", label: "Chính quyền địa phương",
+            children: [
+              { id: "hdnd-tinh", label: "HĐND tỉnh, thành phố trực thuộc TW", aliases: ["HĐND, UBND các tỉnh", "HĐND các tỉnh"] },
+              { id: "ubnd-tinh", label: "UBND tỉnh, thành phố trực thuộc TW", aliases: ["UBND các tỉnh"] },
+            ],
+          },
+          {
+            id: "doc-lap", label: "Cơ quan chuyên môn độc lập",
+            children: [
+              { id: "ub-gs-tcqg", label: "Ủy ban Giám sát Tài chính Quốc gia", aliases: ["Ủy ban Giám sát tài chính Quốc gia"] },
+              { id: "nh-csxh", label: "Ngân hàng Chính sách Xã hội", aliases: ["Ngân hàng Chính sách xã hội"] },
+              { id: "nh-ptvn", label: "Ngân hàng Phát triển Việt Nam", aliases: ["Ngân hàng Phát triển Việt Nam"] },
+            ],
+          },
+        ],
+      },
+      {
+        id: "mttq", label: "Mặt trận Tổ quốc Việt Nam", kind: "front",
+        children: [
+          { id: "ub-tw-mttq", label: "Ủy ban Trung ương MTTQ", aliases: ["Ủy ban Trung ương Mặt trận Tổ quốc Việt Nam", "Mặt trận Tổ quốc"] },
+          { id: "doan-the", label: "Các đoàn thể trung ương", aliases: ["Cơ quan trung ương của các đoàn thể", "đoàn thể"] },
+        ],
+      },
+    ],
+  };
+
+  // Extract a set of agency ids matched in a recipients list.
+  function matchAgencies(recipients) {
+    const matched = new Set();
+    const norm = (s) => (s || "").toLowerCase();
+    function walk(node) {
+      const aliases = [node.label, ...(node.aliases || [])];
+      for (const r of recipients) {
+        const rn = norm(r);
+        if (aliases.some((a) => rn.includes(norm(a)) || norm(a).includes(rn))) {
+          matched.add(node.id);
+          break;
+        }
+      }
+      for (const c of node.children || []) walk(c);
+    }
+    for (const c of AGENCY_TREE.children || []) walk(c);
+    return matched;
+  }
+
+  // Render the agency tree as tiered groups. highlightSet = Set<agencyId>.
+  function renderAgenciesContent(highlightSet, fromDocLabel) {
+    const wrap = $("#agencies-tree");
+    if (!wrap) return;
+    const sub = $("#agencies-sub");
+    const matched = highlightSet instanceof Set ? highlightSet : null;
+    if (sub) {
+      sub.textContent = matched
+        ? `Đánh dấu ${matched.size} cơ quan nhận văn bản này trong tổng số cơ quan thuộc hệ thống.`
+        : "Bốn nhóm chính: Đảng, Nhà nước, Tư pháp & các cơ quan độc lập, và Mặt trận Tổ quốc.";
+    }
+    function nodeHtml(node, depth) {
+      const isHighlighted = matched && matched.has(node.id);
+      const isDimmed = matched && !isHighlighted && !hasHighlightedDescendant(node, matched);
+      const classes = ["ag-node", `ag-depth-${depth}`];
+      if (node.kind) classes.push(`ag-kind-${node.kind}`);
+      if (isHighlighted) classes.push("ag-highlight");
+      if (isDimmed) classes.push("ag-dim");
+      const children = (node.children || []).map((c) => nodeHtml(c, depth + 1)).join("");
+      return `
+        <div class="${classes.join(" ")}">
+          <div class="ag-card">
+            <span class="ag-label">${escapeHtml(node.label)}</span>
+            ${isHighlighted ? '<span class="ag-mark" title="Có trong Nơi nhận của văn bản hiện tại">●</span>' : ""}
+          </div>
+          ${children ? `<div class="ag-children">${children}</div>` : ""}
+        </div>`;
+    }
+    function hasHighlightedDescendant(node, set) {
+      if (set.has(node.id)) return true;
+      for (const c of node.children || []) if (hasHighlightedDescendant(c, set)) return true;
+      return false;
+    }
+    wrap.innerHTML = AGENCY_TREE.children.map((n) => nodeHtml(n, 0)).join("");
   }
 
   // Render the Constitution tier — active HP big & prominent, historical
@@ -1880,6 +2068,8 @@
     landing.classList.add("hidden");
     const overviewEl = $("#overview");
     if (overviewEl) overviewEl.classList.add("hidden");
+    const agenciesEl = $("#agencies");
+    if (agenciesEl) agenciesEl.classList.add("hidden");
     viewer.classList.remove("hidden");
     if (suggestions) suggestions.innerHTML = "";
     sideSuggestions.innerHTML = "";
@@ -2080,10 +2270,16 @@
       else if (isName) cls += " sig-name";
       return `<div class="${cls}">${escapeHtml(l)}</div>`;
     }).join("");
+    // Embed the recipients as a JSON payload so the click handler can pass
+    // them to the agencies page without re-parsing the DOM.
+    const payload = JSON.stringify(recipients).replace(/"/g, "&quot;");
     return `
       <section class="doc-signature">
         <div class="sig-recipients">
-          <h4 class="sig-recipients-head">Nơi nhận:</h4>
+          <a href="#" class="sig-recipients-head" data-action="open-agencies" data-recipients="${payload}" title="Xem hệ thống cơ quan nhà nước">
+            Nơi nhận:
+            <svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
           <ul>${liHtml}</ul>
         </div>
         <div class="sig-signer">${sigHtml}</div>
