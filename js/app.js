@@ -3167,6 +3167,188 @@
     }
   }
 
+  // ===== Find in document =====
+  // Scoped to #doc-body. Wraps each match in <mark class="vbpl-find-hit">
+  // and tracks the "current" mark for nav. Cmd/Ctrl+F opens the bar.
+  (function setupFindInDoc() {
+    const findBar = $("#find-bar");
+    const findInput = $("#find-input");
+    const findCount = $("#find-count");
+    const findToggle = $("#find-toggle");
+    const findPrev = $("#find-prev");
+    const findNext = $("#find-next");
+    const findClose = $("#find-close");
+    if (!findBar || !findInput || !docBody) return;
+
+    let hits = [];
+    let cursor = -1;
+    let lastQuery = "";
+
+    function clearMarks() {
+      const marks = docBody.querySelectorAll("mark.vbpl-find-hit");
+      marks.forEach((m) => {
+        const parent = m.parentNode;
+        if (!parent) return;
+        parent.replaceChild(document.createTextNode(m.textContent), m);
+      });
+      // Merge adjacent text nodes that were split
+      const stack = [docBody];
+      while (stack.length) {
+        const el = stack.pop();
+        if (el && el.normalize) el.normalize();
+      }
+      hits = [];
+      cursor = -1;
+    }
+
+    function escForRegex(s) { return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"); }
+
+    function findAndMark(query) {
+      clearMarks();
+      const q = (query || "").trim();
+      if (!q || q.length < 2) {
+        updateCount();
+        return;
+      }
+      const qLower = q.toLowerCase();
+      const qLen = qLower.length;
+      // Walk text nodes (skip those inside existing marks, scripts, etc.)
+      const walker = document.createTreeWalker(docBody, NodeFilter.SHOW_TEXT, {
+        acceptNode(node) {
+          if (!node.nodeValue) return NodeFilter.FILTER_REJECT;
+          const p = node.parentElement;
+          if (p && (p.tagName === "SCRIPT" || p.tagName === "STYLE")) return NodeFilter.FILTER_REJECT;
+          return NodeFilter.FILTER_ACCEPT;
+        }
+      });
+      const targets = [];
+      let n;
+      while ((n = walker.nextNode())) targets.push(n);
+
+      for (const node of targets) {
+        const text = node.nodeValue;
+        const lower = text.toLowerCase();
+        const ranges = [];
+        let idx = 0, found;
+        while ((found = lower.indexOf(qLower, idx)) >= 0) {
+          ranges.push([found, found + qLen]);
+          idx = found + qLen;
+        }
+        if (!ranges.length) continue;
+        let lastEnd = 0;
+        const frag = document.createDocumentFragment();
+        for (const [start, end] of ranges) {
+          if (start > lastEnd) frag.appendChild(document.createTextNode(text.slice(lastEnd, start)));
+          const m = document.createElement("mark");
+          m.className = "vbpl-find-hit";
+          m.textContent = text.slice(start, end);
+          frag.appendChild(m);
+          hits.push(m);
+          lastEnd = end;
+        }
+        if (lastEnd < text.length) frag.appendChild(document.createTextNode(text.slice(lastEnd)));
+        node.parentNode.replaceChild(frag, node);
+      }
+      cursor = hits.length ? 0 : -1;
+      highlightCurrent();
+      updateCount();
+    }
+
+    function highlightCurrent() {
+      hits.forEach((m, i) => m.classList.toggle("current", i === cursor));
+      const cur = hits[cursor];
+      if (cur) {
+        const r = cur.getBoundingClientRect();
+        if (r.top < 100 || r.bottom > window.innerHeight - 80) {
+          cur.scrollIntoView({ behavior: "smooth", block: "center" });
+        }
+      }
+    }
+
+    function updateCount() {
+      if (findCount) findCount.textContent = hits.length ? `${cursor + 1}/${hits.length}` : "0/0";
+    }
+
+    function navigate(dir) {
+      if (!hits.length) return;
+      cursor = (cursor + dir + hits.length) % hits.length;
+      highlightCurrent();
+      updateCount();
+    }
+
+    function openFindBar() {
+      if (!findBar.classList.contains("hidden")) {
+        findInput.focus();
+        findInput.select();
+        return;
+      }
+      findBar.classList.remove("hidden");
+      findInput.value = lastQuery;
+      findInput.focus();
+      findInput.select();
+      if (lastQuery) findAndMark(lastQuery);
+    }
+    function closeFindBar() {
+      findBar.classList.add("hidden");
+      lastQuery = findInput.value;
+      clearMarks();
+      updateCount();
+    }
+
+    let debounce = null;
+    findInput.addEventListener("input", () => {
+      clearTimeout(debounce);
+      debounce = setTimeout(() => findAndMark(findInput.value), 120);
+    });
+    findInput.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") {
+        e.preventDefault();
+        if (!hits.length) return;
+        navigate(e.shiftKey ? -1 : 1);
+      } else if (e.key === "Escape") {
+        e.preventDefault();
+        closeFindBar();
+      }
+    });
+    if (findToggle) findToggle.addEventListener("click", openFindBar);
+    if (findPrev) findPrev.addEventListener("click", () => navigate(-1));
+    if (findNext) findNext.addEventListener("click", () => navigate(1));
+    if (findClose) findClose.addEventListener("click", closeFindBar);
+
+    // Cmd/Ctrl+F when viewer is visible and we're on the Toàn văn tab
+    document.addEventListener("keydown", (e) => {
+      const isFind = (e.metaKey || e.ctrlKey) && (e.key === "f" || e.key === "F");
+      if (!isFind) return;
+      const viewerEl = $("#viewer");
+      if (!viewerEl || viewerEl.classList.contains("hidden")) return;
+      // Only intercept when Toàn văn tab is active (other tabs have no body to search)
+      const toanvanPanel = document.querySelector('.tab-panel[data-panel="toanvan"]');
+      if (!toanvanPanel || !toanvanPanel.classList.contains("active")) return;
+      e.preventDefault();
+      openFindBar();
+    });
+
+    // Clear marks whenever we render a new doc — onDocOpen would be nicer
+    // but we don't have that hook, so observe docBody mutations.
+    const obs = new MutationObserver(() => {
+      // If the body wholesale changed (new doc opened), drop stale state.
+      // Mutations from our own find-mark wrapping have hits.length > 0,
+      // and the marks themselves trigger mutations — guard against re-runs.
+      // Easiest correct approach: if no .vbpl-find-hit elements remain but
+      // hits[] is non-empty, the body was re-rendered → reset.
+      if (hits.length && !docBody.querySelector("mark.vbpl-find-hit")) {
+        hits = [];
+        cursor = -1;
+        updateCount();
+        if (!findBar.classList.contains("hidden") && findInput.value) {
+          // Re-run search on new content
+          findAndMark(findInput.value);
+        }
+      }
+    });
+    obs.observe(docBody, { childList: true, subtree: false });
+  })();
+
   // ===== References =====
   const DOC_NUMBER_RE = /(Luật|Nghị\s*định|Thông\s*tư|Bộ\s*luật)(?:\s+số)?\s+([0-9]+\/[0-9]+\/(?:QH[0-9]+|N[ĐD][- ]?CP|TT[- ]?[A-ZĐ]+))/giu;
   // Allow commas inside the document name segment — Vietnamese laws often have

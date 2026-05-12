@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" />
-  <link rel="stylesheet" href="css/styles.css?v=114" />
+  <link rel="stylesheet" href="css/styles.css?v=115" />
 </head>
 <body>
 
@@ -210,8 +210,27 @@
               <button class="tool-btn" id="width-narrow">Hẹp</button>
               <button class="tool-btn" id="width-wide">Rộng</button>
             </div>
+            <button class="tool-btn tool-find-toggle" id="find-toggle" title="Tìm trong văn bản (Cmd/Ctrl + F)">
+              <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg>
+              Tìm
+            </button>
             <div class="spacer"></div>
             <span class="lbl" id="reading-info"></span>
+          </div>
+
+          <div class="find-bar hidden" id="find-bar" role="search">
+            <svg class="find-bar-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg>
+            <input id="find-input" type="text" placeholder="Tìm trong văn bản…" autocomplete="off" spellcheck="false" />
+            <span class="find-count" id="find-count">0/0</span>
+            <button class="find-btn" id="find-prev" title="Kết quả trước (Shift + Enter)" aria-label="Trước">
+              <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+            </button>
+            <button class="find-btn" id="find-next" title="Kết quả sau (Enter)" aria-label="Sau">
+              <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <button class="find-btn find-close" id="find-close" title="Đóng (Esc)" aria-label="Đóng">
+              <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
           </div>
 
           <section class="tab-panel active" data-panel="toanvan">
@@ -296,7 +315,7 @@
     </div>
   </div>
 
-  <script src="data/documents.js?v=114"></script>
-  <script src="js/app.js?v=114"></script>
+  <script src="data/documents.js?v=115"></script>
+  <script src="js/app.js?v=115"></script>
 </body>
 </html>

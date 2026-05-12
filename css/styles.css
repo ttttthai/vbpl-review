@@ -2145,6 +2145,89 @@ body.preview-mode .industries { display: none; }
 .tool-btn.active { background: var(--orange); color: white; }
 .read-toolbar .spacer { flex: 1; }
 
+/* Standalone "Tìm" button in the read-toolbar (not in a tool-group) */
+.tool-btn.tool-find-toggle {
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 4px 10px;
+}
+
+/* Find-in-doc bar */
+.find-bar {
+  display: flex; align-items: center; gap: 8px;
+  background: white;
+  border-bottom: 1px solid var(--line);
+  padding: 7px 24px;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  box-shadow: 0 1px 0 rgba(15, 28, 51, 0.04);
+}
+.find-bar .find-bar-icon {
+  color: var(--ink-mute);
+  flex-shrink: 0;
+}
+.find-bar input {
+  flex: 1;
+  min-width: 0;
+  max-width: 400px;
+  border: 1px solid var(--line-strong);
+  border-radius: 4px;
+  padding: 5px 9px;
+  font: inherit;
+  font-size: 12.5px;
+  color: var(--ink);
+  background: white;
+  outline: none;
+  transition: border-color 0.12s ease;
+}
+.find-bar input:focus {
+  border-color: var(--red);
+}
+.find-bar input::placeholder {
+  color: var(--ink-mute);
+  font-style: italic;
+}
+.find-bar .find-count {
+  font-family: 'Inter', sans-serif;
+  font-size: 11.5px;
+  color: var(--ink-mute);
+  min-width: 38px;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+.find-bar .find-btn {
+  border: 1px solid var(--line);
+  background: white;
+  color: var(--ink-soft);
+  border-radius: 4px;
+  padding: 4px 7px;
+  cursor: pointer;
+  display: inline-flex; align-items: center;
+  transition: background 0.12s ease, color 0.12s ease, border-color 0.12s ease;
+}
+.find-bar .find-btn:hover {
+  background: rgba(125, 29, 34, 0.08);
+  color: var(--red);
+  border-color: var(--red);
+}
+.find-bar .find-close { margin-left: 4px; }
+
+/* Highlight marks */
+mark.vbpl-find-hit {
+  background: #fef08a;
+  color: inherit;
+  padding: 0 1px;
+  border-radius: 2px;
+  box-decoration-break: clone;
+}
+mark.vbpl-find-hit.current {
+  background: #f97316;
+  color: white;
+  outline: 2px solid #f97316;
+  outline-offset: 1px;
+}
+
 /* Doc body — Source Serif 4 (loaded at top of <head>) for clean legal-text
    reading; tighter line-height than the previous 1.85 because Vietnamese
    legal text already has many short numbered/lettered paragraphs and the
