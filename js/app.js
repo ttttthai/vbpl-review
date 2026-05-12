@@ -1978,22 +1978,74 @@
   }
 
   function renderArticleBody(body) {
-    // If the body contains a "Nơi nhận:" closing block, split it off and
-    // render that portion as a formal signature block.
-    const sigSplit = body.search(/(?:^|\n)\s*Nơi nhận:/);
-    const mainText = sigSplit >= 0 ? body.slice(0, sigSplit) : body;
-    const sigText  = sigSplit >= 0 ? body.slice(sigSplit) : null;
+    // Split the body into up to three regions in reading order:
+    //   1. main text (before any closing block)
+    //   2. signature block (Nơi nhận + signer)  — optional
+    //   3. appendix section (PHỤ LỤC ...)        — optional
+    // Some docs end with just signature, some with both signature+appendix,
+    // some with just appendix. We detect each marker independently and clip.
+    const sigStart = body.search(/(?:^|\n)\s*Nơi nhận:/);
+    const apxStart = body.search(/(?:^|\n)\s*PHỤ LỤC(?:\s|$|,|\.)/);
+    let mainText = body, sigText = null, apxText = null;
+    if (sigStart >= 0 && apxStart >= 0) {
+      if (sigStart < apxStart) {
+        mainText = body.slice(0, sigStart);
+        sigText = body.slice(sigStart, apxStart);
+        apxText = body.slice(apxStart);
+      } else {
+        // appendix appears before "Nơi nhận" (rare) — treat as appendix
+        // then signature.
+        mainText = body.slice(0, apxStart);
+        apxText = body.slice(apxStart, sigStart);
+        sigText = body.slice(sigStart);
+      }
+    } else if (sigStart >= 0) {
+      mainText = body.slice(0, sigStart);
+      sigText = body.slice(sigStart);
+    } else if (apxStart >= 0) {
+      mainText = body.slice(0, apxStart);
+      apxText = body.slice(apxStart);
+    }
 
-    const lines = mainText.split(/\r?\n/);
+    let html = renderBodyLines(mainText);
+    if (sigText) html += renderSignatureBlockFromText(sigText);
+    if (apxText) html += renderBodyLines(apxText);
+    return html;
+  }
+
+  // Walks plain-text body lines and emits HTML with the right semantic class
+  // for each (point / clause / PHỤ LỤC heading / appendix subtitle / Bảng / etc.)
+  function renderBodyLines(text) {
+    const lines = text.split(/\r?\n/);
     let html = "";
+    let waitForAppendixSubtitle = false;
+    const isAllCapsVi = (s) => /^[A-ZÀ-Ỹ\d][A-ZÀ-Ỹ\d\s,.;:()\-/&%]+$/.test(s);
     for (const line of lines) {
       const t = line.trim();
-      if (!t) continue;
-      if (/^[a-zđ]\)/i.test(t)) html += `<p class="point">${escapeHtml(t)}</p>`;
-      else if (/^\d+\./.test(t)) html += `<p class="clause">${escapeHtml(t)}</p>`;
-      else html += `<p>${escapeHtml(t)}</p>`;
+      if (!t) { waitForAppendixSubtitle = false; continue; }
+      if (/^PHỤ LỤC(?:\s+[IVXLM\d]+)?(?:[.,].*)?$/i.test(t)) {
+        html += `<h3 class="appendix-heading">${escapeHtml(t)}</h3>`;
+        waitForAppendixSubtitle = true;
+      } else if (waitForAppendixSubtitle && t.length > 4 && isAllCapsVi(t)) {
+        html += `<div class="appendix-subtitle">${escapeHtml(t)}</div>`;
+        // Subtitles may continue across multiple all-caps lines — keep flag on.
+      } else if (/^\(Kèm theo\s+/i.test(t)) {
+        html += `<p class="appendix-attr">${escapeHtml(t)}</p>`;
+        waitForAppendixSubtitle = false;
+      } else if (/^Bảng\s+\d+/i.test(t)) {
+        html += `<h4 class="appendix-table-head">${escapeHtml(t)}</h4>`;
+        waitForAppendixSubtitle = false;
+      } else if (/^[a-zđ]\)/i.test(t)) {
+        html += `<p class="point">${escapeHtml(t)}</p>`;
+        waitForAppendixSubtitle = false;
+      } else if (/^\d+\./.test(t)) {
+        html += `<p class="clause">${escapeHtml(t)}</p>`;
+        waitForAppendixSubtitle = false;
+      } else {
+        html += `<p>${escapeHtml(t)}</p>`;
+        waitForAppendixSubtitle = false;
+      }
     }
-    if (sigText) html += renderSignatureBlockFromText(sigText);
     return html;
   }
 

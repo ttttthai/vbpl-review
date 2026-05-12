@@ -2243,6 +2243,49 @@ mark.vbpl-find-hit.current {
 }
 .doc-body.wide { max-width: 100%; }
 
+/* Appendix sections inline in article body — visual hierarchy mirroring the
+   published Vietnamese gov document layout. Triggered for ~35 docs that
+   have 'PHỤ LỤC I/II/III…' embedded in their last article's plain-text
+   body (e.g. NĐ 57/2025 DPPA, NĐ 80/2024, BLHS 2015, Luật Đất đai 2024). */
+.doc-body h3.appendix-heading {
+  font-family: Tahoma, Arial, sans-serif;
+  text-align: center;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  margin: 48px 0 4px;
+  color: var(--ink);
+  text-transform: uppercase;
+  scroll-margin-top: 110px;
+}
+.doc-body .appendix-subtitle {
+  font-family: Tahoma, Arial, sans-serif;
+  text-align: center;
+  font-size: 14.5px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  margin: 0 auto 8px;
+  max-width: 88%;
+  color: var(--ink);
+  text-transform: uppercase;
+  line-height: 1.35;
+}
+.doc-body .appendix-attr {
+  font-style: italic;
+  text-align: center;
+  color: var(--ink-mute);
+  font-size: calc(var(--read-size) - 1px);
+  margin: 4px 0 20px;
+}
+.doc-body h4.appendix-table-head {
+  font-family: Tahoma, Arial, sans-serif;
+  font-weight: 700;
+  font-size: calc(var(--read-size) + 0.5px);
+  margin: 22px 0 8px;
+  color: var(--ink);
+  scroll-margin-top: 110px;
+}
+
 /* Closing signature block: "Nơi nhận" + signer.
    Styled to resemble the formal Vietnamese government document layout —
    recipients on the left, signer block on the right.  */
