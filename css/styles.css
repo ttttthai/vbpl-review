@@ -812,6 +812,7 @@ body.preview-mode .industries { display: none; }
 .st-leaf-pill.type-bo-luat { border-left-color: #7d1d22; }
 .st-leaf-pill.type-nghidinh { border-left-color: #15a884; }
 .st-leaf-pill.type-thongtu { border-left-color: #1a2c4a; }
+.st-leaf-pill.type-quyetdinh { border-left-color: #7a3aa8; color: #5e2c84; }
 .st-leaf-title {
   font-family: Georgia, "Source Serif 4", serif;
   font-size: 12.5px;

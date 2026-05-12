@@ -1001,9 +1001,11 @@
         { key: "bad-debt", label: "Xử lý nợ xấu, dự phòng & VAMC",
           docs: ["53/2013/ND-CP","11/2021/TT-NHNN","26/2022/TT-NHNN","02/2013/TT-NHNN","09/2014/TT-NHNN","12/2013/TT-NHNN","19/2013/TT-NHNN"] },
         { key: "lending", label: "Hoạt động cho vay",
-          docs: ["39/2016/TT-NHNN","06/2023/TT-NHNN","08/2014/TT-NHNN","09/2013/TT-NHNN","10/2013/TT-NHNN","12/2010/TT-NHNN","14/2012/TT-NHNN","16/2013/TT-NHNN","20/2012/TT-NHNN","33/2011/TT-NHNN","33/2012/TT-NHNN","05/2011/TT-NHNN","15/2009/TT-NHNN"] },
+          docs: ["39/2016/TT-NHNN","12/2024/TT-NHNN","06/2023/TT-NHNN","08/2014/TT-NHNN","09/2013/TT-NHNN","10/2013/TT-NHNN","12/2010/TT-NHNN","14/2012/TT-NHNN","16/2013/TT-NHNN","20/2012/TT-NHNN","33/2011/TT-NHNN","33/2012/TT-NHNN","05/2011/TT-NHNN","15/2009/TT-NHNN"] },
         { key: "consumer-finance", label: "Tài chính tiêu dùng",
-          docs: ["39/2014/NĐ-CP","43/2016/TT-NHNN","18/2019/TT-NHNN"] },
+          docs: ["39/2014/NĐ-CP","43/2016/TT-NHNN","18/2019/TT-NHNN","35/2024/TT-NHNN"] },
+        { key: "debt-restructure", label: "Cơ cấu nợ & Giữ nhóm nợ",
+          docs: ["02/2023/TT-NHNN","06/2024/TT-NHNN"] },
         { key: "bond", label: "Trái phiếu doanh nghiệp",
           docs: ["16/2021/TT-NHNN","17/2022/TT-NHNN","15/2018/TT-NHNN","22/2016/TT-NHNN","28/2011/TT-NHNN"] },
         { key: "license", label: "Cấp phép & Tổ chức hoạt động",
@@ -1024,13 +1026,17 @@
       typeKey: "luat",
       groups: [
         { key: "renewable", label: "Năng lượng tái tạo & Điện mặt trời",
-          docs: ["135/2024/ND-CP"] },
+          docs: ["135/2024/ND-CP","11/2017/QĐ-TTg","13/2020/QĐ-TTg"] },
+        { key: "wind", label: "Điện gió",
+          docs: ["37/2011/QĐ-TTg","39/2018/QĐ-TTg"] },
+        { key: "tariff", label: "Cơ chế giá điện & FIT, khung giá chuyển tiếp",
+          docs: ["21/QĐ-BCT-2023","19/2023/TT-BCT","15/2022/TT-BCT","40/2014/TT-BCT"] },
         { key: "dppa", label: "Mua bán điện trực tiếp (DPPA)",
           docs: ["80/2024/ND-CP","100/2025/NĐ-CP"] },
         { key: "market", label: "Thị trường điện & Phát triển điện lực",
           docs: ["56/2025/NĐ-CP","17/2020/NĐ-CP"] },
         { key: "transmission", label: "Truyền tải & Phân phối điện",
-          docs: ["68/2010/NĐ-CP","25/2016/TT-BCT","39/2015/TT-BCT","40/2014/TT-BCT"] },
+          docs: ["68/2010/NĐ-CP","25/2016/TT-BCT","39/2015/TT-BCT"] },
         { key: "energy-saving", label: "Sử dụng năng lượng tiết kiệm",
           docs: ["21/2011/NĐ-CP"] },
         { key: "general", label: "Hướng dẫn chung",
@@ -2250,18 +2256,21 @@
       }
     }
 
-    // Collect implementing decrees and circulars
-    const decrees = [], circulars = [];
+    // Collect implementing decrees, circulars, and decisions (QĐ).
+    // QĐ-TTg and QĐ-BCT sit at the executive tier alongside NĐ.
+    const decrees = [], circulars = [], decisions = [];
     for (const other of Object.values(DB)) {
       const imps = other.implements || [];
       if (!imps.some(id => masterChain.has(id))) continue;
       if (other.typeKey === 'nghidinh') decrees.push(other);
       else if (other.typeKey === 'thongtu') circulars.push(other);
+      else if (other.typeKey === 'quyetdinh') decisions.push(other);
     }
     decrees.sort((a, b) => (b.issuedDate || '').localeCompare(a.issuedDate || ''));
     circulars.sort((a, b) => (b.issuedDate || '').localeCompare(a.issuedDate || ''));
+    decisions.sort((a, b) => (b.issuedDate || '').localeCompare(a.issuedDate || ''));
 
-    const totalImpl = decrees.length + circulars.length;
+    const totalImpl = decrees.length + circulars.length + decisions.length;
 
     const cardHTML = (d, size) => {
       const tk = d.typeKey || '';
@@ -2312,7 +2321,7 @@
       }).join('');
 
       // Collect any implementing docs not yet placed in any sub-sector
-      const orphans = [...decrees, ...circulars].filter(d => !accountedIds.has(d.id));
+      const orphans = [...decrees, ...circulars, ...decisions].filter(d => !accountedIds.has(d.id));
       const orphansHTML = orphans.length ? `
         <li class="st-group" data-group-key="other" role="treeitem" aria-expanded="false">
           <button class="st-group-head" type="button">
@@ -2380,6 +2389,7 @@
       <h2>Hệ thống văn bản — ${escapeHtml(master.shortTitle)}</h2>
       <div class="ht-meta">
         <span><strong>${decrees.length}</strong> nghị định</span>
+        ${decisions.length ? `<span class="ht-meta-sep">·</span><span><strong>${decisions.length}</strong> quyết định</span>` : ''}
         <span class="ht-meta-sep">·</span>
         <span><strong>${circulars.length}</strong> thông tư</span>
         ${taxonomy ? `<span class="ht-meta-sep">·</span><span><strong>${taxonomy.groups.length}</strong> sub-sector</span>` : ''}
