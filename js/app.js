@@ -2087,9 +2087,10 @@
     }
     const years = [...byYear.keys()].sort();
 
-    // Layout direction — 'v' = vertical (time top-to-bottom),
-    // 'h' = horizontal (time left-to-right). Persisted to localStorage.
-    const direction = localStorage.getItem('vbpl.sodoDir') === 'h' ? 'h' : 'v';
+    // Layout direction — vertical (time top-to-bottom) is the canonical view.
+    // The horizontal flow was experimental; horizontal code paths remain
+    // available below in case a toggle is added back later.
+    const direction = 'v';
     // Years the user collapsed (per-direction state in localStorage).
     const collapsedKey = `vbpl.sodoCollapsed.${doc.id}`;
     const collapsed = new Set(JSON.parse(localStorage.getItem(collapsedKey) || '[]'));
@@ -2380,7 +2381,6 @@
         <span><strong>${uniqEdges.length}</strong> liên kết</span>
         <span class="evt-meta-sep">·</span>
         <span class="evt-zoom-controls">
-          <button class="evt-zoom-btn" data-dir="${direction === 'h' ? 'v' : 'h'}" title="${direction === 'h' ? 'Hiển thị dọc' : 'Hiển thị ngang'}">${direction === 'h' ? '⇕' : '⇔'}</button>
           <button class="evt-zoom-btn" data-zoom="out" title="Thu nhỏ">−</button>
           <button class="evt-zoom-btn" data-zoom="reset" title="Đặt lại">⌂</button>
           <button class="evt-zoom-btn" data-zoom="in" title="Phóng to">+</button>
@@ -2442,11 +2442,6 @@
     sodoEl.querySelectorAll('.evt-zoom-btn').forEach(btn => {
       btn.addEventListener('click', (e) => {
         e.preventDefault();
-        if (btn.dataset.dir) {
-          localStorage.setItem('vbpl.sodoDir', btn.dataset.dir);
-          renderSodo(doc);
-          return;
-        }
         const a = btn.dataset.zoom;
         if (a === 'in') scale = Math.min(3, scale + 0.2);
         else if (a === 'out') scale = Math.max(0.4, scale - 0.2);
