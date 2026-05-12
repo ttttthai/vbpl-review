@@ -2094,12 +2094,13 @@
     const years = [...byYear.keys()].sort();
 
     // Layout dimensions. 5 columns let same-year clusters (e.g. 5+ 2025 docs
-    // for the electricity ecosystem) fit without overlapping.
-    const NODE_W = 170, NODE_H = 70;
-    const Y_GAP = 130;
-    const COLS = [110, 280, 450, 620, 790];
+    // for the electricity ecosystem) fit without overlapping. Leftmost column
+    // starts at 145 to leave room for the year-axis labels on the far left.
+    const NODE_W = 170, NODE_H = 80;
+    const Y_GAP = 140;
+    const COLS = [145, 320, 495, 670, 845];
     const X_CENTER = COLS[2];
-    const SVG_W = 900;
+    const SVG_W = 950;
     const yearY = new Map();
     years.forEach((yr, i) => yearY.set(yr, 90 + i * Y_GAP));
     const SVG_H = years.length * Y_GAP + 90;
@@ -2215,13 +2216,20 @@
       const x = n.x - NODE_W / 2;
       const y = n.y - NODE_H / 2;
       const rawTitle = (n.doc.shortTitle || n.doc.title || n.doc.number || '').replace(/\s+/g, ' ');
-      const titleText = rawTitle.length > 28 ? rawTitle.slice(0, 27) + '…' : rawTitle;
+      const foCurrent = n.isCurrent ? ' current' : '';
+      // <foreignObject> lets HTML/CSS handle wrapping + ellipsis cleanly
+      // inside the SVG card, avoiding the manual char-count truncation
+      // that produced text overflow with longer Vietnamese titles.
       nodeMarkup += `
         <g class="evt-node-group" data-doc-id="${escapeHtml(n.doc.id)}" style="cursor: pointer;">
           <rect class="${cls}" x="${x}" y="${y}" width="${NODE_W}" height="${NODE_H}" rx="5"/>
-          <text class="${numCls}" x="${n.x}" y="${n.y - 18}" text-anchor="middle">${n.isCurrent ? '★ ' : ''}${escapeHtml(n.doc.type)} · ${escapeHtml(n.doc.number)}</text>
-          <text class="evt-node-title" x="${n.x}" y="${n.y - 2}" text-anchor="middle">${escapeHtml(titleText)}</text>
-          <text class="evt-node-sub" x="${n.x}" y="${n.y + 18}" text-anchor="middle">${escapeHtml(n.doc.issuedDate ? formatDate(n.doc.issuedDate) : '')}</text>
+          <foreignObject x="${x}" y="${y}" width="${NODE_W}" height="${NODE_H}">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="evt-fo">
+              <div class="evt-fo-num${foCurrent}">${n.isCurrent ? '★ ' : ''}${escapeHtml(n.doc.type)} · ${escapeHtml(n.doc.number)}</div>
+              <div class="evt-fo-title">${escapeHtml(rawTitle)}</div>
+              <div class="evt-fo-sub">${escapeHtml(n.doc.issuedDate ? formatDate(n.doc.issuedDate) : '')}</div>
+            </div>
+          </foreignObject>
         </g>
       `;
     }

@@ -2077,6 +2077,40 @@ body.preview-mode .industries { display: none; }
   fill: var(--ink-mute); font-style: italic;
 }
 .evt-node-group:hover .evt-node-rect { stroke-width: 3; }
+
+/* Card content rendered via <foreignObject> so HTML/CSS handles wrapping */
+.evt-fo {
+  width: 100%; height: 100%;
+  padding: 6px 8px; box-sizing: border-box;
+  display: flex; flex-direction: column; justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  font-family: "Inter", system-ui, sans-serif;
+}
+.evt-fo-num {
+  font-size: 9px; font-weight: 700;
+  letter-spacing: 0.4px; color: var(--ink-mute);
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+.evt-fo-num.current { color: #7d1d22; }
+.evt-fo-title {
+  font-family: Georgia, "Source Serif 4", serif;
+  font-size: 11.5px; font-weight: 700;
+  color: var(--ink);
+  line-height: 1.25;
+  margin: 3px 0 2px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  word-break: break-word;
+}
+.evt-fo-sub {
+  font-size: 9px;
+  color: var(--ink-mute); font-style: italic;
+  line-height: 1.2;
+}
 .evt-edge-label {
   font-family: "Inter", sans-serif; font-size: 9.5px; font-weight: 600;
   fill: var(--ink-soft); letter-spacing: 0.2px;
