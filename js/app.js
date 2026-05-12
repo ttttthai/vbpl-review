@@ -1902,7 +1902,21 @@
     activateTab(opts.tab || "toanvan");
     applyReadSettings();
 
-    window.scrollTo({ top: 0 });
+    if (opts.anchor) {
+      // Scroll to the requested article anchor inside #doc-body. Use a small
+      // delay so the layout has settled after activateTab.
+      setTimeout(() => {
+        const el = document.getElementById(opts.anchor);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth", block: "start" });
+          el.classList.remove("flash");
+          void el.offsetWidth;
+          el.classList.add("flash");
+        }
+      }, 60);
+    } else {
+      window.scrollTo({ top: 0 });
+    }
   }
 
   function renderTitlebar(doc) {
@@ -4041,7 +4055,7 @@
       <div class="pop-title">${escapeHtml(title)}</div>
       <div class="pop-body">${escapeHtml(body)}</div>
       <div class="pop-meta">
-        <span>${escapeHtml(metaLeft)}</span>
+        ${renderPopupBottom(canOpenDoc, openDocId, openAnchor, ref, resolved, metaLeft)}
       </div>
     `;
     refPopup.classList.remove("hidden");
@@ -4061,6 +4075,42 @@
       e.stopPropagation();
       hidePopup(true);
     });
+    // Bottom "Mở văn bản" link → open the referenced doc (with anchor if any).
+    const openLink = refPopup.querySelector('[data-action="open-doc"]');
+    if (openLink) {
+      openLink.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const id = openLink.dataset.docId;
+        const anchor = openLink.dataset.anchor || "";
+        hidePopup(true);
+        if (id) openDoc(id, { tab: "toanvan", anchor });
+      });
+    }
+  }
+
+  // Render the bottom row of the popup: prefer a clickable "open the doc /
+  // article" link over a redundant restatement of the source label.
+  function renderPopupBottom(canOpenDoc, openDocId, openAnchor, ref, resolved, fallbackMeta) {
+    if (!canOpenDoc || !openDocId) {
+      return `<span>${escapeHtml(fallbackMeta || "")}</span>`;
+    }
+    let linkLabel;
+    if (ref.kind === "article") {
+      const parts = [`Mở Điều ${ref.articleNumber}`];
+      if (ref.clauses && ref.clauses.length > 1) parts.push(`khoản ${ref.clauses.join(", ")}`);
+      else if (ref.clause) parts.push(`khoản ${ref.clause}`);
+      if (ref.point) parts.push(`điểm ${ref.point}`);
+      linkLabel = parts.join(", ");
+    } else if (ref.kind === "section") {
+      const titleParts = [];
+      if (ref.section) titleParts.push(`Mục ${ref.section}`);
+      titleParts.push(`Chương ${ref.chapter}`);
+      linkLabel = "Mở " + titleParts.join(" ");
+    } else {
+      linkLabel = "Mở văn bản";
+    }
+    return `<a class="pop-open-doc" href="#" data-action="open-doc" data-doc-id="${escapeHtml(openDocId)}" data-anchor="${escapeHtml(openAnchor || "")}">${escapeHtml(linkLabel)} →</a>`;
   }
 
   function formatArticleExcerpt(article, ref) {

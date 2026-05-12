@@ -3392,9 +3392,27 @@ body.lt-resizing { cursor: col-resize !important; user-select: none; }
   margin-top: 10px;
   padding-top: 8px;
   border-top: 1px solid var(--line);
-  font-size: 11px; color: var(--ink-mute);
+  font-size: 12px;
   font-family: "Inter", system-ui, sans-serif;
   letter-spacing: 0.1px;
+}
+.pop-meta > span {
+  color: var(--ink-mute);
+  font-size: 11px;
+}
+.pop-meta .pop-open-doc {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--red);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.12s ease, color 0.12s ease;
+}
+.pop-meta .pop-open-doc:hover {
+  border-bottom-color: var(--red);
+  color: #5f1316;
 }
 .ref-popup.missing { border-color: var(--ink-faint); }
 .ref-popup.missing .pop-source { color: var(--ink-mute); }
