@@ -1899,6 +1899,26 @@ body.preview-mode .industries { display: none; }
   letter-spacing: -0.01em;
 }
 /* Hệ thống văn bản — hierarchical pyramid (master Luật → NĐ → TT) */
+.ht-subsectors {
+  margin-top: 18px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: white;
+  overflow: hidden;
+}
+.ht-subsectors > .ht-tier-label {
+  padding: 10px 16px;
+  background: var(--paper-2);
+  border-bottom: 1px solid var(--line);
+  margin: 0;
+}
+.ht-subsectors .st-groups { display: block; }
+.ht-subsectors .st-leaf.current {
+  background: #fbf3d4;
+  border-left: 3px solid #7d1d22;
+  padding-left: 55px;
+}
+
 .ht-meta {
   font-family: "Inter", sans-serif;
   font-size: 11.5px; color: var(--ink-mute);

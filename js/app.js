@@ -2278,19 +2278,78 @@
 
     const masterIsCurrent = master.id === doc.id;
 
-    hethongEl.innerHTML = `
-      <h2>Hệ thống văn bản — ${escapeHtml(master.shortTitle)}</h2>
-      <div class="ht-meta">
-        <span><strong>${decrees.length}</strong> nghị định</span>
-        <span class="ht-meta-sep">·</span>
-        <span><strong>${circulars.length}</strong> thông tư</span>
-        ${totalImpl ? '' : '<span class="ht-meta-sep">·</span><span class="ht-meta-empty">chưa có dữ liệu trong CSDL</span>'}
-      </div>
+    // If a curated sub-sector taxonomy exists for this master, render docs
+    // grouped by sub-sector instead of a flat tier-2/tier-3 list. Falls back
+    // to the flat pyramid for masters without a defined taxonomy.
+    const taxonomy = SUB_SECTOR_TAXONOMY.find(b => b.masterId === master.id);
+    let bodyHTML = '';
+    if (taxonomy) {
+      // Build sub-sector groups; track which docs are accounted for so we
+      // can surface unclassified ones in an "Other" group.
+      const accountedIds = new Set();
+      const groupsHTML = taxonomy.groups.map(g => {
+        const docs = g.docs
+          .map(id => H.findDoc(id))
+          .filter(d => d && masterChain.has(d.implements?.[0] || master.id));
+        for (const d of docs) accountedIds.add(d.id);
+        if (!docs.length) return '';
+        const leavesHTML = docs.map(d => `
+          <li class="st-leaf${d.id === doc.id ? ' current' : ''}" data-doc-id="${escapeHtml(d.id)}" role="treeitem">
+            <span class="st-leaf-pill type-${escapeHtml(d.typeKey || '')}">${escapeHtml(d.type)} · ${escapeHtml(d.number)}</span>
+            <span class="st-leaf-title">${escapeHtml(d.shortTitle || d.title || d.number)}</span>
+          </li>
+        `).join('');
+        return `
+          <li class="st-group" data-group-key="${escapeHtml(g.key)}" role="treeitem" aria-expanded="false">
+            <button class="st-group-head" type="button">
+              <span class="st-chev" aria-hidden="true">▸</span>
+              <span class="st-group-label">${escapeHtml(g.label)}</span>
+              <span class="st-group-count">${docs.length}</span>
+            </button>
+            <ul class="st-leaves" role="group">${leavesHTML}</ul>
+          </li>
+        `;
+      }).join('');
 
-      <div class="ht-pyramid">
+      // Collect any implementing docs not yet placed in any sub-sector
+      const orphans = [...decrees, ...circulars].filter(d => !accountedIds.has(d.id));
+      const orphansHTML = orphans.length ? `
+        <li class="st-group" data-group-key="other" role="treeitem" aria-expanded="false">
+          <button class="st-group-head" type="button">
+            <span class="st-chev" aria-hidden="true">▸</span>
+            <span class="st-group-label">Chưa phân loại</span>
+            <span class="st-group-count">${orphans.length}</span>
+          </button>
+          <ul class="st-leaves" role="group">
+            ${orphans.map(d => `
+              <li class="st-leaf${d.id === doc.id ? ' current' : ''}" data-doc-id="${escapeHtml(d.id)}" role="treeitem">
+                <span class="st-leaf-pill type-${escapeHtml(d.typeKey || '')}">${escapeHtml(d.type)} · ${escapeHtml(d.number)}</span>
+                <span class="st-leaf-title">${escapeHtml(d.shortTitle || d.title || d.number)}</span>
+              </li>
+            `).join('')}
+          </ul>
+        </li>
+      ` : '';
+
+      bodyHTML = `
         <div class="ht-tier ht-tier-1">
           <div class="ht-tier-label">CẤP LUẬT</div>
-          ${cardHTML(master, 'lg') /* size lg for master */}
+          ${cardHTML(master, 'lg')}
+          ${masterIsCurrent ? '' : `<div class="ht-master-hint">★ Văn bản đang xem nằm dưới văn bản cấp Luật này</div>`}
+        </div>
+        <div class="ht-subsectors">
+          <div class="ht-tier-label">PHÂN NHÁNH SUB-SECTOR · ${taxonomy.groups.length + (orphans.length ? 1 : 0)}</div>
+          <ul class="st-groups" role="group">
+            ${groupsHTML}${orphansHTML}
+          </ul>
+        </div>
+      `;
+    } else {
+      // Fallback — flat tier 2 / tier 3 grids (existing behavior)
+      bodyHTML = `
+        <div class="ht-tier ht-tier-1">
+          <div class="ht-tier-label">CẤP LUẬT</div>
+          ${cardHTML(master, 'lg')}
           ${masterIsCurrent ? '' : `<div class="ht-master-hint">★ Văn bản đang xem nằm dưới văn bản cấp Luật này</div>`}
         </div>
 
@@ -2314,12 +2373,43 @@
         <div class="ld-empty" style="margin-top: 18px;">
           Chưa có nghị định / thông tư nào trong CSDL khai báo <code>implements: ["${escapeHtml(master.id)}"]</code>.
         </div>` : ''}
+      `;
+    }
+
+    hethongEl.innerHTML = `
+      <h2>Hệ thống văn bản — ${escapeHtml(master.shortTitle)}</h2>
+      <div class="ht-meta">
+        <span><strong>${decrees.length}</strong> nghị định</span>
+        <span class="ht-meta-sep">·</span>
+        <span><strong>${circulars.length}</strong> thông tư</span>
+        ${taxonomy ? `<span class="ht-meta-sep">·</span><span><strong>${taxonomy.groups.length}</strong> sub-sector</span>` : ''}
+        ${totalImpl ? '' : '<span class="ht-meta-sep">·</span><span class="ht-meta-empty">chưa có dữ liệu trong CSDL</span>'}
       </div>
+      <div class="ht-pyramid">${bodyHTML}</div>
     `;
 
+    // Pyramid card clicks
     hethongEl.querySelectorAll('.ht-card[data-doc-id]').forEach(b => {
       b.addEventListener('click', () => {
         const id = b.dataset.docId;
+        if (id !== doc.id) showDocPreview(id);
+      });
+    });
+    // Sub-sector group expand/collapse
+    hethongEl.querySelectorAll('.ht-subsectors .st-group-head').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const node = btn.closest('.st-group');
+        const open = node.getAttribute('aria-expanded') === 'true';
+        node.setAttribute('aria-expanded', open ? 'false' : 'true');
+      });
+    });
+    // Sub-sector leaf click → spotlight preview
+    hethongEl.querySelectorAll('.ht-subsectors .st-leaf[data-doc-id]').forEach(leaf => {
+      leaf.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const id = leaf.dataset.docId;
         if (id !== doc.id) showDocPreview(id);
       });
     });
