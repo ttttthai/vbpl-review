@@ -2087,26 +2087,35 @@
     }
     const years = [...byYear.keys()].sort();
 
-    // Layout dimensions. 5 columns; when a year has >5 docs, wraps to
-    // sub-rows within that year band (Y_GAP_ROW per row).
+    // Layout direction — 'v' = vertical (time top-to-bottom),
+    // 'h' = horizontal (time left-to-right). Persisted to localStorage.
+    const direction = localStorage.getItem('vbpl.sodoDir') === 'h' ? 'h' : 'v';
+
     const NODE_W = 150, NODE_H = 56;
-    const Y_GAP_ROW = 70; // vertical step per sub-row within a year
-    const Y_GAP_MIN = 92; // minimum gap between year bands
+    // For the vertical layout, COLS is X positions; for horizontal it's Y.
+    // The other dimension becomes the time axis.
     const COLS = [130, 290, 450, 610, 770];
     const X_CENTER = COLS[2];
-    const SVG_W = 870;
-    // Compute Y for each year, dynamically allocating space for crowded years.
-    const yearY = new Map();
-    const yearRows = new Map(); // year → rows used
+
+    // Compute the time-axis position for each year, dynamically allocating
+    // space for crowded years (multi-row stacking within a year band).
+    const TIME_GAP_MIN = 92;
+    const TIME_GAP_ROW = 70;
+    const yearTime = new Map(); // year → time-axis coordinate
+    const yearRows = new Map(); // year → rows used (>1 when crowded)
     let cursor = 90;
     for (const yr of years) {
-      yearY.set(yr, cursor);
+      yearTime.set(yr, cursor);
       const count = byYear.get(yr).length;
       const rows = Math.max(1, Math.ceil(count / COLS.length));
       yearRows.set(yr, rows);
-      cursor += Math.max(Y_GAP_MIN, rows * Y_GAP_ROW + 20);
+      cursor += Math.max(TIME_GAP_MIN, rows * TIME_GAP_ROW + 20);
     }
-    const SVG_H = cursor + 20;
+    const TIME_SPAN = cursor + 20;
+
+    // SVG dimensions depend on direction.
+    const SVG_W = direction === 'h' ? TIME_SPAN : 870;
+    const SVG_H = direction === 'h' ? 900 : TIME_SPAN;
 
     // Identify the master's vertical spine — the chain of `replaces` /
     // `amends` linking the spotlight doc to its ancestors. Spine nodes
@@ -2153,21 +2162,19 @@
     const clusterCol = new Map();
     for (let i = 0; i < clusterIdx; i++) clusterCol.set(i, sideOrder[i % sideOrder.length]);
 
-    // Assign positions. For each year band, fill column slots in row-major
-    // order: spine node (if any) → cluster columns → wrap to a new sub-row
-    // when all columns at the current row are taken.
+    // Assign positions in (timeCoord, laneCoord). Then map to (x, y) by
+    // direction.
     for (const [yr, group] of byYear) {
-      const baseY = yearY.get(yr);
-      const slots = new Map(); // key "col:row" → node
-      // Spine node first (gets center, row 0)
+      const baseT = yearTime.get(yr);
+      const slots = new Map(); // key "lane:row" → node
+      // Spine first: center lane, row 0
       for (const n of group) {
         if (spine.has(n.doc.id)) {
-          n.x = X_CENTER;
-          n.y = baseY;
+          n._lane = X_CENTER;
+          n._time = baseT;
           slots.set(`${X_CENTER}:0`, n);
         }
       }
-      // Non-spine nodes — try cluster-preferred column first, then any free
       for (const n of group) {
         if (spine.has(n.doc.id)) continue;
         const preferred = clusterCol.get(clusterOf.get(n.doc.id)) ?? COLS[1];
@@ -2175,23 +2182,27 @@
         for (let row = 0; row < 10 && !placed; row++) {
           const key = `${preferred}:${row}`;
           if (!slots.has(key)) {
-            n.x = preferred; n.y = baseY + row * Y_GAP_ROW;
-            slots.set(key, n); placed = true;
-            break;
+            n._lane = preferred; n._time = baseT + row * TIME_GAP_ROW;
+            slots.set(key, n); placed = true; break;
           }
         }
         if (placed) continue;
-        // Fallback: any free col at any row
         for (let row = 0; row < 10 && !placed; row++) {
           for (const c of COLS) {
             const key = `${c}:${row}`;
             if (!slots.has(key)) {
-              n.x = c; n.y = baseY + row * Y_GAP_ROW;
+              n._lane = c; n._time = baseT + row * TIME_GAP_ROW;
               slots.set(key, n); placed = true; break;
             }
           }
         }
       }
+    }
+
+    // Project (lane, time) → (x, y) based on direction.
+    for (const n of nodeList) {
+      if (direction === 'h') { n.x = n._time; n.y = n._lane; }
+      else                   { n.x = n._lane; n.y = n._time; }
     }
 
     // Count parents per child to detect merges (multi-parent → "HỢP NHẤT")
@@ -2205,22 +2216,39 @@
     };
 
     // === Build SVG ===
+    // Edge paths: parent→child along the time axis. In vertical mode time
+    // flows top→bottom, so the path starts at parent bottom edge and ends
+    // at child top edge. In horizontal mode time flows left→right, so the
+    // path starts at parent right edge and ends at child left edge.
     let edgeMarkup = '';
     for (const e of uniqEdges) {
       const f = nodes.get(e.from), t = nodes.get(e.to);
       if (!f || !t || f.x === undefined) continue;
-      const x1 = f.x, y1 = f.y + NODE_H / 2;
-      const x2 = t.x, y2 = t.y - NODE_H / 2;
-      let path;
-      if (x1 === x2) {
-        path = `M ${x1} ${y1} V ${y2}`;
+      let x1, y1, x2, y2, path, lx, ly;
+      if (direction === 'h') {
+        x1 = f.x + NODE_W / 2; y1 = f.y;
+        x2 = t.x - NODE_W / 2; y2 = t.y;
+        if (y1 === y2) {
+          path = `M ${x1} ${y1} H ${x2}`;
+        } else {
+          const midX = x1 + (x2 - x1) * 0.55;
+          path = `M ${x1} ${y1} H ${midX} V ${y2} H ${x2}`;
+        }
+        lx = x1 + (x2 - x1) * 0.55;
+        ly = (y1 + y2) / 2;
       } else {
-        // Orthogonal step: down half, across, down to target
-        const midY = y1 + (y2 - y1) * 0.55;
-        path = `M ${x1} ${y1} V ${midY} H ${x2} V ${y2}`;
+        x1 = f.x; y1 = f.y + NODE_H / 2;
+        x2 = t.x; y2 = t.y - NODE_H / 2;
+        if (x1 === x2) {
+          path = `M ${x1} ${y1} V ${y2}`;
+        } else {
+          const midY = y1 + (y2 - y1) * 0.55;
+          path = `M ${x1} ${y1} V ${midY} H ${x2} V ${y2}`;
+        }
+        lx = (x1 + x2) / 2;
+        ly = y1 + (y2 - y1) * 0.55;
       }
       edgeMarkup += `<path class="evt-edge evt-edge-${e.type}" d="${path}" marker-end="url(#evt-arr-${e.type})"/>`;
-      const lx = (x1 + x2) / 2, ly = y1 + (y2 - y1) * 0.55;
       const labelText = labelFor(e);
       const labelW = Math.max(48, labelText.length * 6 + 14);
       edgeMarkup += `<g transform="translate(${lx} ${ly})">
@@ -2257,9 +2285,15 @@
 
     let axisMarkup = '';
     for (const yr of years) {
-      const y = yearY.get(yr);
-      axisMarkup += `<text class="evt-axis-label" x="14" y="${y + 5}">${escapeHtml(yr)}</text>`;
-      axisMarkup += `<line class="evt-axis-line" x1="58" y1="${y}" x2="${SVG_W - 20}" y2="${y}"/>`;
+      const t = yearTime.get(yr);
+      if (direction === 'h') {
+        // Year labels along the top, vertical grid lines at each year.
+        axisMarkup += `<text class="evt-axis-label" x="${t}" y="40" text-anchor="middle">${escapeHtml(yr)}</text>`;
+        axisMarkup += `<line class="evt-axis-line" x1="${t}" y1="58" x2="${t}" y2="${SVG_H - 20}"/>`;
+      } else {
+        axisMarkup += `<text class="evt-axis-label" x="14" y="${t + 5}">${escapeHtml(yr)}</text>`;
+        axisMarkup += `<line class="evt-axis-line" x1="58" y1="${t}" x2="${SVG_W - 20}" y2="${t}"/>`;
+      }
     }
 
     sodoEl.innerHTML = `
@@ -2270,14 +2304,15 @@
         <span><strong>${uniqEdges.length}</strong> liên kết</span>
         <span class="evt-meta-sep">·</span>
         <span class="evt-zoom-controls">
+          <button class="evt-zoom-btn" data-dir="${direction === 'h' ? 'v' : 'h'}" title="${direction === 'h' ? 'Hiển thị dọc' : 'Hiển thị ngang'}">${direction === 'h' ? '⇕' : '⇔'}</button>
           <button class="evt-zoom-btn" data-zoom="out" title="Thu nhỏ">−</button>
           <button class="evt-zoom-btn" data-zoom="reset" title="Đặt lại">⌂</button>
           <button class="evt-zoom-btn" data-zoom="in" title="Phóng to">+</button>
           <span class="evt-zoom-pct">100%</span>
         </span>
       </div>
-      <div class="evt-wrap">
-        <svg class="evt-svg" viewBox="0 0 ${SVG_W} ${SVG_H}" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+      <div class="evt-wrap evt-wrap-${direction}">
+        <svg class="evt-svg evt-svg-${direction}" width="${SVG_W}" height="${SVG_H}" viewBox="0 0 ${SVG_W} ${SVG_H}" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <marker id="evt-arr-replace" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L8 4 L0 8 z" fill="#7d1d22"/></marker>
             <marker id="evt-arr-amend" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L8 4 L0 8 z" fill="#b78a3e"/></marker>
@@ -2317,6 +2352,11 @@
     sodoEl.querySelectorAll('.evt-zoom-btn').forEach(btn => {
       btn.addEventListener('click', (e) => {
         e.preventDefault();
+        if (btn.dataset.dir) {
+          localStorage.setItem('vbpl.sodoDir', btn.dataset.dir);
+          renderSodo(doc);
+          return;
+        }
         const a = btn.dataset.zoom;
         if (a === 'in') scale = Math.min(3, scale + 0.2);
         else if (a === 'out') scale = Math.max(0.4, scale - 0.2);

@@ -2068,8 +2068,10 @@ body.preview-mode .industries { display: none; }
 }
 .evt-meta { justify-content: flex-start; }
 
-.evt-wrap { padding: 2px 0; overflow-x: auto; overflow-y: hidden; }
-.evt-svg { width: 100%; max-width: 900px; display: block; margin: 0 auto; }
+.evt-wrap { padding: 2px 0; overflow: auto; max-height: 78vh; }
+.evt-svg { display: block; margin: 0 auto; }
+.evt-svg-v { max-width: 900px; width: 100%; height: auto; }
+.evt-svg-h { /* keep natural width set via SVG attrs; container scrolls */ }
 .evt-axis-label { font-family: "Inter", sans-serif; font-size: 11px; font-weight: 700; fill: var(--ink-mute); }
 .evt-axis-line { stroke: var(--line); stroke-dasharray: 3 4; }
 .evt-edge { fill: none; stroke-width: 2; }
