@@ -980,6 +980,8 @@
   function renderLandingContent() {
     renderStats();
     renderIndustries();
+    renderBoLuatGrid();
+    renderAllLuatGrouped();
     renderNewdocs();
     renderExpired();
     renderHot();
@@ -1272,6 +1274,164 @@
     grid.querySelectorAll(".industry-card[data-anchor]").forEach((btn) => {
       btn.addEventListener("click", () => {
         const id = btn.dataset.anchor;
+        if (H.findDoc(id)) showDocPreview(id);
+      });
+    });
+  }
+
+  // Sort docs by issued year desc, then by id alphabetically.
+  function sortByYearDesc(docs) {
+    return docs.slice().sort((a, b) => {
+      const ya = parseInt((a.issuedDate || "").slice(0, 4), 10) || 0;
+      const yb = parseInt((b.issuedDate || "").slice(0, 4), 10) || 0;
+      if (ya !== yb) return yb - ya;
+      return (a.id || "").localeCompare(b.id || "");
+    });
+  }
+
+  // Render the "Bộ luật" section — all Bộ luật cards in a simple grid.
+  function renderBoLuatGrid() {
+    const grid = $("#boluat-grid");
+    if (!grid) return;
+    const items = sortByYearDesc(Object.values(DB).filter((d) => d.type === "Bộ luật"));
+    grid.innerHTML = items.map((d) => {
+      const year = (d.issuedDate || "").slice(0, 4) || "—";
+      const title = d.shortTitle || d.title || d.id;
+      return `
+        <button class="bl-card" data-doc-id="${escapeHtml(d.id)}" type="button">
+          <div class="bl-card-year">${escapeHtml(year)}</div>
+          <div class="bl-card-body">
+            <div class="bl-card-title">${escapeHtml(title)}</div>
+            <div class="bl-card-id">${escapeHtml(d.id)}</div>
+          </div>
+        </button>`;
+    }).join("");
+    grid.querySelectorAll(".bl-card[data-doc-id]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const id = btn.dataset.docId;
+        if (H.findDoc(id)) showDocPreview(id);
+      });
+    });
+  }
+
+  // Broader taxonomy for the "Toàn bộ Luật theo nhóm" section. The 12
+  // INDUSTRIES matchers are tuned for each anchor's close relations only,
+  // so most Luật in the corpus wouldn't match any of them. LAW_GROUPS is a
+  // superset designed to bucket the full Luật corpus with minimal "Khác".
+  const LAW_GROUPS = [
+    { key: "ngan-hang", label: "Tài chính – Ngân hàng – Tín dụng",
+      matcher: /(tổ chức tín dụng|ngân hàng|tiền tệ|tín dụng|cho vay|bảo hiểm tiền gửi|công ty tài chính|trái phiếu|ngoại hối)/ },
+    { key: "thue-hai-quan", label: "Thuế – Hải quan – Ngân sách",
+      matcher: /(thuế|hải quan|ngân sách|kho bạc|kế toán|kiểm toán|phí và lệ phí|quản lý nợ công)/ },
+    { key: "chung-khoan", label: "Chứng khoán – Đầu tư tài chính",
+      matcher: /(chứng khoán|cổ phiếu|trái phiếu doanh nghiệp|niêm yết|công ty đại chúng)/ },
+    { key: "doanh-nghiep", label: "Doanh nghiệp – Đầu tư – Cạnh tranh",
+      matcher: /(doanh nghiệp|đầu tư|cạnh tranh|công ty cổ phần|hợp tác xã|sở hữu trí tuệ|thương mại|hỗ trợ doanh nghiệp)/ },
+    { key: "dien-luc", label: "Điện lực & Năng lượng",
+      matcher: /(năng lượng|điện lực|sử dụng năng lượng|dầu khí|tiết kiệm năng lượng|nguyên tử)/ },
+    { key: "dat-dai", label: "Đất đai – Bất động sản – Nhà ở",
+      matcher: /(đất đai|nhà ở|bất động sản|kinh doanh bất động sản|quy hoạch sử dụng đất)/ },
+    { key: "xay-dung", label: "Quy hoạch – Xây dựng – Đô thị",
+      matcher: /(quy hoạch|xây dựng|đô thị|kiến trúc|hạ tầng|nhà nước về xây dựng)/ },
+    { key: "giao-thong", label: "Giao thông – Vận tải – Hàng hải",
+      matcher: /(giao thông|vận tải|đường bộ|đường sắt|đường thủy|hàng hải|hàng không|cảng biển|trật tự an toàn giao thông|đường cao tốc)/ },
+    { key: "moi-truong", label: "Môi trường – Tài nguyên – Nông nghiệp",
+      matcher: /(môi trường|tài nguyên|khoáng sản|đa dạng sinh học|biển|thủy sản|lâm nghiệp|trồng trọt|chăn nuôi|thú y|bảo vệ thực vật|đê điều|nông nghiệp|thủy lợi|tài nguyên nước|khí tượng)/ },
+    { key: "lao-dong", label: "Lao động – Việc làm – BHXH",
+      matcher: /(lao động|việc làm|bảo hiểm xã hội|bhxh|bhyt|bảo hiểm y tế|bảo hiểm thất nghiệp|công đoàn|an toàn vệ sinh lao động|đưa người|người lao động|tiền lương|hợp đồng lao động)/ },
+    { key: "giao-duc", label: "Giáo dục – Đào tạo",
+      matcher: /(giáo dục|đào tạo|giáo viên|nhà giáo|đại học|nghề nghiệp|dạy nghề)/ },
+    { key: "y-te", label: "Y tế – Khám chữa bệnh – Dược",
+      matcher: /(y tế|khám|chữa bệnh|dược|thuốc|phòng chống bệnh|kiểm soát dịch|hiến|hành nghề y|sức khỏe|hiv|aids|phòng chống tác hại)/ },
+    { key: "hinh-su", label: "Hình sự – Tố tụng hình sự – Công an",
+      matcher: /(hình sự|tội phạm|tố tụng hình sự|công an|cảnh sát|cơ quan điều tra|thi hành án|tạm giam|tạm giữ)/ },
+    { key: "dan-su", label: "Dân sự – Hợp đồng – Hôn nhân & GĐ",
+      matcher: /(dân sự|hợp đồng|tố tụng dân sự|hôn nhân|gia đình|trẻ em|nuôi con nuôi|bình đẳng giới|người cao tuổi|người khuyết tật)/ },
+    { key: "tu-phap", label: "Tư pháp – Tòa án – VKSND – Luật sư",
+      matcher: /(tòa án|viện kiểm sát|luật sư|công chứng|trợ giúp pháp lý|hòa giải|trọng tài|thi hành án|đấu giá|giám định tư pháp|hộ tịch|lý lịch tư pháp)/ },
+    { key: "vphc", label: "Xử lý vi phạm hành chính – Khiếu nại",
+      matcher: /(vi phạm hành chính|xử phạt|khiếu nại|tố cáo|tiếp công dân|thanh tra)/ },
+    { key: "pcrt", label: "Phòng chống rửa tiền – Tham nhũng",
+      matcher: /(rửa tiền|chống rửa tiền|tham nhũng|kê khai tài sản)/ },
+    { key: "pha-san", label: "Phá sản",
+      matcher: /(phá sản|kiểm soát đặc biệt|phục hồi khả năng thanh toán)/ },
+    { key: "pdpd", label: "Dữ liệu cá nhân – An toàn thông tin – CNTT",
+      matcher: /(dữ liệu cá nhân|bảo vệ dữ liệu|an toàn thông tin|an ninh mạng|công nghệ thông tin|giao dịch điện tử|chữ ký số|viễn thông|tần số|bưu chính|cnTT|chính phủ điện tử)/ },
+    { key: "khoa-hoc", label: "Khoa học – Công nghệ – Đổi mới",
+      matcher: /(khoa học|công nghệ|đổi mới sáng tạo|chuyển giao công nghệ|tiêu chuẩn|đo lường|chất lượng|sở hữu công nghiệp)/ },
+    { key: "quoc-phong", label: "Quốc phòng – An ninh – Biên giới",
+      matcher: /(quốc phòng|an ninh quốc gia|biên giới|biên phòng|nghĩa vụ quân sự|sĩ quan|dân quân|bảo vệ tổ quốc|cảnh sát biển|công nghiệp quốc phòng)/ },
+    { key: "to-chuc-nha-nuoc", label: "Tổ chức nhà nước – Cán bộ – Công chức",
+      matcher: /(cán bộ|công chức|viên chức|tổ chức chính phủ|tổ chức quốc hội|tổ chức chính quyền|hội đồng nhân dân|ủy ban nhân dân|chủ tịch nước|đại biểu|bầu cử|tổ chức tòa án|tổ chức viện kiểm sát)/ },
+    { key: "ton-giao-hoi", label: "Tôn giáo – Hội – Mặt trận – Báo chí",
+      matcher: /(tôn giáo|tín ngưỡng|mặt trận|hội|báo chí|xuất bản|thư viện|điện ảnh|văn hóa|thể dục|thể thao|du lịch|quảng cáo|di sản|nhiếp ảnh)/ },
+    { key: "quoc-te", label: "Quốc tịch – Xuất nhập cảnh – Quốc tế",
+      matcher: /(quốc tịch|xuất nhập cảnh|xuất cảnh|nhập cảnh|cư trú|điều ước quốc tế|cơ quan đại diện|người việt nam|nhập quốc tịch)/ },
+    { key: "phong-chong", label: "Phòng chống tệ nạn – Khẩn cấp – Phòng thủ",
+      matcher: /(phòng chống|phòng cháy|chữa cháy|phòng thủ dân sự|tình trạng khẩn cấp|thiên tai|ma túy|mại dâm|tệ nạn)/ },
+  ];
+
+  // Strip Vietnamese diacritics so undiacriticised placeholder titles
+  // ("Bao ve moi truong") still match diacriticised regex patterns
+  // ("bảo vệ môi trường") via a second pass with both sides normalized.
+  function stripDiacritics(s) {
+    return s.normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/đ/g, "d").replace(/Đ/g, "D");
+  }
+
+  // Render "Toàn bộ Luật theo nhóm" — bucket every Luật into one of the
+  // LAW_GROUPS using its matcher regex against title+shortTitle, with
+  // an "Khác" fallback for laws that don't fit any group. Each bucket is a
+  // collapsible <details>; collapse-state is per-session, no localStorage.
+  function renderAllLuatGrouped() {
+    const wrap = $("#alllaws-list");
+    if (!wrap) return;
+    const luat = Object.values(DB).filter((d) => d.type === "Luật");
+    // Build no-diacritic mirror regex for each group so undiacriticised
+    // placeholder titles also match.
+    const groups = LAW_GROUPS.map((g) => {
+      const flags = g.matcher.flags.includes("i") ? g.matcher.flags : g.matcher.flags + "i";
+      const noDiac = new RegExp(stripDiacritics(g.matcher.source), flags);
+      return { key: g.key, label: g.label, matcher: g.matcher, matcherNoDiac: noDiac, items: [] };
+    });
+    const khac = { key: "khac", label: "Khác", items: [] };
+    for (const d of luat) {
+      const raw = ((d.title || "") + " " + (d.shortTitle || "")).toLowerCase();
+      const norm = stripDiacritics(raw);
+      const g = groups.find((g) => g.matcher.test(raw) || g.matcherNoDiac.test(norm));
+      (g || khac).items.push(d);
+    }
+    // Drop empty groups, sort each bucket's items
+    const buckets = [...groups.filter((g) => g.items.length), khac].filter((g) => g.items.length);
+    for (const g of buckets) g.items = sortByYearDesc(g.items);
+
+    const sub = $("#alllaws-sub");
+    if (sub) sub.textContent = `${luat.length} Luật, phân vào ${buckets.length} nhóm. Bấm tiêu đề nhóm để mở/đóng.`;
+
+    wrap.innerHTML = buckets.map((g, idx) => `
+      <details class="law-group" ${idx < 1 ? "open" : ""} data-group="${escapeHtml(g.key)}">
+        <summary class="law-group-head">
+          <span class="lg-label">${escapeHtml(g.label)}</span>
+          <span class="lg-count">${g.items.length}</span>
+        </summary>
+        <ul class="law-rows">
+          ${g.items.map((d) => {
+            const year = (d.issuedDate || "").slice(0, 4) || "";
+            const title = d.shortTitle || d.title || d.id;
+            return `
+              <li>
+                <button class="law-row" data-doc-id="${escapeHtml(d.id)}" type="button">
+                  <span class="lr-year">${escapeHtml(year)}</span>
+                  <span class="lr-id">${escapeHtml(d.id)}</span>
+                  <span class="lr-title">${escapeHtml(title)}</span>
+                </button>
+              </li>`;
+          }).join("")}
+        </ul>
+      </details>
+    `).join("");
+    wrap.querySelectorAll(".law-row[data-doc-id]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const id = btn.dataset.docId;
         if (H.findDoc(id)) showDocPreview(id);
       });
     });
