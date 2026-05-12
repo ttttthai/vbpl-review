@@ -33,6 +33,7 @@
   const luocdoBadge = $("#luocdo-badge");
   const sodoEl = $("#sodo");
   const sodoBadge = $("#sodo-badge");
+  const hethongEl = $("#hethong");
   const crumbs = $("#crumbs");
 
   const readingInfo = $("#reading-info");
@@ -947,6 +948,8 @@
     if (ctaLuocdo) ctaLuocdo.dataset.docId = doc.id;
     const ctaSodo = $("#sp-cta-sodo");
     if (ctaSodo) ctaSodo.dataset.docId = doc.id;
+    const ctaHethong = $("#sp-cta-hethong");
+    if (ctaHethong) ctaHethong.dataset.docId = doc.id;
   }
 
   function setCrumbs(items) {
@@ -1526,6 +1529,7 @@
     renderRelated(doc);
     renderLuocdo(doc);
     renderSodo(doc);
+    renderHeThong(doc);
     renderHot(); // refresh side hot list
     activateTab(opts.tab || "toanvan");
     applyReadSettings();
@@ -2065,6 +2069,139 @@
     sodoEl.querySelectorAll('.evt-node-group[data-doc-id]').forEach(g => {
       g.addEventListener('click', () => {
         const id = g.dataset.docId;
+        if (id !== doc.id) showDocPreview(id);
+      });
+    });
+  }
+
+  // Hệ thống văn bản — hierarchical pyramid view. Walks the `implements`
+  // field upward to find the master Luật/Bộ luật, then groups all docs
+  // that implement that master (or any of its evolution chain) by tier:
+  //   Tier 1 — Luật / Bộ luật (master)
+  //   Tier 2 — Nghị định (implementing decrees)
+  //   Tier 3 — Thông tư (implementing circulars)
+  // Tier 0 — Hiến pháp — shown as a static placeholder above the master.
+  function renderHeThong(doc) {
+    if (!hethongEl) return;
+
+    // Find the master Luật for this doc:
+    //   - If doc is Luật/Bộ luật, doc itself is the master (or, if it has
+    //     `replaces`, the oldest in its lineage is the lineage root — but
+    //     we want the CURRENT effective master, so we just use `doc`).
+    //   - If doc is NĐ/TT, follow `implements` upward.
+    let master = doc;
+    const seen = new Set();
+    while (master && master.typeKey !== 'luat' && master.typeKey !== 'bo-luat') {
+      if (seen.has(master.id)) break;
+      seen.add(master.id);
+      const imp = (master.implements || [])[0];
+      const next = imp ? H.findDoc(imp) : null;
+      if (!next) break;
+      master = next;
+    }
+
+    if (!master || (master.typeKey !== 'luat' && master.typeKey !== 'bo-luat')) {
+      hethongEl.innerHTML = `
+        <h2>Hệ thống văn bản — ${escapeHtml(doc.shortTitle)}</h2>
+        <div class="ld-empty">
+          Văn bản này chưa được liên kết đến văn bản cấp Luật/Bộ luật chủ quản.<br>
+          Trường <code>implements</code> trong CSDL chưa được khai báo cho văn bản này.
+        </div>
+      `;
+      return;
+    }
+
+    // Build the evolution chain of the master (so a TT issued in 2014 under
+    // 47/2010 still appears under the current 32/2024 pyramid).
+    const masterChain = new Set([master.id]);
+    (function walkChain(id) {
+      const d = H.findDoc(id);
+      if (!d) return;
+      for (const pid of (d.replaces || [])) {
+        if (!masterChain.has(pid)) { masterChain.add(pid); walkChain(pid); }
+      }
+    })(master.id);
+    // Also walk forward — newer amendments of the master share the same pyramid.
+    for (const other of Object.values(DB)) {
+      if (masterChain.has(other.id)) continue;
+      for (const pid of (other.replaces || [])) {
+        if (masterChain.has(pid)) { masterChain.add(other.id); break; }
+      }
+      for (const pid of (other.amends || [])) {
+        if (masterChain.has(pid)) { masterChain.add(other.id); break; }
+      }
+    }
+
+    // Collect implementing decrees and circulars
+    const decrees = [], circulars = [];
+    for (const other of Object.values(DB)) {
+      const imps = other.implements || [];
+      if (!imps.some(id => masterChain.has(id))) continue;
+      if (other.typeKey === 'nghidinh') decrees.push(other);
+      else if (other.typeKey === 'thongtu') circulars.push(other);
+    }
+    decrees.sort((a, b) => (b.issuedDate || '').localeCompare(a.issuedDate || ''));
+    circulars.sort((a, b) => (b.issuedDate || '').localeCompare(a.issuedDate || ''));
+
+    const totalImpl = decrees.length + circulars.length;
+
+    const cardHTML = (d, size) => {
+      const tk = d.typeKey || '';
+      const cls = `ht-card type-${escapeHtml(tk)} ht-card-${size}`;
+      const subtitle = d.shortTitle || d.title || d.number;
+      return `
+        <button class="${cls}" data-doc-id="${escapeHtml(d.id)}" type="button">
+          <span class="ht-card-pill">${escapeHtml(d.type)} · ${escapeHtml(d.number)}</span>
+          <span class="ht-card-title">${escapeHtml(subtitle)}</span>
+          ${d.issuedDate ? `<span class="ht-card-date">${escapeHtml(formatDate(d.issuedDate))}</span>` : ''}
+        </button>
+      `;
+    };
+
+    const masterIsCurrent = master.id === doc.id;
+
+    hethongEl.innerHTML = `
+      <h2>Hệ thống văn bản — ${escapeHtml(master.shortTitle)}</h2>
+      <div class="ht-meta">
+        <span><strong>${decrees.length}</strong> nghị định</span>
+        <span class="ht-meta-sep">·</span>
+        <span><strong>${circulars.length}</strong> thông tư</span>
+        ${totalImpl ? '' : '<span class="ht-meta-sep">·</span><span class="ht-meta-empty">chưa có dữ liệu trong CSDL</span>'}
+      </div>
+
+      <div class="ht-pyramid">
+        <div class="ht-tier ht-tier-1">
+          <div class="ht-tier-label">CẤP LUẬT</div>
+          ${cardHTML(master, 'lg') /* size lg for master */}
+          ${masterIsCurrent ? '' : `<div class="ht-master-hint">★ Văn bản đang xem nằm dưới văn bản cấp Luật này</div>`}
+        </div>
+
+        ${decrees.length ? `
+        <div class="ht-tier ht-tier-2">
+          <div class="ht-tier-label">CẤP NGHỊ ĐỊNH · ${decrees.length}</div>
+          <div class="ht-grid ht-grid-nghidinh">
+            ${decrees.map(d => cardHTML(d, d.id === doc.id ? 'md current' : 'md')).join('')}
+          </div>
+        </div>` : ''}
+
+        ${circulars.length ? `
+        <div class="ht-tier ht-tier-3">
+          <div class="ht-tier-label">CẤP THÔNG TƯ · ${circulars.length}</div>
+          <div class="ht-grid ht-grid-thongtu">
+            ${circulars.map(d => cardHTML(d, d.id === doc.id ? 'sm current' : 'sm')).join('')}
+          </div>
+        </div>` : ''}
+
+        ${totalImpl === 0 ? `
+        <div class="ld-empty" style="margin-top: 18px;">
+          Chưa có nghị định / thông tư nào trong CSDL khai báo <code>implements: ["${escapeHtml(master.id)}"]</code>.
+        </div>` : ''}
+      </div>
+    `;
+
+    hethongEl.querySelectorAll('.ht-card[data-doc-id]').forEach(b => {
+      b.addEventListener('click', () => {
+        const id = b.dataset.docId;
         if (id !== doc.id) showDocPreview(id);
       });
     });
