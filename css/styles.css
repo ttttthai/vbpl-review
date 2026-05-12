@@ -2193,6 +2193,13 @@ body.preview-mode .industries { display: none; }
 .doc-body .art-table tbody tr:hover td {
   background: rgba(125, 29, 34, 0.06);
 }
+/* Cells where the published value is literal "0" / "0,0" / "0.0" are
+   rendered as a muted en-dash via the renderer. Style here just dims the
+   color so the eye skips them in favour of real numbers. */
+.doc-body .art-table .td-zero {
+  color: rgba(31, 39, 51, 0.30);
+  font-variant-numeric: tabular-nums;
+}
 .doc-body h2.chapter {
   text-align: center; font-size: 16.5px;
   margin: 32px 0 4px;

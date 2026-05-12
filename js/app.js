@@ -1998,7 +1998,6 @@
     const rows = block.rows || [];
     if (!rows.length) return "";
     let html = '<div class="art-table-wrap"><table class="art-table">';
-    // Treat first row as <thead> if any cell in row 0 is isHeader or row 0 looks like a header (no later row shares same cells)
     let bodyStartIdx = 0;
     if (rows[0].some(c => c.isHeader)) {
       html += '<thead><tr>';
@@ -2017,7 +2016,15 @@
         const cs = c.colspan && c.colspan > 1 ? ` colspan="${c.colspan}"` : "";
         const rs = c.rowspan && c.rowspan > 1 ? ` rowspan="${c.rowspan}"` : "";
         const tag = c.isHeader ? "th" : "td";
-        html += `<${tag}${cs}${rs}>${escapeHtml(c.text || "")}</${tag}>`;
+        // Visually de-emphasize standalone "0" cells in numeric tables —
+        // PDP8 publishes many "0"s where a province has no allocation; in
+        // context these read as "không phân bổ" rather than literal zero.
+        // Replace with an en-dash + muted style so real values stand out.
+        const raw = (c.text || "").trim();
+        const isZero = /^0(?:[.,]0+)?$/.test(raw);
+        const display = isZero ? "–" : raw;
+        const cls = isZero ? ' class="td-zero"' : "";
+        html += `<${tag}${cls}${cs}${rs}>${escapeHtml(display)}</${tag}>`;
       }
       html += '</tr>';
     }
