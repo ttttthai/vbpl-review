@@ -1438,32 +1438,31 @@
 
     if (subSel) {
       const sub = $(subSel);
-      if (sub) sub.textContent = `${luat.length} Luật, phân vào ${buckets.length} nhóm. Bấm tiêu đề nhóm để mở/đóng.`;
+      if (sub) sub.textContent = `${luat.length} Luật, phân vào ${buckets.length} nhóm chủ đề. Bấm vào mã số để mở văn bản.`;
     }
 
-    wrap.innerHTML = buckets.map((g, idx) => `
-      <details class="law-group" ${idx < 1 ? "open" : ""} data-group="${escapeHtml(g.key)}">
-        <summary class="law-group-head">
-          <span class="lg-label">${escapeHtml(g.label)}</span>
-          <span class="lg-count">${g.items.length}</span>
-        </summary>
-        <ul class="law-rows">
+    // Wikipedia-style category grid: each group is a card; ALL laws in the
+    // group are rendered as flowed pills (year + id, title in tooltip).
+    // Always visible — no accordions to click through.
+    wrap.innerHTML = `<div class="law-cat-grid">` + buckets.map((g) => `
+      <article class="law-cat" data-group="${escapeHtml(g.key)}">
+        <header class="law-cat-head">
+          <h3 class="law-cat-label">${escapeHtml(g.label)}</h3>
+          <span class="law-cat-count">${g.items.length}</span>
+        </header>
+        <div class="law-pills">
           ${g.items.map((d) => {
             const year = (d.issuedDate || "").slice(0, 4) || "";
             const title = d.shortTitle || d.title || d.id;
-            return `
-              <li>
-                <button class="law-row" data-doc-id="${escapeHtml(d.id)}" type="button">
-                  <span class="lr-year">${escapeHtml(year)}</span>
-                  <span class="lr-id">${escapeHtml(d.id)}</span>
-                  <span class="lr-title">${escapeHtml(title)}</span>
-                </button>
-              </li>`;
+            return `<button class="law-pill" data-doc-id="${escapeHtml(d.id)}" type="button" title="${escapeHtml(title)}">
+              <span class="lp-year">${escapeHtml(year)}</span>
+              <span class="lp-id">${escapeHtml(d.id)}</span>
+            </button>`;
           }).join("")}
-        </ul>
-      </details>
-    `).join("");
-    wrap.querySelectorAll(".law-row[data-doc-id]").forEach((btn) => {
+        </div>
+      </article>
+    `).join("") + `</div>`;
+    wrap.querySelectorAll(".law-pill[data-doc-id]").forEach((btn) => {
       btn.addEventListener("click", () => {
         const id = btn.dataset.docId;
         if (H.findDoc(id)) showDocPreview(id);

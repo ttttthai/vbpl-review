@@ -985,121 +985,90 @@ body.preview-mode .industries { display: none; }
   letter-spacing: 0.2px;
 }
 
-/* ===== All Luật grouped by sector ===== */
-.alllaws-list {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
+/* ===== All Luật grouped by sector — Wikipedia-style category grid ===== */
+.alllaws-list { margin: 0; }
+.law-cat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  gap: 14px;
 }
-.law-group {
+.law-cat {
   background: white;
   border: 1px solid var(--line);
+  border-top: 3px solid var(--red);
   border-radius: var(--r-md);
-  overflow: hidden;
-}
-.law-group[open] {
-  border-color: var(--red);
-}
-.law-group-head {
+  padding: 12px 14px 14px;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   gap: 10px;
-  padding: 10px 14px;
-  cursor: pointer;
-  list-style: none;
-  user-select: none;
-  background: white;
-  transition: background 0.15s ease;
 }
-.law-group-head::-webkit-details-marker { display: none; }
-.law-group-head:hover {
-  background: rgba(125, 29, 34, 0.04);
+.law-cat-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 8px;
 }
-.law-group .lg-icon {
-  width: 22px; height: 22px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--red);
-  flex-shrink: 0;
-}
-.law-group .lg-icon svg { width: 18px; height: 18px; }
-.law-group .lg-label {
+.law-cat-label {
+  margin: 0;
   font-family: 'Source Serif 4', Georgia, serif;
   font-size: 14.5px;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--ink);
-  flex: 1;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
 }
-.law-group .lg-count {
+.law-cat-count {
   font-family: 'Inter', sans-serif;
-  font-size: 11.5px;
-  font-weight: 600;
-  color: var(--ink-mute);
-  background: rgba(15, 28, 51, 0.05);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--red);
+  background: rgba(125, 29, 34, 0.10);
   padding: 2px 9px;
   border-radius: 99px;
   flex-shrink: 0;
-}
-.law-group[open] .lg-count {
-  background: rgba(125, 29, 34, 0.12);
-  color: var(--red);
-}
-.law-rows {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  border-top: 1px solid var(--line);
-  max-height: 360px;
-  overflow-y: auto;
-}
-.law-row {
-  display: grid;
-  grid-template-columns: 56px 140px 1fr;
-  gap: 12px;
-  align-items: center;
-  width: 100%;
-  background: transparent;
-  border: 0;
-  border-bottom: 1px solid var(--line);
-  padding: 8px 14px;
-  text-align: left;
-  cursor: pointer;
-  font-family: inherit;
-  transition: background 0.12s ease;
-}
-.law-row:last-child { border-bottom: 0; }
-.law-row:hover { background: rgba(125, 29, 34, 0.04); }
-.law-row .lr-year {
-  font-family: 'Inter', sans-serif;
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--red);
   letter-spacing: 0.2px;
 }
-.law-row .lr-id {
+.law-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.law-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(125, 29, 34, 0.04);
+  border: 1px solid var(--line);
+  border-radius: 99px;
+  padding: 3px 10px 3px 8px;
+  cursor: pointer;
   font-family: 'Inter', sans-serif;
   font-size: 11.5px;
-  color: var(--ink-mute);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.law-row .lr-title {
-  font-family: 'Source Serif 4', Georgia, serif;
-  font-size: 13.5px;
   color: var(--ink);
-  line-height: 1.3;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  line-height: 1.4;
+  transition: background 0.12s ease, border-color 0.12s ease, transform 0.12s ease;
+}
+.law-pill:hover {
+  background: rgba(125, 29, 34, 0.12);
+  border-color: var(--red);
+  transform: translateY(-1px);
+}
+.law-pill .lp-year {
+  font-weight: 700;
+  color: var(--red);
+  font-size: 10.5px;
+  letter-spacing: 0.3px;
+}
+.law-pill .lp-id {
+  font-weight: 500;
+  color: var(--ink);
+  letter-spacing: 0.1px;
 }
 
 @media (max-width: 720px) {
-  .law-row {
-    grid-template-columns: 48px 1fr;
-  }
-  .law-row .lr-id { display: none; }
+  .law-cat-grid { grid-template-columns: 1fr; }
 }
 
 /* ===== Section block ===== */
