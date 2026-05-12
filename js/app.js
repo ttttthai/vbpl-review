@@ -1142,8 +1142,8 @@
     },
     {
       key: "du-lieu-ca-nhan", label: "Bảo vệ dữ liệu cá nhân",
-      anchor: "13/2023/ND-CP",
-      typeKey: "nghidinh",
+      anchor: "91/2025/QH15",
+      typeKey: "luat",
       matcher: /(dữ liệu cá nhân|bảo vệ dữ liệu|thông tin cá nhân|pdpd)/,
       icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>',
     },
