@@ -2095,12 +2095,12 @@
 
     // Layout dimensions. 5 columns let same-year clusters (e.g. 5+ 2025 docs
     // for the electricity ecosystem) fit without overlapping. Leftmost column
-    // starts at 145 to leave room for the year-axis labels on the far left.
-    const NODE_W = 170, NODE_H = 80;
-    const Y_GAP = 140;
-    const COLS = [145, 320, 495, 670, 845];
+    // starts at 130 to leave room for the year-axis labels on the far left.
+    const NODE_W = 150, NODE_H = 56;
+    const Y_GAP = 92;
+    const COLS = [130, 290, 450, 610, 770];
     const X_CENTER = COLS[2];
-    const SVG_W = 950;
+    const SVG_W = 870;
     const yearY = new Map();
     years.forEach((yr, i) => yearY.set(yr, 90 + i * Y_GAP));
     const SVG_H = years.length * Y_GAP + 90;
