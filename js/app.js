@@ -2271,11 +2271,23 @@
     }
     visit(doc.id);
 
-    // When the spotlight is a master Luật, include every doc that implements
-    // it (the master and its lineage). Standalone implementing docs without
-    // chain linkages render as isolated nodes — still informative because
-    // they show the full ecosystem at a glance.
-    if (isLawTier(doc.typeKey)) {
+    // Mirror Hệ thống's coverage: walk UP via `implements` to find the
+    // master Luật, then add the master's full evolution chain and every
+    // implementing doc under that chain. This way Sơ đồ shows the same set
+    // of docs as Hệ thống for any spotlight target, whether the user
+    // entered from a Luật or from a TT/NĐ/QĐ below it.
+    let master = doc;
+    const masterSeen = new Set();
+    while (master && !isLawTier(master.typeKey)) {
+      if (masterSeen.has(master.id)) break;
+      masterSeen.add(master.id);
+      const imp = (master.implements || [])[0];
+      const next = imp ? H.findDoc(imp) : null;
+      if (!next) break;
+      master = next;
+    }
+    if (master && isLawTier(master.typeKey)) {
+      visit(master.id);
       const masterChain = new Set(nodes.keys());
       for (const other of Object.values(DB)) {
         const imps = other.implements || [];
@@ -2993,6 +3005,8 @@
     });
     const rt = $("#read-toolbar");
     if (rt) rt.style.display = (name === "toanvan") ? "" : "none";
+    // Sơ đồ needs the full width — hide both viewer asides when active.
+    document.body.classList.toggle("sodo-fullwidth", name === "sodo");
   }
   function isTabActive(name) {
     if (!tabbar) return name === "toanvan"; // default panel when tabbar is gone

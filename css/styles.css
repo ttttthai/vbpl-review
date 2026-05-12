@@ -2844,6 +2844,11 @@ body.luocdo-only .viewer-main {
   padding: 0;
 }
 
+/* Sơ đồ fullwidth — when on the Sơ đồ tab, hide both viewer asides so the
+   evolution tree gets the entire content area. */
+body.sodo-fullwidth .viewer-grid > aside { display: none !important; }
+body.sodo-fullwidth .viewer-grid { grid-template-columns: 1fr !important; }
+
 /* Timeline (lược đồ — hiệu lực) */
 .lt-header {
   display: flex; align-items: center; justify-content: space-between;
