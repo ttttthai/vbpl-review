@@ -1003,7 +1003,7 @@
         { key: "lending", label: "Hoạt động cho vay",
           docs: ["39/2016/TT-NHNN","12/2024/TT-NHNN","06/2023/TT-NHNN","08/2014/TT-NHNN","09/2013/TT-NHNN","10/2013/TT-NHNN","12/2010/TT-NHNN","14/2012/TT-NHNN","16/2013/TT-NHNN","20/2012/TT-NHNN","33/2011/TT-NHNN","33/2012/TT-NHNN","05/2011/TT-NHNN","15/2009/TT-NHNN"] },
         { key: "consumer-finance", label: "Tài chính tiêu dùng",
-          docs: ["39/2014/NĐ-CP","43/2016/TT-NHNN","18/2019/TT-NHNN","35/2024/TT-NHNN"] },
+          docs: ["39/2014/ND-CP","43/2016/TT-NHNN","18/2019/TT-NHNN","35/2024/TT-NHNN"] },
         { key: "debt-restructure", label: "Cơ cấu nợ & Giữ nhóm nợ",
           docs: ["02/2023/TT-NHNN","06/2024/TT-NHNN"] },
         { key: "bond", label: "Trái phiếu doanh nghiệp",
