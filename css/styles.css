@@ -2409,6 +2409,74 @@ mark.vbpl-find-hit.current {
   color: var(--ink);
   scroll-margin-top: 110px;
 }
+.doc-body h4.appendix-form-label {
+  font-family: Tahoma, Arial, sans-serif;
+  font-weight: 700;
+  font-style: italic;
+  font-size: calc(var(--read-size) - 0.5px);
+  text-align: right;
+  color: var(--ink-mute);
+  margin: 18px 0 4px;
+}
+.doc-body h4.appendix-roman-head {
+  font-family: Tahoma, Arial, sans-serif;
+  font-weight: 700;
+  font-size: calc(var(--read-size) + 1px);
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  text-align: center;
+  margin: 22px 0 10px;
+  color: var(--ink);
+  scroll-margin-top: 110px;
+}
+
+/* Form-template lines inside appendices (templates for application
+   letters, declarations, etc. embedded as the appendix content). */
+.doc-body .form-quoc-hieu {
+  font-family: Tahoma, Arial, sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: calc(var(--read-size) + 0.5px);
+  letter-spacing: 0.3px;
+  margin: 18px 0 2px;
+  color: var(--ink);
+}
+.doc-body .form-tieu-ngu {
+  font-family: Tahoma, Arial, sans-serif;
+  font-weight: 700;
+  text-align: center;
+  font-size: calc(var(--read-size) - 0.5px);
+  letter-spacing: 0.2px;
+  margin: 0 0 4px;
+  color: var(--ink);
+}
+.doc-body .form-divider {
+  text-align: center;
+  color: var(--ink-mute);
+  letter-spacing: 2px;
+  margin: 0 auto 18px;
+  user-select: none;
+}
+.doc-body .form-place-date {
+  text-align: right;
+  font-style: italic;
+  font-size: calc(var(--read-size) - 0.5px);
+  color: var(--ink-mute);
+  margin: 6px 0 14px;
+}
+.doc-body p.form-greeting {
+  text-align: center;
+  font-weight: 600;
+  font-style: italic;
+  margin: 14px 0 12px;
+  color: var(--ink);
+}
+.doc-body p.form-cancu {
+  font-style: italic;
+  color: var(--ink);
+  margin-left: 0;
+}
 
 /* Closing signature block: "Nơi nhận" + signer.
    Styled to resemble the formal Vietnamese government document layout —

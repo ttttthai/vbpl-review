@@ -2204,7 +2204,9 @@
   }
 
   // Walks plain-text body lines and emits HTML with the right semantic class
-  // for each (point / clause / PHỤ LỤC heading / appendix subtitle / Bảng / etc.)
+  // for each: clauses, points, PHỤ LỤC headings, Roman section dividers,
+  // formal template preambles (Cộng hoà / Độc lập …), date placeholders,
+  // "Kính gửi", form labels, and tabular attribute lines.
   function renderBodyLines(text) {
     const lines = text.split(/\r?\n/);
     let html = "";
@@ -2213,17 +2215,48 @@
     for (const line of lines) {
       const t = line.trim();
       if (!t) { waitForAppendixSubtitle = false; continue; }
-      if (/^PHỤ LỤC(?:\s+[IVXLM\d]+)?(?:[.,].*)?$/i.test(t)) {
+      // PHỤ LỤC heading — covers "PHỤ LỤC", "PHỤ LỤC I", "PHỤ LỤC SỐ 01", "PHỤ LỤC 1"
+      if (/^PHỤ LỤC(?:\s+(?:SỐ\s+)?[IVXLM\d]+)?(?:[.,].*)?$/i.test(t)) {
         html += `<h3 class="appendix-heading">${escapeHtml(t)}</h3>`;
         waitForAppendixSubtitle = true;
       } else if (waitForAppendixSubtitle && t.length > 4 && isAllCapsVi(t)) {
         html += `<div class="appendix-subtitle">${escapeHtml(t)}</div>`;
         // Subtitles may continue across multiple all-caps lines — keep flag on.
-      } else if (/^\(Kèm theo\s+/i.test(t)) {
+      } else if (/^\((?:Ban hành\s+)?kèm theo\s+/i.test(t) || /^\(Ban hành kèm theo\s+/i.test(t)) {
         html += `<p class="appendix-attr">${escapeHtml(t)}</p>`;
         waitForAppendixSubtitle = false;
       } else if (/^Bảng\s+\d+/i.test(t)) {
         html += `<h4 class="appendix-table-head">${escapeHtml(t)}</h4>`;
+        waitForAppendixSubtitle = false;
+      } else if (/^Mẫu(?:\s+số)?\s+\d+/i.test(t)) {
+        // "Mẫu số 01" / "Mẫu 01" — form template label
+        html += `<h4 class="appendix-form-label">${escapeHtml(t)}</h4>`;
+        waitForAppendixSubtitle = false;
+      } else if (/^CỘNG HOÀ\s+XÃ HỘI\s+CHỦ NGHĨA\s+VIỆT NAM|^CỘNG HÒA\s+XÃ HỘI\s+CHỦ NGHĨA\s+VIỆT NAM/i.test(t)) {
+        html += `<div class="form-quoc-hieu">${escapeHtml(t)}</div>`;
+        waitForAppendixSubtitle = false;
+      } else if (/^Độc lập\s*[-–]\s*Tự do\s*[-–]\s*Hạnh phúc/i.test(t)) {
+        html += `<div class="form-tieu-ngu">${escapeHtml(t)}</div>`;
+        waitForAppendixSubtitle = false;
+      } else if (/^[-–—]{3,}$/.test(t)) {
+        // Form-divider line of dashes
+        html += `<div class="form-divider">${escapeHtml(t)}</div>`;
+        waitForAppendixSubtitle = false;
+      } else if (/^\.{2,}\s*,?\s*ngày\s*\.{2,}\s*tháng\s*\.{2,}\s*năm/i.test(t) ||
+                 /^[A-ZÀ-Ỹ][^,.\n]{1,40},\s*ngày\s*\.{2,}\s*tháng\s*\.{2,}\s*năm/i.test(t)) {
+        // Place/date line — usually right-aligned in real docs
+        html += `<div class="form-place-date">${escapeHtml(t)}</div>`;
+        waitForAppendixSubtitle = false;
+      } else if (/^Kính gửi\s*:/i.test(t)) {
+        html += `<p class="form-greeting">${escapeHtml(t)}</p>`;
+        waitForAppendixSubtitle = false;
+      } else if (/^Căn cứ\s+/i.test(t)) {
+        html += `<p class="form-cancu">${escapeHtml(t)}</p>`;
+        waitForAppendixSubtitle = false;
+      } else if (/^[IVX]{1,5}\.\s+[A-ZÀ-Ỹ]/.test(t) || /^[IVX]{1,5}\s*$/.test(t)) {
+        // Roman section divider within appendix (e.g. "I. KẾT CẤU HẠ TẦNG" or
+        // standalone "I" / "II" line acting as a heading).
+        html += `<h4 class="appendix-roman-head">${escapeHtml(t)}</h4>`;
         waitForAppendixSubtitle = false;
       } else if (/^[a-zđ]\)/i.test(t)) {
         html += `<p class="point">${escapeHtml(t)}</p>`;
