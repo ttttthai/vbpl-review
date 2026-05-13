@@ -1301,7 +1301,7 @@
         { key: "vwem", label: "Vận hành thị trường bán buôn (VWEM)",
           docs: ["16/2025/TT-BCT","36/2025/TT-BCT","45/2018/TT-BCT"] },
         { key: "planning", label: "Quy hoạch điện VIII (PDP8)",
-          docs: ["768/QĐ-TTg-2025","500/QĐ-TTg-2023","262/QĐ-TTg-2024"] },
+          docs: ["768/QĐ-TTg-2025","1682/QĐ-TTg-2024","262/QĐ-TTg-2024","500/QĐ-TTg-2023"] },
         { key: "transmission", label: "Truyền tải & Phân phối điện",
           docs: ["68/2010/NĐ-CP","25/2016/TT-BCT","39/2015/TT-BCT"] },
         { key: "energy-saving", label: "Sử dụng năng lượng tiết kiệm",
