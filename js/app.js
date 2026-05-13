@@ -1053,10 +1053,17 @@
 
   // ===== Overview page rendering =====
   function renderOverviewContent() {
-    renderHienPhapTier("#ov-hp-row");
-    renderBoLuatGrid("#ov-boluat-grid", "#ov-boluat-sub");
+    renderHienPhapTier("#ov-hp-strip");
+    renderBoLuatGrid("#ov-boluat-grid", null);
     renderIndustries("#ov-industry-grid");
     renderAllLuatGrouped("#ov-alllaws-list", "#ov-alllaws-sub");
+    // Masthead stats
+    const docs = Object.values(DB);
+    const setStat = (id, n) => { const el = $(id); if (el) el.textContent = n; };
+    setStat("#mag-stat-hp", docs.filter(d => d.typeKey === "hienphap" && /hiệu lực/i.test(d.status||"") && !/hết/i.test(d.status||"")).length);
+    setStat("#mag-stat-bl", docs.filter(d => d.type === "Bộ luật").length);
+    setStat("#mag-stat-linhvuc", (typeof INDUSTRIES !== "undefined" ? INDUSTRIES.length : 12));
+    setStat("#mag-stat-luat", docs.filter(d => d.type === "Luật").length);
   }
 
   // ===== Agency tree (Hệ thống cơ quan Việt Nam) =====
@@ -1213,25 +1220,18 @@
     if (!hps.length) { row.innerHTML = ""; return; }
     const active = hps.find((d) => /hiệu lực/i.test(d.status || "") && !/hết/i.test(d.status || ""));
     const history = sortByYearDesc(hps.filter((d) => d !== active));
-    const heroHtml = active ? `
-      <button class="hp-hero" data-doc-id="${escapeHtml(active.id)}" type="button">
-        <span class="hp-hero-eyebrow">Đang có hiệu lực</span>
-        <span class="hp-hero-title">${escapeHtml(active.number || active.shortTitle)}</span>
-        <span class="hp-hero-sub">${escapeHtml(active.title)}</span>
-        <span class="hp-hero-meta">${active.articleTotal || "—"} điều · Có hiệu lực từ ${active.effectiveDate ? formatDate(active.effectiveDate) : "—"}</span>
+    const activeChip = active ? `
+      <button class="hp-chip hp-chip-active" data-doc-id="${escapeHtml(active.id)}" type="button" title="${escapeHtml(active.title)}">
+        <span class="hp-chip-pill">Đang hiệu lực</span>
+        <span class="hp-chip-title">${escapeHtml(active.number || active.shortTitle)}</span>
+        <span class="hp-chip-meta">${active.articleTotal || "—"} điều · từ ${active.effectiveDate ? formatDate(active.effectiveDate) : "—"}</span>
       </button>` : "";
-    const historyHtml = history.length ? `
-      <div class="hp-history">
-        <span class="hp-history-label">Các bản trước</span>
-        <div class="hp-history-list">
-          ${history.map((d) => `
-            <button class="hp-prev" data-doc-id="${escapeHtml(d.id)}" type="button" title="${escapeHtml(d.title)}">
-              <span class="hp-prev-year">${(d.issuedDate || "").slice(0,4)}</span>
-              <span class="hp-prev-name">${escapeHtml(d.shortTitle || d.number)}</span>
-            </button>`).join("")}
-        </div>
-      </div>` : "";
-    row.innerHTML = heroHtml + historyHtml;
+    const histChips = history.map((d) => `
+      <button class="hp-chip hp-chip-past" data-doc-id="${escapeHtml(d.id)}" type="button" title="${escapeHtml(d.title)}">
+        <span class="hp-chip-title">${escapeHtml(d.shortTitle || d.number)}</span>
+        <span class="hp-chip-meta">${(d.issuedDate || "").slice(0,4)}</span>
+      </button>`).join("");
+    row.innerHTML = activeChip + histChips;
     row.querySelectorAll("[data-doc-id]").forEach((btn) => {
       btn.addEventListener("click", () => {
         const id = btn.dataset.docId;

@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" />
-  <link rel="stylesheet" href="css/styles.css?v=125" />
+  <link rel="stylesheet" href="css/styles.css?v=126" />
 </head>
 <body>
 
@@ -112,51 +112,52 @@
     </div>
   </main>
 
-  <!-- ===== OVERVIEW (legal hierarchy pyramid) ===== -->
-  <main id="overview" class="overview-page hidden">
+  <!-- ===== OVERVIEW (legal hierarchy — magazine layout) ===== -->
+  <main id="overview" class="overview-page mag hidden">
     <div class="container">
-      <header class="overview-head">
+      <header class="mag-masthead">
         <h1>Hệ thống pháp luật Việt Nam</h1>
-        <p class="overview-sub">Tháp văn bản theo thứ bậc — từ Hiến pháp (cha đẻ của mọi luật) xuống các tầng văn bản pháp luật.</p>
+        <div class="mag-stats">
+          <span><strong id="mag-stat-hp">1</strong> Hiến pháp</span>
+          <span><strong id="mag-stat-bl">10</strong> Bộ luật</span>
+          <span><strong id="mag-stat-linhvuc">12</strong> Lĩnh vực</span>
+          <span><strong id="mag-stat-luat">253</strong> Luật</span>
+        </div>
       </header>
 
-      <!-- TIER 1 — Constitution -->
-      <section class="hp-section ov-tier" data-tier="1">
-        <div class="ov-tier-label">
-          <span class="ov-tier-num">I</span>
-          <span class="ov-tier-name">HIẾN PHÁP — Luật cơ bản của Nhà nước</span>
-        </div>
-        <div class="hp-row" id="ov-hp-row"></div>
+      <!-- HP — inline horizontal strip, no big gradient card -->
+      <section class="mag-section mag-hp">
+        <h2 class="mag-section-head">
+          <span class="mag-section-tag">Tầng cao nhất</span>
+          Hiến pháp
+        </h2>
+        <div class="hp-strip" id="ov-hp-strip"></div>
       </section>
-      <div class="ov-connector" aria-hidden="true"></div>
 
-      <!-- TIER 2 — Bộ luật + Luật chính (passed by Quốc hội) -->
-      <section class="boluat-section ov-tier" data-tier="2">
-        <div class="ov-tier-label">
-          <span class="ov-tier-num">II</span>
-          <span class="ov-tier-name">BỘ LUẬT — Văn bản tổng hợp một lĩnh vực</span>
-        </div>
+      <!-- Bộ luật — compact carousel-style row -->
+      <section class="mag-section mag-bl">
+        <h2 class="mag-section-head">
+          <span class="mag-section-tag">Bộ luật</span>
+          Văn bản tổng hợp một lĩnh vực
+        </h2>
         <div class="boluat-grid" id="ov-boluat-grid"></div>
       </section>
-      <div class="ov-connector" aria-hidden="true"></div>
 
-      <!-- TIER 3 — 12 main legal areas -->
-      <section class="industries ov-tier" data-tier="3">
-        <div class="ov-tier-label">
-          <span class="ov-tier-num">III</span>
-          <span class="ov-tier-name">12 LĨNH VỰC PHÁP LÝ CHÍNH</span>
-        </div>
+      <!-- 12 industries -->
+      <section class="mag-section mag-industries">
+        <h2 class="mag-section-head">
+          <span class="mag-section-tag">12 lĩnh vực</span>
+          Văn bản chủ chốt theo lĩnh vực
+        </h2>
         <div class="industry-grid" id="ov-industry-grid"></div>
       </section>
-      <div class="ov-connector" aria-hidden="true"></div>
 
-      <!-- TIER 4 — All Luật grouped -->
-      <section class="alllaws-section ov-tier" data-tier="4">
-        <div class="ov-tier-label">
-          <span class="ov-tier-num">IV</span>
-          <span class="ov-tier-name">TOÀN BỘ LUẬT — Phân theo nhóm chủ đề</span>
-        </div>
-        <p class="industries-sub" id="ov-alllaws-sub">Bấm vào mã số để mở văn bản.</p>
+      <!-- All Luật grouped -->
+      <section class="mag-section mag-luat">
+        <h2 class="mag-section-head">
+          <span class="mag-section-tag">Toàn bộ Luật</span>
+          <span id="ov-alllaws-sub">Phân theo nhóm chủ đề</span>
+        </h2>
         <div class="alllaws-list" id="ov-alllaws-list"></div>
       </section>
     </div>
@@ -326,7 +327,7 @@
     </div>
   </div>
 
-  <script src="data/documents.js?v=125"></script>
-  <script src="js/app.js?v=125"></script>
+  <script src="data/documents.js?v=126"></script>
+  <script src="js/app.js?v=126"></script>
 </body>
 </html>
