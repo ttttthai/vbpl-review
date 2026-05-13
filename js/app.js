@@ -34,6 +34,8 @@
   const sodoEl = $("#sodo");
   const sodoBadge = $("#sodo-badge");
   const hethongEl = $("#hethong");
+  const mangluoiEl = $("#mangluoi");
+  const bangEl = $("#bang");
   const crumbs = $("#crumbs");
 
   const readingInfo = $("#reading-info");
@@ -1016,6 +1018,10 @@
     if (ctaSodo) ctaSodo.dataset.docId = doc.id;
     const ctaHethong = $("#sp-cta-hethong");
     if (ctaHethong) ctaHethong.dataset.docId = doc.id;
+    const ctaMl = $("#sp-cta-mangluoi");
+    if (ctaMl) ctaMl.dataset.docId = doc.id;
+    const ctaBang = $("#sp-cta-bang");
+    if (ctaBang) ctaBang.dataset.docId = doc.id;
   }
 
   function setCrumbs(items) {
@@ -2088,6 +2094,8 @@
     renderLuocdo(doc);
     renderSodo(doc);
     renderHeThong(doc);
+    renderMangLuoi(doc);
+    renderBang(doc);
     renderHot(); // refresh side hot list
     activateTab(opts.tab || "toanvan");
     applyReadSettings();
@@ -3348,6 +3356,333 @@
     });
   }
 
+  // ===== Mạng lưới (network graph) =====
+  // Static clustered SVG: anchor Luật in center, sub-sectors radiate as
+  // angular sectors, docs sit on chronological rings. Replace/amend edges
+  // drawn between docs. Reuses the master-chain + sub-sector taxonomy
+  // from renderHeThong so the data flow is identical.
+  function renderMangLuoi(doc) {
+    if (!mangluoiEl) return;
+    // Find master (same algorithm as renderHeThong)
+    let master = doc;
+    const seen = new Set();
+    while (master && master.typeKey !== 'luat' && master.typeKey !== 'bo-luat') {
+      if (seen.has(master.id)) break;
+      seen.add(master.id);
+      const imp = (master.implements || [])[0];
+      const next = imp ? H.findDoc(imp) : null;
+      if (!next) break;
+      master = next;
+    }
+    if (!master || (master.typeKey !== 'luat' && master.typeKey !== 'bo-luat')) {
+      mangluoiEl.innerHTML = `<div class="ld-empty">Văn bản này chưa được liên kết đến văn bản cấp Luật/Bộ luật chủ quản.</div>`;
+      return;
+    }
+
+    // Build master chain via replaces (same as renderHeThong)
+    const masterChain = new Set([master.id]);
+    (function walkChain(id) {
+      const d = H.findDoc(id); if (!d) return;
+      for (const pid of (d.replaces || [])) if (!masterChain.has(pid)) { masterChain.add(pid); walkChain(pid); }
+    })(master.id);
+    for (const other of Object.values(DB)) {
+      if (masterChain.has(other.id)) continue;
+      for (const pid of (other.replaces || [])) if (masterChain.has(pid)) { masterChain.add(other.id); break; }
+      for (const pid of (other.amends || [])) if (masterChain.has(pid)) { masterChain.add(other.id); break; }
+    }
+
+    // Collect implementing docs
+    const impl = [];
+    for (const other of Object.values(DB)) {
+      const imps = other.implements || [];
+      if (imps.some(id => masterChain.has(id))) impl.push(other);
+    }
+
+    // Try sub-sector taxonomy for this master
+    const taxonomy = SUB_SECTOR_TAXONOMY.find(b => b.masterId === master.id);
+    const docToSector = new Map();
+    let sectorList = [];
+    if (taxonomy) {
+      sectorList = taxonomy.groups.map(g => g.label);
+      for (const g of taxonomy.groups) {
+        for (const id of g.docs) if (H.findDoc(id)) docToSector.set(id, g.label);
+      }
+    }
+
+    // Geometry
+    const SVG_W = 880, SVG_H = 680;
+    const CX = SVG_W / 2, CY = SVG_H / 2;
+    const ANCHOR_R = 36;
+    const RING_BASE = 110;
+    const RING_STEP = 60;
+
+    // Pick currentYear for distance: closer = newer
+    const yearOf = (d) => parseInt((d.issuedDate || '').slice(0, 4), 10) || 1990;
+    const NOW = new Date().getFullYear();
+
+    // Distance from center: 0 yrs old → 110, 5 yrs → 170, 10 → 230, etc.
+    function ringRadius(yr) {
+      const age = Math.max(0, NOW - yr);
+      return RING_BASE + Math.min(age * 12, RING_STEP * 4);
+    }
+
+    // Cluster nodes by sub-sector. Each sub-sector gets an angular sector
+    // around the anchor; within the sector, docs are placed at their
+    // chronological radius and spread out angularly.
+    const sectorMap = new Map(); // label → [docs]
+    const orphans = [];
+    for (const d of impl) {
+      const lab = docToSector.get(d.id);
+      if (!lab) { orphans.push(d); continue; }
+      if (!sectorMap.has(lab)) sectorMap.set(lab, []);
+      sectorMap.get(lab).push(d);
+    }
+    if (orphans.length) sectorMap.set("Khác", orphans);
+    const sectors = [...sectorMap.keys()];
+
+    // Position each doc
+    const pos = new Map(); // id → {x, y}
+    if (master) pos.set(master.id, { x: CX, y: CY });
+    const N = Math.max(sectors.length, 1);
+    sectors.forEach((label, si) => {
+      // Center angle of this sector
+      const baseAngle = (-Math.PI / 2) + (si / N) * (Math.PI * 2);
+      // Half-width of the sector in radians (a bit less than 2π/N for spacing)
+      const half = (Math.PI / N) * 0.85;
+      const docs = sectorMap.get(label).slice().sort((a, b) => yearOf(a) - yearOf(b));
+      const M = docs.length;
+      docs.forEach((d, di) => {
+        const r = ringRadius(yearOf(d));
+        // Within sector, spread docs by index (jitter helps avoid stacking)
+        const t = M === 1 ? 0 : (di / (M - 1)) - 0.5;
+        const angle = baseAngle + t * (half * 0.9);
+        const x = CX + r * Math.cos(angle);
+        const y = CY + r * Math.sin(angle);
+        pos.set(d.id, { x, y, angle, label });
+      });
+    });
+
+    // Edges
+    const edges = [];
+    function pushEdge(from, to, type) {
+      if (pos.has(from) && pos.has(to)) edges.push({ from, to, type });
+    }
+    for (const other of [master, ...impl]) {
+      for (const pid of (other.replaces || [])) pushEdge(pid, other.id, 'replace');
+      for (const pid of (other.amends || [])) pushEdge(pid, other.id, 'amend');
+      for (const pid of (other.implements || [])) if (masterChain.has(pid)) pushEdge(pid, other.id, 'implements');
+    }
+
+    // SVG markup
+    const tierColor = (tk) => tk === 'luat' || tk === 'bo-luat' ? '#7d1d22'
+      : tk === 'nghidinh' ? '#15a884'
+      : tk === 'thongtu' ? '#1a2c4a'
+      : tk === 'quyetdinh' ? '#7a3aa8' : '#6b7a90';
+    // A doc is active iff its status reads "Có hiệu lực" AND it has no
+    // successor doc. A non-empty replacedBy[] overrides a stale status field.
+    const isActive = (d) => {
+      if ((d.replacedBy || []).length) return false;
+      return /hiệu lực/i.test(d.status || '') && !/hết/i.test(d.status || '');
+    };
+
+    const ringMarkup = [RING_BASE, RING_BASE + RING_STEP, RING_BASE + RING_STEP * 2, RING_BASE + RING_STEP * 3]
+      .map(r => `<circle cx="${CX}" cy="${CY}" r="${r}" fill="none" stroke="#e4e0d4" stroke-dasharray="2,3"/>`).join('');
+
+    const ringLabels = [
+      { r: RING_BASE,                 label: `${NOW}` },
+      { r: RING_BASE + RING_STEP,     label: `${NOW - 5}` },
+      { r: RING_BASE + RING_STEP * 2, label: `${NOW - 10}` },
+      { r: RING_BASE + RING_STEP * 3, label: `${NOW - 15}` },
+    ].map(rl => `<text x="${CX + rl.r + 4}" y="${CY + 3}" font-family="Inter" font-size="9" fill="#a8b4c4">${rl.label}</text>`).join('');
+
+    const sectorLabels = sectors.map((label, si) => {
+      const baseAngle = (-Math.PI / 2) + (si / N) * (Math.PI * 2);
+      const rLabel = RING_BASE + RING_STEP * 3.6;
+      const x = CX + rLabel * Math.cos(baseAngle);
+      const y = CY + rLabel * Math.sin(baseAngle);
+      return `<text class="ml-sector-label" x="${x}" y="${y}" text-anchor="middle" font-family="Inter" font-size="11" font-weight="700" fill="#7d1d22">${escapeHtml(label)}</text>`;
+    }).join('');
+
+    const edgeMarkup = edges.map(e => {
+      const a = pos.get(e.from), b = pos.get(e.to);
+      const cls = e.type === 'implements' ? 'ml-edge-impl' : (e.type === 'amend' ? 'ml-edge-amend' : 'ml-edge-replace');
+      return `<line class="${cls}" x1="${a.x}" y1="${a.y}" x2="${b.x}" y2="${b.y}"/>`;
+    }).join('');
+
+    const nodeMarkup = [];
+    nodeMarkup.push(`
+      <g class="ml-node ml-node-anchor" data-doc-id="${escapeHtml(master.id)}" style="cursor:pointer">
+        <circle cx="${CX}" cy="${CY}" r="${ANCHOR_R}" fill="${tierColor(master.typeKey)}"/>
+        <text x="${CX}" y="${CY - 3}" text-anchor="middle" font-family="Inter" font-size="10" fill="white" font-weight="700">${escapeHtml(master.type)}</text>
+        <text x="${CX}" y="${CY + 12}" text-anchor="middle" font-family="Inter" font-size="9" fill="white">${escapeHtml(master.number || master.id).slice(0, 14)}</text>
+      </g>`);
+    for (const d of impl) {
+      const p = pos.get(d.id); if (!p) continue;
+      const r = isActive(d) ? 14 : 10;
+      const fill = isActive(d) ? tierColor(d.typeKey) : '#d6d0c2';
+      const stroke = isActive(d) ? '#3a3a3a' : 'none';
+      const label = (d.number || d.id).replace(/Q[ĐD]-/g, '').slice(0, 10);
+      nodeMarkup.push(`
+        <g class="ml-node" data-doc-id="${escapeHtml(d.id)}" style="cursor:pointer">
+          <circle cx="${p.x}" cy="${p.y}" r="${r}" fill="${fill}" stroke="${stroke}" stroke-width="0.5"/>
+          <text x="${p.x}" y="${p.y + r + 11}" text-anchor="middle" font-family="Inter" font-size="9" fill="${isActive(d) ? '#1a2c4a' : '#6b7a90'}" font-weight="${isActive(d) ? '600' : '400'}">${escapeHtml(label)}</text>
+        </g>`);
+    }
+
+    mangluoiEl.innerHTML = `
+      <div class="ml-head">
+        <h2>Mạng lưới văn bản — ${escapeHtml(master.shortTitle)}</h2>
+        <div class="ml-legend">
+          <span class="ml-legend-item"><span class="ml-dot" style="background:#7d1d22"></span>Luật</span>
+          <span class="ml-legend-item"><span class="ml-dot" style="background:#15a884"></span>NĐ</span>
+          <span class="ml-legend-item"><span class="ml-dot" style="background:#1a2c4a"></span>TT</span>
+          <span class="ml-legend-item"><span class="ml-dot" style="background:#7a3aa8"></span>QĐ</span>
+          <span class="ml-legend-item"><span class="ml-dash ml-edge-replace-legend"></span>thay thế</span>
+          <span class="ml-legend-item"><span class="ml-dash ml-edge-amend-legend"></span>sửa đổi</span>
+          <span class="ml-legend-item"><span class="ml-dash ml-edge-impl-legend"></span>implements</span>
+          <span class="ml-legend-item"><span class="ml-dot ml-dim"></span>hết hiệu lực</span>
+        </div>
+      </div>
+      <div class="ml-wrap">
+        <svg class="ml-svg" viewBox="0 0 ${SVG_W} ${SVG_H}" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+          <g class="ml-rings">${ringMarkup}${ringLabels}</g>
+          <g class="ml-sector-labels">${sectorLabels}</g>
+          <g class="ml-edges">${edgeMarkup}</g>
+          <g class="ml-nodes">${nodeMarkup.join('')}</g>
+        </svg>
+      </div>
+    `;
+    mangluoiEl.querySelectorAll('.ml-node[data-doc-id]').forEach(g => {
+      g.addEventListener('click', () => {
+        const id = g.dataset.docId;
+        if (id !== doc.id) showDocPreview(id);
+      });
+    });
+  }
+
+  // ===== Bảng (spreadsheet) =====
+  // Sticky-column table. Rows = sub-sectors (taxonomy groups + orphan).
+  // Columns = NĐ / TT / QĐ. Each cell holds active docs as pills + past
+  // docs as muted text. Status column on the right.
+  function renderBang(doc) {
+    if (!bangEl) return;
+    let master = doc;
+    const seen = new Set();
+    while (master && master.typeKey !== 'luat' && master.typeKey !== 'bo-luat') {
+      if (seen.has(master.id)) break; seen.add(master.id);
+      const imp = (master.implements || [])[0];
+      const next = imp ? H.findDoc(imp) : null;
+      if (!next) break; master = next;
+    }
+    if (!master || (master.typeKey !== 'luat' && master.typeKey !== 'bo-luat')) {
+      bangEl.innerHTML = `<div class="ld-empty">Văn bản này chưa được liên kết đến văn bản cấp Luật/Bộ luật chủ quản.</div>`;
+      return;
+    }
+
+    const masterChain = new Set([master.id]);
+    (function walkChain(id) {
+      const d = H.findDoc(id); if (!d) return;
+      for (const pid of (d.replaces || [])) if (!masterChain.has(pid)) { masterChain.add(pid); walkChain(pid); }
+    })(master.id);
+    for (const other of Object.values(DB)) {
+      if (masterChain.has(other.id)) continue;
+      for (const pid of (other.replaces || [])) if (masterChain.has(pid)) { masterChain.add(other.id); break; }
+      for (const pid of (other.amends || [])) if (masterChain.has(pid)) { masterChain.add(other.id); break; }
+    }
+
+    const impl = [];
+    for (const other of Object.values(DB)) {
+      const imps = other.implements || [];
+      if (imps.some(id => masterChain.has(id))) impl.push(other);
+    }
+
+    const taxonomy = SUB_SECTOR_TAXONOMY.find(b => b.masterId === master.id);
+    // A doc is active iff its status reads "Có hiệu lực" AND it has no
+    // successor doc. A non-empty replacedBy[] overrides a stale status field.
+    const isActive = (d) => {
+      if ((d.replacedBy || []).length) return false;
+      return /hiệu lực/i.test(d.status || '') && !/hết/i.test(d.status || '');
+    };
+    const yearOf = (d) => parseInt((d.issuedDate || '').slice(0, 4), 10) || 0;
+    const sortByYearDesc = (arr) => arr.slice().sort((a, b) => yearOf(b) - yearOf(a));
+
+    // Build sub-sector rows
+    const rows = [];
+    if (taxonomy) {
+      for (const g of taxonomy.groups) {
+        const docs = g.docs.map(id => H.findDoc(id)).filter(Boolean);
+        if (!docs.length) continue;
+        rows.push({ label: g.label, docs });
+      }
+      // Orphans
+      const inTaxonomy = new Set(taxonomy.groups.flatMap(g => g.docs));
+      const orphans = impl.filter(d => !inTaxonomy.has(d.id));
+      if (orphans.length) rows.push({ label: 'Khác', docs: orphans });
+    } else {
+      // No taxonomy — single row
+      rows.push({ label: 'Tất cả', docs: impl });
+    }
+
+    function cellHTML(docs, tk) {
+      const filtered = docs.filter(d => d.typeKey === tk);
+      if (!filtered.length) return `<span class="bg-empty">—</span>`;
+      const sorted = sortByYearDesc(filtered);
+      const actives = sorted.filter(isActive);
+      const pasts = sorted.filter(d => !isActive(d));
+      const activeHTML = actives.map(d => `
+        <span class="bg-active-chip" data-doc-id="${escapeHtml(d.id)}" title="${escapeHtml(d.shortTitle || d.title || d.id)}">
+          ${escapeHtml(d.number || d.id)}
+        </span>`).join('');
+      const pastHTML = pasts.length ? `<div class="bg-past">${pasts.map(d => `
+        <span class="bg-past-id" data-doc-id="${escapeHtml(d.id)}" title="${escapeHtml(d.shortTitle || d.title || d.id)}">${escapeHtml(d.number || d.id)}</span>
+        <span class="bg-past-note">${/Hết hiệu lực/i.test(d.status || '') ? 'hết' : (d.status || '').slice(0, 16)}</span>`).join('<br>')}</div>` : '';
+      return activeHTML + pastHTML;
+    }
+
+    function statusHTML(row) {
+      const anyActive = row.docs.some(isActive);
+      if (anyActive) return `<span class="bg-status bg-status-active">Đang vận hành</span>`;
+      return `<span class="bg-status bg-status-idle">Chưa có VB hiện hành</span>`;
+    }
+
+    const rowsHTML = rows.map(r => `
+      <tr>
+        <td class="bg-first">${escapeHtml(r.label)}</td>
+        <td>${cellHTML(r.docs, 'nghidinh')}</td>
+        <td>${cellHTML(r.docs, 'thongtu')}</td>
+        <td>${cellHTML(r.docs, 'quyetdinh')}</td>
+        <td>${statusHTML(r)}</td>
+      </tr>`).join('');
+
+    bangEl.innerHTML = `
+      <div class="bg-head">
+        <h2>Bảng tổng hợp — ${escapeHtml(master.shortTitle)}</h2>
+        <p class="bg-sub">${rows.length} nhóm chủ đề · ${impl.length} văn bản triển khai</p>
+      </div>
+      <div class="bg-frame">
+        <table class="bg-table">
+          <thead>
+            <tr>
+              <th class="bg-first">Sub-sector</th>
+              <th>Nghị định</th>
+              <th>Thông tư</th>
+              <th>Quyết định</th>
+              <th>Trạng thái</th>
+            </tr>
+          </thead>
+          <tbody>${rowsHTML}</tbody>
+        </table>
+      </div>
+    `;
+    bangEl.querySelectorAll('[data-doc-id]').forEach(el => {
+      el.addEventListener('click', (e) => {
+        e.preventDefault();
+        const id = el.dataset.docId;
+        if (id !== doc.id) showDocPreview(id);
+      });
+    });
+  }
+
   function wireMetaSplitter(wrap) {
     if (!wrap || wrap.dataset.splitterBound) return;
     wrap.dataset.splitterBound = "1";
@@ -3422,7 +3757,9 @@
     const rt = $("#read-toolbar");
     if (rt) rt.style.display = (name === "toanvan") ? "" : "none";
     // Sơ đồ needs the full width — hide both viewer asides when active.
-    document.body.classList.toggle("sodo-fullwidth", name === "sodo");
+    // Tabs that benefit from full-width canvas hide the viewer's side asides.
+    const wideTab = name === "sodo" || name === "mangluoi" || name === "bang";
+    document.body.classList.toggle("sodo-fullwidth", wideTab);
   }
   function isTabActive(name) {
     if (!tabbar) return name === "toanvan"; // default panel when tabbar is gone
