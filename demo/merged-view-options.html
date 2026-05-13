@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Demo — Merged Tiến hóa + Hệ thống views</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" />
+<style>
+  :root {
+    --ink: #1a2c4a; --ink-soft: #3a4a66; --ink-mute: #6b7a90; --ink-faint: #a8b4c4;
+    --line: #e4e0d4; --line-strong: #c8c0a8;
+    --red: #7d1d22; --red-soft: rgba(125,29,34,0.08);
+    --blue: #1a2c4a; --teal: #15a884; --purple: #7a3aa8;
+    --paper: #fbf7ec; --bg: #f6f0e2;
+    --r-md: 6px;
+  }
+  body {
+    background: var(--bg); color: var(--ink); margin: 0;
+    font-family: 'Source Serif 4', Georgia, serif; font-size: 13.5px;
+    padding: 24px 32px;
+  }
+  h1 { font-size: 26px; margin: 0 0 4px; letter-spacing: -0.01em; }
+  .lead { color: var(--ink-mute); margin: 0 0 18px; font-size: 13px; font-family: 'Inter', sans-serif; }
+  .nav-back { color: var(--red); text-decoration: none; font-weight: 600; font-size: 12px; font-family: 'Inter', sans-serif; }
+  .nav-back:hover { text-decoration: underline; }
+
+  .demo-section {
+    background: white; border: 1px solid var(--line); border-radius: var(--r-md);
+    padding: 18px 22px 22px; margin: 0 0 24px;
+  }
+  .demo-section-head {
+    display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap;
+    margin: 0 0 14px; padding-bottom: 10px; border-bottom: 1px solid var(--line);
+  }
+  .demo-section-head h2 {
+    font-size: 17px; font-weight: 700; margin: 0; letter-spacing: -0.01em;
+  }
+  .demo-section-head .tag {
+    display: inline-block; padding: 3px 9px; border-radius: 99px;
+    background: var(--red-soft); color: var(--red); font-size: 10.5px;
+    font-weight: 700; font-family: 'Inter', sans-serif; letter-spacing: 0.16em; text-transform: uppercase;
+  }
+  .demo-section-head .desc {
+    color: var(--ink-mute); font-size: 12.5px; font-family: 'Inter', sans-serif; flex: 1;
+  }
+  .verdict { margin-top: 14px; padding: 10px 14px; background: var(--paper);
+    border-left: 3px solid var(--red); font-size: 12px; color: var(--ink-soft);
+    font-family: 'Inter', sans-serif; line-height: 1.55; }
+  .verdict strong { color: var(--ink); }
+
+  /* ============= OPTION A — Tree + arrows ============= */
+  .opt-a .a-group {
+    border: 1px solid var(--line); border-radius: var(--r-md);
+    padding: 10px 14px; margin-bottom: 10px; background: var(--paper);
+  }
+  .opt-a .a-group-head {
+    display: flex; align-items: baseline; gap: 8px;
+    font-weight: 700; font-size: 13.5px; margin-bottom: 8px;
+    padding-bottom: 6px; border-bottom: 1px solid var(--line);
+  }
+  .opt-a .a-group-count {
+    font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 700;
+    color: var(--red); background: white; padding: 2px 8px; border-radius: 99px;
+    margin-left: auto;
+  }
+  .opt-a .a-chain { display: flex; flex-direction: column; gap: 4px; }
+  .opt-a .a-row {
+    display: grid; grid-template-columns: 16px 1fr; gap: 8px;
+    align-items: baseline;
+  }
+  .opt-a .a-edge {
+    font-family: monospace; color: var(--ink-mute); font-size: 10px;
+    text-align: center; line-height: 1.6;
+  }
+  .opt-a .a-card {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 8px;
+    background: white; border: 1px solid var(--line); border-radius: 4px;
+    padding: 6px 10px; font-family: 'Inter', sans-serif; font-size: 12px;
+  }
+  .opt-a .a-card .a-pill {
+    font-family: 'Inter', sans-serif; font-size: 9.5px; font-weight: 700;
+    padding: 2px 6px; border-radius: 3px; letter-spacing: 0.4px;
+  }
+  .opt-a .a-card .pill-qd { background: rgba(122,58,168,0.12); color: var(--purple); }
+  .opt-a .a-card .a-id { font-weight: 600; color: var(--ink); }
+  .opt-a .a-card .a-year { color: var(--ink-mute); font-size: 11px; }
+  .opt-a .a-card .a-title { color: var(--ink-soft); flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .opt-a .a-card .a-status { font-size: 10px; font-weight: 600; }
+  .opt-a .a-card .s-active { color: var(--teal); }
+  .opt-a .a-card .s-expired { color: var(--ink-mute); }
+
+  /* ============= OPTION B — Swimlane ============= */
+  .opt-b .b-frame { overflow-x: auto; }
+  .opt-b .b-grid {
+    display: grid;
+    grid-template-columns: 100px repeat(7, minmax(80px, 1fr));
+    gap: 4px;
+    align-items: stretch;
+    min-width: 720px;
+  }
+  .opt-b .b-axis-y, .opt-b .b-axis-x {
+    font-family: 'Inter', sans-serif; font-size: 10.5px; color: var(--ink-mute);
+    text-transform: uppercase; letter-spacing: 0.4px; font-weight: 700;
+    padding: 4px 6px;
+  }
+  .opt-b .b-row-label {
+    font-family: 'Inter', sans-serif; font-weight: 700; font-size: 11.5px;
+    color: var(--ink); padding: 8px 6px;
+    background: var(--paper); border-radius: 4px;
+    display: flex; align-items: center;
+  }
+  .opt-b .b-cell {
+    background: white; border: 1px solid var(--line);
+    border-radius: 4px; padding: 6px;
+    display: flex; flex-direction: column; gap: 4px;
+    min-height: 50px;
+  }
+  .opt-b .b-cell.empty { background: rgba(125,29,34,0.015); border-style: dashed; opacity: 0.5; }
+  .opt-b .b-chip {
+    background: rgba(125,29,34,0.04);
+    border-left: 3px solid;
+    padding: 3px 6px; border-radius: 3px;
+    font-family: 'Inter', sans-serif; font-size: 10.5px;
+    line-height: 1.3;
+  }
+  .opt-b .b-chip .b-chip-id { font-weight: 700; color: var(--ink); }
+  .opt-b .b-chip .b-chip-sub { color: var(--ink-mute); font-size: 9.5px; display: block; }
+  .opt-b .b-chip.luat { border-color: var(--red); }
+  .opt-b .b-chip.nghidinh { border-color: var(--teal); }
+  .opt-b .b-chip.thongtu { border-color: var(--blue); }
+  .opt-b .b-chip.quyetdinh { border-color: var(--purple); }
+  .opt-b .b-edge {
+    color: var(--red); font-weight: 600; font-size: 9.5px;
+    margin-top: 1px;
+  }
+
+  /* ============= OPTION C — Tiến hóa with tier coloring ============= */
+  .opt-c .c-tree {
+    display: flex; flex-direction: column; gap: 12px;
+    align-items: center; padding: 12px 0;
+  }
+  .opt-c .c-row {
+    display: grid; grid-template-columns: 60px 1fr; gap: 12px;
+    align-items: center; width: 100%;
+  }
+  .opt-c .c-year {
+    font-family: 'Inter', sans-serif; font-size: 11.5px; font-weight: 700;
+    color: var(--ink-mute); text-align: right; letter-spacing: 0.6px;
+  }
+  .opt-c .c-row-cards {
+    display: flex; gap: 10px; flex-wrap: wrap;
+  }
+  .opt-c .c-card {
+    background: white; border: 1px solid var(--line); border-left: 3px solid var(--line);
+    border-radius: 4px; padding: 7px 10px;
+    font-family: 'Inter', sans-serif; font-size: 11px;
+    min-width: 180px; max-width: 280px;
+    display: flex; flex-direction: column; gap: 2px;
+    transition: border-color 0.15s ease, transform 0.15s ease;
+  }
+  .opt-c .c-card:hover { transform: translateY(-1px); }
+  .opt-c .c-card.luat { border-left-color: var(--red); }
+  .opt-c .c-card.nghidinh { border-left-color: var(--teal); }
+  .opt-c .c-card.thongtu { border-left-color: var(--blue); }
+  .opt-c .c-card.quyetdinh { border-left-color: var(--purple); }
+  .opt-c .c-head { display: flex; align-items: center; gap: 6px; }
+  .opt-c .c-tier {
+    font-size: 9.5px; font-weight: 700; padding: 1px 6px; border-radius: 3px;
+    letter-spacing: 0.3px; text-transform: uppercase;
+  }
+  .opt-c .c-tier.luat { background: rgba(125,29,34,0.10); color: var(--red); }
+  .opt-c .c-tier.nghidinh { background: rgba(21,168,132,0.12); color: var(--teal); }
+  .opt-c .c-tier.thongtu { background: rgba(26,44,74,0.12); color: var(--blue); }
+  .opt-c .c-tier.quyetdinh { background: rgba(122,58,168,0.12); color: var(--purple); }
+  .opt-c .c-sector {
+    font-size: 9.5px; font-weight: 600; padding: 1px 6px;
+    border-radius: 99px; background: var(--paper); color: var(--ink-soft);
+    margin-left: auto;
+  }
+  .opt-c .c-id { font-weight: 700; color: var(--ink); font-size: 11.5px; }
+  .opt-c .c-title { color: var(--ink-soft); line-height: 1.3; }
+  .opt-c .c-edge {
+    color: var(--red); font-size: 14px; line-height: 0.6; padding: 4px 0;
+  }
+</style>
+</head>
+<body>
+
+<p><a class="nav-back" href="../index.html">← Trang chủ</a></p>
+<h1>Merged Tiến hóa + Hệ thống — demo</h1>
+<p class="lead">Three ways to merge the evolution tree with the implementation hierarchy. Same dataset (PDP8 chain + closest related electricity docs). Pick the style you want to ship.</p>
+
+<!-- ============= OPTION A ============= -->
+<section class="demo-section opt-a">
+  <header class="demo-section-head">
+    <span class="tag">Option A</span>
+    <h2>Sub-sector tree + evolution arrows</h2>
+    <span class="desc">Familiar Hệ thống tree, with inline replace/amend arrows. Reads as a sectioned chronology per group.</span>
+  </header>
+
+  <div class="a-group">
+    <div class="a-group-head">
+      Quy hoạch điện VIII (PDP8)
+      <span class="a-group-count">4</span>
+    </div>
+    <div class="a-chain">
+      <div class="a-row">
+        <span class="a-edge">●</span>
+        <div class="a-card">
+          <span class="a-pill pill-qd">QĐ</span>
+          <span class="a-id">768/QĐ-TTg</span>
+          <span class="a-year">15/04/2025</span>
+          <span class="a-title">Điều chỉnh Quy hoạch điện VIII</span>
+          <span class="a-status s-active">đang hiệu lực</span>
+        </div>
+      </div>
+      <div class="a-row"><span class="a-edge">↑</span><span style="color:var(--ink-mute);font-size:10.5px;font-style:italic">thay thế</span></div>
+      <div class="a-row">
+        <span class="a-edge">○</span>
+        <div class="a-card">
+          <span class="a-pill pill-qd">QĐ</span>
+          <span class="a-id">1682/QĐ-TTg</span>
+          <span class="a-year">28/12/2024</span>
+          <span class="a-title">Điều chỉnh Kế hoạch PDP8</span>
+          <span class="a-status s-expired">hết hiệu lực</span>
+        </div>
+      </div>
+      <div class="a-row"><span class="a-edge">↑</span><span style="color:var(--ink-mute);font-size:10.5px;font-style:italic">thay thế</span></div>
+      <div class="a-row">
+        <span class="a-edge">○</span>
+        <div class="a-card">
+          <span class="a-pill pill-qd">QĐ</span>
+          <span class="a-id">262/QĐ-TTg</span>
+          <span class="a-year">01/04/2024</span>
+          <span class="a-title">Kế hoạch thực hiện PDP8</span>
+          <span class="a-status s-expired">hết hiệu lực</span>
+        </div>
+      </div>
+      <div class="a-row"><span class="a-edge">↑</span><span style="color:var(--ink-mute);font-size:10.5px;font-style:italic">thay thế</span></div>
+      <div class="a-row">
+        <span class="a-edge">○</span>
+        <div class="a-card">
+          <span class="a-pill pill-qd">QĐ</span>
+          <span class="a-id">500/QĐ-TTg</span>
+          <span class="a-year">15/05/2023</span>
+          <span class="a-title">Quy hoạch điện VIII (PDP8) gốc</span>
+          <span class="a-status s-expired">hết hiệu lực</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="a-group">
+    <div class="a-group-head">
+      Cơ chế giá điện, FIT &amp; khung giá phát điện
+      <span class="a-group-count">8</span>
+    </div>
+    <div class="a-chain">
+      <div class="a-row"><span class="a-edge">●</span><div class="a-card"><span class="a-pill pill-qd">QĐ</span><span class="a-id">988/QĐ-BCT</span><span class="a-year">10/04/2025</span><span class="a-title">Khung giá điện mặt trời</span><span class="a-status s-active">đang hiệu lực</span></div></div>
+      <div class="a-row"><span class="a-edge">●</span><div class="a-card"><span class="a-pill pill-qd">QĐ</span><span class="a-id">982/QĐ-BCT</span><span class="a-year">10/04/2025</span><span class="a-title">Khung giá thủy điện</span><span class="a-status s-active">đang hiệu lực</span></div></div>
+      <div class="a-row"><span class="a-edge">●</span><div class="a-card"><span class="a-pill pill-qd">QĐ</span><span class="a-id">983/QĐ-BCT</span><span class="a-year">10/04/2025</span><span class="a-title">Khung giá điện khí</span><span class="a-status s-active">đang hiệu lực</span></div></div>
+      <div class="a-row"><span class="a-edge">●</span><div class="a-card"><span class="a-pill pill-qd">QĐ</span><span class="a-id">21/QĐ-BCT</span><span class="a-year">07/01/2023</span><span class="a-title">Khung giá điện chuyển tiếp</span><span class="a-status s-active">đang hiệu lực</span></div></div>
+    </div>
+  </div>
+
+  <div class="verdict">
+    <strong>Strength:</strong> Keeps Hệ thống's familiar sub-sector grouping. Inline ↑ arrows show predecessor chains within each group. Reads like a sectioned changelog.<br>
+    <strong>Weakness:</strong> Cross-group relationships (e.g. a NĐ that implements a Luật + amends another NĐ in a different group) become hard to see.
+  </div>
+</section>
+
+
+<!-- ============= OPTION B ============= -->
+<section class="demo-section opt-b">
+  <header class="demo-section-head">
+    <span class="tag">Option B</span>
+    <h2>Swimlane: tier rows × year columns</h2>
+    <span class="desc">X-axis = year, Y-axis = regulatory tier. Each doc is a chip at its (tier, year) cell. Replace/amend arrows between chips.</span>
+  </header>
+
+  <div class="b-frame">
+    <div class="b-grid">
+      <span></span>
+      <span class="b-axis-x">2010–17</span>
+      <span class="b-axis-x">2018–22</span>
+      <span class="b-axis-x">2023</span>
+      <span class="b-axis-x">2024 Q1–Q3</span>
+      <span class="b-axis-x">2024 Q4</span>
+      <span class="b-axis-x">2025 H1</span>
+      <span class="b-axis-x">2025 H2</span>
+
+      <span class="b-row-label">Luật</span>
+      <div class="b-cell"><div class="b-chip luat"><span class="b-chip-id">28/2004</span><span class="b-chip-sub">Điện lực 2004</span></div></div>
+      <div class="b-cell"><div class="b-chip luat"><span class="b-chip-id">24/2012</span><span class="b-chip-sub">sửa đổi 2012</span></div></div>
+      <div class="b-cell empty"></div>
+      <div class="b-cell"><div class="b-chip luat"><span class="b-chip-id">61/2024</span><span class="b-chip-sub">Điện lực 2024</span></div></div>
+      <div class="b-cell empty"></div>
+      <div class="b-cell empty"></div>
+      <div class="b-cell empty"></div>
+
+      <span class="b-row-label">Nghị định</span>
+      <div class="b-cell"><div class="b-chip nghidinh"><span class="b-chip-id">137/2013</span><span class="b-chip-sub">hướng dẫn</span></div></div>
+      <div class="b-cell empty"></div>
+      <div class="b-cell empty"></div>
+      <div class="b-cell"><div class="b-chip nghidinh"><span class="b-chip-id">80/2024</span><span class="b-chip-sub">DPPA</span></div></div>
+      <div class="b-cell empty"></div>
+      <div class="b-cell"><div class="b-chip nghidinh"><span class="b-chip-id">57/2025</span><span class="b-chip-sub">DPPA v2</span><div class="b-edge">↑ thay 80/2024</div></div><div class="b-chip nghidinh"><span class="b-chip-id">56/2025</span><span class="b-chip-sub">thị trường điện</span></div></div>
+      <div class="b-cell"><div class="b-chip nghidinh"><span class="b-chip-id">100/2025</span><span class="b-chip-sub">điện khí</span></div></div>
+
+      <span class="b-row-label">Thông tư</span>
+      <div class="b-cell"><div class="b-chip thongtu"><span class="b-chip-id">40/2014</span></div><div class="b-chip thongtu"><span class="b-chip-id">39/2015</span></div><div class="b-chip thongtu"><span class="b-chip-id">25/2016</span></div></div>
+      <div class="b-cell"><div class="b-chip thongtu"><span class="b-chip-id">45/2018</span><span class="b-chip-sub">VWEM cũ</span></div><div class="b-chip thongtu"><span class="b-chip-id">15/2022</span></div></div>
+      <div class="b-cell"><div class="b-chip thongtu"><span class="b-chip-id">19/2023</span><span class="b-chip-sub">khung giá MT/gió</span></div></div>
+      <div class="b-cell empty"></div>
+      <div class="b-cell empty"></div>
+      <div class="b-cell"><div class="b-chip thongtu"><span class="b-chip-id">16/2025</span><span class="b-chip-sub">VWEM</span><div class="b-edge">↑ thay 45/2018</div></div></div>
+      <div class="b-cell"><div class="b-chip thongtu"><span class="b-chip-id">36/2025</span><span class="b-chip-sub">sửa đổi VWEM</span></div></div>
+
+      <span class="b-row-label">Quyết định</span>
+      <div class="b-cell"><div class="b-chip quyetdinh"><span class="b-chip-id">37/2011</span><span class="b-chip-sub">điện gió FIT</span></div><div class="b-chip quyetdinh"><span class="b-chip-id">11/2017</span><span class="b-chip-sub">điện mặt trời FIT</span></div></div>
+      <div class="b-cell"><div class="b-chip quyetdinh"><span class="b-chip-id">39/2018</span><span class="b-chip-sub">sửa đổi 37/2011</span></div><div class="b-chip quyetdinh"><span class="b-chip-id">13/2020</span><span class="b-chip-sub">điện mặt trời FIT 2</span></div></div>
+      <div class="b-cell"><div class="b-chip quyetdinh"><span class="b-chip-id">21/QĐ-BCT</span><span class="b-chip-sub">khung giá chuyển tiếp</span></div><div class="b-chip quyetdinh"><span class="b-chip-id">500/QĐ-TTg</span><span class="b-chip-sub">PDP8</span></div></div>
+      <div class="b-cell"><div class="b-chip quyetdinh"><span class="b-chip-id">262/QĐ-TTg</span><span class="b-chip-sub">Kế hoạch PDP8</span></div></div>
+      <div class="b-cell"><div class="b-chip quyetdinh"><span class="b-chip-id">1682/QĐ-TTg</span><span class="b-chip-sub">Điều chỉnh KH PDP8</span></div></div>
+      <div class="b-cell"><div class="b-chip quyetdinh"><span class="b-chip-id">988/QĐ-BCT</span></div><div class="b-chip quyetdinh"><span class="b-chip-id">982/QĐ-BCT</span></div><div class="b-chip quyetdinh"><span class="b-chip-id">983/QĐ-BCT</span></div><div class="b-chip quyetdinh"><span class="b-chip-id">1279/QĐ-BCT</span></div></div>
+      <div class="b-cell"><div class="b-chip quyetdinh"><span class="b-chip-id">768/QĐ-TTg</span><span class="b-chip-sub">PDP8 mới</span><div class="b-edge">↑ thay 500,262,1682</div></div><div class="b-chip quyetdinh"><span class="b-chip-id">1824/QĐ-BCT</span><span class="b-chip-sub">điện gió ngoài khơi</span></div></div>
+    </div>
+  </div>
+
+  <div class="verdict">
+    <strong>Strength:</strong> Most information-dense view. Shows BOTH tier hierarchy AND chronology in one glance. Replace/amend arrows are local to the chip. Great for "when did X enter into force?"<br>
+    <strong>Weakness:</strong> Sub-sector grouping disappears (everything in a tier shares a cell). Wide table — needs horizontal scroll on mobile.
+  </div>
+</section>
+
+
+<!-- ============= OPTION C ============= -->
+<section class="demo-section opt-c">
+  <header class="demo-section-head">
+    <span class="tag">Option C</span>
+    <h2>Tiến hóa with tier coloring + sub-sector tags</h2>
+    <span class="desc">Keep evolution tree shape. Each card gets a tier-colored left bar (Luật burgundy, NĐ teal, TT navy, QĐ purple), plus a sub-sector tag.</span>
+  </header>
+
+  <div class="c-tree">
+    <div class="c-row">
+      <div class="c-year">2004</div>
+      <div class="c-row-cards">
+        <div class="c-card luat">
+          <div class="c-head"><span class="c-tier luat">Luật</span><span class="c-sector">Anchor</span></div>
+          <span class="c-id">28/2004/QH11</span><span class="c-title">Luật Điện lực 2004</span>
+        </div>
+      </div>
+    </div>
+    <div class="c-edge">↓</div>
+
+    <div class="c-row">
+      <div class="c-year">2011</div>
+      <div class="c-row-cards">
+        <div class="c-card quyetdinh">
+          <div class="c-head"><span class="c-tier quyetdinh">QĐ</span><span class="c-sector">điện gió</span></div>
+          <span class="c-id">37/2011/QĐ-TTg</span><span class="c-title">Cơ chế điện gió (FIT)</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="c-row">
+      <div class="c-year">2017</div>
+      <div class="c-row-cards">
+        <div class="c-card quyetdinh">
+          <div class="c-head"><span class="c-tier quyetdinh">QĐ</span><span class="c-sector">điện mặt trời</span></div>
+          <span class="c-id">11/2017/QĐ-TTg</span><span class="c-title">FIT điện mặt trời</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="c-row">
+      <div class="c-year">2023</div>
+      <div class="c-row-cards">
+        <div class="c-card quyetdinh">
+          <div class="c-head"><span class="c-tier quyetdinh">QĐ</span><span class="c-sector">PDP8</span></div>
+          <span class="c-id">500/QĐ-TTg</span><span class="c-title">Quy hoạch điện VIII</span>
+        </div>
+        <div class="c-card quyetdinh">
+          <div class="c-head"><span class="c-tier quyetdinh">QĐ</span><span class="c-sector">khung giá</span></div>
+          <span class="c-id">21/QĐ-BCT</span><span class="c-title">Khung giá chuyển tiếp</span>
+        </div>
+        <div class="c-card thongtu">
+          <div class="c-head"><span class="c-tier thongtu">TT</span><span class="c-sector">khung giá</span></div>
+          <span class="c-id">19/2023/TT-BCT</span><span class="c-title">Khung giá MT/gió</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="c-row">
+      <div class="c-year">2024</div>
+      <div class="c-row-cards">
+        <div class="c-card luat">
+          <div class="c-head"><span class="c-tier luat">Luật</span><span class="c-sector">Anchor</span></div>
+          <span class="c-id">61/2024/QH15</span><span class="c-title">Luật Điện lực 2024</span>
+        </div>
+        <div class="c-card nghidinh">
+          <div class="c-head"><span class="c-tier nghidinh">NĐ</span><span class="c-sector">DPPA</span></div>
+          <span class="c-id">80/2024/NĐ-CP</span><span class="c-title">Mua bán điện trực tiếp</span>
+        </div>
+        <div class="c-card quyetdinh">
+          <div class="c-head"><span class="c-tier quyetdinh">QĐ</span><span class="c-sector">PDP8</span></div>
+          <span class="c-id">262/QĐ-TTg</span><span class="c-title">Kế hoạch thực hiện PDP8</span>
+        </div>
+        <div class="c-card quyetdinh">
+          <div class="c-head"><span class="c-tier quyetdinh">QĐ</span><span class="c-sector">PDP8</span></div>
+          <span class="c-id">1682/QĐ-TTg</span><span class="c-title">Điều chỉnh Kế hoạch PDP8</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="c-row">
+      <div class="c-year">2025</div>
+      <div class="c-row-cards">
+        <div class="c-card nghidinh">
+          <div class="c-head"><span class="c-tier nghidinh">NĐ</span><span class="c-sector">DPPA</span></div>
+          <span class="c-id">57/2025/NĐ-CP</span><span class="c-title">DPPA v2 (thay 80/2024)</span>
+        </div>
+        <div class="c-card nghidinh">
+          <div class="c-head"><span class="c-tier nghidinh">NĐ</span><span class="c-sector">thị trường điện</span></div>
+          <span class="c-id">56/2025/NĐ-CP</span><span class="c-title">Phát triển điện lực</span>
+        </div>
+        <div class="c-card quyetdinh">
+          <div class="c-head"><span class="c-tier quyetdinh">QĐ</span><span class="c-sector">PDP8</span></div>
+          <span class="c-id">768/QĐ-TTg</span><span class="c-title">Điều chỉnh PDP8</span>
+        </div>
+        <div class="c-card quyetdinh">
+          <div class="c-head"><span class="c-tier quyetdinh">QĐ</span><span class="c-sector">khung giá</span></div>
+          <span class="c-id">988/QĐ-BCT</span><span class="c-title">Khung giá điện mặt trời</span>
+        </div>
+        <div class="c-card thongtu">
+          <div class="c-head"><span class="c-tier thongtu">TT</span><span class="c-sector">VWEM</span></div>
+          <span class="c-id">16/2025/TT-BCT</span><span class="c-title">Vận hành VWEM</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="verdict">
+    <strong>Strength:</strong> Closest to current Tiến hóa — minimal disruption. Tier color tells you "what kind of doc"; sector tag tells you "what topic"; year column tells you "when". Three pieces of info per card without crowding.<br>
+    <strong>Weakness:</strong> Loses Hệ thống's sub-sector grouping — you can no longer easily say "show me only the DPPA stack". Could add a sector filter sidebar to compensate.
+  </div>
+</section>
+
+</body>
+</html>
