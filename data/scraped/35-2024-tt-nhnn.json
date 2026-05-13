@@ -1,343 +1,1963 @@
 {
   "id": "35/2024/TT-NHNN",
   "sourceUrl": "https://thuvienphapluat.vn/van-ban/Tien-te-Ngan-hang/Thong-tu-35-2024-TT-NHNN-cap-doi-Giay-phep-cua-to-chuc-tin-dung-phi-ngan-hang-616727.aspx",
-  "scrapedAt": "2026-05-12T15:42:18.700Z",
-  "httpStatus": 200,
-  "via": "tvpl-body",
+  "scrapedAt": "2026-05-13T17:32:29.624Z",
+  "via": "tvpl-table-aware-batch",
   "chapters": [
     {
-      "title": "CHƯƠNG I",
-      "subtitle": "QUY ĐỊNH CHUNG",
+      "title": "PHẦN MỞ ĐẦU",
+      "subtitle": "",
       "articles": [
         {
           "id": "art-1",
           "number": "Điều 1",
           "heading": "Phạm vi điều chỉnh",
-          "body": "1. Thông tư này quy định việc cấp đổi Giấy phép, cấp bổ sung nội dung hoạt động vào Giấy phép và tổ chức, hoạt động của tổ chức tín dụng phi ngân hàng.\n2. Hoạt động cho thuê tài chính của công ty tài chính tổng hợp, công ty cho thuê tài chính thực hiện theo quy định của Thống đốc Ngân hàng Nhà nước."
+          "body": "1. Thông tư này quy định việc cấp đổi Giấy phép, cấp bổ sung nội dung hoạt động vào Giấy phép và tổ chức, hoạt động của tổ chức tín dụng phi ngân hàng.\n2. Hoạt động cho thuê tài chính của công ty tài chính tổng hợp, công ty cho thuê tài chính thực hiện theo quy định của Thống đốc Ngân hàng Nhà nước.",
+          "blocks": [
+            {
+              "kind": "text",
+              "text": "1. Thông tư này quy định việc cấp đổi Giấy phép, cấp bổ sung nội dung hoạt động vào Giấy phép và tổ chức, hoạt động của tổ chức tín dụng phi ngân hàng."
+            },
+            {
+              "kind": "text",
+              "text": "2. Hoạt động cho thuê tài chính của công ty tài chính tổng hợp, công ty cho thuê tài chính thực hiện theo quy định của Thống đốc Ngân hàng Nhà nước."
+            }
+          ]
         },
         {
           "id": "art-2",
           "number": "Điều 2",
           "heading": "Đối tượng áp dụng",
-          "body": "1. Công ty tài chính tổng hợp.\n2. Công ty tài chính chuyên ngành.\n3. Tổ chức, cá nhân có liên quan đến việc cấp đổi Giấy phép, cấp bổ sung nội dung hoạt động vào Giấy phép, tổ chức, hoạt động của tổ chức tín dụng phi ngân hàng quy định tại Thông tư này."
+          "body": "1. Công ty tài chính tổng hợp.\n2. Công ty tài chính chuyên ngành.\n3. Tổ chức, cá nhân có liên quan đến việc cấp đổi Giấy phép, cấp bổ sung nội dung hoạt động vào Giấy phép, tổ chức, hoạt động của tổ chức tín dụng phi ngân hàng quy định tại Thông tư này.",
+          "blocks": [
+            {
+              "kind": "text",
+              "text": "1. Công ty tài chính tổng hợp."
+            },
+            {
+              "kind": "text",
+              "text": "2. Công ty tài chính chuyên ngành."
+            },
+            {
+              "kind": "text",
+              "text": "3. Tổ chức, cá nhân có liên quan đến việc cấp đổi Giấy phép, cấp bổ sung nội dung hoạt động vào Giấy phép, tổ chức, hoạt động của tổ chức tín dụng phi ngân hàng quy định tại Thông tư này."
+            }
+          ]
         },
         {
           "id": "art-3",
           "number": "Điều 3",
           "heading": "Giải thích từ ngữ",
-          "body": "Trong Thông tư này, các từ ngữ dưới đây được hiểu như sau:\n1. Chủ sở hữu là ngân hàng thương mại Việt Nam hoặc tổ chức tín dụng nước ngoài sở hữu toàn bộ vốn điều lệ của tổ chức tín dụng phi ngân hàng trách nhiệm hữu hạn một thành viên.\n2. Tiền thuê là số tiền mà Bên thuê phải trả cho Bên cho thuê theo thỏa thuận trong hợp đồng cho thuê vận hành.\n3. Cho thuê vận hành là hình thức cho thuê hoạt động, theo đó công ty cho thuê tài chính cho thuê tài sản đối với Bên thuê vận hành để sử dụng trong một khoảng thời gian nhất định theo nguyên tắc có hoàn trả tài sản khi kết thúc thời hạn thuê tài sản. Công ty cho thuê tài chính sở hữu tài sản thuê trong suốt thời hạn thuê. Bên thuê vận hành sử dụng tài sản thuê và thanh toán tiền thuê trong suốt thời hạn thuê quy định trong hợp đồng cho thuê vận hành.\n4. Bên thuê vận hành là pháp nhân, cá nhân hoạt động tại Việt Nam.\nĐối với hộ gia đình, tổ hợp tác và tổ chức khác không có tư cách pháp nhân, khi tham gia quan hệ thuê vận hành thì các thành viên của hộ gia đình, tổ hợp tác, tổ chức khác không có tư cách pháp nhân là chủ thể tham gia xác lập, thực hiện giao dịch thuê vận hành hoặc ủy quyền cho người đại diện tham gia xác lập, thực hiện giao dịch thuê vận hành."
+          "body": "Trong Thông tư này, các từ ngữ dưới đây được hiểu như sau:\n1. Chủ sở hữu là ngân hàng thương mại Việt Nam hoặc tổ chức tín dụng nước ngoài sở hữu toàn bộ vốn điều lệ của tổ chức tín dụng phi ngân hàng trách nhiệm hữu hạn một thành viên.\n2. Tiền thuê là số tiền mà Bên thuê phải trả cho Bên cho thuê theo thỏa thuận trong hợp đồng cho thuê vận hành.\n3. Cho thuê vận hành là hình thức cho thuê hoạt động, theo đó công ty cho thuê tài chính cho thuê tài sản đối với Bên thuê vận hành để sử dụng trong một khoảng thời gian nhất định theo nguyên tắc có hoàn trả tài sản khi kết thúc thời hạn thuê tài sản. Công ty cho thuê tài chính sở hữu tài sản thuê trong suốt thời hạn thuê. Bên thuê vận hành sử dụng tài sản thuê và thanh toán tiền thuê trong suốt thời hạn thuê quy định trong hợp đồng cho thuê vận hành.\n4. Bên thuê vận hành là pháp nhân, cá nhân hoạt động tại Việt Nam.\nĐối với hộ gia đình, tổ hợp tác và tổ chức khác không có tư cách pháp nhân, khi tham gia quan hệ thuê vận hành thì các thành viên của hộ gia đình, tổ hợp tác, tổ chức khác không có tư cách pháp nhân là chủ thể tham gia xác lập, thực hiện giao dịch thuê vận hành hoặc ủy quyền cho người đại diện tham gia xác lập, thực hiện giao dịch thuê vận hành.",
+          "blocks": [
+            {
+              "kind": "text",
+              "text": "Trong Thông tư này, các từ ngữ dưới đây được hiểu như sau:"
+            },
+            {
+              "kind": "text",
+              "text": "1. Chủ sở hữu là ngân hàng thương mại Việt Nam hoặc tổ chức tín dụng nước ngoài sở hữu toàn bộ vốn điều lệ của tổ chức tín dụng phi ngân hàng trách nhiệm hữu hạn một thành viên."
+            },
+            {
+              "kind": "text",
+              "text": "2. Tiền thuê là số tiền mà Bên thuê phải trả cho Bên cho thuê theo thỏa thuận trong hợp đồng cho thuê vận hành."
+            },
+            {
+              "kind": "text",
+              "text": "3. Cho thuê vận hành là hình thức cho thuê hoạt động, theo đó công ty cho thuê tài chính cho thuê tài sản đối với Bên thuê vận hành để sử dụng trong một khoảng thời gian nhất định theo nguyên tắc có hoàn trả tài sản khi kết thúc thời hạn thuê tài sản. Công ty cho thuê tài chính sở hữu tài sản thuê trong suốt thời hạn thuê. Bên thuê vận hành sử dụng tài sản thuê và thanh toán tiền thuê trong suốt thời hạn thuê quy định trong hợp đồng cho thuê vận hành."
+            },
+            {
+              "kind": "text",
+              "text": "4. Bên thuê vận hành là pháp nhân, cá nhân hoạt động tại Việt Nam."
+            },
+            {
+              "kind": "text",
+              "text": "Đối với hộ gia đình, tổ hợp tác và tổ chức khác không có tư cách pháp nhân, khi tham gia quan hệ thuê vận hành thì các thành viên của hộ gia đình, tổ hợp tác, tổ chức khác không có tư cách pháp nhân là chủ thể tham gia xác lập, thực hiện giao dịch thuê vận hành hoặc ủy quyền cho người đại diện tham gia xác lập, thực hiện giao dịch thuê vận hành."
+            }
+          ]
         },
         {
           "id": "art-4",
           "number": "Điều 4",
           "heading": "Thẩm quyền chấp thuận cấp đổi Giấp phép, cấp bổ sung nội dung hoạt động vào Giấy phép của tổ chức tín dụng phi ngân hàng",
-          "body": "1. Thống đốc Ngân hàng Nhà nước xem xét, quyết định việc cấp đổi Giấy phép hoặc cấp bổ sung nội dung hoạt động vào Giấy phép đồng thời với cấp đổi Giấy phép của tổ chức tín dụng phi ngân hàng.\n2. Chánh Thanh tra, giám sát ngân hàng xem xét, quyết định việc cấp bổ sung nội dung hoạt động vào Giấy phép của tổ chức tín dụng phi ngân hàng."
-        }
-      ]
-    },
-    {
-      "title": "CHƯƠNG II",
-      "subtitle": "CẤP ĐỔI GIẤY PHÉP, CẤP BỔ SUNG NỘI DUNG HOẠT ĐỘNG VÀO GIẤY PHÉP",
-      "articles": [
+          "body": "1. Thống đốc Ngân hàng Nhà nước xem xét, quyết định việc cấp đổi Giấy phép hoặc cấp bổ sung nội dung hoạt động vào Giấy phép đồng thời với cấp đổi Giấy phép của tổ chức tín dụng phi ngân hàng.\n2. Chánh Thanh tra, giám sát ngân hàng xem xét, quyết định việc cấp bổ sung nội dung hoạt động vào Giấy phép của tổ chức tín dụng phi ngân hàng.\nChương II\nCẤP ĐỔI GIẤY PHÉP, CẤP BỔ SUNG NỘI DUNG HOẠT ĐỘNG VÀO GIẤY PHÉP",
+          "blocks": [
+            {
+              "kind": "text",
+              "text": "1. Thống đốc Ngân hàng Nhà nước xem xét, quyết định việc cấp đổi Giấy phép hoặc cấp bổ sung nội dung hoạt động vào Giấy phép đồng thời với cấp đổi Giấy phép của tổ chức tín dụng phi ngân hàng."
+            },
+            {
+              "kind": "text",
+              "text": "2. Chánh Thanh tra, giám sát ngân hàng xem xét, quyết định việc cấp bổ sung nội dung hoạt động vào Giấy phép của tổ chức tín dụng phi ngân hàng."
+            },
+            {
+              "kind": "text",
+              "text": "Chương II"
+            },
+            {
+              "kind": "text",
+              "text": "CẤP ĐỔI GIẤY PHÉP, CẤP BỔ SUNG NỘI DUNG HOẠT ĐỘNG VÀO GIẤY PHÉP"
+            }
+          ]
+        },
         {
           "id": "art-5",
           "number": "Điều 5",
           "heading": "Nguyên tắc cấp đổi Giấy phép, cấp bổ sung nội dung hoạt động vào Giấy phép",
-          "body": "1. Ngân hàng Nhà nước không thực hiện cấp đổi Giấy phép đối với các nội dung hoạt động mà tổ chức tín dụng phi ngân hàng không được phép thực hiện theo quy định của pháp luật tại thời điểm cấp đổi.\n2. Ngân hàng Nhà nước điều chỉnh tên nội dung hoạt động được phép thực hiện phù hợp với quy định của Luật Các tổ chức tín dụng và các Phụ lục ban hành kèm theo Thông tư này. Giấy phép được cấp đổi thay thế tất cả các Giấy phép, văn bản chấp thuận (liên quan đến nội dung sửa đổi, bổ sung Giấy phép) mà Ngân hàng Nhà nước đã cấp cho tổ chức tín dụng phi ngân hàng trước thời điểm cấp đổi.\n3. Đối với hoạt động kinh doanh ngoại hối, cung ứng dịch vụ ngoại hối, việc cấp bổ sung nội dung hoạt động vào Giấy phép thực hiện theo quy định riêng của Ngân hàng Nhà nước và quy định khác của pháp luật có liên quan.\n4. Đối với các hình thức cấp tín dụng khác và các nội dung hoạt động kinh doanh khác liên quan đến hoạt động ngân hàng quy định tại các Phụ lục ban hành kèm Thông tư này, tổ chức tín dụng phi ngân hàng được thực hiện sau khi có sự chấp thuận của Ngân hàng Nhà nước; thủ tục, cấp bổ sung các nội dung hoạt động này vào Giấy phép thực hiện theo quy định riêng của Ngân hàng Nhà nước và quy định khác của pháp luật có liên quan.\n5. Trường hợp tổ chức tín dụng phi ngân hàng đề nghị cấp bổ sung nội dung hoạt động vào Giấy phép đồng thời với cấp đổi Giấy phép, Ngân hàng Nhà nước xem xét cấp đổi Giấy phép trong đó bao gồm nội dung cấp bổ sung theo đề nghị, trên cơ sở tổ chức tín dụng phi ngân hàng đáp ứng đầy đủ hồ sơ theo quy định tại khoản 3 Điều 7 Thông tư này."
+          "body": "1. Ngân hàng Nhà nước không thực hiện cấp đổi Giấy phép đối với các nội dung hoạt động mà tổ chức tín dụng phi ngân hàng không được phép thực hiện theo quy định của pháp luật tại thời điểm cấp đổi.\n2. Ngân hàng Nhà nước điều chỉnh tên nội dung hoạt động được phép thực hiện phù hợp với quy định của Luật Các tổ chức tín dụng và các Phụ lục ban hành kèm theo Thông tư này. Giấy phép được cấp đổi thay thế tất cả các Giấy phép, văn bản chấp thuận (liên quan đến nội dung sửa đổi, bổ sung Giấy phép) mà Ngân hàng Nhà nước đã cấp cho tổ chức tín dụng phi ngân hàng trước thời điểm cấp đổi.\n3. Đối với hoạt động kinh doanh ngoại hối, cung ứng dịch vụ ngoại hối, việc cấp bổ sung nội dung hoạt động vào Giấy phép thực hiện theo quy định riêng của Ngân hàng Nhà nước và quy định khác của pháp luật có liên quan.\n4. Đối với các hình thức cấp tín dụng khác và các nội dung hoạt động kinh doanh khác liên quan đến hoạt động ngân hàng quy định tại các Phụ lục ban hành kèm Thông tư này, tổ chức tín dụng phi ngân hàng được thực hiện sau khi có sự chấp thuận của Ngân hàng Nhà nước; thủ tục, cấp bổ sung các nội dung hoạt động này vào Giấy phép thực hiện theo quy định riêng của Ngân hàng Nhà nước và quy định khác của pháp luật có liên quan.\n5. Trường hợp tổ chức tín dụng phi ngân hàng đề nghị cấp bổ sung nội dung hoạt động vào Giấy phép đồng thời với cấp đổi Giấy phép, Ngân hàng Nhà nước xem xét cấp đổi Giấy phép trong đó bao gồm nội dung cấp bổ sung theo đề nghị, trên cơ sở tổ chức tín dụng phi ngân hàng đáp ứng đầy đủ hồ sơ theo quy định tại khoản 3 Điều 7 Thông tư này.",
+          "blocks": [
+            {
+              "kind": "text",
+              "text": "1. Ngân hàng Nhà nước không thực hiện cấp đổi Giấy phép đối với các nội dung hoạt động mà tổ chức tín dụng phi ngân hàng không được phép thực hiện theo quy định của pháp luật tại thời điểm cấp đổi."
+            },
+            {
+              "kind": "text",
+              "text": "2. Ngân hàng Nhà nước điều chỉnh tên nội dung hoạt động được phép thực hiện phù hợp với quy định của Luật Các tổ chức tín dụng và các Phụ lục ban hành kèm theo Thông tư này. Giấy phép được cấp đổi thay thế tất cả các Giấy phép, văn bản chấp thuận (liên quan đến nội dung sửa đổi, bổ sung Giấy phép) mà Ngân hàng Nhà nước đã cấp cho tổ chức tín dụng phi ngân hàng trước thời điểm cấp đổi."
+            },
+            {
+              "kind": "text",
+              "text": "3. Đối với hoạt động kinh doanh ngoại hối, cung ứng dịch vụ ngoại hối, việc cấp bổ sung nội dung hoạt động vào Giấy phép thực hiện theo quy định riêng của Ngân hàng Nhà nước và quy định khác của pháp luật có liên quan."
+            },
+            {
+              "kind": "text",
+              "text": "4. Đối với các hình thức cấp tín dụng khác và các nội dung hoạt động kinh doanh khác liên quan đến hoạt động ngân hàng quy định tại các Phụ lục ban hành kèm Thông tư này, tổ chức tín dụng phi ngân hàng được thực hiện sau khi có sự chấp thuận của Ngân hàng Nhà nước; thủ tục, cấp bổ sung các nội dung hoạt động này vào Giấy phép thực hiện theo quy định riêng của Ngân hàng Nhà nước và quy định khác của pháp luật có liên quan."
+            },
+            {
+              "kind": "text",
+              "text": "5. Trường hợp tổ chức tín dụng phi ngân hàng đề nghị cấp bổ sung nội dung hoạt động vào Giấy phép đồng thời với cấp đổi Giấy phép, Ngân hàng Nhà nước xem xét cấp đổi Giấy phép trong đó bao gồm nội dung cấp bổ sung theo đề nghị, trên cơ sở tổ chức tín dụng phi ngân hàng đáp ứng đầy đủ hồ sơ theo quy định tại khoản 3 Điều 7 Thông tư này."
+            }
+          ]
         },
         {
           "id": "art-6",
           "number": "Điều 6",
           "heading": "Nguyên tắc lập hồ sơ cấp đổi Giấy phép, cấp bổ sung nội dung hoạt động vào Giấy phép",
-          "body": "1. Hồ sơ đề nghị cấp đổi Giấy phép, cấp bổ sung nội dung hoạt động vào Giấy phép phải được người đại diện theo pháp luật hoặc người đại diện theo ủy quyền của tổ chức tín dụng phi ngân hàng ký. Trường hợp ký theo ủy quyền, hồ sơ phải có văn bản ủy quyền được lập phù hợp với quy định của pháp luật.\n2. Hồ sơ đề nghị cấp đổi Giấy phép, cấp bổ sung nội dung hoạt động vào Giấy phép của tổ chức tín dụng phi ngân hàng được lập 01 bộ bằng tiếng Việt. Thành phần hồ sơ của nước ngoài phải được hợp pháp hóa lãnh sự theo quy định của pháp luật Việt Nam (trừ trường hợp được miễn hợp pháp hóa lãnh sự theo quy định của pháp luật về hợp pháp hóa lãnh sự) và dịch ra tiếng Việt. Các bản dịch từ tiếng nước ngoài ra tiếng Việt phải được công chứng bản dịch hoặc chứng thực chữ ký của người dịch theo quy định của pháp luật. Trường hợp các giấy tờ là bản sao mà không phải là bản sao có chứng thực, bản sao được cấp từ sổ gốc thì phải xuất trình kèm theo bản chính để đối chiếu, người đối chiếu chịu trách nhiệm về tính chính xác của bản sao so với bản chính.\n3. Trong mỗi bộ hồ sơ phải có danh mục tài liệu."
+          "body": "1. Hồ sơ đề nghị cấp đổi Giấy phép, cấp bổ sung nội dung hoạt động vào Giấy phép phải được người đại diện theo pháp luật hoặc người đại diện theo ủy quyền của tổ chức tín dụng phi ngân hàng ký. Trường hợp ký theo ủy quyền, hồ sơ phải có văn bản ủy quyền được lập phù hợp với quy định của pháp luật.\n2. Hồ sơ đề nghị cấp đổi Giấy phép, cấp bổ sung nội dung hoạt động vào Giấy phép của tổ chức tín dụng phi ngân hàng được lập 01 bộ bằng tiếng Việt. Thành phần hồ sơ của nước ngoài phải được hợp pháp hóa lãnh sự theo quy định của pháp luật Việt Nam (trừ trường hợp được miễn hợp pháp hóa lãnh sự theo quy định của pháp luật về hợp pháp hóa lãnh sự) và dịch ra tiếng Việt. Các bản dịch từ tiếng nước ngoài ra tiếng Việt phải được công chứng bản dịch hoặc chứng thực chữ ký của người dịch theo quy định của pháp luật. Trường hợp các giấy tờ là bản sao mà không phải là bản sao có chứng thực, bản sao được cấp từ sổ gốc thì phải xuất trình kèm theo bản chính để đối chiếu, người đối chiếu chịu trách nhiệm về tính chính xác của bản sao so với bản chính.\n3. Trong mỗi bộ hồ sơ phải có danh mục tài liệu.",
+          "blocks": [
+            {
+              "kind": "text",
+              "text": "1. Hồ sơ đề nghị cấp đổi Giấy phép, cấp bổ sung nội dung hoạt động vào Giấy phép phải được người đại diện theo pháp luật hoặc người đại diện theo ủy quyền của tổ chức tín dụng phi ngân hàng ký. Trường hợp ký theo ủy quyền, hồ sơ phải có văn bản ủy quyền được lập phù hợp với quy định của pháp luật."
+            },
+            {
+              "kind": "text",
+              "text": "2. Hồ sơ đề nghị cấp đổi Giấy phép, cấp bổ sung nội dung hoạt động vào Giấy phép của tổ chức tín dụng phi ngân hàng được lập 01 bộ bằng tiếng Việt. Thành phần hồ sơ của nước ngoài phải được hợp pháp hóa lãnh sự theo quy định của pháp luật Việt Nam (trừ trường hợp được miễn hợp pháp hóa lãnh sự theo quy định của pháp luật về hợp pháp hóa lãnh sự) và dịch ra tiếng Việt. Các bản dịch từ tiếng nước ngoài ra tiếng Việt phải được công chứng bản dịch hoặc chứng thực chữ ký của người dịch theo quy định của pháp luật. Trường hợp các giấy tờ là bản sao mà không phải là bản sao có chứng thực, bản sao được cấp từ sổ gốc thì phải xuất trình kèm theo bản chính để đối chiếu, người đối chiếu chịu trách nhiệm về tính chính xác của bản sao so với bản chính."
+            },
+            {
+              "kind": "text",
+              "text": "3. Trong mỗi bộ hồ sơ phải có danh mục tài liệu."
+            }
+          ]
         },
         {
           "id": "art-7",
           "number": "Điều 7",
           "heading": "Hồ sơ đề nghị cấp đổi Giấy phép, cấp bổ sung nội dung hoạt động vào Giấy phép",
-          "body": "1. Đối với trường hợp cấp đổi Giấy phép:\na) Đơn đề nghị cấp đổi Giấy phép, trong đơn cần nêu rõ các nội dung hoạt động đề nghị thực hiện;\nb) Danh mục các nội dung hoạt động kèm bản chụp Giấy phép hiện hành và các văn bản chấp thuận.\n2. Đối với trường hợp cấp bổ sung nội dung hoạt động vào Giấy phép:\na) Đơn đề nghị cấp bổ sung nội dung hoạt động vào Giấy phép, trong đơn cần nêu rõ các nội dung hoạt động đề nghị bổ sung. Đối với tổ chức tín dụng phi ngân hàng 100% vốn nước ngoài đề nghị bổ sung nội dung hoạt động, trong đơn cần cam kết đây là các nội dung hoạt động mà tổ chức tín dụng nước ngoài là chủ sở hữu, thành viên góp vốn có tỷ lệ góp vốn điều lệ lớn nhất trong tổ chức tín dụng phi ngân hàng 100% vốn nước ngoài đang được phép thực hiện tại nước nơi tổ chức tín dụng nước ngoài đặt trụ sở chính;\nb) Nghị quyết của Hội đồng quản trị, Hội đồng thành viên tổ chức tín dụng phi ngân hàng nhất trí thông qua việc đề nghị cấp bổ sung nội dung hoạt động vào Giấy phép;\nc) Tài liệu chứng minh việc đáp ứng điều kiện hoạt động dự kiến thực hiện tại Việt Nam là hoạt động mà chủ sở hữu, thành viên góp vốn có tỷ lệ góp vốn điều lệ lớn nhất trong tổ chức tín dụng phi ngân hàng 100% vốn nước ngoài đang được phép thực hiện tại nước nơi tổ chức tín dụng nước ngoài đặt trụ sở chính;\nd) Ngoài các thành phần hồ sơ quy định tại điểm a, b, c khoản này, tổ chức tín dụng phi ngân hàng bổ sung nội dung hoạt động ngân hàng đã được quy định cụ thể tại Luật Các tổ chức tín dụng và các Phụ lục ban hành kèm Thông tư này phải có thêm các văn bản sau đây:\n(i) Quy định nội bộ theo quy định của pháp luật để thực hiện hoạt động ngân hàng đề nghị bổ sung;\n(ii) Cam kết về việc đã đáp ứng đủ điều kiện về nghiệp vụ, đội ngũ cán bộ và cơ sở vật chất, công nghệ để thực hiện hoạt động ngân hàng đề nghị bổ sung theo các quy định pháp luật có liên quan.\n3. Đối với trường hợp đề nghị cấp bổ sung nội dung hoạt động vào Giấy phép đồng thời cấp đổi Giấy phép:\na) Đơn đề nghị bổ sung nội dung hoạt động vào Giấy phép và cấp đổi Giấy phép, trong đó bao gồm nội dung hoạt động đề nghị thực hiện, đề nghị bổ sung và nội dung cam kết quy định tại điểm a khoản 2 Điều này;\nb) Hồ sơ quy định tại điểm b khoản 1 và điểm b, c, d khoản 2 Điều này."
+          "body": "1. Đối với trường hợp cấp đổi Giấy phép:\na) Đơn đề nghị cấp đổi Giấy phép, trong đơn cần nêu rõ các nội dung hoạt động đề nghị thực hiện;\nb) Danh mục các nội dung hoạt động kèm bản chụp Giấy phép hiện hành và các văn bản chấp thuận.\n2. Đối với trường hợp cấp bổ sung nội dung hoạt động vào Giấy phép:\na) Đơn đề nghị cấp bổ sung nội dung hoạt động vào Giấy phép, trong đơn cần nêu rõ các nội dung hoạt động đề nghị bổ sung. Đối với tổ chức tín dụng phi ngân hàng 100% vốn nước ngoài đề nghị bổ sung nội dung hoạt động, trong đơn cần cam kết đây là các nội dung hoạt động mà tổ chức tín dụng nước ngoài là chủ sở hữu, thành viên góp vốn có tỷ lệ góp vốn điều lệ lớn nhất trong tổ chức tín dụng phi ngân hàng 100% vốn nước ngoài đang được phép thực hiện tại nước nơi tổ chức tín dụng nước ngoài đặt trụ sở chính;\nb) Nghị quyết của Hội đồng quản trị, Hội đồng thành viên tổ chức tín dụng phi ngân hàng nhất trí thông qua việc đề nghị cấp bổ sung nội dung hoạt động vào Giấy phép;\nc) Tài liệu chứng minh việc đáp ứng điều kiện hoạt động dự kiến thực hiện tại Việt Nam là hoạt động mà chủ sở hữu, thành viên góp vốn có tỷ lệ góp vốn điều lệ lớn nhất trong tổ chức tín dụng phi ngân hàng 100% vốn nước ngoài đang được phép thực hiện tại nước nơi tổ chức tín dụng nước ngoài đặt trụ sở chính;\nd) Ngoài các thành phần hồ sơ quy định tại điểm a, b, c khoản này, tổ chức tín dụng phi ngân hàng bổ sung nội dung hoạt động ngân hàng đã được quy định cụ thể tại Luật Các tổ chức tín dụng và các Phụ lục ban hành kèm Thông tư này phải có thêm các văn bản sau đây:\n(i) Quy định nội bộ theo quy định của pháp luật để thực hiện hoạt động ngân hàng đề nghị bổ sung;\n(ii) Cam kết về việc đã đáp ứng đủ điều kiện về nghiệp vụ, đội ngũ cán bộ và cơ sở vật chất, công nghệ để thực hiện hoạt động ngân hàng đề nghị bổ sung theo các quy định pháp luật có liên quan.\n3. Đối với trường hợp đề nghị cấp bổ sung nội dung hoạt động vào Giấy phép đồng thời cấp đổi Giấy phép:\na) Đơn đề nghị bổ sung nội dung hoạt động vào Giấy phép và cấp đổi Giấy phép, trong đó bao gồm nội dung hoạt động đề nghị thực hiện, đề nghị bổ sung và nội dung cam kết quy định tại điểm a khoản 2 Điều này;\nb) Hồ sơ quy định tại điểm b khoản 1 và điểm b, c, d khoản 2 Điều này.",
+          "blocks": [
+            {
+              "kind": "text",
+              "text": "1. Đối với trường hợp cấp đổi Giấy phép:"
+            },
+            {
+              "kind": "text",
+              "text": "a) Đơn đề nghị cấp đổi Giấy phép, trong đơn cần nêu rõ các nội dung hoạt động đề nghị thực hiện;"
+            },
+            {
+              "kind": "text",
+              "text": "b) Danh mục các nội dung hoạt động kèm bản chụp Giấy phép hiện hành và các văn bản chấp thuận."
+            },
+            {
+              "kind": "text",
+              "text": "2. Đối với trường hợp cấp bổ sung nội dung hoạt động vào Giấy phép:"
+            },
+            {
+              "kind": "text",
+              "text": "a) Đơn đề nghị cấp bổ sung nội dung hoạt động vào Giấy phép, trong đơn cần nêu rõ các nội dung hoạt động đề nghị bổ sung. Đối với tổ chức tín dụng phi ngân hàng 100% vốn nước ngoài đề nghị bổ sung nội dung hoạt động, trong đơn cần cam kết đây là các nội dung hoạt động mà tổ chức tín dụng nước ngoài là chủ sở hữu, thành viên góp vốn có tỷ lệ góp vốn điều lệ lớn nhất trong tổ chức tín dụng phi ngân hàng 100% vốn nước ngoài đang được phép thực hiện tại nước nơi tổ chức tín dụng nước ngoài đặt trụ sở chính;"
+            },
+            {
+              "kind": "text",
+              "text": "b) Nghị quyết của Hội đồng quản trị, Hội đồng thành viên tổ chức tín dụng phi ngân hàng nhất trí thông qua việc đề nghị cấp bổ sung nội dung hoạt động vào Giấy phép;"
+            },
+            {
+              "kind": "text",
+              "text": "c) Tài liệu chứng minh việc đáp ứng điều kiện hoạt động dự kiến thực hiện tại Việt Nam là hoạt động mà chủ sở hữu, thành viên góp vốn có tỷ lệ góp vốn điều lệ lớn nhất trong tổ chức tín dụng phi ngân hàng 100% vốn nước ngoài đang được phép thực hiện tại nước nơi tổ chức tín dụng nước ngoài đặt trụ sở chính;"
+            },
+            {
+              "kind": "text",
+              "text": "d) Ngoài các thành phần hồ sơ quy định tại điểm a, b, c khoản này, tổ chức tín dụng phi ngân hàng bổ sung nội dung hoạt động ngân hàng đã được quy định cụ thể tại Luật Các tổ chức tín dụng và các Phụ lục ban hành kèm Thông tư này phải có thêm các văn bản sau đây:"
+            },
+            {
+              "kind": "text",
+              "text": "(i) Quy định nội bộ theo quy định của pháp luật để thực hiện hoạt động ngân hàng đề nghị bổ sung;"
+            },
+            {
+              "kind": "text",
+              "text": "(ii) Cam kết về việc đã đáp ứng đủ điều kiện về nghiệp vụ, đội ngũ cán bộ và cơ sở vật chất, công nghệ để thực hiện hoạt động ngân hàng đề nghị bổ sung theo các quy định pháp luật có liên quan."
+            },
+            {
+              "kind": "text",
+              "text": "3. Đối với trường hợp đề nghị cấp bổ sung nội dung hoạt động vào Giấy phép đồng thời cấp đổi Giấy phép:"
+            },
+            {
+              "kind": "text",
+              "text": "a) Đơn đề nghị bổ sung nội dung hoạt động vào Giấy phép và cấp đổi Giấy phép, trong đó bao gồm nội dung hoạt động đề nghị thực hiện, đề nghị bổ sung và nội dung cam kết quy định tại điểm a khoản 2 Điều này;"
+            },
+            {
+              "kind": "text",
+              "text": "b) Hồ sơ quy định tại điểm b khoản 1 và điểm b, c, d khoản 2 Điều này."
+            }
+          ]
         },
         {
           "id": "art-8",
           "number": "Điều 8",
           "heading": "Thủ tục đề nghị cấp đổi Giấy phép, cấp bổ sung nội dung hoạt động vào Giấy phép",
-          "body": "1. Tổ chức tín dụng phi ngân hàng có nhu cầu cấp đổi Giấy phép hoặc cấp bổ sung nội dung hoạt động vào Giấy phép hoặc cấp bổ sung nội dung hoạt động vào Giấy phép đồng thời cấp đổi Giấy phép lập hồ sơ theo quy định tại Điều 7 Thông tư này gửi trực tiếp hoặc qua dịch vụ bưu chính đến trụ sở chính Ngân hàng Nhà nước (Bộ phận Một cửa).\n2. Trong thời hạn 40 ngày kể từ ngày nhận được đầy đủ hồ sơ hợp lệ, Ngân hàng Nhà nước thực hiện việc cấp đổi Giấy phép hoặc cấp bổ sung nội dung hoạt động vào Giấy phép hoặc cấp bổ sung nội dung hoạt động vào Giấy phép đồng thời cấp đổi Giấy phép theo đề nghị cho tổ chức tín dụng phi ngân hàng. Trường hợp từ chối, Ngân hàng Nhà nước trả lời bằng văn bản và nêu rõ lý do.\n3. Sau khi được Ngân hàng Nhà nước cấp đổi Giấy phép, cấp bổ sung nội dung hoạt động vào Giấy phép, tổ chức tín dụng phi ngân hàng phải:\na) Công bố thay đổi của Giấy phép trong thời hạn 07 ngày làm việc kể từ ngày được Ngân hàng Nhà nước cấp đổi Giấy phép, cấp bổ sung nội dung hoạt động vào Giấy phép trên 01 phương tiện truyền thông của Ngân hàng Nhà nước và 01 tờ báo in trong 03 số liên tiếp hoặc trên 01 báo điện tử của Việt Nam;\nb) Tổ chức tín dụng phi ngân hàng phải thực hiện sửa đổi, bổ sung Điều lệ phù hợp với nội dung Giấy phép cấp đổi, cấp bổ sung."
+          "body": "1. Tổ chức tín dụng phi ngân hàng có nhu cầu cấp đổi Giấy phép hoặc cấp bổ sung nội dung hoạt động vào Giấy phép hoặc cấp bổ sung nội dung hoạt động vào Giấy phép đồng thời cấp đổi Giấy phép lập hồ sơ theo quy định tại Điều 7 Thông tư này gửi trực tiếp hoặc qua dịch vụ bưu chính đến trụ sở chính Ngân hàng Nhà nước (Bộ phận Một cửa).\n2. Trong thời hạn 40 ngày kể từ ngày nhận được đầy đủ hồ sơ hợp lệ, Ngân hàng Nhà nước thực hiện việc cấp đổi Giấy phép hoặc cấp bổ sung nội dung hoạt động vào Giấy phép hoặc cấp bổ sung nội dung hoạt động vào Giấy phép đồng thời cấp đổi Giấy phép theo đề nghị cho tổ chức tín dụng phi ngân hàng. Trường hợp từ chối, Ngân hàng Nhà nước trả lời bằng văn bản và nêu rõ lý do.\n3. Sau khi được Ngân hàng Nhà nước cấp đổi Giấy phép, cấp bổ sung nội dung hoạt động vào Giấy phép, tổ chức tín dụng phi ngân hàng phải:\na) Công bố thay đổi của Giấy phép trong thời hạn 07 ngày làm việc kể từ ngày được Ngân hàng Nhà nước cấp đổi Giấy phép, cấp bổ sung nội dung hoạt động vào Giấy phép trên 01 phương tiện truyền thông của Ngân hàng Nhà nước và 01 tờ báo in trong 03 số liên tiếp hoặc trên 01 báo điện tử của Việt Nam;\nb) Tổ chức tín dụng phi ngân hàng phải thực hiện sửa đổi, bổ sung Điều lệ phù hợp với nội dung Giấy phép cấp đổi, cấp bổ sung.",
+          "blocks": [
+            {
+              "kind": "text",
+              "text": "1. Tổ chức tín dụng phi ngân hàng có nhu cầu cấp đổi Giấy phép hoặc cấp bổ sung nội dung hoạt động vào Giấy phép hoặc cấp bổ sung nội dung hoạt động vào Giấy phép đồng thời cấp đổi Giấy phép lập hồ sơ theo quy định tại Điều 7 Thông tư này gửi trực tiếp hoặc qua dịch vụ bưu chính đến trụ sở chính Ngân hàng Nhà nước (Bộ phận Một cửa)."
+            },
+            {
+              "kind": "text",
+              "text": "2. Trong thời hạn 40 ngày kể từ ngày nhận được đầy đủ hồ sơ hợp lệ, Ngân hàng Nhà nước thực hiện việc cấp đổi Giấy phép hoặc cấp bổ sung nội dung hoạt động vào Giấy phép hoặc cấp bổ sung nội dung hoạt động vào Giấy phép đồng thời cấp đổi Giấy phép theo đề nghị cho tổ chức tín dụng phi ngân hàng. Trường hợp từ chối, Ngân hàng Nhà nước trả lời bằng văn bản và nêu rõ lý do."
+            },
+            {
+              "kind": "text",
+              "text": "3. Sau khi được Ngân hàng Nhà nước cấp đổi Giấy phép, cấp bổ sung nội dung hoạt động vào Giấy phép, tổ chức tín dụng phi ngân hàng phải:"
+            },
+            {
+              "kind": "text",
+              "text": "a) Công bố thay đổi của Giấy phép trong thời hạn 07 ngày làm việc kể từ ngày được Ngân hàng Nhà nước cấp đổi Giấy phép, cấp bổ sung nội dung hoạt động vào Giấy phép trên 01 phương tiện truyền thông của Ngân hàng Nhà nước và 01 tờ báo in trong 03 số liên tiếp hoặc trên 01 báo điện tử của Việt Nam;"
+            },
+            {
+              "kind": "text",
+              "text": "b) Tổ chức tín dụng phi ngân hàng phải thực hiện sửa đổi, bổ sung Điều lệ phù hợp với nội dung Giấy phép cấp đổi, cấp bổ sung."
+            }
+          ]
         },
         {
           "id": "art-9",
           "number": "Điều 9",
           "heading": "Nộp lệ phí cấp đổi Giấy phép",
-          "body": "1. Mức lệ phí cấp đổi Giấy phép theo quy định của pháp luật về phí, lệ phí.\n2. Trong thời hạn 15 ngày kể từ ngày được cấp đổi Giấy phép, tổ chức tín dụng phi ngân hàng phải nộp lệ phí cấp đổi Giấy phép tại Ngân hàng Nhà nước."
+          "body": "1. Mức lệ phí cấp đổi Giấy phép theo quy định của pháp luật về phí, lệ phí.\n2. Trong thời hạn 15 ngày kể từ ngày được cấp đổi Giấy phép, tổ chức tín dụng phi ngân hàng phải nộp lệ phí cấp đổi Giấy phép tại Ngân hàng Nhà nước.",
+          "blocks": [
+            {
+              "kind": "text",
+              "text": "1. Mức lệ phí cấp đổi Giấy phép theo quy định của pháp luật về phí, lệ phí."
+            },
+            {
+              "kind": "text",
+              "text": "2. Trong thời hạn 15 ngày kể từ ngày được cấp đổi Giấy phép, tổ chức tín dụng phi ngân hàng phải nộp lệ phí cấp đổi Giấy phép tại Ngân hàng Nhà nước."
+            }
+          ]
         },
         {
           "id": "art-10",
           "number": "Điều 10",
           "heading": "Thông báo thông tin về cấp đổi Giấy phép, cấp bổ sung nội dung hoạt động vào Giấy phép",
-          "body": "Trong thời hạn 05 ngày làm việc kể từ ngày Ngân hàng Nhà nước cấp đổi Giấy phép hoặc cấp bổ sung nội dung hoạt động vào Giấy phép hoặc cấp bổ sung nội dung hoạt động vào Giấy phép đồng thời với cấp đổi Giấy phép, Cơ quan Thanh tra, giám sát ngân hàng có trách nhiệm thông báo bằng văn bản kèm theo Quyết định bổ sung nội dung hoạt động vào Giấy phép hoặc Giấy phép cấp đổi cho Cơ quan đăng ký kinh doanh cấp tỉnh nơi tổ chức tín dụng phi ngân hàng đặt trụ sở chính để cập nhật vào hệ thống thông tin quốc gia về đăng ký doanh nghiệp."
-        }
-      ]
-    },
-    {
-      "title": "CHƯƠNG III",
-      "subtitle": "TỔ CHỨC, QUẢN TRỊ, ĐIỀU HÀNH, KIỂM SOÁT",
-      "articles": [
+          "body": "Trong thời hạn 05 ngày làm việc kể từ ngày Ngân hàng Nhà nước cấp đổi Giấy phép hoặc cấp bổ sung nội dung hoạt động vào Giấy phép hoặc cấp bổ sung nội dung hoạt động vào Giấy phép đồng thời với cấp đổi Giấy phép, Cơ quan Thanh tra, giám sát ngân hàng có trách nhiệm thông báo bằng văn bản kèm theo Quyết định bổ sung nội dung hoạt động vào Giấy phép hoặc Giấy phép cấp đổi cho Cơ quan đăng ký kinh doanh cấp tỉnh nơi tổ chức tín dụng phi ngân hàng đặt trụ sở chính để cập nhật vào hệ thống thông tin quốc gia về đăng ký doanh nghiệp.\nChương III\nTỔ CHỨC, QUẢN TRỊ, ĐIỀU HÀNH, KIỂM SOÁT",
+          "blocks": [
+            {
+              "kind": "text",
+              "text": "Trong thời hạn 05 ngày làm việc kể từ ngày Ngân hàng Nhà nước cấp đổi Giấy phép hoặc cấp bổ sung nội dung hoạt động vào Giấy phép hoặc cấp bổ sung nội dung hoạt động vào Giấy phép đồng thời với cấp đổi Giấy phép, Cơ quan Thanh tra, giám sát ngân hàng có trách nhiệm thông báo bằng văn bản kèm theo Quyết định bổ sung nội dung hoạt động vào Giấy phép hoặc Giấy phép cấp đổi cho Cơ quan đăng ký kinh doanh cấp tỉnh nơi tổ chức tín dụng phi ngân hàng đặt trụ sở chính để cập nhật vào hệ thống thông tin quốc gia về đăng ký doanh nghiệp."
+            },
+            {
+              "kind": "text",
+              "text": "Chương III"
+            },
+            {
+              "kind": "text",
+              "text": "TỔ CHỨC, QUẢN TRỊ, ĐIỀU HÀNH, KIỂM SOÁT"
+            }
+          ]
+        },
         {
           "id": "art-11",
           "number": "Điều 11",
           "heading": "Tên, trụ sở chính của tổ chức tín dụng phi ngân hàng",
-          "body": "1. Tên của tổ chức tín dụng phi ngân hàng phải đảm bảo phù hợp với quy định tại Luật Doanh nghiệp và các quy định của pháp luật có liên quan và được đặt phù hợp với hình thức pháp lý, loại hình tương ứng như sau:\na) Công ty tài chính tổng hợp cổ phần và tên riêng;\nb) Công ty tài chính bao thanh toán cổ phần và tên riêng;\nc) Công ty tài chính tín dụng tiêu dùng cổ phần và tên riêng;\nd) Công ty cho thuê tài chính cổ phần và tên riêng;\nđ) Công ty tài chính tổng hợp trách nhiệm hữu hạn một thành viên và tên riêng;\ne) Công ty tài chính bao thanh toán trách nhiệm hữu hạn một thành viên và tên riêng;\ng) Công ty tài chính tín dụng tiêu dùng trách nhiệm hữu hạn một thành viên và tên riêng;\nh) Công ty cho thuê tài chính trách nhiệm hữu hạn một thành viên và tên riêng;\ni) Công ty tài chính tổng hợp trách nhiệm hữu hạn và tên riêng đối với công ty tài chính tổng hợp trách nhiệm hữu hạn hai thành viên trở lên;\nk) Công ty tài chính bao thanh toán trách nhiệm hữu hạn và tên riêng đối với công ty tài chính chuyên ngành trách nhiệm hữu hạn hai thành viên trở lên;\nl) Công ty tài chính tín dụng tiêu dùng trách nhiệm hữu hạn và tên riêng đối với công ty tài chính chuyên ngành trách nhiệm hữu hạn hai thành viên trở lên;\nm) Công ty cho thuê tài chính trách nhiệm hữu hạn và tên riêng đối với công ty tài chính chuyên ngành trách nhiệm hữu hạn hai thành viên trở lên.\n2. Trụ sở chính của tổ chức tín dụng phi ngân hàng phải đáp ứng các quy định về trụ sở chính của doanh nghiệp theo quy định của Luật Doanh nghiệp và các điều kiện sau đây:\na) Được ghi trong Giấy phép theo quy định của pháp luật và là nơi làm việc của Hội đồng quản trị, Hội đồng thành viên, Ban kiểm soát, Tổng giám đốc và được thực hiện giao dịch với khách hàng;\nb) Phải ở trên lãnh thổ Việt Nam, có địa chỉ cụ thể bao gồm tên tòa nhà (nếu có), số nhà, tên đường/phố, xã/phường/thị trấn, huyện/quận/thị xã/thành phố thuộc tỉnh/thành phố thuộc thành phố trực thuộc Trung ương, tỉnh/thành phố trực thuộc Trung ương; số điện thoại (nếu có), số fax (nếu có) và thư điện tử (nếu có);\nc) Đảm bảo thuận tiện giao dịch với khách hàng và tuân thủ quy định của Ngân hàng Nhà nước về kho tiền;\nd) Có hệ thống thông tin quản lý kết nối trực tuyến giữa trụ sở chính với các chi nhánh và các bộ phận kinh doanh của tổ chức tín dụng phi ngân hàng đáp ứng các yêu cầu về quản trị điều hành, quản lý rủi ro của tổ chức tín dụng phi ngân hàng và yêu cầu về quản lý của Ngân hàng Nhà nước."
+          "body": "1. Tên của tổ chức tín dụng phi ngân hàng phải đảm bảo phù hợp với quy định tại Luật Doanh nghiệp và các quy định của pháp luật có liên quan và được đặt phù hợp với hình thức pháp lý, loại hình tương ứng như sau:\na) Công ty tài chính tổng hợp cổ phần và tên riêng;\nb) Công ty tài chính bao thanh toán cổ phần và tên riêng;\nc) Công ty tài chính tín dụng tiêu dùng cổ phần và tên riêng;\nd) Công ty cho thuê tài chính cổ phần và tên riêng;\nđ) Công ty tài chính tổng hợp trách nhiệm hữu hạn một thành viên và tên riêng;\ne) Công ty tài chính bao thanh toán trách nhiệm hữu hạn một thành viên và tên riêng;\ng) Công ty tài chính tín dụng tiêu dùng trách nhiệm hữu hạn một thành viên và tên riêng;\nh) Công ty cho thuê tài chính trách nhiệm hữu hạn một thành viên và tên riêng;\ni) Công ty tài chính tổng hợp trách nhiệm hữu hạn và tên riêng đối với công ty tài chính tổng hợp trách nhiệm hữu hạn hai thành viên trở lên;\nk) Công ty tài chính bao thanh toán trách nhiệm hữu hạn và tên riêng đối với công ty tài chính chuyên ngành trách nhiệm hữu hạn hai thành viên trở lên;\nl) Công ty tài chính tín dụng tiêu dùng trách nhiệm hữu hạn và tên riêng đối với công ty tài chính chuyên ngành trách nhiệm hữu hạn hai thành viên trở lên;\nm) Công ty cho thuê tài chính trách nhiệm hữu hạn và tên riêng đối với công ty tài chính chuyên ngành trách nhiệm hữu hạn hai thành viên trở lên.\n2. Trụ sở chính của tổ chức tín dụng phi ngân hàng phải đáp ứng các quy định về trụ sở chính của doanh nghiệp theo quy định của Luật Doanh nghiệp và các điều kiện sau đây:\na) Được ghi trong Giấy phép theo quy định của pháp luật và là nơi làm việc của Hội đồng quản trị, Hội đồng thành viên, Ban kiểm soát, Tổng giám đốc và được thực hiện giao dịch với khách hàng;\nb) Phải ở trên lãnh thổ Việt Nam, có địa chỉ cụ thể bao gồm tên tòa nhà (nếu có), số nhà, tên đường/phố, xã/phường/thị trấn, huyện/quận/thị xã/thành phố thuộc tỉnh/thành phố thuộc thành phố trực thuộc Trung ương, tỉnh/thành phố trực thuộc Trung ương; số điện thoại (nếu có), số fax (nếu có) và thư điện tử (nếu có);\nc) Đảm bảo thuận tiện giao dịch với khách hàng và tuân thủ quy định của Ngân hàng Nhà nước về kho tiền;\nd) Có hệ thống thông tin quản lý kết nối trực tuyến giữa trụ sở chính với các chi nhánh và các bộ phận kinh doanh của tổ chức tín dụng phi ngân hàng đáp ứng các yêu cầu về quản trị điều hành, quản lý rủi ro của tổ chức tín dụng phi ngân hàng và yêu cầu về quản lý của Ngân hàng Nhà nước.",
+          "blocks": [
+            {
+              "kind": "text",
+              "text": "1. Tên của tổ chức tín dụng phi ngân hàng phải đảm bảo phù hợp với quy định tại Luật Doanh nghiệp và các quy định của pháp luật có liên quan và được đặt phù hợp với hình thức pháp lý, loại hình tương ứng như sau:"
+            },
+            {
+              "kind": "text",
+              "text": "a) Công ty tài chính tổng hợp cổ phần và tên riêng;"
+            },
+            {
+              "kind": "text",
+              "text": "b) Công ty tài chính bao thanh toán cổ phần và tên riêng;"
+            },
+            {
+              "kind": "text",
+              "text": "c) Công ty tài chính tín dụng tiêu dùng cổ phần và tên riêng;"
+            },
+            {
+              "kind": "text",
+              "text": "d) Công ty cho thuê tài chính cổ phần và tên riêng;"
+            },
+            {
+              "kind": "text",
+              "text": "đ) Công ty tài chính tổng hợp trách nhiệm hữu hạn một thành viên và tên riêng;"
+            },
+            {
+              "kind": "text",
+              "text": "e) Công ty tài chính bao thanh toán trách nhiệm hữu hạn một thành viên và tên riêng;"
+            },
+            {
+              "kind": "text",
+              "text": "g) Công ty tài chính tín dụng tiêu dùng trách nhiệm hữu hạn một thành viên và tên riêng;"
+            },
+            {
+              "kind": "text",
+              "text": "h) Công ty cho thuê tài chính trách nhiệm hữu hạn một thành viên và tên riêng;"
+            },
+            {
+              "kind": "text",
+              "text": "i) Công ty tài chính tổng hợp trách nhiệm hữu hạn và tên riêng đối với công ty tài chính tổng hợp trách nhiệm hữu hạn hai thành viên trở lên;"
+            },
+            {
+              "kind": "text",
+              "text": "k) Công ty tài chính bao thanh toán trách nhiệm hữu hạn và tên riêng đối với công ty tài chính chuyên ngành trách nhiệm hữu hạn hai thành viên trở lên;"
+            },
+            {
+              "kind": "text",
+              "text": "l) Công ty tài chính tín dụng tiêu dùng trách nhiệm hữu hạn và tên riêng đối với công ty tài chính chuyên ngành trách nhiệm hữu hạn hai thành viên trở lên;"
+            },
+            {
+              "kind": "text",
+              "text": "m) Công ty cho thuê tài chính trách nhiệm hữu hạn và tên riêng đối với công ty tài chính chuyên ngành trách nhiệm hữu hạn hai thành viên trở lên."
+            },
+            {
+              "kind": "text",
+              "text": "2. Trụ sở chính của tổ chức tín dụng phi ngân hàng phải đáp ứng các quy định về trụ sở chính của doanh nghiệp theo quy định của Luật Doanh nghiệp và các điều kiện sau đây:"
+            },
+            {
+              "kind": "text",
+              "text": "a) Được ghi trong Giấy phép theo quy định của pháp luật và là nơi làm việc của Hội đồng quản trị, Hội đồng thành viên, Ban kiểm soát, Tổng giám đốc và được thực hiện giao dịch với khách hàng;"
+            },
+            {
+              "kind": "text",
+              "text": "b) Phải ở trên lãnh thổ Việt Nam, có địa chỉ cụ thể bao gồm tên tòa nhà (nếu có), số nhà, tên đường/phố, xã/phường/thị trấn, huyện/quận/thị xã/thành phố thuộc tỉnh/thành phố thuộc thành phố trực thuộc Trung ương, tỉnh/thành phố trực thuộc Trung ương; số điện thoại (nếu có), số fax (nếu có) và thư điện tử (nếu có);"
+            },
+            {
+              "kind": "text",
+              "text": "c) Đảm bảo thuận tiện giao dịch với khách hàng và tuân thủ quy định của Ngân hàng Nhà nước về kho tiền;"
+            },
+            {
+              "kind": "text",
+              "text": "d) Có hệ thống thông tin quản lý kết nối trực tuyến giữa trụ sở chính với các chi nhánh và các bộ phận kinh doanh của tổ chức tín dụng phi ngân hàng đáp ứng các yêu cầu về quản trị điều hành, quản lý rủi ro của tổ chức tín dụng phi ngân hàng và yêu cầu về quản lý của Ngân hàng Nhà nước."
+            }
+          ]
         },
         {
           "id": "art-12",
           "number": "Điều 12",
           "heading": "Ủy ban Quản lý rủi ro và Ủy ban Nhân sự",
-          "body": "1. Hội đồng quản trị, Hội đồng thành viên phải thành lập Ủy ban Quản lý rủi ro, Ủy ban Nhân sự để giúp Hội đồng quản trị, Hội đồng thành viên thực hiện nhiệm vụ, quyền hạn của mình. Hội đồng quản trị, Hội đồng thành viên ban hành quy chế tổ chức và hoạt động của các Ủy ban này. Trong thời hạn 10 ngày kể từ ngày ban hành, tổ chức tín dụng phi ngân hàng gửi quy định nội bộ này cho Ngân hàng Nhà nước (Cơ quan Thanh tra, giám sát ngân hàng).\n2. Mỗi Ủy ban phải có tối thiểu ba thành viên, gồm Trưởng ban là thành viên Hội đồng quản trị, Hội đồng thành viên và các thành viên khác do Hội đồng quản trị, Hội đồng thành viên quyết định, bổ nhiệm, miễn nhiệm theo Điều lệ của tổ chức tín dụng phi ngân hàng. Một thành viên Hội đồng quản trị, Hội đồng thành viên chỉ được là Trưởng ban của một Ủy ban. Đối với tổ chức tín dụng phi ngân hàng cổ phần, Ủy ban Quản lý rủi ro phải có tối thiểu một thành viên là thành viên độc lập của Hội đồng quản trị.\n3. Quy chế tổ chức và hoạt động của các Ủy ban tối thiểu gồm các nội dung sau đây:\na) Quy chế làm việc tối thiểu bao gồm: số lượng thành viên của Ủy ban và trách nhiệm của từng thành viên; các kỳ họp định kỳ của Ủy ban; việc họp bất thường của Ủy ban; hình thức và tỷ lệ biểu quyết đối với ý kiến đề xuất của các Ủy ban này;\nb) Nhiệm vụ, chức năng của Ủy ban Quản lý rủi ro:\n(i) Tham mưu cho Hội đồng quản trị, Hội đồng thành viên trong việc ban hành các quy trình, chính sách thuộc thẩm quyền của Ủy ban liên quan đến quản trị rủi ro trong hoạt động tổ chức tín dụng phi ngân hàng theo quy định của pháp luật và Điều lệ của tổ chức tín dụng phi ngân hàng;\n(ii) Phân tích, đưa ra những cảnh báo về mức độ an toàn của tổ chức tín dụng phi ngân hàng trước những nguy cơ, tiềm ẩn rủi ro có thể ảnh hưởng và biện pháp phòng ngừa đối với các rủi ro này trong ngắn hạn, dài hạn;\n(iii) Xem xét, đánh giá tính phù hợp và hiệu quả của các quy trình, chính sách quản trị rủi ro hiện hành của tổ chức tín dụng phi ngân hàng để đưa các khuyến nghị, đề xuất đối với Hội đồng quản trị, Hội đồng thành viên về những yêu cầu cần thay đổi quy trình, chính sách hiện hành, chiến lược hoạt động;\n(iv) Tham mưu cho Hội đồng quản trị, Hội đồng thành viên thông qua quyết định đầu tư, các hợp đồng, giao dịch có liên quan; quyết định chính sách quản lý rủi ro và giám sát việc thực thi các biện pháp phòng ngừa rủi ro của tổ chức tín dụng phi ngân hàng trong phạm vi chức năng, nhiệm vụ do Hội đồng quản trị, Hội đồng thành viên giao;\nc) Nhiệm vụ, chức năng của Ủy ban Nhân sự:\n(i) Tham mưu cho Hội đồng quản trị, Hội đồng thành viên về quy mô và cơ cấu Hội đồng quản trị, Hội đồng thành viên, người điều hành phù hợp với quy mô hoạt động và chiến lược phát triển của tổ chức tín dụng phi ngân hàng;\n(ii) Tham mưu cho Hội đồng quản trị, Hội đồng thành viên xử lý các vấn đề về nhân sự phát sinh liên quan đến các thủ tục bầu, bổ nhiệm, bãi nhiệm, miễn nhiệm các chức danh thành viên Hội đồng quản trị, Hội đồng thành viên, thành viên Ban kiểm soát và người điều hành tổ chức tín dụng phi ngân hàng theo đúng quy định của pháp luật và Điều lệ của tổ chức tín dụng phi ngân hàng;\n(iii) Nghiên cứu, tham mưu cho Hội đồng quản trị, Hội đồng thành viên trong việc ban hành các quy định nội bộ của tổ chức tín dụng phi ngân hàng thuộc thẩm quyền của Hội đồng quản trị, Hội đồng thành viên về chế độ tiền lương, thù lao, tiền thưởng, quy chế tuyển chọn nhân sự, đào tạo và các chính sách đãi ngộ khác đối với người điều hành, cán bộ, nhân viên của tổ chức tín dụng phi ngân hàng."
+          "body": "1. Hội đồng quản trị, Hội đồng thành viên phải thành lập Ủy ban Quản lý rủi ro, Ủy ban Nhân sự để giúp Hội đồng quản trị, Hội đồng thành viên thực hiện nhiệm vụ, quyền hạn của mình. Hội đồng quản trị, Hội đồng thành viên ban hành quy chế tổ chức và hoạt động của các Ủy ban này. Trong thời hạn 10 ngày kể từ ngày ban hành, tổ chức tín dụng phi ngân hàng gửi quy định nội bộ này cho Ngân hàng Nhà nước (Cơ quan Thanh tra, giám sát ngân hàng).\n2. Mỗi Ủy ban phải có tối thiểu ba thành viên, gồm Trưởng ban là thành viên Hội đồng quản trị, Hội đồng thành viên và các thành viên khác do Hội đồng quản trị, Hội đồng thành viên quyết định, bổ nhiệm, miễn nhiệm theo Điều lệ của tổ chức tín dụng phi ngân hàng. Một thành viên Hội đồng quản trị, Hội đồng thành viên chỉ được là Trưởng ban của một Ủy ban. Đối với tổ chức tín dụng phi ngân hàng cổ phần, Ủy ban Quản lý rủi ro phải có tối thiểu một thành viên là thành viên độc lập của Hội đồng quản trị.\n3. Quy chế tổ chức và hoạt động của các Ủy ban tối thiểu gồm các nội dung sau đây:\na) Quy chế làm việc tối thiểu bao gồm: số lượng thành viên của Ủy ban và trách nhiệm của từng thành viên; các kỳ họp định kỳ của Ủy ban; việc họp bất thường của Ủy ban; hình thức và tỷ lệ biểu quyết đối với ý kiến đề xuất của các Ủy ban này;\nb) Nhiệm vụ, chức năng của Ủy ban Quản lý rủi ro:\n(i) Tham mưu cho Hội đồng quản trị, Hội đồng thành viên trong việc ban hành các quy trình, chính sách thuộc thẩm quyền của Ủy ban liên quan đến quản trị rủi ro trong hoạt động tổ chức tín dụng phi ngân hàng theo quy định của pháp luật và Điều lệ của tổ chức tín dụng phi ngân hàng;\n(ii) Phân tích, đưa ra những cảnh báo về mức độ an toàn của tổ chức tín dụng phi ngân hàng trước những nguy cơ, tiềm ẩn rủi ro có thể ảnh hưởng và biện pháp phòng ngừa đối với các rủi ro này trong ngắn hạn, dài hạn;\n(iii) Xem xét, đánh giá tính phù hợp và hiệu quả của các quy trình, chính sách quản trị rủi ro hiện hành của tổ chức tín dụng phi ngân hàng để đưa các khuyến nghị, đề xuất đối với Hội đồng quản trị, Hội đồng thành viên về những yêu cầu cần thay đổi quy trình, chính sách hiện hành, chiến lược hoạt động;\n(iv) Tham mưu cho Hội đồng quản trị, Hội đồng thành viên thông qua quyết định đầu tư, các hợp đồng, giao dịch có liên quan; quyết định chính sách quản lý rủi ro và giám sát việc thực thi các biện pháp phòng ngừa rủi ro của tổ chức tín dụng phi ngân hàng trong phạm vi chức năng, nhiệm vụ do Hội đồng quản trị, Hội đồng thành viên giao;\nc) Nhiệm vụ, chức năng của Ủy ban Nhân sự:\n(i) Tham mưu cho Hội đồng quản trị, Hội đồng thành viên về quy mô và cơ cấu Hội đồng quản trị, Hội đồng thành viên, người điều hành phù hợp với quy mô hoạt động và chiến lược phát triển của tổ chức tín dụng phi ngân hàng;\n(ii) Tham mưu cho Hội đồng quản trị, Hội đồng thành viên xử lý các vấn đề về nhân sự phát sinh liên quan đến các thủ tục bầu, bổ nhiệm, bãi nhiệm, miễn nhiệm các chức danh thành viên Hội đồng quản trị, Hội đồng thành viên, thành viên Ban kiểm soát và người điều hành tổ chức tín dụng phi ngân hàng theo đúng quy định của pháp luật và Điều lệ của tổ chức tín dụng phi ngân hàng;\n(iii) Nghiên cứu, tham mưu cho Hội đồng quản trị, Hội đồng thành viên trong việc ban hành các quy định nội bộ của tổ chức tín dụng phi ngân hàng thuộc thẩm quyền của Hội đồng quản trị, Hội đồng thành viên về chế độ tiền lương, thù lao, tiền thưởng, quy chế tuyển chọn nhân sự, đào tạo và các chính sách đãi ngộ khác đối với người điều hành, cán bộ, nhân viên của tổ chức tín dụng phi ngân hàng.",
+          "blocks": [
+            {
+              "kind": "text",
+              "text": "1. Hội đồng quản trị, Hội đồng thành viên phải thành lập Ủy ban Quản lý rủi ro, Ủy ban Nhân sự để giúp Hội đồng quản trị, Hội đồng thành viên thực hiện nhiệm vụ, quyền hạn của mình. Hội đồng quản trị, Hội đồng thành viên ban hành quy chế tổ chức và hoạt động của các Ủy ban này. Trong thời hạn 10 ngày kể từ ngày ban hành, tổ chức tín dụng phi ngân hàng gửi quy định nội bộ này cho Ngân hàng Nhà nước (Cơ quan Thanh tra, giám sát ngân hàng)."
+            },
+            {
+              "kind": "text",
+              "text": "2. Mỗi Ủy ban phải có tối thiểu ba thành viên, gồm Trưởng ban là thành viên Hội đồng quản trị, Hội đồng thành viên và các thành viên khác do Hội đồng quản trị, Hội đồng thành viên quyết định, bổ nhiệm, miễn nhiệm theo Điều lệ của tổ chức tín dụng phi ngân hàng. Một thành viên Hội đồng quản trị, Hội đồng thành viên chỉ được là Trưởng ban của một Ủy ban. Đối với tổ chức tín dụng phi ngân hàng cổ phần, Ủy ban Quản lý rủi ro phải có tối thiểu một thành viên là thành viên độc lập của Hội đồng quản trị."
+            },
+            {
+              "kind": "text",
+              "text": "3. Quy chế tổ chức và hoạt động của các Ủy ban tối thiểu gồm các nội dung sau đây:"
+            },
+            {
+              "kind": "text",
+              "text": "a) Quy chế làm việc tối thiểu bao gồm: số lượng thành viên của Ủy ban và trách nhiệm của từng thành viên; các kỳ họp định kỳ của Ủy ban; việc họp bất thường của Ủy ban; hình thức và tỷ lệ biểu quyết đối với ý kiến đề xuất của các Ủy ban này;"
+            },
+            {
+              "kind": "text",
+              "text": "b) Nhiệm vụ, chức năng của Ủy ban Quản lý rủi ro:"
+            },
+            {
+              "kind": "text",
+              "text": "(i) Tham mưu cho Hội đồng quản trị, Hội đồng thành viên trong việc ban hành các quy trình, chính sách thuộc thẩm quyền của Ủy ban liên quan đến quản trị rủi ro trong hoạt động tổ chức tín dụng phi ngân hàng theo quy định của pháp luật và Điều lệ của tổ chức tín dụng phi ngân hàng;"
+            },
+            {
+              "kind": "text",
+              "text": "(ii) Phân tích, đưa ra những cảnh báo về mức độ an toàn của tổ chức tín dụng phi ngân hàng trước những nguy cơ, tiềm ẩn rủi ro có thể ảnh hưởng và biện pháp phòng ngừa đối với các rủi ro này trong ngắn hạn, dài hạn;"
+            },
+            {
+              "kind": "text",
+              "text": "(iii) Xem xét, đánh giá tính phù hợp và hiệu quả của các quy trình, chính sách quản trị rủi ro hiện hành của tổ chức tín dụng phi ngân hàng để đưa các khuyến nghị, đề xuất đối với Hội đồng quản trị, Hội đồng thành viên về những yêu cầu cần thay đổi quy trình, chính sách hiện hành, chiến lược hoạt động;"
+            },
+            {
+              "kind": "text",
+              "text": "(iv) Tham mưu cho Hội đồng quản trị, Hội đồng thành viên thông qua quyết định đầu tư, các hợp đồng, giao dịch có liên quan; quyết định chính sách quản lý rủi ro và giám sát việc thực thi các biện pháp phòng ngừa rủi ro của tổ chức tín dụng phi ngân hàng trong phạm vi chức năng, nhiệm vụ do Hội đồng quản trị, Hội đồng thành viên giao;"
+            },
+            {
+              "kind": "text",
+              "text": "c) Nhiệm vụ, chức năng của Ủy ban Nhân sự:"
+            },
+            {
+              "kind": "text",
+              "text": "(i) Tham mưu cho Hội đồng quản trị, Hội đồng thành viên về quy mô và cơ cấu Hội đồng quản trị, Hội đồng thành viên, người điều hành phù hợp với quy mô hoạt động và chiến lược phát triển của tổ chức tín dụng phi ngân hàng;"
+            },
+            {
+              "kind": "text",
+              "text": "(ii) Tham mưu cho Hội đồng quản trị, Hội đồng thành viên xử lý các vấn đề về nhân sự phát sinh liên quan đến các thủ tục bầu, bổ nhiệm, bãi nhiệm, miễn nhiệm các chức danh thành viên Hội đồng quản trị, Hội đồng thành viên, thành viên Ban kiểm soát và người điều hành tổ chức tín dụng phi ngân hàng theo đúng quy định của pháp luật và Điều lệ của tổ chức tín dụng phi ngân hàng;"
+            },
+            {
+              "kind": "text",
+              "text": "(iii) Nghiên cứu, tham mưu cho Hội đồng quản trị, Hội đồng thành viên trong việc ban hành các quy định nội bộ của tổ chức tín dụng phi ngân hàng thuộc thẩm quyền của Hội đồng quản trị, Hội đồng thành viên về chế độ tiền lương, thù lao, tiền thưởng, quy chế tuyển chọn nhân sự, đào tạo và các chính sách đãi ngộ khác đối với người điều hành, cán bộ, nhân viên của tổ chức tín dụng phi ngân hàng."
+            }
+          ]
         },
         {
           "id": "art-13",
           "number": "Điều 13",
           "heading": "Chuyển nhượng phần vốn góp, mua lại phần vốn góp",
-          "body": "1. Việc chuyển nhượng phần vốn góp, mua lại phần vốn góp phải đảm bảo tuân thủ các quy định tại Luật Doanh nghiệp.\n2. Việc chuyển nhượng phần vốn góp phải đảm bảo tuân thủ quy định về hình thức tổ chức của tổ chức tín dụng phi ngân hàng quy định tại khoản 3, khoản 4 Điều 6 Luật Các tổ chức tín dụng.\n3. Thành viên sáng lập chỉ được chuyển nhượng phần vốn góp cho thành viên sáng lập khác trong thời hạn 05 năm kể từ ngày được cấp Giấy phép.\n4. Việc chuyển nhượng phần vốn góp phải đảm bảo tỷ lệ góp vốn quy định tại khoản 1 Điều 77 Luật Các tổ chức tín dụng và các quy định sau đây:\na) Đối tác mới nhận chuyển nhượng phải đáp ứng điều kiện quy định tại khoản 5 Điều 29 Luật Các tổ chức tín dụng và các văn bản hướng dẫn;\nb) Đối tác mới nhận chuyển nhượng là tổ chức tín dụng nước ngoài phải đáp ứng điều kiện quy định tại điểm b, d, đ khoản 2, khoản 5 Điều 29 Luật Các tổ chức tín dụng và các văn bản hướng dẫn.\n5. Mua lại phần vốn góp:\nTổ chức tín dụng phi ngân hàng trách nhiệm hữu hạn mua lại phần vốn góp phải tuân thủ các quy định sau đây:\na) Điều kiện thanh toán và xử lý phần vốn góp theo yêu cầu mua lại phần vốn góp của thành viên góp vốn thực hiện theo quy định về mua lại phần vốn góp của Luật Doanh nghiệp;\nb) Sau khi thanh toán hết phần vốn góp được mua lại, tổ chức tín dụng phi ngân hàng vẫn bảo đảm thanh toán đủ các khoản nợ và nghĩa vụ tài sản khác, tuân thủ các giới hạn, tỷ lệ bảo đảm an toàn trong hoạt động ngân hàng, giá trị thực của vốn điều lệ không thấp hơn mức vốn pháp định;\nc) Tuân thủ đầy đủ các quy định về quản trị rủi ro và trích lập dự phòng đầy đủ theo quy định tại thời điểm đề nghị Ngân hàng Nhà nước chấp thuận việc mua lại phần vốn góp;\nd) Kinh doanh liên tục có lãi trong 05 năm liền kề trước năm đề nghị mua lại phần vốn góp và không có lỗ lũy kế;\nđ) Không bị Ngân hàng Nhà nước xử phạt vi phạm hành chính trong lĩnh vực tiền tệ và hoạt động ngân hàng trong 05 năm liền kề trước năm đề nghị mua lại phần vốn góp và đến thời điểm đề nghị Ngân hàng Nhà nước chấp thuận việc mua lại phần vốn góp."
+          "body": "1. Việc chuyển nhượng phần vốn góp, mua lại phần vốn góp phải đảm bảo tuân thủ các quy định tại Luật Doanh nghiệp.\n2. Việc chuyển nhượng phần vốn góp phải đảm bảo tuân thủ quy định về hình thức tổ chức của tổ chức tín dụng phi ngân hàng quy định tại khoản 3, khoản 4 Điều 6 Luật Các tổ chức tín dụng.\n3. Thành viên sáng lập chỉ được chuyển nhượng phần vốn góp cho thành viên sáng lập khác trong thời hạn 05 năm kể từ ngày được cấp Giấy phép.\n4. Việc chuyển nhượng phần vốn góp phải đảm bảo tỷ lệ góp vốn quy định tại khoản 1 Điều 77 Luật Các tổ chức tín dụng và các quy định sau đây:\na) Đối tác mới nhận chuyển nhượng phải đáp ứng điều kiện quy định tại khoản 5 Điều 29 Luật Các tổ chức tín dụng và các văn bản hướng dẫn;\nb) Đối tác mới nhận chuyển nhượng là tổ chức tín dụng nước ngoài phải đáp ứng điều kiện quy định tại điểm b, d, đ khoản 2, khoản 5 Điều 29 Luật Các tổ chức tín dụng và các văn bản hướng dẫn.\n5. Mua lại phần vốn góp:\nTổ chức tín dụng phi ngân hàng trách nhiệm hữu hạn mua lại phần vốn góp phải tuân thủ các quy định sau đây:\na) Điều kiện thanh toán và xử lý phần vốn góp theo yêu cầu mua lại phần vốn góp của thành viên góp vốn thực hiện theo quy định về mua lại phần vốn góp của Luật Doanh nghiệp;\nb) Sau khi thanh toán hết phần vốn góp được mua lại, tổ chức tín dụng phi ngân hàng vẫn bảo đảm thanh toán đủ các khoản nợ và nghĩa vụ tài sản khác, tuân thủ các giới hạn, tỷ lệ bảo đảm an toàn trong hoạt động ngân hàng, giá trị thực của vốn điều lệ không thấp hơn mức vốn pháp định;\nc) Tuân thủ đầy đủ các quy định về quản trị rủi ro và trích lập dự phòng đầy đủ theo quy định tại thời điểm đề nghị Ngân hàng Nhà nước chấp thuận việc mua lại phần vốn góp;\nd) Kinh doanh liên tục có lãi trong 05 năm liền kề trước năm đề nghị mua lại phần vốn góp và không có lỗ lũy kế;\nđ) Không bị Ngân hàng Nhà nước xử phạt vi phạm hành chính trong lĩnh vực tiền tệ và hoạt động ngân hàng trong 05 năm liền kề trước năm đề nghị mua lại phần vốn góp và đến thời điểm đề nghị Ngân hàng Nhà nước chấp thuận việc mua lại phần vốn góp.",
+          "blocks": [
+            {
+              "kind": "text",
+              "text": "1. Việc chuyển nhượng phần vốn góp, mua lại phần vốn góp phải đảm bảo tuân thủ các quy định tại Luật Doanh nghiệp."
+            },
+            {
+              "kind": "text",
+              "text": "2. Việc chuyển nhượng phần vốn góp phải đảm bảo tuân thủ quy định về hình thức tổ chức của tổ chức tín dụng phi ngân hàng quy định tại khoản 3, khoản 4 Điều 6 Luật Các tổ chức tín dụng."
+            },
+            {
+              "kind": "text",
+              "text": "3. Thành viên sáng lập chỉ được chuyển nhượng phần vốn góp cho thành viên sáng lập khác trong thời hạn 05 năm kể từ ngày được cấp Giấy phép."
+            },
+            {
+              "kind": "text",
+              "text": "4. Việc chuyển nhượng phần vốn góp phải đảm bảo tỷ lệ góp vốn quy định tại khoản 1 Điều 77 Luật Các tổ chức tín dụng và các quy định sau đây:"
+            },
+            {
+              "kind": "text",
+              "text": "a) Đối tác mới nhận chuyển nhượng phải đáp ứng điều kiện quy định tại khoản 5 Điều 29 Luật Các tổ chức tín dụng và các văn bản hướng dẫn;"
+            },
+            {
+              "kind": "text",
+              "text": "b) Đối tác mới nhận chuyển nhượng là tổ chức tín dụng nước ngoài phải đáp ứng điều kiện quy định tại điểm b, d, đ khoản 2, khoản 5 Điều 29 Luật Các tổ chức tín dụng và các văn bản hướng dẫn."
+            },
+            {
+              "kind": "text",
+              "text": "5. Mua lại phần vốn góp:"
+            },
+            {
+              "kind": "text",
+              "text": "Tổ chức tín dụng phi ngân hàng trách nhiệm hữu hạn mua lại phần vốn góp phải tuân thủ các quy định sau đây:"
+            },
+            {
+              "kind": "text",
+              "text": "a) Điều kiện thanh toán và xử lý phần vốn góp theo yêu cầu mua lại phần vốn góp của thành viên góp vốn thực hiện theo quy định về mua lại phần vốn góp của Luật Doanh nghiệp;"
+            },
+            {
+              "kind": "text",
+              "text": "b) Sau khi thanh toán hết phần vốn góp được mua lại, tổ chức tín dụng phi ngân hàng vẫn bảo đảm thanh toán đủ các khoản nợ và nghĩa vụ tài sản khác, tuân thủ các giới hạn, tỷ lệ bảo đảm an toàn trong hoạt động ngân hàng, giá trị thực của vốn điều lệ không thấp hơn mức vốn pháp định;"
+            },
+            {
+              "kind": "text",
+              "text": "c) Tuân thủ đầy đủ các quy định về quản trị rủi ro và trích lập dự phòng đầy đủ theo quy định tại thời điểm đề nghị Ngân hàng Nhà nước chấp thuận việc mua lại phần vốn góp;"
+            },
+            {
+              "kind": "text",
+              "text": "d) Kinh doanh liên tục có lãi trong 05 năm liền kề trước năm đề nghị mua lại phần vốn góp và không có lỗ lũy kế;"
+            },
+            {
+              "kind": "text",
+              "text": "đ) Không bị Ngân hàng Nhà nước xử phạt vi phạm hành chính trong lĩnh vực tiền tệ và hoạt động ngân hàng trong 05 năm liền kề trước năm đề nghị mua lại phần vốn góp và đến thời điểm đề nghị Ngân hàng Nhà nước chấp thuận việc mua lại phần vốn góp."
+            }
+          ]
         },
         {
           "id": "art-14",
           "number": "Điều 14",
           "heading": "Thông báo thông tin về người đại diện theo pháp luật",
-          "body": "1. Trong thời hạn 10 ngày kể từ ngày thay đổi người đại diện theo pháp luật, tổ chức tín dụng phi ngân hàng phải có văn bản thông báo cho Ngân hàng Nhà nước các thông tin về họ và tên; giới tính; chức danh; ngày, tháng, năm sinh; dân tộc; quốc tịch; loại giấy tờ pháp lý của cá nhân; số giấy tờ pháp lý của cá nhân; ngày cấp; nơi cấp; địa chỉ thường trú; địa chỉ liên lạc của người đại diện theo pháp luật (trừ trường hợp tổ chức tín dụng phi ngân hàng đã thông báo thay đổi người đại diện theo pháp luật sau khi được Ngân hàng Nhà nước chấp thuận danh sách dự kiến nhân sự theo quy định).\n2. Trong thời hạn 05 ngày làm việc kể từ ngày nhận được văn bản thay đổi người đại diện theo pháp luật của tổ chức tín dụng phi ngân hàng, Cơ quan Thanh tra, giám sát ngân hàng có trách nhiệm thông báo bằng văn bản thông tin về người đại diện theo pháp luật quy định tại khoản 1 Điều này cho Cơ quan đăng ký kinh doanh cấp tỉnh nơi tổ chức tín dụng phi ngân hàng đặt trụ sở chính."
-        }
-      ]
-    },
-    {
-      "title": "CHƯƠNG IV",
-      "subtitle": "HOẠT ĐỘNG CỦA TỔ CHỨC TÍN DỤNG PHI NGÂN HÀNG",
-      "articles": [
+          "body": "1. Trong thời hạn 10 ngày kể từ ngày thay đổi người đại diện theo pháp luật, tổ chức tín dụng phi ngân hàng phải có văn bản thông báo cho Ngân hàng Nhà nước các thông tin về họ và tên; giới tính; chức danh; ngày, tháng, năm sinh; dân tộc; quốc tịch; loại giấy tờ pháp lý của cá nhân; số giấy tờ pháp lý của cá nhân; ngày cấp; nơi cấp; địa chỉ thường trú; địa chỉ liên lạc của người đại diện theo pháp luật (trừ trường hợp tổ chức tín dụng phi ngân hàng đã thông báo thay đổi người đại diện theo pháp luật sau khi được Ngân hàng Nhà nước chấp thuận danh sách dự kiến nhân sự theo quy định).\n2. Trong thời hạn 05 ngày làm việc kể từ ngày nhận được văn bản thay đổi người đại diện theo pháp luật của tổ chức tín dụng phi ngân hàng, Cơ quan Thanh tra, giám sát ngân hàng có trách nhiệm thông báo bằng văn bản thông tin về người đại diện theo pháp luật quy định tại khoản 1 Điều này cho Cơ quan đăng ký kinh doanh cấp tỉnh nơi tổ chức tín dụng phi ngân hàng đặt trụ sở chính.\nChương IV\nHOẠT ĐỘNG CỦA TỔ CHỨC TÍN DỤNG PHI NGÂN HÀNG",
+          "blocks": [
+            {
+              "kind": "text",
+              "text": "1. Trong thời hạn 10 ngày kể từ ngày thay đổi người đại diện theo pháp luật, tổ chức tín dụng phi ngân hàng phải có văn bản thông báo cho Ngân hàng Nhà nước các thông tin về họ và tên; giới tính; chức danh; ngày, tháng, năm sinh; dân tộc; quốc tịch; loại giấy tờ pháp lý của cá nhân; số giấy tờ pháp lý của cá nhân; ngày cấp; nơi cấp; địa chỉ thường trú; địa chỉ liên lạc của người đại diện theo pháp luật (trừ trường hợp tổ chức tín dụng phi ngân hàng đã thông báo thay đổi người đại diện theo pháp luật sau khi được Ngân hàng Nhà nước chấp thuận danh sách dự kiến nhân sự theo quy định)."
+            },
+            {
+              "kind": "text",
+              "text": "2. Trong thời hạn 05 ngày làm việc kể từ ngày nhận được văn bản thay đổi người đại diện theo pháp luật của tổ chức tín dụng phi ngân hàng, Cơ quan Thanh tra, giám sát ngân hàng có trách nhiệm thông báo bằng văn bản thông tin về người đại diện theo pháp luật quy định tại khoản 1 Điều này cho Cơ quan đăng ký kinh doanh cấp tỉnh nơi tổ chức tín dụng phi ngân hàng đặt trụ sở chính."
+            },
+            {
+              "kind": "text",
+              "text": "Chương IV"
+            },
+            {
+              "kind": "text",
+              "text": "HOẠT ĐỘNG CỦA TỔ CHỨC TÍN DỤNG PHI NGÂN HÀNG"
+            }
+          ]
+        },
         {
           "id": "art-15",
           "number": "Điều 15",
           "heading": "Hoạt động của công ty tài chính",
-          "body": "1. Công ty tài chính tổng hợp được thực hiện các hoạt động theo quy định từ Điều 115 đến Điều 119 của Luật Các tổ chức tín dụng.\n2. Công ty tài chính chuyên ngành được thực hiện các hoạt động quy định từ Điều 120 đến Điều 124 Luật Các tổ chức tín dụng.\n3. Công ty tài chính bao thanh toán có dư nợ bao thanh toán tối thiểu chiếm 70% tổng dư nợ cấp tín dụng.\n4. Công ty tài chính tín dụng tiêu dùng có dư nợ tín dụng tiêu dùng tối thiểu chiếm 70% tổng dư nợ cấp tín dụng.\n5. Công ty cho thuê tài chính có dư nợ cho thuê tài chính tối thiểu chiếm 70% tổng dư nợ cấp tín dụng."
+          "body": "1. Công ty tài chính tổng hợp được thực hiện các hoạt động theo quy định từ Điều 115 đến Điều 119 của Luật Các tổ chức tín dụng.\n2. Công ty tài chính chuyên ngành được thực hiện các hoạt động quy định từ Điều 120 đến Điều 124 Luật Các tổ chức tín dụng.\n3. Công ty tài chính bao thanh toán có dư nợ bao thanh toán tối thiểu chiếm 70% tổng dư nợ cấp tín dụng.\n4. Công ty tài chính tín dụng tiêu dùng có dư nợ tín dụng tiêu dùng tối thiểu chiếm 70% tổng dư nợ cấp tín dụng.\n5. Công ty cho thuê tài chính có dư nợ cho thuê tài chính tối thiểu chiếm 70% tổng dư nợ cấp tín dụng.",
+          "blocks": [
+            {
+              "kind": "text",
+              "text": "1. Công ty tài chính tổng hợp được thực hiện các hoạt động theo quy định từ Điều 115 đến Điều 119 của Luật Các tổ chức tín dụng."
+            },
+            {
+              "kind": "text",
+              "text": "2. Công ty tài chính chuyên ngành được thực hiện các hoạt động quy định từ Điều 120 đến Điều 124 Luật Các tổ chức tín dụng."
+            },
+            {
+              "kind": "text",
+              "text": "3. Công ty tài chính bao thanh toán có dư nợ bao thanh toán tối thiểu chiếm 70% tổng dư nợ cấp tín dụng."
+            },
+            {
+              "kind": "text",
+              "text": "4. Công ty tài chính tín dụng tiêu dùng có dư nợ tín dụng tiêu dùng tối thiểu chiếm 70% tổng dư nợ cấp tín dụng."
+            },
+            {
+              "kind": "text",
+              "text": "5. Công ty cho thuê tài chính có dư nợ cho thuê tài chính tối thiểu chiếm 70% tổng dư nợ cấp tín dụng."
+            }
+          ]
         },
         {
           "id": "art-16",
           "number": "Điều 16",
           "heading": "Hoạt động cho thuê vận hành",
-          "body": "1. Tài sản cho thuê vận hành bao gồm máy móc, thiết bị, phương tiện vận tải, các động sản khác, bất động sản theo quy định tại khoản 2 Điều 139 Luật Các tổ chức tín dụng.\n2. Công ty cho thuê tài chính thực hiện hoạt động cho thuê vận hành phải tuân thủ các quy định về thuê tài sản tại Bộ luật Dân sự và quy định của pháp luật có liên quan.\n3. Hợp đồng cho thuê vận hành:\na) Hợp đồng cho thuê vận hành là thỏa thuận giữa công ty cho thuê tài chính và Bên thuê vận hành về việc cho thuê và sử dụng một hoặc một số tài sản theo quy định tại khoản 1 Điều này. Hợp đồng cho thuê vận hành có hiệu lực kể từ ngày được hai bên thoả thuận trong hợp đồng cho thuê vận hành;\nb) Hợp đồng cho thuê vận hành tối thiểu phải có những nội dung sau đây:\n(i) Tên, địa chỉ, mã số thuế của công ty cho thuê tài chính, Bên thuê vận hành;\n(ii) Tên, loại, mã số (nếu có) của tài sản cho thuê và các thông tin cần thiết để xác định đúng tài sản cho thuê;\n(iii) Thời hạn cho thuê;\n(iv) Tiền thuê;\n(v) Trách nhiệm của các bên trong việc bảo hiểm, bảo dưỡng, bảo hành, kiểm định, sửa chữa, thay thế và các trách nhiệm khác theo thỏa thuận đối với tài sản cho thuê trong thời gian cho thuê;\n(vi) Quyền, nghĩa vụ của công ty cho thuê tài chính và Bên thuê vận hành trong hoạt động cho thuê vận hành, chấm dứt hợp đồng cho thuê vận hành trước hạn phù hợp với quy định của pháp luật dân sự và các quy định pháp luật có liên quan."
+          "body": "1. Tài sản cho thuê vận hành bao gồm máy móc, thiết bị, phương tiện vận tải, các động sản khác, bất động sản theo quy định tại khoản 2 Điều 139 Luật Các tổ chức tín dụng.\n2. Công ty cho thuê tài chính thực hiện hoạt động cho thuê vận hành phải tuân thủ các quy định về thuê tài sản tại Bộ luật Dân sự và quy định của pháp luật có liên quan.\n3. Hợp đồng cho thuê vận hành:\na) Hợp đồng cho thuê vận hành là thỏa thuận giữa công ty cho thuê tài chính và Bên thuê vận hành về việc cho thuê và sử dụng một hoặc một số tài sản theo quy định tại khoản 1 Điều này. Hợp đồng cho thuê vận hành có hiệu lực kể từ ngày được hai bên thoả thuận trong hợp đồng cho thuê vận hành;\nb) Hợp đồng cho thuê vận hành tối thiểu phải có những nội dung sau đây:\n(i) Tên, địa chỉ, mã số thuế của công ty cho thuê tài chính, Bên thuê vận hành;\n(ii) Tên, loại, mã số (nếu có) của tài sản cho thuê và các thông tin cần thiết để xác định đúng tài sản cho thuê;\n(iii) Thời hạn cho thuê;\n(iv) Tiền thuê;\n(v) Trách nhiệm của các bên trong việc bảo hiểm, bảo dưỡng, bảo hành, kiểm định, sửa chữa, thay thế và các trách nhiệm khác theo thỏa thuận đối với tài sản cho thuê trong thời gian cho thuê;\n(vi) Quyền, nghĩa vụ của công ty cho thuê tài chính và Bên thuê vận hành trong hoạt động cho thuê vận hành, chấm dứt hợp đồng cho thuê vận hành trước hạn phù hợp với quy định của pháp luật dân sự và các quy định pháp luật có liên quan.",
+          "blocks": [
+            {
+              "kind": "text",
+              "text": "1. Tài sản cho thuê vận hành bao gồm máy móc, thiết bị, phương tiện vận tải, các động sản khác, bất động sản theo quy định tại khoản 2 Điều 139 Luật Các tổ chức tín dụng."
+            },
+            {
+              "kind": "text",
+              "text": "2. Công ty cho thuê tài chính thực hiện hoạt động cho thuê vận hành phải tuân thủ các quy định về thuê tài sản tại Bộ luật Dân sự và quy định của pháp luật có liên quan."
+            },
+            {
+              "kind": "text",
+              "text": "3. Hợp đồng cho thuê vận hành:"
+            },
+            {
+              "kind": "text",
+              "text": "a) Hợp đồng cho thuê vận hành là thỏa thuận giữa công ty cho thuê tài chính và Bên thuê vận hành về việc cho thuê và sử dụng một hoặc một số tài sản theo quy định tại khoản 1 Điều này. Hợp đồng cho thuê vận hành có hiệu lực kể từ ngày được hai bên thoả thuận trong hợp đồng cho thuê vận hành;"
+            },
+            {
+              "kind": "text",
+              "text": "b) Hợp đồng cho thuê vận hành tối thiểu phải có những nội dung sau đây:"
+            },
+            {
+              "kind": "text",
+              "text": "(i) Tên, địa chỉ, mã số thuế của công ty cho thuê tài chính, Bên thuê vận hành;"
+            },
+            {
+              "kind": "text",
+              "text": "(ii) Tên, loại, mã số (nếu có) của tài sản cho thuê và các thông tin cần thiết để xác định đúng tài sản cho thuê;"
+            },
+            {
+              "kind": "text",
+              "text": "(iii) Thời hạn cho thuê;"
+            },
+            {
+              "kind": "text",
+              "text": "(iv) Tiền thuê;"
+            },
+            {
+              "kind": "text",
+              "text": "(v) Trách nhiệm của các bên trong việc bảo hiểm, bảo dưỡng, bảo hành, kiểm định, sửa chữa, thay thế và các trách nhiệm khác theo thỏa thuận đối với tài sản cho thuê trong thời gian cho thuê;"
+            },
+            {
+              "kind": "text",
+              "text": "(vi) Quyền, nghĩa vụ của công ty cho thuê tài chính và Bên thuê vận hành trong hoạt động cho thuê vận hành, chấm dứt hợp đồng cho thuê vận hành trước hạn phù hợp với quy định của pháp luật dân sự và các quy định pháp luật có liên quan."
+            }
+          ]
         },
         {
           "id": "art-17",
           "number": "Điều 17",
           "heading": "Phạm vi hoạt động đại lý bảo hiểm",
-          "body": "1. Khi Giấy phép Ngân hàng Nhà nước cấp cho tổ chức tín dụng phi ngân hàng có nội dung hoạt động đại lý bảo hiểm, tổ chức tín dụng phi ngân hàng được thực hiện hoạt động đại lý bảo hiểm đối với các loại hình bảo hiểm theo quy định của Luật kinh doanh bảo hiểm.\n2. Khi thực hiện hoạt động đại lý bảo hiểm, tổ chức tín dụng phi ngân hàng phải tuân thủ các quy định của pháp luật về kinh doanh bảo hiểm và quy định của pháp luật có liên quan."
-        }
-      ]
-    },
-    {
-      "title": "CHƯƠNG V",
-      "subtitle": "TRÁCH NHIỆM CỦA CÁC TỔ CHỨC, ĐƠN VỊ LIÊN QUAN",
-      "articles": [
+          "body": "1. Khi Giấy phép Ngân hàng Nhà nước cấp cho tổ chức tín dụng phi ngân hàng có nội dung hoạt động đại lý bảo hiểm, tổ chức tín dụng phi ngân hàng được thực hiện hoạt động đại lý bảo hiểm đối với các loại hình bảo hiểm theo quy định của Luật kinh doanh bảo hiểm.\n2. Khi thực hiện hoạt động đại lý bảo hiểm, tổ chức tín dụng phi ngân hàng phải tuân thủ các quy định của pháp luật về kinh doanh bảo hiểm và quy định của pháp luật có liên quan.\nChương V\nTRÁCH NHIỆM CỦA CÁC TỔ CHỨC, ĐƠN VỊ LIÊN QUAN",
+          "blocks": [
+            {
+              "kind": "text",
+              "text": "1. Khi Giấy phép Ngân hàng Nhà nước cấp cho tổ chức tín dụng phi ngân hàng có nội dung hoạt động đại lý bảo hiểm, tổ chức tín dụng phi ngân hàng được thực hiện hoạt động đại lý bảo hiểm đối với các loại hình bảo hiểm theo quy định của Luật kinh doanh bảo hiểm."
+            },
+            {
+              "kind": "text",
+              "text": "2. Khi thực hiện hoạt động đại lý bảo hiểm, tổ chức tín dụng phi ngân hàng phải tuân thủ các quy định của pháp luật về kinh doanh bảo hiểm và quy định của pháp luật có liên quan."
+            },
+            {
+              "kind": "text",
+              "text": "Chương V"
+            },
+            {
+              "kind": "text",
+              "text": "TRÁCH NHIỆM CỦA CÁC TỔ CHỨC, ĐƠN VỊ LIÊN QUAN"
+            }
+          ]
+        },
         {
           "id": "art-18",
           "number": "Điều 18",
           "heading": "Trách nhiệm của các đơn vị thuộc Ngân hàng Nhà nước",
-          "body": "1. Cơ quan Thanh tra, giám sát ngân hàng:\na) Làm đầu mối tiếp nhận, thẩm định và trình Thống đốc Ngân hàng Nhà nước về hồ sơ đề nghị cấp đổi Giấy phép;\nb) Làm đầu mối tiếp nhận, thẩm định và quyết định việc cấp bổ sung nội dung hoạt động vào Giấy phép;\nc) Thực hiện thông báo theo quy định tại Điều 10, khoản 2 Điều 14 Thông tư này.\n2. Vụ Tài chính - Kế toán:\nHướng dẫn hạch toán kế toán các hoạt động của tổ chức tín dụng phi ngân hàng quy định tại Thông tư này.\n3. Vụ Dự báo, thống kê:\nLàm đầu mối xây dựng, hướng dẫn thực hiện chế độ báo cáo thống kê các hoạt động của tổ chức tín dụng phi ngân hàng theo quy định tại Thông tư này.\n4. Sở Giao dịch:\na) Hướng dẫn tổ chức tín dụng phi ngân hàng thực hiện việc nộp lệ phí cấp đổi Giấy phép;\nb) Thực hiện thu lệ phí cấp đổi Giấy phép của tổ chức tín dụng phi ngân hàng và nộp toàn bộ số tiền lệ phí thu được vào Ngân sách Nhà nước theo quy định hiện hành."
+          "body": "1. Cơ quan Thanh tra, giám sát ngân hàng:\na) Làm đầu mối tiếp nhận, thẩm định và trình Thống đốc Ngân hàng Nhà nước về hồ sơ đề nghị cấp đổi Giấy phép;\nb) Làm đầu mối tiếp nhận, thẩm định và quyết định việc cấp bổ sung nội dung hoạt động vào Giấy phép;\nc) Thực hiện thông báo theo quy định tại Điều 10, khoản 2 Điều 14 Thông tư này.\n2. Vụ Tài chính - Kế toán:\nHướng dẫn hạch toán kế toán các hoạt động của tổ chức tín dụng phi ngân hàng quy định tại Thông tư này.\n3. Vụ Dự báo, thống kê:\nLàm đầu mối xây dựng, hướng dẫn thực hiện chế độ báo cáo thống kê các hoạt động của tổ chức tín dụng phi ngân hàng theo quy định tại Thông tư này.\n4. Sở Giao dịch:\na) Hướng dẫn tổ chức tín dụng phi ngân hàng thực hiện việc nộp lệ phí cấp đổi Giấy phép;\nb) Thực hiện thu lệ phí cấp đổi Giấy phép của tổ chức tín dụng phi ngân hàng và nộp toàn bộ số tiền lệ phí thu được vào Ngân sách Nhà nước theo quy định hiện hành.",
+          "blocks": [
+            {
+              "kind": "text",
+              "text": "1. Cơ quan Thanh tra, giám sát ngân hàng:"
+            },
+            {
+              "kind": "text",
+              "text": "a) Làm đầu mối tiếp nhận, thẩm định và trình Thống đốc Ngân hàng Nhà nước về hồ sơ đề nghị cấp đổi Giấy phép;"
+            },
+            {
+              "kind": "text",
+              "text": "b) Làm đầu mối tiếp nhận, thẩm định và quyết định việc cấp bổ sung nội dung hoạt động vào Giấy phép;"
+            },
+            {
+              "kind": "text",
+              "text": "c) Thực hiện thông báo theo quy định tại Điều 10, khoản 2 Điều 14 Thông tư này."
+            },
+            {
+              "kind": "text",
+              "text": "2. Vụ Tài chính - Kế toán:"
+            },
+            {
+              "kind": "text",
+              "text": "Hướng dẫn hạch toán kế toán các hoạt động của tổ chức tín dụng phi ngân hàng quy định tại Thông tư này."
+            },
+            {
+              "kind": "text",
+              "text": "3. Vụ Dự báo, thống kê:"
+            },
+            {
+              "kind": "text",
+              "text": "Làm đầu mối xây dựng, hướng dẫn thực hiện chế độ báo cáo thống kê các hoạt động của tổ chức tín dụng phi ngân hàng theo quy định tại Thông tư này."
+            },
+            {
+              "kind": "text",
+              "text": "4. Sở Giao dịch:"
+            },
+            {
+              "kind": "text",
+              "text": "a) Hướng dẫn tổ chức tín dụng phi ngân hàng thực hiện việc nộp lệ phí cấp đổi Giấy phép;"
+            },
+            {
+              "kind": "text",
+              "text": "b) Thực hiện thu lệ phí cấp đổi Giấy phép của tổ chức tín dụng phi ngân hàng và nộp toàn bộ số tiền lệ phí thu được vào Ngân sách Nhà nước theo quy định hiện hành."
+            }
+          ]
         },
         {
           "id": "art-19",
           "number": "Điều 19",
           "heading": "Trách nhiệm của tổ chức tín dụng phi ngân hàng",
-          "body": "1. Cung cấp đầy đủ, chính xác, kịp thời các thông tin theo yêu cầu của Ngân hàng Nhà nước theo quy định tại Thông tư này và chịu hoàn toàn trách nhiệm trước pháp luật về các thông tin trên.\n2. Đảm bảo đáp ứng các điều kiện để thực hiện các nội dung hoạt động theo đề nghị và tiếp tục duy trì việc đáp ứng các điều kiện này theo quy định.\n3. Xây dựng và tự chịu trách nhiệm về nội dung của quy định nội bộ theo quy định của pháp luật; thực hiện hoạt động được cấp phép theo đúng quy trình nội bộ đã xây dựng, các quy định tại Thông tư này và các quy định khác có liên quan của pháp luật.\n4. Thực hiện nộp lệ phí cấp đổi Giấy phép theo quy định tại Điều 32 Luật Các tổ chức tín dụng."
-        }
-      ]
-    },
-    {
-      "title": "CHƯƠNG VI",
-      "subtitle": "ĐIỀU KHOẢN THI HÀNH",
-      "articles": [
+          "body": "1. Cung cấp đầy đủ, chính xác, kịp thời các thông tin theo yêu cầu của Ngân hàng Nhà nước theo quy định tại Thông tư này và chịu hoàn toàn trách nhiệm trước pháp luật về các thông tin trên.\n2. Đảm bảo đáp ứng các điều kiện để thực hiện các nội dung hoạt động theo đề nghị và tiếp tục duy trì việc đáp ứng các điều kiện này theo quy định.\n3. Xây dựng và tự chịu trách nhiệm về nội dung của quy định nội bộ theo quy định của pháp luật; thực hiện hoạt động được cấp phép theo đúng quy trình nội bộ đã xây dựng, các quy định tại Thông tư này và các quy định khác có liên quan của pháp luật.\n4. Thực hiện nộp lệ phí cấp đổi Giấy phép theo quy định tại Điều 32 Luật Các tổ chức tín dụng.\nChương VI\nĐIỀU KHOẢN THI HÀNH",
+          "blocks": [
+            {
+              "kind": "text",
+              "text": "1. Cung cấp đầy đủ, chính xác, kịp thời các thông tin theo yêu cầu của Ngân hàng Nhà nước theo quy định tại Thông tư này và chịu hoàn toàn trách nhiệm trước pháp luật về các thông tin trên."
+            },
+            {
+              "kind": "text",
+              "text": "2. Đảm bảo đáp ứng các điều kiện để thực hiện các nội dung hoạt động theo đề nghị và tiếp tục duy trì việc đáp ứng các điều kiện này theo quy định."
+            },
+            {
+              "kind": "text",
+              "text": "3. Xây dựng và tự chịu trách nhiệm về nội dung của quy định nội bộ theo quy định của pháp luật; thực hiện hoạt động được cấp phép theo đúng quy trình nội bộ đã xây dựng, các quy định tại Thông tư này và các quy định khác có liên quan của pháp luật."
+            },
+            {
+              "kind": "text",
+              "text": "4. Thực hiện nộp lệ phí cấp đổi Giấy phép theo quy định tại Điều 32 Luật Các tổ chức tín dụng."
+            },
+            {
+              "kind": "text",
+              "text": "Chương VI"
+            },
+            {
+              "kind": "text",
+              "text": "ĐIỀU KHOẢN THI HÀNH"
+            }
+          ]
+        },
         {
           "id": "art-20",
           "number": "Điều 20",
           "heading": "Hiệu lực thi hành",
-          "body": "1. Thông tư này có hiệu lực thi hành từ ngày 01 tháng 7 năm 2024.\n2. Thông tư này bãi bỏ:\na) Thông tư số 30/2015/TT-NHNN ngày 25 tháng 12 năm 2015 của Thống đốc Ngân hàng Nhà nước Việt Nam quy định việc cấp Giấy phép, tổ chức và hoạt động của tổ chức tín dụng phi ngân hàng (Thông tư số 30/2015/TT-NHNN);\nb) Thông tư số 15/2016/TT-NHNN ngày 30 tháng 6 năm 2016 của Thống đốc Ngân hàng Nhà nước Việt Nam sửa đổi, bổ sung một số điều của Thông tư số 30/2015/TT-NHNN;\nc) Thông tư số 01/2019/TT-NHNN ngày 01 tháng 2 năm 2019 của Thống đốc Ngân hàng Nhà nước Việt Nam sửa đổi, bổ sung một số điều của Thông tư số 30/2015/TT-NHNN;\nd) Thông tư số 05/2023/TT-NHNN ngày 22 tháng 6 năm 2023 của Thống đốc Ngân hàng Nhà nước Việt Nam sửa đổi, bổ sung một số điều của Thông tư số 30/2015/TT-NHNN."
+          "body": "1. Thông tư này có hiệu lực thi hành từ ngày 01 tháng 7 năm 2024.\n2. Thông tư này bãi bỏ:\na) Thông tư số 30/2015/TT-NHNN ngày 25 tháng 12 năm 2015 của Thống đốc Ngân hàng Nhà nước Việt Nam quy định việc cấp Giấy phép, tổ chức và hoạt động của tổ chức tín dụng phi ngân hàng (Thông tư số 30/2015/TT-NHNN);\nb) Thông tư số 15/2016/TT-NHNN ngày 30 tháng 6 năm 2016 của Thống đốc Ngân hàng Nhà nước Việt Nam sửa đổi, bổ sung một số điều của Thông tư số 30/2015/TT-NHNN;\nc) Thông tư số 01/2019/TT-NHNN ngày 01 tháng 2 năm 2019 của Thống đốc Ngân hàng Nhà nước Việt Nam sửa đổi, bổ sung một số điều của Thông tư số 30/2015/TT-NHNN;\nd) Thông tư số 05/2023/TT-NHNN ngày 22 tháng 6 năm 2023 của Thống đốc Ngân hàng Nhà nước Việt Nam sửa đổi, bổ sung một số điều của Thông tư số 30/2015/TT-NHNN.",
+          "blocks": [
+            {
+              "kind": "text",
+              "text": "1. Thông tư này có hiệu lực thi hành từ ngày 01 tháng 7 năm 2024."
+            },
+            {
+              "kind": "text",
+              "text": "2. Thông tư này bãi bỏ:"
+            },
+            {
+              "kind": "text",
+              "text": "a) Thông tư số 30/2015/TT-NHNN ngày 25 tháng 12 năm 2015 của Thống đốc Ngân hàng Nhà nước Việt Nam quy định việc cấp Giấy phép, tổ chức và hoạt động của tổ chức tín dụng phi ngân hàng (Thông tư số 30/2015/TT-NHNN);"
+            },
+            {
+              "kind": "text",
+              "text": "b) Thông tư số 15/2016/TT-NHNN ngày 30 tháng 6 năm 2016 của Thống đốc Ngân hàng Nhà nước Việt Nam sửa đổi, bổ sung một số điều của Thông tư số 30/2015/TT-NHNN;"
+            },
+            {
+              "kind": "text",
+              "text": "c) Thông tư số 01/2019/TT-NHNN ngày 01 tháng 2 năm 2019 của Thống đốc Ngân hàng Nhà nước Việt Nam sửa đổi, bổ sung một số điều của Thông tư số 30/2015/TT-NHNN;"
+            },
+            {
+              "kind": "text",
+              "text": "d) Thông tư số 05/2023/TT-NHNN ngày 22 tháng 6 năm 2023 của Thống đốc Ngân hàng Nhà nước Việt Nam sửa đổi, bổ sung một số điều của Thông tư số 30/2015/TT-NHNN."
+            }
+          ]
         },
         {
           "id": "art-21",
           "number": "Điều 21",
           "heading": "Quy định chuyển tiếp",
-          "body": "1. Văn bản đề nghị cấp đổi Giấy phép, cấp bổ sung nội dung hoạt động vào Giấy phép, cấp bổ sung nội dung hoạt động vào Giấy phép đồng thời cấp đổi Giấy phép của tổ chức tín dụng phi ngân hàng đã nộp trước ngày Thông tư này có hiệu lực thi hành được tiếp tục xem xét, xử lý theo quy định của pháp luật tại thời điểm nộp hồ sơ.\n2. Tổ chức tín dụng phi ngân hàng được tiếp tục thực hiện hoạt động thu phí bảo hiểm, thu thập hồ sơ để phục vụ việc giải quyết bồi thường và trả tiền bảo hiểm theo thỏa thuận đã ký trước ngày 01 tháng 7 năm 2024 đối với các hợp đồng, thỏa thuận bảo hiểm mà tổ chức tín dụng phi ngân hàng làm đại lý bảo hiểm. Việc sửa đổi, bổ sung, gia hạn các hợp đồng, thỏa thuận mà tổ chức tín dụng phi ngân hàng làm đại lý bảo hiểm chỉ được thực hiện nếu nội dung sửa đổi, bổ sung, gia hạn phù hợp với quy định của Luật Các tổ chức tín dụng và Thông tư này."
+          "body": "1. Văn bản đề nghị cấp đổi Giấy phép, cấp bổ sung nội dung hoạt động vào Giấy phép, cấp bổ sung nội dung hoạt động vào Giấy phép đồng thời cấp đổi Giấy phép của tổ chức tín dụng phi ngân hàng đã nộp trước ngày Thông tư này có hiệu lực thi hành được tiếp tục xem xét, xử lý theo quy định của pháp luật tại thời điểm nộp hồ sơ.\n2. Tổ chức tín dụng phi ngân hàng được tiếp tục thực hiện hoạt động thu phí bảo hiểm, thu thập hồ sơ để phục vụ việc giải quyết bồi thường và trả tiền bảo hiểm theo thỏa thuận đã ký trước ngày 01 tháng 7 năm 2024 đối với các hợp đồng, thỏa thuận bảo hiểm mà tổ chức tín dụng phi ngân hàng làm đại lý bảo hiểm. Việc sửa đổi, bổ sung, gia hạn các hợp đồng, thỏa thuận mà tổ chức tín dụng phi ngân hàng làm đại lý bảo hiểm chỉ được thực hiện nếu nội dung sửa đổi, bổ sung, gia hạn phù hợp với quy định của Luật Các tổ chức tín dụng và Thông tư này.",
+          "blocks": [
+            {
+              "kind": "text",
+              "text": "1. Văn bản đề nghị cấp đổi Giấy phép, cấp bổ sung nội dung hoạt động vào Giấy phép, cấp bổ sung nội dung hoạt động vào Giấy phép đồng thời cấp đổi Giấy phép của tổ chức tín dụng phi ngân hàng đã nộp trước ngày Thông tư này có hiệu lực thi hành được tiếp tục xem xét, xử lý theo quy định của pháp luật tại thời điểm nộp hồ sơ."
+            },
+            {
+              "kind": "text",
+              "text": "2. Tổ chức tín dụng phi ngân hàng được tiếp tục thực hiện hoạt động thu phí bảo hiểm, thu thập hồ sơ để phục vụ việc giải quyết bồi thường và trả tiền bảo hiểm theo thỏa thuận đã ký trước ngày 01 tháng 7 năm 2024 đối với các hợp đồng, thỏa thuận bảo hiểm mà tổ chức tín dụng phi ngân hàng làm đại lý bảo hiểm. Việc sửa đổi, bổ sung, gia hạn các hợp đồng, thỏa thuận mà tổ chức tín dụng phi ngân hàng làm đại lý bảo hiểm chỉ được thực hiện nếu nội dung sửa đổi, bổ sung, gia hạn phù hợp với quy định của Luật Các tổ chức tín dụng và Thông tư này."
+            }
+          ]
         },
         {
           "id": "art-22",
           "number": "Điều 22",
           "heading": "Tổ chức thực hiện",
-          "body": "Chánh Văn phòng, Chánh Thanh tra, giám sát ngân hàng, Thủ trưởng các đơn vị thuộc Ngân hàng Nhà nước, tổ chức tín dụng phi ngân hàng chịu trách nhiệm tổ chức thi hành Thông tư này./.\nNơi nhận:\n- Như Điều 22;\n- Ban Lãnh đạo NHNN;\n- Văn phòng Chính phủ;\n- Bộ Tư pháp (để kiểm tra);\n- Bộ Kế hoạch và Đầu tư (để phối hợp);\n- Công báo;\n- Cổng TTĐT của NHNN;\n- Lưu: VP, PC, TTGSNH6 (03 bản).\nKT. THỐNG ĐỐC\nPHÓ THỐNG ĐỐC\nĐoàn Thái Sơn\nPHỤ LỤC 01\nMẪU GIẤY PHÉP THÀNH LẬP VÀ HOẠT ĐỘNG CÔNG TY TÀI CHÍNH TỔNG HỢP\n(Ban hành kèm theo Thông tư số 35/2024/TT-NHNN ngày 30/6/2024 của Thống đốc Ngân hàng Nhà nước Việt Nam)\nNGÂN HÀNG NHÀ NƯỚC\nVIỆT NAM\n-------\nCỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM\nĐộc lập - Tự do - Hạnh phúc\n---------------\nSố: /GP-NHNN\nHà Nội, ngày tháng năm…..\nGIẤY PHÉP\nVề việc thành lập và hoạt động công ty tài chính...(*)\nTHỐNG ĐỐC NGÂN HÀNG NHÀ NƯỚC VIỆT NAM\nCăn cứ Luật Ngân hàng Nhà nước Việt Nam ngày 16 tháng 6 năm 2010;\nCăn cứ Luật Các tổ chức tín dụng ngày 18 tháng 01 năm 2024;\nCăn cứ Nghị định số 102/2022/NĐ-CP, ngày 12 tháng 12 năm 2022 của Chính phủ quy định chức năng, nhiệm vụ, quyền hạn và cơ cấu tổ chức của Ngân hàng Nhà nước Việt Nam;\nCăn cứ Thông tư số …/…/TT-NHNN ngày ... tháng ... năm ... quy định việc cấp đổi Giấy phép, cấp bổ sung nội dung hoạt động vào Giấy phép và tổ chức, hoạt động của tổ chức tín dụng phi ngân hàng;\nXét đơn đề nghị cấp đổi Giấy phép thành lập và hoạt động Công ty tài chính ………..(*) và hồ sơ kèm theo;\nTheo đề nghị của Chánh Thanh tra, giám sát ngân hàng.\nQUYẾT ĐỊNH:"
+          "body": "Chánh Văn phòng, Chánh Thanh tra, giám sát ngân hàng, Thủ trưởng các đơn vị thuộc Ngân hàng Nhà nước, tổ chức tín dụng phi ngân hàng chịu trách nhiệm tổ chức thi hành Thông tư này./.\nPHỤ LỤC 01\nMẪU GIẤY PHÉP THÀNH LẬP VÀ HOẠT ĐỘNG CÔNG TY TÀI CHÍNH TỔNG HỢP\n(Ban hành kèm theo Thông tư số 35/2024/TT-NHNN ngày 30/6/2024 của Thống đốc Ngân hàng Nhà nước Việt Nam)\nGIẤY PHÉP\nVề việc thành lập và hoạt động công ty tài chính...(*)\nTHỐNG ĐỐC NGÂN HÀNG NHÀ NƯỚC VIỆT NAM\nCăn cứ Luật Ngân hàng Nhà nước Việt Nam ngày 16 tháng 6 năm 2010;\nCăn cứ Luật Các tổ chức tín dụng ngày 18 tháng 01 năm 2024;\nCăn cứ Nghị định số 102/2022/NĐ-CP, ngày 12 tháng 12 năm 2022 của Chính phủ quy định chức năng, nhiệm vụ, quyền hạn và cơ cấu tổ chức của Ngân hàng Nhà nước Việt Nam;\nCăn cứ Thông tư số …/…/TT-NHNN ngày ... tháng ... năm ... quy định việc cấp đổi Giấy phép, cấp bổ sung nội dung hoạt động vào Giấy phép và tổ chức, hoạt động của tổ chức tín dụng phi ngân hàng;\nXét đơn đề nghị cấp đổi Giấy phép thành lập và hoạt động Công ty tài chính ………..(*) và hồ sơ kèm theo;\nTheo đề nghị của Chánh Thanh tra, giám sát ngân hàng.\nQUYẾT ĐỊNH:",
+          "blocks": [
+            {
+              "kind": "text",
+              "text": "Chánh Văn phòng, Chánh Thanh tra, giám sát ngân hàng, Thủ trưởng các đơn vị thuộc Ngân hàng Nhà nước, tổ chức tín dụng phi ngân hàng chịu trách nhiệm tổ chức thi hành Thông tư này./."
+            },
+            {
+              "kind": "table",
+              "rows": [
+                [
+                  {
+                    "text": "Nơi nhận:\n- Như Điều 22;\n- Ban Lãnh đạo NHNN;\n- Văn phòng Chính phủ;\n- Bộ Tư pháp (để kiểm tra);\n- Bộ Kế hoạch và Đầu tư (để phối hợp);\n- Công báo;\n- Cổng TTĐT của NHNN;\n- Lưu: VP, PC, TTGSNH6 (03 bản).",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "KT. THỐNG ĐỐC\nPHÓ THỐNG ĐỐC\nĐoàn Thái Sơn",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ]
+              ]
+            },
+            {
+              "kind": "text",
+              "text": "PHỤ LỤC 01"
+            },
+            {
+              "kind": "text",
+              "text": "MẪU GIẤY PHÉP THÀNH LẬP VÀ HOẠT ĐỘNG CÔNG TY TÀI CHÍNH TỔNG HỢP"
+            },
+            {
+              "kind": "text",
+              "text": "(Ban hành kèm theo Thông tư số 35/2024/TT-NHNN ngày 30/6/2024 của Thống đốc Ngân hàng Nhà nước Việt Nam)"
+            },
+            {
+              "kind": "table",
+              "rows": [
+                [
+                  {
+                    "text": "NGÂN HÀNG NHÀ NƯỚC\nVIỆT NAM\n-------",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM\nĐộc lập - Tự do - Hạnh phúc\n---------------",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "Số:       /GP-NHNN",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Hà Nội, ngày   tháng   năm…..",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ]
+              ]
+            },
+            {
+              "kind": "text",
+              "text": "GIẤY PHÉP"
+            },
+            {
+              "kind": "text",
+              "text": "Về việc thành lập và hoạt động công ty tài chính...(*)"
+            },
+            {
+              "kind": "text",
+              "text": "THỐNG ĐỐC NGÂN HÀNG NHÀ NƯỚC VIỆT NAM"
+            },
+            {
+              "kind": "text",
+              "text": "Căn cứ Luật Ngân hàng Nhà nước Việt Nam ngày 16 tháng 6 năm 2010;"
+            },
+            {
+              "kind": "text",
+              "text": "Căn cứ Luật Các tổ chức tín dụng ngày 18 tháng 01 năm 2024;"
+            },
+            {
+              "kind": "text",
+              "text": "Căn cứ Nghị định số 102/2022/NĐ-CP, ngày 12 tháng 12 năm 2022 của Chính phủ quy định chức năng, nhiệm vụ, quyền hạn và cơ cấu tổ chức của Ngân hàng Nhà nước Việt Nam;"
+            },
+            {
+              "kind": "text",
+              "text": "Căn cứ Thông tư số …/…/TT-NHNN ngày ... tháng ... năm ... quy định việc cấp đổi Giấy phép, cấp bổ sung nội dung hoạt động vào Giấy phép và tổ chức, hoạt động của tổ chức tín dụng phi ngân hàng;"
+            },
+            {
+              "kind": "text",
+              "text": "Xét đơn đề nghị cấp đổi Giấy phép thành lập và hoạt động Công ty tài chính ………..(*) và hồ sơ kèm theo;"
+            },
+            {
+              "kind": "text",
+              "text": "Theo đề nghị của Chánh Thanh tra, giám sát ngân hàng."
+            },
+            {
+              "kind": "text",
+              "text": "QUYẾT ĐỊNH:"
+            }
+          ]
         },
         {
-          "id": "art-1",
+          "id": "art-23",
           "number": "Điều 1",
           "heading": "Cấp đổi Giấy phép thành lập và hoạt động số ………… ngày ……………. cho Công ty tài chính …………………. (*) như sau:",
-          "body": "1. Tên Công ty tài chính:\n- Tên đầy đủ bằng tiếng Việt: ………………………;\n- Tên viết tắt bằng tiếng Việt (nếu có): ……………..;\n- Tên đầy đủ bằng tiếng Anh: ………………………;\n- Tên viết tắt bằng tiếng Anh (nếu có): ……………..;\n- Tên giao dịch (nếu có): ……………………………\n2. Địa chỉ trụ sở chính: ………………………………"
+          "body": "1. Tên Công ty tài chính:\n- Tên đầy đủ bằng tiếng Việt: ………………………;\n- Tên viết tắt bằng tiếng Việt (nếu có): ……………..;\n- Tên đầy đủ bằng tiếng Anh: ………………………;\n- Tên viết tắt bằng tiếng Anh (nếu có): ……………..;\n- Tên giao dịch (nếu có): ……………………………\n2. Địa chỉ trụ sở chính: ………………………………",
+          "blocks": [
+            {
+              "kind": "text",
+              "text": "1. Tên Công ty tài chính:"
+            },
+            {
+              "kind": "text",
+              "text": "- Tên đầy đủ bằng tiếng Việt: ………………………;"
+            },
+            {
+              "kind": "text",
+              "text": "- Tên viết tắt bằng tiếng Việt (nếu có): ……………..;"
+            },
+            {
+              "kind": "text",
+              "text": "- Tên đầy đủ bằng tiếng Anh: ………………………;"
+            },
+            {
+              "kind": "text",
+              "text": "- Tên viết tắt bằng tiếng Anh (nếu có): ……………..;"
+            },
+            {
+              "kind": "text",
+              "text": "- Tên giao dịch (nếu có): ……………………………"
+            },
+            {
+              "kind": "text",
+              "text": "2. Địa chỉ trụ sở chính: ………………………………"
+            }
+          ]
         },
         {
-          "id": "art-2",
+          "id": "art-24",
           "number": "Điều 2",
           "heading": "Vốn điều lệ của Công ty tài chính ……..(*) là ……….. (bằng chữ: …………).",
-          "body": ""
+          "body": "",
+          "blocks": []
         },
         {
-          "id": "art-3",
+          "id": "art-25",
           "number": "Điều 3",
           "heading": "Thời hạn hoạt động của Công ty tài chính … (*) là …………… năm (là thời hạn hoạt động được quy định tại Giấy phép do Ngân hàng Nhà nước Việt Nam cấp trước đây) kể từ ngày ………… (là ngày hiệu lực của Giấy phép được Ngân hàng Nhà nước Việt Nam cấp trước đây).",
-          "body": ""
+          "body": "",
+          "blocks": []
         },
         {
-          "id": "art-4",
+          "id": "art-26",
           "number": "Điều 4",
           "heading": "Nội dung hoạt động(**)",
-          "body": "Công ty tài chính ... (*) được thực hiện các hoạt động của công ty tài chính tổng hợp theo quy định của pháp luật và của Ngân hàng Nhà nước Việt Nam, gồm các hoạt động sau đây:\n1. Nhận tiền gửi không kỳ hạn, tiền gửi có kỳ hạn của tổ chức.\n2. Phát hành chứng chỉ tiền gửi để huy động vốn của tổ chức.\n3. Cho vay.\n4. Bảo lãnh ngân hàng.\n5. Chiết khấu, tái chiết khấu.\n6. Phát hành thẻ tín dụng, bao thanh toán, cho thuê tài chính.\n7. Hình thức cấp tín dụng khác theo quy định của Ngân hàng Nhà nước (chỉ cấp phép khi có quy định của pháp luật).\n8. Vay Ngân hàng Nhà nước dưới hình thức tái cấp vốn.\n9. Mua, bán giấy tờ có giá với Ngân hàng Nhà nước.\n10. Cho vay, vay, gửi tiền, nhận tiền gửi, mua, bán có kỳ hạn giấy tờ có giá với tổ chức tín dụng, chi nhánh ngân hàng nước ngoài theo quy định của Ngân hàng Nhà nước.\n11. Vay nước ngoài theo quy định của pháp luật.\n12. Mở tài khoản thanh toán tại Ngân hàng Nhà nước.\n13. Mở tài khoản thanh toán tại ngân hàng thương mại, chi nhánh ngân hàng nước ngoài.\n14. Mở tài khoản tại ngân hàng nước ngoài theo quy định của pháp luật về ngoại hối (đối với công ty tài chính được phép thực hiện hoạt động phát hành thẻ tín dụng).\n15. Mở tài khoản tiền gửi, tài khoản quản lý tiền vay cho khách hàng.\n16. Góp vốn, mua cổ phần theo quy định của pháp luật và hướng dẫn của Ngân hàng Nhà nước.\n17. Các hoạt động kinh doanh khác:\na) Nhận vốn ủy thác của tổ chức, cá nhân để thực hiện hoạt động cấp tín dụng được phép; ủy thác vốn cho tổ chức tín dụng khác thực hiện hoạt động cấp tín dụng của công ty tài chính tổng hợp đó;\nb) Mua, bán tín phiếu Ngân hàng Nhà nước, trái phiếu doanh nghiệp, công cụ nợ của Chính phủ, trái phiếu Chính phủ bảo lãnh, trái phiếu chính quyền địa phương và các giấy tờ có giá khác;\nc) Kinh doanh ngoại hối, cung ứng dịch vụ ngoại hối;\nd) Cung ứng dịch vụ bảo quản tài sản của khách hàng;\nđ) Dịch vụ khác liên quan đến bao thanh toán (chỉ cấp phép khi có quy định của pháp luật);\ne) Tư vấn về hoạt động ngân hàng và hoạt động kinh doanh khác quy định trong Giấy phép;\ng) Phát hành trái phiếu để huy động vốn của tổ chức;\nh) Đại lý bảo hiểm theo quy định của pháp luật về kinh doanh bảo hiểm, phù hợp với phạm vi hoạt động đại lý bảo hiểm theo quy định của Ngân hàng Nhà nước.\n18. Các hoạt động kinh doanh khác liên quan đến hoạt động ngân hàng (chỉ cấp phép khi có quy định của pháp luật)."
+          "body": "Công ty tài chính ... (*) được thực hiện các hoạt động của công ty tài chính tổng hợp theo quy định của pháp luật và của Ngân hàng Nhà nước Việt Nam, gồm các hoạt động sau đây:\n1. Nhận tiền gửi không kỳ hạn, tiền gửi có kỳ hạn của tổ chức.\n2. Phát hành chứng chỉ tiền gửi để huy động vốn của tổ chức.\n3. Cho vay.\n4. Bảo lãnh ngân hàng.\n5. Chiết khấu, tái chiết khấu.\n6. Phát hành thẻ tín dụng, bao thanh toán, cho thuê tài chính.\n7. Hình thức cấp tín dụng khác theo quy định của Ngân hàng Nhà nước (chỉ cấp phép khi có quy định của pháp luật).\n8. Vay Ngân hàng Nhà nước dưới hình thức tái cấp vốn.\n9. Mua, bán giấy tờ có giá với Ngân hàng Nhà nước.\n10. Cho vay, vay, gửi tiền, nhận tiền gửi, mua, bán có kỳ hạn giấy tờ có giá với tổ chức tín dụng, chi nhánh ngân hàng nước ngoài theo quy định của Ngân hàng Nhà nước.\n11. Vay nước ngoài theo quy định của pháp luật.\n12. Mở tài khoản thanh toán tại Ngân hàng Nhà nước.\n13. Mở tài khoản thanh toán tại ngân hàng thương mại, chi nhánh ngân hàng nước ngoài.\n14. Mở tài khoản tại ngân hàng nước ngoài theo quy định của pháp luật về ngoại hối (đối với công ty tài chính được phép thực hiện hoạt động phát hành thẻ tín dụng).\n15. Mở tài khoản tiền gửi, tài khoản quản lý tiền vay cho khách hàng.\n16. Góp vốn, mua cổ phần theo quy định của pháp luật và hướng dẫn của Ngân hàng Nhà nước.\n17. Các hoạt động kinh doanh khác:\na) Nhận vốn ủy thác của tổ chức, cá nhân để thực hiện hoạt động cấp tín dụng được phép; ủy thác vốn cho tổ chức tín dụng khác thực hiện hoạt động cấp tín dụng của công ty tài chính tổng hợp đó;\nb) Mua, bán tín phiếu Ngân hàng Nhà nước, trái phiếu doanh nghiệp, công cụ nợ của Chính phủ, trái phiếu Chính phủ bảo lãnh, trái phiếu chính quyền địa phương và các giấy tờ có giá khác;\nc) Kinh doanh ngoại hối, cung ứng dịch vụ ngoại hối;\nd) Cung ứng dịch vụ bảo quản tài sản của khách hàng;\nđ) Dịch vụ khác liên quan đến bao thanh toán (chỉ cấp phép khi có quy định của pháp luật);\ne) Tư vấn về hoạt động ngân hàng và hoạt động kinh doanh khác quy định trong Giấy phép;\ng) Phát hành trái phiếu để huy động vốn của tổ chức;\nh) Đại lý bảo hiểm theo quy định của pháp luật về kinh doanh bảo hiểm, phù hợp với phạm vi hoạt động đại lý bảo hiểm theo quy định của Ngân hàng Nhà nước.\n18. Các hoạt động kinh doanh khác liên quan đến hoạt động ngân hàng (chỉ cấp phép khi có quy định của pháp luật).",
+          "blocks": [
+            {
+              "kind": "text",
+              "text": "Công ty tài chính ... (*) được thực hiện các hoạt động của công ty tài chính tổng hợp theo quy định của pháp luật và của Ngân hàng Nhà nước Việt Nam, gồm các hoạt động sau đây:"
+            },
+            {
+              "kind": "text",
+              "text": "1. Nhận tiền gửi không kỳ hạn, tiền gửi có kỳ hạn của tổ chức."
+            },
+            {
+              "kind": "text",
+              "text": "2. Phát hành chứng chỉ tiền gửi để huy động vốn của tổ chức."
+            },
+            {
+              "kind": "text",
+              "text": "3. Cho vay."
+            },
+            {
+              "kind": "text",
+              "text": "4. Bảo lãnh ngân hàng."
+            },
+            {
+              "kind": "text",
+              "text": "5. Chiết khấu, tái chiết khấu."
+            },
+            {
+              "kind": "text",
+              "text": "6. Phát hành thẻ tín dụng, bao thanh toán, cho thuê tài chính."
+            },
+            {
+              "kind": "text",
+              "text": "7. Hình thức cấp tín dụng khác theo quy định của Ngân hàng Nhà nước (chỉ cấp phép khi có quy định của pháp luật)."
+            },
+            {
+              "kind": "text",
+              "text": "8. Vay Ngân hàng Nhà nước dưới hình thức tái cấp vốn."
+            },
+            {
+              "kind": "text",
+              "text": "9. Mua, bán giấy tờ có giá với Ngân hàng Nhà nước."
+            },
+            {
+              "kind": "text",
+              "text": "10. Cho vay, vay, gửi tiền, nhận tiền gửi, mua, bán có kỳ hạn giấy tờ có giá với tổ chức tín dụng, chi nhánh ngân hàng nước ngoài theo quy định của Ngân hàng Nhà nước."
+            },
+            {
+              "kind": "text",
+              "text": "11. Vay nước ngoài theo quy định của pháp luật."
+            },
+            {
+              "kind": "text",
+              "text": "12. Mở tài khoản thanh toán tại Ngân hàng Nhà nước."
+            },
+            {
+              "kind": "text",
+              "text": "13. Mở tài khoản thanh toán tại ngân hàng thương mại, chi nhánh ngân hàng nước ngoài."
+            },
+            {
+              "kind": "text",
+              "text": "14. Mở tài khoản tại ngân hàng nước ngoài theo quy định của pháp luật về ngoại hối (đối với công ty tài chính được phép thực hiện hoạt động phát hành thẻ tín dụng)."
+            },
+            {
+              "kind": "text",
+              "text": "15. Mở tài khoản tiền gửi, tài khoản quản lý tiền vay cho khách hàng."
+            },
+            {
+              "kind": "text",
+              "text": "16. Góp vốn, mua cổ phần theo quy định của pháp luật và hướng dẫn của Ngân hàng Nhà nước."
+            },
+            {
+              "kind": "text",
+              "text": "17. Các hoạt động kinh doanh khác:"
+            },
+            {
+              "kind": "text",
+              "text": "a) Nhận vốn ủy thác của tổ chức, cá nhân để thực hiện hoạt động cấp tín dụng được phép; ủy thác vốn cho tổ chức tín dụng khác thực hiện hoạt động cấp tín dụng của công ty tài chính tổng hợp đó;"
+            },
+            {
+              "kind": "text",
+              "text": "b) Mua, bán tín phiếu Ngân hàng Nhà nước, trái phiếu doanh nghiệp, công cụ nợ của Chính phủ, trái phiếu Chính phủ bảo lãnh, trái phiếu chính quyền địa phương và các giấy tờ có giá khác;"
+            },
+            {
+              "kind": "text",
+              "text": "c) Kinh doanh ngoại hối, cung ứng dịch vụ ngoại hối;"
+            },
+            {
+              "kind": "text",
+              "text": "d) Cung ứng dịch vụ bảo quản tài sản của khách hàng;"
+            },
+            {
+              "kind": "text",
+              "text": "đ) Dịch vụ khác liên quan đến bao thanh toán (chỉ cấp phép khi có quy định của pháp luật);"
+            },
+            {
+              "kind": "text",
+              "text": "e) Tư vấn về hoạt động ngân hàng và hoạt động kinh doanh khác quy định trong Giấy phép;"
+            },
+            {
+              "kind": "text",
+              "text": "g) Phát hành trái phiếu để huy động vốn của tổ chức;"
+            },
+            {
+              "kind": "text",
+              "text": "h) Đại lý bảo hiểm theo quy định của pháp luật về kinh doanh bảo hiểm, phù hợp với phạm vi hoạt động đại lý bảo hiểm theo quy định của Ngân hàng Nhà nước."
+            },
+            {
+              "kind": "text",
+              "text": "18. Các hoạt động kinh doanh khác liên quan đến hoạt động ngân hàng (chỉ cấp phép khi có quy định của pháp luật)."
+            }
+          ]
         },
         {
-          "id": "art-5",
+          "id": "art-27",
           "number": "Điều 5",
           "heading": "Trong quá trình hoạt động, Công ty tài chính ...(*) phải tuân thủ pháp luật Việt Nam.",
-          "body": ""
+          "body": "",
+          "blocks": []
         },
         {
-          "id": "art-6",
+          "id": "art-28",
           "number": "Điều 6",
           "heading": "Giấy phép này có hiệu lực kể từ ngày ký, thay thế Giấy phép thành lập và hoạt động công ty tài chính số …….. ngày ……..…. , và các Quyết định sửa đổi, bổ sung Giấy phép.",
-          "body": ""
+          "body": "",
+          "blocks": []
         },
         {
-          "id": "art-7",
+          "id": "art-29",
           "number": "Điều 7",
           "heading": "Giấy phép này được lập thành ba (03) bản chính: một (01) bản cấp cho Công ty tài chính ……. (*); hai (02) bản lưu tại Ngân hàng Nhà nước Việt Nam (một (01) bản lưu tại Văn phòng Ngân hàng Nhà nước Việt Nam, một (01) bản lưu tại hồ sơ cấp đổi Giấy phép thành lập và hoạt động Công ty tài chính...(*)).",
-          "body": "Nơi nhận:\n- Như Điều 7;\n- Sở Kế hoạch và Đầu tư;\n- UBND tỉnh/TP ………;\n- Lưu: VP, TTGSNH.\nTHỐNG ĐỐC\n_____________________________\n(*) Tên công ty tài chính đề nghị cấp đổi Giấy phép\n(**) Căn cứ vào nội dung hoạt động ghi trong đơn đề nghị thành lập để quy định cho phù hợp.\nPHỤ LỤC 02\nMẪU GIẤY PHÉP THÀNH LẬP VÀ HOẠT ĐỘNG CÔNG TY TÀI CHÍNH BAO THANH TOÁN\n(Ban hành kèm theo Thông tư số 35/2024/TT-NHNN ngày 30/6/2024 của Thống đốc Ngân hàng Nhà nước Việt Nam)\nNGÂN HÀNG NHÀ NƯỚC\nVIỆT NAM\n-------\nCỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM\nĐộc lập - Tự do - Hạnh phúc\n---------------\nSố: /GP-NHNN\nHà Nội, ngày tháng năm …..\nGIẤY PHÉP\nVề việc thành lập và hoạt động công ty tài chính...(*)\nTHỐNG ĐỐC NGÂN HÀNG NHÀ NƯỚC VIỆT NAM\nCăn cứ Luật Ngân hàng Nhà nước Việt Nam ngày 16 tháng 6 năm 2010;\nCăn cứ Luật Các tổ chức tín dụng ngày 18 tháng 01 năm 2024;\nCăn cứ Nghị định số 102/2022/NĐ-CP ngày 12 tháng 12 năm 2022 của Chính phủ quy định chức năng, nhiệm vụ, quyền hạn và cơ cấu tổ chức của Ngân hàng Nhà nước Việt Nam;\nCăn cứ Thông tư số …/…/TT-NHNN ngày .... tháng .... năm... quy định việc cấp đổi Giấy phép, cấp bổ sung nội dung hoạt động vào Giấy phép và tổ chức, hoạt động của tổ chức tín dụng phi ngân hàng;\nXét đơn đề nghị cấp đổi Giấy phép thành lập và hoạt động Công ty tài chính ………… (*) và hồ sơ kèm theo;\nTheo đề nghị của Chánh Thanh tra, giám sát ngân hàng.\nQUYẾT ĐỊNH:"
+          "body": "_____________________________\n(*) Tên công ty tài chính đề nghị cấp đổi Giấy phép\n(**) Căn cứ vào nội dung hoạt động ghi trong đơn đề nghị thành lập để quy định cho phù hợp.\nPHỤ LỤC 02\nMẪU GIẤY PHÉP THÀNH LẬP VÀ HOẠT ĐỘNG CÔNG TY TÀI CHÍNH BAO THANH TOÁN\n(Ban hành kèm theo Thông tư số 35/2024/TT-NHNN ngày 30/6/2024 của Thống đốc Ngân hàng Nhà nước Việt Nam)\nGIẤY PHÉP\nVề việc thành lập và hoạt động công ty tài chính...(*)\nTHỐNG ĐỐC NGÂN HÀNG NHÀ NƯỚC VIỆT NAM\nCăn cứ Luật Ngân hàng Nhà nước Việt Nam ngày 16 tháng 6 năm 2010;\nCăn cứ Luật Các tổ chức tín dụng ngày 18 tháng 01 năm 2024;\nCăn cứ Nghị định số 102/2022/NĐ-CP ngày 12 tháng 12 năm 2022 của Chính phủ quy định chức năng, nhiệm vụ, quyền hạn và cơ cấu tổ chức của Ngân hàng Nhà nước Việt Nam;\nCăn cứ Thông tư số …/…/TT-NHNN ngày .... tháng .... năm... quy định việc cấp đổi Giấy phép, cấp bổ sung nội dung hoạt động vào Giấy phép và tổ chức, hoạt động của tổ chức tín dụng phi ngân hàng;\nXét đơn đề nghị cấp đổi Giấy phép thành lập và hoạt động Công ty tài chính ………… (*) và hồ sơ kèm theo;\nTheo đề nghị của Chánh Thanh tra, giám sát ngân hàng.\nQUYẾT ĐỊNH:",
+          "blocks": [
+            {
+              "kind": "table",
+              "rows": [
+                [
+                  {
+                    "text": "Nơi nhận:\n- Như Điều 7;\n- Sở Kế hoạch và Đầu tư;\n- UBND tỉnh/TP ………;\n- Lưu: VP, TTGSNH.",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "THỐNG ĐỐC",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ]
+              ]
+            },
+            {
+              "kind": "text",
+              "text": "_____________________________"
+            },
+            {
+              "kind": "text",
+              "text": "(*) Tên công ty tài chính đề nghị cấp đổi Giấy phép"
+            },
+            {
+              "kind": "text",
+              "text": "(**) Căn cứ vào nội dung hoạt động ghi trong đơn đề nghị thành lập để quy định cho phù hợp."
+            },
+            {
+              "kind": "text",
+              "text": "PHỤ LỤC 02"
+            },
+            {
+              "kind": "text",
+              "text": "MẪU GIẤY PHÉP THÀNH LẬP VÀ HOẠT ĐỘNG CÔNG TY TÀI CHÍNH BAO THANH TOÁN"
+            },
+            {
+              "kind": "text",
+              "text": "(Ban hành kèm theo Thông tư số 35/2024/TT-NHNN ngày 30/6/2024 của Thống đốc Ngân hàng Nhà nước Việt Nam)"
+            },
+            {
+              "kind": "table",
+              "rows": [
+                [
+                  {
+                    "text": "NGÂN HÀNG NHÀ NƯỚC\nVIỆT NAM\n-------",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM\nĐộc lập - Tự do - Hạnh phúc\n---------------",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "Số:       /GP-NHNN",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Hà Nội, ngày   tháng   năm …..",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ]
+              ]
+            },
+            {
+              "kind": "text",
+              "text": "GIẤY PHÉP"
+            },
+            {
+              "kind": "text",
+              "text": "Về việc thành lập và hoạt động công ty tài chính...(*)"
+            },
+            {
+              "kind": "text",
+              "text": "THỐNG ĐỐC NGÂN HÀNG NHÀ NƯỚC VIỆT NAM"
+            },
+            {
+              "kind": "text",
+              "text": "Căn cứ Luật Ngân hàng Nhà nước Việt Nam ngày 16 tháng 6 năm 2010;"
+            },
+            {
+              "kind": "text",
+              "text": "Căn cứ Luật Các tổ chức tín dụng ngày 18 tháng 01 năm 2024;"
+            },
+            {
+              "kind": "text",
+              "text": "Căn cứ Nghị định số 102/2022/NĐ-CP ngày 12 tháng 12 năm 2022 của Chính phủ quy định chức năng, nhiệm vụ, quyền hạn và cơ cấu tổ chức của Ngân hàng Nhà nước Việt Nam;"
+            },
+            {
+              "kind": "text",
+              "text": "Căn cứ Thông tư số …/…/TT-NHNN ngày .... tháng .... năm... quy định việc cấp đổi Giấy phép, cấp bổ sung nội dung hoạt động vào Giấy phép và tổ chức, hoạt động của tổ chức tín dụng phi ngân hàng;"
+            },
+            {
+              "kind": "text",
+              "text": "Xét đơn đề nghị cấp đổi Giấy phép thành lập và hoạt động Công ty tài chính ………… (*) và hồ sơ kèm theo;"
+            },
+            {
+              "kind": "text",
+              "text": "Theo đề nghị của Chánh Thanh tra, giám sát ngân hàng."
+            },
+            {
+              "kind": "text",
+              "text": "QUYẾT ĐỊNH:"
+            }
+          ]
         },
         {
-          "id": "art-1",
+          "id": "art-30",
           "number": "Điều 1",
           "heading": "Cấp đổi Giấy phép thành lập và hoạt động số ………………… ngày …………cho Công ty tài chính ………………… (*) như sau:",
-          "body": "1. Tên Công ty tài chính:\n- Tên đầy đủ bằng tiếng Việt: ……………………;\n- Tên viết tắt bằng tiếng Việt (nếu có): …………..;\n- Tên đầy đủ bằng tiếng Anh: …………………….;\n- Tên viết tắt bằng tiếng Anh (nếu có): …………..;\n- Tên giao dịch (nếu có): …………………………\n2. Địa chỉ trụ sở chính: ………………………….."
+          "body": "1. Tên Công ty tài chính:\n- Tên đầy đủ bằng tiếng Việt: ……………………;\n- Tên viết tắt bằng tiếng Việt (nếu có): …………..;\n- Tên đầy đủ bằng tiếng Anh: …………………….;\n- Tên viết tắt bằng tiếng Anh (nếu có): …………..;\n- Tên giao dịch (nếu có): …………………………\n2. Địa chỉ trụ sở chính: …………………………..",
+          "blocks": [
+            {
+              "kind": "text",
+              "text": "1. Tên Công ty tài chính:"
+            },
+            {
+              "kind": "text",
+              "text": "- Tên đầy đủ bằng tiếng Việt: ……………………;"
+            },
+            {
+              "kind": "text",
+              "text": "- Tên viết tắt bằng tiếng Việt (nếu có): …………..;"
+            },
+            {
+              "kind": "text",
+              "text": "- Tên đầy đủ bằng tiếng Anh: …………………….;"
+            },
+            {
+              "kind": "text",
+              "text": "- Tên viết tắt bằng tiếng Anh (nếu có): …………..;"
+            },
+            {
+              "kind": "text",
+              "text": "- Tên giao dịch (nếu có): …………………………"
+            },
+            {
+              "kind": "text",
+              "text": "2. Địa chỉ trụ sở chính: ………………………….."
+            }
+          ]
         },
         {
-          "id": "art-2",
+          "id": "art-31",
           "number": "Điều 2",
           "heading": "Vốn điều lệ của Công ty tài chính …….(*) là …………. (bằng chữ: ……………)",
-          "body": ""
+          "body": "",
+          "blocks": []
         },
         {
-          "id": "art-3",
+          "id": "art-32",
           "number": "Điều 3",
           "heading": "Thời hạn hoạt động của Công ty tài chính ...(*) là …………… năm (là thời hạn hoạt động được quy định tại Giấy phép do Ngân hàng Nhà nước Việt Nam cấp trước đây) kể từ ngày ……………….. (là ngày hiệu lực của Giấy phép được Ngân hàng Nhà nước Việt Nam cấp trước đây).",
-          "body": ""
+          "body": "",
+          "blocks": []
         },
         {
-          "id": "art-4",
+          "id": "art-33",
           "number": "Điều 4",
           "heading": "Nội dung hoạt động(**)",
-          "body": "Công ty tài chính ...(*) được thực hiện các hoạt động của công ty tài chính bao thanh toán theo quy định của pháp luật và của Ngân hàng Nhà nước Việt Nam, gồm các hoạt động sau đây:\n1. Nhận tiền gửi không kỳ hạn, tiền gửi có kỳ hạn của tổ chức.\n2. Phát hành chứng chỉ tiền gửi để huy động vốn của tổ chức.\n3. Cho vay.\n4. Chiết khấu, tái chiết khấu.\n5. Bao thanh toán\n6. Hình thức cấp tín dụng khác theo quy định của Ngân hàng Nhà nước (chỉ cấp phép khi có quy định của pháp luật).\n7. Vay Ngân hàng Nhà nước dưới hình thức tái cấp vốn.\n8. Mua, bán giấy tờ có giá với Ngân hàng Nhà nước.\n9. Cho vay, vay, gửi tiền, nhận tiền gửi, mua, bán có kỳ hạn giấy tờ có giá với tổ chức tín dụng, chi nhánh ngân hàng nước ngoài theo quy định của Ngân hàng Nhà nước.\n10. Vay nước ngoài theo quy định của pháp luật.\n11. Mở tài khoản thanh toán tại Ngân hàng Nhà nước.\n12. Mở tài khoản thanh toán tại ngân hàng thương mại, chi nhánh ngân hàng nước ngoài.\n13. Mở tài khoản tiền gửi, tài khoản quản lý tiền vay cho khách hàng.\n14. Góp vốn, mua cổ phần theo quy định của pháp luật và hướng dẫn của Ngân hàng Nhà nước.\n15. Các hoạt động kinh doanh khác:\na) Nhận vốn ủy thác để thực hiện hoạt động cấp tín dụng được phép;\nb) Ủy thác vốn cho tổ chức tín dụng khác thực hiện hoạt động cho vay, cấp tín dụng chính của công ty tài chính chuyên ngành đó;\nc) Mua, bán tín phiếu Ngân hàng Nhà nước, chứng chỉ tiền gửi do tổ chức tín dụng, chi nhánh ngân hàng nước ngoài phát hành trong nước, công cụ nợ của Chính phủ, trái phiếu Chính phủ bảo lãnh, trái phiếu chính quyền địa phương;\nd) Kinh doanh ngoại hối, cung ứng dịch vụ ngoại hối;\nđ) Tư vấn về hoạt động ngân hàng và hoạt động kinh doanh khác quy định trong Giấy phép;\ne) Đối với công ty tài chính bao thanh toán được thực hiện dịch vụ khác liên quan đến bao thanh toán;\ng) Phát hành trái phiếu để huy động vốn của tổ chức;\nh) Đại lý bảo hiểm theo quy định của pháp luật về kinh doanh bảo hiểm, phù hợp với phạm vi hoạt động đại lý bảo hiểm theo quy định của Ngân hàng Nhà nước.\n16. Các hoạt động kinh doanh khác liên quan đến hoạt động ngân hàng (chỉ cấp phép khi có quy định của pháp luật)."
+          "body": "Công ty tài chính ...(*) được thực hiện các hoạt động của công ty tài chính bao thanh toán theo quy định của pháp luật và của Ngân hàng Nhà nước Việt Nam, gồm các hoạt động sau đây:\n1. Nhận tiền gửi không kỳ hạn, tiền gửi có kỳ hạn của tổ chức.\n2. Phát hành chứng chỉ tiền gửi để huy động vốn của tổ chức.\n3. Cho vay.\n4. Chiết khấu, tái chiết khấu.\n5. Bao thanh toán\n6. Hình thức cấp tín dụng khác theo quy định của Ngân hàng Nhà nước (chỉ cấp phép khi có quy định của pháp luật).\n7. Vay Ngân hàng Nhà nước dưới hình thức tái cấp vốn.\n8. Mua, bán giấy tờ có giá với Ngân hàng Nhà nước.\n9. Cho vay, vay, gửi tiền, nhận tiền gửi, mua, bán có kỳ hạn giấy tờ có giá với tổ chức tín dụng, chi nhánh ngân hàng nước ngoài theo quy định của Ngân hàng Nhà nước.\n10. Vay nước ngoài theo quy định của pháp luật.\n11. Mở tài khoản thanh toán tại Ngân hàng Nhà nước.\n12. Mở tài khoản thanh toán tại ngân hàng thương mại, chi nhánh ngân hàng nước ngoài.\n13. Mở tài khoản tiền gửi, tài khoản quản lý tiền vay cho khách hàng.\n14. Góp vốn, mua cổ phần theo quy định của pháp luật và hướng dẫn của Ngân hàng Nhà nước.\n15. Các hoạt động kinh doanh khác:\na) Nhận vốn ủy thác để thực hiện hoạt động cấp tín dụng được phép;\nb) Ủy thác vốn cho tổ chức tín dụng khác thực hiện hoạt động cho vay, cấp tín dụng chính của công ty tài chính chuyên ngành đó;\nc) Mua, bán tín phiếu Ngân hàng Nhà nước, chứng chỉ tiền gửi do tổ chức tín dụng, chi nhánh ngân hàng nước ngoài phát hành trong nước, công cụ nợ của Chính phủ, trái phiếu Chính phủ bảo lãnh, trái phiếu chính quyền địa phương;\nd) Kinh doanh ngoại hối, cung ứng dịch vụ ngoại hối;\nđ) Tư vấn về hoạt động ngân hàng và hoạt động kinh doanh khác quy định trong Giấy phép;\ne) Đối với công ty tài chính bao thanh toán được thực hiện dịch vụ khác liên quan đến bao thanh toán;\ng) Phát hành trái phiếu để huy động vốn của tổ chức;\nh) Đại lý bảo hiểm theo quy định của pháp luật về kinh doanh bảo hiểm, phù hợp với phạm vi hoạt động đại lý bảo hiểm theo quy định của Ngân hàng Nhà nước.\n16. Các hoạt động kinh doanh khác liên quan đến hoạt động ngân hàng (chỉ cấp phép khi có quy định của pháp luật).",
+          "blocks": [
+            {
+              "kind": "text",
+              "text": "Công ty tài chính ...(*) được thực hiện các hoạt động của công ty tài chính bao thanh toán theo quy định của pháp luật và của Ngân hàng Nhà nước Việt Nam, gồm các hoạt động sau đây:"
+            },
+            {
+              "kind": "text",
+              "text": "1. Nhận tiền gửi không kỳ hạn, tiền gửi có kỳ hạn của tổ chức."
+            },
+            {
+              "kind": "text",
+              "text": "2. Phát hành chứng chỉ tiền gửi để huy động vốn của tổ chức."
+            },
+            {
+              "kind": "text",
+              "text": "3. Cho vay."
+            },
+            {
+              "kind": "text",
+              "text": "4. Chiết khấu, tái chiết khấu."
+            },
+            {
+              "kind": "text",
+              "text": "5. Bao thanh toán"
+            },
+            {
+              "kind": "text",
+              "text": "6. Hình thức cấp tín dụng khác theo quy định của Ngân hàng Nhà nước (chỉ cấp phép khi có quy định của pháp luật)."
+            },
+            {
+              "kind": "text",
+              "text": "7. Vay Ngân hàng Nhà nước dưới hình thức tái cấp vốn."
+            },
+            {
+              "kind": "text",
+              "text": "8. Mua, bán giấy tờ có giá với Ngân hàng Nhà nước."
+            },
+            {
+              "kind": "text",
+              "text": "9. Cho vay, vay, gửi tiền, nhận tiền gửi, mua, bán có kỳ hạn giấy tờ có giá với tổ chức tín dụng, chi nhánh ngân hàng nước ngoài theo quy định của Ngân hàng Nhà nước."
+            },
+            {
+              "kind": "text",
+              "text": "10. Vay nước ngoài theo quy định của pháp luật."
+            },
+            {
+              "kind": "text",
+              "text": "11. Mở tài khoản thanh toán tại Ngân hàng Nhà nước."
+            },
+            {
+              "kind": "text",
+              "text": "12. Mở tài khoản thanh toán tại ngân hàng thương mại, chi nhánh ngân hàng nước ngoài."
+            },
+            {
+              "kind": "text",
+              "text": "13. Mở tài khoản tiền gửi, tài khoản quản lý tiền vay cho khách hàng."
+            },
+            {
+              "kind": "text",
+              "text": "14. Góp vốn, mua cổ phần theo quy định của pháp luật và hướng dẫn của Ngân hàng Nhà nước."
+            },
+            {
+              "kind": "text",
+              "text": "15. Các hoạt động kinh doanh khác:"
+            },
+            {
+              "kind": "text",
+              "text": "a) Nhận vốn ủy thác để thực hiện hoạt động cấp tín dụng được phép;"
+            },
+            {
+              "kind": "text",
+              "text": "b) Ủy thác vốn cho tổ chức tín dụng khác thực hiện hoạt động cho vay, cấp tín dụng chính của công ty tài chính chuyên ngành đó;"
+            },
+            {
+              "kind": "text",
+              "text": "c) Mua, bán tín phiếu Ngân hàng Nhà nước, chứng chỉ tiền gửi do tổ chức tín dụng, chi nhánh ngân hàng nước ngoài phát hành trong nước, công cụ nợ của Chính phủ, trái phiếu Chính phủ bảo lãnh, trái phiếu chính quyền địa phương;"
+            },
+            {
+              "kind": "text",
+              "text": "d) Kinh doanh ngoại hối, cung ứng dịch vụ ngoại hối;"
+            },
+            {
+              "kind": "text",
+              "text": "đ) Tư vấn về hoạt động ngân hàng và hoạt động kinh doanh khác quy định trong Giấy phép;"
+            },
+            {
+              "kind": "text",
+              "text": "e) Đối với công ty tài chính bao thanh toán được thực hiện dịch vụ khác liên quan đến bao thanh toán;"
+            },
+            {
+              "kind": "text",
+              "text": "g) Phát hành trái phiếu để huy động vốn của tổ chức;"
+            },
+            {
+              "kind": "text",
+              "text": "h) Đại lý bảo hiểm theo quy định của pháp luật về kinh doanh bảo hiểm, phù hợp với phạm vi hoạt động đại lý bảo hiểm theo quy định của Ngân hàng Nhà nước."
+            },
+            {
+              "kind": "text",
+              "text": "16. Các hoạt động kinh doanh khác liên quan đến hoạt động ngân hàng (chỉ cấp phép khi có quy định của pháp luật)."
+            }
+          ]
         },
         {
-          "id": "art-5",
+          "id": "art-34",
           "number": "Điều 5",
           "heading": "Trong quá trình hoạt động, Công ty tài chính ...(*) phải tuân thủ pháp luật Việt Nam.",
-          "body": ""
+          "body": "",
+          "blocks": []
         },
         {
-          "id": "art-6",
+          "id": "art-35",
           "number": "Điều 6",
           "heading": "Giấy phép này có hiệu lực kể từ ngày ký, thay thế Giấy phép thành lập và hoạt động công ty tài chính số ……. ngày …………., và các Quyết định sửa đổi, bổ sung Giấy phép.",
-          "body": ""
+          "body": "",
+          "blocks": []
         },
         {
-          "id": "art-7",
+          "id": "art-36",
           "number": "Điều 7",
           "heading": "Giấy phép này được lập thành ba (03) bản chính: một (01) bản cấp cho Công ty tài chính …………. (*); hai (02) bản lưu tại Ngân hàng Nhà nước Việt Nam (một (01) bản lưu tại Văn phòng Ngân hàng Nhà nước Việt Nam, một (01) bản lưu tại hồ sơ cấp đổi Giấy phép thành lập và hoạt động Công ty tài chính...(*)).",
-          "body": "Nơi nhận:\n- Như Điều 7;\n- Sở Kế hoạch và Đầu tư;\n- UBND tỉnh/TP ……….;\n- Lưu: VP, TTGSNH.\nTHỐNG ĐỐC\n_____________________________\n(*) Tên công ty tài chính đề nghị cấp đổi Giấy phép.\n(**) Căn cứ vào nội dung hoạt động ghi trong đơn đề nghị thành lập để quy định cho phù hợp.\nPHỤ LỤC 03\nMẪU GIẤY PHÉP THÀNH LẬP VÀ HOẠT ĐỘNG CÔNG TY TÀI CHÍNH TÍN DỤNG TIÊU DÙNG\n(Ban hành kèm theo Thông tư số 35/2024/TT-NHNN ngày 30/6/2024 của Thống đốc Ngân hàng Nhà nước Việt Nam)\nNGÂN HÀNG NHÀ NƯỚC\nVIỆT NAM\n-------\nCỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM\nĐộc lập - Tự do - Hạnh phúc\n---------------\nSố: /GP-NHNN\nHà Nội, ngày tháng năm…..\nGIẤY PHÉP\nVề việc thành lập và hoạt động công ty tài chính ...(*)\nTHỐNG ĐỐC NGÂN HÀNG NHÀ NƯỚC VIỆT NAM\nCăn cứ Luật Ngân hàng Nhà nước Việt Nam ngày 16 tháng 6 năm 2010;\nCăn cứ Luật Các tổ chức tín dụng ngày 18 tháng 01 năm 2024;\nCăn cứ Nghị định số 102/2022/NĐ-CP ngày 12 tháng 12 năm 2022 của Chính phủ quy định chức năng, nhiệm vụ, quyền hạn và cơ cấu tổ chức của Ngân hàng Nhà nước Việt Nam;\nCăn cứ Thông tư số .../…/TT-NHNN ngày ... tháng ... năm ... quy định việc cấp đổi Giấy phép, cấp bổ sung nội dung hoạt động vào Giấy phép và tổ chức, hoạt động của tổ chức tín dụng phi ngân hàng;\nXét đơn đề nghị cấp đổi Giấy phép thành lập và hoạt động Công ty tài chính ...........(*) và hồ sơ kèm theo;\nTheo đề nghị của Chánh Thanh tra, giám sát ngân hàng.\nQUYẾT ĐỊNH:"
+          "body": "_____________________________\n(*) Tên công ty tài chính đề nghị cấp đổi Giấy phép.\n(**) Căn cứ vào nội dung hoạt động ghi trong đơn đề nghị thành lập để quy định cho phù hợp.\nPHỤ LỤC 03\nMẪU GIẤY PHÉP THÀNH LẬP VÀ HOẠT ĐỘNG CÔNG TY TÀI CHÍNH TÍN DỤNG TIÊU DÙNG\n(Ban hành kèm theo Thông tư số 35/2024/TT-NHNN ngày 30/6/2024 của Thống đốc Ngân hàng Nhà nước Việt Nam)\nGIẤY PHÉP\nVề việc thành lập và hoạt động công ty tài chính ...(*)\nTHỐNG ĐỐC NGÂN HÀNG NHÀ NƯỚC VIỆT NAM\nCăn cứ Luật Ngân hàng Nhà nước Việt Nam ngày 16 tháng 6 năm 2010;\nCăn cứ Luật Các tổ chức tín dụng ngày 18 tháng 01 năm 2024;\nCăn cứ Nghị định số 102/2022/NĐ-CP ngày 12 tháng 12 năm 2022 của Chính phủ quy định chức năng, nhiệm vụ, quyền hạn và cơ cấu tổ chức của Ngân hàng Nhà nước Việt Nam;\nCăn cứ Thông tư số .../…/TT-NHNN ngày ... tháng ... năm ... quy định việc cấp đổi Giấy phép, cấp bổ sung nội dung hoạt động vào Giấy phép và tổ chức, hoạt động của tổ chức tín dụng phi ngân hàng;\nXét đơn đề nghị cấp đổi Giấy phép thành lập và hoạt động Công ty tài chính ...........(*) và hồ sơ kèm theo;\nTheo đề nghị của Chánh Thanh tra, giám sát ngân hàng.\nQUYẾT ĐỊNH:",
+          "blocks": [
+            {
+              "kind": "table",
+              "rows": [
+                [
+                  {
+                    "text": "Nơi nhận:\n- Như Điều 7;\n- Sở Kế hoạch và Đầu tư;\n- UBND tỉnh/TP ……….;\n- Lưu: VP, TTGSNH.",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "THỐNG ĐỐC",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ]
+              ]
+            },
+            {
+              "kind": "text",
+              "text": "_____________________________"
+            },
+            {
+              "kind": "text",
+              "text": "(*) Tên công ty tài chính đề nghị cấp đổi Giấy phép."
+            },
+            {
+              "kind": "text",
+              "text": "(**) Căn cứ vào nội dung hoạt động ghi trong đơn đề nghị thành lập để quy định cho phù hợp."
+            },
+            {
+              "kind": "text",
+              "text": "PHỤ LỤC 03"
+            },
+            {
+              "kind": "text",
+              "text": "MẪU GIẤY PHÉP THÀNH LẬP VÀ HOẠT ĐỘNG CÔNG TY TÀI CHÍNH TÍN DỤNG TIÊU DÙNG"
+            },
+            {
+              "kind": "text",
+              "text": "(Ban hành kèm theo Thông tư số 35/2024/TT-NHNN ngày 30/6/2024 của Thống đốc Ngân hàng Nhà nước Việt Nam)"
+            },
+            {
+              "kind": "table",
+              "rows": [
+                [
+                  {
+                    "text": "NGÂN HÀNG NHÀ NƯỚC\nVIỆT NAM\n-------",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM\nĐộc lập - Tự do - Hạnh phúc\n---------------",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "Số:     /GP-NHNN",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Hà Nội, ngày   tháng   năm…..",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ]
+              ]
+            },
+            {
+              "kind": "text",
+              "text": "GIẤY PHÉP"
+            },
+            {
+              "kind": "text",
+              "text": "Về việc thành lập và hoạt động công ty tài chính ...(*)"
+            },
+            {
+              "kind": "text",
+              "text": "THỐNG ĐỐC NGÂN HÀNG NHÀ NƯỚC VIỆT NAM"
+            },
+            {
+              "kind": "text",
+              "text": "Căn cứ Luật Ngân hàng Nhà nước Việt Nam ngày 16 tháng 6 năm 2010;"
+            },
+            {
+              "kind": "text",
+              "text": "Căn cứ Luật Các tổ chức tín dụng ngày 18 tháng 01 năm 2024;"
+            },
+            {
+              "kind": "text",
+              "text": "Căn cứ Nghị định số 102/2022/NĐ-CP ngày 12 tháng 12 năm 2022 của Chính phủ quy định chức năng, nhiệm vụ, quyền hạn và cơ cấu tổ chức của Ngân hàng Nhà nước Việt Nam;"
+            },
+            {
+              "kind": "text",
+              "text": "Căn cứ Thông tư số .../…/TT-NHNN ngày ... tháng ... năm ... quy định việc cấp đổi Giấy phép, cấp bổ sung nội dung hoạt động vào Giấy phép và tổ chức, hoạt động của tổ chức tín dụng phi ngân hàng;"
+            },
+            {
+              "kind": "text",
+              "text": "Xét đơn đề nghị cấp đổi Giấy phép thành lập và hoạt động Công ty tài chính ...........(*) và hồ sơ kèm theo;"
+            },
+            {
+              "kind": "text",
+              "text": "Theo đề nghị của Chánh Thanh tra, giám sát ngân hàng."
+            },
+            {
+              "kind": "text",
+              "text": "QUYẾT ĐỊNH:"
+            }
+          ]
         },
         {
-          "id": "art-1",
+          "id": "art-37",
           "number": "Điều 1",
           "heading": "Cấp đổi Giấy phép thành lập và hoạt động số ………… ngày ……….. cho Công ty tài chính …………(*) như sau:",
-          "body": "1. Tên Công ty tài chính:\n- Tên đầy đủ bằng tiếng Việt: ……………..;\n- Tên viết tắt bằng tiếng Việt (nếu có): ........;\n- Tên đầy đủ bằng tiếng Anh: ……………...;\n- Tên viết tắt bằng tiếng Anh (nếu có): …….;\n- Tên giao dịch (nếu có): …………………..\n2. Địa chỉ trụ sở chính: ………………………"
+          "body": "1. Tên Công ty tài chính:\n- Tên đầy đủ bằng tiếng Việt: ……………..;\n- Tên viết tắt bằng tiếng Việt (nếu có): ........;\n- Tên đầy đủ bằng tiếng Anh: ……………...;\n- Tên viết tắt bằng tiếng Anh (nếu có): …….;\n- Tên giao dịch (nếu có): …………………..\n2. Địa chỉ trụ sở chính: ………………………",
+          "blocks": [
+            {
+              "kind": "text",
+              "text": "1. Tên Công ty tài chính:"
+            },
+            {
+              "kind": "text",
+              "text": "- Tên đầy đủ bằng tiếng Việt: ……………..;"
+            },
+            {
+              "kind": "text",
+              "text": "- Tên viết tắt bằng tiếng Việt (nếu có): ........;"
+            },
+            {
+              "kind": "text",
+              "text": "- Tên đầy đủ bằng tiếng Anh: ……………...;"
+            },
+            {
+              "kind": "text",
+              "text": "- Tên viết tắt bằng tiếng Anh (nếu có): …….;"
+            },
+            {
+              "kind": "text",
+              "text": "- Tên giao dịch (nếu có): ………………….."
+            },
+            {
+              "kind": "text",
+              "text": "2. Địa chỉ trụ sở chính: ………………………"
+            }
+          ]
         },
         {
-          "id": "art-2",
+          "id": "art-38",
           "number": "Điều 2",
           "heading": "Vốn điều lệ của Công ty tài chính ……(*) là …….. (bằng chữ: ………………..)",
-          "body": ""
+          "body": "",
+          "blocks": []
         },
         {
-          "id": "art-3",
+          "id": "art-39",
           "number": "Điều 3",
           "heading": "Thời hạn hoạt động của Công ty tài chính ... (*) là …………… năm (là thời hạn hoạt động được quy định tại Giấy phép do Ngân hàng Nhà nước Việt Nam cấp trước đây) kể từ ngày …………… (là ngày hiệu lực của Giấy phép được Ngân hàng Nhà nước Việt Nam cấp trước đây).",
-          "body": ""
+          "body": "",
+          "blocks": []
         },
         {
-          "id": "art-4",
+          "id": "art-40",
           "number": "Điều 4",
           "heading": "Nội dung hoạt động (**)",
-          "body": "Công ty tài chính ... (*) được thực hiện các hoạt động của công ty tài chính tín dụng tiêu dùng theo quy định của pháp luật và của Ngân hàng Nhà nước Việt Nam, gồm các hoạt động sau đây:\n1. Nhận tiền gửi không kỳ hạn, tiền gửi có kỳ hạn của tổ chức.\n2. Phát hành chứng chỉ tiền gửi để huy động vốn của tổ chức.\n3. Cho vay.\n4. Chiết khấu, tái chiết khấu.\n5. Phát hành thẻ tín dụng.\n6. Hình thức cấp tín dụng khác theo quy định của Ngân hàng Nhà nước (chỉ cấp phép khi có quy định của pháp luật).\n7. Vay Ngân hàng Nhà nước dưới hình thức tái cấp vốn.\n8. Mua, bán giấy tờ có giá với Ngân hàng Nhà nước.\n9. Cho vay, vay, gửi tiền, nhận tiền gửi, mua, bán có kỳ hạn giấy tờ có giá với tổ chức tín dụng, chi nhánh ngân hàng nước ngoài theo quy định của Ngân hàng Nhà nước.\n10. Vay nước ngoài theo quy định của pháp luật.\n11. Mở tài khoản thanh toán tại Ngân hàng Nhà nước.\n12. Mở tài khoản thanh toán tại ngân hàng thương mại, chi nhánh ngân hàng nước ngoài.\n13. Mở tài khoản tại ngân hàng nước ngoài theo quy định của pháp luật về ngoại hối (đối với công ty tài chính được phép thực hiện hoạt động phát hành thẻ tín dụng).\n14. Mở tài khoản tiền gửi, tài khoản quản lý tiền vay cho khách hàng.\n15. Góp vốn, mua cổ phần theo quy định của pháp luật và hướng dẫn của Ngân hàng Nhà nước.\n16. Các hoạt động kinh doanh khác:\na) Nhận vốn ủy thác để thực hiện hoạt động cấp tín dụng được phép;\nb) Ủy thác vốn cho tổ chức tín dụng khác thực hiện hoạt động cho vay, cấp tín dụng chính của công ty tài chính chuyên ngành đó;\nc) Mua, bán tín phiếu Ngân hàng Nhà nước, chứng chỉ tiền gửi do tổ chức tín dụng, chi nhánh ngân hàng nước ngoài phát hành trong nước, công cụ nợ của Chính phủ, trái phiếu Chính phủ bảo lãnh, trái phiếu chính quyền địa phương;\nd) Kinh doanh ngoại hối, cung ứng dịch vụ ngoại hối;\nđ) Tư vấn về hoạt động ngân hàng và hoạt động kinh doanh khác quy định trong Giấy phép;\ne) Phát hành trái phiếu để huy động vốn của tổ chức;\ng) Đại lý bảo hiểm theo quy định của pháp luật về kinh doanh bảo hiểm, phù hợp với phạm vi hoạt động đại lý bảo hiểm theo quy định của Ngân hàng Nhà nước.\n17. Các hoạt động kinh doanh khác liên quan đến hoạt động ngân hàng (chỉ cấp phép khi có quy định của pháp luật)."
+          "body": "Công ty tài chính ... (*) được thực hiện các hoạt động của công ty tài chính tín dụng tiêu dùng theo quy định của pháp luật và của Ngân hàng Nhà nước Việt Nam, gồm các hoạt động sau đây:\n1. Nhận tiền gửi không kỳ hạn, tiền gửi có kỳ hạn của tổ chức.\n2. Phát hành chứng chỉ tiền gửi để huy động vốn của tổ chức.\n3. Cho vay.\n4. Chiết khấu, tái chiết khấu.\n5. Phát hành thẻ tín dụng.\n6. Hình thức cấp tín dụng khác theo quy định của Ngân hàng Nhà nước (chỉ cấp phép khi có quy định của pháp luật).\n7. Vay Ngân hàng Nhà nước dưới hình thức tái cấp vốn.\n8. Mua, bán giấy tờ có giá với Ngân hàng Nhà nước.\n9. Cho vay, vay, gửi tiền, nhận tiền gửi, mua, bán có kỳ hạn giấy tờ có giá với tổ chức tín dụng, chi nhánh ngân hàng nước ngoài theo quy định của Ngân hàng Nhà nước.\n10. Vay nước ngoài theo quy định của pháp luật.\n11. Mở tài khoản thanh toán tại Ngân hàng Nhà nước.\n12. Mở tài khoản thanh toán tại ngân hàng thương mại, chi nhánh ngân hàng nước ngoài.\n13. Mở tài khoản tại ngân hàng nước ngoài theo quy định của pháp luật về ngoại hối (đối với công ty tài chính được phép thực hiện hoạt động phát hành thẻ tín dụng).\n14. Mở tài khoản tiền gửi, tài khoản quản lý tiền vay cho khách hàng.\n15. Góp vốn, mua cổ phần theo quy định của pháp luật và hướng dẫn của Ngân hàng Nhà nước.\n16. Các hoạt động kinh doanh khác:\na) Nhận vốn ủy thác để thực hiện hoạt động cấp tín dụng được phép;\nb) Ủy thác vốn cho tổ chức tín dụng khác thực hiện hoạt động cho vay, cấp tín dụng chính của công ty tài chính chuyên ngành đó;\nc) Mua, bán tín phiếu Ngân hàng Nhà nước, chứng chỉ tiền gửi do tổ chức tín dụng, chi nhánh ngân hàng nước ngoài phát hành trong nước, công cụ nợ của Chính phủ, trái phiếu Chính phủ bảo lãnh, trái phiếu chính quyền địa phương;\nd) Kinh doanh ngoại hối, cung ứng dịch vụ ngoại hối;\nđ) Tư vấn về hoạt động ngân hàng và hoạt động kinh doanh khác quy định trong Giấy phép;\ne) Phát hành trái phiếu để huy động vốn của tổ chức;\ng) Đại lý bảo hiểm theo quy định của pháp luật về kinh doanh bảo hiểm, phù hợp với phạm vi hoạt động đại lý bảo hiểm theo quy định của Ngân hàng Nhà nước.\n17. Các hoạt động kinh doanh khác liên quan đến hoạt động ngân hàng (chỉ cấp phép khi có quy định của pháp luật).",
+          "blocks": [
+            {
+              "kind": "text",
+              "text": "Công ty tài chính ... (*) được thực hiện các hoạt động của công ty tài chính tín dụng tiêu dùng theo quy định của pháp luật và của Ngân hàng Nhà nước Việt Nam, gồm các hoạt động sau đây:"
+            },
+            {
+              "kind": "text",
+              "text": "1. Nhận tiền gửi không kỳ hạn, tiền gửi có kỳ hạn của tổ chức."
+            },
+            {
+              "kind": "text",
+              "text": "2. Phát hành chứng chỉ tiền gửi để huy động vốn của tổ chức."
+            },
+            {
+              "kind": "text",
+              "text": "3. Cho vay."
+            },
+            {
+              "kind": "text",
+              "text": "4. Chiết khấu, tái chiết khấu."
+            },
+            {
+              "kind": "text",
+              "text": "5. Phát hành thẻ tín dụng."
+            },
+            {
+              "kind": "text",
+              "text": "6. Hình thức cấp tín dụng khác theo quy định của Ngân hàng Nhà nước (chỉ cấp phép khi có quy định của pháp luật)."
+            },
+            {
+              "kind": "text",
+              "text": "7. Vay Ngân hàng Nhà nước dưới hình thức tái cấp vốn."
+            },
+            {
+              "kind": "text",
+              "text": "8. Mua, bán giấy tờ có giá với Ngân hàng Nhà nước."
+            },
+            {
+              "kind": "text",
+              "text": "9. Cho vay, vay, gửi tiền, nhận tiền gửi, mua, bán có kỳ hạn giấy tờ có giá với tổ chức tín dụng, chi nhánh ngân hàng nước ngoài theo quy định của Ngân hàng Nhà nước."
+            },
+            {
+              "kind": "text",
+              "text": "10. Vay nước ngoài theo quy định của pháp luật."
+            },
+            {
+              "kind": "text",
+              "text": "11. Mở tài khoản thanh toán tại Ngân hàng Nhà nước."
+            },
+            {
+              "kind": "text",
+              "text": "12. Mở tài khoản thanh toán tại ngân hàng thương mại, chi nhánh ngân hàng nước ngoài."
+            },
+            {
+              "kind": "text",
+              "text": "13. Mở tài khoản tại ngân hàng nước ngoài theo quy định của pháp luật về ngoại hối (đối với công ty tài chính được phép thực hiện hoạt động phát hành thẻ tín dụng)."
+            },
+            {
+              "kind": "text",
+              "text": "14. Mở tài khoản tiền gửi, tài khoản quản lý tiền vay cho khách hàng."
+            },
+            {
+              "kind": "text",
+              "text": "15. Góp vốn, mua cổ phần theo quy định của pháp luật và hướng dẫn của Ngân hàng Nhà nước."
+            },
+            {
+              "kind": "text",
+              "text": "16. Các hoạt động kinh doanh khác:"
+            },
+            {
+              "kind": "text",
+              "text": "a) Nhận vốn ủy thác để thực hiện hoạt động cấp tín dụng được phép;"
+            },
+            {
+              "kind": "text",
+              "text": "b) Ủy thác vốn cho tổ chức tín dụng khác thực hiện hoạt động cho vay, cấp tín dụng chính của công ty tài chính chuyên ngành đó;"
+            },
+            {
+              "kind": "text",
+              "text": "c) Mua, bán tín phiếu Ngân hàng Nhà nước, chứng chỉ tiền gửi do tổ chức tín dụng, chi nhánh ngân hàng nước ngoài phát hành trong nước, công cụ nợ của Chính phủ, trái phiếu Chính phủ bảo lãnh, trái phiếu chính quyền địa phương;"
+            },
+            {
+              "kind": "text",
+              "text": "d) Kinh doanh ngoại hối, cung ứng dịch vụ ngoại hối;"
+            },
+            {
+              "kind": "text",
+              "text": "đ) Tư vấn về hoạt động ngân hàng và hoạt động kinh doanh khác quy định trong Giấy phép;"
+            },
+            {
+              "kind": "text",
+              "text": "e) Phát hành trái phiếu để huy động vốn của tổ chức;"
+            },
+            {
+              "kind": "text",
+              "text": "g) Đại lý bảo hiểm theo quy định của pháp luật về kinh doanh bảo hiểm, phù hợp với phạm vi hoạt động đại lý bảo hiểm theo quy định của Ngân hàng Nhà nước."
+            },
+            {
+              "kind": "text",
+              "text": "17. Các hoạt động kinh doanh khác liên quan đến hoạt động ngân hàng (chỉ cấp phép khi có quy định của pháp luật)."
+            }
+          ]
         },
         {
-          "id": "art-5",
+          "id": "art-41",
           "number": "Điều 5",
           "heading": "Trong quá trình hoạt động, Công ty tài chính ...(*) phải tuân thủ pháp luật Việt Nam.",
-          "body": ""
+          "body": "",
+          "blocks": []
         },
         {
-          "id": "art-6",
+          "id": "art-42",
           "number": "Điều 6",
           "heading": "Giấy phép này có hiệu lực kể từ ngày ký, thay thế Giấy phép thành lập và hoạt động công ty tài chính số …….. ngày ………, và các Quyết định sửa đổi, bổ sung Giấy phép.",
-          "body": ""
+          "body": "",
+          "blocks": []
         },
         {
-          "id": "art-7",
+          "id": "art-43",
           "number": "Điều 7",
           "heading": "Giấy phép này được lập thành ba (03) bản chính: một (01) bản cấp cho Công ty tài chính ……… (*); hai (02) bản lưu tại Ngân hàng Nhà nước Việt Nam (một (01) bản lưu tại Văn phòng Ngân hàng Nhà nước Việt Nam, một (01) bản lưu tại hồ sơ cấp đổi Giấy phép thành lập và hoạt động Công ty tài chính...(*)).",
-          "body": "Nơi nhận:\n- Như Điều 7;\n- Sở Kế hoạch và Đầu tư;\n- UBND tỉnh/TP ………;\n- Lưu: VP, TTGSNH.\nTHỐNG ĐỐC\n_______________________________\n(*) Tên công ty tài chính đề nghị cấp đổi Giấy phép.\n(**) Căn cứ vào nội dung hoạt động ghi trong đơn đề nghị thành lập để quy định cho phù hợp.\nPHỤ LỤC 04\nMẪU GIẤY PHÉP THÀNH LẬP VÀ HOẠT ĐỘNG CÔNG TY CHO THUÊ TÀI CHÍNH\n(Ban hành kèm theo Thông tư số 35/2024/TT-NHNN ngày 30/6/2024 của Thống đốc Ngân hàng Nhà nước Việt Nam)\nNGÂN HÀNG NHÀ NƯỚC\nVIỆT NAM\n-------\nCỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM\nĐộc lập - Tự do - Hạnh phúc\n---------------\nSố: /GP-NHNN\nHà Nội, ngày tháng năm…..\nGIẤY PHÉP\nVề việc thành lập và hoạt động công ty cho thuê tài chính ...(*)\nTHỐNG ĐỐC NGÂN HÀNG NHÀ NƯỚC VIỆT NAM\nCăn cứ Luật Ngân hàng Nhà nước Việt Nam ngày 16 tháng 6 năm 2010;\nCăn cứ Luật Các tổ chức tín dụng ngày 18 tháng 01 năm 2024;\nCăn cứ Nghị định số 102/2022/NĐ-CP ngày 12 tháng 12 năm 2022 của Chính phủ quy định chức năng, nhiệm vụ, quyền hạn và cơ cấu tổ chức của Ngân hàng Nhà nước Việt Nam;\nCăn cứ Thông tư số .../.../TT-NHNN ngày ... tháng ... năm... quy định việc cấp đổi Giấy phép, cấp bổ sung nội dung hoạt động vào Giấy phép và tổ chức, hoạt động của tổ chức tín dụng phi ngân hàng;\nXét đơn đề nghị cấp đổi Giấy phép thành lập và hoạt động Công ty cho thuê tài chính………….(*) và hồ sơ kèm theo;\nTheo đề nghị của Chánh Thanh tra, giám sát ngân hàng.\nQUYẾT ĐỊNH:"
+          "body": "_______________________________\n(*) Tên công ty tài chính đề nghị cấp đổi Giấy phép.\n(**) Căn cứ vào nội dung hoạt động ghi trong đơn đề nghị thành lập để quy định cho phù hợp.\nPHỤ LỤC 04\nMẪU GIẤY PHÉP THÀNH LẬP VÀ HOẠT ĐỘNG CÔNG TY CHO THUÊ TÀI CHÍNH\n(Ban hành kèm theo Thông tư số 35/2024/TT-NHNN ngày 30/6/2024 của Thống đốc Ngân hàng Nhà nước Việt Nam)\nGIẤY PHÉP\nVề việc thành lập và hoạt động công ty cho thuê tài chính ...(*)\nTHỐNG ĐỐC NGÂN HÀNG NHÀ NƯỚC VIỆT NAM\nCăn cứ Luật Ngân hàng Nhà nước Việt Nam ngày 16 tháng 6 năm 2010;\nCăn cứ Luật Các tổ chức tín dụng ngày 18 tháng 01 năm 2024;\nCăn cứ Nghị định số 102/2022/NĐ-CP ngày 12 tháng 12 năm 2022 của Chính phủ quy định chức năng, nhiệm vụ, quyền hạn và cơ cấu tổ chức của Ngân hàng Nhà nước Việt Nam;\nCăn cứ Thông tư số .../.../TT-NHNN ngày ... tháng ... năm... quy định việc cấp đổi Giấy phép, cấp bổ sung nội dung hoạt động vào Giấy phép và tổ chức, hoạt động của tổ chức tín dụng phi ngân hàng;\nXét đơn đề nghị cấp đổi Giấy phép thành lập và hoạt động Công ty cho thuê tài chính………….(*) và hồ sơ kèm theo;\nTheo đề nghị của Chánh Thanh tra, giám sát ngân hàng.\nQUYẾT ĐỊNH:",
+          "blocks": [
+            {
+              "kind": "table",
+              "rows": [
+                [
+                  {
+                    "text": "Nơi nhận:\n- Như Điều 7;\n- Sở Kế hoạch và Đầu tư;\n- UBND tỉnh/TP ………;\n- Lưu: VP, TTGSNH.",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "THỐNG ĐỐC",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ]
+              ]
+            },
+            {
+              "kind": "text",
+              "text": "_______________________________"
+            },
+            {
+              "kind": "text",
+              "text": "(*) Tên công ty tài chính đề nghị cấp đổi Giấy phép."
+            },
+            {
+              "kind": "text",
+              "text": "(**) Căn cứ vào nội dung hoạt động ghi trong đơn đề nghị thành lập để quy định cho phù hợp."
+            },
+            {
+              "kind": "text",
+              "text": "PHỤ LỤC 04"
+            },
+            {
+              "kind": "text",
+              "text": "MẪU GIẤY PHÉP THÀNH LẬP VÀ HOẠT ĐỘNG CÔNG TY CHO THUÊ TÀI CHÍNH"
+            },
+            {
+              "kind": "text",
+              "text": "(Ban hành kèm theo Thông tư số 35/2024/TT-NHNN ngày 30/6/2024 của Thống đốc Ngân hàng Nhà nước Việt Nam)"
+            },
+            {
+              "kind": "table",
+              "rows": [
+                [
+                  {
+                    "text": "NGÂN HÀNG NHÀ NƯỚC\nVIỆT NAM\n-------",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM\nĐộc lập - Tự do - Hạnh phúc\n---------------",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "Số:      /GP-NHNN",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Hà Nội, ngày   tháng   năm…..",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ]
+              ]
+            },
+            {
+              "kind": "text",
+              "text": "GIẤY PHÉP"
+            },
+            {
+              "kind": "text",
+              "text": "Về việc thành lập và hoạt động công ty cho thuê tài chính ...(*)"
+            },
+            {
+              "kind": "text",
+              "text": "THỐNG ĐỐC NGÂN HÀNG NHÀ NƯỚC VIỆT NAM"
+            },
+            {
+              "kind": "text",
+              "text": "Căn cứ Luật Ngân hàng Nhà nước Việt Nam ngày 16 tháng 6 năm 2010;"
+            },
+            {
+              "kind": "text",
+              "text": "Căn cứ Luật Các tổ chức tín dụng ngày 18 tháng 01 năm 2024;"
+            },
+            {
+              "kind": "text",
+              "text": "Căn cứ Nghị định số 102/2022/NĐ-CP ngày 12 tháng 12 năm 2022 của Chính phủ quy định chức năng, nhiệm vụ, quyền hạn và cơ cấu tổ chức của Ngân hàng Nhà nước Việt Nam;"
+            },
+            {
+              "kind": "text",
+              "text": "Căn cứ Thông tư số .../.../TT-NHNN ngày ... tháng ... năm... quy định việc cấp đổi Giấy phép, cấp bổ sung nội dung hoạt động vào Giấy phép và tổ chức, hoạt động của tổ chức tín dụng phi ngân hàng;"
+            },
+            {
+              "kind": "text",
+              "text": "Xét đơn đề nghị cấp đổi Giấy phép thành lập và hoạt động Công ty cho thuê tài chính………….(*) và hồ sơ kèm theo;"
+            },
+            {
+              "kind": "text",
+              "text": "Theo đề nghị của Chánh Thanh tra, giám sát ngân hàng."
+            },
+            {
+              "kind": "text",
+              "text": "QUYẾT ĐỊNH:"
+            }
+          ]
         },
         {
-          "id": "art-1",
+          "id": "art-44",
           "number": "Điều 1",
           "heading": "Cấp đổi Giấy phép thành lập và hoạt động số ………… ngày ……….. cho Công ty cho thuê tài chính ………(*) như sau:",
-          "body": "1. Tên Công ty cho thuê tài chính:\n- Tên đầy đủ bằng tiếng Việt: …………………….;\n- Tên viết tắt bằng tiếng Việt (nếu có): ................;\n- Tên đầy đủ bằng tiếng Anh: …………………….;\n- Tên viết tắt bằng tiếng Anh (nếu có):……………;\n- Tên giao dịch (nếu có): …………………………..\n2. Địa chỉ trụ sở chính: ……………………………."
+          "body": "1. Tên Công ty cho thuê tài chính:\n- Tên đầy đủ bằng tiếng Việt: …………………….;\n- Tên viết tắt bằng tiếng Việt (nếu có): ................;\n- Tên đầy đủ bằng tiếng Anh: …………………….;\n- Tên viết tắt bằng tiếng Anh (nếu có):……………;\n- Tên giao dịch (nếu có): …………………………..\n2. Địa chỉ trụ sở chính: …………………………….",
+          "blocks": [
+            {
+              "kind": "text",
+              "text": "1. Tên Công ty cho thuê tài chính:"
+            },
+            {
+              "kind": "text",
+              "text": "- Tên đầy đủ bằng tiếng Việt: …………………….;"
+            },
+            {
+              "kind": "text",
+              "text": "- Tên viết tắt bằng tiếng Việt (nếu có): ................;"
+            },
+            {
+              "kind": "text",
+              "text": "- Tên đầy đủ bằng tiếng Anh: …………………….;"
+            },
+            {
+              "kind": "text",
+              "text": "- Tên viết tắt bằng tiếng Anh (nếu có):……………;"
+            },
+            {
+              "kind": "text",
+              "text": "- Tên giao dịch (nếu có): ………………………….."
+            },
+            {
+              "kind": "text",
+              "text": "2. Địa chỉ trụ sở chính: ……………………………."
+            }
+          ]
         },
         {
-          "id": "art-2",
+          "id": "art-45",
           "number": "Điều 2",
           "heading": "Vốn điều lệ của Công ty cho thuê tài chính …….(*) là ……… (bằng chữ: ………….).",
-          "body": ""
+          "body": "",
+          "blocks": []
         },
         {
-          "id": "art-3",
+          "id": "art-46",
           "number": "Điều 3",
           "heading": "Thời hạn hoạt động của Công ty cho thuê tài chính ... (*) là …….. năm (là thời hạn hoạt động được quy định tại Giấy phép do Ngân hàng Nhà nước Việt Nam cấp trước đây) kể từ ngày …………….. (là ngày hiệu lực của Giấy phép được Ngân hàng Nhà nước Việt Nam cấp trước đây).",
-          "body": ""
+          "body": "",
+          "blocks": []
         },
         {
-          "id": "art-4",
+          "id": "art-47",
           "number": "Điều 4",
           "heading": "Nội dung hoạt động(**)",
-          "body": "Công ty cho thuê tài chính ... (*) được thực hiện các hoạt động của công ty cho thuê tài chính theo quy định của pháp luật và của Ngân hàng Nhà nước Việt Nam, gồm các hoạt động sau đây:\n1. Nhận tiền gửi không kỳ hạn, tiền gửi có kỳ hạn của tổ chức.\n2. Phát hành chứng chỉ tiền gửi để huy động vốn của tổ chức.\n3. Cho vay.\n4. Mua và cho thuê lại theo hình thức cho thuê tài chính.\n5. Cho thuê tài chính.\n6. Hình thức cấp tín dụng khác theo quy định của Ngân hàng Nhà nước (chỉ cấp phép khi có quy định của pháp luật).\n7. Vay Ngân hàng Nhà nước dưới hình thức tái cấp vốn.\n8. Mua, bán giấy tờ có giá với Ngân hàng Nhà nước.\n9. Cho vay, vay, gửi tiền, nhận tiền gửi, mua, bán có kỳ hạn giấy tờ có giá với tổ chức tín dụng, chi nhánh ngân hàng nước ngoài theo quy định của Ngân hàng Nhà nước.\n10. Vay nước ngoài theo quy định của pháp luật.\n11. Mở tài khoản thanh toán tại Ngân hàng Nhà nước.\n12. Mở tài khoản thanh toán tại ngân hàng thương mại, chi nhánh ngân hàng nước ngoài.\n13. Mở tài khoản tiền gửi, tài khoản quản lý tiền vay cho khách hàng.\n14. Góp vốn, mua cổ phần theo quy định của pháp luật và hướng dẫn của Ngân hàng Nhà nước.\n15. Các hoạt động kinh doanh khác:\na) Nhận vốn ủy thác để thực hiện hoạt động cấp tín dụng được phép;\nb) Ủy thác vốn cho tổ chức tín dụng khác thực hiện hoạt động cho vay, cấp tín dụng chính của công ty tài chính chuyên ngành đó;\nc) Mua, bán tín phiếu Ngân hàng Nhà nước, chứng chỉ tiền gửi do tổ chức tín dụng, chi nhánh ngân hàng nước ngoài phát hành trong nước, công cụ nợ của Chính phủ, trái phiếu Chính phủ bảo lãnh, trái phiếu chính quyền địa phương;\nd) Kinh doanh ngoại hối, cung ứng dịch vụ ngoại hối;\nđ) Tư vấn về hoạt động ngân hàng và hoạt động kinh doanh khác quy định trong Giấy phép;\ne) Cho thuê vận hành khi đáp ứng điều kiện theo quy định của pháp luật;\ng) Phát hành trái phiếu để huy động vốn của tổ chức;\nh) Đại lý bảo hiểm theo quy định của pháp luật về kinh doanh bảo hiểm, phù hợp với phạm vi hoạt động đại lý bảo hiểm theo quy định của Ngân hàng Nhà nước.\n16. Bán các khoản phải thu từ hợp đồng cho thuê tài chính cho các tổ chức và cá nhân theo quy định của Ngân hàng Nhà nước.\n17. Các hoạt động kinh doanh khác liên quan đến hoạt động ngân hàng (chỉ cấp phép khi có quy định của pháp luật)."
+          "body": "Công ty cho thuê tài chính ... (*) được thực hiện các hoạt động của công ty cho thuê tài chính theo quy định của pháp luật và của Ngân hàng Nhà nước Việt Nam, gồm các hoạt động sau đây:\n1. Nhận tiền gửi không kỳ hạn, tiền gửi có kỳ hạn của tổ chức.\n2. Phát hành chứng chỉ tiền gửi để huy động vốn của tổ chức.\n3. Cho vay.\n4. Mua và cho thuê lại theo hình thức cho thuê tài chính.\n5. Cho thuê tài chính.\n6. Hình thức cấp tín dụng khác theo quy định của Ngân hàng Nhà nước (chỉ cấp phép khi có quy định của pháp luật).\n7. Vay Ngân hàng Nhà nước dưới hình thức tái cấp vốn.\n8. Mua, bán giấy tờ có giá với Ngân hàng Nhà nước.\n9. Cho vay, vay, gửi tiền, nhận tiền gửi, mua, bán có kỳ hạn giấy tờ có giá với tổ chức tín dụng, chi nhánh ngân hàng nước ngoài theo quy định của Ngân hàng Nhà nước.\n10. Vay nước ngoài theo quy định của pháp luật.\n11. Mở tài khoản thanh toán tại Ngân hàng Nhà nước.\n12. Mở tài khoản thanh toán tại ngân hàng thương mại, chi nhánh ngân hàng nước ngoài.\n13. Mở tài khoản tiền gửi, tài khoản quản lý tiền vay cho khách hàng.\n14. Góp vốn, mua cổ phần theo quy định của pháp luật và hướng dẫn của Ngân hàng Nhà nước.\n15. Các hoạt động kinh doanh khác:\na) Nhận vốn ủy thác để thực hiện hoạt động cấp tín dụng được phép;\nb) Ủy thác vốn cho tổ chức tín dụng khác thực hiện hoạt động cho vay, cấp tín dụng chính của công ty tài chính chuyên ngành đó;\nc) Mua, bán tín phiếu Ngân hàng Nhà nước, chứng chỉ tiền gửi do tổ chức tín dụng, chi nhánh ngân hàng nước ngoài phát hành trong nước, công cụ nợ của Chính phủ, trái phiếu Chính phủ bảo lãnh, trái phiếu chính quyền địa phương;\nd) Kinh doanh ngoại hối, cung ứng dịch vụ ngoại hối;\nđ) Tư vấn về hoạt động ngân hàng và hoạt động kinh doanh khác quy định trong Giấy phép;\ne) Cho thuê vận hành khi đáp ứng điều kiện theo quy định của pháp luật;\ng) Phát hành trái phiếu để huy động vốn của tổ chức;\nh) Đại lý bảo hiểm theo quy định của pháp luật về kinh doanh bảo hiểm, phù hợp với phạm vi hoạt động đại lý bảo hiểm theo quy định của Ngân hàng Nhà nước.\n16. Bán các khoản phải thu từ hợp đồng cho thuê tài chính cho các tổ chức và cá nhân theo quy định của Ngân hàng Nhà nước.\n17. Các hoạt động kinh doanh khác liên quan đến hoạt động ngân hàng (chỉ cấp phép khi có quy định của pháp luật).",
+          "blocks": [
+            {
+              "kind": "text",
+              "text": "Công ty cho thuê tài chính ... (*) được thực hiện các hoạt động của công ty cho thuê tài chính theo quy định của pháp luật và của Ngân hàng Nhà nước Việt Nam, gồm các hoạt động sau đây:"
+            },
+            {
+              "kind": "text",
+              "text": "1. Nhận tiền gửi không kỳ hạn, tiền gửi có kỳ hạn của tổ chức."
+            },
+            {
+              "kind": "text",
+              "text": "2. Phát hành chứng chỉ tiền gửi để huy động vốn của tổ chức."
+            },
+            {
+              "kind": "text",
+              "text": "3. Cho vay."
+            },
+            {
+              "kind": "text",
+              "text": "4. Mua và cho thuê lại theo hình thức cho thuê tài chính."
+            },
+            {
+              "kind": "text",
+              "text": "5. Cho thuê tài chính."
+            },
+            {
+              "kind": "text",
+              "text": "6. Hình thức cấp tín dụng khác theo quy định của Ngân hàng Nhà nước (chỉ cấp phép khi có quy định của pháp luật)."
+            },
+            {
+              "kind": "text",
+              "text": "7. Vay Ngân hàng Nhà nước dưới hình thức tái cấp vốn."
+            },
+            {
+              "kind": "text",
+              "text": "8. Mua, bán giấy tờ có giá với Ngân hàng Nhà nước."
+            },
+            {
+              "kind": "text",
+              "text": "9. Cho vay, vay, gửi tiền, nhận tiền gửi, mua, bán có kỳ hạn giấy tờ có giá với tổ chức tín dụng, chi nhánh ngân hàng nước ngoài theo quy định của Ngân hàng Nhà nước."
+            },
+            {
+              "kind": "text",
+              "text": "10. Vay nước ngoài theo quy định của pháp luật."
+            },
+            {
+              "kind": "text",
+              "text": "11. Mở tài khoản thanh toán tại Ngân hàng Nhà nước."
+            },
+            {
+              "kind": "text",
+              "text": "12. Mở tài khoản thanh toán tại ngân hàng thương mại, chi nhánh ngân hàng nước ngoài."
+            },
+            {
+              "kind": "text",
+              "text": "13. Mở tài khoản tiền gửi, tài khoản quản lý tiền vay cho khách hàng."
+            },
+            {
+              "kind": "text",
+              "text": "14. Góp vốn, mua cổ phần theo quy định của pháp luật và hướng dẫn của Ngân hàng Nhà nước."
+            },
+            {
+              "kind": "text",
+              "text": "15. Các hoạt động kinh doanh khác:"
+            },
+            {
+              "kind": "text",
+              "text": "a) Nhận vốn ủy thác để thực hiện hoạt động cấp tín dụng được phép;"
+            },
+            {
+              "kind": "text",
+              "text": "b) Ủy thác vốn cho tổ chức tín dụng khác thực hiện hoạt động cho vay, cấp tín dụng chính của công ty tài chính chuyên ngành đó;"
+            },
+            {
+              "kind": "text",
+              "text": "c) Mua, bán tín phiếu Ngân hàng Nhà nước, chứng chỉ tiền gửi do tổ chức tín dụng, chi nhánh ngân hàng nước ngoài phát hành trong nước, công cụ nợ của Chính phủ, trái phiếu Chính phủ bảo lãnh, trái phiếu chính quyền địa phương;"
+            },
+            {
+              "kind": "text",
+              "text": "d) Kinh doanh ngoại hối, cung ứng dịch vụ ngoại hối;"
+            },
+            {
+              "kind": "text",
+              "text": "đ) Tư vấn về hoạt động ngân hàng và hoạt động kinh doanh khác quy định trong Giấy phép;"
+            },
+            {
+              "kind": "text",
+              "text": "e) Cho thuê vận hành khi đáp ứng điều kiện theo quy định của pháp luật;"
+            },
+            {
+              "kind": "text",
+              "text": "g) Phát hành trái phiếu để huy động vốn của tổ chức;"
+            },
+            {
+              "kind": "text",
+              "text": "h) Đại lý bảo hiểm theo quy định của pháp luật về kinh doanh bảo hiểm, phù hợp với phạm vi hoạt động đại lý bảo hiểm theo quy định của Ngân hàng Nhà nước."
+            },
+            {
+              "kind": "text",
+              "text": "16. Bán các khoản phải thu từ hợp đồng cho thuê tài chính cho các tổ chức và cá nhân theo quy định của Ngân hàng Nhà nước."
+            },
+            {
+              "kind": "text",
+              "text": "17. Các hoạt động kinh doanh khác liên quan đến hoạt động ngân hàng (chỉ cấp phép khi có quy định của pháp luật)."
+            }
+          ]
         },
         {
-          "id": "art-5",
+          "id": "art-48",
           "number": "Điều 5",
           "heading": "Trong quá trình hoạt động, Công ty cho thuê tài chính ...(*) phải tuân thủ pháp luật Việt Nam.",
-          "body": ""
+          "body": "",
+          "blocks": []
         },
         {
-          "id": "art-6",
+          "id": "art-49",
           "number": "Điều 6",
           "heading": "Giấy phép này có hiệu lực kể từ ngày ký, thay thế Giấy phép thành lập và hoạt động công ty cho thuê tài chính số …….. ngày ………..…, và các Quyết định sửa đổi, bổ sung Giấy phép.",
-          "body": ""
+          "body": "",
+          "blocks": []
         },
         {
-          "id": "art-7",
+          "id": "art-50",
           "number": "Điều 7",
           "heading": "Giấy phép này được lập thành ba (03) bản chính: một (01) bản cấp cho Công ty cho thuê tài chính ………(*); hai (02) bản lưu tại Ngân hàng Nhà nước Việt Nam (một (01) bản lưu tại Văn phòng Ngân hàng Nhà nước Việt Nam, một (01) bản lưu tại hồ sơ cấp đổi Giấy phép thành lập và hoạt động Công ty cho thuê tài chính...(*))",
-          "body": "Nơi nhận:\n- Như Điều 7;\n- Sở Kế hoạch và Đầu tư;\n- UBND tỉnh/TP …...….;\n- Lưu: VP, TTGSNH.\nTHỐNG ĐỐC\n_____________________________\n(*) Tên công ty cho thuê tài chính đề nghị cấp đổi Giấy phép.\n(**) Căn cứ vào nội dung hoạt động ghi trong đơn đề nghị thành lập để quy định cho phù hợp.\nGhi chú\nÝ kiến\nFacebook\nEmail\nBài liên quan:\nHồ sơ đề nghị cấp đổi Giấy phép, cấp bổ sung nội dung hoạt động vào Giấy phép của TCTD phi ngân hàng\nThông tư 30/2015/TT-NHNN, Thông tư 15/2016/TT-NHNN, Thông tư 01/2019/TT-NHNN, Thông tư 05/2023/TT-NHNN, Thông tư 35/2024/TT-NHNN, Thông tư 55/2025/TT-NHNN\nVăn bản liên quan\nQuyết định 1685/QĐ-NHNN năm 2024 đính chính Thông tư 30/2024/TT-NHNN sửa đổi Thông tư quy định về hồ sơ, thủ tục chấp thuận những thay đổi và mạng lưới hoạt động của tổ chức tín dụng phi ngân hàng do Thống đốc Ngân hàng Nhà nước Việt Nam ban hành\nTiếng Anh | Lược đồ | Liên quan hiệu lực | Tải về\nBan hành: 08/08/2024\nHiệu lực: Đã biết\nTình trạng: Đã biết\nCập nhật: 04/09/2024\nThông tư 38/2024/TT-NHNN quy định về hoạt động tư vấn của tổ chức tín dụng, chi nhánh ngân hàng nước ngoài do Thống đốc Ngân hàng Nhà nước Việt Nam ban hành\nTiếng Anh | Lược đồ | Liên quan hiệu lực | Tải về\nBan hành: 01/07/2024\nHiệu lực: Đã biết\nTình trạng: Đã biết\nCập nhật: 12/07/2024\nThông tư 30/2024/TT-NHNN sửa đổi các Thông tư quy định về hồ sơ, thủ tục chấp thuận những thay đổi và mạng lưới hoạt động của tổ chức tín dụng phi ngân hàng do Thống đốc Ngân hàng Nhà nước Việt Nam ban hành\nTiếng Anh | Lược đồ | Liên quan hiệu lực | Tải về\nBan hành: 30/06/2024\nHiệu lực: Đã biết\nTình trạng: Đã biết\nCập nhật: 05/07/2024\nThông tư 31/2024/TT-NHNN quy định về phân loại tài sản có trong hoạt động của ngân hàng thương mại, tổ chức tín dụng phi ngân hàng, chi nhánh ngân hàng nước ngoài do Thống đốc Ngân hàng Nhà nước Việt Nam ban hành\nTiếng Anh | Lược đồ | Liên quan hiệu lực | Tải về\nBan hành: 30/06/2024\nHiệu lực: Đã biết\nTình trạng: Đã biết\nCập nhật: 08/07/2024\nThông tư 34/2024/TT-NHNN quy định việc cấp đổi Giấy phép, cấp bổ sung nội dung hoạt động vào Giấy phép và tổ chức, hoạt động của ngân hàng thương mại, chi nhánh ngân hàng nước ngoài, văn phòng đại diện tại Việt Nam của tổ chức tín dụng nước ngoài, tổ chức nước ngoài khác có hoạt động ngân hàng do Thống đốc Ngân hàng Nhà nước Việt Nam ban hành\nTiếng Anh | Lược đồ | Liên quan hiệu lực | Tải về\nBan hành: 30/06/2024\nHiệu lực: Đã biết\nTình trạng: Đã biết\nCập nhật: 11/07/2024\nThông tư 11/2024/TT-NHNN sửa đổi Thông tư 16/2021/TT-NHNN quy định về tổ chức tín dụng, chi nhánh ngân hàng nước ngoài mua, bán trái phiếu doanh nghiệp do Thống đốc Ngân hàng Nhà nước Việt Nam ban hành\nTiếng Anh | Lược đồ | Liên quan hiệu lực | Tải về\nBan hành: 28/06/2024\nHiệu lực: Đã biết\nTình trạng: Đã biết\nCập nhật: 01/07/2024\nLuật Các tổ chức tín dụng 2024\nTiếng Anh | Lược đồ | Liên quan hiệu lực | Tải về\nBan hành: 18/01/2024\nHiệu lực: Đã biết\nTình trạng: Đã biết\nCập nhật: 19/02/2024\nNghị định 102/2022/NĐ-CP quy định chức năng, nhiệm vụ, quyền hạn và cơ cấu tổ chức của Ngân hàng Nhà nước Việt Nam\nTiếng Anh | Lược đồ | Liên quan hiệu lực | Tải về\nBan hành: 12/12/2022\nHiệu lực: Đã biết\nTình trạng: Đã biết\nCập nhật: 12/12/2022\nLuật Kinh doanh bảo hiểm 2022\nTiếng Anh | Lược đồ | Liên quan hiệu lực | Tải về\nBan hành: 16/06/2022\nHiệu lực: Đã biết\nTình trạng: Đã biết\nCập nhật: 01/07/2022\nLuật Doanh nghiệp 2020\nTiếng Anh | Lược đồ | Liên quan hiệu lực | Tải về\nBan hành: 17/06/2020\nHiệu lực: Đã biết\nTình trạng: Đã biết\nCập nhật: 08/07/2020\n16.527\nĐịa chỉ: 17 Nguyễn Gia Thiều, P. Xuân Hòa, TP.HCM\nĐiện thoại: (028) 3930 3279 (06 lines)\nMã số thuế: 0315459414\nTrang chủ\nCác Gói Dịch Vụ Online\nĐăng ký Thành viên\nHướng Dẫn Sử Dụng\nGiới Thiệu\nLiên Hệ\nQuy Chế Hoạt Động\nThỏa Ước Dịch Vụ\nPM TVPL trực tuyến\nTra cứu Pháp Luật mới\nTra cứu Công văn\nTra cứu Tiêu Chuẩn Việt Nam\nQuy chế bảo vệ dữ liệu cá nhân\nIP: 40.77.167.77\nHãy để chúng tôi hỗ trợ bạn!"
+          "body": "_____________________________\n(*) Tên công ty cho thuê tài chính đề nghị cấp đổi Giấy phép.\n(**) Căn cứ vào nội dung hoạt động ghi trong đơn đề nghị thành lập để quy định cho phù hợp.",
+          "blocks": [
+            {
+              "kind": "table",
+              "rows": [
+                [
+                  {
+                    "text": "Nơi nhận:\n- Như Điều 7;\n- Sở Kế hoạch và Đầu tư;\n- UBND tỉnh/TP …...….;\n- Lưu: VP, TTGSNH.",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "THỐNG ĐỐC",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ]
+              ]
+            },
+            {
+              "kind": "text",
+              "text": "_____________________________"
+            },
+            {
+              "kind": "text",
+              "text": "(*) Tên công ty cho thuê tài chính đề nghị cấp đổi Giấy phép."
+            },
+            {
+              "kind": "text",
+              "text": "(**) Căn cứ vào nội dung hoạt động ghi trong đơn đề nghị thành lập để quy định cho phù hợp."
+            }
+          ]
         }
       ]
     }

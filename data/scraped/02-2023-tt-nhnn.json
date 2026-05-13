@@ -1,85 +1,3917 @@
 {
   "id": "02/2023/TT-NHNN",
   "sourceUrl": "https://thuvienphapluat.vn/van-ban/Tien-te-Ngan-hang/Thong-tu-02-2023-TT-NHNN-to-chuc-tin-dung-co-cau-lai-thoi-han-tra-no-ho-tro-khach-hang-564081.aspx",
-  "scrapedAt": "2026-05-12T15:42:17.423Z",
-  "httpStatus": 200,
-  "via": "tvpl-body",
+  "scrapedAt": "2026-05-13T17:32:28.872Z",
+  "via": "tvpl-table-aware-batch",
   "chapters": [
     {
-      "title": "CHƯƠNG I",
-      "subtitle": "QUY ĐỊNH CHUNG",
+      "title": "PHẦN MỞ ĐẦU",
+      "subtitle": "",
       "articles": [
         {
           "id": "art-1",
           "number": "Điều 1",
           "heading": "Phạm vi điều chỉnh",
-          "body": "Thông tư này quy định về việc tổ chức tín dụng, chi nhánh ngân hàng nước ngoài cơ cấu lại thời hạn trả nợ, giữ nguyên nhóm nợ nhằm hỗ trợ khách hàng gặp khó khăn trong hoạt động sản xuất kinh doanh và khách hàng gặp khó khăn trả nợ vay phục vụ nhu cầu đời sống, tiêu dùng."
+          "body": "Thông tư này quy định về việc tổ chức tín dụng, chi nhánh ngân hàng nước ngoài cơ cấu lại thời hạn trả nợ, giữ nguyên nhóm nợ nhằm hỗ trợ khách hàng gặp khó khăn trong hoạt động sản xuất kinh doanh và khách hàng gặp khó khăn trả nợ vay phục vụ nhu cầu đời sống, tiêu dùng.",
+          "blocks": [
+            {
+              "kind": "text",
+              "text": "Thông tư này quy định về việc tổ chức tín dụng, chi nhánh ngân hàng nước ngoài cơ cấu lại thời hạn trả nợ, giữ nguyên nhóm nợ nhằm hỗ trợ khách hàng gặp khó khăn trong hoạt động sản xuất kinh doanh và khách hàng gặp khó khăn trả nợ vay phục vụ nhu cầu đời sống, tiêu dùng."
+            }
+          ]
         },
         {
           "id": "art-2",
           "number": "Điều 2",
           "heading": "Đối tượng áp dụng",
-          "body": "1. Tổ chức tín dụng (không bao gồm ngân hàng chính sách), chi nhánh ngân hàng nước ngoài.\n2. Khách hàng của tổ chức tín dụng, chi nhánh ngân hàng nước ngoài (trừ khách hàng là tổ chức tín dụng, chi nhánh ngân hàng nước ngoài).\n3. Tổ chức, cá nhân khác có liên quan đến việc cơ cấu lại thời hạn trả nợ và giữ nguyên nhóm nợ nhằm hỗ trợ khách hàng gặp khó khăn."
+          "body": "1. Tổ chức tín dụng (không bao gồm ngân hàng chính sách), chi nhánh ngân hàng nước ngoài.\n2. Khách hàng của tổ chức tín dụng, chi nhánh ngân hàng nước ngoài (trừ khách hàng là tổ chức tín dụng, chi nhánh ngân hàng nước ngoài).\n3. Tổ chức, cá nhân khác có liên quan đến việc cơ cấu lại thời hạn trả nợ và giữ nguyên nhóm nợ nhằm hỗ trợ khách hàng gặp khó khăn.",
+          "blocks": [
+            {
+              "kind": "text",
+              "text": "1. Tổ chức tín dụng (không bao gồm ngân hàng chính sách), chi nhánh ngân hàng nước ngoài."
+            },
+            {
+              "kind": "text",
+              "text": "2. Khách hàng của tổ chức tín dụng, chi nhánh ngân hàng nước ngoài (trừ khách hàng là tổ chức tín dụng, chi nhánh ngân hàng nước ngoài)."
+            },
+            {
+              "kind": "text",
+              "text": "3. Tổ chức, cá nhân khác có liên quan đến việc cơ cấu lại thời hạn trả nợ và giữ nguyên nhóm nợ nhằm hỗ trợ khách hàng gặp khó khăn."
+            }
+          ]
         },
         {
           "id": "art-3",
           "number": "Điều 3",
           "heading": "Áp dụng các văn bản quy phạm pháp luật có liên quan",
-          "body": "Việc cơ cấu lại thời hạn trả nợ và giữ nguyên nhóm nợ, trích lập dự phòng rủi ro nhằm hỗ trợ khách hàng gặp khó khăn trong hoạt động sản xuất kinh doanh và khách hàng gặp khó khăn trả nợ vay phục vụ nhu cầu đời sống, tiêu dùng thực hiện theo quy định tại Thông tư này; các nội dung liên quan đến cơ cấu lại thời hạn trả nợ, phân loại nợ, trích lập và sử dụng dự phòng để xử lý rủi ro không quy định tại Thông tư này thực hiện theo quy định tại các văn bản quy phạm pháp luật khác có liên quan."
-        }
-      ]
-    },
-    {
-      "title": "CHƯƠNG II",
-      "subtitle": "QUY ĐỊNH CỤ THỂ",
-      "articles": [
+          "body": "Việc cơ cấu lại thời hạn trả nợ và giữ nguyên nhóm nợ, trích lập dự phòng rủi ro nhằm hỗ trợ khách hàng gặp khó khăn trong hoạt động sản xuất kinh doanh và khách hàng gặp khó khăn trả nợ vay phục vụ nhu cầu đời sống, tiêu dùng thực hiện theo quy định tại Thông tư này; các nội dung liên quan đến cơ cấu lại thời hạn trả nợ, phân loại nợ, trích lập và sử dụng dự phòng để xử lý rủi ro không quy định tại Thông tư này thực hiện theo quy định tại các văn bản quy phạm pháp luật khác có liên quan.\nChương II\nQUY ĐỊNH CỤ THỂ",
+          "blocks": [
+            {
+              "kind": "text",
+              "text": "Việc cơ cấu lại thời hạn trả nợ và giữ nguyên nhóm nợ, trích lập dự phòng rủi ro nhằm hỗ trợ khách hàng gặp khó khăn trong hoạt động sản xuất kinh doanh và khách hàng gặp khó khăn trả nợ vay phục vụ nhu cầu đời sống, tiêu dùng thực hiện theo quy định tại Thông tư này; các nội dung liên quan đến cơ cấu lại thời hạn trả nợ, phân loại nợ, trích lập và sử dụng dự phòng để xử lý rủi ro không quy định tại Thông tư này thực hiện theo quy định tại các văn bản quy phạm pháp luật khác có liên quan."
+            },
+            {
+              "kind": "text",
+              "text": "Chương II"
+            },
+            {
+              "kind": "text",
+              "text": "QUY ĐỊNH CỤ THỂ"
+            }
+          ]
+        },
         {
           "id": "art-4",
           "number": "Điều 4",
           "heading": "Cơ cấu lại thời hạn trả nợ",
-          "body": "Tổ chức tín dụng, chi nhánh ngân hàng nước ngoài được xem xét quyết định cơ cấu lại thời hạn trả nợ đối với số dư nợ gốc và/hoặc lãi của khoản nợ (bao gồm cả các khoản nợ thuộc phạm vi điều chỉnh của Nghị định số 55/2015/NĐ-CP ngày 09 tháng 6 năm 2015 của Chính phủ về chính sách tín dụng phục vụ phát triển nông nghiệp, nông thôn (đã được sửa đổi, bổ sung)) trên cơ sở đề nghị của khách hàng, khả năng tài chính của tổ chức tín dụng, chi nhánh ngân hàng nước ngoài và đáp ứng các quy định sau đây:\n1. Dư nợ gốc phát sinh trước ngày Thông tư này có hiệu lực và từ hoạt động cho vay, cho thuê tài chính.\n2. Phát sinh nghĩa vụ trả nợ gốc và/hoặc lãi trong khoảng thời gian từ ngày Thông tư này có hiệu lực đến hết ngày 30/6/2024.\n3. Số dư nợ của khoản nợ được cơ cấu lại thời hạn trả nợ còn trong hạn hoặc quá hạn đến 10 (mười) ngày kể từ ngày đến hạn thanh toán, thời hạn trả nợ theo hợp đồng, thỏa thuận.\n4. Được tổ chức tín dụng, chi nhánh ngân hàng nước ngoài đánh giá khách hàng không có khả năng trả nợ đúng hạn nợ gốc và/hoặc lãi theo hợp đồng, thỏa thuận do doanh thu, thu nhập sụt giảm so với doanh thu, thu nhập tại phương án trả nợ gốc và/hoặc lãi theo hợp đồng, thỏa thuận.\n5. Khách hàng được tổ chức tín dụng, chi nhánh ngân hàng nước ngoài đánh giá có khả năng trả nợ đầy đủ nợ gốc và/hoặc lãi theo thời hạn trả nợ được cơ cấu lại.\n6. Tổ chức tín dụng, chi nhánh ngân hàng nước ngoài không thực hiện cơ cấu lại thời hạn trả nợ đối với khoản nợ vi phạm quy định pháp luật.\n7. Thời gian cơ cấu lại thời hạn trả nợ (kể cả trường hợp gia hạn nợ) được xác định phù hợp với mức độ khó khăn của khách hàng và không vượt quá 12 tháng kể từ ngày đến hạn của số dư nợ được cơ cấu lại thời hạn trả nợ.\n8. Việc cơ cấu lại thời hạn trả nợ cho khách hàng theo quy định tại Thông tư này được thực hiện kể từ ngày Thông tư này có hiệu lực đến hết ngày 30/6/2024."
+          "body": "Tổ chức tín dụng, chi nhánh ngân hàng nước ngoài được xem xét quyết định cơ cấu lại thời hạn trả nợ đối với số dư nợ gốc và/hoặc lãi của khoản nợ (bao gồm cả các khoản nợ thuộc phạm vi điều chỉnh của Nghị định số 55/2015/NĐ-CP ngày 09 tháng 6 năm 2015 của Chính phủ về chính sách tín dụng phục vụ phát triển nông nghiệp, nông thôn (đã được sửa đổi, bổ sung)) trên cơ sở đề nghị của khách hàng, khả năng tài chính của tổ chức tín dụng, chi nhánh ngân hàng nước ngoài và đáp ứng các quy định sau đây:\n1. Dư nợ gốc phát sinh trước ngày Thông tư này có hiệu lực và từ hoạt động cho vay, cho thuê tài chính.\n2. Phát sinh nghĩa vụ trả nợ gốc và/hoặc lãi trong khoảng thời gian từ ngày Thông tư này có hiệu lực đến hết ngày 30/6/2024.\n3. Số dư nợ của khoản nợ được cơ cấu lại thời hạn trả nợ còn trong hạn hoặc quá hạn đến 10 (mười) ngày kể từ ngày đến hạn thanh toán, thời hạn trả nợ theo hợp đồng, thỏa thuận.\n4. Được tổ chức tín dụng, chi nhánh ngân hàng nước ngoài đánh giá khách hàng không có khả năng trả nợ đúng hạn nợ gốc và/hoặc lãi theo hợp đồng, thỏa thuận do doanh thu, thu nhập sụt giảm so với doanh thu, thu nhập tại phương án trả nợ gốc và/hoặc lãi theo hợp đồng, thỏa thuận.\n5. Khách hàng được tổ chức tín dụng, chi nhánh ngân hàng nước ngoài đánh giá có khả năng trả nợ đầy đủ nợ gốc và/hoặc lãi theo thời hạn trả nợ được cơ cấu lại.\n6. Tổ chức tín dụng, chi nhánh ngân hàng nước ngoài không thực hiện cơ cấu lại thời hạn trả nợ đối với khoản nợ vi phạm quy định pháp luật.\n7. Thời gian cơ cấu lại thời hạn trả nợ (kể cả trường hợp gia hạn nợ) được xác định phù hợp với mức độ khó khăn của khách hàng và không vượt quá 12 tháng kể từ ngày đến hạn của số dư nợ được cơ cấu lại thời hạn trả nợ.\n8. Việc cơ cấu lại thời hạn trả nợ cho khách hàng theo quy định tại Thông tư này được thực hiện kể từ ngày Thông tư này có hiệu lực đến hết ngày 30/6/2024.",
+          "blocks": [
+            {
+              "kind": "text",
+              "text": "Tổ chức tín dụng, chi nhánh ngân hàng nước ngoài được xem xét quyết định cơ cấu lại thời hạn trả nợ đối với số dư nợ gốc và/hoặc lãi của khoản nợ (bao gồm cả các khoản nợ thuộc phạm vi điều chỉnh của Nghị định số 55/2015/NĐ-CP ngày 09 tháng 6 năm 2015 của Chính phủ về chính sách tín dụng phục vụ phát triển nông nghiệp, nông thôn (đã được sửa đổi, bổ sung)) trên cơ sở đề nghị của khách hàng, khả năng tài chính của tổ chức tín dụng, chi nhánh ngân hàng nước ngoài và đáp ứng các quy định sau đây:"
+            },
+            {
+              "kind": "text",
+              "text": "1. Dư nợ gốc phát sinh trước ngày Thông tư này có hiệu lực và từ hoạt động cho vay, cho thuê tài chính."
+            },
+            {
+              "kind": "text",
+              "text": "2. Phát sinh nghĩa vụ trả nợ gốc và/hoặc lãi trong khoảng thời gian từ ngày Thông tư này có hiệu lực đến hết ngày 30/6/2024."
+            },
+            {
+              "kind": "text",
+              "text": "3. Số dư nợ của khoản nợ được cơ cấu lại thời hạn trả nợ còn trong hạn hoặc quá hạn đến 10 (mười) ngày kể từ ngày đến hạn thanh toán, thời hạn trả nợ theo hợp đồng, thỏa thuận."
+            },
+            {
+              "kind": "text",
+              "text": "4. Được tổ chức tín dụng, chi nhánh ngân hàng nước ngoài đánh giá khách hàng không có khả năng trả nợ đúng hạn nợ gốc và/hoặc lãi theo hợp đồng, thỏa thuận do doanh thu, thu nhập sụt giảm so với doanh thu, thu nhập tại phương án trả nợ gốc và/hoặc lãi theo hợp đồng, thỏa thuận."
+            },
+            {
+              "kind": "text",
+              "text": "5. Khách hàng được tổ chức tín dụng, chi nhánh ngân hàng nước ngoài đánh giá có khả năng trả nợ đầy đủ nợ gốc và/hoặc lãi theo thời hạn trả nợ được cơ cấu lại."
+            },
+            {
+              "kind": "text",
+              "text": "6. Tổ chức tín dụng, chi nhánh ngân hàng nước ngoài không thực hiện cơ cấu lại thời hạn trả nợ đối với khoản nợ vi phạm quy định pháp luật."
+            },
+            {
+              "kind": "text",
+              "text": "7. Thời gian cơ cấu lại thời hạn trả nợ (kể cả trường hợp gia hạn nợ) được xác định phù hợp với mức độ khó khăn của khách hàng và không vượt quá 12 tháng kể từ ngày đến hạn của số dư nợ được cơ cấu lại thời hạn trả nợ."
+            },
+            {
+              "kind": "text",
+              "text": "8. Việc cơ cấu lại thời hạn trả nợ cho khách hàng theo quy định tại Thông tư này được thực hiện kể từ ngày Thông tư này có hiệu lực đến hết ngày 30/6/2024."
+            }
+          ]
         },
         {
           "id": "art-5",
           "number": "Điều 5",
           "heading": "Giữ nguyên nhóm nợ và phân loại nợ",
-          "body": "1. Tổ chức tín dụng, chi nhánh ngân hàng nước ngoài được giữ nguyên nhóm nợ đối với khoản nợ có số dư nợ gốc và/hoặc lãi được cơ cấu lại thời hạn trả nợ (sau đây là khoản nợ được cơ cấu lại thời hạn trả nợ) theo quy định tại Thông tư này như nhóm nợ đã được phân loại theo quy định của Thống đốc Ngân hàng Nhà nước Việt Nam về phân loại tài sản có, mức trích, phương pháp trích lập dự phòng rủi ro và việc sử dụng dự phòng để xử lý rủi ro trong hoạt động của tổ chức tín dụng, chi nhánh ngân hàng nước ngoài tại thời điểm gần nhất trước khi cơ cấu lại thời hạn trả nợ theo quy định tại Thông tư này.\n2. Khoản nợ sau khi cơ cấu lại thời hạn trả nợ và giữ nguyên nhóm nợ theo quy định tại khoản 1 Điều này còn trong hạn theo thời hạn cơ cấu lại, tổ chức tín dụng, chi nhánh ngân hàng nước ngoài không phải áp dụng nguyên tắc điều chỉnh, phân loại lại vào nhóm nợ có mức độ rủi ro cao hơn theo quy định của Thống đốc Ngân hàng Nhà nước Việt Nam về phân loại tài sản có, mức trích, phương pháp trích lập dự phòng rủi ro và việc sử dụng dự phòng để xử lý rủi ro trong hoạt động của tổ chức tín dụng, chi nhánh ngân hàng nước ngoài.\n3. Trường hợp khoản nợ sau khi cơ cấu lại thời hạn trả nợ và giữ nguyên nhóm nợ theo quy định tại khoản 1 Điều này quá hạn theo thời hạn cơ cấu lại mà không được tổ chức tín dụng, chi nhánh ngân hàng nước ngoài tiếp tục cơ cấu lại thời hạn trả nợ theo quy định tại Thông tư này, thì tổ chức tín dụng, chi nhánh ngân hàng nước ngoài phải thực hiện phân loại nợ theo quy định của Thống đốc Ngân hàng Nhà nước Việt Nam về phân loại tài sản có, mức trích, phương pháp trích lập dự phòng rủi ro và việc sử dụng dự phòng để xử lý rủi ro trong hoạt động của tổ chức tín dụng, chi nhánh ngân hàng nước ngoài.\n4. Đối với số lãi phải thu của khoản nợ được cơ cấu lại thời hạn trả nợ và giữ nguyên nhóm nợ đủ tiêu chuẩn (nhóm 1) theo quy định tại Thông tư này, kể từ ngày được cơ cấu lại, tổ chức tín dụng, chi nhánh ngân hàng nước ngoài không phải hạch toán thu nhập (dự thu) mà thực hiện theo dõi ngoại bảng để đôn đốc thu; thực hiện hạch toán vào thu nhập khi thu được theo quy định của pháp luật về chế độ tài chính đối với tổ chức tín dụng, chi nhánh ngân hàng nước ngoài."
+          "body": "1. Tổ chức tín dụng, chi nhánh ngân hàng nước ngoài được giữ nguyên nhóm nợ đối với khoản nợ có số dư nợ gốc và/hoặc lãi được cơ cấu lại thời hạn trả nợ (sau đây là khoản nợ được cơ cấu lại thời hạn trả nợ) theo quy định tại Thông tư này như nhóm nợ đã được phân loại theo quy định của Thống đốc Ngân hàng Nhà nước Việt Nam về phân loại tài sản có, mức trích, phương pháp trích lập dự phòng rủi ro và việc sử dụng dự phòng để xử lý rủi ro trong hoạt động của tổ chức tín dụng, chi nhánh ngân hàng nước ngoài tại thời điểm gần nhất trước khi cơ cấu lại thời hạn trả nợ theo quy định tại Thông tư này.\n2. Khoản nợ sau khi cơ cấu lại thời hạn trả nợ và giữ nguyên nhóm nợ theo quy định tại khoản 1 Điều này còn trong hạn theo thời hạn cơ cấu lại, tổ chức tín dụng, chi nhánh ngân hàng nước ngoài không phải áp dụng nguyên tắc điều chỉnh, phân loại lại vào nhóm nợ có mức độ rủi ro cao hơn theo quy định của Thống đốc Ngân hàng Nhà nước Việt Nam về phân loại tài sản có, mức trích, phương pháp trích lập dự phòng rủi ro và việc sử dụng dự phòng để xử lý rủi ro trong hoạt động của tổ chức tín dụng, chi nhánh ngân hàng nước ngoài.\n3. Trường hợp khoản nợ sau khi cơ cấu lại thời hạn trả nợ và giữ nguyên nhóm nợ theo quy định tại khoản 1 Điều này quá hạn theo thời hạn cơ cấu lại mà không được tổ chức tín dụng, chi nhánh ngân hàng nước ngoài tiếp tục cơ cấu lại thời hạn trả nợ theo quy định tại Thông tư này, thì tổ chức tín dụng, chi nhánh ngân hàng nước ngoài phải thực hiện phân loại nợ theo quy định của Thống đốc Ngân hàng Nhà nước Việt Nam về phân loại tài sản có, mức trích, phương pháp trích lập dự phòng rủi ro và việc sử dụng dự phòng để xử lý rủi ro trong hoạt động của tổ chức tín dụng, chi nhánh ngân hàng nước ngoài.\n4. Đối với số lãi phải thu của khoản nợ được cơ cấu lại thời hạn trả nợ và giữ nguyên nhóm nợ đủ tiêu chuẩn (nhóm 1) theo quy định tại Thông tư này, kể từ ngày được cơ cấu lại, tổ chức tín dụng, chi nhánh ngân hàng nước ngoài không phải hạch toán thu nhập (dự thu) mà thực hiện theo dõi ngoại bảng để đôn đốc thu; thực hiện hạch toán vào thu nhập khi thu được theo quy định của pháp luật về chế độ tài chính đối với tổ chức tín dụng, chi nhánh ngân hàng nước ngoài.",
+          "blocks": [
+            {
+              "kind": "text",
+              "text": "1. Tổ chức tín dụng, chi nhánh ngân hàng nước ngoài được giữ nguyên nhóm nợ đối với khoản nợ có số dư nợ gốc và/hoặc lãi được cơ cấu lại thời hạn trả nợ (sau đây là khoản nợ được cơ cấu lại thời hạn trả nợ) theo quy định tại Thông tư này như nhóm nợ đã được phân loại theo quy định của Thống đốc Ngân hàng Nhà nước Việt Nam về phân loại tài sản có, mức trích, phương pháp trích lập dự phòng rủi ro và việc sử dụng dự phòng để xử lý rủi ro trong hoạt động của tổ chức tín dụng, chi nhánh ngân hàng nước ngoài tại thời điểm gần nhất trước khi cơ cấu lại thời hạn trả nợ theo quy định tại Thông tư này."
+            },
+            {
+              "kind": "text",
+              "text": "2. Khoản nợ sau khi cơ cấu lại thời hạn trả nợ và giữ nguyên nhóm nợ theo quy định tại khoản 1 Điều này còn trong hạn theo thời hạn cơ cấu lại, tổ chức tín dụng, chi nhánh ngân hàng nước ngoài không phải áp dụng nguyên tắc điều chỉnh, phân loại lại vào nhóm nợ có mức độ rủi ro cao hơn theo quy định của Thống đốc Ngân hàng Nhà nước Việt Nam về phân loại tài sản có, mức trích, phương pháp trích lập dự phòng rủi ro và việc sử dụng dự phòng để xử lý rủi ro trong hoạt động của tổ chức tín dụng, chi nhánh ngân hàng nước ngoài."
+            },
+            {
+              "kind": "text",
+              "text": "3. Trường hợp khoản nợ sau khi cơ cấu lại thời hạn trả nợ và giữ nguyên nhóm nợ theo quy định tại khoản 1 Điều này quá hạn theo thời hạn cơ cấu lại mà không được tổ chức tín dụng, chi nhánh ngân hàng nước ngoài tiếp tục cơ cấu lại thời hạn trả nợ theo quy định tại Thông tư này, thì tổ chức tín dụng, chi nhánh ngân hàng nước ngoài phải thực hiện phân loại nợ theo quy định của Thống đốc Ngân hàng Nhà nước Việt Nam về phân loại tài sản có, mức trích, phương pháp trích lập dự phòng rủi ro và việc sử dụng dự phòng để xử lý rủi ro trong hoạt động của tổ chức tín dụng, chi nhánh ngân hàng nước ngoài."
+            },
+            {
+              "kind": "text",
+              "text": "4. Đối với số lãi phải thu của khoản nợ được cơ cấu lại thời hạn trả nợ và giữ nguyên nhóm nợ đủ tiêu chuẩn (nhóm 1) theo quy định tại Thông tư này, kể từ ngày được cơ cấu lại, tổ chức tín dụng, chi nhánh ngân hàng nước ngoài không phải hạch toán thu nhập (dự thu) mà thực hiện theo dõi ngoại bảng để đôn đốc thu; thực hiện hạch toán vào thu nhập khi thu được theo quy định của pháp luật về chế độ tài chính đối với tổ chức tín dụng, chi nhánh ngân hàng nước ngoài."
+            }
+          ]
         },
         {
           "id": "art-6",
           "number": "Điều 6",
           "heading": "Trích lập dự phòng rủi ro",
-          "body": "1. Tổ chức tín dụng, chi nhánh ngân hàng nước ngoài thực hiện trích lập dự phòng cụ thể đối với khách hàng có số dư nợ được cơ cấu lại thời hạn trả nợ theo quy định tại Thông tư này như sau:\na) Căn cứ quy định của Thống đốc Ngân hàng Nhà nước Việt Nam về trích lập dự phòng rủi ro trong hoạt động của tổ chức tín dụng, chi nhánh ngân hàng nước ngoài, tổ chức tín dụng, chi nhánh ngân hàng nước ngoài thực hiện trích lập số tiền dự phòng cụ thể đối với toàn bộ dư nợ của khách hàng theo kết quả phân loại nợ quy định tại Điều 5 Thông tư này đối với khoản nợ được giữ nguyên nhóm nợ và kết quả phân loại nợ đối với dư nợ còn lại của khách hàng theo quy định của Thống đốc Ngân hàng Nhà nước Việt Nam về phân loại tài sản có, mức trích, phương pháp trích lập dự phòng rủi ro và việc sử dụng dự phòng để xử lý rủi ro trong hoạt động của tổ chức tín dụng, chi nhánh ngân hàng nước ngoài.\nb) Tổ chức tín dụng, chi nhánh ngân hàng nước ngoài xác định số tiền dự phòng cụ thể phải trích đối với toàn bộ dư nợ của khách hàng theo kết quả phân loại nợ theo quy định của Thống đốc Ngân hàng Nhà nước Việt Nam về phân loại tài sản có, mức trích, phương pháp trích lập dự phòng rủi ro và việc sử dụng dự phòng để xử lý rủi ro trong hoạt động của tổ chức tín dụng, chi nhánh ngân hàng nước ngoài (không áp dụng quy định giữ nguyên nhóm nợ theo quy định tại Điều 5 Thông tư này).\nc) Tổ chức tín dụng, chi nhánh ngân hàng nước ngoài xác định số tiền dự phòng cụ thể phải trích bổ sung theo công thức sau:\nSố tiền dự phòng cụ thể phải trích bổ sung = A - B\nTrong đó:\n- A: Số tiền dự phòng cụ thể phải trích quy định tại điểm b khoản 1 Điều này.\n- B: Số tiền dự phòng cụ thể đã trích quy định tại điểm a khoản 1 Điều này.\nd) Trường hợp số tiền dự phòng cụ thể phải trích bổ sung được xác định theo quy định tại điểm c khoản 1 Điều này là dương, tổ chức tín dụng, chi nhánh ngân hàng nước ngoài thực hiện trích bổ sung dự phòng cụ thể như sau:\n(i) Đến thời điểm 31/12/2023: Tối thiểu 50% số tiền dự phòng cụ thể phải trích bổ sung;\n(ii) Đến thời điểm 31/12/2024: Trích thêm số còn lại để đủ 100% số tiền dự phòng cụ thể phải trích bổ sung.\n2. Tổ chức tín dụng, chi nhánh ngân hàng nước ngoài thực hiện trích lập dự phòng chung đối với toàn bộ dư nợ của khách hàng theo kết quả phân loại nợ được xác định theo quy định tại điểm b khoản 1 Điều này."
+          "body": "1. Tổ chức tín dụng, chi nhánh ngân hàng nước ngoài thực hiện trích lập dự phòng cụ thể đối với khách hàng có số dư nợ được cơ cấu lại thời hạn trả nợ theo quy định tại Thông tư này như sau:\na) Căn cứ quy định của Thống đốc Ngân hàng Nhà nước Việt Nam về trích lập dự phòng rủi ro trong hoạt động của tổ chức tín dụng, chi nhánh ngân hàng nước ngoài, tổ chức tín dụng, chi nhánh ngân hàng nước ngoài thực hiện trích lập số tiền dự phòng cụ thể đối với toàn bộ dư nợ của khách hàng theo kết quả phân loại nợ quy định tại Điều 5 Thông tư này đối với khoản nợ được giữ nguyên nhóm nợ và kết quả phân loại nợ đối với dư nợ còn lại của khách hàng theo quy định của Thống đốc Ngân hàng Nhà nước Việt Nam về phân loại tài sản có, mức trích, phương pháp trích lập dự phòng rủi ro và việc sử dụng dự phòng để xử lý rủi ro trong hoạt động của tổ chức tín dụng, chi nhánh ngân hàng nước ngoài.\nb) Tổ chức tín dụng, chi nhánh ngân hàng nước ngoài xác định số tiền dự phòng cụ thể phải trích đối với toàn bộ dư nợ của khách hàng theo kết quả phân loại nợ theo quy định của Thống đốc Ngân hàng Nhà nước Việt Nam về phân loại tài sản có, mức trích, phương pháp trích lập dự phòng rủi ro và việc sử dụng dự phòng để xử lý rủi ro trong hoạt động của tổ chức tín dụng, chi nhánh ngân hàng nước ngoài (không áp dụng quy định giữ nguyên nhóm nợ theo quy định tại Điều 5 Thông tư này).\nc) Tổ chức tín dụng, chi nhánh ngân hàng nước ngoài xác định số tiền dự phòng cụ thể phải trích bổ sung theo công thức sau:\nSố tiền dự phòng cụ thể phải trích bổ sung = A - B\nTrong đó:\n- A: Số tiền dự phòng cụ thể phải trích quy định tại điểm b khoản 1 Điều này.\n- B: Số tiền dự phòng cụ thể đã trích quy định tại điểm a khoản 1 Điều này.\nd) Trường hợp số tiền dự phòng cụ thể phải trích bổ sung được xác định theo quy định tại điểm c khoản 1 Điều này là dương, tổ chức tín dụng, chi nhánh ngân hàng nước ngoài thực hiện trích bổ sung dự phòng cụ thể như sau:\n(i) Đến thời điểm 31/12/2023: Tối thiểu 50% số tiền dự phòng cụ thể phải trích bổ sung;\n(ii) Đến thời điểm 31/12/2024: Trích thêm số còn lại để đủ 100% số tiền dự phòng cụ thể phải trích bổ sung.\n2. Tổ chức tín dụng, chi nhánh ngân hàng nước ngoài thực hiện trích lập dự phòng chung đối với toàn bộ dư nợ của khách hàng theo kết quả phân loại nợ được xác định theo quy định tại điểm b khoản 1 Điều này.",
+          "blocks": [
+            {
+              "kind": "text",
+              "text": "1. Tổ chức tín dụng, chi nhánh ngân hàng nước ngoài thực hiện trích lập dự phòng cụ thể đối với khách hàng có số dư nợ được cơ cấu lại thời hạn trả nợ theo quy định tại Thông tư này như sau:"
+            },
+            {
+              "kind": "text",
+              "text": "a) Căn cứ quy định của Thống đốc Ngân hàng Nhà nước Việt Nam về trích lập dự phòng rủi ro trong hoạt động của tổ chức tín dụng, chi nhánh ngân hàng nước ngoài, tổ chức tín dụng, chi nhánh ngân hàng nước ngoài thực hiện trích lập số tiền dự phòng cụ thể đối với toàn bộ dư nợ của khách hàng theo kết quả phân loại nợ quy định tại Điều 5 Thông tư này đối với khoản nợ được giữ nguyên nhóm nợ và kết quả phân loại nợ đối với dư nợ còn lại của khách hàng theo quy định của Thống đốc Ngân hàng Nhà nước Việt Nam về phân loại tài sản có, mức trích, phương pháp trích lập dự phòng rủi ro và việc sử dụng dự phòng để xử lý rủi ro trong hoạt động của tổ chức tín dụng, chi nhánh ngân hàng nước ngoài."
+            },
+            {
+              "kind": "text",
+              "text": "b) Tổ chức tín dụng, chi nhánh ngân hàng nước ngoài xác định số tiền dự phòng cụ thể phải trích đối với toàn bộ dư nợ của khách hàng theo kết quả phân loại nợ theo quy định của Thống đốc Ngân hàng Nhà nước Việt Nam về phân loại tài sản có, mức trích, phương pháp trích lập dự phòng rủi ro và việc sử dụng dự phòng để xử lý rủi ro trong hoạt động của tổ chức tín dụng, chi nhánh ngân hàng nước ngoài (không áp dụng quy định giữ nguyên nhóm nợ theo quy định tại Điều 5 Thông tư này)."
+            },
+            {
+              "kind": "text",
+              "text": "c) Tổ chức tín dụng, chi nhánh ngân hàng nước ngoài xác định số tiền dự phòng cụ thể phải trích bổ sung theo công thức sau:"
+            },
+            {
+              "kind": "text",
+              "text": "Số tiền dự phòng cụ thể phải trích bổ sung = A - B"
+            },
+            {
+              "kind": "text",
+              "text": "Trong đó:"
+            },
+            {
+              "kind": "text",
+              "text": "- A: Số tiền dự phòng cụ thể phải trích quy định tại điểm b khoản 1 Điều này."
+            },
+            {
+              "kind": "text",
+              "text": "- B: Số tiền dự phòng cụ thể đã trích quy định tại điểm a khoản 1 Điều này."
+            },
+            {
+              "kind": "text",
+              "text": "d) Trường hợp số tiền dự phòng cụ thể phải trích bổ sung được xác định theo quy định tại điểm c khoản 1 Điều này là dương, tổ chức tín dụng, chi nhánh ngân hàng nước ngoài thực hiện trích bổ sung dự phòng cụ thể như sau:"
+            },
+            {
+              "kind": "text",
+              "text": "(i) Đến thời điểm 31/12/2023: Tối thiểu 50% số tiền dự phòng cụ thể phải trích bổ sung;"
+            },
+            {
+              "kind": "text",
+              "text": "(ii) Đến thời điểm 31/12/2024: Trích thêm số còn lại để đủ 100% số tiền dự phòng cụ thể phải trích bổ sung."
+            },
+            {
+              "kind": "text",
+              "text": "2. Tổ chức tín dụng, chi nhánh ngân hàng nước ngoài thực hiện trích lập dự phòng chung đối với toàn bộ dư nợ của khách hàng theo kết quả phân loại nợ được xác định theo quy định tại điểm b khoản 1 Điều này."
+            }
+          ]
         },
         {
           "id": "art-7",
           "number": "Điều 7",
           "heading": "Trách nhiệm của tổ chức tín dụng, chi nhánh ngân hàng nước ngoài",
-          "body": "1. Tổ chức tín dụng, chi nhánh ngân hàng nước ngoài chịu trách nhiệm về quyết định cơ cấu lại thời hạn trả nợ và giữ nguyên nhóm nợ theo quy định tại Thông tư này, thực hiện kiểm tra, kiểm soát nội bộ đảm bảo giám sát chặt chẽ, an toàn, phòng ngừa, ngăn chặn việc lợi dụng cơ cấu lại thời hạn trả nợ và giữ nguyên nhóm nợ để trục lợi.\n2. Ban hành quy định nội bộ về cơ cấu lại thời hạn trả nợ và giữ nguyên nhóm nợ theo quy định của Thông tư này để thực hiện thống nhất trong toàn hệ thống, trong đó quy định cụ thể các nội dung sau:\na) Tiêu chí xác định số dư nợ của khoản nợ được cơ cấu lại thời hạn trả nợ và giữ nguyên nhóm nợ theo quy định tại Thông tư này;\nb) Trình tự, thủ tục, phân công, phân cấp, nhiệm vụ, trách nhiệm của từng cá nhân, bộ phận trong việc thực hiện cơ cấu lại thời hạn trả nợ và giữ nguyên nhóm nợ bảo đảm nguyên tắc cá nhân, bộ phận quyết định cơ cấu lại thời hạn trả nợ và giữ nguyên nhóm nợ không là cá nhân, bộ phận phê duyệt cấp tín dụng, trừ trường hợp việc cấp tín dụng do Hội đồng quản trị, Hội đồng thành viên, Tổng Giám đốc/Giám đốc, ngân hàng mẹ (đối với chi nhánh ngân hàng nước ngoài) thông qua. Trường hợp việc xét duyệt cấp tín dụng và xét duyệt cơ cấu lại thời hạn trả nợ thực hiện thông qua cơ chế hội đồng thì Chủ tịch Hội đồng xét duyệt cơ cấu lại thời hạn trả nợ không phải là Chủ tịch Hội đồng xét duyệt cấp tín dụng và ít nhất hai phần ba (2/3) thành viên Hội đồng xét duyệt cơ cấu lại thời hạn trả nợ không phải là thành viên của Hội đồng xét duyệt tín dụng;\nc) Tần suất rà soát, đánh giá khả năng trả nợ của khách hàng sau khi được cơ cấu lại thời hạn trả nợ và giữ nguyên nhóm nợ theo quy định pháp luật; theo dõi, kiểm tra, kiểm soát, giám sát đối với việc cơ cấu lại thời hạn trả nợ và giữ nguyên nhóm nợ.\n3. Tổ chức tín dụng, chi nhánh ngân hàng nước ngoài gửi 01 (một) bản quy định nội bộ quy định tại khoản 2 Điều này cho Ngân hàng Nhà nước (Cơ quan Thanh tra, giám sát ngân hàng, Ngân hàng Nhà nước chi nhánh tỉnh, thành phố trực thuộc trung ương nơi đặt trụ sở chính) theo quy định pháp luật.\n4. Trong thời hạn 10 (mười) ngày đầu tiên của mỗi tháng, tổ chức tín dụng (trừ quỹ tín dụng nhân dân), chi nhánh ngân hàng nước ngoài phải gửi báo cáo Ngân hàng Nhà nước Việt Nam (Vụ Tín dụng các ngành kinh tế, Cơ quan Thanh tra giám sát ngân hàng) về tình hình thực hiện cơ cấu lại thời hạn trả nợ và giữ nguyên nhóm nợ đến ngày cuối cùng của tháng liền trước theo quy định tại Phụ lục 01 và Phụ lục 02 đính kèm Thông tư này.\n5. Trong thời hạn 10 (mười) ngày đầu tiên của mỗi tháng, tổ chức tín dụng là Quỹ tín dụng nhân dân phải gửi báo cáo cho Ngân hàng Nhà nước chi nhánh tỉnh, thành phố trực thuộc trung ương (sau đây gọi tắt là Ngân hàng Nhà nước chi nhánh) nơi đặt trụ sở chính về tình hình thực hiện cơ cấu lại thời hạn trả nợ và giữ nguyên nhóm nợ đến ngày cuối cùng của tháng liền trước theo quy định tại Phụ lục 01 và Phụ lục 02 đính kèm Thông tư này."
+          "body": "1. Tổ chức tín dụng, chi nhánh ngân hàng nước ngoài chịu trách nhiệm về quyết định cơ cấu lại thời hạn trả nợ và giữ nguyên nhóm nợ theo quy định tại Thông tư này, thực hiện kiểm tra, kiểm soát nội bộ đảm bảo giám sát chặt chẽ, an toàn, phòng ngừa, ngăn chặn việc lợi dụng cơ cấu lại thời hạn trả nợ và giữ nguyên nhóm nợ để trục lợi.\n2. Ban hành quy định nội bộ về cơ cấu lại thời hạn trả nợ và giữ nguyên nhóm nợ theo quy định của Thông tư này để thực hiện thống nhất trong toàn hệ thống, trong đó quy định cụ thể các nội dung sau:\na) Tiêu chí xác định số dư nợ của khoản nợ được cơ cấu lại thời hạn trả nợ và giữ nguyên nhóm nợ theo quy định tại Thông tư này;\nb) Trình tự, thủ tục, phân công, phân cấp, nhiệm vụ, trách nhiệm của từng cá nhân, bộ phận trong việc thực hiện cơ cấu lại thời hạn trả nợ và giữ nguyên nhóm nợ bảo đảm nguyên tắc cá nhân, bộ phận quyết định cơ cấu lại thời hạn trả nợ và giữ nguyên nhóm nợ không là cá nhân, bộ phận phê duyệt cấp tín dụng, trừ trường hợp việc cấp tín dụng do Hội đồng quản trị, Hội đồng thành viên, Tổng Giám đốc/Giám đốc, ngân hàng mẹ (đối với chi nhánh ngân hàng nước ngoài) thông qua. Trường hợp việc xét duyệt cấp tín dụng và xét duyệt cơ cấu lại thời hạn trả nợ thực hiện thông qua cơ chế hội đồng thì Chủ tịch Hội đồng xét duyệt cơ cấu lại thời hạn trả nợ không phải là Chủ tịch Hội đồng xét duyệt cấp tín dụng và ít nhất hai phần ba (2/3) thành viên Hội đồng xét duyệt cơ cấu lại thời hạn trả nợ không phải là thành viên của Hội đồng xét duyệt tín dụng;\nc) Tần suất rà soát, đánh giá khả năng trả nợ của khách hàng sau khi được cơ cấu lại thời hạn trả nợ và giữ nguyên nhóm nợ theo quy định pháp luật; theo dõi, kiểm tra, kiểm soát, giám sát đối với việc cơ cấu lại thời hạn trả nợ và giữ nguyên nhóm nợ.\n3. Tổ chức tín dụng, chi nhánh ngân hàng nước ngoài gửi 01 (một) bản quy định nội bộ quy định tại khoản 2 Điều này cho Ngân hàng Nhà nước (Cơ quan Thanh tra, giám sát ngân hàng, Ngân hàng Nhà nước chi nhánh tỉnh, thành phố trực thuộc trung ương nơi đặt trụ sở chính) theo quy định pháp luật.\n4. Trong thời hạn 10 (mười) ngày đầu tiên của mỗi tháng, tổ chức tín dụng (trừ quỹ tín dụng nhân dân), chi nhánh ngân hàng nước ngoài phải gửi báo cáo Ngân hàng Nhà nước Việt Nam (Vụ Tín dụng các ngành kinh tế, Cơ quan Thanh tra giám sát ngân hàng) về tình hình thực hiện cơ cấu lại thời hạn trả nợ và giữ nguyên nhóm nợ đến ngày cuối cùng của tháng liền trước theo quy định tại Phụ lục 01 và Phụ lục 02 đính kèm Thông tư này.\n5. Trong thời hạn 10 (mười) ngày đầu tiên của mỗi tháng, tổ chức tín dụng là Quỹ tín dụng nhân dân phải gửi báo cáo cho Ngân hàng Nhà nước chi nhánh tỉnh, thành phố trực thuộc trung ương (sau đây gọi tắt là Ngân hàng Nhà nước chi nhánh) nơi đặt trụ sở chính về tình hình thực hiện cơ cấu lại thời hạn trả nợ và giữ nguyên nhóm nợ đến ngày cuối cùng của tháng liền trước theo quy định tại Phụ lục 01 và Phụ lục 02 đính kèm Thông tư này.",
+          "blocks": [
+            {
+              "kind": "text",
+              "text": "1. Tổ chức tín dụng, chi nhánh ngân hàng nước ngoài chịu trách nhiệm về quyết định cơ cấu lại thời hạn trả nợ và giữ nguyên nhóm nợ theo quy định tại Thông tư này, thực hiện kiểm tra, kiểm soát nội bộ đảm bảo giám sát chặt chẽ, an toàn, phòng ngừa, ngăn chặn việc lợi dụng cơ cấu lại thời hạn trả nợ và giữ nguyên nhóm nợ để trục lợi."
+            },
+            {
+              "kind": "text",
+              "text": "2. Ban hành quy định nội bộ về cơ cấu lại thời hạn trả nợ và giữ nguyên nhóm nợ theo quy định của Thông tư này để thực hiện thống nhất trong toàn hệ thống, trong đó quy định cụ thể các nội dung sau:"
+            },
+            {
+              "kind": "text",
+              "text": "a) Tiêu chí xác định số dư nợ của khoản nợ được cơ cấu lại thời hạn trả nợ và giữ nguyên nhóm nợ theo quy định tại Thông tư này;"
+            },
+            {
+              "kind": "text",
+              "text": "b) Trình tự, thủ tục, phân công, phân cấp, nhiệm vụ, trách nhiệm của từng cá nhân, bộ phận trong việc thực hiện cơ cấu lại thời hạn trả nợ và giữ nguyên nhóm nợ bảo đảm nguyên tắc cá nhân, bộ phận quyết định cơ cấu lại thời hạn trả nợ và giữ nguyên nhóm nợ không là cá nhân, bộ phận phê duyệt cấp tín dụng, trừ trường hợp việc cấp tín dụng do Hội đồng quản trị, Hội đồng thành viên, Tổng Giám đốc/Giám đốc, ngân hàng mẹ (đối với chi nhánh ngân hàng nước ngoài) thông qua. Trường hợp việc xét duyệt cấp tín dụng và xét duyệt cơ cấu lại thời hạn trả nợ thực hiện thông qua cơ chế hội đồng thì Chủ tịch Hội đồng xét duyệt cơ cấu lại thời hạn trả nợ không phải là Chủ tịch Hội đồng xét duyệt cấp tín dụng và ít nhất hai phần ba (2/3) thành viên Hội đồng xét duyệt cơ cấu lại thời hạn trả nợ không phải là thành viên của Hội đồng xét duyệt tín dụng;"
+            },
+            {
+              "kind": "text",
+              "text": "c) Tần suất rà soát, đánh giá khả năng trả nợ của khách hàng sau khi được cơ cấu lại thời hạn trả nợ và giữ nguyên nhóm nợ theo quy định pháp luật; theo dõi, kiểm tra, kiểm soát, giám sát đối với việc cơ cấu lại thời hạn trả nợ và giữ nguyên nhóm nợ."
+            },
+            {
+              "kind": "text",
+              "text": "3. Tổ chức tín dụng, chi nhánh ngân hàng nước ngoài gửi 01 (một) bản quy định nội bộ quy định tại khoản 2 Điều này cho Ngân hàng Nhà nước (Cơ quan Thanh tra, giám sát ngân hàng, Ngân hàng Nhà nước chi nhánh tỉnh, thành phố trực thuộc trung ương nơi đặt trụ sở chính) theo quy định pháp luật."
+            },
+            {
+              "kind": "text",
+              "text": "4. Trong thời hạn 10 (mười) ngày đầu tiên của mỗi tháng, tổ chức tín dụng (trừ quỹ tín dụng nhân dân), chi nhánh ngân hàng nước ngoài phải gửi báo cáo Ngân hàng Nhà nước Việt Nam (Vụ Tín dụng các ngành kinh tế, Cơ quan Thanh tra giám sát ngân hàng) về tình hình thực hiện cơ cấu lại thời hạn trả nợ và giữ nguyên nhóm nợ đến ngày cuối cùng của tháng liền trước theo quy định tại Phụ lục 01 và Phụ lục 02 đính kèm Thông tư này."
+            },
+            {
+              "kind": "text",
+              "text": "5. Trong thời hạn 10 (mười) ngày đầu tiên của mỗi tháng, tổ chức tín dụng là Quỹ tín dụng nhân dân phải gửi báo cáo cho Ngân hàng Nhà nước chi nhánh tỉnh, thành phố trực thuộc trung ương (sau đây gọi tắt là Ngân hàng Nhà nước chi nhánh) nơi đặt trụ sở chính về tình hình thực hiện cơ cấu lại thời hạn trả nợ và giữ nguyên nhóm nợ đến ngày cuối cùng của tháng liền trước theo quy định tại Phụ lục 01 và Phụ lục 02 đính kèm Thông tư này."
+            }
+          ]
         },
         {
           "id": "art-8",
           "number": "Điều 8",
           "heading": "Trách nhiệm của các đơn vị thuộc Ngân hàng Nhà nước Việt Nam",
-          "body": "1. Trách nhiệm của Vụ Tín dụng các ngành kinh tế\na) Tổng hợp báo cáo quy định tại khoản 4 Điều 7 Thông tư này và điểm a khoản 3 Điều này;\nb) Chủ trì, phối hợp với Vụ Chính sách tiền tệ, Cơ quan Thanh tra, giám sát ngân hàng và các đơn vị liên quan trong việc tham mưu cho Thống đốc Ngân hàng Nhà nước Việt Nam xử lý các vấn đề phát sinh trong quá trình triển khai thực hiện.\n2. Trách nhiệm của Cơ quan Thanh tra, giám sát ngân hàng\nThực hiện thanh tra, giám sát việc tổ chức tín dụng, chi nhánh ngân hàng nước ngoài thực hiện Thông tư này theo chức năng, nhiệm vụ.\n3. Trách nhiệm của Ngân hàng Nhà nước chi nhánh\na) Trong thời hạn 15 (mười lăm) ngày đầu tiên của mỗi tháng, tổng hợp báo cáo của quỹ tín dụng nhân dân trên địa bàn theo khoản 5 Điều 7 Thông tư này và gửi Vụ Tín dụng các ngành kinh tế để tổng hợp;\nb) Thực hiện thanh tra, giám sát việc tổ chức tín dụng, chi nhánh ngân hàng nước ngoài thực hiện Thông tư này theo chức năng, nhiệm vụ."
-        }
-      ]
-    },
-    {
-      "title": "CHƯƠNG III",
-      "subtitle": "ĐIỀU KHOẢN THI HÀNH",
-      "articles": [
+          "body": "1. Trách nhiệm của Vụ Tín dụng các ngành kinh tế\na) Tổng hợp báo cáo quy định tại khoản 4 Điều 7 Thông tư này và điểm a khoản 3 Điều này;\nb) Chủ trì, phối hợp với Vụ Chính sách tiền tệ, Cơ quan Thanh tra, giám sát ngân hàng và các đơn vị liên quan trong việc tham mưu cho Thống đốc Ngân hàng Nhà nước Việt Nam xử lý các vấn đề phát sinh trong quá trình triển khai thực hiện.\n2. Trách nhiệm của Cơ quan Thanh tra, giám sát ngân hàng\nThực hiện thanh tra, giám sát việc tổ chức tín dụng, chi nhánh ngân hàng nước ngoài thực hiện Thông tư này theo chức năng, nhiệm vụ.\n3. Trách nhiệm của Ngân hàng Nhà nước chi nhánh\na) Trong thời hạn 15 (mười lăm) ngày đầu tiên của mỗi tháng, tổng hợp báo cáo của quỹ tín dụng nhân dân trên địa bàn theo khoản 5 Điều 7 Thông tư này và gửi Vụ Tín dụng các ngành kinh tế để tổng hợp;\nb) Thực hiện thanh tra, giám sát việc tổ chức tín dụng, chi nhánh ngân hàng nước ngoài thực hiện Thông tư này theo chức năng, nhiệm vụ.\nChương III\nĐIỀU KHOẢN THI HÀNH",
+          "blocks": [
+            {
+              "kind": "text",
+              "text": "1. Trách nhiệm của Vụ Tín dụng các ngành kinh tế"
+            },
+            {
+              "kind": "text",
+              "text": "a) Tổng hợp báo cáo quy định tại khoản 4 Điều 7 Thông tư này và điểm a khoản 3 Điều này;"
+            },
+            {
+              "kind": "text",
+              "text": "b) Chủ trì, phối hợp với Vụ Chính sách tiền tệ, Cơ quan Thanh tra, giám sát ngân hàng và các đơn vị liên quan trong việc tham mưu cho Thống đốc Ngân hàng Nhà nước Việt Nam xử lý các vấn đề phát sinh trong quá trình triển khai thực hiện."
+            },
+            {
+              "kind": "text",
+              "text": "2. Trách nhiệm của Cơ quan Thanh tra, giám sát ngân hàng"
+            },
+            {
+              "kind": "text",
+              "text": "Thực hiện thanh tra, giám sát việc tổ chức tín dụng, chi nhánh ngân hàng nước ngoài thực hiện Thông tư này theo chức năng, nhiệm vụ."
+            },
+            {
+              "kind": "text",
+              "text": "3. Trách nhiệm của Ngân hàng Nhà nước chi nhánh"
+            },
+            {
+              "kind": "text",
+              "text": "a) Trong thời hạn 15 (mười lăm) ngày đầu tiên của mỗi tháng, tổng hợp báo cáo của quỹ tín dụng nhân dân trên địa bàn theo khoản 5 Điều 7 Thông tư này và gửi Vụ Tín dụng các ngành kinh tế để tổng hợp;"
+            },
+            {
+              "kind": "text",
+              "text": "b) Thực hiện thanh tra, giám sát việc tổ chức tín dụng, chi nhánh ngân hàng nước ngoài thực hiện Thông tư này theo chức năng, nhiệm vụ."
+            },
+            {
+              "kind": "text",
+              "text": "Chương III"
+            },
+            {
+              "kind": "text",
+              "text": "ĐIỀU KHOẢN THI HÀNH"
+            }
+          ]
+        },
         {
           "id": "art-9",
           "number": "Điều 9",
           "heading": "Hiệu lực thi hành",
-          "body": "Thông tư này có hiệu lực kể từ ngày 24 tháng 4 năm 2023."
+          "body": "Thông tư này có hiệu lực kể từ ngày 24 tháng 4 năm 2023.",
+          "blocks": [
+            {
+              "kind": "text",
+              "text": "Thông tư này có hiệu lực kể từ ngày 24 tháng 4 năm 2023."
+            }
+          ]
         },
         {
           "id": "art-10",
           "number": "Điều 10",
           "heading": "Tổ chức thực hiện",
-          "body": "Chánh Văn phòng, Vụ trưởng Vụ Tín dụng các ngành kinh tế, Chánh Thanh tra giám sát, ngân hàng, Thủ trưởng các đơn vị thuộc Ngân hàng Nhà nước Việt Nam, Giám đốc Ngân hàng Nhà nước chi nhánh, Chủ tịch Hội đồng quản trị, Chủ tịch Hội đồng thành viên và Tổng Giám đốc (Giám đốc) tổ chức tín dụng, chi nhánh ngân hàng nước ngoài chịu trách nhiệm tổ chức thực hiện Thông tư này./.\nNơi nhận:\n- Như Điều 10;\n- Ban lãnh đạo NHNN;\n- Văn phòng Chính phủ;\n- Bộ Tư pháp (để kiểm tra);\n- Công báo;\n- Lưu VT, PC, TDCNKT (5b).\nKT. THỐNG ĐỐC\nPHÓ THỐNG ĐỐC\nĐào Minh Tú\nPHỤ LỤC 01\n(Ban hành kèm theo Thông tư số 02/2023/TT-NHNN ngày 23/4/2023 của Thống đốc Ngân hàng Nhà nước Việt Nam)\nTỔ CHỨC TÍN DỤNG, CHI NHÁNH NGÂN HÀNG NƯỚC NGOÀI\nBÁO CÁO TÌNH HÌNH THỰC HIỆN CƠ CẤU LẠI THỜI HẠN TRẢ NỢ, GIỮ NGUYÊN NHÓM NỢ\nKỳ báo cáo tháng ... năm ...\nĐơn vị: tỷ đồng, khách hàng\nSTT\nChỉ tiêu\nCơ cấu lại thời hạn trả nợ và giữ nguyên nhóm nợ\nTổng dư nợ của khách hàng có số dư được cơ cấu lại thời hạn trả nợ tại cuối kỳ báo cáo\nNợ không bị chuyển sang nhóm nợ xấu do được giữ nguyên nhóm nợ\nDự phòng\nSố lãi phải thu hạch toán ngoại bảng theo quy định tại khoản 4 Điều 5 Thông tư này\nLũy kế\nTại cuối kỳ báo cáo\nTổng giá trị nợ đã được cơ cấu lại thời hạn trả nợ lũy kế\nSố lượt khách hàng được cơ cấu lại thời hạn trả nợ lũy kế (gốc và/hoặc lãi)\nDư nợ được cơ cấu lại thời hạn trả nợ tại cuối kỳ báo cáo\nSố khách hàng được cơ cấu lại thời hạn trả nợ tại cuối kỳ báo cáo (gốc và/hoặc lãi)\nTổng số dư nợ của khách hàng có khoản nợ không bị chuyển sang nhóm nợ xấu do được cơ cấu lại thời hạn trả nợ và giữ nguyên nhóm nợ tại cuối kỳ báo cáo\nTrong đó:\nSố khách hàng không bị chuyển sang nhóm nợ xấu tại cuối kỳ báo cáo\nSố tiền dự phòng phải trích tại cuối kỳ báo cáo\nTrong đó:\nGốc\nLãi\nGốc\nLãi\nSố dư nợ được cơ cấu lại thời hạn trả nợ không bị chuyển sang nhóm nợ xấu\nSố tiền dự phòng đã trích\n(1)\n(2)\n(3)\n(4)\n(5)\n(6)\n(7)\n(8)\n(9)\n(10)\n(11)\n(12)\n(13)\n(14)\n(15)\nI\nPhân theo khách hàng\nCá nhân\nDoanh nghiệp\nHợp tác xã, liên hiệp hợp tác xã\nKhác\nII\nPhân theo mục đích vay vốn\nPhục vụ nhu cầu đời sống, tiêu dùng\nPhục vụ hoạt động sản xuất kinh doanh\nIII\nPhân theo 21 ngành kinh tế\nNông nghiệp, lâm nghiệp và\nKhai khoáng\nCông nghiệp chế biến, chế tạo\nSản xuất và phân phối điện, khí đốt, nước nóng, hơi nước và điều hoà không khí\nCung cấp nước; hoạt động quản lý và xử lý rác thải, nước thải.\nXây dựng\nBán buôn và bán lẻ; sửa chữa ô tô, mô tô, xe máy và xe có động cơ khác\nVận tải kho bãi\nDịch vụ lưu trú và ăn uống\nThông tin và truyền thông\nHoạt động tài chính, ngân hàng và bảo hiểm\nHoạt động kinh doanh bất động sản\nHoạt động chuyên môn, khoa học và công nghệ\nHoạt động hành chính và dịch vụ hỗ trợ\nHoạt động của đảng Cộng sản, tổ chức chính trị - xã hội, quản lý nhà nước, an ninh quốc phòng; bảo đảm xã hội bắt buộc\nGiáo dục và đào tạo\nY tế và hoạt động trợ giúp xã hội\nNghệ thuật, vui chơi và giải trí\nHoạt động dịch vụ khác\nHoạt động làm thuê các công việc trong các hộ gia đình, sản xuất sản phẩm vật chất và dịch vụ tự tiêu dùng của hộ gia đình\nHoạt động của các tổ chức và cơ quan quốc tế\nHƯỚNG DẪN LẬP BÁO CÁO:\n- Tổ chức tín dụng, chi nhánh ngân hàng nước ngoài (gọi chung là tổ chức tín dụng) báo cáo thông qua Hệ thống báo cáo thống kê tập trung của Ngân hàng Nhà nước Việt Nam, bao gồm số liệu toàn hệ thống và số liệu từng chi nhánh tổ chức tín dụng, chi nhánh ngân hàng nước ngoài.\n- Tổ chức tín dụng thực hiện báo cáo định kỳ hàng tháng theo quy định tại Khoản 4, Khoản 5 Điều 7 Thông tư này.\n- Cột (3): Lũy kế từ ngày Thông tư này có hiệu lực, tổng giá trị nợ gốc phát sinh nghĩa vụ trả nợ trong khoảng thời gian quy định tại khoản 2 Điều 4 Thông tư này đã được cơ cấu lại thời hạn trả nợ và giữ nguyên nhóm nợ (lưu ý chỉ báo cáo nợ gốc phát sinh nghĩa vụ trả nợ trong khoảng thời gian quy định tại khoản 2 Điều 4 Thông tư này, không phải toàn bộ dư nợ của khoản nợ).\n- Cột (4): Lũy kế từ ngày Thông tư có hiệu lực, số tiền lãi đã được cơ cấu lại thời hạn trả nợ được thực hiện theo Thông tư này.\n- Cột (5): Lũy kế từ ngày Thông tư có hiệu lực, số lượt khách hàng đã được cơ cấu lại thời hạn trả nợ (gốc và/hoặc lãi) và giữ nguyên nhóm nợ được thực hiện theo Thông tư này.\n- Cột (6): Số dư nợ gốc phát sinh nghĩa vụ trả nợ trong khoảng thời gian quy định tại khoản 2 Điều 4 Thông tư này được cơ cấu lại thời hạn trả nợ và giữ nguyên nhóm nợ tại cuối kỳ báo cáo (lưu ý chỉ báo cáo nợ gốc phát sinh nghĩa vụ trả nợ trong khoảng thời gian quy định tại khoản 2 Điều 4 Thông tư này, không phải toàn bộ dư nợ của khoản nợ; Trường hợp đã kết thúc thời hạn cơ cấu nhưng khách hàng chưa trả hết nợ được cơ cấu, TCTD báo cáo số dư nợ cơ cấu còn lại thực tế tại cuối kỳ báo cáo).\n- Cột (7): Số tiền lãi được cơ cấu lại thời hạn trả nợ được thực hiện theo Thông tư này tại cuối kỳ báo cáo. (Lưu ý trường hợp đã kết thúc thời hạn cơ cấu nhưng khách hàng chưa trả hết tiền lãi được cơ cấu, Tổ chức tín dụng báo cáo số tiền lãi được cơ cấu còn lại thực tế tại cuối kỳ báo cáo).\n- Cột (8): Số khách hàng được cơ cấu lại thời hạn trả nợ và giữ nguyên nhóm nợ (gốc và/hoặc lãi) tại cuối kỳ báo cáo (tương ứng với số liệu tại cột 6, cột 7).\n- Cột (9): Tổng dư nợ (gốc và lãi) của khách hàng có số dư được cơ cấu lại thời hạn trả nợ theo Thông tư này tại cuối kỳ báo cáo (tương ứng với các khách hàng được thống kê tại cột 8).\n- Cột (10): Tổng dư nợ gốc của khách hàng có khoản nợ có số dư nợ đã được cơ cấu lại thời hạn trả nợ theo quy định tại Thông tư này đang được phân loại ở nhóm 1, 2 nhưng sẽ phải chuyển sang nhóm 3, 4, 5 nếu thực hiện phân loại lại theo quy định của Ngân hàng Nhà nước Việt Nam về phân loại nợ, trích lập và sử dụng dự phòng để xử lý rủi ro trong hoạt động của tổ chức tín dụng, chi nhánh ngân hàng nước ngoài tại cuối kỳ báo cáo.\n- Cột (11): Số dư nợ gốc được cơ cấu lại thời hạn trả nợ theo quy định tại Thông tư này của khách hàng được thống kê tại cột 8 đang được phân loại ở nhóm 1, 2 nhưng sẽ phải chuyển sang nhóm 3, 4, 5 nếu thực hiện phân loại lại theo quy định của Ngân hàng Nhà nước Việt Nam về phân loại nợ, trích lập và sử dụng dự phòng để xử lý rủi ro trong hoạt động của tổ chức tín dụng, chi nhánh ngân hàng nước ngoài tại cuối kỳ báo cáo.\n- Cột (12): Tổng số khách hàng có số dư nợ được thống kê tại cột 11 tại cuối kỳ báo cáo.\n- Cột (13): Tổng số tiền dự phòng phải trích của các khách hàng có số nợ được cơ cấu lại thời hạn trả nợ và giữ nguyên nhóm nợ theo quy định tại Khoản 1 Điều 6 Thông tư này tại cuối kỳ báo cáo.\n- Cột (14): Tổng số tiền dự phòng đã trích của các khách hàng có số nợ được cơ cấu lại thời hạn trà nợ và giữ nguyên nhóm nợ theo quy định tại khoản 2 Điều 6 Thông tư này tại cuối kỳ báo cáo.\n- Cột ( 15): Số lãi phải thu theo dõi ngoại bảng của các khách hàng được thống kê tại cột 8 đối với số dư nợ được cơ cấu lại thời hạn trả nợ và giữ nguyên nhóm nợ theo quy định tại khoản 4 Điều 5 Thông tư này.\n- Dòng II báo cáo số liệu phân theo mục đích cho vay: (1) Phục vụ nhu cầu đời sống, tiêu dùng (theo quy định tại Thông tư 39/2016/TT-NHNN và Thông tư số 43/2016/TT-NHNN); (2) Phục vụ hoạt động sản xuất, kinh doanh (là khoản cho vay/ cho thuê tài chính nhằm phục vụ các mục đích ngoài mục đích tại dòng II.1)\n- Dòng III báo cáo số liệu phân theo 21 ngành kinh tế theo quy định tại Quyết định 27/2018/QĐ-TTg ngày 06/7/2018 của Thủ tướng Chính phủ ban hành hệ thống ngành kinh tế Việt Nam.\nPHỤ LỤC 02\n(Ban hành kèm theo Thông tư số 02/2023/TT-NHNN ngày 23/4/2023 của Thống đốc Ngân hàng Nhà nước Việt Nam)\nTỔ CHỨC TÍN DỤNG, CHI NHÁNH NGÂN HÀNG NƯỚC NGOÀI\nBÁO CÁO SỐ LƯỢNG KHÁCH HÀNG ĐƯỢC CƠ CẤU LẠI THỜI HẠN TRẢ NỢ\nKỳ báo cáo tháng … năm ...\nĐơn vị: khách hàng\nSTT\nChỉ tiêu\nSố lũy kế đến thời điểm cuối kỳ báo cáo\nSố phát sinh trong kỳ báo cáo\nTổng số khách hàng có đề nghị được cơ cấu lại hạn trả nợ và giữ nguyên nhóm nợ lũy kế\nTrong đó:\nTổng số khách hàng có đề nghị được cơ cấu lại thời hạn trả nợ và giữ nguyên nhóm nợ trong kỳ báo cáo\nTrong đó:\nSố khách hàng được cơ cấu lại thời hạn trả nợ (gốc và/hoặc lãi) và giữ nguyên nhóm nợ lũy kế\nSố khách hàng không được cơ cấu lại thời hạn trả nợ lũy kế\nSố khách hàng được cơ cấu lại thời hạn trả nợ và giữ nguyên nhóm nợ tại cuối kỳ báo cáo (gốc và/hoặc lãi)\nSố khách hàng không được cơ cấu lại thời hạn trả nợ tại cuối kỳ báo cáo\nNguyên nhân TCTD không cơ cấu lại thời hạn trả nợ cho khách hàng (nêu nguyên nhân chính, chủ yếu)\n(1)\n(2)\n(3)\n(4)\n(5)\n(6)\n(7)\n(8)\n(9)\nCá nhân\nDoanh nghiệp\nHợp tác xã, liên hiệp hợp tác xã\nKhác\nTỔNG CỘNG\nHƯỚNG DẪN LẬP BÁO CÁO:\n- Tổ chức tín dụng, chi nhánh ngân hàng nước ngoài (gọi chung là tổ chức tín dụng) báo cáo thông qua hệ thống báo cáo thống kê tập trung của Ngân hàng Nhà nước Việt Nam số liệu toàn hệ thống.\n- Tổ chức tín dụng thực hiện báo cáo định kỳ hàng tháng theo quy định tại Khoản 4, Khoản 5 Điều 7 Thông tư này.\n- Cột (3): Lũy kế từ ngày Thông tư có hiệu lực đến thời điểm cuối kỳ báo cáo, Tổng số khách hàng đề nghị tổ chức tín dụng xem xét cơ cấu lại thời hạn trả nợ theo Thông tư này.\n- Cột (4): Lũy kế từ ngày Thông tư có hiệu lực đến thời điểm cuối kỳ báo cáo, số khách hàng đã được cơ cấu lại thời hạn trả nợ (gốc và/hoặc lãi) và giữ nguyên nhóm nợ được thực hiện theo Thông tư này.\n- Cột (5): Lũy kế từ ngày Thông tư có hiệu lực đến thời điểm cuối kỳ báo cáo, số khách hàng không được chấp thuận cơ cấu lại thời hạn trả nợ (gốc và/hoặc lãi) theo quy định tại Thông tư này\n- Cột (6): Tổng số khách hàng có đề nghị được cơ cấu lại thời hạn trả nợ theo Thông tư này trong kỳ báo cáo.\n- Cột (7): Số khách hàng được cơ cấu lại thời hạn trả nợ (gốc và/hoặc lãi) và giữ nguyên nhóm nợ theo quy định tại Thông tư này tại cuối kỳ báo cáo.\n- Cột (8): Số khách hàng không được tổ chức tín dụng chấp thuận cơ cấu lại thời hạn trả nợ (gốc và/hoặc lãi) tại cuối kỳ báo cáo\n- Cột (9): Nguyên nhân tổ chức tín dụng không chấp thuận đề nghị cơ cấu lại thời hạn trả nợ của khách hàng (chỉ nêu nguyên nhân chính, chủ yếu)\n- Dòng Tổng cộng = Dòng (1) + (2) + (3) + (4)\nGhi chú\nÝ kiến\nFacebook\nEmail\nBài liên quan:\nNgân hàng được cơ cấu lại thời hạn trả nợ cho khách hàng từ 24/4 đến 30/6/2024\nNgân hàng được cơ cấu lại thời hạn trả nợ cho khách hàng đến hết 30/6/2024\nKhẩn trương sửa đổi Thông tư 02/2023/TT-NHNN để kéo dài thực hiện cơ cấu lại thời gian trả nợ và giữ nguyên nhóm nợ đến 31/12/2024\nAi được cơ cấu lại nợ, giữ nguyên nhóm nợ theo dự thảo Thông tư mới của NHNN?\nTổ chức tín dụng thực hiện trích lập dự phòng rủi ro như thế nào?\nThông tư 02/2023/TT-NHNN, Thông tư 06/2024/TT-NHNN\nVăn bản liên quan\nThông tư 53/2024/TT-NHNN quy định về tổ chức tín dụng, chi nhánh ngân hàng nước ngoài cơ cấu lại thời hạn trả nợ đối với khách hàng gặp khó khăn do ảnh hưởng, thiệt hại của bão số 3, ngập lụt, lũ, sạt lở đất sau bão số 3 do Thống đốc Ngân hàng Nhà nước Việt Nam ban hành\nTiếng Anh | Lược đồ | Liên quan hiệu lực | Tải về\nBan hành: 04/12/2024\nHiệu lực: Đã biết\nTình trạng: Đã biết\nCập nhật: 12/12/2024\nCông văn 6248/NHNN-TD năm 2023 về giải đáp, hướng dẫn thực hiện Thông tư 02/2023/TT-NHNN do Ngân hàng Nhà nước Việt Nam ban hành\nTiếng Anh | Lược đồ | Liên quan hiệu lực | Tải về\nBan hành: 09/08/2023\nHiệu lực: Đã biết\nCập nhật: 24/08/2023\nNghị quyết 59/NQ-CP năm 2023 về giải pháp hỗ trợ tháo gỡ khó khăn cho khách hàng vay phục vụ nhu cầu đời sống, tiêu dùng do Chính phủ ban hành\nTiếng Anh | Lược đồ | Liên quan hiệu lực | Tải về\nBan hành: 23/04/2023\nHiệu lực: Đã biết\nTình trạng: Đã biết\nCập nhật: 24/04/2023\nNghị quyết 50/NQ-CP Hội nghị Chính phủ với địa phương và Phiên họp Chính phủ thường kỳ tháng 3 năm 2023\nTiếng Anh | Lược đồ | Liên quan hiệu lực | Tải về\nBan hành: 08/04/2023\nHiệu lực: Đã biết\nTình trạng: Đã biết\nCập nhật: 09/04/2023\nQuyết định 574/QĐ-NHNN năm 2023 về lãi suất tái cấp vốn, lãi suất tái chiết khấu, lãi suất cho vay qua đêm trong thanh toán điện tử liên ngân hàng và cho vay bù đắp thiếu hụt vốn trong thanh toán bù trừ của Ngân hàng Nhà nước Việt Nam đối với tổ chức tín dụng, chi nhánh ngân hàng nước ngoài\nTiếng Anh | Lược đồ | Liên quan hiệu lực | Tải về\nBan hành: 31/03/2023\nHiệu lực: Đã biết\nTình trạng: Đã biết\nCập nhật: 01/04/2023\nQuyết định 575/QĐ-NHNN năm 2023 về mức lãi suất tối đa đối với tiền gửi bằng đồng Việt Nam của tổ chức, cá nhân tại tổ chức tín dụng, chi nhánh ngân hàng nước ngoài theo quy định tại Thông tư 07/2014/TT-NHNN do Thống đốc Ngân hàng Nhà nước Việt Nam ban hành\nTiếng Anh | Lược đồ | Liên quan hiệu lực | Tải về\nBan hành: 31/03/2023\nHiệu lực: Đã biết\nTình trạng: Đã biết\nCập nhật: 01/04/2023\nQuyết định 576/QĐ-NHNN năm 2023 về mức lãi suất cho vay ngắn hạn tối đa bằng đồng Việt Nam của tổ chức tín dụng, chi nhánh ngân hàng nước ngoài đối với khách hàng vay để đáp ứng nhu cầu vốn phục vụ một số lĩnh vực, ngành kinh tế theo quy định tại Thông tư 39/2016/TT-NHNN do Thống đốc Ngân hàng Nhà nước Việt Nam ban hành\nTiếng Anh | Lược đồ | Liên quan hiệu lực | Tải về\nBan hành: 31/03/2023\nHiệu lực: Đã biết\nTình trạng: Đã biết\nCập nhật: 01/04/2023\nNghị định 102/2022/NĐ-CP quy định chức năng, nhiệm vụ, quyền hạn và cơ cấu tổ chức của Ngân hàng Nhà nước Việt Nam\nTiếng Anh | Lược đồ | Liên quan hiệu lực | Tải về\nBan hành: 12/12/2022\nHiệu lực: Đã biết\nTình trạng: Đã biết\nCập nhật: 12/12/2022\nQuyết định 27/2018/QĐ-TTg về Hệ thống ngành kinh tế Việt Nam do Thủ tướng Chính phủ ban hành\nTiếng Anh | Lược đồ | Liên quan hiệu lực | Tải về\nBan hành: 06/07/2018\nHiệu lực: Đã biết\nTình trạng: Đã biết\nCập nhật: 16/07/2018\nLuật Các tổ chức tín dụng sửa đổi 2017\nTiếng Anh | Lược đồ | Liên quan hiệu lực | Tải về\nBan hành: 20/11/2017\nHiệu lực: Đã biết\nTình trạng: Đã biết\nCập nhật: 12/12/2017\n145.811\nĐịa chỉ: 17 Nguyễn Gia Thiều, P. Xuân Hòa, TP.HCM\nĐiện thoại: (028) 3930 3279 (06 lines)\nMã số thuế: 0315459414\nTrang chủ\nCác Gói Dịch Vụ Online\nĐăng ký Thành viên\nHướng Dẫn Sử Dụng\nGiới Thiệu\nLiên Hệ\nQuy Chế Hoạt Động\nThỏa Ước Dịch Vụ\nPM TVPL trực tuyến\nTra cứu Pháp Luật mới\nTra cứu Công văn\nTra cứu Tiêu Chuẩn Việt Nam\nQuy chế bảo vệ dữ liệu cá nhân\nIP: 172.204.16.73\nHãy để chúng tôi hỗ trợ bạn!"
+          "body": "Chánh Văn phòng, Vụ trưởng Vụ Tín dụng các ngành kinh tế, Chánh Thanh tra giám sát, ngân hàng, Thủ trưởng các đơn vị thuộc Ngân hàng Nhà nước Việt Nam, Giám đốc Ngân hàng Nhà nước chi nhánh, Chủ tịch Hội đồng quản trị, Chủ tịch Hội đồng thành viên và Tổng Giám đốc (Giám đốc) tổ chức tín dụng, chi nhánh ngân hàng nước ngoài chịu trách nhiệm tổ chức thực hiện Thông tư này./.\nPHỤ LỤC 01\n(Ban hành kèm theo Thông tư số 02/2023/TT-NHNN ngày 23/4/2023 của Thống đốc Ngân hàng Nhà nước Việt Nam)\nTỔ CHỨC TÍN DỤNG, CHI NHÁNH NGÂN HÀNG NƯỚC NGOÀI\nBÁO CÁO TÌNH HÌNH THỰC HIỆN CƠ CẤU LẠI THỜI HẠN TRẢ NỢ, GIỮ NGUYÊN NHÓM NỢ\nKỳ báo cáo tháng ... năm ...\nĐơn vị: tỷ đồng, khách hàng\nHƯỚNG DẪN LẬP BÁO CÁO:\n- Tổ chức tín dụng, chi nhánh ngân hàng nước ngoài (gọi chung là tổ chức tín dụng) báo cáo thông qua Hệ thống báo cáo thống kê tập trung của Ngân hàng Nhà nước Việt Nam, bao gồm số liệu toàn hệ thống và số liệu từng chi nhánh tổ chức tín dụng, chi nhánh ngân hàng nước ngoài.\n- Tổ chức tín dụng thực hiện báo cáo định kỳ hàng tháng theo quy định tại Khoản 4, Khoản 5 Điều 7 Thông tư này.\n- Cột (3): Lũy kế từ ngày Thông tư này có hiệu lực, tổng giá trị nợ gốc phát sinh nghĩa vụ trả nợ trong khoảng thời gian quy định tại khoản 2 Điều 4 Thông tư này đã được cơ cấu lại thời hạn trả nợ và giữ nguyên nhóm nợ (lưu ý chỉ báo cáo nợ gốc phát sinh nghĩa vụ trả nợ trong khoảng thời gian quy định tại khoản 2 Điều 4 Thông tư này, không phải toàn bộ dư nợ của khoản nợ).\n- Cột (4): Lũy kế từ ngày Thông tư có hiệu lực, số tiền lãi đã được cơ cấu lại thời hạn trả nợ được thực hiện theo Thông tư này.\n- Cột (5): Lũy kế từ ngày Thông tư có hiệu lực, số lượt khách hàng đã được cơ cấu lại thời hạn trả nợ (gốc và/hoặc lãi) và giữ nguyên nhóm nợ được thực hiện theo Thông tư này.\n- Cột (6): Số dư nợ gốc phát sinh nghĩa vụ trả nợ trong khoảng thời gian quy định tại khoản 2 Điều 4 Thông tư này được cơ cấu lại thời hạn trả nợ và giữ nguyên nhóm nợ tại cuối kỳ báo cáo (lưu ý chỉ báo cáo nợ gốc phát sinh nghĩa vụ trả nợ trong khoảng thời gian quy định tại khoản 2 Điều 4 Thông tư này, không phải toàn bộ dư nợ của khoản nợ; Trường hợp đã kết thúc thời hạn cơ cấu nhưng khách hàng chưa trả hết nợ được cơ cấu, TCTD báo cáo số dư nợ cơ cấu còn lại thực tế tại cuối kỳ báo cáo).\n- Cột (7): Số tiền lãi được cơ cấu lại thời hạn trả nợ được thực hiện theo Thông tư này tại cuối kỳ báo cáo. (Lưu ý trường hợp đã kết thúc thời hạn cơ cấu nhưng khách hàng chưa trả hết tiền lãi được cơ cấu, Tổ chức tín dụng báo cáo số tiền lãi được cơ cấu còn lại thực tế tại cuối kỳ báo cáo).\n- Cột (8): Số khách hàng được cơ cấu lại thời hạn trả nợ và giữ nguyên nhóm nợ (gốc và/hoặc lãi) tại cuối kỳ báo cáo (tương ứng với số liệu tại cột 6, cột 7).\n- Cột (9): Tổng dư nợ (gốc và lãi) của khách hàng có số dư được cơ cấu lại thời hạn trả nợ theo Thông tư này tại cuối kỳ báo cáo (tương ứng với các khách hàng được thống kê tại cột 8).\n- Cột (10): Tổng dư nợ gốc của khách hàng có khoản nợ có số dư nợ đã được cơ cấu lại thời hạn trả nợ theo quy định tại Thông tư này đang được phân loại ở nhóm 1, 2 nhưng sẽ phải chuyển sang nhóm 3, 4, 5 nếu thực hiện phân loại lại theo quy định của Ngân hàng Nhà nước Việt Nam về phân loại nợ, trích lập và sử dụng dự phòng để xử lý rủi ro trong hoạt động của tổ chức tín dụng, chi nhánh ngân hàng nước ngoài tại cuối kỳ báo cáo.\n- Cột (11): Số dư nợ gốc được cơ cấu lại thời hạn trả nợ theo quy định tại Thông tư này của khách hàng được thống kê tại cột 8 đang được phân loại ở nhóm 1, 2 nhưng sẽ phải chuyển sang nhóm 3, 4, 5 nếu thực hiện phân loại lại theo quy định của Ngân hàng Nhà nước Việt Nam về phân loại nợ, trích lập và sử dụng dự phòng để xử lý rủi ro trong hoạt động của tổ chức tín dụng, chi nhánh ngân hàng nước ngoài tại cuối kỳ báo cáo.\n- Cột (12): Tổng số khách hàng có số dư nợ được thống kê tại cột 11 tại cuối kỳ báo cáo.\n- Cột (13): Tổng số tiền dự phòng phải trích của các khách hàng có số nợ được cơ cấu lại thời hạn trả nợ và giữ nguyên nhóm nợ theo quy định tại Khoản 1 Điều 6 Thông tư này tại cuối kỳ báo cáo.\n- Cột (14): Tổng số tiền dự phòng đã trích của các khách hàng có số nợ được cơ cấu lại thời hạn trà nợ và giữ nguyên nhóm nợ theo quy định tại khoản 2 Điều 6 Thông tư này tại cuối kỳ báo cáo.\n- Cột ( 15): Số lãi phải thu theo dõi ngoại bảng của các khách hàng được thống kê tại cột 8 đối với số dư nợ được cơ cấu lại thời hạn trả nợ và giữ nguyên nhóm nợ theo quy định tại khoản 4 Điều 5 Thông tư này.\n- Dòng II báo cáo số liệu phân theo mục đích cho vay: (1) Phục vụ nhu cầu đời sống, tiêu dùng (theo quy định tại Thông tư 39/2016/TT-NHNN và Thông tư số 43/2016/TT-NHNN); (2) Phục vụ hoạt động sản xuất, kinh doanh (là khoản cho vay/ cho thuê tài chính nhằm phục vụ các mục đích ngoài mục đích tại dòng II.1)\n- Dòng III báo cáo số liệu phân theo 21 ngành kinh tế theo quy định tại Quyết định 27/2018/QĐ-TTg ngày 06/7/2018 của Thủ tướng Chính phủ ban hành hệ thống ngành kinh tế Việt Nam.\nPHỤ LỤC 02\n(Ban hành kèm theo Thông tư số 02/2023/TT-NHNN ngày 23/4/2023 của Thống đốc Ngân hàng Nhà nước Việt Nam)\nTỔ CHỨC TÍN DỤNG, CHI NHÁNH NGÂN HÀNG NƯỚC NGOÀI\nBÁO CÁO SỐ LƯỢNG KHÁCH HÀNG ĐƯỢC CƠ CẤU LẠI THỜI HẠN TRẢ NỢ\nKỳ báo cáo tháng … năm ...\nĐơn vị: khách hàng\nHƯỚNG DẪN LẬP BÁO CÁO:\n- Tổ chức tín dụng, chi nhánh ngân hàng nước ngoài (gọi chung là tổ chức tín dụng) báo cáo thông qua hệ thống báo cáo thống kê tập trung của Ngân hàng Nhà nước Việt Nam số liệu toàn hệ thống.\n- Tổ chức tín dụng thực hiện báo cáo định kỳ hàng tháng theo quy định tại Khoản 4, Khoản 5 Điều 7 Thông tư này.\n- Cột (3): Lũy kế từ ngày Thông tư có hiệu lực đến thời điểm cuối kỳ báo cáo, Tổng số khách hàng đề nghị tổ chức tín dụng xem xét cơ cấu lại thời hạn trả nợ theo Thông tư này.\n- Cột (4): Lũy kế từ ngày Thông tư có hiệu lực đến thời điểm cuối kỳ báo cáo, số khách hàng đã được cơ cấu lại thời hạn trả nợ (gốc và/hoặc lãi) và giữ nguyên nhóm nợ được thực hiện theo Thông tư này.\n- Cột (5): Lũy kế từ ngày Thông tư có hiệu lực đến thời điểm cuối kỳ báo cáo, số khách hàng không được chấp thuận cơ cấu lại thời hạn trả nợ (gốc và/hoặc lãi) theo quy định tại Thông tư này\n- Cột (6): Tổng số khách hàng có đề nghị được cơ cấu lại thời hạn trả nợ theo Thông tư này trong kỳ báo cáo.\n- Cột (7): Số khách hàng được cơ cấu lại thời hạn trả nợ (gốc và/hoặc lãi) và giữ nguyên nhóm nợ theo quy định tại Thông tư này tại cuối kỳ báo cáo.\n- Cột (8): Số khách hàng không được tổ chức tín dụng chấp thuận cơ cấu lại thời hạn trả nợ (gốc và/hoặc lãi) tại cuối kỳ báo cáo\n- Cột (9): Nguyên nhân tổ chức tín dụng không chấp thuận đề nghị cơ cấu lại thời hạn trả nợ của khách hàng (chỉ nêu nguyên nhân chính, chủ yếu)\n- Dòng Tổng cộng = Dòng (1) + (2) + (3) + (4)",
+          "blocks": [
+            {
+              "kind": "text",
+              "text": "Chánh Văn phòng, Vụ trưởng Vụ Tín dụng các ngành kinh tế, Chánh Thanh tra giám sát, ngân hàng, Thủ trưởng các đơn vị thuộc Ngân hàng Nhà nước Việt Nam, Giám đốc Ngân hàng Nhà nước chi nhánh, Chủ tịch Hội đồng quản trị, Chủ tịch Hội đồng thành viên và Tổng Giám đốc (Giám đốc) tổ chức tín dụng, chi nhánh ngân hàng nước ngoài chịu trách nhiệm tổ chức thực hiện Thông tư này./."
+            },
+            {
+              "kind": "table",
+              "rows": [
+                [
+                  {
+                    "text": "Nơi nhận:\n- Như Điều 10;\n- Ban lãnh đạo NHNN;\n- Văn phòng Chính phủ;\n- Bộ Tư pháp (để kiểm tra);\n- Công báo;\n- Lưu VT, PC, TDCNKT (5b).",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "KT. THỐNG ĐỐC\nPHÓ THỐNG ĐỐC\nĐào Minh Tú",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ]
+              ]
+            },
+            {
+              "kind": "text",
+              "text": "PHỤ LỤC 01"
+            },
+            {
+              "kind": "text",
+              "text": "(Ban hành kèm theo Thông tư số 02/2023/TT-NHNN ngày 23/4/2023 của Thống đốc Ngân hàng Nhà nước Việt Nam)"
+            },
+            {
+              "kind": "text",
+              "text": "TỔ CHỨC TÍN DỤNG, CHI NHÁNH NGÂN HÀNG NƯỚC NGOÀI"
+            },
+            {
+              "kind": "text",
+              "text": "BÁO CÁO TÌNH HÌNH THỰC HIỆN CƠ CẤU LẠI THỜI HẠN TRẢ NỢ, GIỮ NGUYÊN NHÓM NỢ"
+            },
+            {
+              "kind": "text",
+              "text": "Kỳ báo cáo tháng ... năm ..."
+            },
+            {
+              "kind": "text",
+              "text": "Đơn vị: tỷ đồng, khách hàng"
+            },
+            {
+              "kind": "table",
+              "rows": [
+                [
+                  {
+                    "text": "STT",
+                    "colspan": 1,
+                    "rowspan": 4,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Chỉ tiêu",
+                    "colspan": 1,
+                    "rowspan": 4,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Cơ cấu lại thời hạn trả nợ và giữ nguyên nhóm nợ",
+                    "colspan": 6,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Tổng dư nợ của khách hàng có số dư được cơ cấu lại thời hạn trả nợ tại cuối kỳ báo cáo",
+                    "colspan": 1,
+                    "rowspan": 4,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Nợ không bị chuyển sang nhóm nợ xấu do được giữ nguyên nhóm nợ",
+                    "colspan": 3,
+                    "rowspan": 2,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Dự phòng",
+                    "colspan": 2,
+                    "rowspan": 2,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Số lãi phải thu hạch toán ngoại bảng theo quy định tại khoản 4 Điều 5 Thông tư này",
+                    "colspan": 1,
+                    "rowspan": 4,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "Lũy kế",
+                    "colspan": 3,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Tại cuối kỳ báo cáo",
+                    "colspan": 3,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "Tổng giá trị nợ đã được cơ cấu lại thời hạn trả nợ lũy kế",
+                    "colspan": 2,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Số lượt khách hàng được cơ cấu lại thời hạn trả nợ lũy kế (gốc và/hoặc lãi)",
+                    "colspan": 1,
+                    "rowspan": 2,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Dư nợ được cơ cấu lại thời hạn trả nợ tại cuối kỳ báo cáo",
+                    "colspan": 2,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Số khách hàng được cơ cấu lại thời hạn trả nợ tại cuối kỳ báo cáo (gốc và/hoặc lãi)",
+                    "colspan": 1,
+                    "rowspan": 2,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Tổng số dư nợ của khách hàng có khoản nợ không bị chuyển sang nhóm nợ xấu do được cơ cấu lại thời hạn trả nợ và giữ nguyên nhóm nợ tại cuối kỳ báo cáo",
+                    "colspan": 1,
+                    "rowspan": 2,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Trong đó:",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Số khách hàng không bị chuyển sang nhóm nợ xấu tại cuối kỳ báo cáo",
+                    "colspan": 1,
+                    "rowspan": 2,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Số tiền dự phòng phải trích tại cuối kỳ báo cáo",
+                    "colspan": 1,
+                    "rowspan": 2,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Trong đó:",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "Gốc",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Lãi",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Gốc",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Lãi",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Số dư nợ được cơ cấu lại thời hạn trả nợ không bị chuyển sang nhóm nợ xấu",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Số tiền dự phòng đã trích",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "(1)",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "(2)",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "(3)",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "(4)",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "(5)",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "(6)",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "(7)",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "(8)",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "(9)",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "(10)",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "(11)",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "(12)",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "(13)",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "(14)",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "(15)",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "I",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Phân theo khách hàng",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "1",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Cá nhân",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "2",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Doanh nghiệp",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "3",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Hợp tác xã, liên hiệp hợp tác xã",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "4",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Khác",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "II",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Phân theo mục đích vay vốn",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "1",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Phục vụ nhu cầu đời sống, tiêu dùng",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "2",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Phục vụ hoạt động sản xuất kinh doanh",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "III",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Phân theo 21 ngành kinh tế",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "1",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Nông nghiệp, lâm nghiệp và",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "2",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Khai khoáng",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "3",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Công nghiệp chế biến, chế tạo",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "4",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Sản xuất và phân phối điện, khí đốt, nước nóng, hơi nước và điều hoà không khí",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "5",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Cung cấp nước; hoạt động quản lý và xử lý rác thải, nước thải.",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "6",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Xây dựng",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "7",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Bán buôn và bán lẻ; sửa chữa ô tô, mô tô, xe máy và xe có động cơ khác",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "8",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Vận tải kho bãi",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "9",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Dịch vụ lưu trú và ăn uống",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "10",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Thông tin và truyền thông",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "11",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Hoạt động tài chính, ngân hàng và bảo hiểm",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "12",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Hoạt động kinh doanh bất động sản",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "13",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Hoạt động chuyên môn, khoa học và công nghệ",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "14",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Hoạt động hành chính và dịch vụ hỗ trợ",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "15",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Hoạt động của đảng Cộng sản, tổ chức chính trị - xã hội, quản lý nhà nước, an ninh quốc phòng; bảo đảm xã hội bắt buộc",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "16",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Giáo dục và đào tạo",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "17",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Y tế và hoạt động trợ giúp xã hội",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "18",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Nghệ thuật, vui chơi và giải trí",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "19",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Hoạt động dịch vụ khác",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "20",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Hoạt động làm thuê các công việc trong các hộ gia đình, sản xuất sản phẩm vật chất và dịch vụ tự tiêu dùng của hộ gia đình",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "21",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Hoạt động của các tổ chức và cơ quan quốc tế",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ]
+              ]
+            },
+            {
+              "kind": "text",
+              "text": "HƯỚNG DẪN LẬP BÁO CÁO:"
+            },
+            {
+              "kind": "text",
+              "text": "- Tổ chức tín dụng, chi nhánh ngân hàng nước ngoài (gọi chung là tổ chức tín dụng) báo cáo thông qua Hệ thống báo cáo thống kê tập trung của Ngân hàng Nhà nước Việt Nam, bao gồm số liệu toàn hệ thống và số liệu từng chi nhánh tổ chức tín dụng, chi nhánh ngân hàng nước ngoài."
+            },
+            {
+              "kind": "text",
+              "text": "- Tổ chức tín dụng thực hiện báo cáo định kỳ hàng tháng theo quy định tại Khoản 4, Khoản 5 Điều 7 Thông tư này."
+            },
+            {
+              "kind": "text",
+              "text": "- Cột (3): Lũy kế từ ngày Thông tư này có hiệu lực, tổng giá trị nợ gốc phát sinh nghĩa vụ trả nợ trong khoảng thời gian quy định tại khoản 2 Điều 4 Thông tư này đã được cơ cấu lại thời hạn trả nợ và giữ nguyên nhóm nợ (lưu ý chỉ báo cáo nợ gốc phát sinh nghĩa vụ trả nợ trong khoảng thời gian quy định tại khoản 2 Điều 4 Thông tư này, không phải toàn bộ dư nợ của khoản nợ)."
+            },
+            {
+              "kind": "text",
+              "text": "- Cột (4): Lũy kế từ ngày Thông tư có hiệu lực, số tiền lãi đã được cơ cấu lại thời hạn trả nợ được thực hiện theo Thông tư này."
+            },
+            {
+              "kind": "text",
+              "text": "- Cột (5): Lũy kế từ ngày Thông tư có hiệu lực, số lượt khách hàng đã được cơ cấu lại thời hạn trả nợ (gốc và/hoặc lãi) và giữ nguyên nhóm nợ được thực hiện theo Thông tư này."
+            },
+            {
+              "kind": "text",
+              "text": "- Cột (6): Số dư nợ gốc phát sinh nghĩa vụ trả nợ trong khoảng thời gian quy định tại khoản 2 Điều 4 Thông tư này được cơ cấu lại thời hạn trả nợ và giữ nguyên nhóm nợ tại cuối kỳ báo cáo (lưu ý chỉ báo cáo nợ gốc phát sinh nghĩa vụ trả nợ trong khoảng thời gian quy định tại khoản 2 Điều 4 Thông tư này, không phải toàn bộ dư nợ của khoản nợ; Trường hợp đã kết thúc thời hạn cơ cấu nhưng khách hàng chưa trả hết nợ được cơ cấu, TCTD báo cáo số dư nợ cơ cấu còn lại thực tế tại cuối kỳ báo cáo)."
+            },
+            {
+              "kind": "text",
+              "text": "- Cột (7): Số tiền lãi được cơ cấu lại thời hạn trả nợ được thực hiện theo Thông tư này tại cuối kỳ báo cáo. (Lưu ý trường hợp đã kết thúc thời hạn cơ cấu nhưng khách hàng chưa trả hết tiền lãi được cơ cấu, Tổ chức tín dụng báo cáo số tiền lãi được cơ cấu còn lại thực tế tại cuối kỳ báo cáo)."
+            },
+            {
+              "kind": "text",
+              "text": "- Cột (8): Số khách hàng được cơ cấu lại thời hạn trả nợ và giữ nguyên nhóm nợ (gốc và/hoặc lãi) tại cuối kỳ báo cáo (tương ứng với số liệu tại cột 6, cột 7)."
+            },
+            {
+              "kind": "text",
+              "text": "- Cột (9): Tổng dư nợ (gốc và lãi) của khách hàng có số dư được cơ cấu lại thời hạn trả nợ theo Thông tư này tại cuối kỳ báo cáo (tương ứng với các khách hàng được thống kê tại cột 8)."
+            },
+            {
+              "kind": "text",
+              "text": "- Cột (10): Tổng dư nợ gốc của khách hàng có khoản nợ có số dư nợ đã được cơ cấu lại thời hạn trả nợ theo quy định tại Thông tư này đang được phân loại ở nhóm 1, 2 nhưng sẽ phải chuyển sang nhóm 3, 4, 5 nếu thực hiện phân loại lại theo quy định của Ngân hàng Nhà nước Việt Nam về phân loại nợ, trích lập và sử dụng dự phòng để xử lý rủi ro trong hoạt động của tổ chức tín dụng, chi nhánh ngân hàng nước ngoài tại cuối kỳ báo cáo."
+            },
+            {
+              "kind": "text",
+              "text": "- Cột (11): Số dư nợ gốc được cơ cấu lại thời hạn trả nợ theo quy định tại Thông tư này của khách hàng được thống kê tại cột 8 đang được phân loại ở nhóm 1, 2 nhưng sẽ phải chuyển sang nhóm 3, 4, 5 nếu thực hiện phân loại lại theo quy định của Ngân hàng Nhà nước Việt Nam về phân loại nợ, trích lập và sử dụng dự phòng để xử lý rủi ro trong hoạt động của tổ chức tín dụng, chi nhánh ngân hàng nước ngoài tại cuối kỳ báo cáo."
+            },
+            {
+              "kind": "text",
+              "text": "- Cột (12): Tổng số khách hàng có số dư nợ được thống kê tại cột 11 tại cuối kỳ báo cáo."
+            },
+            {
+              "kind": "text",
+              "text": "- Cột (13): Tổng số tiền dự phòng phải trích của các khách hàng có số nợ được cơ cấu lại thời hạn trả nợ và giữ nguyên nhóm nợ theo quy định tại Khoản 1 Điều 6 Thông tư này tại cuối kỳ báo cáo."
+            },
+            {
+              "kind": "text",
+              "text": "- Cột (14): Tổng số tiền dự phòng đã trích của các khách hàng có số nợ được cơ cấu lại thời hạn trà nợ và giữ nguyên nhóm nợ theo quy định tại khoản 2 Điều 6 Thông tư này tại cuối kỳ báo cáo."
+            },
+            {
+              "kind": "text",
+              "text": "- Cột ( 15): Số lãi phải thu theo dõi ngoại bảng của các khách hàng được thống kê tại cột 8 đối với số dư nợ được cơ cấu lại thời hạn trả nợ và giữ nguyên nhóm nợ theo quy định tại khoản 4 Điều 5 Thông tư này."
+            },
+            {
+              "kind": "text",
+              "text": "- Dòng II báo cáo số liệu phân theo mục đích cho vay: (1) Phục vụ nhu cầu đời sống, tiêu dùng (theo quy định tại Thông tư 39/2016/TT-NHNN và Thông tư số 43/2016/TT-NHNN); (2) Phục vụ hoạt động sản xuất, kinh doanh (là khoản cho vay/ cho thuê tài chính nhằm phục vụ các mục đích ngoài mục đích tại dòng II.1)"
+            },
+            {
+              "kind": "text",
+              "text": "- Dòng III báo cáo số liệu phân theo 21 ngành kinh tế theo quy định tại Quyết định 27/2018/QĐ-TTg ngày 06/7/2018 của Thủ tướng Chính phủ ban hành hệ thống ngành kinh tế Việt Nam."
+            },
+            {
+              "kind": "text",
+              "text": "PHỤ LỤC 02"
+            },
+            {
+              "kind": "text",
+              "text": "(Ban hành kèm theo Thông tư số 02/2023/TT-NHNN ngày 23/4/2023 của Thống đốc Ngân hàng Nhà nước Việt Nam)"
+            },
+            {
+              "kind": "text",
+              "text": "TỔ CHỨC TÍN DỤNG, CHI NHÁNH NGÂN HÀNG NƯỚC NGOÀI"
+            },
+            {
+              "kind": "text",
+              "text": "BÁO CÁO SỐ LƯỢNG KHÁCH HÀNG ĐƯỢC CƠ CẤU LẠI THỜI HẠN TRẢ NỢ"
+            },
+            {
+              "kind": "text",
+              "text": "Kỳ báo cáo tháng … năm ..."
+            },
+            {
+              "kind": "text",
+              "text": "Đơn vị: khách hàng"
+            },
+            {
+              "kind": "table",
+              "rows": [
+                [
+                  {
+                    "text": "STT",
+                    "colspan": 1,
+                    "rowspan": 3,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Chỉ tiêu",
+                    "colspan": 1,
+                    "rowspan": 3,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Số lũy kế đến thời điểm cuối kỳ báo cáo",
+                    "colspan": 3,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Số phát sinh trong kỳ báo cáo",
+                    "colspan": 4,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "Tổng số khách hàng có đề nghị được cơ cấu lại hạn trả nợ và giữ nguyên nhóm nợ lũy kế",
+                    "colspan": 1,
+                    "rowspan": 2,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Trong đó:",
+                    "colspan": 2,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Tổng số khách hàng có đề nghị được cơ cấu lại thời hạn trả nợ và giữ nguyên nhóm nợ trong kỳ báo cáo",
+                    "colspan": 1,
+                    "rowspan": 2,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Trong đó:",
+                    "colspan": 3,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "Số khách hàng được cơ cấu lại thời hạn trả nợ (gốc và/hoặc lãi) và giữ nguyên nhóm nợ lũy kế",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Số khách hàng không được cơ cấu lại thời hạn trả nợ lũy kế",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Số khách hàng được cơ cấu lại thời hạn trả nợ và giữ nguyên nhóm nợ tại cuối kỳ báo cáo (gốc và/hoặc lãi)",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Số khách hàng không được cơ cấu lại thời hạn trả nợ tại cuối kỳ báo cáo",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Nguyên nhân TCTD không cơ cấu lại thời hạn trả nợ cho khách hàng (nêu nguyên nhân chính, chủ yếu)",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "(1)",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "(2)",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "(3)",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "(4)",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "(5)",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "(6)",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "(7)",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "(8)",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "(9)",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "1",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Cá nhân",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "2",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Doanh nghiệp",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "3",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Hợp tác xã, liên hiệp hợp tác xã",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "4",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Khác",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "TỔNG CỘNG",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ]
+              ]
+            },
+            {
+              "kind": "text",
+              "text": "HƯỚNG DẪN LẬP BÁO CÁO:"
+            },
+            {
+              "kind": "text",
+              "text": "- Tổ chức tín dụng, chi nhánh ngân hàng nước ngoài (gọi chung là tổ chức tín dụng) báo cáo thông qua hệ thống báo cáo thống kê tập trung của Ngân hàng Nhà nước Việt Nam số liệu toàn hệ thống."
+            },
+            {
+              "kind": "text",
+              "text": "- Tổ chức tín dụng thực hiện báo cáo định kỳ hàng tháng theo quy định tại Khoản 4, Khoản 5 Điều 7 Thông tư này."
+            },
+            {
+              "kind": "text",
+              "text": "- Cột (3): Lũy kế từ ngày Thông tư có hiệu lực đến thời điểm cuối kỳ báo cáo, Tổng số khách hàng đề nghị tổ chức tín dụng xem xét cơ cấu lại thời hạn trả nợ theo Thông tư này."
+            },
+            {
+              "kind": "text",
+              "text": "- Cột (4): Lũy kế từ ngày Thông tư có hiệu lực đến thời điểm cuối kỳ báo cáo, số khách hàng đã được cơ cấu lại thời hạn trả nợ (gốc và/hoặc lãi) và giữ nguyên nhóm nợ được thực hiện theo Thông tư này."
+            },
+            {
+              "kind": "text",
+              "text": "- Cột (5): Lũy kế từ ngày Thông tư có hiệu lực đến thời điểm cuối kỳ báo cáo, số khách hàng không được chấp thuận cơ cấu lại thời hạn trả nợ (gốc và/hoặc lãi) theo quy định tại Thông tư này"
+            },
+            {
+              "kind": "text",
+              "text": "- Cột (6): Tổng số khách hàng có đề nghị được cơ cấu lại thời hạn trả nợ theo Thông tư này trong kỳ báo cáo."
+            },
+            {
+              "kind": "text",
+              "text": "- Cột (7): Số khách hàng được cơ cấu lại thời hạn trả nợ (gốc và/hoặc lãi) và giữ nguyên nhóm nợ theo quy định tại Thông tư này tại cuối kỳ báo cáo."
+            },
+            {
+              "kind": "text",
+              "text": "- Cột (8): Số khách hàng không được tổ chức tín dụng chấp thuận cơ cấu lại thời hạn trả nợ (gốc và/hoặc lãi) tại cuối kỳ báo cáo"
+            },
+            {
+              "kind": "text",
+              "text": "- Cột (9): Nguyên nhân tổ chức tín dụng không chấp thuận đề nghị cơ cấu lại thời hạn trả nợ của khách hàng (chỉ nêu nguyên nhân chính, chủ yếu)"
+            },
+            {
+              "kind": "text",
+              "text": "- Dòng Tổng cộng = Dòng (1) + (2) + (3) + (4)"
+            }
+          ]
         }
       ]
     }

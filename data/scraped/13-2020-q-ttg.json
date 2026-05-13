@@ -1,103 +1,512 @@
 {
   "id": "13/2020/QĐ-TTg",
   "sourceUrl": "https://thuvienphapluat.vn/van-ban/Tai-nguyen-Moi-truong/Quyet-dinh-13-2020-QD-TTg-co-che-khuyen-khich-phat-trien-dien-mat-troi-tai-Viet-Nam-439160.aspx",
-  "scrapedAt": "2026-05-12T15:44:32.370Z",
-  "httpStatus": 200,
-  "via": "tvpl-body",
+  "scrapedAt": "2026-05-13T17:32:30.212Z",
+  "via": "tvpl-table-aware-batch",
   "chapters": [
     {
-      "title": "CHƯƠNG I",
-      "subtitle": "NHỮNG QUY ĐỊNH CHUNG",
+      "title": "PHẦN MỞ ĐẦU",
+      "subtitle": "",
       "articles": [
         {
           "id": "art-1",
           "number": "Điều 1",
           "heading": "Phạm vi điều chỉnh",
-          "body": "Quyết định này quy định về cơ chế khuyến khích phát triển điện mặt trời tại Việt Nam."
+          "body": "Quyết định này quy định về cơ chế khuyến khích phát triển điện mặt trời tại Việt Nam.",
+          "blocks": [
+            {
+              "kind": "text",
+              "text": "Quyết định này quy định về cơ chế khuyến khích phát triển điện mặt trời tại Việt Nam."
+            }
+          ]
         },
         {
           "id": "art-2",
           "number": "Điều 2",
           "heading": "Đối tượng áp dụng",
-          "body": "Đối tượng áp dụng của Quyết định này gồm các tổ chức, cá nhân tham gia phát triển điện mặt trời tại Việt Nam và các tổ chức, cá nhân khác có liên quan."
+          "body": "Đối tượng áp dụng của Quyết định này gồm các tổ chức, cá nhân tham gia phát triển điện mặt trời tại Việt Nam và các tổ chức, cá nhân khác có liên quan.",
+          "blocks": [
+            {
+              "kind": "text",
+              "text": "Đối tượng áp dụng của Quyết định này gồm các tổ chức, cá nhân tham gia phát triển điện mặt trời tại Việt Nam và các tổ chức, cá nhân khác có liên quan."
+            }
+          ]
         },
         {
           "id": "art-3",
           "number": "Điều 3",
           "heading": "Giải thích từ ngữ",
-          "body": "Trong Quyết định này các từ ngữ dưới đây được hiểu như sau:\n1. Bên mua điện là Tập đoàn Điện lực Việt Nam hoặc đơn vị thành viên được Tập đoàn Điện lực Việt Nam ủy quyền hoặc tổ chức, cá nhân khác mua điện từ Bên bán điện hoặc tổ chức tiếp nhận quyền và nghĩa vụ của các tổ chức nêu trên theo quy định của pháp luật.\n2. Bên bán điện là tổ chức, cá nhân tham gia hoạt động trong lĩnh vực phát điện từ các nhà máy hoặc hệ thống điện mặt trời hoặc tổ chức, cá nhân tiếp nhận quyền và nghĩa vụ của các tổ chức, cá nhân nêu trên theo quy định của pháp luật.\n3. Đơn vị phân phối và bán lẻ điện không thuộc Tập đoàn Điện lực Việt Nam là đơn vị điện lực không thuộc Tập đoàn Điện lực Việt Nam được cấp giấy phép hoạt động điện lực trong lĩnh vực phân phối và bán lẻ điện, mua buôn điện từ đơn vị phân phối điện để bán lẻ điện cho khách hàng sử dụng điện.\n4. Điện mặt trời là điện được sản xuất từ các tấm quang điện theo nguyên lý biến đổi từ quang năng thành điện năng.\n5. Hệ thống điện mặt trời mái nhà là hệ thống điện mặt trời có các tấm quang điện được lắp đặt trên mái nhà của công trình xây dựng và có công suất không quá 01 MW, đấu nối trực tiếp hoặc gián tiếp vào lưới điện có cấp điện áp từ 35 kV trở xuống của Bên mua điện.\n6. Dự án điện mặt trời nối lưới là dự án điện mặt trời được đấu nối trực tiếp vào lưới điện quốc gia trừ quy định tại khoản 5 Điều này.\n7. Dự án điện mặt trời nổi là dự án điện mặt trời nối lưới có các tấm quang điện được lắp đặt trên cấu trúc nổi trên mặt nước.\n8. Dự án điện mặt trời mặt đất là dự án điện mặt trời nối lưới trừ các dự án quy định tại khoản 7 Điều này.\n9. Ngày vận hành thương mại của dự án hoặc một phần dự án điện mặt trời nối lưới là ngày toàn bộ hoặc một phần công trình điện mặt trời sẵn sàng bán điện cho Bên mua điện và thỏa mãn các điều kiện sau:\na) Hoàn thành các thử nghiệm ban đầu đối với toàn bộ hoặc một phần công trình theo quy định;\nb) Đã được cơ quan có thẩm quyền cấp giấy phép hoạt động điện lực trong lĩnh vực phát điện;\nc) Bên bán điện và Bên mua điện chốt chỉ số công tơ để bắt đầu thanh toán."
-        }
-      ]
-    },
-    {
-      "title": "CHƯƠNG II",
-      "subtitle": "ĐIỆN MẶT TRỜI NỐI LƯỚI",
-      "articles": [
+          "body": "Trong Quyết định này các từ ngữ dưới đây được hiểu như sau:\n1. Bên mua điện là Tập đoàn Điện lực Việt Nam hoặc đơn vị thành viên được Tập đoàn Điện lực Việt Nam ủy quyền hoặc tổ chức, cá nhân khác mua điện từ Bên bán điện hoặc tổ chức tiếp nhận quyền và nghĩa vụ của các tổ chức nêu trên theo quy định của pháp luật.\n2. Bên bán điện là tổ chức, cá nhân tham gia hoạt động trong lĩnh vực phát điện từ các nhà máy hoặc hệ thống điện mặt trời hoặc tổ chức, cá nhân tiếp nhận quyền và nghĩa vụ của các tổ chức, cá nhân nêu trên theo quy định của pháp luật.\n3. Đơn vị phân phối và bán lẻ điện không thuộc Tập đoàn Điện lực Việt Nam là đơn vị điện lực không thuộc Tập đoàn Điện lực Việt Nam được cấp giấy phép hoạt động điện lực trong lĩnh vực phân phối và bán lẻ điện, mua buôn điện từ đơn vị phân phối điện để bán lẻ điện cho khách hàng sử dụng điện.\n4. Điện mặt trời là điện được sản xuất từ các tấm quang điện theo nguyên lý biến đổi từ quang năng thành điện năng.\n5. Hệ thống điện mặt trời mái nhà là hệ thống điện mặt trời có các tấm quang điện được lắp đặt trên mái nhà của công trình xây dựng và có công suất không quá 01 MW, đấu nối trực tiếp hoặc gián tiếp vào lưới điện có cấp điện áp từ 35 kV trở xuống của Bên mua điện.\n6. Dự án điện mặt trời nối lưới là dự án điện mặt trời được đấu nối trực tiếp vào lưới điện quốc gia trừ quy định tại khoản 5 Điều này.\n7. Dự án điện mặt trời nổi là dự án điện mặt trời nối lưới có các tấm quang điện được lắp đặt trên cấu trúc nổi trên mặt nước.\n8. Dự án điện mặt trời mặt đất là dự án điện mặt trời nối lưới trừ các dự án quy định tại khoản 7 Điều này.\n9. Ngày vận hành thương mại của dự án hoặc một phần dự án điện mặt trời nối lưới là ngày toàn bộ hoặc một phần công trình điện mặt trời sẵn sàng bán điện cho Bên mua điện và thỏa mãn các điều kiện sau:\na) Hoàn thành các thử nghiệm ban đầu đối với toàn bộ hoặc một phần công trình theo quy định;\nb) Đã được cơ quan có thẩm quyền cấp giấy phép hoạt động điện lực trong lĩnh vực phát điện;\nc) Bên bán điện và Bên mua điện chốt chỉ số công tơ để bắt đầu thanh toán.\nChương II\nĐIỆN MẶT TRỜI NỐI LƯỚI",
+          "blocks": [
+            {
+              "kind": "text",
+              "text": "Trong Quyết định này các từ ngữ dưới đây được hiểu như sau:"
+            },
+            {
+              "kind": "text",
+              "text": "1. Bên mua điện là Tập đoàn Điện lực Việt Nam hoặc đơn vị thành viên được Tập đoàn Điện lực Việt Nam ủy quyền hoặc tổ chức, cá nhân khác mua điện từ Bên bán điện hoặc tổ chức tiếp nhận quyền và nghĩa vụ của các tổ chức nêu trên theo quy định của pháp luật."
+            },
+            {
+              "kind": "text",
+              "text": "2. Bên bán điện là tổ chức, cá nhân tham gia hoạt động trong lĩnh vực phát điện từ các nhà máy hoặc hệ thống điện mặt trời hoặc tổ chức, cá nhân tiếp nhận quyền và nghĩa vụ của các tổ chức, cá nhân nêu trên theo quy định của pháp luật."
+            },
+            {
+              "kind": "text",
+              "text": "3. Đơn vị phân phối và bán lẻ điện không thuộc Tập đoàn Điện lực Việt Nam là đơn vị điện lực không thuộc Tập đoàn Điện lực Việt Nam được cấp giấy phép hoạt động điện lực trong lĩnh vực phân phối và bán lẻ điện, mua buôn điện từ đơn vị phân phối điện để bán lẻ điện cho khách hàng sử dụng điện."
+            },
+            {
+              "kind": "text",
+              "text": "4. Điện mặt trời là điện được sản xuất từ các tấm quang điện theo nguyên lý biến đổi từ quang năng thành điện năng."
+            },
+            {
+              "kind": "text",
+              "text": "5. Hệ thống điện mặt trời mái nhà là hệ thống điện mặt trời có các tấm quang điện được lắp đặt trên mái nhà của công trình xây dựng và có công suất không quá 01 MW, đấu nối trực tiếp hoặc gián tiếp vào lưới điện có cấp điện áp từ 35 kV trở xuống của Bên mua điện."
+            },
+            {
+              "kind": "text",
+              "text": "6. Dự án điện mặt trời nối lưới là dự án điện mặt trời được đấu nối trực tiếp vào lưới điện quốc gia trừ quy định tại khoản 5 Điều này."
+            },
+            {
+              "kind": "text",
+              "text": "7. Dự án điện mặt trời nổi là dự án điện mặt trời nối lưới có các tấm quang điện được lắp đặt trên cấu trúc nổi trên mặt nước."
+            },
+            {
+              "kind": "text",
+              "text": "8. Dự án điện mặt trời mặt đất là dự án điện mặt trời nối lưới trừ các dự án quy định tại khoản 7 Điều này."
+            },
+            {
+              "kind": "text",
+              "text": "9. Ngày vận hành thương mại của dự án hoặc một phần dự án điện mặt trời nối lưới là ngày toàn bộ hoặc một phần công trình điện mặt trời sẵn sàng bán điện cho Bên mua điện và thỏa mãn các điều kiện sau:"
+            },
+            {
+              "kind": "text",
+              "text": "a) Hoàn thành các thử nghiệm ban đầu đối với toàn bộ hoặc một phần công trình theo quy định;"
+            },
+            {
+              "kind": "text",
+              "text": "b) Đã được cơ quan có thẩm quyền cấp giấy phép hoạt động điện lực trong lĩnh vực phát điện;"
+            },
+            {
+              "kind": "text",
+              "text": "c) Bên bán điện và Bên mua điện chốt chỉ số công tơ để bắt đầu thanh toán."
+            },
+            {
+              "kind": "text",
+              "text": "Chương II"
+            },
+            {
+              "kind": "text",
+              "text": "ĐIỆN MẶT TRỜI NỐI LƯỚI"
+            }
+          ]
+        },
         {
           "id": "art-4",
           "number": "Điều 4",
           "heading": "Trách nhiệm mua điện từ các dự án điện mặt trời nối lưới",
-          "body": "1. Bên mua điện có trách nhiệm mua toàn bộ điện năng được sản xuất từ các dự án điện mặt trời nối lưới phát lên hệ thống lưới điện quốc gia phù hợp với quy định về vận hành hệ thống điện và tiêu chuẩn, quy chuẩn kỹ thuật ngành điện; ưu tiên điều độ để khai thác toàn bộ công suất, điện năng phát của các dự án điện mặt trời.\n2. Việc sử dụng Hợp đồng mua bán điện mẫu cho các dự án điện mặt trời nối lưới là bắt buộc trong mua bán điện giữa Bên bán điện và Bên mua điện là Tập đoàn Điện lực Việt Nam hoặc đơn vị thành viên được Tập đoàn Điện lực Việt Nam ủy quyền.\n3. Thời hạn của hợp đồng mua bán điện đối với các dự án điện mặt trời nối lưới là 20 năm kể từ ngày vận hành thương mại. Sau thời gian này, việc gia hạn thời hạn hợp đồng hoặc ký hợp đồng mới thực hiện theo quy định của pháp luật tại thời điểm ký gia hạn hợp đồng hoặc ký hợp đồng mới."
+          "body": "1. Bên mua điện có trách nhiệm mua toàn bộ điện năng được sản xuất từ các dự án điện mặt trời nối lưới phát lên hệ thống lưới điện quốc gia phù hợp với quy định về vận hành hệ thống điện và tiêu chuẩn, quy chuẩn kỹ thuật ngành điện; ưu tiên điều độ để khai thác toàn bộ công suất, điện năng phát của các dự án điện mặt trời.\n2. Việc sử dụng Hợp đồng mua bán điện mẫu cho các dự án điện mặt trời nối lưới là bắt buộc trong mua bán điện giữa Bên bán điện và Bên mua điện là Tập đoàn Điện lực Việt Nam hoặc đơn vị thành viên được Tập đoàn Điện lực Việt Nam ủy quyền.\n3. Thời hạn của hợp đồng mua bán điện đối với các dự án điện mặt trời nối lưới là 20 năm kể từ ngày vận hành thương mại. Sau thời gian này, việc gia hạn thời hạn hợp đồng hoặc ký hợp đồng mới thực hiện theo quy định của pháp luật tại thời điểm ký gia hạn hợp đồng hoặc ký hợp đồng mới.",
+          "blocks": [
+            {
+              "kind": "text",
+              "text": "1. Bên mua điện có trách nhiệm mua toàn bộ điện năng được sản xuất từ các dự án điện mặt trời nối lưới phát lên hệ thống lưới điện quốc gia phù hợp với quy định về vận hành hệ thống điện và tiêu chuẩn, quy chuẩn kỹ thuật ngành điện; ưu tiên điều độ để khai thác toàn bộ công suất, điện năng phát của các dự án điện mặt trời."
+            },
+            {
+              "kind": "text",
+              "text": "2. Việc sử dụng Hợp đồng mua bán điện mẫu cho các dự án điện mặt trời nối lưới là bắt buộc trong mua bán điện giữa Bên bán điện và Bên mua điện là Tập đoàn Điện lực Việt Nam hoặc đơn vị thành viên được Tập đoàn Điện lực Việt Nam ủy quyền."
+            },
+            {
+              "kind": "text",
+              "text": "3. Thời hạn của hợp đồng mua bán điện đối với các dự án điện mặt trời nối lưới là 20 năm kể từ ngày vận hành thương mại. Sau thời gian này, việc gia hạn thời hạn hợp đồng hoặc ký hợp đồng mới thực hiện theo quy định của pháp luật tại thời điểm ký gia hạn hợp đồng hoặc ký hợp đồng mới."
+            }
+          ]
         },
         {
           "id": "art-5",
           "number": "Điều 5",
           "heading": "Giá mua điện đối với các dự án điện mặt trời nối lưới",
-          "body": "1. Dự án điện mặt trời nối lưới đã được cơ quan có thẩm quyền quyết định chủ trương đầu tư trước ngày 23 tháng 11 năm 2019 và có ngày vận hành thương mại của dự án hoặc một phần dự án trong giai đoạn từ ngày 01 tháng 7 năm 2019 đến hết ngày 31 tháng 12 năm 2020 thì dự án hoặc một phần dự án đó được áp dụng Biểu giá mua điện của các dự án điện mặt trời nối lưới tại điểm giao nhận điện quy định tại Phụ lục của Quyết định này.\n2. Giá mua điện tại Biểu giá mua điện chưa bao gồm thuế giá trị gia tăng, được điều chỉnh theo biến động của tỷ giá của đồng Việt Nam với đô la Mỹ (tính tương đương UScents/kWh), tỷ giá áp dụng là tỷ giá trung tâm của đồng Việt Nam với đô la Mỹ do Ngân hàng Nhà nước Việt Nam công bố vào ngày Bên bán điện xuất hóa đơn thanh toán. Giá mua điện này được áp dụng 20 năm kể từ ngày vận hành thương mại.\n3. Đối với tỉnh Ninh Thuận, giá mua điện từ các dự án điện mặt trời nối lưới đã có trong quy hoạch phát triển điện lực các cấp và có ngày vận hành thương mại trước ngày 01 tháng 01 năm 2021 với tổng công suất tích lũy không quá 2.000 MW là 2.086 đồng/kWh (chưa bao gồm thuế giá trị gia tăng, tương đương với 9,35 UScents/kWh, theo tỷ giá trung tâm của đồng Việt Nam với đô la Mỹ do Ngân hàng Nhà nước Việt Nam công bố ngày 10 tháng 4 năm 2017 là 22.316 đồng/USD), được áp dụng 20 năm kể từ ngày vận hành thương mại. Giá mua điện được điều chỉnh theo biến động của tỷ giá đồng/USD. Tỷ giá áp dụng là tỷ giá trung tâm của đồng Việt Nam với đô la Mỹ do Ngân hàng Nhà nước Việt Nam công bố vào ngày Bên bán điện xuất hóa đơn thanh toán.\n4. Giá mua điện từ các dự án điện mặt trời nối lưới không đáp ứng các điều kiện tại khoản 1 và khoản 3 Điều này được xác định thông qua cơ chế cạnh tranh.\n5. Giá mua điện tại khoản 1 và khoản 3 Điều này được áp dụng cho các dự án có hiệu suất của tế bào quang điện (solar cell) lớn hơn 16% hoặc module lớn hơn 15%.\n6. Chi phí mua điện từ các dự án điện mặt trời nối lưới nêu tại khoản 1 và khoản 3 Điều này được hạch toán và đưa đầy đủ trong thông số đầu vào của phương án giá điện bán buôn và bán lẻ hàng năm của Tập đoàn Điện lực Việt Nam."
+          "body": "1. Dự án điện mặt trời nối lưới đã được cơ quan có thẩm quyền quyết định chủ trương đầu tư trước ngày 23 tháng 11 năm 2019 và có ngày vận hành thương mại của dự án hoặc một phần dự án trong giai đoạn từ ngày 01 tháng 7 năm 2019 đến hết ngày 31 tháng 12 năm 2020 thì dự án hoặc một phần dự án đó được áp dụng Biểu giá mua điện của các dự án điện mặt trời nối lưới tại điểm giao nhận điện quy định tại Phụ lục của Quyết định này.\n2. Giá mua điện tại Biểu giá mua điện chưa bao gồm thuế giá trị gia tăng, được điều chỉnh theo biến động của tỷ giá của đồng Việt Nam với đô la Mỹ (tính tương đương UScents/kWh), tỷ giá áp dụng là tỷ giá trung tâm của đồng Việt Nam với đô la Mỹ do Ngân hàng Nhà nước Việt Nam công bố vào ngày Bên bán điện xuất hóa đơn thanh toán. Giá mua điện này được áp dụng 20 năm kể từ ngày vận hành thương mại.\n3. Đối với tỉnh Ninh Thuận, giá mua điện từ các dự án điện mặt trời nối lưới đã có trong quy hoạch phát triển điện lực các cấp và có ngày vận hành thương mại trước ngày 01 tháng 01 năm 2021 với tổng công suất tích lũy không quá 2.000 MW là 2.086 đồng/kWh (chưa bao gồm thuế giá trị gia tăng, tương đương với 9,35 UScents/kWh, theo tỷ giá trung tâm của đồng Việt Nam với đô la Mỹ do Ngân hàng Nhà nước Việt Nam công bố ngày 10 tháng 4 năm 2017 là 22.316 đồng/USD), được áp dụng 20 năm kể từ ngày vận hành thương mại. Giá mua điện được điều chỉnh theo biến động của tỷ giá đồng/USD. Tỷ giá áp dụng là tỷ giá trung tâm của đồng Việt Nam với đô la Mỹ do Ngân hàng Nhà nước Việt Nam công bố vào ngày Bên bán điện xuất hóa đơn thanh toán.\n4. Giá mua điện từ các dự án điện mặt trời nối lưới không đáp ứng các điều kiện tại khoản 1 và khoản 3 Điều này được xác định thông qua cơ chế cạnh tranh.\n5. Giá mua điện tại khoản 1 và khoản 3 Điều này được áp dụng cho các dự án có hiệu suất của tế bào quang điện (solar cell) lớn hơn 16% hoặc module lớn hơn 15%.\n6. Chi phí mua điện từ các dự án điện mặt trời nối lưới nêu tại khoản 1 và khoản 3 Điều này được hạch toán và đưa đầy đủ trong thông số đầu vào của phương án giá điện bán buôn và bán lẻ hàng năm của Tập đoàn Điện lực Việt Nam.",
+          "blocks": [
+            {
+              "kind": "text",
+              "text": "1. Dự án điện mặt trời nối lưới đã được cơ quan có thẩm quyền quyết định chủ trương đầu tư trước ngày 23 tháng 11 năm 2019 và có ngày vận hành thương mại của dự án hoặc một phần dự án trong giai đoạn từ ngày 01 tháng 7 năm 2019 đến hết ngày 31 tháng 12 năm 2020 thì dự án hoặc một phần dự án đó được áp dụng Biểu giá mua điện của các dự án điện mặt trời nối lưới tại điểm giao nhận điện quy định tại Phụ lục của Quyết định này."
+            },
+            {
+              "kind": "text",
+              "text": "2. Giá mua điện tại Biểu giá mua điện chưa bao gồm thuế giá trị gia tăng, được điều chỉnh theo biến động của tỷ giá của đồng Việt Nam với đô la Mỹ (tính tương đương UScents/kWh), tỷ giá áp dụng là tỷ giá trung tâm của đồng Việt Nam với đô la Mỹ do Ngân hàng Nhà nước Việt Nam công bố vào ngày Bên bán điện xuất hóa đơn thanh toán. Giá mua điện này được áp dụng 20 năm kể từ ngày vận hành thương mại."
+            },
+            {
+              "kind": "text",
+              "text": "3. Đối với tỉnh Ninh Thuận, giá mua điện từ các dự án điện mặt trời nối lưới đã có trong quy hoạch phát triển điện lực các cấp và có ngày vận hành thương mại trước ngày 01 tháng 01 năm 2021 với tổng công suất tích lũy không quá 2.000 MW là 2.086 đồng/kWh (chưa bao gồm thuế giá trị gia tăng, tương đương với 9,35 UScents/kWh, theo tỷ giá trung tâm của đồng Việt Nam với đô la Mỹ do Ngân hàng Nhà nước Việt Nam công bố ngày 10 tháng 4 năm 2017 là 22.316 đồng/USD), được áp dụng 20 năm kể từ ngày vận hành thương mại. Giá mua điện được điều chỉnh theo biến động của tỷ giá đồng/USD. Tỷ giá áp dụng là tỷ giá trung tâm của đồng Việt Nam với đô la Mỹ do Ngân hàng Nhà nước Việt Nam công bố vào ngày Bên bán điện xuất hóa đơn thanh toán."
+            },
+            {
+              "kind": "text",
+              "text": "4. Giá mua điện từ các dự án điện mặt trời nối lưới không đáp ứng các điều kiện tại khoản 1 và khoản 3 Điều này được xác định thông qua cơ chế cạnh tranh."
+            },
+            {
+              "kind": "text",
+              "text": "5. Giá mua điện tại khoản 1 và khoản 3 Điều này được áp dụng cho các dự án có hiệu suất của tế bào quang điện (solar cell) lớn hơn 16% hoặc module lớn hơn 15%."
+            },
+            {
+              "kind": "text",
+              "text": "6. Chi phí mua điện từ các dự án điện mặt trời nối lưới nêu tại khoản 1 và khoản 3 Điều này được hạch toán và đưa đầy đủ trong thông số đầu vào của phương án giá điện bán buôn và bán lẻ hàng năm của Tập đoàn Điện lực Việt Nam."
+            }
+          ]
         },
         {
           "id": "art-6",
           "number": "Điều 6",
           "heading": "Phát triển các dự án điện mặt trời nối lưới",
-          "body": "1. Thiết bị chính của dự án mặt trời nối lưới phải đáp ứng tiêu chuẩn, quy chuẩn kỹ thuật Việt Nam hoặc tiêu chuẩn quốc tế (IEC) hoặc các tiêu chuẩn tương đương. Chất lượng điện của dự án điện mặt trời nối lưới phải đáp ứng các yêu cầu kỹ thuật về điện áp, tần số và các yêu cầu về vận hành hệ thống điện quốc gia theo quy định hiện hành.\n2. Việc đầu tư xây dựng các dự án điện mặt trời nối lưới được thực hiện theo quy định của pháp luật về đầu tư, xây dựng, an toàn điện, đất đai, phòng cháy chữa cháy, bảo vệ môi trường và các quy định khác của pháp luật có liên quan.\n3. Ưu đãi về thuế, sử dụng đất và sử dụng mặt nước đối với dự án điện mặt trời nối lưới thực hiện theo quy định của pháp luật hiện hành có liên quan."
+          "body": "1. Thiết bị chính của dự án mặt trời nối lưới phải đáp ứng tiêu chuẩn, quy chuẩn kỹ thuật Việt Nam hoặc tiêu chuẩn quốc tế (IEC) hoặc các tiêu chuẩn tương đương. Chất lượng điện của dự án điện mặt trời nối lưới phải đáp ứng các yêu cầu kỹ thuật về điện áp, tần số và các yêu cầu về vận hành hệ thống điện quốc gia theo quy định hiện hành.\n2. Việc đầu tư xây dựng các dự án điện mặt trời nối lưới được thực hiện theo quy định của pháp luật về đầu tư, xây dựng, an toàn điện, đất đai, phòng cháy chữa cháy, bảo vệ môi trường và các quy định khác của pháp luật có liên quan.\n3. Ưu đãi về thuế, sử dụng đất và sử dụng mặt nước đối với dự án điện mặt trời nối lưới thực hiện theo quy định của pháp luật hiện hành có liên quan.",
+          "blocks": [
+            {
+              "kind": "text",
+              "text": "1. Thiết bị chính của dự án mặt trời nối lưới phải đáp ứng tiêu chuẩn, quy chuẩn kỹ thuật Việt Nam hoặc tiêu chuẩn quốc tế (IEC) hoặc các tiêu chuẩn tương đương. Chất lượng điện của dự án điện mặt trời nối lưới phải đáp ứng các yêu cầu kỹ thuật về điện áp, tần số và các yêu cầu về vận hành hệ thống điện quốc gia theo quy định hiện hành."
+            },
+            {
+              "kind": "text",
+              "text": "2. Việc đầu tư xây dựng các dự án điện mặt trời nối lưới được thực hiện theo quy định của pháp luật về đầu tư, xây dựng, an toàn điện, đất đai, phòng cháy chữa cháy, bảo vệ môi trường và các quy định khác của pháp luật có liên quan."
+            },
+            {
+              "kind": "text",
+              "text": "3. Ưu đãi về thuế, sử dụng đất và sử dụng mặt nước đối với dự án điện mặt trời nối lưới thực hiện theo quy định của pháp luật hiện hành có liên quan."
+            }
+          ]
         },
         {
           "id": "art-7",
           "number": "Điều 7",
           "heading": "Đấu nối dự án điện mặt trời nối lưới vào hệ thống điện",
-          "body": "1. Bên bán điện chịu trách nhiệm đầu tư, lắp đặt, vận hành và bảo dưỡng thiết bị đo đếm điện năng, đường dây và trạm biến áp tăng áp (nếu có) từ nhà máy điện của Bên bán điện tới điểm đấu nối với lưới điện của Bên mua điện; tổ chức việc kiểm định, hiệu chuẩn, thử nghiệm thiết bị đo đếm điện năng theo đúng quy định của pháp luật về đo lường.\n2. Điểm đấu nối do Bên bán điện và Bên mua điện thỏa thuận phù hợp với quy hoạch được duyệt. Trường hợp điểm đấu nối khác với điểm đặt thiết bị đo đếm, Bên bán điện chịu phần tổn thất điện năng trên đường dây đấu nối và tổn thất máy biến áp tăng áp của nhà máy điện."
-        }
-      ]
-    },
-    {
-      "title": "CHƯƠNG III",
-      "subtitle": "HỆ THỐNG ĐIỆN MẶT TRỜI MÁI NHÀ",
-      "articles": [
+          "body": "1. Bên bán điện chịu trách nhiệm đầu tư, lắp đặt, vận hành và bảo dưỡng thiết bị đo đếm điện năng, đường dây và trạm biến áp tăng áp (nếu có) từ nhà máy điện của Bên bán điện tới điểm đấu nối với lưới điện của Bên mua điện; tổ chức việc kiểm định, hiệu chuẩn, thử nghiệm thiết bị đo đếm điện năng theo đúng quy định của pháp luật về đo lường.\n2. Điểm đấu nối do Bên bán điện và Bên mua điện thỏa thuận phù hợp với quy hoạch được duyệt. Trường hợp điểm đấu nối khác với điểm đặt thiết bị đo đếm, Bên bán điện chịu phần tổn thất điện năng trên đường dây đấu nối và tổn thất máy biến áp tăng áp của nhà máy điện.\nChương III\nHỆ THỐNG ĐIỆN MẶT TRỜI MÁI NHÀ",
+          "blocks": [
+            {
+              "kind": "text",
+              "text": "1. Bên bán điện chịu trách nhiệm đầu tư, lắp đặt, vận hành và bảo dưỡng thiết bị đo đếm điện năng, đường dây và trạm biến áp tăng áp (nếu có) từ nhà máy điện của Bên bán điện tới điểm đấu nối với lưới điện của Bên mua điện; tổ chức việc kiểm định, hiệu chuẩn, thử nghiệm thiết bị đo đếm điện năng theo đúng quy định của pháp luật về đo lường."
+            },
+            {
+              "kind": "text",
+              "text": "2. Điểm đấu nối do Bên bán điện và Bên mua điện thỏa thuận phù hợp với quy hoạch được duyệt. Trường hợp điểm đấu nối khác với điểm đặt thiết bị đo đếm, Bên bán điện chịu phần tổn thất điện năng trên đường dây đấu nối và tổn thất máy biến áp tăng áp của nhà máy điện."
+            },
+            {
+              "kind": "text",
+              "text": "Chương III"
+            },
+            {
+              "kind": "text",
+              "text": "HỆ THỐNG ĐIỆN MẶT TRỜI MÁI NHÀ"
+            }
+          ]
+        },
         {
           "id": "art-8",
           "number": "Điều 8",
           "heading": "Giá mua điện và Hợp đồng mua bán điện mẫu",
-          "body": "1. Các hệ thống điện mặt trời mái nhà được phép bán một phần hoặc toàn bộ điện năng sản xuất ra cho Bên mua là Tập đoàn Điện lực Việt Nam hoặc Bên mua là tổ chức, cá nhân khác trong trường hợp không sử dụng lưới điện của Tập đoàn Điện lực Việt Nam.\n2. Tập đoàn Điện lực Việt Nam hoặc đơn vị thành viên được ủy quyền thực hiện thanh toán lượng điện năng từ hệ thống điện mặt trời mái nhà phát lên lưới điện quốc gia theo giá mua điện quy định tại Biểu giá mua điện đối với hệ thống điện mặt trời mái nhà tại Phụ lục của Quyết định này. Giá mua điện này chưa bao gồm thuế giá trị gia tăng, được điều chỉnh theo biến động của tỷ giá của đồng Việt Nam với đô la Mỹ (tính tương đương UScents/kWh), tỷ giá áp dụng là tỷ giá trung tâm của đồng Việt Nam với đô la Mỹ do Ngân hàng Nhà nước Việt Nam công bố vào ngày cuối cùng của năm trước để tính tiền điện thanh toán cho năm tiếp theo. Các Bên co trách nhiệm thực hiện các quy định của pháp luật hiện hành về thuế và phí.\n3. Trường hợp Bên mua điện không phải là Tập đoàn Điện lực Việt Nam hoặc đơn vị thành viên được ủy quyền giá mua điện và hợp đồng mua điện do các bên thỏa thuận phù hợp quy định của pháp luật hiện hành.\n4. Giá mua điện tại khoản 2 Điều này được áp dụng cho hệ thống điện mặt trời mái nhà có thời điểm vào vận hành phát điện và xác nhận chỉ số công tơ trong giai đoạn từ ngày 01 tháng 7 năm 2019 đến ngày 31 tháng 12 năm 2020 và được áp dụng 20 năm kể từ ngày vào vận hành phát điện. Chi phí mua điện từ các dự án điện mặt trời mái nhà quy định tại khoản 2 Điều này được hạch toán và đưa đầy đủ trong thông số đầu vào của phương án giá điện bán buôn và bán lẻ hàng năm của Tập đoàn Điện lực Việt Nam. Hóa đơn thanh toán được lập trên cơ sở sản lượng điện giao và sản lượng điện nhận riêng biệt.\n5. Hợp đồng mua bán điện mà Bên mua điện là Tập đoàn Điện lực Việt Nam hoặc đơn vị thành viên được ủy quyền của Tập đoàn Điện lực Việt Nam phải tuân theo Hợp đồng mua bán điện mẫu. Thời hạn của hợp đồng mua bán điện đối với các hệ thống điện mặt trời mái nhà tối đa là 20 năm kể từ ngày vào vận hành phát điện. Sau thời gian này, việc gia hạn thời gian hợp đồng hoặc ký hợp đồng mới thực hiện theo quy định của pháp luật hiện hành."
+          "body": "1. Các hệ thống điện mặt trời mái nhà được phép bán một phần hoặc toàn bộ điện năng sản xuất ra cho Bên mua là Tập đoàn Điện lực Việt Nam hoặc Bên mua là tổ chức, cá nhân khác trong trường hợp không sử dụng lưới điện của Tập đoàn Điện lực Việt Nam.\n2. Tập đoàn Điện lực Việt Nam hoặc đơn vị thành viên được ủy quyền thực hiện thanh toán lượng điện năng từ hệ thống điện mặt trời mái nhà phát lên lưới điện quốc gia theo giá mua điện quy định tại Biểu giá mua điện đối với hệ thống điện mặt trời mái nhà tại Phụ lục của Quyết định này. Giá mua điện này chưa bao gồm thuế giá trị gia tăng, được điều chỉnh theo biến động của tỷ giá của đồng Việt Nam với đô la Mỹ (tính tương đương UScents/kWh), tỷ giá áp dụng là tỷ giá trung tâm của đồng Việt Nam với đô la Mỹ do Ngân hàng Nhà nước Việt Nam công bố vào ngày cuối cùng của năm trước để tính tiền điện thanh toán cho năm tiếp theo. Các Bên co trách nhiệm thực hiện các quy định của pháp luật hiện hành về thuế và phí.\n3. Trường hợp Bên mua điện không phải là Tập đoàn Điện lực Việt Nam hoặc đơn vị thành viên được ủy quyền giá mua điện và hợp đồng mua điện do các bên thỏa thuận phù hợp quy định của pháp luật hiện hành.\n4. Giá mua điện tại khoản 2 Điều này được áp dụng cho hệ thống điện mặt trời mái nhà có thời điểm vào vận hành phát điện và xác nhận chỉ số công tơ trong giai đoạn từ ngày 01 tháng 7 năm 2019 đến ngày 31 tháng 12 năm 2020 và được áp dụng 20 năm kể từ ngày vào vận hành phát điện. Chi phí mua điện từ các dự án điện mặt trời mái nhà quy định tại khoản 2 Điều này được hạch toán và đưa đầy đủ trong thông số đầu vào của phương án giá điện bán buôn và bán lẻ hàng năm của Tập đoàn Điện lực Việt Nam. Hóa đơn thanh toán được lập trên cơ sở sản lượng điện giao và sản lượng điện nhận riêng biệt.\n5. Hợp đồng mua bán điện mà Bên mua điện là Tập đoàn Điện lực Việt Nam hoặc đơn vị thành viên được ủy quyền của Tập đoàn Điện lực Việt Nam phải tuân theo Hợp đồng mua bán điện mẫu. Thời hạn của hợp đồng mua bán điện đối với các hệ thống điện mặt trời mái nhà tối đa là 20 năm kể từ ngày vào vận hành phát điện. Sau thời gian này, việc gia hạn thời gian hợp đồng hoặc ký hợp đồng mới thực hiện theo quy định của pháp luật hiện hành.",
+          "blocks": [
+            {
+              "kind": "text",
+              "text": "1. Các hệ thống điện mặt trời mái nhà được phép bán một phần hoặc toàn bộ điện năng sản xuất ra cho Bên mua là Tập đoàn Điện lực Việt Nam hoặc Bên mua là tổ chức, cá nhân khác trong trường hợp không sử dụng lưới điện của Tập đoàn Điện lực Việt Nam."
+            },
+            {
+              "kind": "text",
+              "text": "2. Tập đoàn Điện lực Việt Nam hoặc đơn vị thành viên được ủy quyền thực hiện thanh toán lượng điện năng từ hệ thống điện mặt trời mái nhà phát lên lưới điện quốc gia theo giá mua điện quy định tại Biểu giá mua điện đối với hệ thống điện mặt trời mái nhà tại Phụ lục của Quyết định này. Giá mua điện này chưa bao gồm thuế giá trị gia tăng, được điều chỉnh theo biến động của tỷ giá của đồng Việt Nam với đô la Mỹ (tính tương đương UScents/kWh), tỷ giá áp dụng là tỷ giá trung tâm của đồng Việt Nam với đô la Mỹ do Ngân hàng Nhà nước Việt Nam công bố vào ngày cuối cùng của năm trước để tính tiền điện thanh toán cho năm tiếp theo. Các Bên co trách nhiệm thực hiện các quy định của pháp luật hiện hành về thuế và phí."
+            },
+            {
+              "kind": "text",
+              "text": "3. Trường hợp Bên mua điện không phải là Tập đoàn Điện lực Việt Nam hoặc đơn vị thành viên được ủy quyền giá mua điện và hợp đồng mua điện do các bên thỏa thuận phù hợp quy định của pháp luật hiện hành."
+            },
+            {
+              "kind": "text",
+              "text": "4. Giá mua điện tại khoản 2 Điều này được áp dụng cho hệ thống điện mặt trời mái nhà có thời điểm vào vận hành phát điện và xác nhận chỉ số công tơ trong giai đoạn từ ngày 01 tháng 7 năm 2019 đến ngày 31 tháng 12 năm 2020 và được áp dụng 20 năm kể từ ngày vào vận hành phát điện. Chi phí mua điện từ các dự án điện mặt trời mái nhà quy định tại khoản 2 Điều này được hạch toán và đưa đầy đủ trong thông số đầu vào của phương án giá điện bán buôn và bán lẻ hàng năm của Tập đoàn Điện lực Việt Nam. Hóa đơn thanh toán được lập trên cơ sở sản lượng điện giao và sản lượng điện nhận riêng biệt."
+            },
+            {
+              "kind": "text",
+              "text": "5. Hợp đồng mua bán điện mà Bên mua điện là Tập đoàn Điện lực Việt Nam hoặc đơn vị thành viên được ủy quyền của Tập đoàn Điện lực Việt Nam phải tuân theo Hợp đồng mua bán điện mẫu. Thời hạn của hợp đồng mua bán điện đối với các hệ thống điện mặt trời mái nhà tối đa là 20 năm kể từ ngày vào vận hành phát điện. Sau thời gian này, việc gia hạn thời gian hợp đồng hoặc ký hợp đồng mới thực hiện theo quy định của pháp luật hiện hành."
+            }
+          ]
         },
         {
           "id": "art-9",
           "number": "Điều 9",
           "heading": "Phát triển hệ thống điện mặt trời mái nhà, đấu nối và đo đếm điện năng",
-          "body": "1. Hệ thống điện mặt trời mái nhà có đấu nối trực tiếp hoặc gián tiếp vào lưới điện quốc gia được đầu tư phát triển sau khi đăng ký đấu nối với Tập đoàn Điện lực Việt Nam hoặc đơn vị thành viên được Tập đoàn Điện lực Việt Nam ủy quyền.\n2. Tập đoàn Điện lực Việt Nam đầu tư, lắp đặt và bảo dưỡng thiết bị đo đếm điện năng đối với các hệ thống điện mặt trời mái nhà ký hợp đồng mua bán điện với Tập đoàn Điện lực Việt Nam hoặc đơn vị thành viên được Tập đoàn Điện lực Việt Nam ủy quyền.\n3. Hệ thống điện mặt trời mái nhà phải có hiệu suất của tế bào quang điện (solar cell) lớn hơn 16% hoặc module lớn hơn 15%.\n4. Tổ chức, cá nhân đầu tư lắp đặt hệ thống điện mặt trời mái nhà phải đảm bảo các yêu cầu về an toàn điện, an toàn công trình xây dựng, môi trường, phòng chống cháy nổ theo quy định hiện hành."
-        }
-      ]
-    },
-    {
-      "title": "CHƯƠNG IV",
-      "subtitle": "ĐIỀU KHOẢN THI HÀNH",
-      "articles": [
+          "body": "1. Hệ thống điện mặt trời mái nhà có đấu nối trực tiếp hoặc gián tiếp vào lưới điện quốc gia được đầu tư phát triển sau khi đăng ký đấu nối với Tập đoàn Điện lực Việt Nam hoặc đơn vị thành viên được Tập đoàn Điện lực Việt Nam ủy quyền.\n2. Tập đoàn Điện lực Việt Nam đầu tư, lắp đặt và bảo dưỡng thiết bị đo đếm điện năng đối với các hệ thống điện mặt trời mái nhà ký hợp đồng mua bán điện với Tập đoàn Điện lực Việt Nam hoặc đơn vị thành viên được Tập đoàn Điện lực Việt Nam ủy quyền.\n3. Hệ thống điện mặt trời mái nhà phải có hiệu suất của tế bào quang điện (solar cell) lớn hơn 16% hoặc module lớn hơn 15%.\n4. Tổ chức, cá nhân đầu tư lắp đặt hệ thống điện mặt trời mái nhà phải đảm bảo các yêu cầu về an toàn điện, an toàn công trình xây dựng, môi trường, phòng chống cháy nổ theo quy định hiện hành.\nChương IV\nĐIỀU KHOẢN THI HÀNH",
+          "blocks": [
+            {
+              "kind": "text",
+              "text": "1. Hệ thống điện mặt trời mái nhà có đấu nối trực tiếp hoặc gián tiếp vào lưới điện quốc gia được đầu tư phát triển sau khi đăng ký đấu nối với Tập đoàn Điện lực Việt Nam hoặc đơn vị thành viên được Tập đoàn Điện lực Việt Nam ủy quyền."
+            },
+            {
+              "kind": "text",
+              "text": "2. Tập đoàn Điện lực Việt Nam đầu tư, lắp đặt và bảo dưỡng thiết bị đo đếm điện năng đối với các hệ thống điện mặt trời mái nhà ký hợp đồng mua bán điện với Tập đoàn Điện lực Việt Nam hoặc đơn vị thành viên được Tập đoàn Điện lực Việt Nam ủy quyền."
+            },
+            {
+              "kind": "text",
+              "text": "3. Hệ thống điện mặt trời mái nhà phải có hiệu suất của tế bào quang điện (solar cell) lớn hơn 16% hoặc module lớn hơn 15%."
+            },
+            {
+              "kind": "text",
+              "text": "4. Tổ chức, cá nhân đầu tư lắp đặt hệ thống điện mặt trời mái nhà phải đảm bảo các yêu cầu về an toàn điện, an toàn công trình xây dựng, môi trường, phòng chống cháy nổ theo quy định hiện hành."
+            },
+            {
+              "kind": "text",
+              "text": "Chương IV"
+            },
+            {
+              "kind": "text",
+              "text": "ĐIỀU KHOẢN THI HÀNH"
+            }
+          ]
+        },
         {
           "id": "art-10",
           "number": "Điều 10",
           "heading": "Trách nhiệm của các cơ quan quản lý nhà nước",
-          "body": "1. Bộ Công Thương\na) Chủ trì, phối hợp với Ủy ban nhân dân tỉnh Ninh Thuận, Tập đoàn Điện lực Việt Nam theo dõi các dự án điện mặt trời nối lưới có ngày vận hành thương mại đáp ứng yêu cầu được hưởng giá mua điện hỗ trợ quy định tại khoản 3 Điều 5 của Quyết định này và phù hợp với Nghị quyết số 115/NQ-CP ngày 31 tháng 8 năm 2018 của Chính phủ về việc thực hiện một số cơ chế chính sách đặc thù hỗ trợ tỉnh Ninh Thuận phát triển kinh tế - xã hội, ổn định sản xuất đời sống nhân dân giai đoạn 2018 - 2023;\nb) Tổ chức, hướng dẫn và phối hợp với Ủy ban nhân dân các tỉnh, thành phố trực thuộc trung ương kiểm tra, giám sát việc thực hiện Quyết định này;\nc) Ban hành Hợp đồng mua bán điện mẫu áp dụng cho các dự án điện mặt trời nối lưới và Hợp đồng mua bán điện mẫu áp dụng cho các hệ thống điện mặt trời mái nhà đối với trường hợp Bên mua điện là Tập đoàn Điện lực Việt Nam hoặc đơn vị thành viên được ủy quyền;\nd) Ban hành quy định về đo đếm, ghi nhận sản lượng điện và thanh toán đối với các hệ thống điện mặt trời mái nhà có sự tham gia của Đơn vị phân phối và bán lẻ điện không thuộc Tập đoàn Điện lực Việt Nam;\nđ) Phối hợp với các bộ ngành, địa phương huy động các nguồn lực để thúc đẩy phát triển chương trình điện mặt trời mái nhà;\ne) Nghiên cứu hoàn chỉnh cơ chế đấu thầu các dự án điện mặt trời, lộ trình thực hiện và báo cáo Thủ tướng Chính phủ phê duyệt triển khai trên toàn quốc.\n2. Ủy ban nhân dân các tỉnh, thành phố trực thuộc trung ương\na) Phối hợp, hỗ trợ nhà đầu tư về bồi thường, giải phóng mặt bằng, hạ tầng, nguồn nhân lực để đầu tư, thực hiện và phát triển các dự án điện mặt trời trên địa bàn;\nb) Theo dõi, kiểm tra thực hiện các dự án điện mặt trời tại địa phương theo thẩm quyền;\nc) Thực hiện nhiệm vụ quản lý nhà nước về hoạt động liên quan đến điện mặt trời tại địa phương theo quy định của pháp luật hiện hành.\nd) Báo cáo Bộ Công Thương về tình hình đăng ký, đầu tư phát triển các dự án điện mặt trời trên địa bàn."
+          "body": "1. Bộ Công Thương\na) Chủ trì, phối hợp với Ủy ban nhân dân tỉnh Ninh Thuận, Tập đoàn Điện lực Việt Nam theo dõi các dự án điện mặt trời nối lưới có ngày vận hành thương mại đáp ứng yêu cầu được hưởng giá mua điện hỗ trợ quy định tại khoản 3 Điều 5 của Quyết định này và phù hợp với Nghị quyết số 115/NQ-CP ngày 31 tháng 8 năm 2018 của Chính phủ về việc thực hiện một số cơ chế chính sách đặc thù hỗ trợ tỉnh Ninh Thuận phát triển kinh tế - xã hội, ổn định sản xuất đời sống nhân dân giai đoạn 2018 - 2023;\nb) Tổ chức, hướng dẫn và phối hợp với Ủy ban nhân dân các tỉnh, thành phố trực thuộc trung ương kiểm tra, giám sát việc thực hiện Quyết định này;\nc) Ban hành Hợp đồng mua bán điện mẫu áp dụng cho các dự án điện mặt trời nối lưới và Hợp đồng mua bán điện mẫu áp dụng cho các hệ thống điện mặt trời mái nhà đối với trường hợp Bên mua điện là Tập đoàn Điện lực Việt Nam hoặc đơn vị thành viên được ủy quyền;\nd) Ban hành quy định về đo đếm, ghi nhận sản lượng điện và thanh toán đối với các hệ thống điện mặt trời mái nhà có sự tham gia của Đơn vị phân phối và bán lẻ điện không thuộc Tập đoàn Điện lực Việt Nam;\nđ) Phối hợp với các bộ ngành, địa phương huy động các nguồn lực để thúc đẩy phát triển chương trình điện mặt trời mái nhà;\ne) Nghiên cứu hoàn chỉnh cơ chế đấu thầu các dự án điện mặt trời, lộ trình thực hiện và báo cáo Thủ tướng Chính phủ phê duyệt triển khai trên toàn quốc.\n2. Ủy ban nhân dân các tỉnh, thành phố trực thuộc trung ương\na) Phối hợp, hỗ trợ nhà đầu tư về bồi thường, giải phóng mặt bằng, hạ tầng, nguồn nhân lực để đầu tư, thực hiện và phát triển các dự án điện mặt trời trên địa bàn;\nb) Theo dõi, kiểm tra thực hiện các dự án điện mặt trời tại địa phương theo thẩm quyền;\nc) Thực hiện nhiệm vụ quản lý nhà nước về hoạt động liên quan đến điện mặt trời tại địa phương theo quy định của pháp luật hiện hành.\nd) Báo cáo Bộ Công Thương về tình hình đăng ký, đầu tư phát triển các dự án điện mặt trời trên địa bàn.",
+          "blocks": [
+            {
+              "kind": "text",
+              "text": "1. Bộ Công Thương"
+            },
+            {
+              "kind": "text",
+              "text": "a) Chủ trì, phối hợp với Ủy ban nhân dân tỉnh Ninh Thuận, Tập đoàn Điện lực Việt Nam theo dõi các dự án điện mặt trời nối lưới có ngày vận hành thương mại đáp ứng yêu cầu được hưởng giá mua điện hỗ trợ quy định tại khoản 3 Điều 5 của Quyết định này và phù hợp với Nghị quyết số 115/NQ-CP ngày 31 tháng 8 năm 2018 của Chính phủ về việc thực hiện một số cơ chế chính sách đặc thù hỗ trợ tỉnh Ninh Thuận phát triển kinh tế - xã hội, ổn định sản xuất đời sống nhân dân giai đoạn 2018 - 2023;"
+            },
+            {
+              "kind": "text",
+              "text": "b) Tổ chức, hướng dẫn và phối hợp với Ủy ban nhân dân các tỉnh, thành phố trực thuộc trung ương kiểm tra, giám sát việc thực hiện Quyết định này;"
+            },
+            {
+              "kind": "text",
+              "text": "c) Ban hành Hợp đồng mua bán điện mẫu áp dụng cho các dự án điện mặt trời nối lưới và Hợp đồng mua bán điện mẫu áp dụng cho các hệ thống điện mặt trời mái nhà đối với trường hợp Bên mua điện là Tập đoàn Điện lực Việt Nam hoặc đơn vị thành viên được ủy quyền;"
+            },
+            {
+              "kind": "text",
+              "text": "d) Ban hành quy định về đo đếm, ghi nhận sản lượng điện và thanh toán đối với các hệ thống điện mặt trời mái nhà có sự tham gia của Đơn vị phân phối và bán lẻ điện không thuộc Tập đoàn Điện lực Việt Nam;"
+            },
+            {
+              "kind": "text",
+              "text": "đ) Phối hợp với các bộ ngành, địa phương huy động các nguồn lực để thúc đẩy phát triển chương trình điện mặt trời mái nhà;"
+            },
+            {
+              "kind": "text",
+              "text": "e) Nghiên cứu hoàn chỉnh cơ chế đấu thầu các dự án điện mặt trời, lộ trình thực hiện và báo cáo Thủ tướng Chính phủ phê duyệt triển khai trên toàn quốc."
+            },
+            {
+              "kind": "text",
+              "text": "2. Ủy ban nhân dân các tỉnh, thành phố trực thuộc trung ương"
+            },
+            {
+              "kind": "text",
+              "text": "a) Phối hợp, hỗ trợ nhà đầu tư về bồi thường, giải phóng mặt bằng, hạ tầng, nguồn nhân lực để đầu tư, thực hiện và phát triển các dự án điện mặt trời trên địa bàn;"
+            },
+            {
+              "kind": "text",
+              "text": "b) Theo dõi, kiểm tra thực hiện các dự án điện mặt trời tại địa phương theo thẩm quyền;"
+            },
+            {
+              "kind": "text",
+              "text": "c) Thực hiện nhiệm vụ quản lý nhà nước về hoạt động liên quan đến điện mặt trời tại địa phương theo quy định của pháp luật hiện hành."
+            },
+            {
+              "kind": "text",
+              "text": "d) Báo cáo Bộ Công Thương về tình hình đăng ký, đầu tư phát triển các dự án điện mặt trời trên địa bàn."
+            }
+          ]
         },
         {
           "id": "art-11",
           "number": "Điều 11",
           "heading": "Tập đoàn Điện lực Việt Nam",
-          "body": "1. Tập đoàn Điện lực Việt Nam có trách nhiệm hạch toán đầy đủ chi phí mua điện của các dự án điện mặt trời ký hợp đồng mua bán điện với Tập đoàn Điện lực Việt Nam hoặc đơn vị thành viên được Tập đoàn Điện lực Việt Nam ủy quyền và đưa vào thông số đầu vào trong phương án giá điện bán buôn và bán lẻ hàng năm của Tập đoàn Điện lực Việt Nam.\n2. Nghiên cứu đầu tư các giải pháp lưu trữ điện năng cho hệ thống nhằm đảm bảo vận hành ổn định hệ thống điện khi tích hợp các nguồn năng lượng tái tạo.\n3. Xây dựng hệ thống thông tin quản lý về phát triển điện mặt trời nối lưới và điện mặt trời mái nhà trên toàn quốc.\n4. Rà soát tiến độ các dự án điện đảm bảo giải tỏa công suất dự án điện mặt trời nối lưới và hệ thống điện mặt trời mái nhà, không gây quá tải đối với hệ thống điện quốc gia.\n5. Định kỳ hàng năm báo cáo Bộ Công Thương về hiện trạng đấu nối điện mặt trời, tổng công suất lắp đặt sản lượng điện mua từ các dự án điện mặt trời nối lưới và hệ thống điện mặt trời mái nhà."
+          "body": "1. Tập đoàn Điện lực Việt Nam có trách nhiệm hạch toán đầy đủ chi phí mua điện của các dự án điện mặt trời ký hợp đồng mua bán điện với Tập đoàn Điện lực Việt Nam hoặc đơn vị thành viên được Tập đoàn Điện lực Việt Nam ủy quyền và đưa vào thông số đầu vào trong phương án giá điện bán buôn và bán lẻ hàng năm của Tập đoàn Điện lực Việt Nam.\n2. Nghiên cứu đầu tư các giải pháp lưu trữ điện năng cho hệ thống nhằm đảm bảo vận hành ổn định hệ thống điện khi tích hợp các nguồn năng lượng tái tạo.\n3. Xây dựng hệ thống thông tin quản lý về phát triển điện mặt trời nối lưới và điện mặt trời mái nhà trên toàn quốc.\n4. Rà soát tiến độ các dự án điện đảm bảo giải tỏa công suất dự án điện mặt trời nối lưới và hệ thống điện mặt trời mái nhà, không gây quá tải đối với hệ thống điện quốc gia.\n5. Định kỳ hàng năm báo cáo Bộ Công Thương về hiện trạng đấu nối điện mặt trời, tổng công suất lắp đặt sản lượng điện mua từ các dự án điện mặt trời nối lưới và hệ thống điện mặt trời mái nhà.",
+          "blocks": [
+            {
+              "kind": "text",
+              "text": "1. Tập đoàn Điện lực Việt Nam có trách nhiệm hạch toán đầy đủ chi phí mua điện của các dự án điện mặt trời ký hợp đồng mua bán điện với Tập đoàn Điện lực Việt Nam hoặc đơn vị thành viên được Tập đoàn Điện lực Việt Nam ủy quyền và đưa vào thông số đầu vào trong phương án giá điện bán buôn và bán lẻ hàng năm của Tập đoàn Điện lực Việt Nam."
+            },
+            {
+              "kind": "text",
+              "text": "2. Nghiên cứu đầu tư các giải pháp lưu trữ điện năng cho hệ thống nhằm đảm bảo vận hành ổn định hệ thống điện khi tích hợp các nguồn năng lượng tái tạo."
+            },
+            {
+              "kind": "text",
+              "text": "3. Xây dựng hệ thống thông tin quản lý về phát triển điện mặt trời nối lưới và điện mặt trời mái nhà trên toàn quốc."
+            },
+            {
+              "kind": "text",
+              "text": "4. Rà soát tiến độ các dự án điện đảm bảo giải tỏa công suất dự án điện mặt trời nối lưới và hệ thống điện mặt trời mái nhà, không gây quá tải đối với hệ thống điện quốc gia."
+            },
+            {
+              "kind": "text",
+              "text": "5. Định kỳ hàng năm báo cáo Bộ Công Thương về hiện trạng đấu nối điện mặt trời, tổng công suất lắp đặt sản lượng điện mua từ các dự án điện mặt trời nối lưới và hệ thống điện mặt trời mái nhà."
+            }
+          ]
         },
         {
           "id": "art-12",
           "number": "Điều 12",
           "heading": "Hiệu lực thi hành",
-          "body": "1. Quyết định này có hiệu lực thi hành từ ngày 22 tháng 5 năm 2020.\n2. Các Bộ trưởng, Thủ trưởng cơ quan ngang bộ, Thủ trưởng cơ quan thuộc Chính phủ, Chủ tịch Ủy ban nhân dân các tỉnh, thành phố trực thuộc trung ương; Thủ trưởng các cơ quan, đơn vị và tổ chức liên quan đến hoạt động phát triển các dự án điện mặt trời tại Việt Nam có trách nhiệm thi hành Quyết định này./\nNơi nhận:\n- Ban Bí thư Trung ương Đảng;\n- Thủ tướng, các Phó Thủ tướng Chính phủ;\n- Các bộ, cơ quan ngang bộ, cơ quan thuộc Chính phủ;\n- HĐND, UBND các tỉnh, thành phố trực thuộc trung ương;\n- Văn phòng Trung ương và các Ban của Đảng;\n- Văn phòng Tổng Bí thư;\n- Văn phòng Chủ tịch nước;\n- Hội đồng Dân tộc và các Ủy ban của Quốc hội;\n- Văn phòng Quốc hội;\n- Tòa án nhân dân tối cao;\n- Viện kiểm sát nhân dân tối cao;\n- Kiểm toán Nhà nước;\n- Ủy ban Giám sát tài chính Quốc gia;\n- Ngân hàng Chính sách xã hội;\n- Ngân hàng Phát triển Việt Nam;\n- Ủy ban Trung ương Mặt trận Tổ quốc Việt Nam;\n- Cơ quan trung ương của các đoàn thể;\n- VPCP: BTCN, các PCN, Trợ lý TTg, TGĐ Cổng TTĐT, các Vụ, Cục, đơn vị trực thuộc, Công báo;\n- Lưu: VT, CN (2b).\nKT. THỦ TƯỚNG\nPHÓ THỦ TƯỚNG\nTrịnh Đình Dũng\nPHỤ LỤC\nBIỂU GIÁ MUA ĐIỆN MẶT TRỜI\n(Kèm theo Quyết định số 13/2020/QĐ-TTg ngày 06 tháng 4 năm 2020 của Thủ tướng Chính phủ)\nTT\nCông nghệ điện mặt trời\nGiá điện\nVNĐ/kWh\nTương đương UScent/kWh\nDự án điện mặt trời nổi\n1.783\n7,69\nDự án điện mặt trời mặt đất\n1.644\n7,09\nHệ thống điện mặt trời mái nhà\n1.943\n8,38\nGhi chú: Tỷ giá tính theo tỷ giá trung tâm của đồng Việt Nam với đô la Mỹ được Ngân hàng Nhà nước Việt Nam công bố ngày 10 tháng 3 năm 2020.\nGhi chú\nÝ kiến\nFacebook\nEmail\nBài liên quan:\nMới: Đã ban hành biểu giá mua điện mặt trời\nChính thức chốt giá mua điện mặt trời áp mái 1.943 đồng/kWh\n13/2020/QĐ-TTg, Quyết định 13/2020/QĐ-TTg\nVăn bản liên quan\nCông văn 8691/BCT-ĐL năm 2023 đề nghị góp ý kiến về Hồ sơ đề nghị xây dựng Nghị định quy định về cơ chế khuyến khích phát triển điện mặt trời mái nhà do Bộ Công thương ban hành\nTiếng Anh | Lược đồ | Liên quan hiệu lực | Tải về\nBan hành: 06/12/2023\nHiệu lực: Đã biết\nCập nhật: 11/12/2023\nCông văn 8125/VPCP-CN năm 2023 về cơ chế phát triển điện mặt trời mái nhà lắp đặt tại nhà ở, cơ quan công sở tại Việt Nam do Văn phòng Chính phủ ban hành\nTiếng Anh | Lược đồ | Liên quan hiệu lực | Tải về\nBan hành: 18/10/2023\nHiệu lực: Đã biết\nCập nhật: 20/10/2023\nCông văn 3259/BCT-ĐL năm 2021 về kiểm tra, rà soát các vấn đề liên quan đến phát triển điện mặt trời trên địa bàn do Bộ Công thương ban hành\nTiếng Anh | Lược đồ | Liên quan hiệu lực | Tải về\nBan hành: 07/06/2021\nHiệu lực: Đã biết\nCập nhật: 19/06/2021\nThông tư 18/2020/TT-BCT quy định về phát triển dự án và hợp đồng mua bán điện mẫu áp dụng cho dự án điện mặt trời do Bộ trưởng Bộ Công thương ban hành\nTiếng Anh | Lược đồ | Liên quan hiệu lực | Tải về\nBan hành: 17/07/2020\nHiệu lực: Đã biết\nTình trạng: Đã biết\nCập nhật: 27/07/2020\nThông báo 402/TB-VPCP năm 2019 kết luận của Thủ tướng Chính phủ Nguyễn Xuân Phúc tại cuộc họp Thường trực Chính phủ về Dự thảo Cơ chế khuyến khích phát triển điện mặt trời tại Việt Nam, áp dụng từ ngày 01 tháng 7 năm 2019 tiếp theo Quyết định 11/2017/QĐ-TTg do Văn phòng Chính phủ ban hành\nTiếng Anh | Lược đồ | Liên quan hiệu lực | Tải về\nBan hành: 22/11/2019\nHiệu lực: Đã biết\nTình trạng: Đã biết\nCập nhật: 23/11/2019\nQuyết định 2023/QĐ-BCT năm 2019 về phê duyệt Chương trình Thúc đẩy phát triển điện mặt trời mái nhà tại Việt Nam giai đoạn 2019-2025 do Bộ trưởng Bộ Công thương ban hành\nTiếng Anh | Lược đồ | Liên quan hiệu lực | Tải về\nBan hành: 05/07/2019\nHiệu lực: Đã biết\nTình trạng: Đã biết\nCập nhật: 30/07/2019\nNghị quyết 115/NQ-CP năm 2018 thực hiện cơ chế, chính sách đặc thù hỗ trợ tỉnh Ninh Thuận phát triển kinh tế - xã hội, ổn định sản xuất, đời sống nhân dân giai đoạn 2018-2023 do Chính phủ ban hành\nTiếng Anh | Lược đồ | Liên quan hiệu lực | Tải về\nBan hành: 31/08/2018\nHiệu lực: Đã biết\nTình trạng: Đã biết\nCập nhật: 06/09/2018\nCông văn 4614/BCT-ĐL năm 2018 về báo cáo tình hình phát triển điện mặt trời do Bộ Công Thương ban hành\nTiếng Anh | Lược đồ | Liên quan hiệu lực | Tải về\nBan hành: 11/06/2018\nHiệu lực: Đã biết\nCập nhật: 05/10/2018\nLuật sửa đổi, bổ sung Điều 6 và Phụ lục 4 về Danh mục ngành, nghề đầu tư kinh doanh có điều kiện của Luật đầu tư\nTiếng Anh | Lược đồ | Liên quan hiệu lực | Tải về\nBan hành: 22/11/2016\nHiệu lực: Đã biết\nTình trạng: Đã biết\nCập nhật: 12/12/2016\nLuật tổ chức Chính phủ 2015\nTiếng Anh | Lược đồ | Liên quan hiệu lực | Tải về\nBan hành: 19/06/2015\nHiệu lực: Đã biết\nTình trạng: Đã biết\nCập nhật: 16/07/2015\n130.251\nĐịa chỉ: 17 Nguyễn Gia Thiều, P. Xuân Hòa, TP.HCM\nĐiện thoại: (028) 3930 3279 (06 lines)\nMã số thuế: 0315459414\nTrang chủ\nCác Gói Dịch Vụ Online\nĐăng ký Thành viên\nHướng Dẫn Sử Dụng\nGiới Thiệu\nLiên Hệ\nQuy Chế Hoạt Động\nThỏa Ước Dịch Vụ\nPM TVPL trực tuyến\nTra cứu Pháp Luật mới\nTra cứu Công văn\nTra cứu Tiêu Chuẩn Việt Nam\nQuy chế bảo vệ dữ liệu cá nhân\nIP: 2001:4860:7:512::2\nHãy để chúng tôi hỗ trợ bạn!"
+          "body": "1. Quyết định này có hiệu lực thi hành từ ngày 22 tháng 5 năm 2020.\n2. Các Bộ trưởng, Thủ trưởng cơ quan ngang bộ, Thủ trưởng cơ quan thuộc Chính phủ, Chủ tịch Ủy ban nhân dân các tỉnh, thành phố trực thuộc trung ương; Thủ trưởng các cơ quan, đơn vị và tổ chức liên quan đến hoạt động phát triển các dự án điện mặt trời tại Việt Nam có trách nhiệm thi hành Quyết định này./\nPHỤ LỤC\nBIỂU GIÁ MUA ĐIỆN MẶT TRỜI\n(Kèm theo Quyết định số 13/2020/QĐ-TTg ngày 06 tháng 4 năm 2020 của Thủ tướng Chính phủ)\nGhi chú: Tỷ giá tính theo tỷ giá trung tâm của đồng Việt Nam với đô la Mỹ được Ngân hàng Nhà nước Việt Nam công bố ngày 10 tháng 3 năm 2020.",
+          "blocks": [
+            {
+              "kind": "text",
+              "text": "1. Quyết định này có hiệu lực thi hành từ ngày 22 tháng 5 năm 2020."
+            },
+            {
+              "kind": "text",
+              "text": "2. Các Bộ trưởng, Thủ trưởng cơ quan ngang bộ, Thủ trưởng cơ quan thuộc Chính phủ, Chủ tịch Ủy ban nhân dân các tỉnh, thành phố trực thuộc trung ương; Thủ trưởng các cơ quan, đơn vị và tổ chức liên quan đến hoạt động phát triển các dự án điện mặt trời tại Việt Nam có trách nhiệm thi hành Quyết định này./"
+            },
+            {
+              "kind": "table",
+              "rows": [
+                [
+                  {
+                    "text": "Nơi nhận:\n- Ban Bí thư Trung ương Đảng;\n- Thủ tướng, các Phó Thủ tướng Chính phủ;\n- Các bộ, cơ quan ngang bộ, cơ quan thuộc Chính phủ;\n- HĐND, UBND các tỉnh, thành phố trực thuộc trung ương;\n- Văn phòng Trung ương và các Ban của Đảng;\n- Văn phòng Tổng Bí thư;\n- Văn phòng Chủ tịch nước;\n- Hội đồng Dân tộc và các Ủy ban của Quốc hội;\n- Văn phòng Quốc hội;\n- Tòa án nhân dân tối cao;\n- Viện kiểm sát nhân dân tối cao;\n- Kiểm toán Nhà nước;\n- Ủy ban Giám sát tài chính Quốc gia;\n- Ngân hàng Chính sách xã hội;\n- Ngân hàng Phát triển Việt Nam;\n- Ủy ban Trung ương Mặt trận Tổ quốc Việt Nam;\n- Cơ quan trung ương của các đoàn thể;\n- VPCP: BTCN, các PCN, Trợ lý TTg, TGĐ Cổng TTĐT, các Vụ, Cục, đơn vị trực thuộc, Công báo;\n- Lưu: VT, CN (2b).",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "KT. THỦ TƯỚNG\nPHÓ THỦ TƯỚNG\nTrịnh Đình Dũng",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ]
+              ]
+            },
+            {
+              "kind": "text",
+              "text": "PHỤ LỤC"
+            },
+            {
+              "kind": "text",
+              "text": "BIỂU GIÁ MUA ĐIỆN MẶT TRỜI"
+            },
+            {
+              "kind": "text",
+              "text": "(Kèm theo Quyết định số 13/2020/QĐ-TTg ngày 06 tháng 4 năm 2020 của Thủ tướng Chính phủ)"
+            },
+            {
+              "kind": "table",
+              "rows": [
+                [
+                  {
+                    "text": "TT",
+                    "colspan": 1,
+                    "rowspan": 2,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Công nghệ điện mặt trời",
+                    "colspan": 1,
+                    "rowspan": 2,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Giá điện",
+                    "colspan": 2,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "VNĐ/kWh",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Tương đương UScent/kWh",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "1",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Dự án điện mặt trời nổi",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "1.783",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "7,69",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "2",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Dự án điện mặt trời mặt đất",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "1.644",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "7,09",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "3",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Hệ thống điện mặt trời mái nhà",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "1.943",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "8,38",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ]
+              ]
+            },
+            {
+              "kind": "text",
+              "text": "Ghi chú: Tỷ giá tính theo tỷ giá trung tâm của đồng Việt Nam với đô la Mỹ được Ngân hàng Nhà nước Việt Nam công bố ngày 10 tháng 3 năm 2020."
+            }
+          ]
         }
       ]
     }
