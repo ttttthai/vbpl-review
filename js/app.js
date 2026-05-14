@@ -2353,7 +2353,17 @@
       return renderSignatureBlock(recipients, signerLines);
     }
 
-    let html = '<div class="art-table-wrap"><table class="art-table">';
+    // Classify the table: a "form template" has lots of placeholder dots
+    // and single-cell banner rows; a "data table" has consistent column
+    // counts and short cells. Form templates get a lighter visual weight
+    // and no zebra striping; data tables keep the original treatment.
+    const maxCols = rows.reduce((m, r) => Math.max(m, r.length), 0);
+    const singleCellRows = rows.filter(r => r.length === 1).length;
+    const dotPlaceholders = rows.reduce((s, r) => s + r.filter(c => /\.{3,}/.test(c.text || "")).length, 0);
+    const checkboxCells = rows.reduce((s, r) => s + r.filter(c => /^[☐□]/.test((c.text || "").trim())).length, 0);
+    const isFormTable = (singleCellRows >= 2 || dotPlaceholders >= 2 || checkboxCells >= 1);
+
+    let html = `<div class="art-table-wrap"><table class="art-table${isFormTable ? ' art-table-form' : ''}">`;
     let bodyStartIdx = 0;
     if (rows[0].some(c => c.isHeader)) {
       html += '<thead><tr>';
@@ -2367,20 +2377,32 @@
     }
     html += '<tbody>';
     for (let i = bodyStartIdx; i < rows.length; i++) {
-      html += '<tr>';
-      for (const c of rows[i]) {
-        const cs = c.colspan && c.colspan > 1 ? ` colspan="${c.colspan}"` : "";
-        const rs = c.rowspan && c.rowspan > 1 ? ` rowspan="${c.rowspan}"` : "";
+      // Banner row: a single cell that visually spans the full table —
+      // either there's only one cell or that cell has colspan == maxCols.
+      // These are typically section dividers ("Phần I", "THÔNG TIN…").
+      // Centre + bold them so they read as headings, not data cells.
+      const row = rows[i];
+      const isBanner =
+        (row.length === 1 && maxCols > 1) ||
+        (row.length === 1 && (row[0].colspan || 1) >= maxCols);
+      const trCls = isBanner ? ' class="art-row-banner"' : '';
+      html += `<tr${trCls}>`;
+      for (const c of row) {
+        const colsp = c.colspan && c.colspan > 1 ? ` colspan="${c.colspan}"` : "";
+        const rowsp = c.rowspan && c.rowspan > 1 ? ` rowspan="${c.rowspan}"` : "";
         const tag = c.isHeader ? "th" : "td";
-        // Visually de-emphasize standalone "0" cells in numeric tables —
-        // PDP8 publishes many "0"s where a province has no allocation; in
-        // context these read as "không phân bổ" rather than literal zero.
-        // Replace with an en-dash + muted style so real values stand out.
         const raw = (c.text || "").trim();
         const isZero = /^0(?:[.,]0+)?$/.test(raw);
-        const display = isZero ? "–" : raw;
-        const cls = isZero ? ' class="td-zero"' : "";
-        html += `<${tag}${cls}${cs}${rs}>${escapeHtml(display)}</${tag}>`;
+        // Style standalone checkbox-prefix cells with a styled empty box —
+        // strip the leading "☐ " from text so we don't double-render it.
+        const cbMatch = raw.match(/^[☐□]\s*(.*)$/);
+        const isCheckbox = !!cbMatch;
+        let display = raw;
+        let cellCls = "";
+        if (isZero) { display = "–"; cellCls = "td-zero"; }
+        else if (isCheckbox) { display = cbMatch[1]; cellCls = "td-checkbox"; }
+        const classAttr = cellCls ? ` class="${cellCls}"` : "";
+        html += `<${tag}${classAttr}${colsp}${rowsp}>${escapeHtml(display)}</${tag}>`;
       }
       html += '</tr>';
     }

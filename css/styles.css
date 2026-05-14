@@ -2543,6 +2543,66 @@ mark.vbpl-find-hit.current {
   color: rgba(31, 39, 51, 0.30);
   font-variant-numeric: tabular-nums;
 }
+
+/* Banner row — a single-cell row in a multi-column table acts as a
+   section divider inside the table (e.g. "Phần I", "THÔNG TIN VỀ ĐỐI
+   TƯỢNG BÁO CÁO"). Centre + bold so it reads as a heading, not data. */
+.doc-body .art-table tbody tr.art-row-banner td,
+.doc-body .art-table tbody tr.art-row-banner th {
+  text-align: center;
+  font-weight: 700;
+  background: rgba(125, 29, 34, 0.05);
+  letter-spacing: 0.02em;
+  color: var(--ink);
+}
+
+/* Form-template tables (Mẫu số ...) — lighter weight than data tables.
+   Drop zebra striping, use thinner borders, smaller font. Distinguishes
+   "fill-in form" tables from "actual data" tables visually. */
+.doc-body .art-table.art-table-form {
+  background: var(--paper);
+  border: 1px solid var(--line);
+}
+.doc-body .art-table.art-table-form th,
+.doc-body .art-table.art-table-form td {
+  border-color: rgba(200, 192, 168, 0.6);
+  padding: 5px 9px;
+  font-size: calc(var(--read-size) - 1.5px);
+  background: white;
+}
+.doc-body .art-table.art-table-form tbody tr:nth-child(even) td {
+  background: white;
+}
+.doc-body .art-table.art-table-form tbody tr:hover td {
+  background: rgba(125, 29, 34, 0.025);
+}
+.doc-body .art-table.art-table-form tbody tr.art-row-banner td {
+  background: rgba(31, 39, 51, 0.04);
+  font-weight: 600;
+  font-size: calc(var(--read-size) - 1px);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Checkbox cells — leading "☐" gets replaced with a pseudo box so the
+   form-template visual reads as an interactive control even though it
+   isn't actually fillable. */
+.doc-body .art-table .td-checkbox {
+  position: relative;
+  padding-left: 22px;
+}
+.doc-body .art-table .td-checkbox::before {
+  content: "";
+  position: absolute;
+  left: 7px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 11px;
+  height: 11px;
+  border: 1.5px solid var(--ink-mute);
+  border-radius: 2px;
+  background: white;
+}
 /* Heading hierarchy — three clear visual levels, each obviously larger and
    heavier than the next, with generous spacing to break up dense legal text:
      h2.chapter   (CHƯƠNG I)             — biggest, all caps, top spacing
