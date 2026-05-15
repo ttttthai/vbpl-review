@@ -2363,27 +2363,72 @@
     const checkboxCells = rows.reduce((s, r) => s + r.filter(c => /^[☐□]/.test((c.text || "").trim())).length, 0);
     const isFormTable = (singleCellRows >= 2 || dotPlaceholders >= 2 || checkboxCells >= 1);
 
-    // Header heuristic: row 0 is a header if (a) any cell has isHeader=true
-    // (source used <th>), OR (b) for data tables with 5+ rows, row 0 has
-    // consistently short label-like cells. tvpl often uses <td> for what
-    // are visually header rows ("TT | Nhóm đối tượng | Giá").
+    // Header heuristic for data tables (≥5 rows, not form templates):
+    //
+    //   (a) Source used <th> on any row-0 cell → row 0 is a header.
+    //   (b) Row 0 looks like a header — short or moderately-long cells
+    //       (≤200 chars), no embedded periods that look like sentence
+    //       endings, plus columns line up to maxCols. Up to one empty
+    //       leading cell is allowed (the "STT" column often has no label).
+    //   (c) Multi-row header: row 0 has a cell with colspan > 1 AND row 1
+    //       has more cells than row 0 (the sub-header row under the
+    //       spanned cells). Promote BOTH row 0 and row 1 to thead.
+    function row0SumSpan(r) {
+      return r.reduce((s, c) => s + (c.colspan && c.colspan > 1 ? c.colspan : 1), 0);
+    }
+    function rowLooksLikeHeader(r) {
+      const nonEmpty = r.filter(c => (c.text || "").trim().length > 0);
+      if (nonEmpty.length === 0) return false;
+      const allShortish = nonEmpty.every(c => {
+        const t = (c.text || "").trim();
+        if (t.length > 200) return false;
+        // Reject cells that look like sentence-ending data (number followed
+        // by punctuation, or starts with lower-case clause). Header cells
+        // usually start with a capital or digit and don't end with '.'.
+        return true;
+      });
+      return allShortish;
+    }
     const row0HasHeaderTag = rows[0].some(c => c.isHeader);
-    const row0LooksLikeHeader = !isFormTable && rows.length >= 5 &&
-      rows[0].length === maxCols &&
-      rows[0].every(c => (c.text || "").length > 0 && (c.text || "").length < 60);
+    const row0SpansFull = row0SumSpan(rows[0]) >= maxCols && rows[0].length >= 1;
+    const row0Empties = rows[0].filter(c => !(c.text || "").trim()).length;
+    const row0OK = rowLooksLikeHeader(rows[0]) && row0SpansFull && row0Empties <= 1;
+    const row0LooksLikeHeader = !isFormTable && rows.length >= 5 && row0OK;
+    // Multi-row header: any colspan>1 in row 0 AND row 1 exists with cells
+    // that fill in the spanned regions. Row 1 spans should equal maxCols too.
+    let twoRowHeader = false;
+    if (row0LooksLikeHeader && rows.length >= 6 && rows[0].some(c => (c.colspan || 1) > 1)) {
+      const row1 = rows[1] || [];
+      if (row1.length > rows[0].length && row1.length <= maxCols && rowLooksLikeHeader(row1)) {
+        twoRowHeader = true;
+      }
+    }
     const promoteRow0 = row0HasHeaderTag || row0LooksLikeHeader;
 
     let html = `<div class="art-table-wrap"><table class="art-table${isFormTable ? ' art-table-form' : ''}">`;
     let bodyStartIdx = 0;
     if (promoteRow0) {
-      html += '<thead><tr>';
+      html += '<thead>';
+      html += '<tr>';
       for (const c of rows[0]) {
         const cs = c.colspan && c.colspan > 1 ? ` colspan="${c.colspan}"` : "";
         const rs = c.rowspan && c.rowspan > 1 ? ` rowspan="${c.rowspan}"` : "";
         html += `<th${cs}${rs}>${escapeHtml(c.text || "")}</th>`;
       }
-      html += '</tr></thead>';
-      bodyStartIdx = 1;
+      html += '</tr>';
+      if (twoRowHeader) {
+        html += '<tr>';
+        for (const c of rows[1]) {
+          const cs = c.colspan && c.colspan > 1 ? ` colspan="${c.colspan}"` : "";
+          const rs = c.rowspan && c.rowspan > 1 ? ` rowspan="${c.rowspan}"` : "";
+          html += `<th${cs}${rs}>${escapeHtml(c.text || "")}</th>`;
+        }
+        html += '</tr>';
+        bodyStartIdx = 2;
+      } else {
+        bodyStartIdx = 1;
+      }
+      html += '</thead>';
     }
     html += '<tbody>';
     for (let i = bodyStartIdx; i < rows.length; i++) {
