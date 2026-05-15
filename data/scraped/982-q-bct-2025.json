@@ -1,0 +1,58 @@
+{
+  "id": "982/QĐ-BCT-2025",
+  "sourceUrl": "https://nangluongvietnam.vn/phe-duyet-khung-gia-phat-dien-tu-nguon-thuy-dien-dien-khi-va-dien-mat-troi-nam-2025-34069.html",
+  "scrapedAt": "2026-05-14T00:00:00.000Z",
+  "via": "manual-synthesis-from-news",
+  "chapters": [
+    {
+      "title": "PHẦN MỞ ĐẦU",
+      "subtitle": "",
+      "articles": [
+        {
+          "id": "art-1",
+          "number": "Điều 1",
+          "heading": "Phê duyệt khung giá phát điện áp dụng cho loại hình nhà máy thủy điện năm 2025",
+          "body": "Khung giá phát điện áp dụng cho loại hình nhà máy thủy điện năm 2025 quy định mức giá tối đa là 1.110 đồng/kWh (chưa bao gồm thuế tài nguyên nước, tiền phí dịch vụ môi trường rừng, tiền cấp quyền khai thác tài nguyên nước và thuế giá trị gia tăng).\nKhung giá: từ 0 đến 1.110 đồng/kWh.",
+          "blocks": [
+            { "kind": "text", "text": "Khung giá phát điện áp dụng cho loại hình nhà máy thủy điện năm 2025 quy định mức giá tối đa là 1.110 đồng/kWh, chưa bao gồm thuế tài nguyên nước, tiền phí dịch vụ môi trường rừng, tiền cấp quyền khai thác tài nguyên nước và thuế giá trị gia tăng." },
+            {
+              "kind": "table",
+              "rows": [
+                [
+                  { "text": "Loại hình nhà máy phát điện", "isHeader": true, "colspan": 1, "rowspan": 1 },
+                  { "text": "Khung giá phát điện năm 2025 (đồng/kWh)", "isHeader": true, "colspan": 1, "rowspan": 1 },
+                  { "text": "Mức giá tối đa (đồng/kWh)", "isHeader": true, "colspan": 1, "rowspan": 1 },
+                  { "text": "Ghi chú", "isHeader": true, "colspan": 1, "rowspan": 1 }
+                ],
+                [
+                  { "text": "Nhà máy thủy điện", "colspan": 1, "rowspan": 1, "isHeader": false },
+                  { "text": "0 – 1.110", "colspan": 1, "rowspan": 1, "isHeader": false },
+                  { "text": "1.110", "colspan": 1, "rowspan": 1, "isHeader": false },
+                  { "text": "Chưa bao gồm thuế tài nguyên nước, tiền phí dịch vụ môi trường rừng, tiền cấp quyền khai thác tài nguyên nước và thuế giá trị gia tăng", "colspan": 1, "rowspan": 1, "isHeader": false }
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "id": "art-2",
+          "number": "Điều 2",
+          "heading": "Hiệu lực thi hành",
+          "body": "Quyết định này có hiệu lực thi hành kể từ ngày ký ban hành (10/04/2025).",
+          "blocks": [
+            { "kind": "text", "text": "Quyết định này có hiệu lực thi hành kể từ ngày ký ban hành (10/04/2025)." }
+          ]
+        },
+        {
+          "id": "art-3",
+          "number": "Điều 3",
+          "heading": "Trách nhiệm thi hành",
+          "body": "Chánh Văn phòng Bộ; Cục trưởng Cục Điều tiết điện lực; Tổng giám đốc Tập đoàn Điện lực Việt Nam; Tổng giám đốc Đơn vị vận hành hệ thống điện và thị trường điện; Thủ trưởng các đơn vị có liên quan chịu trách nhiệm thi hành Quyết định này.",
+          "blocks": [
+            { "kind": "text", "text": "Chánh Văn phòng Bộ; Cục trưởng Cục Điều tiết điện lực; Tổng giám đốc Tập đoàn Điện lực Việt Nam; Tổng giám đốc Đơn vị vận hành hệ thống điện và thị trường điện; Thủ trưởng các đơn vị có liên quan chịu trách nhiệm thi hành Quyết định này." }
+          ]
+        }
+      ]
+    }
+  ]
+}
