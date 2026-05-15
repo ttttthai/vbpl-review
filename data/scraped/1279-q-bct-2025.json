@@ -1,8 +1,8 @@
 {
   "id": "1279/QĐ-BCT-2025",
-  "sourceUrl": "https://thuvienphapluat.vn/van-ban/Thuong-mai/Thong-tu-22-2025-TT-BCT-tinh-toan-gia-ban-le-dien-binh-quan-655313.aspx",
-  "scrapedAt": "2026-05-15T15:18:09.590Z",
-  "via": "tvpl-table-aware-retail",
+  "sourceUrl": "https://thuvienphapluat.vn/van-ban/Thuong-mai/Quyet-dinh-1279-QD-BCT-2025-gia-ban-dien-656047.aspx",
+  "scrapedAt": "2026-05-15T15:28:45.848Z",
+  "via": "tvpl-table-aware",
   "chapters": [
     {
       "title": "PHẦN MỞ ĐẦU",
@@ -11,525 +11,2599 @@
         {
           "id": "art-1",
           "number": "Điều 1",
-          "heading": "Phạm vi và đối tượng áp dụng",
-          "body": "1. Thông tư này hướng dẫn tính toán giá bán lẻ điện bình quân theo quy định tại Điều 4 Nghị định số 72/2025/NĐ-CP ngày 28 tháng 3 năm 2025 của Chính phủ quy định về cơ chế, thời gian điều chỉnh giá bán lẻ điện bình quân (sau đây viết tắt là Nghị định số 72/2025/NĐ-CP).\n2. Thông tư này áp dụng đối với Tập đoàn Điện lực Việt Nam, các đơn vị thành viên của Tập đoàn Điện lực Việt Nam và các tổ chức, cá nhân có liên quan.",
-          "blocks": [
-            {
-              "kind": "text",
-              "text": "1. Thông tư này hướng dẫn tính toán giá bán lẻ điện bình quân theo quy định tại Điều 4 Nghị định số 72/2025/NĐ-CP ngày 28 tháng 3 năm 2025 của Chính phủ quy định về cơ chế, thời gian điều chỉnh giá bán lẻ điện bình quân (sau đây viết tắt là Nghị định số 72/2025/NĐ-CP)."
-            },
-            {
-              "kind": "text",
-              "text": "2. Thông tư này áp dụng đối với Tập đoàn Điện lực Việt Nam, các đơn vị thành viên của Tập đoàn Điện lực Việt Nam và các tổ chức, cá nhân có liên quan."
-            }
-          ]
+          "heading": "Ban hành giá bán lẻ điện cho các nhóm khách hàng sử dụng điện và giá bán điện cho các đơn vị bán lẻ điện tại Phụ lục kèm theo Quyết định này. Giá bán điện quy định tại Phụ lục kèm theo Quyết định này chưa bao gồm thuế giá trị gia tăng.",
+          "body": "",
+          "blocks": []
         },
         {
           "id": "art-2",
           "number": "Điều 2",
-          "heading": "Giải thích từ ngữ",
-          "body": "Trong Thông tư này các thuật ngữ dưới đây được hiểu như sau:\n1. CPI là chỉ số giá tiêu dùng do cơ quan thống kê trung ương công bố.\n2. Đơn vị vận hành hệ thống điện và thị trường điện là đơn vị thực hiện chức năng của Đơn vị điều độ hệ thống điện quốc gia và Đơn vị điều hành giao dịch thị trường điện theo quy định tại Luật Điện lực (hiện nay là Công ty TNHH MTV Vận hành hệ thống điện và thị trường điện Quốc gia - NSMO).\n3. Giá điện năng thị trường là mức giá cho một đơn vị điện năng xác định cho mỗi chu kỳ giao dịch, áp dụng để tính toán khoản thanh toán điện năng trong thị trường điện.\n4. Giá công suất thị trường là mức giá tính toán cho mỗi chu kỳ giao dịch và áp dụng để tính toán khoản thanh toán công suất cho các đơn vị phát điện trong thị trường điện.\n5. Giá bán lẻ điện bình quân là mức giá bán lẻ điện được xác định theo nguyên tắc tính tổng chi phí sản xuất, kinh doanh điện và mức lợi nhuận bình quân cho 01 kWh thương phẩm trong từng thời kỳ.\n6. Năm N là năm giá bán lẻ điện bình quân được tính toán theo quy định tại Thông tư này, được tính từ ngày 01 tháng 01 đến hết ngày 31 tháng 12 của năm dương lịch.\n7. Năm N-1 là năm dương lịch liền trước năm N.\n8. Năm N-2 là năm dương lịch liền trước năm N-1.\n9. Nhà máy điện BOT là nhà máy điện được đầu tư theo hình thức Xây dựng - Kinh doanh - Chuyển giao thông qua hợp đồng giữa nhà đầu tư và cơ quan nhà nước có thẩm quyền.\n10. Tổng sản lượng điện thương phẩm là tổng sản lượng điện của Tập đoàn Điện lực Việt Nam và các Tổng công ty Điện lực bán cho các khách hàng.\n11. Tổng công ty Điện lực là thuật ngữ chung chỉ Tổng công ty Điện lực miền Bắc, Tổng công ty Điện lực miền Nam, Tổng công ty Điện lực miền Trung, Tổng công ty Điện lực thành phố Hà Nội và Tổng công ty Điện lực thành phố Hồ Chí Minh.\nChương II\nPHƯƠNG PHÁP LẬP GIÁ BÁN LẺ ĐIỆN BÌNH QUÂN\nMục 1. PHƯƠNG PHÁP LẬP GIÁ BÁN LẺ ĐIỆN BÌNH QUÂN HẰNG NĂM",
-          "blocks": [
-            {
-              "kind": "text",
-              "text": "Trong Thông tư này các thuật ngữ dưới đây được hiểu như sau:"
-            },
-            {
-              "kind": "text",
-              "text": "1. CPI là chỉ số giá tiêu dùng do cơ quan thống kê trung ương công bố."
-            },
-            {
-              "kind": "text",
-              "text": "2. Đơn vị vận hành hệ thống điện và thị trường điện là đơn vị thực hiện chức năng của Đơn vị điều độ hệ thống điện quốc gia và Đơn vị điều hành giao dịch thị trường điện theo quy định tại Luật Điện lực (hiện nay là Công ty TNHH MTV Vận hành hệ thống điện và thị trường điện Quốc gia - NSMO)."
-            },
-            {
-              "kind": "text",
-              "text": "3. Giá điện năng thị trường là mức giá cho một đơn vị điện năng xác định cho mỗi chu kỳ giao dịch, áp dụng để tính toán khoản thanh toán điện năng trong thị trường điện."
-            },
-            {
-              "kind": "text",
-              "text": "4. Giá công suất thị trường là mức giá tính toán cho mỗi chu kỳ giao dịch và áp dụng để tính toán khoản thanh toán công suất cho các đơn vị phát điện trong thị trường điện."
-            },
-            {
-              "kind": "text",
-              "text": "5. Giá bán lẻ điện bình quân là mức giá bán lẻ điện được xác định theo nguyên tắc tính tổng chi phí sản xuất, kinh doanh điện và mức lợi nhuận bình quân cho 01 kWh thương phẩm trong từng thời kỳ."
-            },
-            {
-              "kind": "text",
-              "text": "6. Năm N là năm giá bán lẻ điện bình quân được tính toán theo quy định tại Thông tư này, được tính từ ngày 01 tháng 01 đến hết ngày 31 tháng 12 của năm dương lịch."
-            },
-            {
-              "kind": "text",
-              "text": "7. Năm N-1 là năm dương lịch liền trước năm N."
-            },
-            {
-              "kind": "text",
-              "text": "8. Năm N-2 là năm dương lịch liền trước năm N-1."
-            },
-            {
-              "kind": "text",
-              "text": "9. Nhà máy điện BOT là nhà máy điện được đầu tư theo hình thức Xây dựng - Kinh doanh - Chuyển giao thông qua hợp đồng giữa nhà đầu tư và cơ quan nhà nước có thẩm quyền."
-            },
-            {
-              "kind": "text",
-              "text": "10. Tổng sản lượng điện thương phẩm là tổng sản lượng điện của Tập đoàn Điện lực Việt Nam và các Tổng công ty Điện lực bán cho các khách hàng."
-            },
-            {
-              "kind": "text",
-              "text": "11. Tổng công ty Điện lực là thuật ngữ chung chỉ Tổng công ty Điện lực miền Bắc, Tổng công ty Điện lực miền Nam, Tổng công ty Điện lực miền Trung, Tổng công ty Điện lực thành phố Hà Nội và Tổng công ty Điện lực thành phố Hồ Chí Minh."
-            },
-            {
-              "kind": "text",
-              "text": "Chương II"
-            },
-            {
-              "kind": "text",
-              "text": "PHƯƠNG PHÁP LẬP GIÁ BÁN LẺ ĐIỆN BÌNH QUÂN"
-            },
-            {
-              "kind": "text",
-              "text": "Mục 1. PHƯƠNG PHÁP LẬP GIÁ BÁN LẺ ĐIỆN BÌNH QUÂN HẰNG NĂM"
-            }
-          ]
+          "heading": "Mức giá bán lẻ điện bình quân là 2.204,0655 đồng/kWh (chưa bao gồm thuế giá trị gia tăng).",
+          "body": "",
+          "blocks": []
         },
         {
           "id": "art-3",
           "number": "Điều 3",
-          "heading": "Phương pháp lập giá bán lẻ điện bình quân hằng năm",
-          "body": "1. Giá bán lẻ điện bình quân năm N được tính toán theo công thức quy định tại khoản 2 Điều 4 Nghị định số 72/2025/NĐ-CP.\n2. Chi phí khâu phát điện, chi phí dịch vụ phụ trợ hệ thống điện, chi phí mua các dịch vụ truyền tải điện, phân phối - bán lẻ điện, điều độ vận hành hệ thống điện và điều hành giao dịch thị trường điện lực, chi phí điều hành - quản lý ngành được xác định lần lượt theo quy định tại Điều 4, Điều 5, Điều 6, Điều 7, Điều 8 và Điều 9 Thông tư này.\n3. Sản lượng điện nhà máy điện năm N được xác định theo kế hoạch cung cấp điện và vận hành hệ thống điện quốc gia năm N.\n4. Tổng sản lượng điện thương phẩm dự kiến cho năm N do Tập đoàn Điện lực Việt Nam tính toán tương ứng theo kế hoạch cung cấp điện và vận hành hệ thống điện quốc gia năm N.\n5. Hồ sơ phương án giá bán lẻ điện bình quân hằng năm thực hiện theo quy định tại khoản 2 Điều 5 Nghị định số 72/2025/NĐ-CP.",
-          "blocks": [
-            {
-              "kind": "text",
-              "text": "1. Giá bán lẻ điện bình quân năm N được tính toán theo công thức quy định tại khoản 2 Điều 4 Nghị định số 72/2025/NĐ-CP."
-            },
-            {
-              "kind": "text",
-              "text": "2. Chi phí khâu phát điện, chi phí dịch vụ phụ trợ hệ thống điện, chi phí mua các dịch vụ truyền tải điện, phân phối - bán lẻ điện, điều độ vận hành hệ thống điện và điều hành giao dịch thị trường điện lực, chi phí điều hành - quản lý ngành được xác định lần lượt theo quy định tại Điều 4, Điều 5, Điều 6, Điều 7, Điều 8 và Điều 9 Thông tư này."
-            },
-            {
-              "kind": "text",
-              "text": "3. Sản lượng điện nhà máy điện năm N được xác định theo kế hoạch cung cấp điện và vận hành hệ thống điện quốc gia năm N."
-            },
-            {
-              "kind": "text",
-              "text": "4. Tổng sản lượng điện thương phẩm dự kiến cho năm N do Tập đoàn Điện lực Việt Nam tính toán tương ứng theo kế hoạch cung cấp điện và vận hành hệ thống điện quốc gia năm N."
-            },
-            {
-              "kind": "text",
-              "text": "5. Hồ sơ phương án giá bán lẻ điện bình quân hằng năm thực hiện theo quy định tại khoản 2 Điều 5 Nghị định số 72/2025/NĐ-CP."
-            }
-          ]
+          "heading": "Thời gian áp dụng giá bán điện: từ ngày 10 tháng 5 năm 2025.",
+          "body": "",
+          "blocks": []
         },
         {
           "id": "art-4",
           "number": "Điều 4",
-          "heading": "Phương pháp lập tổng chi phí khâu phát điện",
-          "body": "1. Tổng chi phí khâu phát điện năm N (CPĐ) được xác định theo công thức sau:\nCPĐ= CTTĐ + CĐMT + CBOT + CTTN + CNLTT + CNK\nTrong đó:\na) CTTĐ: Tổng chi phí mua điện năm N (đồng) từ các nhà máy điện trực tiếp và gián tiếp tham gia thị trường điện, được xác định theo quy định tại khoản 2 Điều này;\nb) CĐMT: Tổng chi phí và lợi nhuận định mức năm N (đồng) từ các nhà máy thủy điện chiến lược đa mục tiêu và nhà máy điện hạch toán phụ thuộc khác trong giai đoạn chưa tham gia thị trường điện cạnh tranh của Tập đoàn Điện lực Việt Nam, được xác định theo quy định tại khoản 3 Điều này;\nc) CBOT: Tổng chi phí mua điện năm N (đồng) từ các nhà máy điện BOT, được xác định theo quy định tại khoản 2 Điều này;\nd) CTTN: Tổng chi phí mua điện năm N (đồng) từ các nhà máy năng lượng tái tạo nhỏ, được xác định theo quy định tại khoản 2 Điều này;\nđ) CNLTT: Tổng chi phí mua điện năm N (đồng) từ các nhà máy điện sử dụng năng lượng tái tạo và năng lượng mới bao gồm cả hệ thống lưu trữ điện, được xác định theo quy định tại khoản 2 Điều này;\ne) CNK: Tổng chi phí mua điện năm N (đồng) từ nhập khẩu điện, được xác định theo quy định tại khoản 2 Điều này.\n2. Tổng chi phí mua điện từ các nhà máy điện trực tiếp và gián tiếp tham gia thị trường điện (không bao gồm các nhà máy thủy điện chiến lược đa mục tiêu và nhà máy điện hạch toán phụ thuộc khác trong giai đoạn chưa tham gia thị trường điện cạnh tranh của Tập đoàn Điện lực Việt Nam), nhà máy điện BOT, nhà máy năng lượng tái tạo nhỏ, nhà máy điện sử dụng năng lượng tái tạo và năng lượng mới bao gồm cả hệ thống lưu trữ điện và nhập khẩu điện được xác định căn cứ theo hợp đồng mua bán điện và quy định thị trường điện, trong đó:\na) Sản lượng điện nhà máy điện: theo quy định tại Điều 3 Thông tư này;\nb) Sản lượng điện các nhà máy điện năng lượng tái tạo và năng lượng mới do Đơn vị vận hành hệ thống điện và thị trường điện cung cấp;\nc) Sản lượng hợp đồng (Qc) của các nhà máy điện trực tiếp tham gia thị trường điện do Đơn vị vận hành hệ thống điện và thị trường điện cung cấp;\nd) Giá điện năng thị trường trung bình tháng được tính toán căn cứ kết quả tính toán mô phỏng thị trường điện của Đơn vị vận hành hệ thống điện và thị trường điện theo kế hoạch vận hành thị trường điện năm N;\nđ) Giá công suất thị trường trung bình tháng được phê duyệt dựa trên tính toán mô phỏng thị trường điện của Đơn vị vận hành hệ thống điện và thị trường điện theo kế hoạch vận hành thị trường điện năm N;\ne) Giá điện và các thông số đầu vào về nhiên liệu, tỷ giá ngoại tệ của các nhà máy điện trực tiếp và gián tiếp tham gia thị trường điện, nhà máy điện BOT, nhà máy điện sử dụng năng lượng tái tạo và năng lượng mới, nhập khẩu điện: được xác định theo giá điện sử dụng trong tính toán kế hoạch cung cấp điện và vận hành hệ thống điện quốc gia năm N. Đối với nhà máy điện dự kiến đưa vào vận hành trong năm N nhưng chưa xác định được giá điện, Tập đoàn Điện lực Việt Nam chịu trách nhiệm đề xuất giá dự kiến để ước tính chi phí năm N;\ng) Chi phí mua điện từ các nhà máy nhà máy năng lượng tái tạo nhỏ áp dụng biểu giá chi phí tránh được: được xác định theo biểu giá chi phí tránh được năm N (trường hợp chưa có biểu giá chi phí tránh được năm N thì lấy theo biểu giá chi phí tránh được năm N-1) và cơ cấu sản lượng điện cao điểm, bình thường và thấp điểm theo tháng của từng miền năm N theo tỷ lệ cơ cấu sản lượng điện theo tháng của từng miền ước thực hiện năm N-1;\nh) Chi phí mua điện của các nhà máy điện trực tiếp tham gia thị trường điện do Đơn vị vận hành hệ thống điện và thị trường điện tính toán và cung cấp.\n3. Phương pháp xác định tổng chi phí và lợi nhuận định mức năm N từ các nhà máy thủy điện chiến lược đa mục tiêu và nhà máy điện hạch toán phụ thuộc khác trong giai đoạn chưa tham gia thị trường điện cạnh tranh của Tập đoàn Điện lực Việt Nam như sau:\na) Tổng chi phí từ các nhà máy thủy điện chiến lược đa mục tiêu và hạch toán phụ thuộc khác trong giai đoạn chưa tham gia thị trường điện cạnh tranh của Tập đoàn Điện lực Việt Nam được xác định theo quy định của Bộ trưởng Bộ Công Thương quy định phương pháp xác định chi phí phát điện của nhà máy điện trong giai đoạn chưa tham gia thị trường điện cạnh tranh đối với một số loại hình nhà máy điện;\nb) Lợi nhuận định mức được xác định theo quy định tại khoản 5 Điều 4 Nghị định số 72/2025/NĐ-CP.",
+          "heading": "Chánh Văn phòng Bộ, Cục trưởng Cục Điện lực, Tổng giám đốc Tập đoàn Điện lực Việt Nam, các tổ chức, cá nhân có liên quan chịu trách nhiệm thi hành Quyết định này./.",
+          "body": "PHỤ LỤC\nGIÁ BÁN ĐIỆN\n(Ban hành kèm theo Quyết định số 1279/QĐ-BCT ngày 09 tháng 5 năm 2025 của Bộ Công Thương)",
           "blocks": [
-            {
-              "kind": "text",
-              "text": "1. Tổng chi phí khâu phát điện năm N (CPĐ) được xác định theo công thức sau:"
-            },
-            {
-              "kind": "text",
-              "text": "CPĐ= CTTĐ + CĐMT + CBOT + CTTN + CNLTT + CNK"
-            },
-            {
-              "kind": "text",
-              "text": "Trong đó:"
-            },
-            {
-              "kind": "text",
-              "text": "a) CTTĐ: Tổng chi phí mua điện năm N (đồng) từ các nhà máy điện trực tiếp và gián tiếp tham gia thị trường điện, được xác định theo quy định tại khoản 2 Điều này;"
-            },
-            {
-              "kind": "text",
-              "text": "b) CĐMT: Tổng chi phí và lợi nhuận định mức năm N (đồng) từ các nhà máy thủy điện chiến lược đa mục tiêu và nhà máy điện hạch toán phụ thuộc khác trong giai đoạn chưa tham gia thị trường điện cạnh tranh của Tập đoàn Điện lực Việt Nam, được xác định theo quy định tại khoản 3 Điều này;"
-            },
-            {
-              "kind": "text",
-              "text": "c) CBOT: Tổng chi phí mua điện năm N (đồng) từ các nhà máy điện BOT, được xác định theo quy định tại khoản 2 Điều này;"
-            },
-            {
-              "kind": "text",
-              "text": "d) CTTN: Tổng chi phí mua điện năm N (đồng) từ các nhà máy năng lượng tái tạo nhỏ, được xác định theo quy định tại khoản 2 Điều này;"
-            },
-            {
-              "kind": "text",
-              "text": "đ) CNLTT: Tổng chi phí mua điện năm N (đồng) từ các nhà máy điện sử dụng năng lượng tái tạo và năng lượng mới bao gồm cả hệ thống lưu trữ điện, được xác định theo quy định tại khoản 2 Điều này;"
-            },
-            {
-              "kind": "text",
-              "text": "e) CNK: Tổng chi phí mua điện năm N (đồng) từ nhập khẩu điện, được xác định theo quy định tại khoản 2 Điều này."
-            },
-            {
-              "kind": "text",
-              "text": "2. Tổng chi phí mua điện từ các nhà máy điện trực tiếp và gián tiếp tham gia thị trường điện (không bao gồm các nhà máy thủy điện chiến lược đa mục tiêu và nhà máy điện hạch toán phụ thuộc khác trong giai đoạn chưa tham gia thị trường điện cạnh tranh của Tập đoàn Điện lực Việt Nam), nhà máy điện BOT, nhà máy năng lượng tái tạo nhỏ, nhà máy điện sử dụng năng lượng tái tạo và năng lượng mới bao gồm cả hệ thống lưu trữ điện và nhập khẩu điện được xác định căn cứ theo hợp đồng mua bán điện và quy định thị trường điện, trong đó:"
-            },
-            {
-              "kind": "text",
-              "text": "a) Sản lượng điện nhà máy điện: theo quy định tại Điều 3 Thông tư này;"
-            },
-            {
-              "kind": "text",
-              "text": "b) Sản lượng điện các nhà máy điện năng lượng tái tạo và năng lượng mới do Đơn vị vận hành hệ thống điện và thị trường điện cung cấp;"
-            },
-            {
-              "kind": "text",
-              "text": "c) Sản lượng hợp đồng (Qc) của các nhà máy điện trực tiếp tham gia thị trường điện do Đơn vị vận hành hệ thống điện và thị trường điện cung cấp;"
-            },
-            {
-              "kind": "text",
-              "text": "d) Giá điện năng thị trường trung bình tháng được tính toán căn cứ kết quả tính toán mô phỏng thị trường điện của Đơn vị vận hành hệ thống điện và thị trường điện theo kế hoạch vận hành thị trường điện năm N;"
-            },
-            {
-              "kind": "text",
-              "text": "đ) Giá công suất thị trường trung bình tháng được phê duyệt dựa trên tính toán mô phỏng thị trường điện của Đơn vị vận hành hệ thống điện và thị trường điện theo kế hoạch vận hành thị trường điện năm N;"
-            },
-            {
-              "kind": "text",
-              "text": "e) Giá điện và các thông số đầu vào về nhiên liệu, tỷ giá ngoại tệ của các nhà máy điện trực tiếp và gián tiếp tham gia thị trường điện, nhà máy điện BOT, nhà máy điện sử dụng năng lượng tái tạo và năng lượng mới, nhập khẩu điện: được xác định theo giá điện sử dụng trong tính toán kế hoạch cung cấp điện và vận hành hệ thống điện quốc gia năm N. Đối với nhà máy điện dự kiến đưa vào vận hành trong năm N nhưng chưa xác định được giá điện, Tập đoàn Điện lực Việt Nam chịu trách nhiệm đề xuất giá dự kiến để ước tính chi phí năm N;"
-            },
-            {
-              "kind": "text",
-              "text": "g) Chi phí mua điện từ các nhà máy nhà máy năng lượng tái tạo nhỏ áp dụng biểu giá chi phí tránh được: được xác định theo biểu giá chi phí tránh được năm N (trường hợp chưa có biểu giá chi phí tránh được năm N thì lấy theo biểu giá chi phí tránh được năm N-1) và cơ cấu sản lượng điện cao điểm, bình thường và thấp điểm theo tháng của từng miền năm N theo tỷ lệ cơ cấu sản lượng điện theo tháng của từng miền ước thực hiện năm N-1;"
-            },
-            {
-              "kind": "text",
-              "text": "h) Chi phí mua điện của các nhà máy điện trực tiếp tham gia thị trường điện do Đơn vị vận hành hệ thống điện và thị trường điện tính toán và cung cấp."
-            },
-            {
-              "kind": "text",
-              "text": "3. Phương pháp xác định tổng chi phí và lợi nhuận định mức năm N từ các nhà máy thủy điện chiến lược đa mục tiêu và nhà máy điện hạch toán phụ thuộc khác trong giai đoạn chưa tham gia thị trường điện cạnh tranh của Tập đoàn Điện lực Việt Nam như sau:"
-            },
-            {
-              "kind": "text",
-              "text": "a) Tổng chi phí từ các nhà máy thủy điện chiến lược đa mục tiêu và hạch toán phụ thuộc khác trong giai đoạn chưa tham gia thị trường điện cạnh tranh của Tập đoàn Điện lực Việt Nam được xác định theo quy định của Bộ trưởng Bộ Công Thương quy định phương pháp xác định chi phí phát điện của nhà máy điện trong giai đoạn chưa tham gia thị trường điện cạnh tranh đối với một số loại hình nhà máy điện;"
-            },
-            {
-              "kind": "text",
-              "text": "b) Lợi nhuận định mức được xác định theo quy định tại khoản 5 Điều 4 Nghị định số 72/2025/NĐ-CP."
-            }
-          ]
-        },
-        {
-          "id": "art-5",
-          "number": "Điều 5",
-          "heading": "Phương pháp lập tổng chi phí các nhà máy điện cung cấp dịch vụ phụ trợ hệ thống điện",
-          "body": "1. Tổng chi phí các nhà máy điện cung cấp dịch vụ phụ trợ hệ thống điện năm N, bao gồm cả chi phí chạy thử nghiệm của các nhà máy điện được xác định theo hợp đồng cung cấp dịch vụ phụ trợ hệ thống điện, trong đó:\na) Sản lượng điện được xác định theo quy định tại Điều 3 Thông tư này;\nb) Giá điện và các thông số đầu vào về nhiên liệu, tỷ giá ngoại tệ được xác định theo thông số đã được Đơn vị vận hành hệ thống điện và thị trường điện sử dụng trong lập kế hoạch cung cấp điện và vận hành hệ thống điện quốc gia năm N.\n2. Trường hợp các nhà máy điện, tổ máy phát điện trực thuộc Tập đoàn Điện lực Việt Nam đã ký hợp đồng mua bán điện với các Tổng công ty Điện lực và tham gia cung cấp dịch vụ phụ trợ hệ thống điện thì các nhà máy điện, tổ máy phát điện này được tính toán khoản chi phí nhiên liệu, chi phí vận hành và bảo dưỡng biến đổi trong thời gian tham gia cung cấp dịch vụ phụ trợ hệ thống điện.",
-          "blocks": [
-            {
-              "kind": "text",
-              "text": "1. Tổng chi phí các nhà máy điện cung cấp dịch vụ phụ trợ hệ thống điện năm N, bao gồm cả chi phí chạy thử nghiệm của các nhà máy điện được xác định theo hợp đồng cung cấp dịch vụ phụ trợ hệ thống điện, trong đó:"
-            },
-            {
-              "kind": "text",
-              "text": "a) Sản lượng điện được xác định theo quy định tại Điều 3 Thông tư này;"
-            },
-            {
-              "kind": "text",
-              "text": "b) Giá điện và các thông số đầu vào về nhiên liệu, tỷ giá ngoại tệ được xác định theo thông số đã được Đơn vị vận hành hệ thống điện và thị trường điện sử dụng trong lập kế hoạch cung cấp điện và vận hành hệ thống điện quốc gia năm N."
-            },
-            {
-              "kind": "text",
-              "text": "2. Trường hợp các nhà máy điện, tổ máy phát điện trực thuộc Tập đoàn Điện lực Việt Nam đã ký hợp đồng mua bán điện với các Tổng công ty Điện lực và tham gia cung cấp dịch vụ phụ trợ hệ thống điện thì các nhà máy điện, tổ máy phát điện này được tính toán khoản chi phí nhiên liệu, chi phí vận hành và bảo dưỡng biến đổi trong thời gian tham gia cung cấp dịch vụ phụ trợ hệ thống điện."
-            }
-          ]
-        },
-        {
-          "id": "art-6",
-          "number": "Điều 6",
-          "heading": "Phương pháp lập tổng chi phí mua dịch vụ truyền tải điện",
-          "body": "Tổng chi phí mua dịch vụ truyền tải điện năm N (CTT) là tổng doanh thu truyền tải điện cho phép được xác định theo quy định về phương pháp lập, hồ sơ, trình tự, thủ tục phê duyệt giá dịch vụ truyền tải điện do Bộ trưởng Bộ Công Thương ban hành.",
-          "blocks": [
-            {
-              "kind": "text",
-              "text": "Tổng chi phí mua dịch vụ truyền tải điện năm N (CTT) là tổng doanh thu truyền tải điện cho phép được xác định theo quy định về phương pháp lập, hồ sơ, trình tự, thủ tục phê duyệt giá dịch vụ truyền tải điện do Bộ trưởng Bộ Công Thương ban hành."
-            }
-          ]
-        },
-        {
-          "id": "art-7",
-          "number": "Điều 7",
-          "heading": "Phương pháp lập tổng chi phí phân phối - bán lẻ điện và lợi nhuận định mức",
-          "body": "1. Tổng chi phí phân phối - bán lẻ điện năm N là tổng chi phí phân phối - bán lẻ điện năm N của các Tổng công ty Điện lực được xác định theo quy định về phương pháp lập và trình tự, thủ tục phê duyệt khung giá bán buôn điện; phương pháp xác định giá bán buôn điện; nội dung chính của hợp đồng mua bán điện do Bộ trưởng Bộ Công Thương ban hành.\n2. Lợi nhuận định mức được xác định theo quy định tại khoản 5 Điều 4 Nghị định số 72/2025/NĐ-CP.",
-          "blocks": [
-            {
-              "kind": "text",
-              "text": "1. Tổng chi phí phân phối - bán lẻ điện năm N là tổng chi phí phân phối - bán lẻ điện năm N của các Tổng công ty Điện lực được xác định theo quy định về phương pháp lập và trình tự, thủ tục phê duyệt khung giá bán buôn điện; phương pháp xác định giá bán buôn điện; nội dung chính của hợp đồng mua bán điện do Bộ trưởng Bộ Công Thương ban hành."
-            },
-            {
-              "kind": "text",
-              "text": "2. Lợi nhuận định mức được xác định theo quy định tại khoản 5 Điều 4 Nghị định số 72/2025/NĐ-CP."
-            }
-          ]
-        },
-        {
-          "id": "art-8",
-          "number": "Điều 8",
-          "heading": "Phương pháp lập tổng chi phí mua dịch vụ điều độ vận hành hệ thống điện và dịch vụ điều hành giao dịch thị trường điện lực",
-          "body": "Tổng chi phí mua dịch vụ điều độ vận hành hệ thống điện và điều hành giao dịch thị trường điện lực năm N (CĐĐ) là tổng doanh thu điều độ vận hành hệ thống điện và điều hành giao dịch thị trường điện lực cho phép năm N của Đơn vị vận hành hệ thống điện và thị trường điện được xác định theo quy định về phương pháp lập, hồ sơ, trình tự, thủ tục phê duyệt giá dịch vụ điều độ vận hành hệ thống điện và dịch vụ điều hành giao dịch thị trường điện lực do Bộ trưởng Bộ Công Thương ban hành.",
-          "blocks": [
-            {
-              "kind": "text",
-              "text": "Tổng chi phí mua dịch vụ điều độ vận hành hệ thống điện và điều hành giao dịch thị trường điện lực năm N (CĐĐ) là tổng doanh thu điều độ vận hành hệ thống điện và điều hành giao dịch thị trường điện lực cho phép năm N của Đơn vị vận hành hệ thống điện và thị trường điện được xác định theo quy định về phương pháp lập, hồ sơ, trình tự, thủ tục phê duyệt giá dịch vụ điều độ vận hành hệ thống điện và dịch vụ điều hành giao dịch thị trường điện lực do Bộ trưởng Bộ Công Thương ban hành."
-            }
-          ]
-        },
-        {
-          "id": "art-9",
-          "number": "Điều 9",
-          "heading": "Phương pháp lập tổng chi phí điều hành - quản lý ngành và lợi nhuận định mức",
-          "body": "Tổng chi phí điều hành - quản lý ngành bao gồm các chi phí quản lý về hoạt động sản xuất kinh doanh điện của Tập đoàn Điện lực Việt Nam. Tổng chi phí điều hành - quản lý ngành và lợi nhuận định mức năm N (Cchung) được xác định theo công thức sau:\nCchung = CVL + CTL + CKH + CSCL + CMN + CBTK + CTC + GT + LN\nTrong đó:\na) CVL: Tổng chi phí vật liệu năm N (đồng), được xác định theo báo cáo tài chính đã được kiểm toán trên cơ sở kết quả kiểm tra hoặc công bố chi phí sản xuất kinh doanh điện năm N-2, loại trừ các chi phí đột biến bất thường của năm N-2, tính trượt giá từng năm theo bình quân CPI của 3 năm gần nhất trước đó tại thời điểm xây dựng giá bán lẻ điện bình quân và bổ sung chi phí hợp lý phát sinh dự kiến năm N nhưng chưa được tính hoặc chưa được tính đầy đủ cho năm N-2;\nb) CTL: Tổng chi phí tiền lương năm N (đồng), bao gồm tổng chi phí tiền lương và các khoản chi phí có tính chất lương như chi phí bảo hiểm y tế, bảo hiểm xã hội, bảo hiểm thất nghiệp và kinh phí công đoàn, được xác định theo quy định của pháp luật có liên quan;\nc) CKH: Tổng chi phí khấu hao tài sản cố định năm N (đồng), được xác định theo quy định về chế độ quản lý, sử dụng và trích khấu hao tài sản cố định của Bộ Tài chính hoặc cơ quan, tổ chức có thẩm quyền;\nd) CSCL: Tổng chi phí sửa chữa lớn năm N (đồng), được xác định trên cơ sở kế hoạch sửa chữa lớn năm N do cơ quan, tổ chức có thẩm quyền phê duyệt;\nđ) CMN: Tổng chi phí dịch vụ mua ngoài năm N (đồng), được xác định theo báo cáo tài chính đã được kiểm toán trên cơ sở kết quả kiểm tra hoặc công bố chi phí sản xuất kinh doanh điện năm N-2, loại trừ các chi phí đột biến bất thường của năm N-2, tính trượt giá từng năm theo bình quân CPI của 03 năm gần nhất trước đó tại thời điểm xây dựng giá bán lẻ điện bình quân và bổ sung chi phí hợp lý phát sinh dự kiến năm N nhưng chưa được tính hoặc chưa được tính đầy đủ cho năm N-2;\ne) CBTK: Tổng chi phí bằng tiền khác năm N (đồng), bao gồm: các khoản thuế, phí, lệ phí, tiền thuê đất, tiền ăn ca và chi phí khác bằng tiền dự kiến năm N. Các khoản thuế, phí, lệ phí, tiền thuê đất, tiền ăn ca dự kiến năm N được xác định theo quy định hiện hành. Các khoản chi phí khác bằng tiền năm N được xác định theo báo cáo tài chính đã được kiểm toán trên cơ sở kết quả kiểm tra hoặc công bố chi phí sản xuất kinh doanh điện năm N-2, loại trừ các chi phí đột biến bất thường của năm N-2, tính trượt giá từng năm theo bình quân CPI của 03 năm gần nhất trước đó tại thời điểm xây dựng giá và bổ sung chi phí hợp lý phát sinh dự kiến năm N nhưng chưa được tính hoặc chưa được tính đầy đủ cho năm N-2;\ng) CTC: Tổng chi phí tài chính năm N (đồng), bao gồm: tổng chi phí lãi vay, trái phiếu, thuê tài chính và các khoản phí để vay vốn, phải trả trong năm N, được xác định theo các hợp đồng, các tài liệu có tính pháp lý, dự kiến các khoản vay phục vụ hoạt động sản xuất năm N; chênh lệch tỷ giá dự kiến năm N được xác định theo quy định về tài chính kế toán;\nh) GT: Các khoản giảm trừ giá thành (đồng);\ni) Lợi nhuận định mức được xác định theo quy định tại khoản 5 Điều 4 Nghị định số 72/2025/NĐ-CP.\nk) Trường hợp có số liệu đã được đơn vị kiểm toán độc lập kiểm toán năm N-1, sử dụng số liệu các khoản chi phí vật liệu, chi phí dịch vụ mua ngoài, chi phí khác bằng tiền của năm N-1 để tính chi phí tương ứng của năm N.\nMục 2. PHƯƠNG PHÁP LẬP GIÁ BÁN LẺ ĐIỆN BÌNH QUÂN TRONG NĂM",
-          "blocks": [
-            {
-              "kind": "text",
-              "text": "Tổng chi phí điều hành - quản lý ngành bao gồm các chi phí quản lý về hoạt động sản xuất kinh doanh điện của Tập đoàn Điện lực Việt Nam. Tổng chi phí điều hành - quản lý ngành và lợi nhuận định mức năm N (Cchung) được xác định theo công thức sau:"
-            },
-            {
-              "kind": "text",
-              "text": "Cchung = CVL + CTL + CKH + CSCL + CMN + CBTK + CTC + GT + LN"
-            },
-            {
-              "kind": "text",
-              "text": "Trong đó:"
-            },
-            {
-              "kind": "text",
-              "text": "a) CVL: Tổng chi phí vật liệu năm N (đồng), được xác định theo báo cáo tài chính đã được kiểm toán trên cơ sở kết quả kiểm tra hoặc công bố chi phí sản xuất kinh doanh điện năm N-2, loại trừ các chi phí đột biến bất thường của năm N-2, tính trượt giá từng năm theo bình quân CPI của 3 năm gần nhất trước đó tại thời điểm xây dựng giá bán lẻ điện bình quân và bổ sung chi phí hợp lý phát sinh dự kiến năm N nhưng chưa được tính hoặc chưa được tính đầy đủ cho năm N-2;"
-            },
-            {
-              "kind": "text",
-              "text": "b) CTL: Tổng chi phí tiền lương năm N (đồng), bao gồm tổng chi phí tiền lương và các khoản chi phí có tính chất lương như chi phí bảo hiểm y tế, bảo hiểm xã hội, bảo hiểm thất nghiệp và kinh phí công đoàn, được xác định theo quy định của pháp luật có liên quan;"
-            },
-            {
-              "kind": "text",
-              "text": "c) CKH: Tổng chi phí khấu hao tài sản cố định năm N (đồng), được xác định theo quy định về chế độ quản lý, sử dụng và trích khấu hao tài sản cố định của Bộ Tài chính hoặc cơ quan, tổ chức có thẩm quyền;"
-            },
-            {
-              "kind": "text",
-              "text": "d) CSCL: Tổng chi phí sửa chữa lớn năm N (đồng), được xác định trên cơ sở kế hoạch sửa chữa lớn năm N do cơ quan, tổ chức có thẩm quyền phê duyệt;"
-            },
-            {
-              "kind": "text",
-              "text": "đ) CMN: Tổng chi phí dịch vụ mua ngoài năm N (đồng), được xác định theo báo cáo tài chính đã được kiểm toán trên cơ sở kết quả kiểm tra hoặc công bố chi phí sản xuất kinh doanh điện năm N-2, loại trừ các chi phí đột biến bất thường của năm N-2, tính trượt giá từng năm theo bình quân CPI của 03 năm gần nhất trước đó tại thời điểm xây dựng giá bán lẻ điện bình quân và bổ sung chi phí hợp lý phát sinh dự kiến năm N nhưng chưa được tính hoặc chưa được tính đầy đủ cho năm N-2;"
-            },
-            {
-              "kind": "text",
-              "text": "e) CBTK: Tổng chi phí bằng tiền khác năm N (đồng), bao gồm: các khoản thuế, phí, lệ phí, tiền thuê đất, tiền ăn ca và chi phí khác bằng tiền dự kiến năm N. Các khoản thuế, phí, lệ phí, tiền thuê đất, tiền ăn ca dự kiến năm N được xác định theo quy định hiện hành. Các khoản chi phí khác bằng tiền năm N được xác định theo báo cáo tài chính đã được kiểm toán trên cơ sở kết quả kiểm tra hoặc công bố chi phí sản xuất kinh doanh điện năm N-2, loại trừ các chi phí đột biến bất thường của năm N-2, tính trượt giá từng năm theo bình quân CPI của 03 năm gần nhất trước đó tại thời điểm xây dựng giá và bổ sung chi phí hợp lý phát sinh dự kiến năm N nhưng chưa được tính hoặc chưa được tính đầy đủ cho năm N-2;"
-            },
-            {
-              "kind": "text",
-              "text": "g) CTC: Tổng chi phí tài chính năm N (đồng), bao gồm: tổng chi phí lãi vay, trái phiếu, thuê tài chính và các khoản phí để vay vốn, phải trả trong năm N, được xác định theo các hợp đồng, các tài liệu có tính pháp lý, dự kiến các khoản vay phục vụ hoạt động sản xuất năm N; chênh lệch tỷ giá dự kiến năm N được xác định theo quy định về tài chính kế toán;"
-            },
-            {
-              "kind": "text",
-              "text": "h) GT: Các khoản giảm trừ giá thành (đồng);"
-            },
-            {
-              "kind": "text",
-              "text": "i) Lợi nhuận định mức được xác định theo quy định tại khoản 5 Điều 4 Nghị định số 72/2025/NĐ-CP."
-            },
-            {
-              "kind": "text",
-              "text": "k) Trường hợp có số liệu đã được đơn vị kiểm toán độc lập kiểm toán năm N-1, sử dụng số liệu các khoản chi phí vật liệu, chi phí dịch vụ mua ngoài, chi phí khác bằng tiền của năm N-1 để tính chi phí tương ứng của năm N."
-            },
-            {
-              "kind": "text",
-              "text": "Mục 2. PHƯƠNG PHÁP LẬP GIÁ BÁN LẺ ĐIỆN BÌNH QUÂN TRONG NĂM"
-            }
-          ]
-        },
-        {
-          "id": "art-10",
-          "number": "Điều 10",
-          "heading": "Phương pháp lập giá bán lẻ điện bình quân trong năm",
-          "body": "1. Giá bán lẻ điện bình quân trong năm được tính toán theo công thức quy định tại khoản 2 Điều 4 Nghị định số 72/2025/NĐ-CP.\n2. Các thông số giữ nguyên theo phương án giá bán lẻ điện bình quân hằng năm bao gồm: tổng chi phí mua các dịch vụ truyền tải điện, điều độ hệ thống điện và điều hành giao dịch thị trường điện lực; tổng chi phí phân phối - bán lẻ điện và lợi nhuận định mức; tổng chi phí điều hành - quản lý ngành và lợi nhuận định mức.\n3. Tổng chi phí khâu phát điện, tổng chi phí các nhà máy điện cung cấp dịch vụ phụ trợ hệ thống điện cập nhật hằng quý được xác định theo quy định tại Điều 11 và Điều 12 Thông tư này.\n4. Hồ sơ phương án giá bán điện bình quân trong năm thực hiện theo quy định tại khoản 2 Điều 6 Nghị định số 72/2025/NĐ-CP.",
-          "blocks": [
-            {
-              "kind": "text",
-              "text": "1. Giá bán lẻ điện bình quân trong năm được tính toán theo công thức quy định tại khoản 2 Điều 4 Nghị định số 72/2025/NĐ-CP."
-            },
-            {
-              "kind": "text",
-              "text": "2. Các thông số giữ nguyên theo phương án giá bán lẻ điện bình quân hằng năm bao gồm: tổng chi phí mua các dịch vụ truyền tải điện, điều độ hệ thống điện và điều hành giao dịch thị trường điện lực; tổng chi phí phân phối - bán lẻ điện và lợi nhuận định mức; tổng chi phí điều hành - quản lý ngành và lợi nhuận định mức."
-            },
-            {
-              "kind": "text",
-              "text": "3. Tổng chi phí khâu phát điện, tổng chi phí các nhà máy điện cung cấp dịch vụ phụ trợ hệ thống điện cập nhật hằng quý được xác định theo quy định tại Điều 11 và Điều 12 Thông tư này."
-            },
-            {
-              "kind": "text",
-              "text": "4. Hồ sơ phương án giá bán điện bình quân trong năm thực hiện theo quy định tại khoản 2 Điều 6 Nghị định số 72/2025/NĐ-CP."
-            }
-          ]
-        },
-        {
-          "id": "art-11",
-          "number": "Điều 11",
-          "heading": "Phương pháp xác định tổng chi phí khâu phát điện",
-          "body": "1. Sản lượng điện được xác định theo phương thức vận hành hệ thống điện quốc gia tháng 4 năm N đối với phương án giá cập nhật quý I, tháng 7 năm N đối với phương án giá cập nhật quý II và tháng 10 năm N đối với phương án giá cập nhật quý III hoặc kế hoạch cung cấp điện và vận hành hệ thống điện quốc gia năm N được cập nhật.\n2. Giá điện và các thông số đầu vào về nhiên liệu, tỷ giá ngoại tệ được xác định theo thông số đã được Đơn vị vận hành hệ thống điện và thị trường điện sử dụng trong lập phương thức vận hành hệ thống điện quốc gia hoặc kế hoạch cung cấp điện và vận hành hệ thống điện quốc gia năm N cập nhật. Đối với nhà máy điện dự kiến đưa vào vận hành trong năm N nhưng chưa xác định được giá điện, Tập đoàn Điện lực Việt Nam chịu trách nhiệm đề xuất giá dự kiến để ước tính chi phí mua điện các tháng còn lại trong năm N.\n3. Tổng chi phí khâu phát điện cập nhật hằng quý năm N được xác định theo công thức quy định tại khoản 1 Điều 4 Thông tư này.\n4. Chi phí mua điện từ các nhà máy điện cập nhật hằng quý năm N, bao gồm các nhà máy điện trực tiếp và gián tiếp tham gia thị trường điện (không bao gồm các nhà máy thủy điện chiến lược đa mục tiêu và nhà máy điện hạch toán phụ thuộc khác trong giai đoạn chưa tham gia thị trường điện cạnh tranh của Tập đoàn Điện lực Việt Nam), nhà máy điện BOT, nhà máy năng lượng tái tạo nhỏ, nhà máy điện sử dụng năng lượng tái tạo và năng lượng mới bao gồm cả hệ thống lưu trữ điện và nhập khẩu điện được xác định căn cứ theo hợp đồng mua bán điện, chi phí mua điện các tháng đầu năm và dự kiến chi phí mua điện các tháng còn lại trong năm, trong đó:\na) Chi phí mua điện các tháng đầu năm N: xác định theo hồ sơ thanh toán chi phí mua điện thực tế phát sinh, ước tính đối với các khoản chi phí chưa có hoặc chưa đầy đủ hồ sơ thanh toán tại thời điểm xây dựng phương án giá;\nb) Chi phí mua điện dự kiến các tháng còn lại năm N được xác định trên cơ sở:\nb1) Sản lượng điện dự kiến các tháng cuối năm theo quy định tại khoản 1 Điều này;\nb2) Sản lượng điện các nhà máy điện sử dụng năng lượng tái tạo và năng lượng mới các tháng cuối năm do Đơn vị vận hành hệ thống điện và thị trường điện cung cấp;\nb3) Sản lượng hợp đồng (Qc) của các nhà máy điện trực tiếp tham gia thị trường điện do Đơn vị vận hành hệ thống điện và thị trường điện công bố tại thời điểm tính toán kế hoạch cung cấp điện và vận hành hệ thống điện quốc gia năm N, cập nhật Qc của các nhà máy điện đến thời điểm tính toán phương thức vận hành hệ thống điện quốc gia theo quy định tại khoản 1 Điều này;\nb4) Giá điện năng thị trường trung bình tháng do Đơn vị vận hành hệ thống điện và thị trường điện tính toán căn cứ theo kết quả tính toán lập kế hoạch hệ thống điện và thị trường điện tháng 4 năm N đối với phương án giá bán lẻ điện bình quân cập nhật quý I, tháng 7 năm N đối với phương án giá bán lẻ điện bình quân cập nhật quý II và tháng 10 năm N đối với phương án giá bán lẻ điện bình quân cập nhật quý III hoặc kế hoạch cung cấp điện và vận hành hệ thống điện quốc gia năm N được cập nhật;\nb5) Giá công suất thị trường trung bình tháng theo kế hoạch vận hành thị trường điện năm N đã được phê duyệt;\nb6) Giá điện và thông số đầu vào của các nhà máy điện trực tiếp và gián tiếp tham gia thị trường điện, nhà máy điện BOT, năng lượng tái tạo và năng lượng mới, nhập khẩu điện: xác định theo quy định tại khoản 2 Điều này;\nb7) Chi phí mua điện từ các nhà máy năng lượng tái tạo nhỏ áp dụng biểu giá chi phí tránh được: được xác định theo biểu giá chi phí tránh được năm N (trường hợp chưa có biểu giá chi phí tránh được năm N thì lấy theo biểu giá chi phí tránh được năm N-1) và cơ cấu sản lượng điện cao điểm, bình thường và thấp điểm các tháng còn lại của từng miền năm N theo tỷ lệ cơ cấu sản lượng điện theo tháng tương ứng của từng miền thực hiện năm N-1.\nc) Chi phí mua điện các tháng còn lại năm N của các nhà máy điện trực tiếp tham gia thị trường điện do Đơn vị vận hành hệ thống điện và thị trường điện tính toán và cung cấp.\n5. Tổng chi phí từ các nhà máy thủy điện chiến lược đa mục tiêu và hạch toán phụ thuộc khác trong giai đoạn chưa tham gia thị trường điện cạnh tranh của Tập đoàn Điện lực Việt Nam cập nhật hằng quý năm N: cập nhật theo các loại thuế, phí, tiền phải trả biến động theo sản lượng điện và chi phí nhiên liệu. Sản lượng điện cập nhật hằng quý dùng để tính toán các loại thuế, phí, tiền phải trả và chi phí nhiên liệu là sản lượng điện theo quy định tại khoản 1 Điều này. Lợi nhuận theo phương án giá bán lẻ điện bình quân hằng năm.",
-          "blocks": [
-            {
-              "kind": "text",
-              "text": "1. Sản lượng điện được xác định theo phương thức vận hành hệ thống điện quốc gia tháng 4 năm N đối với phương án giá cập nhật quý I, tháng 7 năm N đối với phương án giá cập nhật quý II và tháng 10 năm N đối với phương án giá cập nhật quý III hoặc kế hoạch cung cấp điện và vận hành hệ thống điện quốc gia năm N được cập nhật."
-            },
-            {
-              "kind": "text",
-              "text": "2. Giá điện và các thông số đầu vào về nhiên liệu, tỷ giá ngoại tệ được xác định theo thông số đã được Đơn vị vận hành hệ thống điện và thị trường điện sử dụng trong lập phương thức vận hành hệ thống điện quốc gia hoặc kế hoạch cung cấp điện và vận hành hệ thống điện quốc gia năm N cập nhật. Đối với nhà máy điện dự kiến đưa vào vận hành trong năm N nhưng chưa xác định được giá điện, Tập đoàn Điện lực Việt Nam chịu trách nhiệm đề xuất giá dự kiến để ước tính chi phí mua điện các tháng còn lại trong năm N."
-            },
-            {
-              "kind": "text",
-              "text": "3. Tổng chi phí khâu phát điện cập nhật hằng quý năm N được xác định theo công thức quy định tại khoản 1 Điều 4 Thông tư này."
-            },
-            {
-              "kind": "text",
-              "text": "4. Chi phí mua điện từ các nhà máy điện cập nhật hằng quý năm N, bao gồm các nhà máy điện trực tiếp và gián tiếp tham gia thị trường điện (không bao gồm các nhà máy thủy điện chiến lược đa mục tiêu và nhà máy điện hạch toán phụ thuộc khác trong giai đoạn chưa tham gia thị trường điện cạnh tranh của Tập đoàn Điện lực Việt Nam), nhà máy điện BOT, nhà máy năng lượng tái tạo nhỏ, nhà máy điện sử dụng năng lượng tái tạo và năng lượng mới bao gồm cả hệ thống lưu trữ điện và nhập khẩu điện được xác định căn cứ theo hợp đồng mua bán điện, chi phí mua điện các tháng đầu năm và dự kiến chi phí mua điện các tháng còn lại trong năm, trong đó:"
-            },
-            {
-              "kind": "text",
-              "text": "a) Chi phí mua điện các tháng đầu năm N: xác định theo hồ sơ thanh toán chi phí mua điện thực tế phát sinh, ước tính đối với các khoản chi phí chưa có hoặc chưa đầy đủ hồ sơ thanh toán tại thời điểm xây dựng phương án giá;"
-            },
-            {
-              "kind": "text",
-              "text": "b) Chi phí mua điện dự kiến các tháng còn lại năm N được xác định trên cơ sở:"
-            },
-            {
-              "kind": "text",
-              "text": "b1) Sản lượng điện dự kiến các tháng cuối năm theo quy định tại khoản 1 Điều này;"
-            },
-            {
-              "kind": "text",
-              "text": "b2) Sản lượng điện các nhà máy điện sử dụng năng lượng tái tạo và năng lượng mới các tháng cuối năm do Đơn vị vận hành hệ thống điện và thị trường điện cung cấp;"
-            },
-            {
-              "kind": "text",
-              "text": "b3) Sản lượng hợp đồng (Qc) của các nhà máy điện trực tiếp tham gia thị trường điện do Đơn vị vận hành hệ thống điện và thị trường điện công bố tại thời điểm tính toán kế hoạch cung cấp điện và vận hành hệ thống điện quốc gia năm N, cập nhật Qc của các nhà máy điện đến thời điểm tính toán phương thức vận hành hệ thống điện quốc gia theo quy định tại khoản 1 Điều này;"
-            },
-            {
-              "kind": "text",
-              "text": "b4) Giá điện năng thị trường trung bình tháng do Đơn vị vận hành hệ thống điện và thị trường điện tính toán căn cứ theo kết quả tính toán lập kế hoạch hệ thống điện và thị trường điện tháng 4 năm N đối với phương án giá bán lẻ điện bình quân cập nhật quý I, tháng 7 năm N đối với phương án giá bán lẻ điện bình quân cập nhật quý II và tháng 10 năm N đối với phương án giá bán lẻ điện bình quân cập nhật quý III hoặc kế hoạch cung cấp điện và vận hành hệ thống điện quốc gia năm N được cập nhật;"
-            },
-            {
-              "kind": "text",
-              "text": "b5) Giá công suất thị trường trung bình tháng theo kế hoạch vận hành thị trường điện năm N đã được phê duyệt;"
-            },
-            {
-              "kind": "text",
-              "text": "b6) Giá điện và thông số đầu vào của các nhà máy điện trực tiếp và gián tiếp tham gia thị trường điện, nhà máy điện BOT, năng lượng tái tạo và năng lượng mới, nhập khẩu điện: xác định theo quy định tại khoản 2 Điều này;"
-            },
-            {
-              "kind": "text",
-              "text": "b7) Chi phí mua điện từ các nhà máy năng lượng tái tạo nhỏ áp dụng biểu giá chi phí tránh được: được xác định theo biểu giá chi phí tránh được năm N (trường hợp chưa có biểu giá chi phí tránh được năm N thì lấy theo biểu giá chi phí tránh được năm N-1) và cơ cấu sản lượng điện cao điểm, bình thường và thấp điểm các tháng còn lại của từng miền năm N theo tỷ lệ cơ cấu sản lượng điện theo tháng tương ứng của từng miền thực hiện năm N-1."
-            },
-            {
-              "kind": "text",
-              "text": "c) Chi phí mua điện các tháng còn lại năm N của các nhà máy điện trực tiếp tham gia thị trường điện do Đơn vị vận hành hệ thống điện và thị trường điện tính toán và cung cấp."
-            },
-            {
-              "kind": "text",
-              "text": "5. Tổng chi phí từ các nhà máy thủy điện chiến lược đa mục tiêu và hạch toán phụ thuộc khác trong giai đoạn chưa tham gia thị trường điện cạnh tranh của Tập đoàn Điện lực Việt Nam cập nhật hằng quý năm N: cập nhật theo các loại thuế, phí, tiền phải trả biến động theo sản lượng điện và chi phí nhiên liệu. Sản lượng điện cập nhật hằng quý dùng để tính toán các loại thuế, phí, tiền phải trả và chi phí nhiên liệu là sản lượng điện theo quy định tại khoản 1 Điều này. Lợi nhuận theo phương án giá bán lẻ điện bình quân hằng năm."
-            }
-          ]
-        },
-        {
-          "id": "art-12",
-          "number": "Điều 12",
-          "heading": "Phương pháp xác định tổng chi phí các nhà máy điện cung cấp dịch vụ phụ trợ hệ thống điện",
-          "body": "1. Tổng chi phí các nhà máy điện, tổ máy phát điện cung cấp dịch vụ phụ trợ hệ thống điện cập nhật hằng quý năm N được xác định theo nguyên tắc chi phí các tháng đầu năm N theo quy định tại khoản 2 Điều này, chi phí dự kiến các tháng còn lại trong năm N theo quy định tại khoản 3 Điều này.\n2. Chi phí mua điện các tháng đầu năm N đã thực hiện: được xác định theo hồ sơ thanh toán chi phí mua điện đối với các nhà máy điện đã có hồ sơ thanh toán và số liệu ước đối với các nhà máy điện chưa có hồ sơ thanh toán. Đối với các nhà máy điện, tổ máy phát điện trực thuộc Tập đoàn Điện lực Việt Nam đã ký hợp đồng mua bán điện với các Tổng công ty Điện lực và tham gia cung cấp dịch vụ phụ trợ hệ thống điện, khoản chi phí nhiên liệu, chi phí vận hành và bảo dưỡng biến đổi được tính toán trên cơ sở thực tế phát sinh.\n3. Chi phí mua điện các nhà máy điện, tổ máy phát điện cung cấp dịch vụ phụ trợ hệ thống điện dự kiến các tháng còn lại năm N được xác định trên cơ sở:\na) Sản lượng dự kiến các tháng còn lại năm N được xác định theo quy định tại khoản 1 Điều 11 Thông tư này;\nb) Giá điện và các thông số đầu vào về nhiên liệu, tỷ giá ngoại tệ các tháng còn lại năm N được xác định theo quy định tại khoản 2 Điều 11 Thông tư này.\nChương III\nTỔ CHỨC THỰC HIỆN",
-          "blocks": [
-            {
-              "kind": "text",
-              "text": "1. Tổng chi phí các nhà máy điện, tổ máy phát điện cung cấp dịch vụ phụ trợ hệ thống điện cập nhật hằng quý năm N được xác định theo nguyên tắc chi phí các tháng đầu năm N theo quy định tại khoản 2 Điều này, chi phí dự kiến các tháng còn lại trong năm N theo quy định tại khoản 3 Điều này."
-            },
-            {
-              "kind": "text",
-              "text": "2. Chi phí mua điện các tháng đầu năm N đã thực hiện: được xác định theo hồ sơ thanh toán chi phí mua điện đối với các nhà máy điện đã có hồ sơ thanh toán và số liệu ước đối với các nhà máy điện chưa có hồ sơ thanh toán. Đối với các nhà máy điện, tổ máy phát điện trực thuộc Tập đoàn Điện lực Việt Nam đã ký hợp đồng mua bán điện với các Tổng công ty Điện lực và tham gia cung cấp dịch vụ phụ trợ hệ thống điện, khoản chi phí nhiên liệu, chi phí vận hành và bảo dưỡng biến đổi được tính toán trên cơ sở thực tế phát sinh."
-            },
-            {
-              "kind": "text",
-              "text": "3. Chi phí mua điện các nhà máy điện, tổ máy phát điện cung cấp dịch vụ phụ trợ hệ thống điện dự kiến các tháng còn lại năm N được xác định trên cơ sở:"
-            },
-            {
-              "kind": "text",
-              "text": "a) Sản lượng dự kiến các tháng còn lại năm N được xác định theo quy định tại khoản 1 Điều 11 Thông tư này;"
-            },
-            {
-              "kind": "text",
-              "text": "b) Giá điện và các thông số đầu vào về nhiên liệu, tỷ giá ngoại tệ các tháng còn lại năm N được xác định theo quy định tại khoản 2 Điều 11 Thông tư này."
-            },
-            {
-              "kind": "text",
-              "text": "Chương III"
-            },
-            {
-              "kind": "text",
-              "text": "TỔ CHỨC THỰC HIỆN"
-            }
-          ]
-        },
-        {
-          "id": "art-13",
-          "number": "Điều 13",
-          "heading": "Trách nhiệm của Cục Điện lực",
-          "body": "Chủ trì, phối hợp với các cơ quan liên quan báo cáo Bộ trưởng Bộ Công Thương việc kiểm tra, rà soát và giám sát phương án giá bán lẻ điện bình quân do Tập đoàn Điện lực Việt Nam xây dựng, điều chỉnh theo quy định tại Nghị định số 72/2025/NĐ-CP.",
-          "blocks": [
-            {
-              "kind": "text",
-              "text": "Chủ trì, phối hợp với các cơ quan liên quan báo cáo Bộ trưởng Bộ Công Thương việc kiểm tra, rà soát và giám sát phương án giá bán lẻ điện bình quân do Tập đoàn Điện lực Việt Nam xây dựng, điều chỉnh theo quy định tại Nghị định số 72/2025/NĐ-CP."
-            }
-          ]
-        },
-        {
-          "id": "art-14",
-          "number": "Điều 14",
-          "heading": "Trách nhiệm của Tập đoàn Điện lực Việt Nam",
-          "body": "Tập đoàn Điện lực Việt Nam có trách nhiệm thực hiện các quy định tại Nghị định số 72/2025/NĐ-CP và quy định tại Thông tư này.",
-          "blocks": [
-            {
-              "kind": "text",
-              "text": "Tập đoàn Điện lực Việt Nam có trách nhiệm thực hiện các quy định tại Nghị định số 72/2025/NĐ-CP và quy định tại Thông tư này."
-            }
-          ]
-        },
-        {
-          "id": "art-15",
-          "number": "Điều 15",
-          "heading": "Trách nhiệm của Đơn vị vận hành hệ thống điện và thị trường điện",
-          "body": "Đơn vị vận hành hệ thống điện và thị trường điện có trách nhiệm tính toán, cung cấp số liệu cho Tập đoàn Điện lực Việt Nam theo quy định tại Điều 4, Điều 5, Điều 8 và Điều 11 Thông tư này.",
-          "blocks": [
-            {
-              "kind": "text",
-              "text": "Đơn vị vận hành hệ thống điện và thị trường điện có trách nhiệm tính toán, cung cấp số liệu cho Tập đoàn Điện lực Việt Nam theo quy định tại Điều 4, Điều 5, Điều 8 và Điều 11 Thông tư này."
-            }
-          ]
-        },
-        {
-          "id": "art-16",
-          "number": "Điều 16",
-          "heading": "Hiệu lực thi hành",
-          "body": "1. Thông tư này có hiệu lực thi hành kể từ ngày ký ban hành.\n2. Bãi bỏ Thông tư số 09/2024/TT-BCT ngày 30 tháng 7 năm 2024 của Bộ trưởng Bộ Công Thương quy định tính toán giá bán điện bình quân./.",
-          "blocks": [
-            {
-              "kind": "text",
-              "text": "1. Thông tư này có hiệu lực thi hành kể từ ngày ký ban hành."
-            },
-            {
-              "kind": "text",
-              "text": "2. Bãi bỏ Thông tư số 09/2024/TT-BCT ngày 30 tháng 7 năm 2024 của Bộ trưởng Bộ Công Thương quy định tính toán giá bán điện bình quân./."
-            },
             {
               "kind": "table",
               "rows": [
                 [
                   {
-                    "text": "Nơi nhận:\n- Văn phòng Tổng Bí thư;\n- Văn phòng Chủ tịch nước;\n- Văn phòng Quốc hội;\n- Thủ tướng Chính phủ, các Phó Thủ tướng;\n- Các Bộ, cơ quan ngang Bộ, cơ quan thuộc Chính phủ;\n- Viện KSNDTC;\n- Tòa án nhân dân tối cao;\n- Kiểm toán Nhà nước;\n- Các Lãnh đạo Bộ Công Thương;\n- Cục Kiểm tra văn bản và Quản lý xử lý vi phạm hành chính;\n- Ủy ban nhân dân tỉnh, thành phố trực thuộc Trung ương;\n- Sở Công Thương tỉnh, thành phố trực thuộc Trung ương;\n- Tập đoàn Điện lực Việt Nam; các Tổng công ty Điện lực;\n- Website Chính phủ; Website Bộ Công Thương;\n- Công báo;\n- Lưu: VT, ĐL.",
+                    "text": "Nơi nhận:\n- Thủ tướng Chính phủ, các Phó Thủ tướng;\n- Văn phòng Tổng Bí thư;\n- Các Lãnh đạo Bộ Công Thương;\n- Các Bộ, cơ quan ngang Bộ, cơ quan thuộc Chính phủ;\n- UBND các tỉnh, thành phố trực thuộc Trung ương;\n- Sở Công Thương các tỉnh, thành phố trực thuộc Trung ương;\n- Tập đoàn Điện lực Việt Nam;\n- Các Tổng công ty Điện lực;\n- Website Chính phủ;\n- Website Bộ Công Thương;\n- Lưu: VT, ĐL.",
                     "colspan": 1,
                     "rowspan": 1,
                     "isHeader": false
                   },
                   {
                     "text": "KT. BỘ TRƯỞNG\nTHỨ TRƯỞNG\nNguyễn Hoàng Long",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ]
+              ]
+            },
+            {
+              "kind": "text",
+              "text": "PHỤ LỤC"
+            },
+            {
+              "kind": "text",
+              "text": "GIÁ BÁN ĐIỆN"
+            },
+            {
+              "kind": "text",
+              "text": "(Ban hành kèm theo Quyết định số 1279/QĐ-BCT ngày 09 tháng 5 năm 2025 của Bộ Công Thương)"
+            },
+            {
+              "kind": "table",
+              "rows": [
+                [
+                  {
+                    "text": "TT",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Nhóm đối tượng khách hàng",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Giá bán điện (đồng/kWh)",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "1",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Giá bán lẻ điện cho các ngành sản xuất",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "1.1",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Cấp điện áp từ 110 kV trở lên",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "a) Giờ bình thường",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "1.811",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "b) Giờ thấp điểm",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "1.146",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "c) Giờ cao điểm",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "3.266",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "1.2",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Cấp điện áp từ 22 kV đến dưới 110 kV",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "a) Giờ bình thường",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "1.833",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "b) Giờ thấp điểm",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "1.190",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "c) Giờ cao điểm",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "3.398",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "1.3",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Cấp điện áp từ 6 kV đến dưới 22 kV",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "a) Giờ bình thường",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "1.899",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "b) Giờ thấp điểm",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "1.234",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "c) Giờ cao điểm",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "3.508",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "1.4",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Cấp điện áp dưới 6 kV",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "a) Giờ bình thường",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "1.987",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "b) Giờ thấp điểm",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "1.300",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "c) Giờ cao điểm",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "3.640",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "2",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Giá bán lẻ điện cho khối hành chính sự nghiệp",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "2.1",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Bệnh viện, nhà trẻ, mẫu giáo, trường phổ thông",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "2.1.1",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Cấp điện áp từ 6 kV trở lên",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "1.940",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "2.1.2",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Cấp điện áp dưới 6 kV",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "2.072",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "2.2",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Chiếu sáng công cộng; đơn vị hành chính sự nghiệp",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "2.2.1",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Cấp điện áp từ 6 kV trở lên",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "2.138",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "2.2.2",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Cấp điện áp dưới 6 kV",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "2.226",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "3",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Giá bán lẻ điện cho kinh doanh",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "3.1",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Cấp điện áp từ 22 kV trở lên",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "a) Giờ bình thường",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "2.887",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "b) Giờ thấp điểm",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "1.609",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "c) Giờ cao điểm",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "5.025",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "3.2",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Cấp điện áp từ 6 kV đến dưới 22 kV",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "a) Giờ bình thường",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "3.108",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "b) Giờ thấp điểm",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "1.829",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "c) Giờ cao điểm",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "5.202",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "3.3",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Cấp điện áp dưới 6 kV",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "a) Giờ bình thường",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "3.152",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "b) Giờ thấp điểm",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "1.918",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "c) Giờ cao điểm",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "5.422",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "4",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Giá bán lẻ điện cho sinh hoạt",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "4.1",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Giá bán lẻ điện sinh hoạt",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Bậc 1: Cho kWh từ 0 - 50",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "1.984",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Bậc 2: Cho kWh từ 51 - 100",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "2.050",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Bậc 3: Cho kWh từ 101 - 200",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "2.380",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Bậc 4: Cho kWh từ 201 - 300",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "2.998",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Bậc 5: Cho kWh từ 301 - 400",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "3.350",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Bậc 6: Cho kWh từ 401 trở lên",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "3.460",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "4.2",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Giá bán lẻ điện sinh hoạt dùng công tơ thẻ trả trước",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "2.909",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "5",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Giá bán buôn điện nông thôn",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "5.1",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Giá bán buôn điện sinh hoạt",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Bậc 1: Cho kWh từ 0 - 50",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "1.658",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Bậc 2: Cho kWh từ 51 - 100",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "1.724",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Bậc 3: Cho kWh từ 101 -200",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "1.876",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Bậc 4: Cho kWh từ 201 -300",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "2.327",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Bậc 5: Cho kWh từ 301 -400",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "2.635",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Bậc 6: Cho kWh từ 401 trở lên",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "2.744",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "5.2",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Giá bán buôn điện cho mục đích khác",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "1.735",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "6",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Giá bán buôn điện khu tập thể, cụm dân cư",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "6.1",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Thành phố, thị xã",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "6.1.1",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Giá bán buôn điện sinh hoạt",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "6.1.1.1",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Trạm biến áp do Bên bán điện đầu tư",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Bậc 1: Cho kWh từ 0 - 50",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "1.853",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Bậc 2: Cho kWh từ 51 - 100",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "1.919",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Bậc 3: Cho kWh từ 101 - 200",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "2.172",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Bậc 4: Cho kWh từ 201 -300",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "2.750",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Bậc 5: Cho kWh từ 301 - 400",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "3.102",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Bậc 6: Cho kWh từ 401 trở lên",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "3.206",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "6.1.1.2",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Trạm biến áp do Bên mua điện đầu tư",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Bậc 1: Cho kWh từ 0 - 50",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "1.826",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Bậc 2: Cho kWh từ 51 - 100",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "1.892",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Bậc 3: Cho kWh từ 101 -200",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "2.109",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Bậc 4: Cho kWh từ 201 - 300",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "2.667",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Bậc 5: Cho kWh từ 301 - 400",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "2.999",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Bậc 6: Cho kWh từ 401 trở lên",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "3.134",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "6.1.2",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Giá bán buôn điện cho mục đích khác",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "1.750",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "6.2",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Thị trấn, huyện lỵ",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "6.2.1",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Giá bán buôn điện sinh hoạt",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "6.2.1.1",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Trạm biến áp do Bên bán điện đầu tư",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Bậc 1: Cho kWh từ 0 - 50",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "1.790",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Bậc 2: Cho kWh từ 51 - 100",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "1.856",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Bậc 3: Cho kWh từ 101 - 200",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "2.062",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Bậc 4: Cho kWh từ 201 - 300",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "2.611",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Bậc 5: Cho kWh từ 301 - 400",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "2.937",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Bậc 6: Cho kWh từ 401 trở lên",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "3.035",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "6.2.1.2",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Trạm biến áp do Bên mua điện đầu tư",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Bậc 1: Cho kWh từ 0 - 50",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "1.762",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Bậc 2: Cho kWh từ 51 - 100",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "1.828",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Bậc 3: Cho kWh từ 101 -200",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "2.017",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Bậc 4: Cho kWh từ 201 - 300",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "2.503",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Bậc 5: Cho kWh từ 301 -400",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "2.834",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Bậc 6: Cho kWh từ 401 trở lên",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "2.929",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "6.2.2",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Giá bán buôn điện cho mục đích khác",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "1.750",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "7",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Giá bán buôn điện cho tổ hợp thương mại - dịch vụ - sinh hoạt",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "7.1",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Giá bán buôn điện sinh hoạt",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Bậc 1: Cho kWh từ 0 - 50",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "1.947",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Bậc 2: Cho kWh từ 51 - 100",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "2.011",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Bậc 3: Cho kWh từ 101 -200",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "2.334",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Bậc 4: Cho kWh từ 201 -300",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "2.941",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Bậc 5: Cho kWh từ 301 -400",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "3.286",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Bậc 6: Cho kWh từ 401 trở lên",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "3.393",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "7.2",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Giá bán buôn điện cho mục đích khác",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "a) Giờ bình thường",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "2.989",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "b) Giờ thấp điểm",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "1.818",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "c) Giờ cao điểm",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "5.140",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "8",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Giá bán buôn điện cho các khu công nghiệp, cụm công nghiệp",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "8.1",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Giá bán buôn điện tại thanh cái 110 kV của trạm biến áp 110 kV/35-22-10-6 kV",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "8.1.1",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Tổng công suất đặt các MBA của trạm biến áp lớn hơn 100 MVA",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "a) Giờ bình thường",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "1.744",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "b) Giờ thấp điểm",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "1.117",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "c) Giờ cao điểm",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "3.197",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "8.1.2",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Tổng công suất đặt các MBA của trạm biến áp từ 50 MVA đến 100 MVA",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "a) Giờ bình thường",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "1.737",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "b) Giờ thấp điểm",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "1.084",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "c) Giờ cao điểm",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "3.183",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "8.1.3",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Tổng công suất đặt các MBA của trạm biến áp dưới 50 MVA",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "a) Giờ bình thường",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "1.728",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "b) Giờ thấp điểm",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "1.079",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "c) Giờ cao điểm",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "3.164",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "8.2",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Giá bán buôn điện phía trung áp của trạm biến áp 110/35-22-10-6 kV",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "8.2.1",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Cấp điện áp từ 22 kV đến dưới 110 kV",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "a) Giờ bình thường",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "1.800",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "b) Giờ thấp điểm",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "1.168",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "c) Giờ cao điểm",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "3.334",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "8.2.2",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Cấp điện áp từ 6 kV đến dưới 22 kV",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "a) Giờ bình thường",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "1.865",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "b) Giờ thấp điểm",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "1.210",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "c) Giờ cao điểm",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "3.441",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  }
+                ],
+                [
+                  {
+                    "text": "9",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "Giá bán buôn điện cho chợ",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "isHeader": false
+                  },
+                  {
+                    "text": "2.818",
                     "colspan": 1,
                     "rowspan": 1,
                     "isHeader": false
