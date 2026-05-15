@@ -2363,9 +2363,19 @@
     const checkboxCells = rows.reduce((s, r) => s + r.filter(c => /^[☐□]/.test((c.text || "").trim())).length, 0);
     const isFormTable = (singleCellRows >= 2 || dotPlaceholders >= 2 || checkboxCells >= 1);
 
+    // Header heuristic: row 0 is a header if (a) any cell has isHeader=true
+    // (source used <th>), OR (b) for data tables with 5+ rows, row 0 has
+    // consistently short label-like cells. tvpl often uses <td> for what
+    // are visually header rows ("TT | Nhóm đối tượng | Giá").
+    const row0HasHeaderTag = rows[0].some(c => c.isHeader);
+    const row0LooksLikeHeader = !isFormTable && rows.length >= 5 &&
+      rows[0].length === maxCols &&
+      rows[0].every(c => (c.text || "").length > 0 && (c.text || "").length < 60);
+    const promoteRow0 = row0HasHeaderTag || row0LooksLikeHeader;
+
     let html = `<div class="art-table-wrap"><table class="art-table${isFormTable ? ' art-table-form' : ''}">`;
     let bodyStartIdx = 0;
-    if (rows[0].some(c => c.isHeader)) {
+    if (promoteRow0) {
       html += '<thead><tr>';
       for (const c of rows[0]) {
         const cs = c.colspan && c.colspan > 1 ? ` colspan="${c.colspan}"` : "";
