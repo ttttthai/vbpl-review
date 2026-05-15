@@ -3002,16 +3002,16 @@ mark.vbpl-find-hit.current {
   display: flex; align-items: center; gap: 4px;
   flex-wrap: wrap;
 }
+/* Background/foreground/border are set inline per sector via an HSL hash on
+   the sector key, so each sub-sector gets a distinct stable colour. */
 .evt-fo-sector {
   font-style: normal;
   font-size: 7.5px;
   font-weight: 700;
   letter-spacing: 0.1px;
-  padding: 1px 4px;
+  padding: 1px 5px;
   border-radius: 99px;
-  background: rgba(125, 29, 34, 0.10);
-  color: var(--red);
-  max-width: 110px;
+  max-width: 130px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;

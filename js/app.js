@@ -2706,13 +2706,12 @@
   function renderSodo(doc) {
     if (!sodoEl) return;
 
-    // Build a lookup: docId → sub-sector label. Used to tag each tree node
-    // with its sub-sector pill so users can see the topical grouping
-    // (banking: AML / DPPA / VWEM / ...; electricity: PDP8 / FIT / ...).
+    // Build a lookup: docId → {key, label}. The key drives the colour hash
+    // so pills for the same sub-sector get the same colour across nodes.
     const docSector = new Map();
     for (const branch of SUB_SECTOR_TAXONOMY) {
       for (const g of branch.groups) {
-        for (const id of g.docs) docSector.set(id, g.label);
+        for (const id of g.docs) docSector.set(id, { key: g.key, label: g.label });
       }
     }
 
@@ -3083,9 +3082,19 @@
       const y = n.y - NODE_H / 2;
       const rawTitle = (n.doc.shortTitle || n.doc.title || n.doc.number || '').replace(/\s+/g, ' ');
       const foCurrent = n.isCurrent ? ' current' : '';
-      const sector = docSector.get(n.doc.id) || '';
-      const sectorPill = sector
-        ? `<div class="evt-fo-sector" title="${escapeHtml(sector)}">${escapeHtml(sector)}</div>`
+      const sectorEntry = docSector.get(n.doc.id);
+      const sectorPill = sectorEntry
+        ? (() => {
+            const { key, label } = sectorEntry;
+            // Stable hue per sector key (FNV-1a-ish hash → 0..359°).
+            let h = 0;
+            for (let i = 0; i < key.length; i++) h = ((h * 31) + key.charCodeAt(i)) >>> 0;
+            const hue = h % 360;
+            const bg = `hsl(${hue}, 60%, 92%)`;
+            const fg = `hsl(${hue}, 62%, 28%)`;
+            const bd = `hsl(${hue}, 50%, 70%)`;
+            return `<div class="evt-fo-sector" title="${escapeHtml(label)}" style="background:${bg};color:${fg};border:1px solid ${bd};">${escapeHtml(label)}</div>`;
+          })()
         : '';
       nodeMarkup += `
         <g class="evt-node-group" data-doc-id="${escapeHtml(n.doc.id)}" style="cursor: pointer;">
