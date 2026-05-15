@@ -2651,6 +2651,16 @@
   function renderSodo(doc) {
     if (!sodoEl) return;
 
+    // Build a lookup: docId → sub-sector label. Used to tag each tree node
+    // with its sub-sector pill so users can see the topical grouping
+    // (banking: AML / DPPA / VWEM / ...; electricity: PDP8 / FIT / ...).
+    const docSector = new Map();
+    for (const branch of SUB_SECTOR_TAXONOMY) {
+      for (const g of branch.groups) {
+        for (const id of g.docs) docSector.set(id, g.label);
+      }
+    }
+
     // Build reverse maps: parentId → [child docs] for both replaces and amends.
     const replacedByMap = new Map();
     const amendedByMap = new Map();
@@ -3018,6 +3028,10 @@
       const y = n.y - NODE_H / 2;
       const rawTitle = (n.doc.shortTitle || n.doc.title || n.doc.number || '').replace(/\s+/g, ' ');
       const foCurrent = n.isCurrent ? ' current' : '';
+      const sector = docSector.get(n.doc.id) || '';
+      const sectorPill = sector
+        ? `<div class="evt-fo-sector" title="${escapeHtml(sector)}">${escapeHtml(sector)}</div>`
+        : '';
       nodeMarkup += `
         <g class="evt-node-group" data-doc-id="${escapeHtml(n.doc.id)}" style="cursor: pointer;">
           <rect class="${cls}" x="${x}" y="${y}" width="${NODE_W}" height="${NODE_H}" rx="5"/>
@@ -3025,7 +3039,7 @@
             <div xmlns="http://www.w3.org/1999/xhtml" class="evt-fo">
               <div class="evt-fo-num${foCurrent}">${n.isCurrent ? '★ ' : ''}${escapeHtml(n.doc.type)} · ${escapeHtml(n.doc.number)}</div>
               <div class="evt-fo-title">${escapeHtml(rawTitle)}</div>
-              <div class="evt-fo-sub">${escapeHtml(n.doc.issuedDate ? formatDate(n.doc.issuedDate) : '')}</div>
+              <div class="evt-fo-sub">${escapeHtml(n.doc.issuedDate ? formatDate(n.doc.issuedDate) : '')}${sectorPill}</div>
             </div>
           </foreignObject>
         </g>
